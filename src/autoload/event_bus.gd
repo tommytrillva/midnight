@@ -65,10 +65,14 @@ signal part_removed(vehicle_id: String, slot: String)
 signal vehicle_acquired(vehicle_id: String, source: String)
 signal vehicle_lost(vehicle_id: String, reason: String)
 signal vehicle_stats_changed(vehicle_id: String, stats: Dictionary)
+signal part_combo_achieved(vehicle_id: String, combo_data: Dictionary)
+signal part_combo_lost(vehicle_id: String, combo_id: String)
 
 # --- Pink Slip Events ---
 signal pink_slip_challenge_offered(challenger_data: Dictionary)
 signal pink_slip_accepted(race_data: Dictionary)
+signal pink_slip_challenged(challenge_data: Dictionary)
+signal pink_slip_declined(decline_data: Dictionary)
 signal pink_slip_won(won_vehicle: Dictionary)
 signal pink_slip_lost(lost_vehicle: Dictionary)
 
@@ -88,8 +92,16 @@ signal skill_unlocked(tree: String, skill_id: String)
 # --- World/Time Events ---
 signal time_period_changed(period: String)
 signal weather_changed(condition: String)
+signal weather_changing(from: String, to: String)
+signal lightning_struck
+signal road_wetness_changed(wetness: float)
 signal district_entered(district_id: String)
 signal district_unlocked(district_id: String)
+
+# --- Day/Night Cycle Events ---
+signal neon_lights_activated
+signal neon_lights_deactivated
+signal headlights_needed_changed(needed: bool)
 
 # --- UI Events ---
 signal hud_message(text: String, duration: float)
@@ -98,6 +110,20 @@ signal screen_fade_in(duration: float)
 signal screen_fade_out(duration: float)
 signal save_screen_requested()
 signal load_screen_requested()
+
+# --- Phone/Message Events ---
+signal message_received(sender: String, message_id: String)
+signal message_read(message_id: String)
+signal message_replied(message_id: String, reply_index: int)
+signal phone_opened()
+signal phone_closed()
+
+# --- Housing Events ---
+signal housing_upgraded(old_level: int, new_level: int, housing_data: Dictionary)
+signal housing_downgraded(old_level: int, new_level: int, housing_data: Dictionary)
+signal rent_paid(amount: int, housing_id: String)
+signal rent_missed(amount_owed: int, housing_id: String)
+signal housing_screen_requested()
 
 # --- Save Events ---
 signal game_saved(slot: int)
@@ -110,6 +136,10 @@ signal music_playlist_changed(playlist_id: String)
 signal radio_next_track()
 signal radio_previous_track()
 signal radio_toggle()
+signal radio_station_changed(station_id: int, station_name: String)
+signal radio_dj_line(dj_name: String, line: String)
+signal radio_song_favorited(track_id: String, favorited: bool)
+signal radio_volume_changed(volume: float)
 signal game_state_audio_changed(state: String)
 signal drift_started(vehicle_id: int)
 signal drift_ended(vehicle_id: int, score: float)
@@ -168,6 +198,12 @@ signal slow_motion_deactivated()
 signal ghost_appeared()
 signal ghost_race_started()
 signal ghost_escaped()
+
+# --- Ghost Replay Events ---
+signal ghost_recording_started(track_id: String)
+signal ghost_recording_stopped(track_id: String, time: float)
+signal ghost_beaten(track_id: String, old_time: float, new_time: float)
+signal personal_best_set(track_id: String, time: float)
 
 # --- Ending Events ---
 signal ending_started(ending_id: String, ending_title: String)

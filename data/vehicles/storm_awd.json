@@ -1,0 +1,33 @@
+{
+  "vehicle_id": "storm_awd",
+  "display_name": "Storm AWD",
+  "manufacturer": "Kreuzer",
+  "year": 2003,
+  "body_style": "sedan",
+  "culture": "euro",
+  "description": "A German super sedan that looks like a business executive's daily driver and accelerates like a missile. The Storm AWD combines a twin-turbo V8, all-wheel drive, and an adaptive suspension into a package that does everything impossibly well.",
+  "tier": 4,
+  "rarity": "rare",
+  "base_speed": 90.0,
+  "base_acceleration": 86.0,
+  "base_handling": 78.0,
+  "base_braking": 82.0,
+  "base_durability": 75.0,
+  "nitro_capacity": 45.0,
+  "engine_type": "v8",
+  "displacement_cc": 4400,
+  "stock_hp": 400.0,
+  "stock_torque": 390.0,
+  "aspiration": "twin_turbo",
+  "redline_rpm": 7000,
+  "weight_kg": 1780.0,
+  "drivetrain": "awd",
+  "starting_value": 95000,
+  "class": "A",
+  "cosmetics": {
+    "default_color": "#C0C0C0",
+    "available_colors": ["#C0C0C0", "#000000", "#FFFFFF", "#191970", "#2F4F4F", "#696969"]
+  },
+  "special_traits": ["sleeper", "luxury_missile", "launch_control", "all_weather", "adaptive_suspension"],
+  "lore": "Kreuzer's philosophy is simple: why choose between comfort and speed when you can have both? The Storm AWD will cruise at highway speeds in perfect silence, then annihilate a straightaway at the tap of a pedal. It's the car that corporate executives use to quietly humiliate sports car owners at every stoplight."
+}

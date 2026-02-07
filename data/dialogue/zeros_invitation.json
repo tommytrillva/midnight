@@ -1,0 +1,213 @@
+{
+  "id": "zeros_invitation",
+  "context": "Act 2A Chapter 2.3 — Echo reappears. Zero wants the professional champion for an elite private race.",
+  "lines": [
+    {
+      "type": "narration",
+      "text": "A note on your car windshield. Not in the hotel parking garage — in the secured Apex racing facility lot. Past two checkpoints and a biometric lock. Whoever left it shouldn't have been able to get within a hundred meters of this car."
+    },
+    {
+      "type": "narration",
+      "text": "The note is a single card. Matte black. No text. Just a symbol — an ouroboros, a snake eating its own tail. And on the back, coordinates and a time."
+    },
+    {
+      "type": "narration",
+      "text": "Zero."
+    },
+    {
+      "type": "narration",
+      "text": "The coordinates lead to a stretch of coastal highway north of the city. No streetlights. No guardrails. Just the ocean on one side and the cliffs on the other and the kind of road that was built by someone who believed straight lines were an insult to geography."
+    },
+    {
+      "type": "narration",
+      "text": "A figure stands beside a car at the meeting point. Not Zero — you have never met Zero. This is Echo, Zero's voice. Hooded. Face obscured. Gender indeterminate. They speak like a recording that somehow learned to have a personality."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Echo",
+      "portrait": "echo_hooded",
+      "text": "You went corporate. Zero watched. Zero is not disappointed — Zero does not experience disappointment. But Zero is... recalibrating."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Echo",
+      "portrait": "echo_hooded",
+      "text": "The professional circuit is a performance. You know this. The times are managed. The results are curated. You are racing inside a controlled experiment."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Echo",
+      "portrait": "echo_hooded",
+      "text": "Zero offers something different. The real competition isn't on TV. It never was."
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "What does Zero want from me?",
+          "choice_id": "zero_inv_what_want",
+          "relationship_changes": {"zero": 5},
+          "moral_shift": 0,
+          "jump_to": "echo_explains"
+        },
+        {
+          "text": "I know about the race fixing. Is Zero involved?",
+          "choice_id": "zero_inv_fixing",
+          "relationship_changes": {"zero": -5},
+          "moral_shift": 10,
+          "conditions": {"corruption_discovered": true},
+          "jump_to": "echo_fixing_response"
+        },
+        {
+          "text": "I'm not interested in games. Tell Zero to find someone else.",
+          "choice_id": "zero_inv_refuse",
+          "relationship_changes": {"zero": -10},
+          "moral_shift": 5,
+          "set_flags": {"refused_zeros_invitation": true},
+          "jump_to": "echo_warning"
+        }
+      ]
+    },
+    {
+      "label": "echo_explains",
+      "type": "dialogue",
+      "speaker": "Echo",
+      "portrait": "echo_hooded",
+      "text": "An invitation. Once a month, the best drivers in the world gather at a location known only to them. No teams. No sponsors. No cameras. Just cars and road and the purest form of competition that exists."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Echo",
+      "portrait": "echo_hooded",
+      "text": "Professional champions. Underground legends. Formula refugees. Rally gods. They come because Zero asks, and Zero asks because they are worthy."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Echo",
+      "portrait": "echo_hooded",
+      "text": "Zero is asking you.",
+      "jump_to": "the_proposition"
+    },
+    {
+      "label": "echo_fixing_response",
+      "type": "narration",
+      "text": "Echo pauses. The hood shifts — you imagine a head tilting, considering. The silence is loaded."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Echo",
+      "portrait": "echo_hooded",
+      "text": "Zero does not fix races. Zero renders fixed races irrelevant. The professional circuit is a puppet show. Zero hosts the actual theater."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Echo",
+      "portrait": "echo_hooded",
+      "text": "The corruption you have discovered is a symptom. The disease is the system itself — a system that commodifies speed and sells it to people who have never felt a car break traction. Zero exists outside that system.",
+      "jump_to": "the_proposition"
+    },
+    {
+      "label": "echo_warning",
+      "type": "dialogue",
+      "speaker": "Echo",
+      "portrait": "echo_hooded",
+      "text": "No one has refused Zero's invitation and remained unaffected."
+    },
+    {
+      "type": "narration",
+      "text": "It is not a threat. It is stated with the same neutrality as a weather forecast. Rain is coming. Whether you carry an umbrella is your business."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Echo",
+      "portrait": "echo_hooded",
+      "text": "Zero will ask again. Zero always asks again.",
+      "jump_to": "invitation_end"
+    },
+    {
+      "label": "the_proposition",
+      "type": "dialogue",
+      "speaker": "Echo",
+      "portrait": "echo_hooded",
+      "text": "This Saturday. A private road in the mountains north of the city. Three other drivers. Cars will be provided — equal, identical, no advantage. Only driving matters."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Echo",
+      "portrait": "echo_hooded",
+      "text": "There is no prize money. There is no trophy. There is only the knowledge of where you stand among the best who have ever lived."
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "I'll be there.",
+          "choice_id": "zero_inv_accept",
+          "relationship_changes": {"zero": 15},
+          "moral_shift": -5,
+          "set_flags": {"accepted_zeros_invitation": true, "zeros_race_saturday": true},
+          "jump_to": "echo_pleased"
+        },
+        {
+          "text": "I need to think about it.",
+          "choice_id": "zero_inv_think",
+          "relationship_changes": {"zero": 0},
+          "moral_shift": 0,
+          "set_flags": {"zeros_invitation_pending": true},
+          "jump_to": "echo_patient"
+        }
+      ]
+    },
+    {
+      "label": "echo_pleased",
+      "type": "dialogue",
+      "speaker": "Echo",
+      "portrait": "echo_hooded",
+      "text": "Zero anticipated this answer. A car will be delivered to these coordinates at midnight on Saturday. Drive north. Follow the road until it ends. That is where it begins."
+    },
+    {
+      "type": "narration",
+      "text": "Echo turns toward a car you didn't notice — matte black, no plates, silent engine. They open the door and pause."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Echo",
+      "portrait": "echo_hooded",
+      "text": "One more thing. The drivers you will face — they are not your opponents. They are your mirrors. Zero does not test skill. Zero tests character.",
+      "jump_to": "invitation_end"
+    },
+    {
+      "label": "echo_patient",
+      "type": "dialogue",
+      "speaker": "Echo",
+      "portrait": "echo_hooded",
+      "text": "Think quickly. The road does not wait. Neither does Zero."
+    },
+    {
+      "type": "narration",
+      "text": "Echo's car disappears into the coastal darkness. No headlights. No sound. Like it was absorbed by the night itself.",
+      "jump_to": "invitation_end"
+    },
+    {
+      "label": "invitation_end",
+      "type": "narration",
+      "text": "You stand alone on the coastal highway. The ocean crashes against the rocks below. The moon paints a silver line across the water that looks like a racing line drawn by God."
+    },
+    {
+      "type": "narration",
+      "text": "The professional world offers fame, money, and a championship. Zero offers something else — something that has no name, no price, no definition. Something that lives in the space between speed and meaning."
+    },
+    {
+      "type": "narration",
+      "text": "You drive back to the hotel. The road feels different now. Like it is watching you."
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "zeros_invitation_complete",
+        "value": true
+      }
+    }
+  ]
+}

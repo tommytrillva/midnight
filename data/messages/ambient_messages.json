@@ -1,0 +1,316 @@
+{
+  "pools": {
+    "maya": [
+      {
+        "text": "Your oil pressure was high last run. Bring it by.",
+        "replies": [
+          {"text": "On my way.", "relationship": {"maya": 1}},
+          {"text": "It's probably fine.", "relationship": {"maya": -1}}
+        ]
+      },
+      {
+        "text": "Found a part you might like. Rare intake manifold from a '97 Sakura.",
+        "replies": [
+          {"text": "Save it for me!", "relationship": {"maya": 2}},
+          {"text": "How much?", "relationship": {"maya": 1}}
+        ]
+      },
+      {
+        "text": "Closing early tonight. Pizza?",
+        "replies": [
+          {"text": "Name the place.", "relationship": {"maya": 3}},
+          {"text": "Rain check?", "relationship": {"maya": 0}}
+        ]
+      },
+      {
+        "text": "Your brake pads are at 30%. Don't push it.",
+        "replies": [
+          {"text": "I'll swing by tomorrow.", "relationship": {"maya": 1}},
+          {"text": "They'll last a few more runs.", "relationship": {"maya": -1}}
+        ]
+      },
+      {
+        "text": "Someone brought in a turbo kit today. Thinking of you.",
+        "replies": [
+          {"text": "Is it compatible with the Sakura?", "relationship": {"maya": 2}},
+          {"text": "Tempting...", "relationship": {"maya": 1}}
+        ]
+      },
+      {
+        "text": "Your exhaust is rattling. I can hear it from inside the shop. Bring it in.",
+        "replies": [
+          {"text": "It adds character.", "relationship": {"maya": 0}},
+          {"text": "Coming now.", "relationship": {"maya": 1}}
+        ]
+      },
+      {
+        "text": "Slow night at the shop. Working on a personal project. Remind me to show you later.",
+        "replies": [
+          {"text": "Now I'm curious.", "relationship": {"maya": 1}},
+          {"text": "Can't wait to see it.", "relationship": {"maya": 2}}
+        ]
+      },
+      {
+        "text": "A customer asked about you today. Word's spreading.",
+        "replies": [
+          {"text": "Good things I hope.", "relationship": {"maya": 1}},
+          {"text": "Tell them I'm available for autographs.", "relationship": {"maya": 0}}
+        ]
+      },
+      {
+        "text": "Just rebuilt your alternator. No charge. Consider it an investment.",
+        "replies": [
+          {"text": "Maya, you don't have to do that.", "relationship": {"maya": 3}},
+          {"text": "I'll pay you back in wins.", "relationship": {"maya": 2}}
+        ]
+      },
+      {
+        "text": "Your alignment is off by 2 degrees. I noticed during the last tune. Stop by.",
+        "replies": [
+          {"text": "You're the best, Maya.", "relationship": {"maya": 2}},
+          {"text": "I was wondering why it pulled left.", "relationship": {"maya": 1}}
+        ]
+      }
+    ],
+    "nikko": [
+      {
+        "text": "Saw your time on the board. Not bad.",
+        "replies": [
+          {"text": "Not bad? I set the record.", "relationship": {"nikko": 1}},
+          {"text": "Thanks. Yours is next.", "relationship": {"nikko": 2}}
+        ]
+      },
+      {
+        "text": "I still would have won.",
+        "replies": [
+          {"text": "Prove it.", "relationship": {"nikko": 2}},
+          {"text": "Sure you would have.", "relationship": {"nikko": 0}}
+        ]
+      },
+      {
+        "text": "Race tonight?",
+        "replies": [
+          {"text": "Name the time and place.", "relationship": {"nikko": 3}},
+          {"text": "Can't tonight. Tomorrow?", "relationship": {"nikko": 1}},
+          {"text": "Scared of losing again?", "relationship": {"nikko": -2}}
+        ]
+      },
+      {
+        "text": "New tires. New setup. You won't recognize my car next time we race.",
+        "replies": [
+          {"text": "Can't wait.", "relationship": {"nikko": 2}},
+          {"text": "It's not the car, Nikko.", "relationship": {"nikko": -1}}
+        ]
+      },
+      {
+        "text": "There's a drift run happening at the harbor tonight. You in?",
+        "replies": [
+          {"text": "Always.", "relationship": {"nikko": 2}},
+          {"text": "Only if you're buying ramen after.", "relationship": {"nikko": 3}}
+        ]
+      },
+      {
+        "text": "Watched your replay three times. Your entry into turn 6 is sloppy.",
+        "replies": [
+          {"text": "Noted. What about turns 1 through 5?", "relationship": {"nikko": 1}},
+          {"text": "You watched my replay THREE times?", "relationship": {"nikko": 2}}
+        ]
+      },
+      {
+        "text": "Can't sleep. Want to do midnight laps?",
+        "replies": [
+          {"text": "Meet you at the usual spot.", "relationship": {"nikko": 3}},
+          {"text": "Only if we get coffee first.", "relationship": {"nikko": 2}}
+        ]
+      },
+      {
+        "text": "My mechanic said my car is faster than yours now. Objectively.",
+        "replies": [
+          {"text": "Speed doesn't win races. Drivers do.", "relationship": {"nikko": 2}},
+          {"text": "Then why do I keep winning?", "relationship": {"nikko": -1}}
+        ]
+      }
+    ],
+    "diesel": [
+      {
+        "text": "The mountain doesn't care about your feelings.",
+        "replies": []
+      },
+      {
+        "text": "Practice.",
+        "replies": []
+      },
+      {
+        "text": "Come to the garage.",
+        "replies": [
+          {"text": "On my way.", "relationship": {"diesel": 1}}
+        ]
+      },
+      {
+        "text": "You're overdriving. Slow down to go faster.",
+        "replies": [
+          {"text": "That makes no sense. And also perfect sense.", "relationship": {"diesel": 2}},
+          {"text": "I'll try.", "relationship": {"diesel": 1}}
+        ]
+      },
+      {
+        "text": "The engine is a heart. Treat it like one.",
+        "replies": []
+      },
+      {
+        "text": "I drove your route today. You're leaving time on the table in sector 2.",
+        "replies": [
+          {"text": "Show me.", "relationship": {"diesel": 2}},
+          {"text": "I'll work on it.", "relationship": {"diesel": 1}}
+        ]
+      },
+      {
+        "text": "The road forgives those who listen.",
+        "replies": []
+      },
+      {
+        "text": "Early morning run tomorrow. Harbor route. Meet at 5.",
+        "replies": [
+          {"text": "I'll be there.", "relationship": {"diesel": 2}},
+          {"text": "5 AM again?", "relationship": {"diesel": 0}}
+        ]
+      },
+      {
+        "text": "There is no shortcut to mastery.",
+        "replies": []
+      },
+      {
+        "text": "Watched you from the bridge last night. Your cornering has improved.",
+        "replies": [
+          {"text": "I had a good teacher.", "relationship": {"diesel": 3}},
+          {"text": "I've been practicing.", "relationship": {"diesel": 1}}
+        ]
+      }
+    ],
+    "jade": [
+      {
+        "text": "Apex is monitoring your performance metrics. Keep them trending upward.",
+        "conditions": {"flags_required": ["met_jade"]},
+        "replies": [
+          {"text": "Always.", "relationship": {"jade": 1}},
+          {"text": "Numbers aren't everything.", "relationship": {"jade": -1}}
+        ]
+      },
+      {
+        "text": "Professional racing update: the qualifying window opens next week. I've registered you.",
+        "conditions": {"flags_required": ["met_jade"]},
+        "replies": [
+          {"text": "Thanks for handling that.", "relationship": {"jade": 1}},
+          {"text": "You could have asked first.", "relationship": {"jade": -1}}
+        ]
+      },
+      {
+        "text": "Event tomorrow. Dress code: smart casual. Try to look presentable.",
+        "conditions": {"flags_required": ["met_jade"]},
+        "replies": [
+          {"text": "I clean up well.", "relationship": {"jade": 1}},
+          {"text": "I'll be in my racing suit.", "relationship": {"jade": -1}}
+        ]
+      },
+      {
+        "text": "Your social media presence could use work. Consider posting more. The sponsors pay attention.",
+        "conditions": {"flags_required": ["met_jade"]},
+        "replies": [
+          {"text": "I'll try to be more active.", "relationship": {"jade": 1}},
+          {"text": "I race. That's my brand.", "relationship": {"jade": 0}}
+        ]
+      },
+      {
+        "text": "A potential sponsor wants to meet. Dinner Thursday. Wear something nice.",
+        "conditions": {"flags_required": ["met_jade"]},
+        "replies": [
+          {"text": "I'll be there.", "relationship": {"jade": 2}},
+          {"text": "Can we just race instead?", "relationship": {"jade": -1}}
+        ]
+      },
+      {
+        "text": "Off the record: how are you really doing? I know this world can be overwhelming.",
+        "conditions": {"flags_required": ["met_jade"], "min_level": {"jade": 3}},
+        "replies": [
+          {"text": "It's a lot. But I'm handling it.", "relationship": {"jade": 3}},
+          {"text": "Better now that you asked.", "relationship": {"jade": 4}}
+        ]
+      }
+    ],
+    "unknown": [
+      {
+        "text": "Do you ever feel like someone is watching you drive?",
+        "conditions": {"flags_required": ["prologue_complete"]},
+        "replies": []
+      },
+      {
+        "text": "The city has a rhythm. Have you found yours yet?",
+        "conditions": {"flags_required": ["prologue_complete"]},
+        "replies": []
+      },
+      {
+        "text": "Some races can't be won. Some can't be lost. Know the difference.",
+        "conditions": {"flags_required": ["first_race_done"]},
+        "replies": []
+      },
+      {
+        "text": "Check your mirrors.",
+        "conditions": {"flags_required": ["the_pit_discovered"]},
+        "replies": []
+      },
+      {
+        "text": "The underground has eyes. And a long memory.",
+        "conditions": {"flags_required": ["the_pit_discovered"]},
+        "replies": []
+      },
+      {
+        "text": "Wrong number. Or was it?",
+        "conditions": {"flags_required": ["prologue_complete"]},
+        "replies": []
+      },
+      {
+        "text": "There are those who race for money. Those who race for fame. And those who race because they have no choice.",
+        "conditions": {"flags_required": ["first_race_done"]},
+        "replies": []
+      },
+      {
+        "text": "01:00. Harbor District. Flash your lights twice. Or don't. Your choice.",
+        "conditions": {"flags_required": ["the_pit_discovered"]},
+        "replies": []
+      }
+    ],
+    "echo": [
+      {
+        "text": "Zero asked about you today. That's unusual.",
+        "conditions": {"flags_required": ["met_zero"]},
+        "replies": [
+          {"text": "Good or bad?", "relationship": {"zero": 1}},
+          {"text": "I'm flattered.", "relationship": {"zero": 0}}
+        ]
+      },
+      {
+        "text": "The circles within circles run deeper than you know.",
+        "conditions": {"flags_required": ["met_zero"]},
+        "replies": []
+      },
+      {
+        "text": "Trust is a luxury in this world. Spend it wisely.",
+        "conditions": {"flags_required": ["met_zero"]},
+        "replies": []
+      },
+      {
+        "text": "Have you ever wondered why they call it 'underground'? Not because it's hidden. Because it's the foundation.",
+        "conditions": {"flags_required": ["met_zero"]},
+        "replies": []
+      },
+      {
+        "text": "Zero never texts directly. That's what I'm for. Consider me the filter between you and something much larger.",
+        "conditions": {"flags_required": ["met_zero"]},
+        "replies": [
+          {"text": "What is Zero afraid of?", "relationship": {"zero": 2}},
+          {"text": "I prefer direct communication.", "relationship": {"zero": -1}}
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,81 @@
+{
+	"district_id": "harbor",
+	"district_name": "Harbor District",
+	"scale_factor": 1.0,
+	"bounds": {
+		"x": -300,
+		"y": -200,
+		"width": 600,
+		"height": 500
+	},
+	"road_color": [0.0, 0.6, 0.9, 0.55],
+	"background_color": [0.02, 0.03, 0.1, 0.8],
+	"roads": [
+		{"start": [-250, -150], "end": [250, -150], "width": 4.0},
+		{"start": [-250, 0], "end": [250, 0], "width": 3.0},
+		{"start": [-250, 100], "end": [250, 100], "width": 3.0},
+		{"start": [-250, 200], "end": [250, 200], "width": 3.0},
+
+		{"start": [-250, -150], "end": [-250, 200], "width": 3.0},
+		{"start": [-120, -150], "end": [-120, 200], "width": 3.0},
+		{"start": [0, -150], "end": [0, 200], "width": 4.0},
+		{"start": [120, -150], "end": [120, 200], "width": 3.0},
+		{"start": [250, -150], "end": [250, 200], "width": 3.0},
+
+		{"start": [-250, -50], "end": [-120, -50], "width": 2.0},
+		{"start": [120, 50], "end": [250, 50], "width": 2.0},
+
+		{"start": [-120, 50], "end": [0, 50], "width": 1.5},
+		{"start": [0, -80], "end": [120, -80], "width": 1.5},
+
+		{"start": [-180, 200], "end": [-180, 280], "width": 2.0},
+		{"start": [-60, 200], "end": [-60, 260], "width": 2.0},
+		{"start": [60, 200], "end": [60, 260], "width": 2.0},
+		{"start": [180, 200], "end": [180, 280], "width": 2.0},
+		{"start": [-180, 260], "end": [180, 260], "width": 2.0}
+	],
+	"pois": [
+		{
+			"position": [-120, 100],
+			"type": "race",
+			"label": "Dock Race Start",
+			"icon": "flag",
+			"color": [0.2, 1.0, 0.3, 1.0]
+		},
+		{
+			"position": [-250, 0],
+			"type": "transition",
+			"label": "To Downtown",
+			"icon": "arrow",
+			"color": [1.0, 1.0, 1.0, 0.8]
+		},
+		{
+			"position": [250, -150],
+			"type": "transition",
+			"label": "To Industrial Zone",
+			"icon": "arrow",
+			"color": [1.0, 1.0, 1.0, 0.8]
+		},
+		{
+			"position": [60, -80],
+			"type": "contact",
+			"label": "Kai Nakamura",
+			"icon": "person",
+			"color": [0.3, 0.6, 1.0, 1.0]
+		},
+		{
+			"position": [180, 240],
+			"type": "shop",
+			"label": "Harbor Imports",
+			"icon": "dollar",
+			"color": [0.0, 1.0, 1.0, 1.0]
+		},
+		{
+			"position": [-60, 240],
+			"type": "shop",
+			"label": "Dockside Customs",
+			"icon": "dollar",
+			"color": [0.0, 1.0, 1.0, 1.0]
+		}
+	]
+}

@@ -137,6 +137,20 @@ var input_steer: float = 0.0
 ## Set externally by RaceManager when another car is directly ahead.
 var is_drafting: bool = false
 
+# -- Weather ------------------------------------------------------------------
+## Current weather grip multiplier (1.0 = dry, lower = slippery).
+var _weather_grip: float = 1.0
+## Current road wetness level (0.0-1.0) from WeatherSystem.
+var _road_wetness: float = 0.0
+## Hydroplaning state: true when speed + wetness cause grip loss.
+var _is_hydroplaning: bool = false
+## Speed threshold (km/h) above which hydroplaning risk begins on wet roads.
+const HYDROPLANE_SPEED_THRESHOLD: float = 120.0
+## Wetness level above which hydroplaning can occur.
+const HYDROPLANE_WETNESS_THRESHOLD: float = 0.6
+## Extra oversteer tendency multiplier when roads are wet.
+const WET_OVERSTEER_MULT: float = 0.7
+
 # -- Private ------------------------------------------------------------------
 var _was_drifting: bool = false
 var _was_nitro: bool = false
@@ -211,6 +225,7 @@ func _physics_process(delta: float) -> void:
 	# ── Modifiers ──
 	_apply_damage_effects()
 	_apply_skill_effects()
+	_apply_weather_effects(delta)
 
 	# ── Output ──
 	_emit_telemetry()
@@ -686,6 +701,83 @@ func reset_drift_score() -> void:
 func set_drafting(value: bool) -> void:
 	## Call from RaceManager when another car is directly ahead.
 	is_drafting = value
+
+
+# ═══════════════════════════════════════════════════════════════════════════════
+#  WEATHER INTEGRATION
+# ═══════════════════════════════════════════════════════════════════════════════
+
+func _apply_weather_effects(_delta: float) -> void:
+	## Reads weather data from WeatherSystem (via GameManager) and applies
+	## grip reduction, wet oversteer tendency, and hydroplaning.
+
+	# Fetch weather grip from WeatherSystem if available
+	_weather_grip = 1.0
+	_road_wetness = 0.0
+
+	if GameManager.has_node("WeatherSystem"):
+		var weather_sys: Node = GameManager.get_node("WeatherSystem")
+		if weather_sys.has_method("get_grip_multiplier"):
+			_weather_grip = weather_sys.get_grip_multiplier()
+		if weather_sys.has_method("get_rain_intensity"):
+			_road_wetness = weather_sys.get_rain_intensity()
+	elif GameManager.has_node("WorldTimeSystem"):
+		# Fallback to WorldTimeSystem grip data
+		var world_time: Node = GameManager.get_node("WorldTimeSystem")
+		if world_time.has_method("get_grip_multiplier"):
+			_weather_grip = world_time.get_grip_multiplier()
+
+	# Apply grip reduction to wheel friction
+	if _weather_grip < 1.0:
+		for w: VehicleWheel3D in _front_wheels:
+			w.wheel_friction_slip *= _weather_grip
+		for w: VehicleWheel3D in _rear_wheels:
+			w.wheel_friction_slip *= _weather_grip
+
+	# Wet oversteer: reduce rear friction more than front when wet
+	if _road_wetness > 0.1 and not is_drifting:
+		var wet_factor := _road_wetness * WET_OVERSTEER_MULT
+		for w: VehicleWheel3D in _rear_wheels:
+			w.wheel_friction_slip *= (1.0 - wet_factor * 0.15)
+
+	# Hydroplaning: at high speed on very wet roads, brief total grip loss
+	_update_hydroplaning()
+
+
+func _update_hydroplaning() -> void:
+	## Checks for hydroplaning conditions: high speed + heavy wetness.
+	## Hydroplaning causes a sudden severe grip reduction.
+	var was_hydroplaning := _is_hydroplaning
+
+	if _road_wetness >= HYDROPLANE_WETNESS_THRESHOLD \
+			and current_speed_kmh >= HYDROPLANE_SPEED_THRESHOLD:
+		# Chance of hydroplaning scales with speed and wetness
+		var risk := (_road_wetness - HYDROPLANE_WETNESS_THRESHOLD) \
+			/ (1.0 - HYDROPLANE_WETNESS_THRESHOLD)
+		var speed_risk := (current_speed_kmh - HYDROPLANE_SPEED_THRESHOLD) / 80.0
+		var total_risk := clampf(risk * speed_risk * 0.02, 0.0, 0.05)
+
+		if not _is_hydroplaning and randf() < total_risk:
+			_is_hydroplaning = true
+			print("[Vehicle] Hydroplaning!")
+		elif _is_hydroplaning and current_speed_kmh < HYDROPLANE_SPEED_THRESHOLD * 0.9:
+			_is_hydroplaning = false
+	else:
+		_is_hydroplaning = false
+
+	# Apply hydroplaning grip loss
+	if _is_hydroplaning:
+		var hydro_grip := 0.3  # Severe grip loss
+		for w: VehicleWheel3D in _front_wheels:
+			w.wheel_friction_slip *= hydro_grip
+		for w: VehicleWheel3D in _rear_wheels:
+			w.wheel_friction_slip *= hydro_grip
+
+	if _is_hydroplaning != was_hydroplaning:
+		if _is_hydroplaning:
+			print("[Vehicle] Hydroplaning started at %.0f km/h" % current_speed_kmh)
+		else:
+			print("[Vehicle] Hydroplaning ended")
 
 
 # ═══════════════════════════════════════════════════════════════════════════════

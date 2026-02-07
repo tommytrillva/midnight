@@ -1,4 +1,6 @@
-[gd_scene load_steps=28 format=3 uid="uid://downtown"]
+[gd_scene load_steps=29 format=3 uid="uid://downtown"]
+
+[ext_resource type="Script" path="res://src/visual/day_night_cycle.gd" id="day_night_cycle_script"]
 
 [sub_resource type="ProceduralSkyMaterial" id="sky_mat"]
 sky_top_color = Color(0.02, 0.01, 0.06, 1)
@@ -28,12 +30,14 @@ roughness = 0.9
 
 [node name="WorldEnv" type="WorldEnvironment" parent="."]
 environment = SubResource("env")
+metadata/_groups = ["world_environment"]
 
 [node name="Moonlight" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.866, -0.25, 0.433, 0, 0.866, 0.5, -0.5, -0.433, 0.75, 0, 50, 0)
 light_color = Color(0.4, 0.45, 0.7, 1)
 light_energy = 0.4
 shadow_enabled = true
+metadata/_groups = ["sun_light"]
 
 [node name="Ground" type="StaticBody3D" parent="."]
 collision_layer = 2
@@ -126,42 +130,53 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 8, 30)
 light_color = Color(1, 0.7, 0.4, 1)
 light_energy = 2.0
 omni_range = 25.0
+metadata/_groups = ["street_lights"]
 
 [node name="Light2" type="OmniLight3D" parent="StreetLights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 8, 80)
 light_color = Color(1, 0.7, 0.4, 1)
 light_energy = 2.0
 omni_range = 25.0
+metadata/_groups = ["street_lights"]
 
 [node name="Light3" type="OmniLight3D" parent="StreetLights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 8, 130)
 light_color = Color(1, 0.7, 0.4, 1)
 light_energy = 2.0
 omni_range = 25.0
+metadata/_groups = ["street_lights"]
 
 [node name="Light4" type="OmniLight3D" parent="StreetLights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 8, -30)
 light_color = Color(1, 0.7, 0.4, 1)
 light_energy = 2.0
 omni_range = 25.0
+metadata/_groups = ["street_lights"]
 
 [node name="NeonSign1" type="OmniLight3D" parent="StreetLights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 6, 50)
 light_color = Color(1, 0, 0.4, 1)
 light_energy = 3.0
 omni_range = 15.0
+metadata/_groups = ["neon_lights"]
 
 [node name="NeonSign2" type="OmniLight3D" parent="StreetLights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 6, 100)
 light_color = Color(0, 1, 0.8, 1)
 light_energy = 3.0
 omni_range = 15.0
+metadata/_groups = ["neon_lights"]
 
 [node name="NeonSign3" type="OmniLight3D" parent="StreetLights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 5, -50)
 light_color = Color(0.4, 0, 1, 1)
 light_energy = 3.0
 omni_range = 15.0
+metadata/_groups = ["neon_lights"]
+
+[node name="DayNightCycle" type="Node" parent="."]
+script = ExtResource("day_night_cycle_script")
+metadata/district = "downtown"
 
 [node name="Buildings" type="Node3D" parent="."]
 

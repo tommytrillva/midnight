@@ -77,8 +77,12 @@ func get_effective_stats() -> Dictionary:
 	var affinity_bonus := affinity * 0.001 # Max 10% bonus at 100 affinity
 	var total_mult := wear_mult * damage_mult * (1.0 + affinity_bonus)
 
+	# "speed" and "top_speed" are treated as the same stat for part bonuses
+	var speed_bonus := _get_part_bonus("speed") + _get_part_bonus("top_speed")
+
 	return {
-		"speed": base_speed * total_mult + _get_part_bonus("speed"),
+		"speed": base_speed * total_mult + speed_bonus,
+		"top_speed": base_speed * total_mult + speed_bonus,
 		"acceleration": base_acceleration * total_mult + _get_part_bonus("acceleration"),
 		"handling": base_handling * total_mult + _get_part_bonus("handling"),
 		"braking": base_braking * total_mult + _get_part_bonus("braking"),
@@ -86,6 +90,8 @@ func get_effective_stats() -> Dictionary:
 		"hp": current_hp * wear_mult,
 		"torque": current_torque * wear_mult,
 		"weight": weight_kg + _get_part_weight_delta(),
+		"drift_bonus": _get_part_bonus("drift_bonus"),
+		"nitro_capacity": _get_part_bonus("nitro_capacity"),
 	}
 
 

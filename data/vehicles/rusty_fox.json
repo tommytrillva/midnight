@@ -1,0 +1,33 @@
+{
+  "vehicle_id": "rusty_fox",
+  "display_name": "Rusty Fox",
+  "manufacturer": "Kitsune",
+  "year": 1989,
+  "body_style": "hatchback",
+  "culture": "jdm",
+  "description": "A scrappy little hatchback with more rust than paint. The Fox body is featherweight and rear-wheel drive — a combination that makes it a surprisingly capable drift car in the right hands. Most of these ended up in junkyards, but the survivors have a cult following.",
+  "tier": 1,
+  "rarity": "common",
+  "base_speed": 38.0,
+  "base_acceleration": 35.0,
+  "base_handling": 45.0,
+  "base_braking": 30.0,
+  "base_durability": 40.0,
+  "nitro_capacity": 20.0,
+  "engine_type": "i4",
+  "displacement_cc": 1500,
+  "stock_hp": 95.0,
+  "stock_torque": 90.0,
+  "aspiration": "na",
+  "redline_rpm": 7000,
+  "weight_kg": 920.0,
+  "drivetrain": "rwd",
+  "starting_value": 1200,
+  "class": "D",
+  "cosmetics": {
+    "default_color": "#8B4513",
+    "available_colors": ["#8B4513", "#2F4F4F", "#C0C0C0", "#556B2F", "#8B0000"]
+  },
+  "special_traits": ["drift_bonus", "lightweight", "rust_bucket"],
+  "lore": "The Kitsune Fox was supposed to be a forgettable economy car, but its rear-drive layout and featherweight chassis made it an accidental legend in grassroots drift scenes. In Nova Pacifica, you can find them in every junkyard — and on every touge run at 2 AM."
+}

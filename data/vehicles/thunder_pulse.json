@@ -1,0 +1,33 @@
+{
+  "vehicle_id": "thunder_pulse",
+  "display_name": "Thunder Pulse",
+  "manufacturer": "Boreal",
+  "year": 2000,
+  "body_style": "sedan",
+  "culture": "jdm",
+  "description": "A turbocharged all-wheel-drive sedan that doubles as a rally weapon. The Thunder Pulse puts power down with mechanical fury — the turbo hits like a freight train and the AWD system hooks up on any surface. Understated looks hide serious intent.",
+  "tier": 2,
+  "rarity": "uncommon",
+  "base_speed": 65.0,
+  "base_acceleration": 62.0,
+  "base_handling": 60.0,
+  "base_braking": 55.0,
+  "base_durability": 70.0,
+  "nitro_capacity": 35.0,
+  "engine_type": "i4",
+  "displacement_cc": 2500,
+  "stock_hp": 230.0,
+  "stock_torque": 235.0,
+  "aspiration": "turbo",
+  "redline_rpm": 7200,
+  "weight_kg": 1395.0,
+  "drivetrain": "awd",
+  "starting_value": 18000,
+  "class": "C",
+  "cosmetics": {
+    "default_color": "#191970",
+    "available_colors": ["#191970", "#FFD700", "#FFFFFF", "#FF0000", "#000000", "#808080"]
+  },
+  "special_traits": ["rally_heritage", "launch_control", "turbo_lag", "all_weather", "hood_scoop"],
+  "lore": "Boreal built the Thunder Pulse for World Rally Championship homologation, and you can feel that pedigree in every corner. The boxer-layout turbo four sounds like an angry hornet's nest and the symmetrical AWD system is unflappable. The official car of showing up and shutting up."
+}

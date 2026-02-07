@@ -1,0 +1,33 @@
+{
+  "vehicle_id": "night_runner",
+  "display_name": "Night Runner",
+  "manufacturer": "Eclipse",
+  "year": 1995,
+  "body_style": "hatchback",
+  "culture": "jdm",
+  "description": "A turbo hatchback with rally DNA in every weld. The Night Runner came from the factory with a turbo four and optional all-wheel drive, making it a weapon in any conditions. Wet roads, gravel shoulders, broken pavement — the Night Runner doesn't care.",
+  "tier": 2,
+  "rarity": "uncommon",
+  "base_speed": 62.0,
+  "base_acceleration": 58.0,
+  "base_handling": 58.0,
+  "base_braking": 50.0,
+  "base_durability": 68.0,
+  "nitro_capacity": 35.0,
+  "engine_type": "i4",
+  "displacement_cc": 2000,
+  "stock_hp": 210.0,
+  "stock_torque": 214.0,
+  "aspiration": "turbo",
+  "redline_rpm": 7000,
+  "weight_kg": 1360.0,
+  "drivetrain": "awd",
+  "starting_value": 12000,
+  "class": "C",
+  "cosmetics": {
+    "default_color": "#2F4F4F",
+    "available_colors": ["#2F4F4F", "#000000", "#4B0082", "#696969", "#B22222", "#F0E68C"]
+  },
+  "special_traits": ["rally_heritage", "turbo_lag", "all_weather", "boost_threshold"],
+  "lore": "Eclipse built the Night Runner to homologate their rally program, and it shows. The turbo spools hard at 3,500 RPM and the AWD system claws for traction like a caged animal. Half the street racers in Nova Pacifica learned to drive fast in one of these."
+}

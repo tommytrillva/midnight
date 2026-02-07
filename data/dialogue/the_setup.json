@@ -1,0 +1,134 @@
+{
+  "id": "the_setup",
+  "context": "Act 2A Chapter 2.4 — Race against Zero's champion. It's a trap. Scripted to lose. Everything crashes down. THE FALL begins.",
+  "lines": [
+    {
+      "type": "narration",
+      "text": "An invitation arrives. Not from Echo this time — from Dominic Weir himself. A 'special exhibition race' for charity. One on one. You against a driver representing the Zero Foundation."
+    },
+    {
+      "type": "narration",
+      "text": "Jade advises against it. Henrik thinks it is a distraction. But the board insists — the publicity is too good to refuse, and after the championship, Apex needs to ride the momentum."
+    },
+    {
+      "type": "narration",
+      "text": "The race takes place on the harbor circuit. Night. Closed course. VIP spectators only. The air smells like salt and money and something else — something electric and wrong."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_worried",
+      "text": "[RADIO] I don't like this. Everything about this event was organized outside my channels. Dominic set it up directly. That never happens."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_worried",
+      "text": "[RADIO] Be careful out there. If anything feels wrong — anything at all — you pull out. Championship or no championship."
+    },
+    {
+      "type": "narration",
+      "text": "The opposing car pulls to the start line. Matte black. No sponsor logos. No number. The driver's visor is dark — you cannot see their face."
+    },
+    {
+      "type": "narration",
+      "text": "The starter drops the flag."
+    },
+    {
+      "type": "narration",
+      "text": "The black car is fast. Impossibly fast. Not fast in the way professional cars are fast — fast in a way that defies the physics of the class. It pulls away from you on the straight like you are standing still."
+    },
+    {
+      "type": "narration",
+      "text": "You push. Every technique, every trick, every ounce of skill that the underground and the professional world taught you. You push the car to its absolute limit."
+    },
+    {
+      "type": "narration",
+      "text": "It is not enough. The gap grows. Lap after lap, the black car pulls further ahead."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_radio",
+      "text": "[RADIO] Their telemetry doesn't make sense. That car is running at least fifty horsepower over class limit. This race is — this race is rigged."
+    },
+    {
+      "type": "narration",
+      "text": "And then, on the final lap, the black car slows. Just enough. Just enough to let you close the gap. Just enough to make the finish look competitive."
+    },
+    {
+      "type": "narration",
+      "text": "But not enough to let you win."
+    },
+    {
+      "type": "narration",
+      "text": "You cross the line second. The VIP crowd applauds politely. And then the real trap springs."
+    },
+    {
+      "type": "narration",
+      "text": "Floodlights. Cameras. Not the charity event cameras — broadcast cameras. News crews. And at the center of it all, a man you have never seen before, holding a microphone."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "News Anchor",
+      "portrait": "news_anchor",
+      "text": "Breaking news tonight — evidence has surfaced that this year's Pacific Rim Championship was compromised by race fixing, with the winning team, Apex Dynamics, at the center of the scandal."
+    },
+    {
+      "type": "narration",
+      "text": "Screens appear everywhere. Your face. The spreadsheet — the one from the conference room. Emails. Bank transfers. Every piece of evidence Mina Park collected, but presented differently. Twisted. Framed to make you look like the perpetrator, not the victim."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "News Anchor",
+      "portrait": "news_anchor",
+      "text": "Sources indicate the championship-winning driver had full knowledge of the race-fixing scheme and participated willingly in exchange for guaranteed results."
+    },
+    {
+      "type": "narration",
+      "text": "Jade's voice comes through the radio. Not the professional voice. Not the corporate voice. The voice of someone watching their world end."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_devastated",
+      "text": "[RADIO] Get out. Get out now. Go to the hotel. Don't talk to anyone. Don't answer your phone. Go."
+    },
+    {
+      "type": "narration",
+      "text": "You drive. Not racing — fleeing. The harbor blurs past. Your phone is already exploding with notifications. Texts from numbers you don't recognize. Your name trending on every platform."
+    },
+    {
+      "type": "narration",
+      "text": "In the rearview mirror, the harbor circuit shrinks. The lights diminish. The world you built over months of effort — the championship, the career, the respect — collapses behind you like a building brought down by controlled demolition."
+    },
+    {
+      "type": "narration",
+      "text": "And somewhere in the darkness, behind the wheel of a matte black car, someone is removing their helmet and smiling."
+    },
+    {
+      "type": "narration",
+      "text": "Zero. This was always Zero."
+    },
+    {
+      "type": "narration",
+      "text": "The setup is complete. The fall begins."
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "the_setup_complete",
+        "value": true
+      }
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "corporate_fall",
+        "value": true
+      }
+    }
+  ]
+}

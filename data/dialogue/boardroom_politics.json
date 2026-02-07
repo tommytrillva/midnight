@@ -1,0 +1,262 @@
+{
+  "id": "boardroom_politics",
+  "context": "Act 2A Chapter 2.2 — Discovering Apex Dynamics is involved in race fixing. Finding documents. Choices: confront Jade, gather evidence, or ignore.",
+  "lines": [
+    {
+      "type": "narration",
+      "text": "Apex Dynamics HQ. Third floor. You're looking for the telemetry archives — Jade asked you to review last season's data for the upcoming championship series. The door you need is at the end of the hall."
+    },
+    {
+      "type": "narration",
+      "text": "The door you open is not that one."
+    },
+    {
+      "type": "narration",
+      "text": "A conference room. Empty. Lights off. But someone left the projector running, and on the screen is a spreadsheet that makes your blood go cold."
+    },
+    {
+      "type": "narration",
+      "text": "Race results. But not predictions — these are final standings for races that haven't happened yet. Next week's Pacific Cup. The results are already filled in. Every position. Every driver."
+    },
+    {
+      "type": "narration",
+      "text": "You are listed in fourth. Henrik is second. The winner is a driver named Kessler from a rival team — and next to his name is a number. $450,000."
+    },
+    {
+      "type": "narration",
+      "text": "Someone is buying race results. And Apex Dynamics is on the spreadsheet."
+    },
+    {
+      "type": "narration",
+      "text": "You hear footsteps in the hallway. Getting closer."
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "Take photos of everything on the screen.",
+          "choice_id": "politics_photograph",
+          "relationship_changes": {},
+          "moral_shift": 10,
+          "set_flags": {"has_corruption_photos": true, "corruption_evidence_gathered": true},
+          "jump_to": "take_photos"
+        },
+        {
+          "text": "Leave immediately. Pretend you never saw this.",
+          "choice_id": "politics_ignore",
+          "relationship_changes": {},
+          "moral_shift": -10,
+          "set_flags": {"corruption_ignored": true},
+          "jump_to": "leave_room"
+        },
+        {
+          "text": "Stay and see who left this up.",
+          "choice_id": "politics_wait",
+          "relationship_changes": {},
+          "moral_shift": 5,
+          "set_flags": {"corruption_witness": true},
+          "jump_to": "stay_hidden"
+        }
+      ]
+    },
+    {
+      "label": "take_photos",
+      "type": "narration",
+      "text": "Your phone is in your hand before the thought finishes forming. Three photos. Four. The spreadsheet, the names, the numbers. Every frame is evidence. Every frame is a bomb."
+    },
+    {
+      "type": "narration",
+      "text": "The footsteps stop outside the door. You kill the phone screen and press against the wall beside a filing cabinet."
+    },
+    {
+      "type": "narration",
+      "text": "The door opens. A man in a suit — not Jade, someone higher, someone you've seen at board meetings but never spoken to — reaches for the projector remote. Clicks it off. The screen goes dark."
+    },
+    {
+      "type": "narration",
+      "text": "He leaves without turning on the lights. Without looking around. Without knowing you are twelve feet away, barely breathing, with enough evidence on your phone to burn the entire organization to the ground.",
+      "jump_to": "after_discovery"
+    },
+    {
+      "label": "leave_room",
+      "type": "narration",
+      "text": "You step back. Close the door. Your heart is hammering but your face is blank — you learned that in the underground. Never show the cards you're holding."
+    },
+    {
+      "type": "narration",
+      "text": "You find the telemetry archive three doors down. You spend thirty minutes reviewing corner data and see nothing because your mind is still on that spreadsheet."
+    },
+    {
+      "type": "narration",
+      "text": "Race fixing. At the highest level. And your name is on the board.",
+      "jump_to": "after_discovery"
+    },
+    {
+      "label": "stay_hidden",
+      "type": "narration",
+      "text": "You step behind the door as it opens. The conference room is dark enough to hide in, and you learned how to be invisible in warehouse districts where the penalty for being seen was worse than embarrassment."
+    },
+    {
+      "type": "narration",
+      "text": "A man enters. Corporate. Expensive suit. You recognize him — Dominic Weir, Apex's VP of Racing Operations. He speaks into his phone."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Dominic Weir",
+      "portrait": "dominic_phone",
+      "text": "The Pacific Cup results are locked. Kessler takes it, our kid finishes fourth. Enough to keep the championship interesting but not enough to draw attention."
+    },
+    {
+      "type": "narration",
+      "text": "A pause. Listening."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Dominic Weir",
+      "portrait": "dominic_phone",
+      "text": "No, she doesn't know. Jade thinks her little street project is competing on merit. That's what makes it work — her enthusiasm is genuine. The audience can smell authenticity."
+    },
+    {
+      "type": "narration",
+      "text": "He kills the projector. Walks out. His cologne lingers in the dark."
+    },
+    {
+      "type": "narration",
+      "text": "Jade doesn't know. She thinks this is real.",
+      "jump_to": "after_discovery"
+    },
+    {
+      "label": "after_discovery",
+      "type": "narration",
+      "text": "The hallway outside the conference room is empty. The building hums with air conditioning and corporate ambition and a rot that goes deeper than bad air."
+    },
+    {
+      "type": "narration",
+      "text": "You lean against the wall. Breathe. Think."
+    },
+    {
+      "type": "narration",
+      "text": "Every race you've run for Apex — were any of them real? Were you actually competing, or were you just performing a role in someone else's script? Fourth place in your debut — was that talent, or was that the spreadsheet?"
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "Find Jade. Tell her everything.",
+          "choice_id": "politics_tell_jade",
+          "relationship_changes": {"jade": 10},
+          "moral_shift": 10,
+          "set_flags": {"told_jade_corruption": true},
+          "jump_to": "confront_jade"
+        },
+        {
+          "text": "Keep quiet. Gather more evidence before making a move.",
+          "choice_id": "politics_gather_evidence",
+          "relationship_changes": {},
+          "moral_shift": 5,
+          "set_flags": {"gathering_corruption_evidence": true},
+          "jump_to": "gather_more"
+        },
+        {
+          "text": "This is above my pay grade. Just race and don't ask questions.",
+          "choice_id": "politics_bury_it",
+          "relationship_changes": {},
+          "moral_shift": -15,
+          "set_flags": {"corruption_buried": true},
+          "jump_to": "bury_it"
+        }
+      ]
+    },
+    {
+      "label": "confront_jade",
+      "type": "narration",
+      "text": "You find her in her office. She is on the phone, smiling, closing a sponsorship deal. When she sees your face, the smile dies."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_concerned",
+      "text": "What happened?"
+    },
+    {
+      "type": "narration",
+      "text": "You tell her. Everything. The conference room, the spreadsheet, the names, the numbers. If you heard Weir's call, you tell her that too."
+    },
+    {
+      "type": "narration",
+      "text": "Jade's face doesn't change while you speak. But her hand — the one resting on the desk — slowly closes into a fist."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_cold",
+      "text": "Dominic. Of course it's Dominic."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_pained",
+      "text": "I recruited you because I believed in this. In you. In what racing could be. And the whole time, they were—"
+    },
+    {
+      "type": "narration",
+      "text": "She stops. Composes herself. The corporate mask slides back into place, but it doesn't fit as well as it used to."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_professional",
+      "text": "We need to be careful. If Dominic finds out we know, we lose everything — our jobs, our access, and any chance of exposing this. For now, we play along. We smile. We race. And we document everything.",
+      "jump_to": "boardroom_end"
+    },
+    {
+      "label": "gather_more",
+      "type": "narration",
+      "text": "You need more. One spreadsheet is suspicious. Ten spreadsheets are a scandal. A pattern of documents across multiple races is an indictment."
+    },
+    {
+      "type": "narration",
+      "text": "Over the next week, you start paying attention to things you used to ignore. Locked doors. Late-night meetings. Emails left open on unattended laptops."
+    },
+    {
+      "type": "narration",
+      "text": "The picture that emerges is bigger than Apex. Multiple teams. Multiple sponsors. A network of race fixing that stretches across the entire professional circuit."
+    },
+    {
+      "type": "narration",
+      "text": "And at the center of it all, a name you keep encountering in the margins of documents, never in the text itself. A name that shouldn't be there. A name you know."
+    },
+    {
+      "type": "narration",
+      "text": "Zero.",
+      "jump_to": "boardroom_end"
+    },
+    {
+      "label": "bury_it",
+      "type": "narration",
+      "text": "You walk away. Down the hall. Into the garage. You sit in your race car and grip the wheel and stare at the dashboard until your heart rate normalizes."
+    },
+    {
+      "type": "narration",
+      "text": "This is not your fight. You are here to race. You are here because Jade believed in you. You are here because the alternative is going back to the underground and racing for pocket change in warehouse districts."
+    },
+    {
+      "type": "narration",
+      "text": "The spreadsheet stays in that dark conference room. The truth stays in your head. And the question of whether any of your races were real — that stays in the place where you keep the things you don't want to look at."
+    },
+    {
+      "type": "narration",
+      "text": "But it doesn't stay quiet. It never does.",
+      "jump_to": "boardroom_end"
+    },
+    {
+      "label": "boardroom_end",
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "boardroom_politics_complete",
+        "value": true
+      }
+    }
+  ]
+}

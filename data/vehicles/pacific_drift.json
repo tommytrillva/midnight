@@ -1,0 +1,33 @@
+{
+  "vehicle_id": "pacific_drift",
+  "display_name": "Pacific Drift",
+  "manufacturer": "Sakura",
+  "year": 1997,
+  "body_style": "coupe",
+  "culture": "jdm",
+  "description": "THE drift car. The Pacific Drift is rear-wheel drive with a bulletproof chassis that was practically designed to go sideways. Stock power is modest, but the aftermarket support is legendary — there are more bolt-on options for this car than any other vehicle in Nova Pacifica.",
+  "tier": 2,
+  "rarity": "common",
+  "base_speed": 55.0,
+  "base_acceleration": 48.0,
+  "base_handling": 65.0,
+  "base_braking": 48.0,
+  "base_durability": 60.0,
+  "nitro_capacity": 30.0,
+  "engine_type": "i4",
+  "displacement_cc": 2400,
+  "stock_hp": 155.0,
+  "stock_torque": 160.0,
+  "aspiration": "na",
+  "redline_rpm": 7000,
+  "weight_kg": 1200.0,
+  "drivetrain": "rwd",
+  "starting_value": 7500,
+  "class": "C",
+  "cosmetics": {
+    "default_color": "#C0C0C0",
+    "available_colors": ["#C0C0C0", "#FF4500", "#1C1C1C", "#4169E1", "#FFD700", "#FF69B4", "#7CFC00"]
+  },
+  "special_traits": ["drift_bonus", "legendary_aftermarket", "engine_swap_friendly", "lightweight"],
+  "lore": "If you've been to any drift event in Nova Pacifica, you've seen a Pacific Drift. Probably twenty of them. The aftermarket for these is so deep you could build ten completely different cars from the same platform. Stock, it's a canvas. Built, it's a masterpiece."
+}

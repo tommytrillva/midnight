@@ -1,0 +1,191 @@
+{
+  "id": "championship_final_corporate",
+  "context": "Act 2A Chapter 2.4 — Championship final. Henrik, pressure, everything on the line.",
+  "lines": [
+    {
+      "type": "narration",
+      "text": "Singapore. The night race. The crown jewel of the Pacific Rim Championship."
+    },
+    {
+      "type": "narration",
+      "text": "The circuit is illuminated by ten thousand lights that turn night into a fever dream of neon and speed. Every grandstand is full. Every screen in every bar in every city in the Pacific Rim is tuned to this race."
+    },
+    {
+      "type": "narration",
+      "text": "You are leading the championship by six points. Henrik is fourth, seventeen points back. Nikko is second, nine points behind. One race decides everything."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_radio",
+      "text": "[RADIO] Okay. Final pre-race. You need a top-five finish to clinch the championship regardless of what anyone else does. Top three makes it comfortable. A win makes it historic."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_radio",
+      "text": "[RADIO] Henrik — you're running support. If our driver needs space, you give it. If someone attacks, you defend. We're winning this as a team."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Henrik",
+      "portrait": "henrik_radio",
+      "text": "[RADIO] Understood. Let's bring it home."
+    },
+    {
+      "type": "narration",
+      "text": "The grid forms. Twelve cars. The noise of twelve engines is a wall of sound that vibrates in your ribcage. The lights glow red."
+    },
+    {
+      "type": "narration",
+      "text": "In the car next to you, Nikko stares straight ahead. You catch his eyes for a fraction of a second through the visors. No hostility. No rivalry. Just two people who started in the same place, arriving at the same moment, with everything on the line."
+    },
+    {
+      "type": "narration",
+      "text": "Green."
+    },
+    {
+      "type": "narration",
+      "text": "The field explodes into the first corner. You are third by the apex. Nikko is first — he launched like a missile, Kessler's car screaming, and you can feel his desperation in the way he drives. He needs this win. Not for the championship — for the debt."
+    },
+    {
+      "type": "narration",
+      "text": "Lap five. Lap ten. The race is a war of attrition under lights. Nikko leads. You are second. Henrik is fourth, holding position, a guardian angel with a Scandinavian accent."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_radio",
+      "text": "[RADIO] You're second. That's enough for the championship. Hold position. Don't engage Nikko — you don't need this fight."
+    },
+    {
+      "type": "narration",
+      "text": "Nikko is pulling away. His car is faster on the straights and he is driving like there is no tomorrow — because for him, there might not be."
+    },
+    {
+      "type": "narration",
+      "text": "But you are faster in the corners. And the Singapore circuit is eighty percent corners."
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "Hold position. Secure the championship. Play it safe.",
+          "choice_id": "champ_final_safe",
+          "relationship_changes": {"jade": 10, "henrik": 5},
+          "moral_shift": 0,
+          "set_flags": {"championship_won_safe": true},
+          "jump_to": "safe_finish"
+        },
+        {
+          "text": "Hunt Nikko down. Win the race and the championship.",
+          "choice_id": "champ_final_attack",
+          "relationship_changes": {"jade": -5, "nikko": 5},
+          "moral_shift": 0,
+          "rep": 15,
+          "set_flags": {"championship_won_aggressive": true},
+          "jump_to": "attack_nikko"
+        },
+        {
+          "text": "Let Nikko win. He needs it more than I do.",
+          "choice_id": "champ_final_gift",
+          "relationship_changes": {"nikko": 25, "jade": -15, "henrik": -10},
+          "moral_shift": 15,
+          "set_flags": {"championship_won_gifted": true, "let_nikko_win": true},
+          "jump_to": "gift_nikko"
+        }
+      ]
+    },
+    {
+      "label": "safe_finish",
+      "type": "narration",
+      "text": "You hold. Second place. Every lap is a controlled exercise in discipline. The car has more to give and you keep it leashed. Henrik guards your rear. The team machine works perfectly."
+    },
+    {
+      "type": "narration",
+      "text": "Nikko takes the win. You finish second. It is enough. More than enough."
+    },
+    {
+      "type": "narration",
+      "text": "The checkered flag waves and the number flashes on every screen: PACIFIC RIM CHAMPION. Your name. Your face. Your moment.",
+      "jump_to": "post_race"
+    },
+    {
+      "label": "attack_nikko",
+      "type": "narration",
+      "text": "You push. The car responds — hungry, alive, feeding on your intent. Corner after corner, you close the gap. Half a second. Three tenths. Two."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_radio",
+      "text": "[RADIO] What are you doing? You don't need to — oh. OH. You're actually going for it."
+    },
+    {
+      "type": "narration",
+      "text": "Final lap. Final corner. You are on Nikko's bumper. He defends inside. You go outside — the long way, the hard way, the underground way. Two cars, side by side through a corner that barely fits one."
+    },
+    {
+      "type": "narration",
+      "text": "You exit with the advantage. Half a car length. The finish line approaches like a verdict."
+    },
+    {
+      "type": "narration",
+      "text": "Champion. Race winner. The crowd is deafening. The night is yours.",
+      "jump_to": "post_race"
+    },
+    {
+      "label": "gift_nikko",
+      "type": "narration",
+      "text": "You ease off. Not obviously — just a fraction less throttle on the exits. Just enough that Nikko's gap stays safe. Just enough that a man drowning in debt can breathe for another day."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_radio",
+      "text": "[RADIO] Your pace is dropping. What's happening? Are you managing tires or—"
+    },
+    {
+      "type": "narration",
+      "text": "You don't answer. Jade is smart enough to figure it out. She won't approve. But she won't stop you."
+    },
+    {
+      "type": "narration",
+      "text": "Nikko takes the win. You finish second. Champion by six points. And somewhere in the Kessler garage, Nikko Tanaka just earned enough money to buy himself six more months of breathing room.",
+      "jump_to": "post_race"
+    },
+    {
+      "label": "post_race",
+      "type": "narration",
+      "text": "The podium. Singapore at night, from the highest step, looks like a galaxy that fell to earth. Confetti. Champagne. Your name echoing off buildings and bouncing back like a pulse."
+    },
+    {
+      "type": "narration",
+      "text": "Pacific Rim Champion. Apex's first ever. Jade's fifteen-year mission, complete."
+    },
+    {
+      "type": "narration",
+      "text": "You hold the trophy up. It is heavy and cold and beautiful and it means everything and nothing all at once."
+    },
+    {
+      "type": "narration",
+      "text": "In the crowd, somewhere, you imagine Maya watching on a screen at the garage. You imagine Diesel not watching, but knowing. You imagine the underground stirring, whispering: one of ours made it."
+    },
+    {
+      "type": "narration",
+      "text": "The champagne hits your face. The crowd roars. The night swallows everything in light."
+    },
+    {
+      "type": "narration",
+      "text": "You won. You are the champion. And somewhere in the machinery of this victory, the gears of something much darker are turning."
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "championship_final_complete",
+        "value": true
+      }
+    }
+  ]
+}

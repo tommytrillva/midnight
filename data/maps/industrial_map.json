@@ -1,0 +1,87 @@
+{
+	"district_id": "industrial",
+	"district_name": "Industrial Zone",
+	"scale_factor": 1.0,
+	"bounds": {
+		"x": -300,
+		"y": -300,
+		"width": 600,
+		"height": 600
+	},
+	"road_color": [0.9, 0.5, 0.0, 0.5],
+	"background_color": [0.06, 0.03, 0.02, 0.8],
+	"roads": [
+		{"start": [-250, -250], "end": [250, -250], "width": 4.0},
+		{"start": [-250, -100], "end": [250, -100], "width": 3.0},
+		{"start": [-250, 50], "end": [250, 50], "width": 3.0},
+		{"start": [-250, 200], "end": [250, 200], "width": 4.0},
+
+		{"start": [-250, -250], "end": [-250, 200], "width": 3.0},
+		{"start": [-100, -250], "end": [-100, 200], "width": 3.0},
+		{"start": [50, -250], "end": [50, 200], "width": 4.0},
+		{"start": [200, -250], "end": [200, 200], "width": 3.0},
+
+		{"start": [-250, -175], "end": [-100, -175], "width": 1.5},
+		{"start": [50, -175], "end": [200, -175], "width": 1.5},
+		{"start": [-100, -30], "end": [50, -30], "width": 2.0},
+		{"start": [-100, 125], "end": [50, 125], "width": 2.0},
+
+		{"start": [-175, -100], "end": [-175, 50], "width": 1.5},
+		{"start": [125, -100], "end": [125, 50], "width": 1.5},
+
+		{"start": [-250, 250], "end": [250, 250], "width": 2.0},
+		{"start": [-250, 200], "end": [-250, 250], "width": 2.0},
+		{"start": [250, 200], "end": [250, 250], "width": 2.0}
+	],
+	"pois": [
+		{
+			"position": [-175, -30],
+			"type": "race",
+			"label": "Illegal Race Meetup",
+			"icon": "flag",
+			"color": [1.0, 0.3, 0.3, 1.0]
+		},
+		{
+			"position": [125, 125],
+			"type": "garage",
+			"label": "Diesel's Garage",
+			"icon": "wrench",
+			"color": [1.0, 0.6, 0.0, 1.0]
+		},
+		{
+			"position": [200, -250],
+			"type": "transition",
+			"label": "To Downtown",
+			"icon": "arrow",
+			"color": [1.0, 1.0, 1.0, 0.8]
+		},
+		{
+			"position": [-250, -250],
+			"type": "transition",
+			"label": "To Harbor District",
+			"icon": "arrow",
+			"color": [1.0, 1.0, 1.0, 0.8]
+		},
+		{
+			"position": [0, -250],
+			"type": "transition",
+			"label": "To Hillside / Route 9",
+			"icon": "arrow",
+			"color": [1.0, 1.0, 1.0, 0.8]
+		},
+		{
+			"position": [-30, -175],
+			"type": "contact",
+			"label": "Diesel",
+			"icon": "person",
+			"color": [0.8, 0.4, 0.2, 1.0]
+		},
+		{
+			"position": [200, 50],
+			"type": "shop",
+			"label": "Salvage Yard Parts",
+			"icon": "dollar",
+			"color": [0.0, 1.0, 1.0, 1.0]
+		}
+	]
+}

@@ -1,9 +1,10 @@
 ## Manages the player's garage: vehicle collection, part installation,
-## and vehicle acquisition/loss including pink slip outcomes.
+## part combo detection, and vehicle acquisition/loss including pink slip outcomes.
 class_name GarageSystem
 extends Node
 
 var vehicles: Dictionary = {} # vehicle_id -> VehicleData
+var _active_combos: Dictionary = {} # vehicle_id -> Array[Dictionary] (active combo data)
 
 
 func _ready() -> void:
@@ -25,6 +26,7 @@ func remove_vehicle(vehicle_id: String, reason: String = "sold") -> void:
 	if vehicles.has(vehicle_id):
 		var vehicle := vehicles[vehicle_id]
 		vehicles.erase(vehicle_id)
+		_active_combos.erase(vehicle_id)
 		GameManager.player_data.owned_vehicle_ids.erase(vehicle_id)
 		EventBus.vehicle_lost.emit(vehicle_id, reason)
 		print("[Garage] Vehicle lost: %s (%s)" % [vehicle.display_name, reason])
@@ -42,6 +44,10 @@ func get_vehicle_count() -> int:
 	return vehicles.size()
 
 
+# ---------------------------------------------------------------------------
+# Part Installation
+# ---------------------------------------------------------------------------
+
 func install_part(vehicle_id: String, slot: String, part_id: String) -> bool:
 	var vehicle := get_vehicle(vehicle_id)
 	if vehicle == null:
@@ -53,22 +59,32 @@ func install_part(vehicle_id: String, slot: String, part_id: String) -> bool:
 		push_error("[Garage] Part not found: %s" % part_id)
 		return false
 
-	# Check prerequisites
-	var requires: Array = part.get("requires", [])
-	for req_id in requires:
-		var has_req := false
-		for s in vehicle.installed_parts:
-			if vehicle.installed_parts[s] == req_id:
-				has_req = true
-				break
-		if not has_req:
-			push_warning("[Garage] Missing prerequisite: %s for part %s" % [req_id, part_id])
+	# Check prerequisites using the centralized method
+	if not PartDatabase.check_prerequisites(part_id, vehicle.installed_parts):
+		var reqs: Array = part.get("prerequisites", part.get("requires", []))
+		push_warning("[Garage] Missing prerequisites for part %s: %s" % [part_id, str(reqs)])
+		return false
+
+	# Check drivetrain compatibility
+	var compat_dt: Array = part.get("compatible_drivetrains", [])
+	if not compat_dt.is_empty():
+		if vehicle.drivetrain.to_upper() not in compat_dt:
+			push_warning("[Garage] Part %s not compatible with %s drivetrain" % [part_id, vehicle.drivetrain])
 			return false
 
+	# Store combos before install to detect new ones
+	var old_combos := _get_active_combo_ids(vehicle)
+
+	# Install the part
 	vehicle.installed_parts[slot] = part_id
 	_recalculate_vehicle_power(vehicle)
+
+	# Detect newly activated combos
+	_check_combos(vehicle_id, vehicle, old_combos)
+
 	EventBus.part_installed.emit(vehicle_id, slot, part)
-	EventBus.vehicle_stats_changed.emit(vehicle_id, vehicle.get_effective_stats())
+	EventBus.vehicle_stats_changed.emit(vehicle_id, get_effective_stats(vehicle))
+	print("[Garage] Installed %s in %s slot on %s" % [part_id, slot, vehicle.display_name])
 	return true
 
 
@@ -76,11 +92,104 @@ func remove_part(vehicle_id: String, slot: String) -> void:
 	var vehicle := get_vehicle(vehicle_id)
 	if vehicle == null:
 		return
+
+	var old_combos := _get_active_combo_ids(vehicle)
+
 	vehicle.installed_parts[slot] = ""
 	_recalculate_vehicle_power(vehicle)
-	EventBus.part_removed.emit(vehicle_id, slot)
-	EventBus.vehicle_stats_changed.emit(vehicle_id, vehicle.get_effective_stats())
 
+	# Re-check combos (some may have been lost)
+	_check_combos(vehicle_id, vehicle, old_combos)
+
+	EventBus.part_removed.emit(vehicle_id, slot)
+	EventBus.vehicle_stats_changed.emit(vehicle_id, get_effective_stats(vehicle))
+
+
+# ---------------------------------------------------------------------------
+# Combo Detection
+# ---------------------------------------------------------------------------
+
+func _get_active_combo_ids(vehicle: VehicleData) -> Array:
+	## Returns an array of combo IDs currently active on this vehicle.
+	var active := PartDatabase.get_active_combos(vehicle.installed_parts)
+	var ids: Array = []
+	for combo in active:
+		ids.append(combo.get("id", ""))
+	return ids
+
+
+func _check_combos(vehicle_id: String, vehicle: VehicleData, old_combo_ids: Array) -> void:
+	## Compare old vs new active combos and emit signals for any newly achieved combos.
+	var new_active := PartDatabase.get_active_combos(vehicle.installed_parts)
+	var new_ids: Array = []
+	for combo in new_active:
+		new_ids.append(combo.get("id", ""))
+
+	# Store current active combos
+	_active_combos[vehicle_id] = new_active
+
+	# Detect newly achieved combos
+	for combo in new_active:
+		var combo_id: String = combo.get("id", "")
+		if combo_id not in old_combo_ids:
+			var combo_name: String = combo.get("name", combo_id)
+			var combo_bonus: Dictionary = combo.get("bonus", {})
+			print("[Garage] Combo achieved on %s: %s! Bonus: %s" % [vehicle.display_name, combo_name, str(combo_bonus)])
+			EventBus.part_combo_achieved.emit(vehicle_id, combo)
+
+	# Detect lost combos
+	for old_id in old_combo_ids:
+		if old_id not in new_ids:
+			print("[Garage] Combo lost on %s: %s" % [vehicle.display_name, old_id])
+			EventBus.part_combo_lost.emit(vehicle_id, old_id)
+
+
+func get_active_combos_for_vehicle(vehicle_id: String) -> Array:
+	## Returns all active combos for a vehicle. Useful for UI display.
+	if _active_combos.has(vehicle_id):
+		return _active_combos[vehicle_id]
+	var vehicle := get_vehicle(vehicle_id)
+	if vehicle == null:
+		return []
+	var active := PartDatabase.get_active_combos(vehicle.installed_parts)
+	_active_combos[vehicle_id] = active
+	return active
+
+
+# ---------------------------------------------------------------------------
+# Stat Calculation with Combo Bonuses
+# ---------------------------------------------------------------------------
+
+func get_effective_stats(vehicle: VehicleData) -> Dictionary:
+	## Returns stats after applying mods, wear, damage, affinity, AND combo bonuses.
+	var base_stats := vehicle.get_effective_stats()
+
+	# Apply combo bonuses on top of base stats
+	var combo_bonuses := PartDatabase.get_combo_bonus_totals(vehicle.installed_parts)
+	for stat in combo_bonuses:
+		if base_stats.has(stat):
+			base_stats[stat] += combo_bonuses[stat]
+		elif stat == "weight_reduction":
+			# Special handling: weight_reduction subtracts from weight
+			base_stats["weight"] = base_stats.get("weight", vehicle.weight_kg) - combo_bonuses[stat]
+		else:
+			# Stats like drift_bonus that aren't in the base dict
+			base_stats[stat] = combo_bonuses[stat]
+
+	return base_stats
+
+
+func get_combo_bonus_summary(vehicle_id: String) -> Dictionary:
+	## Returns a human-readable summary of all active combo bonuses for a vehicle.
+	var vehicle := get_vehicle(vehicle_id)
+	if vehicle == null:
+		return {}
+	return PartDatabase.get_combo_bonus_totals(vehicle.installed_parts)
+
+
+# ---------------------------------------------------------------------------
+# Power Recalculation
+# ---------------------------------------------------------------------------
 
 func _recalculate_vehicle_power(vehicle: VehicleData) -> void:
 	## Recalculate HP/torque based on installed parts.
@@ -103,6 +212,10 @@ func _recalculate_vehicle_power(vehicle: VehicleData) -> void:
 	vehicle.current_hp = hp
 	vehicle.current_torque = torque
 
+
+# ---------------------------------------------------------------------------
+# Vehicle Management
+# ---------------------------------------------------------------------------
 
 func get_worst_vehicle_id() -> String:
 	## Returns the lowest-value vehicle — used for Act 3 Fall.
@@ -149,7 +262,12 @@ func service_vehicle(vehicle_id: String) -> int:
 
 func reset() -> void:
 	vehicles.clear()
+	_active_combos.clear()
 
+
+# ---------------------------------------------------------------------------
+# Event Handlers
+# ---------------------------------------------------------------------------
 
 func _on_pink_slip_won(won_vehicle_data: Dictionary) -> void:
 	var vehicle := VehicleData.new()
@@ -167,6 +285,10 @@ func _on_vehicle_impounded(vehicle_id: String) -> void:
 	# Vehicle is impounded but not yet lost — player can retrieve it
 	print("[Garage] Vehicle impounded: %s" % vehicle_id)
 
+
+# ---------------------------------------------------------------------------
+# Serialization
+# ---------------------------------------------------------------------------
 
 func serialize() -> Dictionary:
 	var vehicle_data := {}
@@ -209,6 +331,7 @@ func serialize() -> Dictionary:
 
 func deserialize(data: Dictionary) -> void:
 	vehicles.clear()
+	_active_combos.clear()
 	var vehicle_data: Dictionary = data.get("vehicles", {})
 	for vid in vehicle_data:
 		var vd: Dictionary = vehicle_data[vid]
@@ -244,3 +367,5 @@ func deserialize(data: Dictionary) -> void:
 		v.current_hp = vd.get("current_hp", v.stock_hp)
 		v.current_torque = vd.get("current_torque", v.stock_torque)
 		vehicles[vid] = v
+		# Rebuild active combos cache for loaded vehicles
+		_active_combos[vid] = PartDatabase.get_active_combos(v.installed_parts)

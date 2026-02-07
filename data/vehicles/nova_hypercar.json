@@ -1,0 +1,33 @@
+{
+  "vehicle_id": "nova_hypercar",
+  "display_name": "Nova Hypercar",
+  "manufacturer": "Nova Motors",
+  "year": 2005,
+  "body_style": "coupe",
+  "culture": "euro",
+  "description": "The pinnacle of automotive engineering. A 900-horsepower hybrid hypercar with a carbon fiber monocoque, active aerodynamics, and a powertrain that rewrites the laws of physics. There are twelve in existence. One is in Nova Pacifica. And now it's yours.",
+  "tier": 5,
+  "rarity": "legendary",
+  "base_speed": 100.0,
+  "base_acceleration": 98.0,
+  "base_handling": 90.0,
+  "base_braking": 92.0,
+  "base_durability": 45.0,
+  "nitro_capacity": 50.0,
+  "engine_type": "v8",
+  "displacement_cc": 3800,
+  "stock_hp": 900.0,
+  "stock_torque": 722.0,
+  "aspiration": "hybrid",
+  "redline_rpm": 9200,
+  "weight_kg": 1395.0,
+  "drivetrain": "awd",
+  "starting_value": 950000,
+  "class": "S",
+  "cosmetics": {
+    "default_color": "#FF4500",
+    "available_colors": ["#FF4500", "#000000", "#C0C0C0", "#FFFFFF", "#4169E1"]
+  },
+  "special_traits": ["hybrid_boost", "active_aero", "carbon_monocoque", "launch_control", "limited_production", "mid_engine", "drs"],
+  "lore": "Nova Motors built twelve hypercars as a technology demonstrator and sold each one for nearly a million dollars. The hybrid powertrain combines a twin-turbo V8 with three electric motors, producing 900 horsepower and instant torque. Active aerodynamics adjust the car's downforce profile in real-time. It's not a car — it's a spaceship that happens to have wheels."
+}

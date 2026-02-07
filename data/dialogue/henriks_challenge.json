@@ -1,0 +1,275 @@
+{
+  "id": "henriks_challenge",
+  "context": "Act 2A Chapter 2.2 — Henrik pushes for 1v1 after team tensions boil. Mutual respect or bitter rivalry.",
+  "lines": [
+    {
+      "type": "narration",
+      "text": "Apex Racing Facility. The garage after hours. Everyone else has gone home. The building is quiet except for the hum of fluorescent lights and the click of Henrik's keyboard as he reviews data."
+    },
+    {
+      "type": "narration",
+      "text": "He has been reviewing your data. Your telemetry. Your corner entries, your brake points, your throttle traces. You know because he left the file open on the shared terminal — accidentally or otherwise."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Henrik",
+      "portrait": "henrik_cold",
+      "text": "I've been watching your sessions."
+    },
+    {
+      "type": "narration",
+      "text": "He says it without turning around. His voice echoes in the empty garage like a stone dropped in a well."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Henrik",
+      "portrait": "henrik_cold",
+      "text": "Your racing line through Sector 3 is wrong. It's fast — I'll give you that — but it's wrong. You're overdriving the rear tires, trading longevity for lap time. In a five-lap sprint, it works. In a twenty-lap race, you're done by lap fifteen."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Henrik",
+      "portrait": "henrik_cold",
+      "text": "I've told Jade this. She says to be patient with you. That you're 'adapting.'"
+    },
+    {
+      "type": "narration",
+      "text": "He turns now. His face is the same controlled mask it always is, but there's something underneath — frustration, maybe. Or fear. Fear that you might actually be better than him."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Henrik",
+      "portrait": "henrik_intense",
+      "text": "I've been the number one driver at Apex for four years. I earned that through discipline, preparation, and results. Not because someone found me in a parking garage and thought I had potential."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Henrik",
+      "portrait": "henrik_intense",
+      "text": "So let's settle this. You and me. The circuit. No team strategy, no telemetry, no radio. Just driving. Five laps."
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "Name the time.",
+          "choice_id": "henrik_accept_confident",
+          "relationship_changes": {"henrik": 5},
+          "moral_shift": 0,
+          "set_flags": {"henrik_challenge_accepted": true},
+          "jump_to": "challenge_set"
+        },
+        {
+          "text": "What does this prove? We're on the same team.",
+          "choice_id": "henrik_question",
+          "relationship_changes": {"henrik": -5},
+          "moral_shift": 5,
+          "jump_to": "henrik_explains"
+        },
+        {
+          "text": "I'll race you, Henrik. But when I win, you stop looking at me like I don't belong here.",
+          "choice_id": "henrik_accept_terms",
+          "relationship_changes": {"henrik": 0},
+          "moral_shift": 0,
+          "set_flags": {"henrik_challenge_accepted": true},
+          "jump_to": "henrik_terms"
+        }
+      ]
+    },
+    {
+      "label": "challenge_set",
+      "type": "dialogue",
+      "speaker": "Henrik",
+      "portrait": "henrik_neutral",
+      "text": "Tomorrow. Dawn. Before the engineers arrive. I'll have both cars prepped. Identical setups. The only variable is us."
+    },
+    {
+      "type": "narration",
+      "text": "He extends his hand. It is the first time he has offered you a handshake since you arrived. You take it. His grip is exactly what you'd expect — controlled, measured, firm without being aggressive.",
+      "jump_to": "race_dawn"
+    },
+    {
+      "label": "henrik_explains",
+      "type": "dialogue",
+      "speaker": "Henrik",
+      "portrait": "henrik_intense",
+      "text": "It proves who leads and who follows. In a team, there's always a hierarchy. Jade wants equality. The track wants truth. I'd rather know where I stand than pretend we're partners."
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "Fine. Let's find out.",
+          "choice_id": "henrik_accept_after_question",
+          "relationship_changes": {"henrik": 3},
+          "moral_shift": 0,
+          "set_flags": {"henrik_challenge_accepted": true},
+          "jump_to": "challenge_set"
+        },
+        {
+          "text": "You already know where you stand, Henrik. That's what scares you.",
+          "choice_id": "henrik_refuse_provoke",
+          "relationship_changes": {"henrik": -15},
+          "moral_shift": -5,
+          "set_flags": {"henrik_challenge_refused": true, "henrik_provoked": true},
+          "jump_to": "henrik_cold_war"
+        }
+      ]
+    },
+    {
+      "label": "henrik_terms",
+      "type": "dialogue",
+      "speaker": "Henrik",
+      "portrait": "henrik_neutral",
+      "text": "If you win, I'll stop questioning your place here. If I win, you follow my lead for the rest of the season. No hero moves. No improvisation. You drive the plan."
+    },
+    {
+      "type": "narration",
+      "text": "Fair terms. Hard terms. The kind of stakes that Henrik lives by — everything measured, everything quantified, even respect.",
+      "jump_to": "race_dawn"
+    },
+    {
+      "label": "henrik_cold_war",
+      "type": "narration",
+      "text": "Henrik's jaw tightens. His eyes go flat — not angry, but something worse. Calculated."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Henrik",
+      "portrait": "henrik_cold",
+      "text": "Alright. We'll settle it on the grid, then. In front of everyone. At the championship."
+    },
+    {
+      "type": "narration",
+      "text": "He turns back to the terminal. The conversation is over. The cold war has begun.",
+      "jump_to": "challenge_end"
+    },
+    {
+      "label": "race_dawn",
+      "type": "narration",
+      "text": "5:17 AM. The circuit is empty. Morning fog sits on the asphalt like a ghost waiting to be born."
+    },
+    {
+      "type": "narration",
+      "text": "Two cars. Two drivers. No audience. No cameras. No commentary. Just the sound of engines and the truth that only a stopwatch can tell."
+    },
+    {
+      "type": "narration",
+      "text": "Henrik drives the way he does everything — precise, calculated, every input deliberate. His car moves through corners like a mathematical proof. No wasted motion. No wasted energy."
+    },
+    {
+      "type": "narration",
+      "text": "You drive the way the underground taught you — by feel, by instinct, by the conversation between your hands and the steering wheel. The car talks to you and you listen and you respond and the result is something that cannot be plotted on a graph."
+    },
+    {
+      "type": "narration",
+      "text": "Five laps. The gap between you oscillates — he gains on the straights, you gain in the corners. Discipline versus instinct. The metronome versus the jazz solo."
+    },
+    {
+      "type": "narration",
+      "text": "On the final lap, final corner, the gap is less than a car length. It could go either way. It is the closest thing to a coin flip that two human beings can produce at 180 kilometers per hour."
+    },
+    {
+      "type": "narration",
+      "text": "The finish line passes. You both pull into the pit lane. Kill the engines. Sit in silence."
+    },
+    {
+      "type": "narration",
+      "text": "Henrik gets out first. He walks to the timing screen on the pit wall. Looks at the numbers. His jaw works."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Henrik",
+      "portrait": "henrik_neutral",
+      "text": "Two tenths."
+    },
+    {
+      "type": "narration",
+      "text": "Two tenths of a second. Over five laps of a four-kilometer circuit. The margin between first and second is smaller than a heartbeat."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Henrik",
+      "portrait": "henrik_neutral",
+      "text": "Your tire wear on the left rear is catastrophic. In a real race, you'd have been a sitting duck by lap eight. But—"
+    },
+    {
+      "type": "narration",
+      "text": "He pauses. This next word costs him something."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Henrik",
+      "portrait": "henrik_respectful",
+      "text": "But you're fast. Genuinely fast. Not just underground fast. Fast."
+    },
+    {
+      "type": "narration",
+      "text": "Coming from Henrik Vale, that might be the highest compliment anyone in professional racing has ever received."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Henrik",
+      "portrait": "henrik_respectful",
+      "text": "We should work together. Not because Jade wants us to — because between my consistency and your raw pace, no team on this grid can match us."
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "Partners. Not leader and follower. Partners.",
+          "choice_id": "henrik_partners",
+          "relationship_changes": {"henrik": 15},
+          "moral_shift": 5,
+          "set_flags": {"henrik_partnership": true},
+          "jump_to": "henrik_partnership"
+        },
+        {
+          "text": "I respect your driving, Henrik. Let's win a championship.",
+          "choice_id": "henrik_respect",
+          "relationship_changes": {"henrik": 10},
+          "moral_shift": 0,
+          "set_flags": {"henrik_mutual_respect": true},
+          "jump_to": "henrik_respect_end"
+        }
+      ]
+    },
+    {
+      "label": "henrik_partnership",
+      "type": "narration",
+      "text": "Henrik extends his hand again. This time, the grip is different. Warmer. Less a measurement and more a promise."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Henrik",
+      "portrait": "henrik_respectful",
+      "text": "Partners.",
+      "jump_to": "challenge_end"
+    },
+    {
+      "label": "henrik_respect_end",
+      "type": "dialogue",
+      "speaker": "Henrik",
+      "portrait": "henrik_neutral",
+      "text": "Now go fix your tire management. It's embarrassing.",
+      "jump_to": "challenge_end"
+    },
+    {
+      "label": "challenge_end",
+      "type": "narration",
+      "text": "The sun breaks through the fog. The circuit emerges from the mist like a promise. In an hour, the engineers will arrive, the data will flow, the corporate machinery will grind forward."
+    },
+    {
+      "type": "narration",
+      "text": "But for five laps at dawn, it was just two drivers and the truth. And sometimes, that is enough."
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "henriks_challenge_complete",
+        "value": true
+      }
+    }
+  ]
+}

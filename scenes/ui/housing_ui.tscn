@@ -1,0 +1,213 @@
+[gd_scene load_steps=2 format=3 uid="uid://housing_ui"]
+
+[ext_resource type="Script" path="res://scenes/ui/housing_ui.gd" id="1"]
+
+[node name="HousingUI" type="CanvasLayer"]
+layer = 10
+script = ExtResource("1")
+
+[node name="Background" type="ColorRect" parent="." unique_name_in_owner=true]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.02, 0.02, 0.06, 0.92)
+
+[node name="MainMargin" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = 20.0
+offset_right = -30.0
+offset_bottom = -20.0
+
+[node name="VBoxRoot" type="VBoxContainer" parent="MainMargin"]
+layout_mode = 2
+add_theme_constant_override/separation = 12
+
+[node name="Title" type="Label" parent="MainMargin/VBoxRoot"]
+layout_mode = 2
+text = "HOUSING"
+add_theme_font_size_override/font_size = 26
+add_theme_color_override/font_color = Color(0.9, 0.85, 0.7, 1)
+
+[node name="TitleSep" type="HSeparator" parent="MainMargin/VBoxRoot"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 4)
+
+[node name="ContentHBox" type="HBoxContainer" parent="MainMargin/VBoxRoot"]
+layout_mode = 2
+size_flags_vertical = 3
+add_theme_constant_override/separation = 20
+
+[node name="CurrentHousingPanel" type="PanelContainer" parent="MainMargin/VBoxRoot/ContentHBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(380, 0)
+size_flags_horizontal = 0
+
+[node name="CurrentVBox" type="VBoxContainer" parent="MainMargin/VBoxRoot/ContentHBox/CurrentHousingPanel"]
+layout_mode = 2
+add_theme_constant_override/separation = 10
+
+[node name="CurrentHeader" type="Label" parent="MainMargin/VBoxRoot/ContentHBox/CurrentHousingPanel/CurrentVBox"]
+layout_mode = 2
+text = "CURRENT HOUSING"
+add_theme_font_size_override/font_size = 13
+add_theme_color_override/font_color = Color(0.5, 0.5, 0.6, 1)
+
+[node name="CurrentPhoto" type="ColorRect" parent="MainMargin/VBoxRoot/ContentHBox/CurrentHousingPanel/CurrentVBox" unique_name_in_owner=true]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 160)
+color = Color(0.15, 0.15, 0.2, 1)
+
+[node name="CurrentNameLabel" type="Label" parent="MainMargin/VBoxRoot/ContentHBox/CurrentHousingPanel/CurrentVBox" unique_name_in_owner=true]
+layout_mode = 2
+text = "Your Car"
+add_theme_font_size_override/font_size = 20
+add_theme_color_override/font_color = Color(1, 1, 1, 1)
+
+[node name="CurrentDescLabel" type="Label" parent="MainMargin/VBoxRoot/ContentHBox/CurrentHousingPanel/CurrentVBox" unique_name_in_owner=true]
+layout_mode = 2
+text = "The backseat of your beater."
+autowrap_mode = 2
+add_theme_font_size_override/font_size = 12
+add_theme_color_override/font_color = Color(0.7, 0.7, 0.75, 1)
+
+[node name="CurrentFlavorLabel" type="Label" parent="MainMargin/VBoxRoot/ContentHBox/CurrentHousingPanel/CurrentVBox" unique_name_in_owner=true]
+layout_mode = 2
+text = "\"You wake up with a steering wheel imprint on your forehead.\""
+autowrap_mode = 2
+add_theme_font_size_override/font_size = 11
+add_theme_color_override/font_color = Color(0.55, 0.5, 0.45, 1)
+
+[node name="StatsSep" type="HSeparator" parent="MainMargin/VBoxRoot/ContentHBox/CurrentHousingPanel/CurrentVBox"]
+layout_mode = 2
+
+[node name="CurrentRentLabel" type="Label" parent="MainMargin/VBoxRoot/ContentHBox/CurrentHousingPanel/CurrentVBox" unique_name_in_owner=true]
+layout_mode = 2
+text = "RENT: FREE"
+add_theme_font_size_override/font_size = 13
+add_theme_color_override/font_color = Color(0.6, 0.8, 0.6, 1)
+
+[node name="CurrentRestLabel" type="Label" parent="MainMargin/VBoxRoot/ContentHBox/CurrentHousingPanel/CurrentVBox" unique_name_in_owner=true]
+layout_mode = 2
+text = "REST BONUS: None"
+add_theme_font_size_override/font_size = 13
+add_theme_color_override/font_color = Color(0.6, 0.6, 0.8, 1)
+
+[node name="CurrentStorageLabel" type="Label" parent="MainMargin/VBoxRoot/ContentHBox/CurrentHousingPanel/CurrentVBox" unique_name_in_owner=true]
+layout_mode = 2
+text = "GARAGE SLOTS: None"
+add_theme_font_size_override/font_size = 13
+add_theme_color_override/font_color = Color(0.7, 0.65, 0.5, 1)
+
+[node name="CurrentSpacer" type="Control" parent="MainMargin/VBoxRoot/ContentHBox/CurrentHousingPanel/CurrentVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="OptionsSection" type="VBoxContainer" parent="MainMargin/VBoxRoot/ContentHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+add_theme_constant_override/separation = 8
+
+[node name="OptionsHeader" type="Label" parent="MainMargin/VBoxRoot/ContentHBox/OptionsSection"]
+layout_mode = 2
+text = "AVAILABLE HOUSING"
+add_theme_font_size_override/font_size = 13
+add_theme_color_override/font_color = Color(0.5, 0.5, 0.6, 1)
+
+[node name="OptionsScroll" type="ScrollContainer" parent="MainMargin/VBoxRoot/ContentHBox/OptionsSection"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="OptionsContainer" type="VBoxContainer" parent="MainMargin/VBoxRoot/ContentHBox/OptionsSection/OptionsScroll" unique_name_in_owner=true]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+add_theme_constant_override/separation = 10
+
+[node name="BottomSep" type="HSeparator" parent="MainMargin/VBoxRoot"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 4)
+
+[node name="BottomBar" type="HBoxContainer" parent="MainMargin/VBoxRoot"]
+layout_mode = 2
+add_theme_constant_override/separation = 30
+
+[node name="CashLabel" type="Label" parent="MainMargin/VBoxRoot/BottomBar" unique_name_in_owner=true]
+layout_mode = 2
+text = "CASH: $500"
+add_theme_font_size_override/font_size = 14
+add_theme_color_override/font_color = Color(0.5, 0.85, 0.5, 1)
+
+[node name="ExpensesLabel" type="Label" parent="MainMargin/VBoxRoot/BottomBar" unique_name_in_owner=true]
+layout_mode = 2
+text = "MONTHLY EXPENSES: $0"
+add_theme_font_size_override/font_size = 14
+add_theme_color_override/font_color = Color(0.85, 0.5, 0.5, 1)
+
+[node name="BottomSpacer" type="Control" parent="MainMargin/VBoxRoot/BottomBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HintLabel" type="Label" parent="MainMargin/VBoxRoot/BottomBar"]
+layout_mode = 2
+text = "[ESC] Close"
+add_theme_font_size_override/font_size = 11
+add_theme_color_override/font_color = Color(0.4, 0.4, 0.5, 1)
+
+[node name="BackButton" type="Button" parent="MainMargin/VBoxRoot/BottomBar" unique_name_in_owner=true]
+layout_mode = 2
+custom_minimum_size = Vector2(120, 36)
+text = "BACK"
+
+[node name="ConfirmDialog" type="PanelContainer" parent="." unique_name_in_owner=true]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = -90.0
+offset_right = 180.0
+offset_bottom = 90.0
+
+[node name="ConfirmVBox" type="VBoxContainer" parent="ConfirmDialog"]
+layout_mode = 2
+add_theme_constant_override/separation = 12
+
+[node name="ConfirmNameLabel" type="Label" parent="ConfirmDialog/ConfirmVBox" unique_name_in_owner=true]
+layout_mode = 2
+text = "Move to Harbor Studio?"
+horizontal_alignment = 1
+add_theme_font_size_override/font_size = 16
+add_theme_color_override/font_color = Color(1, 1, 1, 1)
+
+[node name="ConfirmRentLabel" type="Label" parent="ConfirmDialog/ConfirmVBox" unique_name_in_owner=true]
+layout_mode = 2
+text = "Monthly rent: $500"
+horizontal_alignment = 1
+add_theme_font_size_override/font_size = 13
+add_theme_color_override/font_color = Color(0.7, 0.7, 0.75, 1)
+
+[node name="ConfirmSpacer" type="Control" parent="ConfirmDialog/ConfirmVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ConfirmButtons" type="HBoxContainer" parent="ConfirmDialog/ConfirmVBox"]
+layout_mode = 2
+alignment = 1
+add_theme_constant_override/separation = 20
+
+[node name="ConfirmYesButton" type="Button" parent="ConfirmDialog/ConfirmVBox/ConfirmButtons" unique_name_in_owner=true]
+layout_mode = 2
+custom_minimum_size = Vector2(100, 34)
+text = "MOVE IN"
+
+[node name="ConfirmNoButton" type="Button" parent="ConfirmDialog/ConfirmVBox/ConfirmButtons" unique_name_in_owner=true]
+layout_mode = 2
+custom_minimum_size = Vector2(100, 34)
+text = "CANCEL"

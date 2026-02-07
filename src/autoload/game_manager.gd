@@ -28,6 +28,8 @@ var moral_tracker: MoralTracker = null
 var ending_calculator: EndingCalculator = null
 var ending_system: EndingSystem = null
 var ambient_dialogue: AmbientDialogue = null
+var housing: HousingSystem = null
+var phone: PhoneSystem = null
 
 # --- Debug ---
 var debug_mode: bool = false
@@ -57,6 +59,10 @@ func _ready() -> void:
 	ending_system.name = "EndingSystem"
 	ambient_dialogue = AmbientDialogue.new()
 	ambient_dialogue.name = "AmbientDialogue"
+	housing = HousingSystem.new()
+	housing.name = "HousingSystem"
+	phone = PhoneSystem.new()
+	phone.name = "PhoneSystem"
 
 	# Add subsystems as children so they process
 	add_child(reputation)
@@ -75,6 +81,8 @@ func _ready() -> void:
 	add_child(ending_calculator)
 	add_child(ending_system)
 	add_child(ambient_dialogue)
+	add_child(housing)
+	add_child(phone)
 
 	# Initialize with default state
 	economy.set_cash(500) # Starting cash per GDD
@@ -103,6 +111,8 @@ func start_new_game() -> void:
 	consequence_manager.deserialize({})  # Reset to empty state
 	moral_tracker.deserialize({})  # Reset to empty state
 	ambient_dialogue.clear_recent_events()
+	housing.deserialize({})  # Reset to CAR (starting housing)
+	phone.deserialize({})  # Reset phone messages
 	# Start in CUTSCENE state for the prologue; story.start_new_story()
 	# will auto-trigger the prologue_opening mission
 	change_state(GameState.CUTSCENE)
@@ -121,6 +131,7 @@ func trigger_the_fall() -> void:
 	reputation.apply_fall_penalty() # -90% REP
 	police.reset()
 	relationships.apply_fall_strain()
+	housing.trigger_fall_housing()
 	EventBus.story_chapter_started.emit(3, 1)
 	EventBus.hud_message.emit("Everything is gone.", 5.0)
 	print("[GameManager] ACT 3: THE FALL triggered.")
@@ -146,6 +157,8 @@ func get_save_data() -> Dictionary:
 		# EndingCalculator is calculated on demand, no persistence needed
 		"ending_system": ending_system.serialize(),
 		"ambient_dialogue": ambient_dialogue.serialize(),
+		"housing": housing.serialize(),
+		"phone": phone.serialize(),
 	}
 
 
@@ -165,4 +178,6 @@ func load_save_data(data: Dictionary) -> void:
 	moral_tracker.deserialize(data.get("moral_tracker", {}))
 	ending_system.deserialize(data.get("ending_system", {}))
 	ambient_dialogue.deserialize(data.get("ambient_dialogue", {}))
+	housing.deserialize(data.get("housing", {}))
+	phone.deserialize(data.get("phone", {}))
 	print("[GameManager] Save data loaded.")

@@ -8,6 +8,7 @@ const PERIOD_DUSK := "dusk" # 7PM-9PM
 const PERIOD_NIGHT := "night" # 9PM-4AM
 const PERIOD_LATE_NIGHT := "late_night" # 12AM-3AM (subset of night)
 const PERIOD_DAWN := "dawn" # 4AM-6AM
+const PERIOD_DAY := "day" # 6AM-7PM (not normally reachable in gameplay)
 
 # Weather conditions with frequencies from GDD
 const WEATHER_TABLE := {
@@ -96,6 +97,11 @@ func get_grip_multiplier() -> float:
 
 func get_visibility() -> float:
 	return WEATHER_VISIBILITY.get(current_weather, 1.0)
+
+
+func get_normalized_hour() -> float:
+	## Returns current time as a 0.0-24.0 float for lighting calculations.
+	return fmod(game_hour, 24.0)
 
 
 func is_ghost_encounter_possible() -> bool:

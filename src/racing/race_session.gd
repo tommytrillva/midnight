@@ -13,6 +13,9 @@ const DriftArenaScene := preload("res://scenes/racing/drift_arena.tscn")
 const TougeTrackScene := preload("res://scenes/racing/touge_track.tscn")
 const CircuitTrackScene := preload("res://scenes/racing/circuit_track.tscn")
 
+const PinkSlipUIScene := preload("res://scenes/ui/pink_slip_ui.tscn")
+const PinkSlipResultScene := preload("res://scenes/ui/pink_slip_result.tscn")
+
 @onready var race_track: RaceTrack = $SprintTrack
 @onready var race_hud_node: Node = $RaceHUD
 @onready var results_panel: Control = $ResultsUI
@@ -33,6 +36,11 @@ var _screen_transition: ScreenTransition = null
 
 # --- Countdown UI ---
 var _countdown_label: Label = null
+
+# --- Pink Slip UI ---
+var _pink_slip_ui: PinkSlipUI = null
+var _pink_slip_result: PinkSlipResult = null
+var _pink_slip_challenge: Dictionary = {}
 
 signal race_session_complete(results: Dictionary)
 
@@ -86,6 +94,16 @@ func _create_countdown_label() -> void:
 func setup_race(data: RaceData) -> void:
 	race_data = data
 
+	# Pink slip pre-race: show wagering UI before the race begins
+	if data.is_pink_slip:
+		_show_pink_slip_pre_race(data)
+		return # Race setup continues after player accepts in _on_pink_slip_ui_accepted
+
+	_setup_race_internal(data)
+
+
+func _setup_race_internal(data: RaceData) -> void:
+	## Internal race setup — called directly or after pink slip UI acceptance.
 	# Swap in the correct track scene based on race type
 	_setup_track_for_type(data.race_type)
 
@@ -528,6 +546,11 @@ func _run_finish_sequence(results: Dictionary) -> void:
 
 
 func _show_results(results: Dictionary) -> void:
+	# Pink slip races get the special result screen instead of the normal one
+	if results.get("is_pink_slip", false) and not _pink_slip_challenge.is_empty():
+		_show_pink_slip_result(results)
+		return
+
 	if results_panel == null:
 		# No UI — just emit and return
 		await get_tree().create_timer(3.0).timeout
@@ -727,6 +750,158 @@ func _on_circuit_pit_exited(racer_id: int, repairs: Dictionary) -> void:
 
 
 # ---------------------------------------------------------------------------
+# Pink Slip Pre-Race Flow
+# ---------------------------------------------------------------------------
+
+func _show_pink_slip_pre_race(data: RaceData) -> void:
+	## Show the pink slip wagering UI before the race starts.
+	## The race only proceeds if the player accepts.
+	var pink_slip_sys := _get_pink_slip_system()
+	if pink_slip_sys == null:
+		print("[RaceSession] No PinkSlipSystem found — skipping pink slip UI")
+		_setup_race_internal(data)
+		return
+
+	# Get the active challenge (already created by PinkSlipSystem or trigger)
+	_pink_slip_challenge = pink_slip_sys.get_active_challenge_for_race()
+	if _pink_slip_challenge.is_empty():
+		# No active challenge — create one from race_data opponent info
+		var player_vehicle_data := GameManager.garage.get_vehicle(
+			GameManager.player_data.current_vehicle_id
+		)
+		var opponent_vehicle_data := VehicleData.new()
+		opponent_vehicle_data.vehicle_id = data.opponent_vehicle_data.get("vehicle_id", "opponent")
+		opponent_vehicle_data.display_name = data.opponent_vehicle_data.get("display_name", "Opponent's Car")
+		opponent_vehicle_data.stock_hp = data.opponent_vehicle_data.get("stock_hp", 200.0)
+		opponent_vehicle_data.current_hp = opponent_vehicle_data.stock_hp
+		opponent_vehicle_data.weight_kg = data.opponent_vehicle_data.get("weight_kg", 1300.0)
+		opponent_vehicle_data.base_speed = data.opponent_vehicle_data.get("base_speed", 100.0)
+
+		if player_vehicle_data:
+			var race_config := {
+				"type": "voluntary",
+				"opponent_name": data.ai_names[0] if data.ai_names.size() > 0 else "Opponent",
+				"story_protected": data.is_story_mission,
+			}
+			_pink_slip_challenge = pink_slip_sys.create_challenge(
+				player_vehicle_data, opponent_vehicle_data, race_config
+			)
+
+	if _pink_slip_challenge.is_empty():
+		print("[RaceSession] Could not create pink slip challenge — proceeding without UI")
+		_setup_race_internal(data)
+		return
+
+	# Instantiate and show the pink slip UI
+	_pink_slip_ui = PinkSlipUIScene.instantiate() as PinkSlipUI
+	add_child(_pink_slip_ui)
+	_pink_slip_ui.challenge_accepted.connect(_on_pink_slip_ui_accepted)
+	_pink_slip_ui.challenge_declined.connect(_on_pink_slip_ui_declined)
+	_pink_slip_ui.show_challenge(_pink_slip_challenge)
+
+	print("[RaceSession] Pink slip pre-race UI shown")
+
+
+func _on_pink_slip_ui_accepted(challenge_id: String, player_vehicle_id: String) -> void:
+	## Player accepted the pink slip — proceed with race setup.
+	var pink_slip_sys := _get_pink_slip_system()
+	if pink_slip_sys:
+		# Update the challenge with the selected vehicle
+		_pink_slip_challenge["player_vehicle_id"] = player_vehicle_id
+		pink_slip_sys.accept_challenge(challenge_id)
+		pink_slip_sys.set_challenge_in_race(challenge_id)
+
+		# Switch the player's active vehicle to the wagered one
+		GameManager.player_data.current_vehicle_id = player_vehicle_id
+
+	# Clean up the UI
+	if _pink_slip_ui:
+		_pink_slip_ui.queue_free()
+		_pink_slip_ui = null
+
+	# Now proceed with the actual race setup
+	_setup_race_internal(race_data)
+	print("[RaceSession] Pink slip accepted — starting race")
+
+
+func _on_pink_slip_ui_declined(challenge_id: String) -> void:
+	## Player declined the pink slip — abort the race.
+	var pink_slip_sys := _get_pink_slip_system()
+	if pink_slip_sys:
+		pink_slip_sys.decline_challenge(challenge_id)
+
+	# Clean up the UI
+	if _pink_slip_ui:
+		_pink_slip_ui.queue_free()
+		_pink_slip_ui = null
+
+	_pink_slip_challenge = {}
+
+	# Emit session complete with a declined result
+	race_session_complete.emit({
+		"race_name": race_data.race_name if race_data else "",
+		"pink_slip_declined": true,
+		"player_won": false,
+	})
+	print("[RaceSession] Pink slip declined — race aborted")
+
+
+# ---------------------------------------------------------------------------
+# Pink Slip Post-Race Result
+# ---------------------------------------------------------------------------
+
+func _show_pink_slip_result(results: Dictionary) -> void:
+	## Show the dramatic pink slip result screen after the race.
+	var player_won: bool = results.get("player_won", false)
+
+	_pink_slip_result = PinkSlipResultScene.instantiate() as PinkSlipResult
+	add_child(_pink_slip_result)
+	_pink_slip_result.result_acknowledged.connect(_on_pink_slip_result_done.bind(results))
+
+	if player_won:
+		# Build won vehicle data
+		var won_vehicle := VehicleData.new()
+		won_vehicle.vehicle_id = _pink_slip_challenge.get("opponent_vehicle_id", "")
+		won_vehicle.display_name = _pink_slip_challenge.get("opponent_vehicle_name", "Unknown")
+		won_vehicle.estimated_value = _pink_slip_challenge.get("opponent_vehicle_value", 0)
+
+		# Try to load full vehicle data from garage (it was just added by PinkSlipSystem)
+		var garage_vehicle := GameManager.garage.get_vehicle(won_vehicle.vehicle_id)
+		if garage_vehicle:
+			won_vehicle = garage_vehicle
+
+		var dialogue: String = _pink_slip_challenge.get("opponent_dialogue_lose", "")
+		_pink_slip_result.show_win(won_vehicle, dialogue)
+		print("[RaceSession] Pink slip result: WIN — %s" % won_vehicle.display_name)
+	else:
+		# Build lost vehicle data
+		var lost_vehicle := VehicleData.new()
+		lost_vehicle.vehicle_id = _pink_slip_challenge.get("player_vehicle_id", "")
+		lost_vehicle.display_name = _pink_slip_challenge.get("player_vehicle_name", "Unknown")
+		lost_vehicle.estimated_value = _pink_slip_challenge.get("player_vehicle_value", 0)
+
+		var dialogue: String = _pink_slip_challenge.get("opponent_dialogue_win", "")
+		_pink_slip_result.show_loss(lost_vehicle, dialogue)
+		print("[RaceSession] Pink slip result: LOSS — %s" % lost_vehicle.display_name)
+
+
+func _on_pink_slip_result_done(results: Dictionary) -> void:
+	## Player acknowledged the pink slip result — continue to normal flow.
+	if _pink_slip_result:
+		_pink_slip_result.queue_free()
+		_pink_slip_result = null
+
+	_pink_slip_challenge = {}
+	race_session_complete.emit(results)
+
+
+func _get_pink_slip_system() -> PinkSlipSystem:
+	if GameManager.has_node("PinkSlipSystem"):
+		return GameManager.get_node("PinkSlipSystem") as PinkSlipSystem
+	return null
+
+
+# ---------------------------------------------------------------------------
 # Cleanup
 # ---------------------------------------------------------------------------
 
@@ -747,6 +922,15 @@ func cleanup() -> void:
 		circuit_race.deactivate()
 		circuit_race.queue_free()
 		circuit_race = null
+
+	# Clean up pink slip UI if still open
+	if _pink_slip_ui:
+		_pink_slip_ui.queue_free()
+		_pink_slip_ui = null
+	if _pink_slip_result:
+		_pink_slip_result.queue_free()
+		_pink_slip_result = null
+	_pink_slip_challenge = {}
 
 	if player_vehicle:
 		player_vehicle.queue_free()

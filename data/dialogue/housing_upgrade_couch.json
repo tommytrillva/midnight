@@ -1,0 +1,50 @@
+{
+  "id": "housing_upgrade_couch",
+  "context": "Maya offers her couch above Torres Automotive. A small kindness that changes everything.",
+  "lines": [
+    {
+      "speaker": "maya",
+      "portrait": "maya_casual",
+      "text": "Hey. You've been sleeping in that thing, haven't you."
+    },
+    {
+      "type": "narration",
+      "text": "It's not a question. She saw the blanket in the backseat. The toothbrush in the cup holder."
+    },
+    {
+      "speaker": "maya",
+      "portrait": "maya_looking_away",
+      "text": "The couch upstairs folds out. Sort of. It's not great."
+    },
+    {
+      "speaker": "maya",
+      "portrait": "maya_casual",
+      "text": "Don't touch the thermostat. And if you use the shower, clean the drain. I'm serious."
+    },
+    {
+      "type": "narration",
+      "text": "She hands you a spare key. It's warm from her pocket. She doesn't make eye contact."
+    },
+    {
+      "speaker": "maya",
+      "portrait": "maya_looking_away",
+      "text": "It's not charity. You're helping in the shop. This is... logistics."
+    },
+    {
+      "type": "narration",
+      "text": "You take the key. For the first time in weeks, you know where you're sleeping tonight."
+    },
+    {
+      "type": "narration",
+      "text": "The couch smells like motor oil and lavender fabric softener. It's the most comfortable thing you've ever felt."
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "living_at_mayas",
+        "value": true
+      }
+    }
+  ]
+}

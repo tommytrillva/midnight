@@ -1,0 +1,75 @@
+{
+  "vehicle_id": "act1_champion",
+  "display_name": "Championship Prize",
+  "manufacturer": "Various",
+  "year": 2002,
+  "body_style": "coupe",
+  "culture": "jdm",
+  "description": "The prize for winning the Act 1 Underground Championship. The player chooses from three vehicles — each representing a different philosophy of speed. A grip monster, a drift king, or a straight-line bruiser. The choice defines your style going into Act 2.",
+  "tier": 3,
+  "rarity": "epic",
+  "base_speed": 82.0,
+  "base_acceleration": 76.0,
+  "base_handling": 78.0,
+  "base_braking": 70.0,
+  "base_durability": 65.0,
+  "nitro_capacity": 40.0,
+  "engine_type": "i6",
+  "displacement_cc": 2800,
+  "stock_hp": 310.0,
+  "stock_torque": 280.0,
+  "aspiration": "turbo",
+  "redline_rpm": 7800,
+  "weight_kg": 1380.0,
+  "drivetrain": "rwd",
+  "starting_value": 0,
+  "class": "B",
+  "acquired_method": "story",
+  "is_player_choice": true,
+  "choice_variants": [
+    {
+      "variant_id": "act1_champion_grip",
+      "variant_name": "Grip Variant",
+      "description": "Tuned for maximum cornering grip. Stiffer suspension, wider tires, aggressive alignment.",
+      "stat_overrides": {
+        "base_handling": 88.0,
+        "base_braking": 78.0,
+        "base_speed": 78.0,
+        "base_acceleration": 72.0
+      },
+      "special_traits": ["track_bred", "corner_carver", "championship_prize"]
+    },
+    {
+      "variant_id": "act1_champion_drift",
+      "variant_name": "Drift Variant",
+      "description": "Set up for angle and style. Welded diff, softened rear, hydraulic handbrake.",
+      "stat_overrides": {
+        "base_handling": 75.0,
+        "base_braking": 68.0,
+        "base_speed": 80.0,
+        "base_acceleration": 78.0
+      },
+      "special_traits": ["drift_bonus", "style_points", "championship_prize"]
+    },
+    {
+      "variant_id": "act1_champion_power",
+      "variant_name": "Power Variant",
+      "description": "Built for straight-line speed. Bigger turbo, built internals, drag-oriented gearing.",
+      "stat_overrides": {
+        "base_handling": 68.0,
+        "base_braking": 65.0,
+        "base_speed": 88.0,
+        "base_acceleration": 82.0,
+        "stock_hp": 380.0,
+        "stock_torque": 340.0
+      },
+      "special_traits": ["straight_line_speed", "high_power_ceiling", "championship_prize"]
+    }
+  ],
+  "cosmetics": {
+    "default_color": "#FFD700",
+    "available_colors": ["#FFD700", "#000000", "#DC143C", "#4169E1", "#FFFFFF", "#C0C0C0"]
+  },
+  "special_traits": ["championship_prize", "story_locked", "player_choice"],
+  "lore": "Win the Act 1 Underground Championship and you earn more than respect — you earn your pick from three custom-built machines, each prepared by a different crew. The grip car was built by circuit racers who worship lap times. The drift car was built by style crews who believe speed without beauty is meaningless. The power car was built by drag racers who believe the shortest distance between two points is a straight line at 180 mph."
+}

@@ -1,0 +1,33 @@
+{
+  "vehicle_id": "apex_circuit",
+  "display_name": "Apex Circuit",
+  "manufacturer": "Zenith",
+  "year": 2003,
+  "body_style": "coupe",
+  "culture": "jdm",
+  "description": "A mid-engine masterpiece built by engineers who worship at the altar of balance. The Apex Circuit has a naturally aspirated V6 mounted behind the driver, aluminum everything, and the kind of telepathic handling that makes professional drivers weep with joy.",
+  "tier": 3,
+  "rarity": "rare",
+  "base_speed": 80.0,
+  "base_acceleration": 72.0,
+  "base_handling": 88.0,
+  "base_braking": 75.0,
+  "base_durability": 58.0,
+  "nitro_capacity": 35.0,
+  "engine_type": "v6",
+  "displacement_cc": 3200,
+  "stock_hp": 290.0,
+  "stock_torque": 224.0,
+  "aspiration": "na",
+  "redline_rpm": 8300,
+  "weight_kg": 1370.0,
+  "drivetrain": "rwd",
+  "starting_value": 55000,
+  "class": "B",
+  "cosmetics": {
+    "default_color": "#FF0000",
+    "available_colors": ["#FF0000", "#FFFFFF", "#000000", "#C0C0C0", "#FFD700", "#191970"]
+  },
+  "special_traits": ["mid_engine", "perfect_balance", "aluminum_body", "high_redline", "track_bred", "rev_happy"],
+  "lore": "Zenith's flagship was hand-built by a team of 200 in a dedicated facility. Each engine was assembled by a single technician who signed the valve cover. The Apex Circuit doesn't have the most power in Tier 3, but its mid-engine layout and aluminum construction make it the benchmark for balance. The car that other cars are measured against."
+}

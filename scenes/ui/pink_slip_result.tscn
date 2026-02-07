@@ -1,0 +1,176 @@
+[gd_scene load_steps=2 format=3 uid="uid://pink_slip_result"]
+
+[ext_resource type="Script" path="res://scenes/ui/pink_slip_result.gd" id="1"]
+
+[node name="PinkSlipResult" type="CanvasLayer"]
+layer = 95
+visible = false
+script = ExtResource("1")
+
+; ---------- Dark/Themed Overlay ----------
+
+[node name="ResultOverlay" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.05, 0, 0, 0.9)
+
+; ---------- Main Layout ----------
+
+[node name="MainMargin" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_right = 80
+theme_override_constants/margin_top = 60
+theme_override_constants/margin_bottom = 60
+
+[node name="ResultContainer" type="VBoxContainer" parent="MainMargin"]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+; ---------- Result Title (YOU WON / YOU LOST) ----------
+
+[node name="ResultTitle" type="Label" parent="MainMargin/ResultContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.85, 0, 1)
+theme_override_font_sizes/font_size = 52
+text = "YOU WON"
+horizontal_alignment = 1
+
+; ---------- Car Visual Area ----------
+
+[node name="CarVisualCenter" type="CenterContainer" parent="MainMargin/ResultContainer"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 140)
+
+[node name="CarVisualContainer" type="Control" parent="MainMargin/ResultContainer/CarVisualCenter"]
+layout_mode = 2
+custom_minimum_size = Vector2(300, 130)
+
+[node name="CarColorRect" type="ColorRect" parent="MainMargin/ResultContainer/CarVisualCenter/CarVisualContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.3, 0.3, 0.6, 1)
+
+[node name="CarSilhouette" type="ColorRect" parent="MainMargin/ResultContainer/CarVisualCenter/CarVisualContainer"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 0.7)
+
+; ---------- Car Name ----------
+
+[node name="CarNameLabel" type="Label" parent="MainMargin/ResultContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.9, 0.3, 1)
+theme_override_font_sizes/font_size = 28
+text = "Vehicle Name"
+horizontal_alignment = 1
+
+; ---------- Stats Grid ----------
+
+[node name="StatsCenter" type="CenterContainer" parent="MainMargin/ResultContainer"]
+layout_mode = 2
+
+[node name="ResultStatsGrid" type="GridContainer" parent="MainMargin/ResultContainer/StatsCenter"]
+layout_mode = 2
+columns = 2
+theme_override_constants/h_separation = 24
+theme_override_constants/v_separation = 6
+
+[node name="HPStatLabel" type="Label" parent="MainMargin/ResultContainer/StatsCenter/ResultStatsGrid"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6, 0.6, 0.6, 1)
+theme_override_font_sizes/font_size = 16
+text = "POWER:"
+
+[node name="ResultHPLabel" type="Label" parent="MainMargin/ResultContainer/StatsCenter/ResultStatsGrid"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+text = "--- HP"
+
+[node name="WeightStatLabel" type="Label" parent="MainMargin/ResultContainer/StatsCenter/ResultStatsGrid"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6, 0.6, 0.6, 1)
+theme_override_font_sizes/font_size = 16
+text = "WEIGHT:"
+
+[node name="ResultWeightLabel" type="Label" parent="MainMargin/ResultContainer/StatsCenter/ResultStatsGrid"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+text = "--- kg"
+
+[node name="SpeedStatLabel" type="Label" parent="MainMargin/ResultContainer/StatsCenter/ResultStatsGrid"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6, 0.6, 0.6, 1)
+theme_override_font_sizes/font_size = 16
+text = "SPEED:"
+
+[node name="ResultSpeedLabel" type="Label" parent="MainMargin/ResultContainer/StatsCenter/ResultStatsGrid"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+text = "SPD: ---"
+
+[node name="ValueStatLabel" type="Label" parent="MainMargin/ResultContainer/StatsCenter/ResultStatsGrid"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6, 0.6, 0.6, 1)
+theme_override_font_sizes/font_size = 16
+text = "VALUE:"
+
+[node name="ResultValueLabel" type="Label" parent="MainMargin/ResultContainer/StatsCenter/ResultStatsGrid"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 0.5, 1)
+theme_override_font_sizes/font_size = 16
+text = "$---"
+
+; ---------- Message ----------
+
+[node name="MessageLabel" type="Label" parent="MainMargin/ResultContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 0.6, 1)
+theme_override_font_sizes/font_size = 18
+text = "Added to your garage"
+horizontal_alignment = 1
+
+; ---------- Opponent Reaction ----------
+
+[node name="OpponentReactionLabel" type="Label" parent="MainMargin/ResultContainer"]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.6, 0.4, 1)
+theme_override_font_sizes/font_size = 16
+text = ""
+horizontal_alignment = 1
+autowrap_mode = 2
+
+; ---------- Remaining Vehicles (loss only) ----------
+
+[node name="RemainingLabel" type="Label" parent="MainMargin/ResultContainer"]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6, 0.6, 0.6, 1)
+theme_override_font_sizes/font_size = 14
+text = "You have X vehicles remaining."
+horizontal_alignment = 1
+
+; ---------- Continue Button ----------
+
+[node name="ButtonCenter" type="CenterContainer" parent="MainMargin/ResultContainer"]
+layout_mode = 2
+
+[node name="ContinueButton" type="Button" parent="MainMargin/ResultContainer/ButtonCenter"]
+layout_mode = 2
+custom_minimum_size = Vector2(250, 50)
+theme_override_colors/font_color = Color(1, 0.85, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "COLLECT YOUR PRIZE"

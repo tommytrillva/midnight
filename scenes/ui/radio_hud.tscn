@@ -1,0 +1,98 @@
+[gd_scene load_steps=3 format=3 uid="uid://radio_hud_scene"]
+
+[ext_resource type="Script" path="res://scenes/ui/radio_hud.gd" id="1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
+bg_color = Color(0.05, 0.05, 0.1, 0.75)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.3, 0.3, 0.5, 0.6)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+content_margin_left = 8.0
+content_margin_top = 6.0
+content_margin_right = 8.0
+content_margin_bottom = 6.0
+
+[node name="RadioHUD" type="Control"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -120.0
+offset_right = 380.0
+offset_bottom = -10.0
+grow_vertical = 0
+script = ExtResource("1")
+
+[node name="Panel" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+
+[node name="VBox" type="VBoxContainer" parent="Panel"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="HBox" type="HBoxContainer" parent="Panel/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="PrevBtn" type="Button" parent="Panel/VBox/HBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(28, 0)
+text = "<"
+flat = true
+
+[node name="StationName" type="Label" parent="Panel/VBox/HBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(120, 0)
+text = "RADIO OFF"
+horizontal_alignment = 1
+text_overrun_behavior = 3
+
+[node name="NextBtn" type="Button" parent="Panel/VBox/HBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(28, 0)
+text = ">"
+flat = true
+
+[node name="SongInfo" type="Label" parent="Panel/VBox/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = ""
+text_overrun_behavior = 3
+
+[node name="EQBars" type="HBoxContainer" parent="Panel/VBox/HBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(35, 0)
+theme_override_constants/separation = 2
+alignment = 1
+
+[node name="Volume" type="Label" parent="Panel/VBox/HBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(56, 0)
+text = "VOL 100%"
+horizontal_alignment = 2
+
+[node name="FavBtn" type="Button" parent="Panel/VBox/HBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(28, 0)
+text = "[ ]"
+flat = true
+tooltip_text = "Favorite"
+
+[node name="DJLine" type="Label" parent="Panel/VBox"]
+visible = false
+layout_mode = 2
+text = ""
+autowrap_mode = 2
+text_overrun_behavior = 3

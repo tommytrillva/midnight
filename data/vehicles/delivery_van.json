@@ -1,0 +1,33 @@
+{
+  "vehicle_id": "delivery_van",
+  "display_name": "Delivery Van",
+  "manufacturer": "Haul-Co",
+  "year": 1990,
+  "body_style": "van",
+  "culture": "jdm",
+  "description": "A boxy panel van that was never meant to go fast. The handling is atrocious, the body roll is comical, and it has all the aerodynamics of a brick. But it's cheap, it's roomy, and there's something undeniably hilarious about beating someone in a race with a delivery van.",
+  "tier": 1,
+  "rarity": "uncommon",
+  "base_speed": 35.0,
+  "base_acceleration": 22.0,
+  "base_handling": 18.0,
+  "base_braking": 22.0,
+  "base_durability": 65.0,
+  "nitro_capacity": 15.0,
+  "engine_type": "i4",
+  "displacement_cc": 2200,
+  "stock_hp": 110.0,
+  "stock_torque": 130.0,
+  "aspiration": "na",
+  "redline_rpm": 5500,
+  "weight_kg": 1800.0,
+  "drivetrain": "rwd",
+  "starting_value": 800,
+  "class": "D",
+  "cosmetics": {
+    "default_color": "#F5F5F5",
+    "available_colors": ["#F5F5F5", "#FFD700", "#FF6347", "#4169E1", "#32CD32"]
+  },
+  "special_traits": ["comic_relief", "tank", "cargo_space"],
+  "lore": "Legend has it that someone once won a pink slip race in The Pit driving one of these. Nobody believed it until they saw the video. Now every crew has that one guy who insists he can make a delivery van fast. He can't. But he'll die trying."
+}

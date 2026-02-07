@@ -1,0 +1,33 @@
+{
+  "vehicle_id": "coastal_roadster",
+  "display_name": "Coastal Roadster",
+  "manufacturer": "Zenith",
+  "year": 1999,
+  "body_style": "roadster",
+  "culture": "jdm",
+  "description": "A thousand kilograms of pure driving joy. The Coastal Roadster is a minimalist masterpiece — no turbo, no AWD tricks, no electronic aids. Just a high-revving engine, perfect weight distribution, and a chassis so balanced it reads your mind.",
+  "tier": 3,
+  "rarity": "uncommon",
+  "base_speed": 73.0,
+  "base_acceleration": 68.0,
+  "base_handling": 85.0,
+  "base_braking": 72.0,
+  "base_durability": 50.0,
+  "nitro_capacity": 30.0,
+  "engine_type": "i4",
+  "displacement_cc": 2200,
+  "stock_hp": 240.0,
+  "stock_torque": 162.0,
+  "aspiration": "na",
+  "redline_rpm": 9000,
+  "weight_kg": 1000.0,
+  "drivetrain": "rwd",
+  "starting_value": 28000,
+  "class": "B",
+  "cosmetics": {
+    "default_color": "#4169E1",
+    "available_colors": ["#4169E1", "#FF0000", "#FFFFFF", "#FFD700", "#000000", "#32CD32"]
+  },
+  "special_traits": ["lightweight", "high_redline", "perfect_balance", "rev_happy", "drivers_car", "convertible"],
+  "lore": "Zenith's engineers had one rule when designing the Coastal Roadster: if it doesn't make the car faster, remove it. The result is a car that weighs nothing, revs to 9,000 RPM, and has 50/50 weight distribution. It's the closest thing to telepathy on four wheels."
+}

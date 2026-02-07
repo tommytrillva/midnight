@@ -1,0 +1,201 @@
+{
+  "id": "the_teammate",
+  "context": "Act 2A Chapter 2.1 — Meeting Henrik Vale, professional teammate and rival. Initial friction. By-the-book vs underground instinct.",
+  "lines": [
+    {
+      "type": "narration",
+      "text": "Apex Dynamics Racing Facility. The garage is a cathedral of engineering — climate-controlled, spotless, every tool arranged with surgical precision. Two identical race cars sit side by side under halogen lights that make everything look like a photograph."
+    },
+    {
+      "type": "narration",
+      "text": "Henrik Vale is already here. Of course he is. He has been here since 5 AM, because Henrik Vale does not arrive — he occupies. He stands beside his car reviewing telemetry on a tablet, and he does not look up when you walk in."
+    },
+    {
+      "type": "narration",
+      "text": "Tall. Scandinavian. Hair so perfectly maintained it could survive a hurricane. Everything about him is precise — his posture, his expression, the way his racing suit fits like it was sewn onto his body."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_professional",
+      "text": "Henrik, meet your new teammate."
+    },
+    {
+      "type": "narration",
+      "text": "He looks up. Evaluates you in approximately two seconds. You have been weighed, measured, and filed under 'insufficient.'"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Henrik",
+      "portrait": "henrik_cold",
+      "text": "I've seen the footage from your... events."
+    },
+    {
+      "type": "narration",
+      "text": "The way he says 'events' — like he is handling something with tongs."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Henrik",
+      "portrait": "henrik_cold",
+      "text": "You're fast. I'll give you that. But fast is the minimum requirement here. Everyone on this grid is fast. The ones who last are the ones who understand that professional racing is a system. A discipline."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Henrik",
+      "portrait": "henrik_cold",
+      "text": "In corporate racing, the team always comes first. Your instincts, your improvisation, your underground theatrics — leave them at the door. Here, we follow the plan."
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "I respect the system. Teach me how it works.",
+          "choice_id": "teammate_respectful",
+          "relationship_changes": {"henrik": 10, "jade": 5},
+          "moral_shift": 0,
+          "set_flags": {"henrik_initial_respect": true},
+          "jump_to": "henrik_surprised"
+        },
+        {
+          "text": "Plans don't survive contact with the first corner.",
+          "choice_id": "teammate_defiant",
+          "relationship_changes": {"henrik": -10},
+          "moral_shift": 5,
+          "set_flags": {"henrik_initial_friction": true},
+          "jump_to": "henrik_dismissive"
+        },
+        {
+          "text": "I'm here to race. Whatever form that takes.",
+          "choice_id": "teammate_neutral",
+          "relationship_changes": {"henrik": 0},
+          "moral_shift": 0,
+          "jump_to": "henrik_assessing"
+        }
+      ]
+    },
+    {
+      "label": "henrik_surprised",
+      "type": "narration",
+      "text": "Something shifts in Henrik's expression. Not warmth — more like the absence of active hostility. For Henrik, that might be the same thing."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Henrik",
+      "portrait": "henrik_neutral",
+      "text": "Hm. That's... not what I expected you to say."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Henrik",
+      "portrait": "henrik_neutral",
+      "text": "Alright. First lesson: in professional racing, you don't win races on the track. You win them in preparation. Data, strategy, tire management, fuel windows. The actual driving is maybe twenty percent of it."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Henrik",
+      "portrait": "henrik_neutral",
+      "text": "Your car is identical to mine. Same engine, same setup. The only variable is the driver. Show me you understand that, and we'll get along fine.",
+      "jump_to": "team_briefing"
+    },
+    {
+      "label": "henrik_dismissive",
+      "type": "dialogue",
+      "speaker": "Henrik",
+      "portrait": "henrik_cold",
+      "text": "And there it is. The underground mentality. 'I'm special, I'm different, rules don't apply to me.'"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Henrik",
+      "portrait": "henrik_cold",
+      "text": "I've watched eight drivers come through this program. Three of them had talent like yours. Two burned out in six months. One is driving delivery trucks in Stockholm."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Henrik",
+      "portrait": "henrik_cold",
+      "text": "The grid doesn't care about your instincts. It cares about consistency. You'll learn that, or you'll wash out. Either way, I'll still be here.",
+      "jump_to": "team_briefing"
+    },
+    {
+      "label": "henrik_assessing",
+      "type": "narration",
+      "text": "Henrik holds your gaze for a long moment. Measuring. Deciding how much of himself to invest in this conversation."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Henrik",
+      "portrait": "henrik_neutral",
+      "text": "Fair enough. We'll see what form it takes once you're on a real track with real consequences."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Henrik",
+      "portrait": "henrik_neutral",
+      "text": "In the underground, a bad race costs you money. Here, a bad race costs the team millions in sponsorship. Different stakes, different rules.",
+      "jump_to": "team_briefing"
+    },
+    {
+      "label": "team_briefing",
+      "type": "narration",
+      "text": "Jade steps forward, a tablet in her hand, the briefing already loaded. She positions herself between the two of you like a diplomat between nations."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_professional",
+      "text": "Gentlemen. Tomorrow's exhibition race — four laps, eight competitors, full press coverage. Henrik, you're the anchor. Standard strategy — manage the field, protect position."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_professional",
+      "text": "And you — this is your introduction to the world. Don't try to win. Don't try to be a hero. Just drive clean, hit your marks, and finish in the top five. That's the mission."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Henrik",
+      "portrait": "henrik_cold",
+      "text": "And if our new teammate decides to go off-script?"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_professional",
+      "text": "Then I handle it. That's my job."
+    },
+    {
+      "type": "narration",
+      "text": "She says it to Henrik, but she is looking at you. The message is clear: I brought you here. Don't make me regret it."
+    },
+    {
+      "type": "narration",
+      "text": "Henrik returns to his telemetry without another word. The conversation is over. The assessment has been made."
+    },
+    {
+      "type": "narration",
+      "text": "You walk to your car. It is beautiful — a machine engineered to the edge of what physics allows. Carbon fiber, ceramic brakes, an engine that puts out more horsepower than ten of your old CRX."
+    },
+    {
+      "type": "narration",
+      "text": "You run your hand along the body. It is cold. Perfectly smooth. Not a scratch, not a dent, not a single mark of personality."
+    },
+    {
+      "type": "narration",
+      "text": "You think about Maya's garage. The oil stains on the floor that told stories. The dents in the CRX that marked every lesson learned. The sound of her wrench against metal that was more honest than any engine in this building."
+    },
+    {
+      "type": "narration",
+      "text": "This car is faster than anything you have ever touched. It is also the first car you have driven that doesn't feel like yours."
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "met_henrik",
+        "value": true
+      }
+    }
+  ]
+}

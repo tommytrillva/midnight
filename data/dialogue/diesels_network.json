@@ -1,0 +1,216 @@
+{
+  "id": "diesels_network",
+  "context": "Act 2B Chapter 2.1 — Diesel opens his underground map. Shows hidden race circuits across Nova Pacifica. Old-school code of honor.",
+  "lines": [
+    {
+      "type": "narration",
+      "text": "Diesel's workshop. A place you've heard about but never seen — because Diesel doesn't invite people to his workshop. Diesel's workshop invites you when Diesel decides you're ready."
+    },
+    {
+      "type": "narration",
+      "text": "It is behind a laundromat in the industrial district. The door has three locks, a keypad, and a sign that says 'PRIVATE' in letters that have been there longer than you've been alive."
+    },
+    {
+      "type": "narration",
+      "text": "Inside: organized chaos. Engines on stands, transmissions on benches, walls covered in maps and photographs and racing memorabilia from three decades of underground culture. A Datsun 240Z sits in the center, half-restored, like a sleeping animal."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "Sit."
+    },
+    {
+      "type": "narration",
+      "text": "He unfolds a map on the workbench. Not a city map — a custom thing, hand-drawn, annotated in Diesel's cramped handwriting. Nova Pacifica, but the version that doesn't appear in any tourist guide."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_teaching",
+      "text": "You chose to stay. That means you're committed. And if you're committed, you need to see the full picture."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_teaching",
+      "text": "The Pit is where it starts. But the underground is bigger than one venue. There are circuits all over this city — each one controlled by a crew, each crew with its own rules, its own code."
+    },
+    {
+      "type": "narration",
+      "text": "He traces routes on the map with a thick finger."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_teaching",
+      "text": "Downtown. The Pit. You know this. Entry level. Where reputations are built."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_teaching",
+      "text": "Harbor District. The Dock Run. Longer straights, higher speeds. Controlled by a crew called the Salts — longshoremen, dock workers, fishermen. Hard people. Honest racing."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_teaching",
+      "text": "Industrial Zone. The Foundry Circuit. Technical. Tight corners around the old steel works. Run by the Ironworks crew — mechanics, welders, engineers. They respect cars more than drivers."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_teaching",
+      "text": "Hillside. The Ridge Run. Mountain roads, elevation changes, guardrails that are suggestions at best. The Hillside Runners — they're the best technical drivers in the city. Touge specialists."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_serious",
+      "text": "And then there's the fifth circuit. The one nobody talks about."
+    },
+    {
+      "type": "narration",
+      "text": "He taps a section of the map that has no markings. A blank space in the center of the city."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_serious",
+      "text": "Zero's Circuit. The Inner Road. It doesn't exist on any map. It moves. It changes. You don't find it — it finds you."
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "How do I take them all? Where do I start?",
+          "choice_id": "network_eager",
+          "relationship_changes": {"diesel": 5},
+          "moral_shift": -5,
+          "jump_to": "diesel_caution"
+        },
+        {
+          "text": "What's the code? You said each crew has rules.",
+          "choice_id": "network_code",
+          "relationship_changes": {"diesel": 15},
+          "moral_shift": 10,
+          "set_flags": {"learned_underground_code": true},
+          "jump_to": "diesel_code"
+        },
+        {
+          "text": "Tell me about Zero's Circuit.",
+          "choice_id": "network_zero",
+          "relationship_changes": {"diesel": 0},
+          "moral_shift": 0,
+          "jump_to": "diesel_zero_warning"
+        }
+      ]
+    },
+    {
+      "label": "diesel_caution",
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_stern",
+      "text": "Slow down. You don't take them. You earn your way in. Each crew has to accept you before you race on their ground. Show up uninvited and you're not a racer — you're a trespasser."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_teaching",
+      "text": "Start with the Salts at the harbor. I know their captain — a man named Koa. He owes me a favor from twenty years ago. I'll make the introduction.",
+      "jump_to": "diesel_bigger_picture"
+    },
+    {
+      "label": "diesel_code",
+      "type": "narration",
+      "text": "Diesel leans back. For the first time, he looks at you the way a teacher looks at a student who asked the right question."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_approving",
+      "text": "Good question. The code is simple. Four rules."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_teaching",
+      "text": "One: you don't race where you're not welcome. Every crew controls their territory. Ask permission or don't show up."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_teaching",
+      "text": "Two: pink slip means pink slip. If you bet the car, you honor the bet. No exceptions. No lawyers."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_teaching",
+      "text": "Three: no civilian casualties. We race on closed routes. If an innocent person gets hurt because you couldn't keep your car on the road, you're done. Forever."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_serious",
+      "text": "Four: what happens underground stays underground. No cameras. No social media. No bragging to people who aren't in the life. The underground survives because it's invisible. Make it visible and you kill it.",
+      "jump_to": "diesel_bigger_picture"
+    },
+    {
+      "label": "diesel_zero_warning",
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_serious",
+      "text": "Zero is not a person. Zero is a myth that drives a car. Nobody has seen Zero's face. Nobody knows Zero's name. What I know is this — Zero has been part of the underground since before I started racing. Longer, maybe."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_stern",
+      "text": "Zero collects the best. Finds them, tests them, brings them into an inner circle. And the ones who go in don't come back the same. Something changes. I've seen it happen to three drivers. They get faster, but they lose something. Like the speed costs them a piece of who they are."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_stern",
+      "text": "Stay away from Zero. Master the four districts first. When the time comes for the fifth — if it comes — you'll be ready. Not before.",
+      "jump_to": "diesel_bigger_picture"
+    },
+    {
+      "label": "diesel_bigger_picture",
+      "type": "narration",
+      "text": "Diesel folds the map. Places it in your hands. His hands are rough, scarred, the hands of someone who has spent a lifetime with engines."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_approving",
+      "text": "The corporate world builds from the top down. The underground builds from the ground up. You chose the ground. That means you do the work."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_approving",
+      "text": "Earn each crew's respect. Win each circuit's crown. Do it the right way, and by the time you're done, you won't just be a racer — you'll be the underground."
+    },
+    {
+      "type": "narration",
+      "text": "He opens the shop door. Morning light streams in, catching the dust motes floating above the Datsun like tiny stars."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "Now get out. I have a 240Z to finish and you have a city to conquer."
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "underground_map_revealed",
+        "value": true
+      }
+    }
+  ]
+}

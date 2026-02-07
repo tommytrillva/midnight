@@ -1,0 +1,95 @@
+{
+	"district_id": "downtown",
+	"district_name": "Downtown",
+	"scale_factor": 1.0,
+	"bounds": {
+		"x": -250,
+		"y": -250,
+		"width": 500,
+		"height": 500
+	},
+	"road_color": [0.0, 0.85, 0.85, 0.55],
+	"background_color": [0.03, 0.02, 0.08, 0.8],
+	"roads": [
+		{"start": [-200, -200], "end": [-200, 200], "width": 3.0},
+		{"start": [-100, -200], "end": [-100, 200], "width": 3.0},
+		{"start": [0, -200], "end": [0, 200], "width": 4.0},
+		{"start": [100, -200], "end": [100, 200], "width": 3.0},
+		{"start": [200, -200], "end": [200, 200], "width": 3.0},
+
+		{"start": [-200, -200], "end": [200, -200], "width": 3.0},
+		{"start": [-200, -100], "end": [200, -100], "width": 3.0},
+		{"start": [-200, 0], "end": [200, 0], "width": 4.0},
+		{"start": [-200, 100], "end": [200, 100], "width": 3.0},
+		{"start": [-200, 200], "end": [200, 200], "width": 3.0},
+
+		{"start": [-50, -50], "end": [50, -50], "width": 1.5},
+		{"start": [-50, 50], "end": [50, 50], "width": 1.5},
+		{"start": [-50, -50], "end": [-50, 50], "width": 1.5},
+		{"start": [50, -50], "end": [50, 50], "width": 1.5},
+
+		{"start": [100, -50], "end": [200, -50], "width": 1.5},
+		{"start": [-200, 50], "end": [-100, 50], "width": 1.5},
+
+		{"start": [-150, -150], "end": [-100, -100], "width": 1.5},
+		{"start": [150, 100], "end": [200, 150], "width": 1.5}
+	],
+	"pois": [
+		{
+			"position": [-80, 60],
+			"type": "garage",
+			"label": "Torres Garage",
+			"icon": "wrench",
+			"color": [1.0, 0.6, 0.0, 1.0]
+		},
+		{
+			"position": [100, -100],
+			"type": "race",
+			"label": "Street Sprint Start",
+			"icon": "flag",
+			"color": [0.2, 1.0, 0.3, 1.0]
+		},
+		{
+			"position": [200, 0],
+			"type": "transition",
+			"label": "To Harbor District",
+			"icon": "arrow",
+			"color": [1.0, 1.0, 1.0, 0.8]
+		},
+		{
+			"position": [-200, -100],
+			"type": "transition",
+			"label": "To Industrial Zone",
+			"icon": "arrow",
+			"color": [1.0, 1.0, 1.0, 0.8]
+		},
+		{
+			"position": [0, -200],
+			"type": "transition",
+			"label": "To Hillside / Route 9",
+			"icon": "arrow",
+			"color": [1.0, 1.0, 1.0, 0.8]
+		},
+		{
+			"position": [-30, -20],
+			"type": "contact",
+			"label": "Maya Torres",
+			"icon": "person",
+			"color": [1.0, 0.4, 0.6, 1.0]
+		},
+		{
+			"position": [50, 100],
+			"type": "shop",
+			"label": "Parts Shop",
+			"icon": "dollar",
+			"color": [0.0, 1.0, 1.0, 1.0]
+		},
+		{
+			"position": [150, 50],
+			"type": "shop",
+			"label": "Body Shop",
+			"icon": "dollar",
+			"color": [0.0, 1.0, 1.0, 1.0]
+		}
+	]
+}

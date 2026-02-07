@@ -1,0 +1,33 @@
+{
+  "vehicle_id": "midnight_coupe",
+  "display_name": "Midnight Coupe",
+  "manufacturer": "Sakura",
+  "year": 2001,
+  "body_style": "coupe",
+  "culture": "jdm",
+  "description": "A grand tourer that blurs the line between luxury and performance. The Midnight Coupe's twin-turbo V6 delivers smooth, effortless power while the cabin wraps you in comfort. It's the car for people who want to go very fast without breaking a sweat.",
+  "tier": 3,
+  "rarity": "uncommon",
+  "base_speed": 82.0,
+  "base_acceleration": 70.0,
+  "base_handling": 70.0,
+  "base_braking": 66.0,
+  "base_durability": 72.0,
+  "nitro_capacity": 40.0,
+  "engine_type": "v6",
+  "displacement_cc": 3000,
+  "stock_hp": 300.0,
+  "stock_torque": 283.0,
+  "aspiration": "twin_turbo",
+  "redline_rpm": 7000,
+  "weight_kg": 1480.0,
+  "drivetrain": "rwd",
+  "starting_value": 32000,
+  "class": "B",
+  "cosmetics": {
+    "default_color": "#191970",
+    "available_colors": ["#191970", "#8B0000", "#000000", "#C0C0C0", "#4B0082", "#F5F5F5"]
+  },
+  "special_traits": ["twin_turbo", "comfortable", "grand_tourer", "smooth_powerband", "t_top"],
+  "lore": "Named for the color of the sky when it's at its best — 2 AM on a clear night, cruising Harbor Expressway with the T-tops off. The Midnight Coupe isn't the fastest car in its tier, but it might be the most satisfying to drive. Effortless speed with a V6 soundtrack."
+}

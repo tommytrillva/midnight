@@ -1,0 +1,237 @@
+{
+  "id": "circuit_initiation",
+  "context": "Act 2A Chapter 2.1 — First professional race. Clean racing vs underground instincts. Post-race Jade reaction.",
+  "lines": [
+    {
+      "type": "narration",
+      "text": "Nova Pacifica International Circuit. Race day."
+    },
+    {
+      "type": "narration",
+      "text": "The grid is unlike anything you have experienced. Twelve cars lined up on clean asphalt under stadium lights that turn night into day. Grandstands full of people who paid actual money to sit in actual seats — not hiding in warehouse doorways or standing on container roofs."
+    },
+    {
+      "type": "narration",
+      "text": "Your car idles on the grid, seventh position. Henrik is fourth, where he always starts, because his qualifying laps are as consistent as a metronome."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_radio",
+      "text": "[RADIO] Remember the plan. Clean lines, consistent pace. Top five is the target. Do NOT get into battles with Henrik — you are on the same team."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Henrik",
+      "portrait": "henrik_radio",
+      "text": "[RADIO] Just stay out of my braking zones and we'll be fine."
+    },
+    {
+      "type": "narration",
+      "text": "Lights. Red. Red. Red. Red. Red."
+    },
+    {
+      "type": "narration",
+      "text": "Green."
+    },
+    {
+      "type": "narration",
+      "text": "The field launches. Twelve cars accelerating into the first corner and the noise is enormous — not the raw, ragged scream of underground engines, but a coordinated roar of precision machinery all reaching for the same point in space at the same time."
+    },
+    {
+      "type": "narration",
+      "text": "Turn one. You are on the outside. A gap opens — inside line, half a car width. Every underground instinct in your body screams at you to take it."
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "Take the gap. Race is race.",
+          "choice_id": "circuit_aggressive",
+          "relationship_changes": {"jade": -10, "henrik": -5},
+          "moral_shift": -5,
+          "rep": 10,
+          "set_flags": {"circuit_drove_aggressive": true},
+          "jump_to": "aggressive_move"
+        },
+        {
+          "text": "Hold position. Follow the plan.",
+          "choice_id": "circuit_disciplined",
+          "relationship_changes": {"jade": 10, "henrik": 5},
+          "moral_shift": 0,
+          "set_flags": {"circuit_drove_clean": true},
+          "jump_to": "disciplined_race"
+        },
+        {
+          "text": "Split the difference — controlled aggression.",
+          "choice_id": "circuit_balanced",
+          "relationship_changes": {"jade": 3, "henrik": 0},
+          "moral_shift": 5,
+          "rep": 5,
+          "set_flags": {"circuit_drove_balanced": true},
+          "jump_to": "balanced_race"
+        }
+      ]
+    },
+    {
+      "label": "aggressive_move",
+      "type": "narration",
+      "text": "You dive inside. The gap closes but you are already through — threading the car between two opponents with the kind of precision that no simulator can teach. The crowd gasps. The commentators raise their voices."
+    },
+    {
+      "type": "narration",
+      "text": "Fifth place. Fourth. The car in front brakes early and you are past it before the thought is fully formed in your mind."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_radio",
+      "text": "[RADIO] What are you doing? That was not — hold on. Third? You're in third?"
+    },
+    {
+      "type": "narration",
+      "text": "Eight laps of controlled fury. You are not driving the way Henrik drives — you are driving the way The Pit taught you. Late brakes, tight exits, finding gaps that shouldn't exist. The car responds to everything. It is the best machine you have ever piloted."
+    },
+    {
+      "type": "narration",
+      "text": "You finish second. Henrik finishes third. The team got a podium double, but the order is wrong. Henrik's jaw is set like granite."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_conflicted",
+      "text": "We need to talk.",
+      "jump_to": "post_race"
+    },
+    {
+      "label": "disciplined_race",
+      "type": "narration",
+      "text": "You let the gap close. Your hands tighten on the wheel but you hold position, following the car ahead, matching its pace, being the disciplined professional Jade asked you to be."
+    },
+    {
+      "type": "narration",
+      "text": "Eight laps of controlled racing. You do exactly what the data says — hit the braking markers, follow the racing line, manage tire wear. It feels like driving with chains on."
+    },
+    {
+      "type": "narration",
+      "text": "You finish fifth. Clean. Consistent. Exactly on target. Henrik finishes third."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_happy",
+      "text": "Perfect execution. We need to talk.",
+      "jump_to": "post_race"
+    },
+    {
+      "label": "balanced_race",
+      "type": "narration",
+      "text": "You take the outside line but carry more speed than anyone expects. You don't dive for the gap — you create your own, wider, cleaner, using the car's mechanical grip to carry velocity where others brake."
+    },
+    {
+      "type": "narration",
+      "text": "It is neither underground chaos nor corporate precision. It is something in between — something that might be your own style, if you live long enough to develop it."
+    },
+    {
+      "type": "narration",
+      "text": "Eight laps. You finish fourth. Henrik finishes third. The team is happy. Jade is satisfied. You are hungry for more."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_professional",
+      "text": "Interesting approach. We need to talk.",
+      "jump_to": "post_race"
+    },
+    {
+      "label": "post_race",
+      "type": "narration",
+      "text": "The post-race debrief room. Screens showing telemetry data. Jade sits across from you with a tablet, scrolling through your lap times."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_professional",
+      "text": "I'm going to be direct with you, because that's what you deserve.",
+      "conditions": {"circuit_drove_aggressive": true}
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_cold",
+      "text": "You drove brilliantly and recklessly. Second place in your debut — that's a headline. But you disobeyed the team strategy, and Henrik is currently in the hallway pretending he doesn't want to put your head through a wall.",
+      "conditions": {"circuit_drove_aggressive": true}
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_cold",
+      "text": "In the underground, that gets you a trophy. Here, it gets you a meeting with the board of directors and a conversation about whether you're worth the liability insurance.",
+      "conditions": {"circuit_drove_aggressive": true}
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_happy",
+      "text": "Fifth place, exactly where I asked you to finish. Clean data. No incidents. The engineers are happy, the sponsors are happy, I'm happy.",
+      "conditions": {"circuit_drove_clean": true}
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_thoughtful",
+      "text": "But I saw something in your telemetry. Moments where you could have pushed harder and didn't. Places where the car had more to give and you held it back. You drove to the plan, not to your ability.",
+      "conditions": {"circuit_drove_clean": true}
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_professional",
+      "text": "Fourth place. Clean but fast. You found something in between the plan and the instinct.",
+      "conditions": {"circuit_drove_balanced": true}
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_professional",
+      "text": "That's what the best professional drivers do. They don't follow the plan blindly and they don't throw it away. They adapt. I think you might actually have something here.",
+      "conditions": {"circuit_drove_balanced": true}
+    },
+    {
+      "type": "narration",
+      "text": "She closes the tablet. Looks at you."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_professional",
+      "text": "We have twelve races in this season. Twelve chances to prove you belong here. The championship chase starts next month. Be ready."
+    },
+    {
+      "type": "narration",
+      "text": "She stands. Pauses at the door."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_professional",
+      "text": "And for what it's worth? You're the most exciting thing that's happened to this team in three years. Don't let that go to your head."
+    },
+    {
+      "type": "narration",
+      "text": "The door closes. You sit alone in the debrief room, surrounded by data that describes exactly what you did on every corner of every lap."
+    },
+    {
+      "type": "narration",
+      "text": "None of it captures what it felt like."
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "circuit_initiation_complete",
+        "value": true
+      }
+    }
+  ]
+}

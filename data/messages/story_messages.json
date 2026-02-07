@@ -1,0 +1,1071 @@
+{
+  "messages": [
+    {
+      "id": "maya_post_prologue_01",
+      "trigger": "mission_complete:prologue_maya_meeting",
+      "delay": 300,
+      "sender": "maya",
+      "text": "Shop opens at 7. Don't make me regret this.",
+      "replies": [
+        {"text": "I'll be there.", "relationship": {"maya": 2}},
+        {"text": "Yes ma'am.", "relationship": {"maya": 1}}
+      ]
+    },
+    {
+      "id": "maya_post_prologue_02",
+      "trigger": "mission_complete:prologue_first_day",
+      "delay": 600,
+      "sender": "maya",
+      "text": "You didn't break anything today. That's a start. Same time tomorrow.",
+      "replies": [
+        {"text": "Thanks for showing me the ropes.", "relationship": {"maya": 3}},
+        {"text": "Wouldn't miss it.", "relationship": {"maya": 1}}
+      ]
+    },
+    {
+      "id": "maya_post_prologue_03",
+      "trigger": "mission_complete:prologue_underground",
+      "delay": 900,
+      "sender": "maya",
+      "text": "So you heard about The Pit. Everyone does eventually. Just... be careful with that $500. It's all you've got.",
+      "replies": [
+        {"text": "I know what I'm doing.", "relationship": {"maya": -1}},
+        {"text": "Any tips?", "relationship": {"maya": 3}},
+        {"text": "Come watch me race.", "relationship": {"maya": 2}}
+      ]
+    },
+    {
+      "id": "maya_settling_01",
+      "trigger": "chapter:1.1",
+      "delay": 1200,
+      "sender": "maya",
+      "text": "Left a spare key under the toolbox for you. Don't lose it.",
+      "replies": [
+        {"text": "You trust me with a key already?", "relationship": {"maya": 2}},
+        {"text": "Got it. Thanks Maya.", "relationship": {"maya": 1}}
+      ]
+    },
+    {
+      "id": "maya_settling_02",
+      "trigger": "chapter:1.1",
+      "delay": 3600,
+      "sender": "maya",
+      "text": "Your Sakura's timing is off by 0.3 degrees. Bring it in before you race again.",
+      "replies": [
+        {"text": "On my way.", "relationship": {"maya": 2}},
+        {"text": "It drives fine to me.", "relationship": {"maya": -2}}
+      ]
+    },
+    {
+      "id": "maya_post_first_blood_win",
+      "trigger": "mission_complete:first_blood",
+      "delay": 180,
+      "sender": "maya",
+      "text": "I heard you made it through The Pit. Not bad for a nobody. Bring the car in tomorrow, I want to check the brakes.",
+      "replies": [
+        {"text": "Not a nobody anymore.", "relationship": {"maya": 1}},
+        {"text": "The brakes felt soft in turn 3. Good call.", "relationship": {"maya": 4}}
+      ]
+    },
+    {
+      "id": "nikko_post_first_blood",
+      "trigger": "mission_complete:first_blood",
+      "delay": 600,
+      "sender": "nikko",
+      "text": "Heard some new kid made noise at The Pit. Enjoy it while it lasts.",
+      "replies": [
+        {"text": "Come find out yourself.", "relationship": {"nikko": -2}},
+        {"text": "Who is this?", "relationship": {"nikko": 0}}
+      ]
+    },
+    {
+      "id": "diesel_post_first_blood",
+      "trigger": "mission_complete:first_blood",
+      "delay": 1800,
+      "sender": "diesel",
+      "text": "Speed without purpose is just noise.",
+      "replies": []
+    },
+    {
+      "id": "unknown_post_first_blood",
+      "trigger": "mission_complete:first_blood",
+      "delay": 3600,
+      "sender": "unknown",
+      "text": "Nice race. We'll be watching.",
+      "replies": []
+    },
+    {
+      "id": "maya_post_mechanics_gamble_01",
+      "trigger": "mission_complete:mechanics_gamble",
+      "delay": 300,
+      "sender": "maya",
+      "text": "Pink slips? Already? You've got guts, I'll give you that. Preston's been running his mouth all over Downtown.",
+      "replies": [
+        {"text": "He had it coming.", "relationship": {"maya": 0}},
+        {"text": "I didn't want it to go that far.", "relationship": {"maya": 3}},
+        {"text": "His car's mine now.", "relationship": {"maya": -1}}
+      ]
+    },
+    {
+      "id": "maya_post_mechanics_gamble_02",
+      "trigger": "mission_complete:mechanics_gamble",
+      "delay": 1800,
+      "sender": "maya",
+      "text": "Preston came by the shop. He's upset but he'll survive. Word of advice: make friends, not just enemies.",
+      "replies": [
+        {"text": "I'll try.", "relationship": {"maya": 2}},
+        {"text": "In this city? Good luck.", "relationship": {"maya": 0}}
+      ]
+    },
+    {
+      "id": "diesel_post_test_01",
+      "trigger": "mission_complete:diesels_test",
+      "delay": 120,
+      "sender": "diesel",
+      "text": "You followed well. Most people try to overtake. That tells me something.",
+      "replies": [
+        {"text": "What does it tell you?", "relationship": {"diesel": 3}},
+        {"text": "I was just keeping up.", "relationship": {"diesel": 1}}
+      ]
+    },
+    {
+      "id": "diesel_training_01",
+      "trigger": "mission_complete:diesels_test",
+      "delay": 7200,
+      "sender": "diesel",
+      "text": "Tomorrow. Industrial zone. 5 AM. Don't be late.",
+      "replies": [
+        {"text": "I'll be there.", "relationship": {"diesel": 2}},
+        {"text": "5 AM? Seriously?", "relationship": {"diesel": -1}}
+      ]
+    },
+    {
+      "id": "diesel_cryptic_01",
+      "trigger": "mission_complete:diesels_test",
+      "delay": 14400,
+      "sender": "diesel",
+      "text": "The car doesn't lie. It tells you exactly what you are.",
+      "replies": []
+    },
+    {
+      "id": "maya_fresh_meat_pre",
+      "trigger": "mission_start:fresh_meat",
+      "delay": 60,
+      "sender": "maya",
+      "text": "Five-race gauntlet. I've seen people wreck their cars and their confidence in this. Focus.",
+      "replies": [
+        {"text": "I'm ready.", "relationship": {"maya": 1}},
+        {"text": "Any weak spots in the field?", "relationship": {"maya": 2}}
+      ]
+    },
+    {
+      "id": "maya_post_fresh_meat",
+      "trigger": "mission_complete:fresh_meat",
+      "delay": 300,
+      "sender": "maya",
+      "text": "Five races. You survived. That's more than most get. Your suspension needs attention though.",
+      "replies": [
+        {"text": "Can you look at it?", "relationship": {"maya": 3}},
+        {"text": "I barely felt anything wrong.", "relationship": {"maya": -1}}
+      ]
+    },
+    {
+      "id": "maya_post_sparks_fly",
+      "trigger": "mission_complete:sparks_fly",
+      "delay": 120,
+      "sender": "maya",
+      "text": "You saved my equipment. My whole livelihood was in that van. I don't forget that.",
+      "replies": [
+        {"text": "That's what friends do.", "relationship": {"maya": 5}},
+        {"text": "You owe me one.", "relationship": {"maya": -2}},
+        {"text": "Nobody messes with our shop.", "relationship": {"maya": 4}}
+      ]
+    },
+    {
+      "id": "diesel_post_old_ways",
+      "trigger": "mission_complete:the_old_ways",
+      "delay": 600,
+      "sender": "diesel",
+      "text": "You're learning. The road teaches what no mentor can. But you still brake too early in the harbor curves.",
+      "replies": [
+        {"text": "I'll work on it.", "relationship": {"diesel": 2}},
+        {"text": "I was being careful.", "relationship": {"diesel": -1}}
+      ]
+    },
+    {
+      "id": "diesel_cryptic_02",
+      "trigger": "mission_complete:the_old_ways",
+      "delay": 3600,
+      "sender": "diesel",
+      "text": "Every great driver I've known had one thing in common. They listened to the road before they listened to themselves.",
+      "replies": []
+    },
+    {
+      "id": "nikko_post_shadow",
+      "trigger": "mission_complete:nikkos_shadow",
+      "delay": 120,
+      "sender": "nikko",
+      "text": "Don't get comfortable. That was round one.",
+      "replies": [
+        {"text": "Bring it.", "relationship": {"nikko": 2}},
+        {"text": "Good race, Nikko.", "relationship": {"nikko": 3}},
+        {"text": "I already forgot about it.", "relationship": {"nikko": -3}}
+      ]
+    },
+    {
+      "id": "nikko_grudging_01",
+      "trigger": "mission_complete:nikkos_shadow",
+      "delay": 7200,
+      "sender": "nikko",
+      "text": "Your line through the S-curves was decent. Don't tell anyone I said that.",
+      "replies": [
+        {"text": "Secret's safe with me.", "relationship": {"nikko": 3}},
+        {"text": "Decent? I gapped you.", "relationship": {"nikko": -2}}
+      ]
+    },
+    {
+      "id": "echo_first_contact",
+      "trigger": "mission_complete:zeros_eye",
+      "delay": 1800,
+      "sender": "echo",
+      "text": "You found the invitation. Good. Zero sees potential where others see noise. Don't waste it.",
+      "replies": [
+        {"text": "Who are you?", "relationship": {"zero": 1}},
+        {"text": "What does Zero want?", "relationship": {"zero": 2}},
+        {"text": "I don't take orders from strangers.", "relationship": {"zero": -1}}
+      ]
+    },
+    {
+      "id": "echo_cryptic_01",
+      "trigger": "mission_complete:zeros_eye",
+      "delay": 7200,
+      "sender": "echo",
+      "text": "The city has layers. You're still on the surface.",
+      "replies": []
+    },
+    {
+      "id": "maya_family_business",
+      "trigger": "mission_complete:family_business",
+      "delay": 300,
+      "sender": "maya",
+      "text": "$50K race. You're playing in a different league now. Don't forget where you started.",
+      "replies": [
+        {"text": "This shop is still home.", "relationship": {"maya": 5}},
+        {"text": "I'm moving up, Maya.", "relationship": {"maya": -2}},
+        {"text": "Come celebrate with me.", "relationship": {"maya": 3}}
+      ]
+    },
+    {
+      "id": "nikko_family_business",
+      "trigger": "mission_complete:family_business",
+      "delay": 900,
+      "sender": "nikko",
+      "text": "I saw you in that $50K. You're getting faster. So am I.",
+      "replies": [
+        {"text": "Then let's run it back.", "relationship": {"nikko": 2}},
+        {"text": "You looked off out there. Everything okay?", "relationship": {"nikko": 5}}
+      ]
+    },
+    {
+      "id": "jade_first_contact",
+      "trigger": "mission_complete:corporate_scout",
+      "delay": 600,
+      "sender": "jade",
+      "text": "Thank you for attending the trial event. Your performance metrics were... noteworthy. I'd like to discuss further opportunities. - Jade Chen, Apex Motorsport",
+      "replies": [
+        {"text": "I'm interested. Tell me more.", "relationship": {"jade": 3}},
+        {"text": "Professional racing? What's the catch?", "relationship": {"jade": 1}},
+        {"text": "I'm fine where I am.", "relationship": {"jade": -2}}
+      ]
+    },
+    {
+      "id": "jade_follow_up",
+      "trigger": "mission_complete:corporate_scout",
+      "delay": 3600,
+      "sender": "jade",
+      "text": "For context: Apex sponsors 14 professional drivers. We provide vehicles, engineering support, and media exposure. Very few receive an invitation at your stage.",
+      "replies": [
+        {"text": "I appreciate the opportunity.", "relationship": {"jade": 2}},
+        {"text": "What would I have to give up?", "relationship": {"jade": 3}}
+      ]
+    },
+    {
+      "id": "diesel_past_revealed",
+      "trigger": "mission_complete:diesels_past",
+      "delay": 1800,
+      "sender": "diesel",
+      "text": "I told you things I haven't told anyone in years. Don't carry it as a burden. Carry it as a lesson.",
+      "replies": [
+        {"text": "Thank you for trusting me.", "relationship": {"diesel": 5}},
+        {"text": "Your secret is safe.", "relationship": {"diesel": 3}},
+        {"text": "Why tell me?", "relationship": {"diesel": 2}}
+      ]
+    },
+    {
+      "id": "diesel_cryptic_03",
+      "trigger": "mission_complete:diesels_past",
+      "delay": 7200,
+      "sender": "diesel",
+      "text": "Everyone has a ghost in the passenger seat. The question is whether you let it steer.",
+      "replies": []
+    },
+    {
+      "id": "maya_gauntlet_pre",
+      "trigger": "mission_start:the_gauntlet",
+      "delay": 120,
+      "sender": "maya",
+      "text": "10-race gauntlet. I tuned your engine this morning. She's running clean. Don't crash her.",
+      "replies": [
+        {"text": "She's in good hands.", "relationship": {"maya": 2}},
+        {"text": "No promises.", "relationship": {"maya": 0}}
+      ]
+    },
+    {
+      "id": "nikko_gauntlet_post",
+      "trigger": "mission_complete:the_gauntlet",
+      "delay": 600,
+      "sender": "nikko",
+      "text": "10 wins. Fine. But the championship is different. I'll see you in the semi.",
+      "replies": [
+        {"text": "Looking forward to it.", "relationship": {"nikko": 2}},
+        {"text": "Try to keep up this time.", "relationship": {"nikko": -2}}
+      ]
+    },
+    {
+      "id": "nikko_gambit_post",
+      "trigger": "mission_complete:nikkos_gambit",
+      "delay": 300,
+      "sender": "nikko",
+      "text": "That was too close. My car... I pushed too hard. Maybe you're right about some things.",
+      "replies": [
+        {"text": "You scared me out there.", "relationship": {"nikko": 5}},
+        {"text": "You need to be smarter, not faster.", "relationship": {"nikko": 3}},
+        {"text": "A win's a win.", "relationship": {"nikko": -3}}
+      ]
+    },
+    {
+      "id": "maya_crown_pre",
+      "trigger": "mission_start:the_crown",
+      "delay": 60,
+      "sender": "maya",
+      "text": "Championship final. I checked everything twice. Tires, brakes, fuel lines. You're ready. Go be a king.",
+      "replies": [
+        {"text": "Couldn't do this without you.", "relationship": {"maya": 5}},
+        {"text": "Time to make history.", "relationship": {"maya": 2}}
+      ]
+    },
+    {
+      "id": "maya_crown_post",
+      "trigger": "mission_complete:the_crown",
+      "delay": 180,
+      "sender": "maya",
+      "text": "Underground champion. I remember when you couldn't even find the shop. Look at you now.",
+      "replies": [
+        {"text": "We did this together.", "relationship": {"maya": 5}},
+        {"text": "This is just the beginning.", "relationship": {"maya": 2}},
+        {"text": "Drinks on me tonight.", "relationship": {"maya": 3}}
+      ]
+    },
+    {
+      "id": "diesel_crown_post",
+      "trigger": "mission_complete:the_crown",
+      "delay": 600,
+      "sender": "diesel",
+      "text": "Crown's heavy. Wear it carefully.",
+      "replies": [
+        {"text": "I will.", "relationship": {"diesel": 2}},
+        {"text": "You sound worried.", "relationship": {"diesel": 3}}
+      ]
+    },
+    {
+      "id": "nikko_crown_post",
+      "trigger": "mission_complete:the_crown",
+      "delay": 900,
+      "sender": "nikko",
+      "text": "Champion. You earned it. Doesn't mean I won't take it from you someday.",
+      "replies": [
+        {"text": "I'd expect nothing less.", "relationship": {"nikko": 4}},
+        {"text": "You're welcome to try.", "relationship": {"nikko": 1}}
+      ]
+    },
+    {
+      "id": "echo_crown_post",
+      "trigger": "mission_complete:the_crown",
+      "delay": 3600,
+      "sender": "echo",
+      "text": "A crown in the underground. Interesting. But there are kingdoms above and below that you haven't seen yet.",
+      "replies": [
+        {"text": "Show me.", "relationship": {"zero": 3}},
+        {"text": "I'm fine where I am.", "relationship": {"zero": -2}}
+      ]
+    },
+    {
+      "id": "maya_fork_corporate",
+      "trigger": "mission_complete:the_fork",
+      "delay": 600,
+      "sender": "maya",
+      "text": "So you're going corporate. I get it. Just... don't forget the people who believed in you before the cameras did.",
+      "conditions": {"flags_required": ["chosen_path"]},
+      "replies": [
+        {"text": "I could never forget you, Maya.", "relationship": {"maya": 5}},
+        {"text": "It's not like that.", "relationship": {"maya": 1}},
+        {"text": "This is a better opportunity.", "relationship": {"maya": -3}}
+      ]
+    },
+    {
+      "id": "diesel_fork_warning",
+      "trigger": "mission_complete:the_fork",
+      "delay": 1800,
+      "sender": "diesel",
+      "text": "Choose wisely. I've seen the corporate road. It paves over everything real.",
+      "replies": [
+        {"text": "I'll remember that.", "relationship": {"diesel": 2}},
+        {"text": "Times change, Diesel.", "relationship": {"diesel": -2}}
+      ]
+    },
+    {
+      "id": "jade_act2_welcome",
+      "trigger": "mission_complete:media_day",
+      "delay": 300,
+      "sender": "jade",
+      "text": "Excellent debut. The sponsors are pleased. Your social media engagement is already trending. We need to discuss your public image strategy.",
+      "replies": [
+        {"text": "Whatever it takes.", "relationship": {"jade": 2}},
+        {"text": "I just want to race.", "relationship": {"jade": -1}},
+        {"text": "Tell me what you need.", "relationship": {"jade": 3}}
+      ]
+    },
+    {
+      "id": "jade_warming_01",
+      "trigger": "mission_complete:the_teammate",
+      "delay": 1200,
+      "sender": "jade",
+      "text": "Off the record: you handled Henrik well. Most rookies crumble around him. Between us, I'm impressed.",
+      "replies": [
+        {"text": "Thanks, Jade. That means a lot.", "relationship": {"jade": 4}},
+        {"text": "Henrik's not that scary.", "relationship": {"jade": 1}}
+      ]
+    },
+    {
+      "id": "jade_warming_02",
+      "trigger": "mission_complete:jades_truth",
+      "delay": 600,
+      "sender": "jade",
+      "text": "I don't usually talk about the real costs of this world. Thank you for listening. Maybe I needed that.",
+      "replies": [
+        {"text": "Anytime, Jade.", "relationship": {"jade": 5}},
+        {"text": "We all need someone to talk to.", "relationship": {"jade": 3}}
+      ]
+    },
+    {
+      "id": "maya_double_life",
+      "trigger": "mission_complete:the_favor",
+      "delay": 300,
+      "sender": "maya",
+      "text": "Thank you. I know you risked your corporate reputation to help me. The underground doesn't forget loyalty.",
+      "replies": [
+        {"text": "Some things matter more than sponsors.", "relationship": {"maya": 5}},
+        {"text": "Don't tell anyone about this.", "relationship": {"maya": 1}}
+      ]
+    },
+    {
+      "id": "nikko_act2_return",
+      "trigger": "mission_complete:nikko_returns",
+      "delay": 300,
+      "sender": "nikko",
+      "text": "Different arena, same result. You're good. I hate admitting that. We should grab food sometime.",
+      "replies": [
+        {"text": "Name the place.", "relationship": {"nikko": 5}},
+        {"text": "Are you going soft on me, Tanaka?", "relationship": {"nikko": 2}},
+        {"text": "Sure. After I beat you again.", "relationship": {"nikko": -1}}
+      ]
+    },
+    {
+      "id": "diesel_underground_network",
+      "trigger": "mission_complete:diesels_network",
+      "delay": 600,
+      "sender": "diesel",
+      "text": "Now you see the full map. Every district has a king. Every king has a weakness. Study them.",
+      "replies": [
+        {"text": "Which one first?", "relationship": {"diesel": 2}},
+        {"text": "I'm going to run them all.", "relationship": {"diesel": 1}}
+      ]
+    },
+    {
+      "id": "diesel_cryptic_04",
+      "trigger": "mission_complete:underground_empire",
+      "delay": 1800,
+      "sender": "diesel",
+      "text": "Empires are built in the night. They fall in the morning.",
+      "replies": []
+    },
+    {
+      "id": "echo_zeros_invitation",
+      "trigger": "mission_complete:zeros_invitation",
+      "delay": 120,
+      "sender": "echo",
+      "text": "You've proven yourself worthy of the inner circle. Zero was pleased. Not many impress Zero.",
+      "replies": [
+        {"text": "What happens now?", "relationship": {"zero": 3}},
+        {"text": "I'm not looking to impress anyone.", "relationship": {"zero": -1}}
+      ]
+    },
+    {
+      "id": "echo_unsettling_01",
+      "trigger": "mission_complete:zeros_invitation",
+      "delay": 7200,
+      "sender": "echo",
+      "text": "Do you ever wonder why certain people cross your path? Coincidence is a comfortable lie.",
+      "replies": []
+    },
+    {
+      "id": "maya_championship_glory",
+      "trigger": "mission_complete:championship_glory",
+      "delay": 600,
+      "sender": "maya",
+      "text": "Championship winner. I watched the broadcast. You looked like a different person up there. Not bad-different, just... different.",
+      "replies": [
+        {"text": "I'm still the same person.", "relationship": {"maya": 4}},
+        {"text": "People change, Maya.", "relationship": {"maya": -1}},
+        {"text": "Wish you were there.", "relationship": {"maya": 5}}
+      ]
+    },
+    {
+      "id": "jade_championship",
+      "trigger": "mission_complete:championship_glory",
+      "delay": 300,
+      "sender": "jade",
+      "text": "Congratulations. You've exceeded every projection we had. Apex is formally offering a multi-year extension. Let's celebrate properly.",
+      "replies": [
+        {"text": "This calls for champagne.", "relationship": {"jade": 3}},
+        {"text": "Let's talk numbers.", "relationship": {"jade": 1}}
+      ]
+    },
+    {
+      "id": "echo_setup_warning",
+      "trigger": "mission_start:the_setup",
+      "delay": 60,
+      "sender": "echo",
+      "text": "Tonight's race is different. Zero doesn't lose. Remember that.",
+      "replies": [
+        {"text": "Everyone loses eventually.", "relationship": {"zero": -2}},
+        {"text": "Why are you warning me?", "relationship": {"zero": 3}}
+      ]
+    },
+    {
+      "id": "maya_post_setup",
+      "trigger": "mission_complete:the_setup",
+      "delay": 300,
+      "sender": "maya",
+      "text": "I heard what happened. Come to the shop. Please.",
+      "replies": [
+        {"text": "On my way.", "relationship": {"maya": 3}},
+        {"text": "I need to be alone right now.", "relationship": {"maya": -1}}
+      ]
+    },
+    {
+      "id": "diesel_post_setup",
+      "trigger": "mission_complete:the_setup",
+      "delay": 900,
+      "sender": "diesel",
+      "text": "Come to the garage.",
+      "replies": [
+        {"text": "I'll be there.", "relationship": {"diesel": 2}}
+      ]
+    },
+    {
+      "id": "nikko_post_setup",
+      "trigger": "mission_complete:the_setup",
+      "delay": 1200,
+      "sender": "nikko",
+      "text": "I heard what happened. That's messed up. Even for this scene. If you need anything... you know.",
+      "replies": [
+        {"text": "Thanks, Nikko. I mean it.", "relationship": {"nikko": 5}},
+        {"text": "I'll handle it.", "relationship": {"nikko": 1}}
+      ]
+    },
+    {
+      "id": "jade_post_investigation",
+      "trigger": "mission_complete:the_investigation",
+      "delay": 300,
+      "sender": "jade",
+      "text": "We need to talk. Privately. Not at the office. There are things happening that I can't control. I'm scared.",
+      "replies": [
+        {"text": "Where do you want to meet?", "relationship": {"jade": 4}},
+        {"text": "What do you know, Jade?", "relationship": {"jade": 2}},
+        {"text": "You should be scared.", "relationship": {"jade": -3}}
+      ]
+    },
+    {
+      "id": "act3_collection_echo",
+      "trigger": "mission_complete:the_collection",
+      "delay": 600,
+      "sender": "echo",
+      "text": "Beautiful, isn't it? Every car in that collection has a story. Most of them end badly for the previous owner.",
+      "replies": [
+        {"text": "Is that a threat?", "relationship": {"zero": -1}},
+        {"text": "What happened to them?", "relationship": {"zero": 2}}
+      ]
+    },
+    {
+      "id": "maya_act3_strained",
+      "trigger": "mission_complete:old_friends_stakes",
+      "delay": 300,
+      "sender": "maya",
+      "text": "I don't know who you are anymore. The person I met wouldn't have... never mind. Just be careful.",
+      "replies": [
+        {"text": "Maya, I'm sorry.", "relationship": {"maya": 3}},
+        {"text": "You don't understand what I'm dealing with.", "relationship": {"maya": -1}},
+        {"text": "I'll make this right. I promise.", "relationship": {"maya": 5}}
+      ]
+    },
+    {
+      "id": "diesel_act3_strained",
+      "trigger": "mission_complete:old_friends_stakes",
+      "delay": 900,
+      "sender": "diesel",
+      "text": "I once stood where you stand. Surrounded by power and money. I lost everything. Learn from my mistakes or repeat them.",
+      "replies": [
+        {"text": "I'm listening.", "relationship": {"diesel": 4}},
+        {"text": "I'm not you, Diesel.", "relationship": {"diesel": -2}}
+      ]
+    },
+    {
+      "id": "echo_price_of_entry",
+      "trigger": "mission_complete:price_of_entry",
+      "delay": 300,
+      "sender": "echo",
+      "text": "You passed Zero's test. The door is open. Once you walk through, there's no walking back.",
+      "replies": [
+        {"text": "I'm ready.", "relationship": {"zero": 2}},
+        {"text": "What if I don't want in?", "relationship": {"zero": -3}}
+      ]
+    },
+    {
+      "id": "nikko_breaking_post",
+      "trigger": "mission_complete:nikkos_breaking_point",
+      "delay": 120,
+      "sender": "nikko",
+      "text": "You came after me. Nobody does that. I was ready to crash. You pulled me back. I owe you everything.",
+      "replies": [
+        {"text": "That's what brothers do.", "relationship": {"nikko": 10}},
+        {"text": "Don't ever scare me like that again.", "relationship": {"nikko": 5}},
+        {"text": "You'd do the same for me.", "relationship": {"nikko": 7}}
+      ]
+    },
+    {
+      "id": "echo_zero_revealed",
+      "trigger": "mission_complete:zero_revealed",
+      "delay": 600,
+      "sender": "echo",
+      "text": "Now you know. The question is: what will you do with the truth? Zero is watching your next move very carefully.",
+      "replies": [
+        {"text": "Zero should be worried.", "relationship": {"zero": -5}},
+        {"text": "I need time to think.", "relationship": {"zero": 0}}
+      ]
+    },
+    {
+      "id": "maya_accusation",
+      "trigger": "mission_complete:the_accusation",
+      "delay": 120,
+      "sender": "maya",
+      "text": "I saw the news. Are you okay? Where are you? Talk to me.",
+      "replies": [
+        {"text": "I'm okay. Don't worry about me.", "relationship": {"maya": 2}},
+        {"text": "It's all falling apart, Maya.", "relationship": {"maya": 4}},
+        {"text": "I can't talk right now.", "relationship": {"maya": -1}}
+      ]
+    },
+    {
+      "id": "nikko_accusation",
+      "trigger": "mission_complete:the_accusation",
+      "delay": 300,
+      "sender": "nikko",
+      "text": "I heard what happened. The media is wrong. I know you. This isn't who you are. What do you need?",
+      "replies": [
+        {"text": "Just someone who believes me.", "relationship": {"nikko": 5}},
+        {"text": "I need a place to lay low.", "relationship": {"nikko": 3}},
+        {"text": "I need to fight back.", "relationship": {"nikko": 2}}
+      ]
+    },
+    {
+      "id": "diesel_accusation",
+      "trigger": "mission_complete:the_accusation",
+      "delay": 600,
+      "sender": "diesel",
+      "text": "Come to the garage. Now.",
+      "replies": [
+        {"text": "On my way.", "relationship": {"diesel": 2}}
+      ]
+    },
+    {
+      "id": "jade_accusation",
+      "trigger": "mission_complete:the_accusation",
+      "delay": 900,
+      "sender": "jade",
+      "text": "I'm so sorry. Apex is distancing itself officially but I'm going to help you privately. I have documents. We can fight this.",
+      "replies": [
+        {"text": "Thank you, Jade. I won't forget this.", "relationship": {"jade": 5}},
+        {"text": "Why are you risking your career for me?", "relationship": {"jade": 3}}
+      ]
+    },
+    {
+      "id": "maya_rock_bottom",
+      "trigger": "mission_complete:rock_bottom",
+      "delay": 600,
+      "sender": "maya",
+      "text": "I know you're hurting. I know it feels like the end. But I've seen you start from nothing before. You can do it again. The shop is always open for you.",
+      "replies": [
+        {"text": "Thank you, Maya. For everything.", "relationship": {"maya": 5}},
+        {"text": "I don't know if I can come back from this.", "relationship": {"maya": 2}}
+      ]
+    },
+    {
+      "id": "diesel_rock_bottom",
+      "trigger": "mission_complete:rock_bottom",
+      "delay": 1200,
+      "sender": "diesel",
+      "text": "Rock bottom is just another starting line. I know. I've been there. The only direction is up.",
+      "replies": [
+        {"text": "Teach me again, Diesel.", "relationship": {"diesel": 5}},
+        {"text": "How did you climb back?", "relationship": {"diesel": 3}}
+      ]
+    },
+    {
+      "id": "nikko_rock_bottom",
+      "trigger": "mission_complete:rock_bottom",
+      "delay": 1800,
+      "sender": "nikko",
+      "text": "Remember when you chased me down during my worst moment? Now it's my turn. Where are you? I'm coming.",
+      "replies": [
+        {"text": "Motel off Harbor Road. Room 7.", "relationship": {"nikko": 5}},
+        {"text": "You don't have to do this.", "relationship": {"nikko": 3}}
+      ]
+    },
+    {
+      "id": "echo_rock_bottom",
+      "trigger": "mission_complete:rock_bottom",
+      "delay": 3600,
+      "sender": "echo",
+      "text": "Zero underestimated you. That's a rare mistake. Use it.",
+      "replies": [
+        {"text": "Whose side are you on?", "relationship": {"zero": 2}},
+        {"text": "I intend to.", "relationship": {"zero": 1}}
+      ]
+    },
+    {
+      "id": "maya_the_fire",
+      "trigger": "mission_complete:the_fire",
+      "delay": 300,
+      "sender": "maya",
+      "text": "There's a beater in the back lot. It's ugly but it runs. I tuned it myself. Consider it a loan. Go remind this city who you are.",
+      "replies": [
+        {"text": "Maya Torres, you are incredible.", "relationship": {"maya": 5}},
+        {"text": "I'll bring it back in one piece.", "relationship": {"maya": 3}}
+      ]
+    },
+    {
+      "id": "diesel_the_fire",
+      "trigger": "mission_complete:the_fire",
+      "delay": 600,
+      "sender": "diesel",
+      "text": "The fire in your eyes. It's back. Good. The streets are waiting.",
+      "replies": [
+        {"text": "Let's go.", "relationship": {"diesel": 3}}
+      ]
+    },
+    {
+      "id": "maya_back_to_streets",
+      "trigger": "mission_complete:back_to_streets",
+      "delay": 300,
+      "sender": "maya",
+      "text": "Back in a beater. Back at the bottom. And you still won. You're something else, you know that?",
+      "replies": [
+        {"text": "It felt like the beginning again.", "relationship": {"maya": 4}},
+        {"text": "This is what I was born to do.", "relationship": {"maya": 2}}
+      ]
+    },
+    {
+      "id": "nikko_back_to_streets",
+      "trigger": "mission_complete:back_to_streets",
+      "delay": 600,
+      "sender": "nikko",
+      "text": "Heard you're racing in a beater now. And winning. That's the most dangerous kind of driver. The one with nothing left to lose.",
+      "replies": [
+        {"text": "I've got plenty to fight for.", "relationship": {"nikko": 3}},
+        {"text": "Want to ride shotgun for old times' sake?", "relationship": {"nikko": 4}}
+      ]
+    },
+    {
+      "id": "jade_building_case",
+      "trigger": "mission_complete:building_the_case",
+      "delay": 300,
+      "sender": "jade",
+      "text": "The evidence is coming together. Three former league officials are willing to testify. We're building something real here.",
+      "replies": [
+        {"text": "Keep going. We're close.", "relationship": {"jade": 3}},
+        {"text": "Be careful, Jade. Zero has eyes everywhere.", "relationship": {"jade": 4}}
+      ]
+    },
+    {
+      "id": "diesel_underground_tournament",
+      "trigger": "mission_complete:underground_tournament",
+      "delay": 300,
+      "sender": "diesel",
+      "text": "Tournament champion again. From the ashes. I'm proud of you. And I don't say that lightly.",
+      "replies": [
+        {"text": "I learned from the best.", "relationship": {"diesel": 5}},
+        {"text": "One more fight to go.", "relationship": {"diesel": 2}}
+      ]
+    },
+    {
+      "id": "maya_press_conference",
+      "trigger": "mission_complete:the_press_conference",
+      "delay": 120,
+      "sender": "maya",
+      "text": "I watched the press conference. The whole shop watched. You were brave. We're with you. All of us.",
+      "replies": [
+        {"text": "Couldn't have done it without you.", "relationship": {"maya": 5}},
+        {"text": "The truth had to come out.", "relationship": {"maya": 3}}
+      ]
+    },
+    {
+      "id": "nikko_press_conference",
+      "trigger": "mission_complete:the_press_conference",
+      "delay": 300,
+      "sender": "nikko",
+      "text": "You just declared war on the most powerful person in racing. And I'm standing right next to you. Let's finish this.",
+      "replies": [
+        {"text": "Together.", "relationship": {"nikko": 5}},
+        {"text": "Watch my six out there.", "relationship": {"nikko": 3}}
+      ]
+    },
+    {
+      "id": "jade_press_conference",
+      "trigger": "mission_complete:the_press_conference",
+      "delay": 600,
+      "sender": "jade",
+      "text": "The board fired me this morning. Worth it. The evidence is public. Zero can't hide anymore. Let's bring this home.",
+      "replies": [
+        {"text": "Jade... I'm sorry.", "relationship": {"jade": 3}},
+        {"text": "You're the bravest person I know.", "relationship": {"jade": 5}},
+        {"text": "We'll build something better together.", "relationship": {"jade": 4}}
+      ]
+    },
+    {
+      "id": "diesel_press_conference",
+      "trigger": "mission_complete:the_press_conference",
+      "delay": 900,
+      "sender": "diesel",
+      "text": "Truth is a weapon. You just used it well. Now comes the hard part: the road ahead.",
+      "replies": [
+        {"text": "I'm ready.", "relationship": {"diesel": 3}}
+      ]
+    },
+    {
+      "id": "echo_press_conference",
+      "trigger": "mission_complete:the_press_conference",
+      "delay": 1800,
+      "sender": "echo",
+      "text": "You've forced Zero's hand. That's either the bravest or most foolish thing I've ever seen. Time will tell.",
+      "replies": [
+        {"text": "Whose side are you on, Echo?", "relationship": {"zero": 1}},
+        {"text": "Tell Zero I'm coming.", "relationship": {"zero": -3}}
+      ]
+    },
+    {
+      "id": "maya_the_challenge",
+      "trigger": "mission_complete:the_challenge",
+      "delay": 180,
+      "sender": "maya",
+      "text": "You're back. Really back. The crowd was chanting your name. I might have teared up a little. Don't tell anyone.",
+      "replies": [
+        {"text": "Your secret is safe with me.", "relationship": {"maya": 5}},
+        {"text": "The comeback is always greater than the setback.", "relationship": {"maya": 3}}
+      ]
+    },
+    {
+      "id": "nikko_settling_accounts",
+      "trigger": "mission_complete:settling_accounts",
+      "delay": 300,
+      "sender": "nikko",
+      "text": "You faced Zero head-on. Regardless of the result, that takes guts nobody else in this city has. Respect.",
+      "replies": [
+        {"text": "It had to be done.", "relationship": {"nikko": 3}},
+        {"text": "Zero's not invincible. Nobody is.", "relationship": {"nikko": 2}}
+      ]
+    },
+    {
+      "id": "maya_legacy_path",
+      "trigger": "mission_complete:the_offer_act4",
+      "delay": 600,
+      "sender": "maya",
+      "text": "Whatever path you choose, the shop is yours too. Always was. I just made it official in the paperwork today.",
+      "replies": [
+        {"text": "Maya... I don't know what to say.", "relationship": {"maya": 10}},
+        {"text": "Partners?", "relationship": {"maya": 8}}
+      ]
+    },
+    {
+      "id": "diesel_legacy_path",
+      "trigger": "mission_complete:the_offer_act4",
+      "delay": 1200,
+      "sender": "diesel",
+      "text": "Legacy isn't about what you build. It's about what survives after you stop building.",
+      "replies": [
+        {"text": "I'm building something that lasts.", "relationship": {"diesel": 3}},
+        {"text": "Will you help me build it?", "relationship": {"diesel": 5}}
+      ]
+    },
+    {
+      "id": "nikko_legacy_path",
+      "trigger": "mission_complete:the_offer_act4",
+      "delay": 1800,
+      "sender": "nikko",
+      "text": "Whatever you decide, I've got your back. Rivals, friends, brothers. The full journey. Thank you for that.",
+      "replies": [
+        {"text": "Brother.", "relationship": {"nikko": 5}},
+        {"text": "Race you to the future.", "relationship": {"nikko": 3}}
+      ]
+    },
+    {
+      "id": "jade_legacy_path",
+      "trigger": "mission_complete:the_offer_act4",
+      "delay": 2400,
+      "sender": "jade",
+      "text": "I've been offered to build a new racing league. Clean, transparent, driver-first. I want you involved. Not as a product. As a partner.",
+      "replies": [
+        {"text": "I'm in.", "relationship": {"jade": 5}},
+        {"text": "Tell me more.", "relationship": {"jade": 3}}
+      ]
+    },
+    {
+      "id": "maya_world_remembers",
+      "trigger": "mission_complete:world_remembers",
+      "delay": 300,
+      "sender": "maya",
+      "text": "Every track from your journey. Every memory. I tuned the car for each one. This is our victory lap.",
+      "replies": [
+        {"text": "Ours. Always ours.", "relationship": {"maya": 5}}
+      ]
+    },
+    {
+      "id": "diesel_ultimate_test",
+      "trigger": "mission_complete:ultimate_test",
+      "delay": 600,
+      "sender": "diesel",
+      "text": "24-hour endurance. You pushed beyond what I thought possible. There's nothing left to teach you.",
+      "replies": [
+        {"text": "There's always more to learn.", "relationship": {"diesel": 5}},
+        {"text": "I had the best teacher.", "relationship": {"diesel": 5}}
+      ]
+    },
+    {
+      "id": "nikko_next_gen",
+      "trigger": "mission_complete:next_generation",
+      "delay": 600,
+      "sender": "nikko",
+      "text": "That young driver reminds me of you. Reminds me of us. Wild, hungry, stupid-brave. Take care of them.",
+      "replies": [
+        {"text": "Like you took care of me. By trying to beat me.", "relationship": {"nikko": 4}},
+        {"text": "The next generation deserves better than what we got.", "relationship": {"nikko": 3}}
+      ]
+    },
+    {
+      "id": "maya_final_race_pre",
+      "trigger": "mission_start:the_final_race",
+      "delay": 60,
+      "sender": "maya",
+      "text": "The final race. Everyone's on the grid. Even me, apparently. I guess all those years fixing cars taught me something. See you out there.",
+      "replies": [
+        {"text": "Don't hold back.", "relationship": {"maya": 3}},
+        {"text": "I've been waiting for this.", "relationship": {"maya": 2}}
+      ]
+    },
+    {
+      "id": "diesel_final_race_pre",
+      "trigger": "mission_start:the_final_race",
+      "delay": 120,
+      "sender": "diesel",
+      "text": "One last ride under neon skies. I'll be on that grid too. Not to win. Just to drive alongside you one more time.",
+      "replies": [
+        {"text": "It would mean the world.", "relationship": {"diesel": 5}},
+        {"text": "Let's make it count.", "relationship": {"diesel": 3}}
+      ]
+    },
+    {
+      "id": "nikko_final_race_pre",
+      "trigger": "mission_start:the_final_race",
+      "delay": 180,
+      "sender": "nikko",
+      "text": "Final race. You and me on the same grid one last time. No rivalry. No anger. Just speed. And maybe I'll still try to beat you.",
+      "replies": [
+        {"text": "I wouldn't have it any other way.", "relationship": {"nikko": 5}},
+        {"text": "You'll have to catch me first.", "relationship": {"nikko": 3}}
+      ]
+    },
+    {
+      "id": "echo_final_race",
+      "trigger": "mission_start:the_final_race",
+      "delay": 240,
+      "sender": "echo",
+      "text": "Zero will be on the grid. Not to destroy. Not to control. Just to race. You earned that. Whatever happens tonight, it ends clean.",
+      "replies": [
+        {"text": "Thank you, Echo.", "relationship": {"zero": 3}},
+        {"text": "It's about time.", "relationship": {"zero": 1}}
+      ]
+    },
+    {
+      "id": "maya_final_race_post",
+      "trigger": "mission_complete:the_final_race",
+      "delay": 120,
+      "sender": "maya",
+      "text": "That was the greatest race I've ever seen. The greatest race anyone's ever seen. I'm so proud of you. Whatever comes next, we did this together.",
+      "replies": [
+        {"text": "Together. From day one to the last lap.", "relationship": {"maya": 10}},
+        {"text": "The best is yet to come.", "relationship": {"maya": 5}}
+      ]
+    },
+    {
+      "id": "diesel_final_race_post",
+      "trigger": "mission_complete:the_final_race",
+      "delay": 300,
+      "sender": "diesel",
+      "text": "Legend. Not because you won. Because of how you got here. The road remembers.",
+      "replies": [
+        {"text": "The road remembers.", "relationship": {"diesel": 5}}
+      ]
+    },
+    {
+      "id": "nikko_final_race_post",
+      "trigger": "mission_complete:the_final_race",
+      "delay": 600,
+      "sender": "nikko",
+      "text": "Brother. That's the only word. Brother.",
+      "replies": [
+        {"text": "Brother.", "relationship": {"nikko": 5}}
+      ]
+    },
+    {
+      "id": "jade_final_race_post",
+      "trigger": "mission_complete:the_final_race",
+      "delay": 900,
+      "sender": "jade",
+      "text": "The new league launches next month. Your name is the first on the charter. Not as a driver. As a founder. You changed everything.",
+      "replies": [
+        {"text": "Let's change it together.", "relationship": {"jade": 5}},
+        {"text": "This is what it was all for.", "relationship": {"jade": 3}}
+      ]
+    },
+    {
+      "id": "echo_epilogue",
+      "trigger": "mission_complete:the_final_race",
+      "delay": 3600,
+      "sender": "echo",
+      "text": "Zero asked me to send one last message. Not a threat. Not a riddle. Just two words: Well raced.",
+      "replies": [
+        {"text": "Well raced.", "relationship": {"zero": 5}}
+      ]
+    }
+  ]
+}
