@@ -78,13 +78,12 @@ func get_tier_progress() -> float:
 
 func can_access_district(district_id: String) -> bool:
 	## Check if player REP tier allows access to a district.
+	## District IDs must match DistrictManager.DISTRICT_UNLOCK_TIERS.
 	var required_tiers := {
 		"downtown": 0,
-		"industrial": 1,
-		"highway": 1,
-		"port": 2,
-		"suburbs": 2,
-		"hills": 3,
+		"harbor": 1,
+		"industrial": 2,
+		"hillside": 3,
 	}
 	return current_tier >= required_tiers.get(district_id, 0)
 

@@ -41,6 +41,11 @@ var _unlocked_districts: Array[String] = ["downtown"]
 var in_transition_zone: bool = false
 var pending_target_id: String = ""
 
+## Tracks where we came from for directional spawn points.
+var _source_district: String = ""
+## Captures player velocity before transition for momentum preservation.
+var _player_velocity: Vector3 = Vector3.ZERO
+
 # --- Preloaded Scene Cache ---
 var _scene_cache: Dictionary = {}
 
@@ -116,7 +121,16 @@ func transition_to_district(target_district_id: String) -> void:
 		return
 
 	_transitioning = true
+	_source_district = current_district_id
+	in_transition_zone = false
+	pending_target_id = ""
 	print("[District] Transitioning: %s -> %s" % [current_district_id, target_district_id])
+
+	# Capture player velocity for momentum preservation through the transition
+	if _player_vehicle and is_instance_valid(_player_vehicle) and _player_vehicle is RigidBody3D:
+		_player_velocity = (_player_vehicle as RigidBody3D).linear_velocity
+	else:
+		_player_velocity = Vector3.ZERO
 
 	# Fade out
 	EventBus.screen_fade_out.emit(0.5)
@@ -189,18 +203,38 @@ func _reposition_player(district_node: Node3D) -> void:
 		print("[District] WARNING: No player vehicle to reposition.")
 		return
 
-	var spawn := district_node.get_node_or_null("PlayerSpawn") as Marker3D
+	# Try direction-specific spawn first (e.g., SpawnFrom_downtown)
+	var spawn: Marker3D = null
+	if not _source_district.is_empty():
+		var spawn_name := "SpawnFrom_%s" % _source_district
+		spawn = district_node.get_node_or_null(spawn_name) as Marker3D
+		if spawn:
+			print("[District] Using directional spawn: %s" % spawn_name)
+
+	# Fall back to generic PlayerSpawn
+	if spawn == null:
+		spawn = district_node.get_node_or_null("PlayerSpawn") as Marker3D
+
 	if spawn:
 		_player_vehicle.global_transform = spawn.global_transform
-		# Reset velocity if the vehicle supports it
-		if _player_vehicle.has_method("reset_velocity"):
+		# Preserve momentum: apply saved speed in the new facing direction
+		if _player_vehicle is RigidBody3D:
+			var rb := _player_vehicle as RigidBody3D
+			var speed := _player_velocity.length()
+			if speed > 1.0:
+				var forward := -spawn.global_transform.basis.z.normalized()
+				rb.linear_velocity = forward * speed
+			else:
+				rb.linear_velocity = Vector3.ZERO
+			rb.angular_velocity = Vector3.ZERO
+		elif _player_vehicle.has_method("reset_velocity"):
 			_player_vehicle.reset_velocity()
-		elif _player_vehicle is RigidBody3D:
-			(_player_vehicle as RigidBody3D).linear_velocity = Vector3.ZERO
-			(_player_vehicle as RigidBody3D).angular_velocity = Vector3.ZERO
 		print("[District] Player repositioned to spawn point.")
 	else:
 		_player_vehicle.global_transform.origin = Vector3(0, 1, 0)
+		if _player_vehicle is RigidBody3D:
+			(_player_vehicle as RigidBody3D).linear_velocity = Vector3.ZERO
+			(_player_vehicle as RigidBody3D).angular_velocity = Vector3.ZERO
 		print("[District] WARNING: No PlayerSpawn in district, using default position.")
 
 
@@ -226,10 +260,14 @@ func _disconnect_transition_zones(district_node: Node3D) -> void:
 	for child in transitions.get_children():
 		if child is Area3D:
 			var area := child as Area3D
-			if area.body_entered.is_connected(_on_transition_zone_entered):
-				area.body_entered.disconnect(_on_transition_zone_entered)
-			if area.body_exited.is_connected(_on_transition_zone_exited):
-				area.body_exited.disconnect(_on_transition_zone_exited)
+			# Disconnect bound callables by matching method name,
+			# since .bind(area) creates a new Callable that won't match the raw method.
+			for connection in area.body_entered.get_connections():
+				if connection.callable.get_method() == "_on_transition_zone_entered":
+					area.body_entered.disconnect(connection.callable)
+			for connection in area.body_exited.get_connections():
+				if connection.callable.get_method() == "_on_transition_zone_exited":
+					area.body_exited.disconnect(connection.callable)
 
 
 func _on_transition_zone_entered(body: Node3D, area: Area3D) -> void:

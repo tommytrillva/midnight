@@ -33,6 +33,7 @@ func _ready() -> void:
 	EventBus.mission_completed.connect(_on_mission_completed)
 	EventBus.race_finished.connect(_on_race_finished)
 	EventBus.choice_made.connect(_on_choice_made)
+	EventBus.dialogue_ended.connect(_on_story_dialogue_ended)
 
 
 func start_new_story() -> void:
@@ -45,6 +46,10 @@ func start_new_story() -> void:
 	story_flags.clear()
 	chosen_path = ""
 	_refresh_available_missions()
+
+	# Auto-start the arrival mission on new game
+	if "arrival" in available_missions:
+		start_mission("arrival")
 
 
 func start_mission(mission_id: String) -> void:
@@ -80,6 +85,9 @@ func complete_mission(mission_id: String, outcome: Dictionary = {}) -> void:
 
 	EventBus.mission_completed.emit(mission_id, outcome)
 	print("[Story] Mission completed: %s" % mission_id)
+
+	# Apply mission-defined rewards (cash, rep, relationships)
+	_apply_mission_rewards(mission_id, outcome)
 
 	# Check for chapter/act progression
 	_check_progression()
@@ -236,8 +244,57 @@ func _refresh_available_missions() -> void:
 			available_missions.append(mission_id)
 
 
-func _on_mission_completed(mission_id: String, _outcome: Dictionary) -> void:
+func _on_mission_completed(_mission_id: String, _outcome: Dictionary) -> void:
 	pass # Already handled in complete_mission
+
+
+func _on_story_dialogue_ended(dialogue_id: String) -> void:
+	## When a dialogue ends, check if it completes a story/scripted mission.
+	## Then check for any auto-trigger missions that should start.
+	for mid in active_missions.duplicate():
+		var m := get_mission(mid)
+		if m.get("pre_dialogue", "") == dialogue_id:
+			var mtype: String = m.get("type", "")
+			if mtype in ["story", "scripted"]:
+				complete_mission(mid)
+				break
+
+	# After any dialogue ends, check for auto-trigger missions
+	check_auto_trigger_missions()
+
+
+func check_auto_trigger_missions() -> void:
+	## Start any available missions that have auto_trigger set.
+	## Called after dialogue ends or when returning to free roam after a race.
+	if _dialogue_system._current_dialogue_id != "":
+		return # A dialogue is already active, wait for it to finish
+	for mid in available_missions.duplicate():
+		var m := get_mission(mid)
+		if m.get("auto_trigger", false):
+			start_mission(mid)
+			break # One at a time
+
+
+func _apply_mission_rewards(mission_id: String, _outcome: Dictionary) -> void:
+	## Apply cash, rep, and relationship rewards defined on the mission.
+	var mission := get_mission(mission_id)
+	var rewards: Dictionary = mission.get("rewards", {})
+	if rewards.is_empty():
+		return
+
+	var cash: int = rewards.get("cash", 0)
+	if cash > 0:
+		GameManager.economy.earn(cash, "mission_%s" % mission_id)
+
+	var rep: int = rewards.get("rep", 0)
+	if rep > 0:
+		GameManager.reputation.earn_rep(rep, "mission_%s" % mission_id)
+
+	var rel: Dictionary = rewards.get("relationship", {})
+	for char_id in rel:
+		GameManager.relationships.change_affinity(char_id, rel[char_id])
+
+	print("[Story] Rewards applied for %s — cash: %d, rep: %d" % [mission_id, cash, rep])
 
 
 func _on_race_finished(results: Dictionary) -> void:
@@ -307,6 +364,15 @@ func _load_default_missions() -> void:
 			"prerequisites": [],
 		},
 		{
+			"id": "torres_garage", "name": "Torres Garage", "act": 1, "chapter": 1,
+			"type": "story", "required": true,
+			"description": "Meet Maya, tour the garage, get your first upgrade.",
+			"pre_dialogue": "torres_garage_intro",
+			"trigger_zone": "garage",
+			"prerequisites": ["arrival"],
+			"rewards": {"relationship": {"maya": 10}},
+		},
+		{
 			"id": "first_blood", "name": "First Blood", "act": 1, "chapter": 1,
 			"type": "street_sprint", "required": true,
 			"description": "Your first race — prove you belong.",
@@ -314,23 +380,22 @@ func _load_default_missions() -> void:
 			"post_win_dialogue": "first_blood_win",
 			"post_lose_dialogue": "first_blood_lose",
 			"fail_on_loss": false,
-			"prerequisites": ["arrival"],
+			"prerequisites": ["torres_garage"],
 			"rewards": {"cash": 300, "rep": 100},
-		},
-		{
-			"id": "torres_garage", "name": "Torres Garage", "act": 1, "chapter": 1,
-			"type": "story", "required": true,
-			"description": "Meet Maya, tour the garage, get your first upgrade.",
-			"pre_dialogue": "torres_garage_intro",
-			"prerequisites": ["first_blood"],
-			"rewards": {"relationship": {"maya": 10}},
+			"race_config": {
+				"ai_count": 3,
+				"ai_names": ["Rico", "Street Racer", "Newcomer"],
+				"ai_difficulty": 0.3,
+				"tier": 1,
+			},
 		},
 		{
 			"id": "the_watcher", "name": "The Watcher", "act": 1, "chapter": 2,
 			"type": "story", "required": true,
 			"description": "Diesel observes your race from the shadows.",
 			"pre_dialogue": "the_watcher",
-			"prerequisites": ["torres_garage"],
+			"auto_trigger": true,
+			"prerequisites": ["first_blood"],
 			"rewards": {"relationship": {"diesel": 5}},
 		},
 		{
@@ -338,12 +403,20 @@ func _load_default_missions() -> void:
 			"type": "circuit", "required": true,
 			"description": "First organized event — beat local regulars.",
 			"pre_dialogue": "proving_grounds_pre",
+			"fail_on_loss": false,
 			"prerequisites": ["the_watcher"],
 			"rewards": {"cash": 800, "rep": 300},
+			"race_config": {
+				"ai_count": 5,
+				"ai_names": ["Regular #1", "Regular #2", "Tuner", "Hotshot", "Veteran"],
+				"ai_difficulty": 0.5,
+				"lap_count": 4,
+				"tier": 1,
+			},
 		},
 		{
 			"id": "diesels_test", "name": "Diesel's Test", "act": 1, "chapter": 2,
-			"type": "touge", "required": false,
+			"type": "touge", "required": true,
 			"description": "Diesel challenges you — not to win, but to see your heart.",
 			"pre_dialogue": "diesels_test_pre",
 			"post_win_dialogue": "diesels_test_win",
@@ -351,6 +424,12 @@ func _load_default_missions() -> void:
 			"prerequisites": ["proving_grounds"],
 			"fail_on_loss": false,
 			"rewards": {"relationship": {"diesel": 15}, "rep": 200},
+			"race_config": {
+				"ai_count": 1,
+				"ai_names": ["Diesel"],
+				"ai_difficulty": 0.7,
+				"tier": 2,
+			},
 		},
 	]
 	for m in missions:

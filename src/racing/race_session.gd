@@ -2,6 +2,7 @@
 ## Handles vehicle spawning, AI setup, HUD wiring, and result transitions.
 ## Detects race type from RaceData and instantiates the appropriate mode controller
 ## (DriftScoring, TougeRace, CircuitRace) or falls through to the default sprint flow.
+## Includes animated countdown, flash-white GO!, slow-mo finish, and slide-in results.
 extends Node3D
 
 const PlayerVehicleScene := preload("res://scenes/vehicles/player_vehicle.tscn")
@@ -27,6 +28,12 @@ var touge_race: TougeRace = null
 var circuit_race: CircuitRace = null
 var pause_menu: PauseMenu = null
 
+# --- Transition reference ---
+var _screen_transition: ScreenTransition = null
+
+# --- Countdown UI ---
+var _countdown_label: Label = null
+
 signal race_session_complete(results: Dictionary)
 
 
@@ -39,6 +46,41 @@ func _ready() -> void:
 	pause_menu = PauseMenuScene.instantiate()
 	pause_menu.race_mode = true
 	add_child(pause_menu)
+
+	# Find screen transition from the tree
+	_screen_transition = _find_screen_transition()
+
+	# Create countdown label overlay
+	_create_countdown_label()
+
+
+func _find_screen_transition() -> ScreenTransition:
+	var node := get_parent()
+	while node:
+		for child in node.get_children():
+			if child is ScreenTransition:
+				return child
+		node = node.get_parent()
+	return null
+
+
+func _create_countdown_label() -> void:
+	## Creates a centered label used for 3-2-1-GO countdown display.
+	var canvas := CanvasLayer.new()
+	canvas.layer = 50
+	canvas.name = "CountdownLayer"
+	add_child(canvas)
+
+	_countdown_label = Label.new()
+	_countdown_label.set_anchors_preset(Control.PRESET_CENTER)
+	_countdown_label.grow_horizontal = Control.GROW_DIRECTION_BOTH
+	_countdown_label.grow_vertical = Control.GROW_DIRECTION_BOTH
+	_countdown_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	_countdown_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	_countdown_label.add_theme_font_size_override("font_size", 120)
+	_countdown_label.add_theme_color_override("font_color", Color(1.0, 1.0, 1.0))
+	_countdown_label.visible = false
+	canvas.add_child(_countdown_label)
 
 
 func setup_race(data: RaceData) -> void:
@@ -53,11 +95,100 @@ func setup_race(data: RaceData) -> void:
 	_wire_race_type(data)
 
 	GameManager.change_state(GameManager.GameState.RACING)
+
+	# Animated pre-race sequence: fade in + countdown
+	_run_pre_race_sequence(data)
+
+
+func _run_pre_race_sequence(data: RaceData) -> void:
+	## Pre-race: fade from black, dramatic countdown, flash GO!
+	# Fade in from black
+	if _screen_transition:
+		_screen_transition._setup_for_type(ScreenTransition.TransitionType.FADE_BLACK)
+		_screen_transition._color_rect.visible = true
+		_screen_transition._color_rect.color = Color(0, 0, 0, 1)
+		await _screen_transition.transition_out(ScreenTransition.TransitionType.FADE_BLACK, 0.8)
+
+	# Brief pause before countdown
+	await get_tree().create_timer(0.3).timeout
+
+	# Animated countdown: 3, 2, 1, GO!
+	await _animate_countdown()
+
+	# Now actually start the race logic
 	GameManager.race_manager.start_race(data)
 	print("[RaceSession] Race ready: %s (%s)" % [
 		data.race_name,
 		RaceManager.RaceType.keys()[data.race_type]
 	])
+
+
+func _animate_countdown() -> void:
+	## Displays 3-2-1-GO! with scale/fade Tween animations.
+	if _countdown_label == null:
+		return
+
+	# Count 3, 2, 1
+	for i in range(3, 0, -1):
+		_countdown_label.text = str(i)
+		_countdown_label.visible = true
+		_countdown_label.scale = Vector2(2.0, 2.0)
+		_countdown_label.modulate = Color(1, 1, 1, 1)
+		_countdown_label.add_theme_color_override("font_color", Color(1.0, 1.0, 1.0))
+
+		var tween := create_tween()
+		tween.set_parallel(true)
+		tween.tween_property(_countdown_label, "scale", Vector2(1.0, 1.0), 0.35).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK)
+		tween.tween_property(_countdown_label, "modulate:a", 0.3, 0.7).set_ease(Tween.EASE_IN).set_delay(0.3)
+		await tween.finished
+
+		EventBus.countdown_beep.emit(i)
+		await get_tree().create_timer(0.3).timeout
+
+	# "GO!" — flash white + screen flash
+	_countdown_label.text = "GO!"
+	_countdown_label.visible = true
+	_countdown_label.scale = Vector2(1.5, 1.5)
+	_countdown_label.modulate = Color(1, 1, 1, 1)
+	_countdown_label.add_theme_color_override("font_color", Color(0.0, 1.0, 1.0))
+
+	var go_tween := create_tween()
+	go_tween.set_parallel(true)
+	go_tween.tween_property(_countdown_label, "scale", Vector2(2.5, 2.5), 0.4).set_ease(Tween.EASE_OUT)
+	go_tween.tween_property(_countdown_label, "modulate:a", 0.0, 0.5).set_ease(Tween.EASE_IN)
+
+	# Flash white screen effect
+	if _screen_transition:
+		_screen_transition._setup_for_type(ScreenTransition.TransitionType.FADE_WHITE)
+		_screen_transition._color_rect.visible = true
+		_screen_transition._color_rect.color = Color(1, 1, 1, 0.6)
+		var flash_tween := create_tween()
+		flash_tween.tween_property(_screen_transition._color_rect, "color:a", 0.0, 0.3).set_ease(Tween.EASE_OUT)
+		flash_tween.tween_callback(func(): _screen_transition._color_rect.visible = false)
+
+	# Screen shake
+	_apply_screen_shake(8.0, 0.2)
+
+	EventBus.countdown_go.emit()
+	await go_tween.finished
+	_countdown_label.visible = false
+
+
+func _apply_screen_shake(intensity: float, duration: float) -> void:
+	## Shakes the camera briefly for impact feel.
+	if player_vehicle == null:
+		return
+	var camera := player_vehicle.get_node_or_null("CameraMount/ChaseCamera") as Camera3D
+	if camera == null:
+		return
+
+	var original_offset := camera.h_offset
+	var shake_tween := create_tween()
+	var steps := int(duration / 0.03)
+	for s in range(steps):
+		var offset := randf_range(-intensity, intensity) * 0.01
+		shake_tween.tween_property(camera, "h_offset", original_offset + offset, 0.03)
+	shake_tween.tween_property(camera, "h_offset", original_offset, 0.03)
 
 
 # ---------------------------------------------------------------------------
@@ -346,7 +477,7 @@ func _process(_delta: float) -> void:
 
 
 # ---------------------------------------------------------------------------
-# Race Finish
+# Race Finish — Slow-mo + fade to results
 # ---------------------------------------------------------------------------
 
 func _on_race_finished(results: Dictionary) -> void:
@@ -365,7 +496,35 @@ func _on_race_finished(results: Dictionary) -> void:
 		circuit_race.deactivate()
 		results["circuit_results"] = circuit_race.get_results()
 
+	# Slow-motion finish effect
+	_run_finish_sequence(results)
+
+
+func _run_finish_sequence(results: Dictionary) -> void:
+	## Slow-mo dip + fade to results screen.
+	# Brief slow-motion
+	var original_timescale := Engine.time_scale
+	var slowmo_tween := create_tween()
+	slowmo_tween.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+	slowmo_tween.tween_method(func(val: float): Engine.time_scale = val, 1.0, 0.3, 0.3)
+	await slowmo_tween.finished
+
+	await get_tree().create_timer(0.6).timeout
+
+	# Restore time scale
+	var restore_tween := create_tween()
+	restore_tween.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+	restore_tween.tween_method(func(val: float): Engine.time_scale = val, 0.3, original_timescale, 0.4)
+	await restore_tween.finished
+
+	# Fade to results
+	if _screen_transition:
+		await _screen_transition.transition_in(ScreenTransition.TransitionType.FADE_BLACK, 0.5)
+
 	_show_results(results)
+
+	if _screen_transition:
+		await _screen_transition.transition_out(ScreenTransition.TransitionType.FADE_BLACK, 0.5)
 
 
 func _show_results(results: Dictionary) -> void:
@@ -376,6 +535,15 @@ func _show_results(results: Dictionary) -> void:
 		return
 
 	results_panel.visible = true
+
+	# --- Slide-in animation for results panel ---
+	results_panel.modulate.a = 0.0
+	results_panel.position.y += 60.0
+
+	var slide_tween := create_tween()
+	slide_tween.set_parallel(true)
+	slide_tween.tween_property(results_panel, "modulate:a", 1.0, 0.4).set_ease(Tween.EASE_OUT)
+	slide_tween.tween_property(results_panel, "position:y", results_panel.position.y - 60.0, 0.5).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK)
 
 	# --- Common results ---
 	var position_label := results_panel.get_node_or_null("Position") as Label
@@ -399,6 +567,9 @@ func _show_results(results: Dictionary) -> void:
 	# --- Race-type-specific result details ---
 	_show_type_specific_results(results)
 
+	# --- Stagger-animate child elements ---
+	_stagger_results_children()
+
 	var continue_btn := results_panel.get_node_or_null("ContinueButton") as Button
 	if continue_btn:
 		continue_btn.pressed.connect(func():
@@ -408,6 +579,23 @@ func _show_results(results: Dictionary) -> void:
 		# Auto-dismiss after delay
 		await get_tree().create_timer(5.0).timeout
 		race_session_complete.emit(results)
+
+
+func _stagger_results_children() -> void:
+	## Animate each child of the results panel with a staggered slide-in.
+	if results_panel == null:
+		return
+	var delay_offset := 0.0
+	for child in results_panel.get_children():
+		if child is Control:
+			var orig_x := child.position.x
+			child.position.x -= 40.0
+			child.modulate.a = 0.0
+			var child_tween := create_tween()
+			child_tween.set_parallel(true)
+			child_tween.tween_property(child, "position:x", orig_x, 0.3).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK).set_delay(delay_offset)
+			child_tween.tween_property(child, "modulate:a", 1.0, 0.25).set_delay(delay_offset)
+			delay_offset += 0.08
 
 
 func _show_type_specific_results(results: Dictionary) -> void:
@@ -543,6 +731,9 @@ func _on_circuit_pit_exited(racer_id: int, repairs: Dictionary) -> void:
 # ---------------------------------------------------------------------------
 
 func cleanup() -> void:
+	# Ensure time_scale is restored
+	Engine.time_scale = 1.0
+
 	# Clean up mode controllers
 	if drift_scoring:
 		drift_scoring.deactivate()

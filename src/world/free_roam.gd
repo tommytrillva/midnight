@@ -1,6 +1,7 @@
 ## Free roam gameplay controller. Manages the player driving around
 ## Nova Pacifica districts, triggering races, garage visits, dialogue,
 ## and district transitions via DistrictManager.
+## Uses ScreenTransition for polished scene changes.
 extends Node3D
 
 const PlayerVehicleScene := preload("res://scenes/vehicles/player_vehicle.tscn")
@@ -24,6 +25,9 @@ var pause_menu: PauseMenu = null
 var district_manager: DistrictManager = null
 var _current_district_node: Node3D = null
 
+## Screen transition reference (found from parent Main scene)
+var _screen_transition: ScreenTransition = null
+
 
 func _ready() -> void:
 	_spawn_player_vehicle()
@@ -33,6 +37,9 @@ func _ready() -> void:
 
 	_setup_interactions()
 	_setup_dialogue()
+
+	# Find the ScreenTransition node from the main scene tree
+	_screen_transition = _find_screen_transition()
 
 	GameManager.change_state(GameManager.GameState.FREE_ROAM)
 
@@ -56,6 +63,21 @@ func _ready() -> void:
 
 	_update_hud_district_name()
 	print("[FreeRoam] %s loaded. Drive around!" % district_manager.get_current_district_name())
+
+
+func _find_screen_transition() -> ScreenTransition:
+	## Walk up the tree to find a ScreenTransition node.
+	var node := get_parent()
+	while node:
+		for child in node.get_children():
+			if child is ScreenTransition:
+				return child
+		node = node.get_parent()
+	# Not found — create a local fallback
+	var st := ScreenTransition.new()
+	add_child(st)
+	print("[FreeRoam] Created local ScreenTransition (no parent found).")
+	return st
 
 
 func _setup_district_manager() -> void:
@@ -192,7 +214,7 @@ func _input(event: InputEvent) -> void:
 			var target := district_manager.pending_target_id
 			if not target.is_empty():
 				print("[FreeRoam] Player requested transition to %s" % target)
-				district_manager.request_transition(target)
+				_transition_to_district(target)
 				return
 
 		if _in_garage_zone:
@@ -251,19 +273,41 @@ func _on_race_zone_exited(body: Node3D) -> void:
 		_in_race_zone = false
 
 
+# ---------------------------------------------------------------------------
+# Garage — Quick fade_black transition (0.3s)
+# ---------------------------------------------------------------------------
+
 func _open_garage() -> void:
+	# Check for story missions tied to the garage zone first (e.g. torres_garage)
+	var story_mid := _get_story_mission_for_zone("garage")
+	if not story_mid.is_empty():
+		GameManager.story.start_mission(story_mid)
+		return
+
+	if _screen_transition:
+		await _screen_transition.transition_in(ScreenTransition.TransitionType.FADE_BLACK, 0.15)
 	GameManager.change_state(GameManager.GameState.GARAGE)
 	if garage_ui:
 		garage_ui.visible = true
 		if garage_ui.has_method("refresh"):
 			garage_ui.refresh()
+	if _screen_transition:
+		await _screen_transition.transition_out(ScreenTransition.TransitionType.FADE_BLACK, 0.15)
 
 
 func close_garage() -> void:
+	if _screen_transition:
+		await _screen_transition.transition_in(ScreenTransition.TransitionType.FADE_BLACK, 0.15)
 	GameManager.change_state(GameManager.GameState.FREE_ROAM)
 	if garage_ui:
 		garage_ui.visible = false
+	if _screen_transition:
+		await _screen_transition.transition_out(ScreenTransition.TransitionType.FADE_BLACK, 0.15)
 
+
+# ---------------------------------------------------------------------------
+# Skill Tree
+# ---------------------------------------------------------------------------
 
 func _open_skill_tree() -> void:
 	if GameManager.current_state != GameManager.GameState.FREE_ROAM:
@@ -282,6 +326,34 @@ func close_skill_tree() -> void:
 		_skill_tree_ui.visible = false
 	print("[FreeRoam] Skill tree closed.")
 
+
+func _get_story_mission_for_zone(zone: String) -> String:
+	## Return the ID of an available story mission whose trigger_zone matches.
+	for mid in GameManager.story.available_missions:
+		var m := GameManager.story.get_mission(mid)
+		if m.get("trigger_zone", "") == zone:
+			return mid
+	return ""
+
+
+# ---------------------------------------------------------------------------
+# District Transition — Pixelate transition (through loading screen if big)
+# ---------------------------------------------------------------------------
+
+func _transition_to_district(target_id: String) -> void:
+	if _screen_transition:
+		await _screen_transition.transition_in(ScreenTransition.TransitionType.PIXELATE, 0.5)
+
+	# Perform the actual district swap
+	district_manager.request_transition(target_id)
+
+	if _screen_transition:
+		await _screen_transition.transition_out(ScreenTransition.TransitionType.PIXELATE, 0.5)
+
+
+# ---------------------------------------------------------------------------
+# Race Start — Wipe horizontal transition
+# ---------------------------------------------------------------------------
 
 func _start_available_race() -> void:
 	# Check for story mission races first
@@ -315,7 +387,10 @@ func _create_freeplay_race() -> RaceData:
 
 
 func _launch_race(data: RaceData) -> void:
-	# Hide free roam, show race session
+	# Wipe horizontal transition into race
+	if _screen_transition:
+		await _screen_transition.transition_in(ScreenTransition.TransitionType.WIPE_HORIZONTAL, 0.4)
+
 	_hide_free_roam()
 
 	_race_session = RaceSessionScene.instantiate()
@@ -323,8 +398,15 @@ func _launch_race(data: RaceData) -> void:
 	_race_session.race_session_complete.connect(_on_race_complete)
 	_race_session.setup_race(data)
 
+	if _screen_transition:
+		await _screen_transition.transition_out(ScreenTransition.TransitionType.WIPE_HORIZONTAL, 0.4)
+
 
 func _on_race_complete(results: Dictionary) -> void:
+	# Fade black transition back to free roam
+	if _screen_transition:
+		await _screen_transition.transition_in(ScreenTransition.TransitionType.FADE_BLACK, 0.4)
+
 	if _race_session:
 		_race_session.cleanup()
 		_race_session.queue_free()
@@ -332,6 +414,9 @@ func _on_race_complete(results: Dictionary) -> void:
 
 	_show_free_roam()
 	GameManager.change_state(GameManager.GameState.FREE_ROAM)
+
+	if _screen_transition:
+		await _screen_transition.transition_out(ScreenTransition.TransitionType.FADE_BLACK, 0.4)
 
 	# Trigger post-race dialogue if story mission
 	if results.get("is_story_mission", false):
@@ -344,6 +429,9 @@ func _on_race_complete(results: Dictionary) -> void:
 			dialogue_id = mission.get("post_lose_dialogue", "")
 		if not dialogue_id.is_empty():
 			GameManager.story._dialogue_system.start_dialogue(dialogue_id)
+		else:
+			# No post-dialogue — check for auto-trigger missions now
+			GameManager.story.check_auto_trigger_missions()
 
 	# Autosave after race
 	SaveManager.autosave()
@@ -389,10 +477,13 @@ func _create_story_race(mission_id: String, mission: Dictionary) -> RaceData:
 		"touge":
 			data.race_type = RaceManager.RaceType.TOUGE
 
-	data.tier = 1
-	data.ai_count = 1
-	data.ai_names = ["Street Racer"]
-	data.ai_difficulty = 0.35
+	# Use mission-specific race configuration if provided
+	var race_config: Dictionary = mission.get("race_config", {})
+	data.tier = race_config.get("tier", 1)
+	data.ai_count = race_config.get("ai_count", 1)
+	data.ai_names = race_config.get("ai_names", ["Street Racer"])
+	data.ai_difficulty = race_config.get("ai_difficulty", 0.35)
+	data.lap_count = race_config.get("lap_count", 0)
 	data.pre_race_dialogue_id = mission.get("pre_dialogue", "")
 	data.post_race_win_dialogue_id = mission.get("post_win_dialogue", "")
 	data.post_race_lose_dialogue_id = mission.get("post_lose_dialogue", "")

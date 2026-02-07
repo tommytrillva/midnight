@@ -121,9 +121,13 @@ func _end_dialogue() -> void:
 	_current_line_index = 0
 	_waiting_for_choice = false
 
+	# Restore game state BEFORE emitting signals so that handlers
+	# (e.g. auto-triggering the next story dialogue) can safely set
+	# a new state without it being clobbered afterwards.
+	GameManager.change_state(GameManager.previous_state)
+
 	dialogue_completed.emit(id)
 	EventBus.dialogue_ended.emit(id)
-	GameManager.change_state(GameManager.previous_state)
 
 
 func _apply_choice_consequences(choice: Dictionary) -> void:

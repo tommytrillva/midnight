@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://notification_popup"]
+
+[ext_resource type="Script" path="res://scenes/ui/notification_popup.gd" id="1"]
+
+[node name="NotificationPopup" type="CanvasLayer"]
+layer = 120
+process_mode = 2
+script = ExtResource("1")

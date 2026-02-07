@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://industrial"]
+[gd_scene load_steps=47 format=3 uid="uid://industrial"]
 
 [sub_resource type="ProceduralSkyMaterial" id="sky_mat"]
 sky_top_color = Color(0.03, 0.02, 0.04, 1)
@@ -155,6 +155,18 @@ material_override = SubResource("road_mat")
 transform = Transform3D(1, 0, 0, 0, 0.981, 0.196, 0, -0.196, 0.981, 0, 3.0, -160)
 shape = SubResource("BoxShape_overpass_ramp")
 
+[node name="TransitionRoadWest" type="StaticBody3D" parent="Roads"]
+collision_layer = 2
+
+[node name="Mesh" type="MeshInstance3D" parent="Roads/TransitionRoadWest"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -175, 0.02, 0)
+mesh = SubResource("BoxMesh_transition_road")
+material_override = SubResource("road_mat")
+
+[node name="Collision" type="CollisionShape3D" parent="Roads/TransitionRoadWest"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -175, 0.02, 0)
+shape = SubResource("BoxShape_transition_road")
+
 [node name="StreetLights" type="Node3D" parent="."]
 
 [node name="SodiumLight1" type="OmniLight3D" parent="StreetLights"]
@@ -310,16 +322,27 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 28, 75)
 [node name="SteamVent3" type="Marker3D" parent="Structures"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45, 28, 15)
 
-[node name="Fence1" type="StaticBody3D" parent="Structures"]
+[node name="Fence1North" type="StaticBody3D" parent="Structures"]
 collision_layer = 2
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -160, 1.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -160, 1.5, -67.5)
 
-[node name="Mesh" type="MeshInstance3D" parent="Structures/Fence1"]
-mesh = SubResource("BoxMesh_fence")
+[node name="Mesh" type="MeshInstance3D" parent="Structures/Fence1North"]
+mesh = SubResource("BoxMesh_fence_half")
 material_override = SubResource("fence_mat")
 
-[node name="Collision" type="CollisionShape3D" parent="Structures/Fence1"]
-shape = SubResource("BoxShape_fence")
+[node name="Collision" type="CollisionShape3D" parent="Structures/Fence1North"]
+shape = SubResource("BoxShape_fence_half")
+
+[node name="Fence1South" type="StaticBody3D" parent="Structures"]
+collision_layer = 2
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -160, 1.5, 67.5)
+
+[node name="Mesh" type="MeshInstance3D" parent="Structures/Fence1South"]
+mesh = SubResource("BoxMesh_fence_half")
+material_override = SubResource("fence_mat")
+
+[node name="Collision" type="CollisionShape3D" parent="Structures/Fence1South"]
+shape = SubResource("BoxShape_fence_half")
 
 [node name="Fence2" type="StaticBody3D" parent="Structures"]
 collision_layer = 2
@@ -478,10 +501,13 @@ modulate = Color(1.0, 0.6, 0.0, 1)
 [node name="PlayerSpawn" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
+[node name="SpawnFrom_downtown" type="Marker3D" parent="."]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -240, 1, 0)
+
 [node name="DistrictTransitions" type="Node3D" parent="."]
 
 [node name="ToDowntown" type="Area3D" parent="DistrictTransitions"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, -280)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -250, 2.5, 0)
 collision_layer = 64
 metadata/target_district = "downtown"
 
@@ -490,7 +516,7 @@ shape = SubResource("BoxShape_transition")
 
 [node name="Label" type="Label3D" parent="DistrictTransitions/ToDowntown"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
-text = ">> DOWNTOWN >>"
+text = "<< DOWNTOWN <<"
 font_size = 36
 outline_size = 4
 modulate = Color(1, 1, 0.5, 1)
@@ -610,4 +636,16 @@ size = Vector3(1.5, 6, 1.5)
 size = Vector3(10, 4, 10)
 
 [sub_resource type="BoxShape3D" id="BoxShape_transition"]
-size = Vector3(14, 8, 14)
+size = Vector3(20, 5, 20)
+
+[sub_resource type="BoxMesh" id="BoxMesh_fence_half"]
+size = Vector3(0.3, 3, 115)
+
+[sub_resource type="BoxShape3D" id="BoxShape_fence_half"]
+size = Vector3(0.3, 3, 115)
+
+[sub_resource type="BoxMesh" id="BoxMesh_transition_road"]
+size = Vector3(150, 0.05, 14)
+
+[sub_resource type="BoxShape3D" id="BoxShape_transition_road"]
+size = Vector3(150, 0.05, 14)

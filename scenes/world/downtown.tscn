@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://downtown"]
+[gd_scene load_steps=28 format=3 uid="uid://downtown"]
 
 [sub_resource type="ProceduralSkyMaterial" id="sky_mat"]
 sky_top_color = Color(0.02, 0.01, 0.06, 1)
@@ -242,6 +242,62 @@ modulate = Color(0, 1, 0.8, 1)
 [node name="PlayerSpawn" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
+[node name="SpawnFrom_harbor" type="Marker3D" parent="."]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -240, 1, 0)
+
+[node name="SpawnFrom_industrial" type="Marker3D" parent="."]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 240, 1, 0)
+
+[node name="SpawnFrom_hillside" type="Marker3D" parent="."]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 0, 1, -240)
+
+[node name="DistrictTransitions" type="Node3D" parent="."]
+
+[node name="ToHarbor" type="Area3D" parent="DistrictTransitions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -250, 2.5, 0)
+collision_layer = 64
+metadata/target_district = "harbor"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DistrictTransitions/ToHarbor"]
+shape = SubResource("BoxShape_transition")
+
+[node name="Label" type="Label3D" parent="DistrictTransitions/ToHarbor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+text = "<< HARBOR DISTRICT <<"
+font_size = 36
+outline_size = 4
+modulate = Color(0, 0.8, 1, 1)
+
+[node name="ToIndustrial" type="Area3D" parent="DistrictTransitions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 250, 2.5, 0)
+collision_layer = 64
+metadata/target_district = "industrial"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DistrictTransitions/ToIndustrial"]
+shape = SubResource("BoxShape_transition")
+
+[node name="Label" type="Label3D" parent="DistrictTransitions/ToIndustrial"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+text = ">> INDUSTRIAL ZONE >>"
+font_size = 36
+outline_size = 4
+modulate = Color(1.0, 0.6, 0.0, 1)
+
+[node name="ToHillside" type="Area3D" parent="DistrictTransitions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -250)
+collision_layer = 64
+metadata/target_district = "hillside"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DistrictTransitions/ToHillside"]
+shape = SubResource("BoxShape_transition")
+
+[node name="Label" type="Label3D" parent="DistrictTransitions/ToHillside"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+text = ">> HILLSIDE / ROUTE 9 >>"
+font_size = 36
+outline_size = 4
+modulate = Color(0.4, 0.8, 1.0, 1)
+
 [sub_resource type="PlaneMesh" id="PlaneMesh_ground"]
 size = Vector2(600, 600)
 
@@ -309,3 +365,6 @@ size = Vector3(22, 24, 18)
 
 [sub_resource type="BoxShape3D" id="BoxShape_trigger"]
 size = Vector3(10, 4, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape_transition"]
+size = Vector3(20, 5, 20)
