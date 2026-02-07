@@ -1,0 +1,653 @@
+{
+  "id": "race_intro_final",
+  "description": "The Final Race — all characters, dramatic buildup, culmination of the story.",
+  "skippable": false,
+  "steps": [
+    {
+      "type": "effect",
+      "data": { "letterbox": true, "aspect": "cinematic" },
+      "duration": 0.5,
+      "parallel": false
+    },
+    {
+      "type": "environment",
+      "data": { "weather": "clear", "time": "night" },
+      "duration": 0,
+      "parallel": true
+    },
+    {
+      "type": "audio",
+      "data": {
+        "music": { "track": "final_race_buildup", "artist": "Midnight OST", "action": "play" },
+        "ambient": "crowd_murmur_large"
+      },
+      "duration": 0,
+      "parallel": true
+    },
+    {
+      "type": "effect",
+      "data": { "fade": "black", "direction": "out" },
+      "duration": 1.0,
+      "parallel": false
+    },
+
+    {
+      "type": "camera",
+      "data": {
+        "move": "teleport",
+        "position": [0, 50, -60],
+        "look_at": [0, 0, 0]
+      },
+      "duration": 0,
+      "parallel": true,
+      "comment": "Extreme wide — the circuit lit up, crowd everywhere"
+    },
+    {
+      "type": "camera",
+      "data": {
+        "move": "crane",
+        "height": -35,
+        "ease": "ease_in_out"
+      },
+      "duration": 5.0,
+      "parallel": false,
+      "comment": "Slow descent from aerial to street level"
+    },
+
+    {
+      "type": "transition",
+      "data": { "transition": "fade_black" },
+      "duration": 0.6,
+      "parallel": false,
+      "comment": "CUT TO: Marcus — arriving in his GTR, crowd reacting"
+    },
+    {
+      "type": "camera",
+      "data": {
+        "move": "teleport",
+        "position": [-8, 1.5, -20],
+        "look_at": [-5, 1, -15]
+      },
+      "duration": 0,
+      "parallel": true
+    },
+    {
+      "type": "camera",
+      "data": {
+        "move": "orbit",
+        "target": [-5, 1, -15],
+        "angle": 45,
+        "ease": "ease_in_out"
+      },
+      "duration": 3.0,
+      "parallel": false,
+      "comment": "Hero orbit around Marcus's car"
+    },
+    {
+      "type": "camera",
+      "data": {
+        "move": "teleport",
+        "position": [-4.5, 1.5, -15],
+        "look_at": [-5, 1.5, -16]
+      },
+      "duration": 0,
+      "parallel": true,
+      "comment": "Marcus stepping out, adjusting gloves"
+    },
+    {
+      "type": "wait",
+      "data": {},
+      "duration": 2.0,
+      "parallel": false
+    },
+
+    {
+      "type": "transition",
+      "data": { "transition": "fade_black" },
+      "duration": 0.5,
+      "parallel": false,
+      "comment": "CUT TO: Jade — leaning on her RX-7, arms crossed"
+    },
+    {
+      "type": "camera",
+      "data": {
+        "move": "teleport",
+        "position": [8, 1.8, -18],
+        "look_at": [5, 1.2, -15]
+      },
+      "duration": 0,
+      "parallel": true
+    },
+    {
+      "type": "camera",
+      "data": {
+        "move": "dolly",
+        "distance": 3,
+        "ease": "ease_out"
+      },
+      "duration": 2.5,
+      "parallel": false,
+      "comment": "Push toward Jade — determined expression"
+    },
+    {
+      "type": "wait",
+      "data": {},
+      "duration": 1.5,
+      "parallel": false
+    },
+
+    {
+      "type": "transition",
+      "data": { "transition": "fade_black" },
+      "duration": 0.5,
+      "parallel": false,
+      "comment": "CUT TO: Ricky — revving his Evo, flashy as always"
+    },
+    {
+      "type": "camera",
+      "data": {
+        "move": "teleport",
+        "position": [0, 0.8, -12],
+        "look_at": [3, 1, -10]
+      },
+      "duration": 0,
+      "parallel": true
+    },
+    {
+      "type": "audio",
+      "data": { "sfx": "engine_rev_aggressive" },
+      "duration": 0,
+      "parallel": true
+    },
+    {
+      "type": "camera",
+      "data": {
+        "move": "pan",
+        "from": [0, 0.8, -12],
+        "to": [2, 1.2, -10],
+        "look_at": [3, 1, -10],
+        "ease": "ease_in_out"
+      },
+      "duration": 2.0,
+      "parallel": false,
+      "comment": "Low sweep past Ricky's Evo"
+    },
+    {
+      "type": "wait",
+      "data": {},
+      "duration": 1.0,
+      "parallel": false
+    },
+
+    {
+      "type": "transition",
+      "data": { "transition": "fade_black" },
+      "duration": 0.5,
+      "parallel": false,
+      "comment": "CUT TO: Zero — sitting in shadow, engine idling, watching everything"
+    },
+    {
+      "type": "camera",
+      "data": {
+        "move": "teleport",
+        "position": [-10, 2, -8],
+        "look_at": [-12, 1.2, -5]
+      },
+      "duration": 0,
+      "parallel": true
+    },
+    {
+      "type": "camera",
+      "data": {
+        "move": "dolly",
+        "distance": 2,
+        "ease": "ease_in"
+      },
+      "duration": 3.0,
+      "parallel": false,
+      "comment": "Slow menacing push toward Zero's blacked-out car"
+    },
+    {
+      "type": "wait",
+      "data": {},
+      "duration": 1.0,
+      "parallel": false
+    },
+
+    {
+      "type": "transition",
+      "data": { "transition": "fade_black" },
+      "duration": 0.6,
+      "parallel": false,
+      "comment": "CUT TO: Driver — walking to the CRX"
+    },
+    {
+      "type": "camera",
+      "data": {
+        "move": "teleport",
+        "position": [0, 1, 5],
+        "look_at": [0, 1.5, 0]
+      },
+      "duration": 0,
+      "parallel": true,
+      "comment": "Driver walking through crowd toward the car"
+    },
+    {
+      "type": "camera",
+      "data": {
+        "move": "dolly",
+        "distance": -3,
+        "ease": "ease_out"
+      },
+      "duration": 3.0,
+      "parallel": false,
+      "comment": "Track backward as Driver approaches — crowd parting"
+    },
+    {
+      "type": "camera",
+      "data": {
+        "move": "teleport",
+        "position": [-2, 1.2, -2],
+        "look_at": [0, 0.8, -3]
+      },
+      "duration": 0,
+      "parallel": true,
+      "comment": "Driver's hand on the CRX door handle"
+    },
+    {
+      "type": "wait",
+      "data": {},
+      "duration": 1.5,
+      "parallel": false
+    },
+    {
+      "type": "camera",
+      "data": {
+        "move": "orbit",
+        "target": [0, 1, -3],
+        "angle": 120,
+        "ease": "ease_in_out"
+      },
+      "duration": 4.0,
+      "parallel": false,
+      "comment": "Full hero orbit around the CRX — the comeback car"
+    },
+
+    {
+      "type": "transition",
+      "data": { "transition": "fade_black" },
+      "duration": 0.5,
+      "parallel": false,
+      "comment": "CUT TO: Grid formation from above"
+    },
+    {
+      "type": "camera",
+      "data": {
+        "move": "teleport",
+        "position": [0, 40, -10],
+        "look_at": [0, 0, -10]
+      },
+      "duration": 0,
+      "parallel": true,
+      "comment": "Aerial — all cars on the grid, lights reflecting off hoods"
+    },
+    {
+      "type": "camera",
+      "data": {
+        "move": "crane",
+        "height": -25,
+        "ease": "ease_in_out"
+      },
+      "duration": 4.0,
+      "parallel": false,
+      "comment": "Descend from grid overview to street level"
+    },
+
+    {
+      "type": "camera",
+      "data": {
+        "move": "teleport",
+        "position": [1, 1.5, -5],
+        "look_at": [0, 1.5, -8]
+      },
+      "duration": 0,
+      "parallel": true,
+      "comment": "Eye contact: Driver looks at Marcus"
+    },
+    {
+      "type": "wait",
+      "data": {},
+      "duration": 1.2,
+      "parallel": false
+    },
+    {
+      "type": "camera",
+      "data": {
+        "move": "teleport",
+        "position": [-4, 1.5, -14],
+        "look_at": [-5, 1.5, -15]
+      },
+      "duration": 0,
+      "parallel": true,
+      "comment": "Marcus returns the look — respect"
+    },
+    {
+      "type": "wait",
+      "data": {},
+      "duration": 1.0,
+      "parallel": false
+    },
+
+    {
+      "type": "camera",
+      "data": {
+        "move": "teleport",
+        "position": [1, 1.5, -5],
+        "look_at": [5, 1.2, -8]
+      },
+      "duration": 0,
+      "parallel": true,
+      "comment": "Eye contact: Driver looks at Jade"
+    },
+    {
+      "type": "wait",
+      "data": {},
+      "duration": 1.0,
+      "parallel": false
+    },
+    {
+      "type": "camera",
+      "data": {
+        "move": "teleport",
+        "position": [6, 1.5, -14],
+        "look_at": [5, 1.5, -15]
+      },
+      "duration": 0,
+      "parallel": true,
+      "comment": "Jade nods — unspoken alliance"
+    },
+    {
+      "type": "wait",
+      "data": {},
+      "duration": 1.0,
+      "parallel": false
+    },
+
+    {
+      "type": "camera",
+      "data": {
+        "move": "teleport",
+        "position": [1, 1.5, -5],
+        "look_at": [-12, 1.2, -5]
+      },
+      "duration": 0,
+      "parallel": true,
+      "comment": "Eye contact: Driver looks at Zero"
+    },
+    {
+      "type": "wait",
+      "data": {},
+      "duration": 1.0,
+      "parallel": false
+    },
+    {
+      "type": "camera",
+      "data": {
+        "move": "teleport",
+        "position": [-11, 1.5, -4.5],
+        "look_at": [-12, 1.5, -5]
+      },
+      "duration": 0,
+      "parallel": true,
+      "comment": "Zero — inscrutable, engine revving"
+    },
+    {
+      "type": "audio",
+      "data": { "sfx": "engine_rev_low_menacing" },
+      "duration": 0,
+      "parallel": true
+    },
+    {
+      "type": "wait",
+      "data": {},
+      "duration": 1.5,
+      "parallel": false
+    },
+
+    {
+      "type": "transition",
+      "data": { "transition": "fade_black" },
+      "duration": 0.4,
+      "parallel": false,
+      "comment": "CUT TO: Maya on pit wall"
+    },
+    {
+      "type": "camera",
+      "data": {
+        "move": "teleport",
+        "position": [15, 2, 0],
+        "look_at": [12, 1.6, 0]
+      },
+      "duration": 0,
+      "parallel": true,
+      "comment": "Maya watching from pit wall, hands clasped"
+    },
+    {
+      "type": "camera",
+      "data": {
+        "move": "dolly",
+        "distance": 2,
+        "ease": "ease_out"
+      },
+      "duration": 2.0,
+      "parallel": false,
+      "comment": "Push toward Maya — worried but believing"
+    },
+    {
+      "type": "wait",
+      "data": {},
+      "duration": 1.0,
+      "parallel": false
+    },
+
+    {
+      "type": "camera",
+      "data": {
+        "move": "teleport",
+        "position": [0.3, 1.5, -4],
+        "look_at": [0, 1.5, -10]
+      },
+      "duration": 0,
+      "parallel": true,
+      "comment": "Driver — final look forward, takes a breath"
+    },
+    {
+      "type": "dialogue",
+      "data": { "dialogue_id": "final_race_inner_monologue" },
+      "duration": 0,
+      "parallel": false,
+      "comment": "One line: 'One last ride.'"
+    },
+
+    {
+      "type": "camera",
+      "data": {
+        "move": "teleport",
+        "position": [0, 8, -10],
+        "look_at": [0, 0, -10]
+      },
+      "duration": 0,
+      "parallel": true,
+      "comment": "Overhead — all engines revving"
+    },
+    {
+      "type": "audio",
+      "data": { "sfx": "engines_chorus_rev" },
+      "duration": 0,
+      "parallel": true
+    },
+    {
+      "type": "camera",
+      "data": {
+        "move": "crane",
+        "height": -4,
+        "ease": "ease_in"
+      },
+      "duration": 2.0,
+      "parallel": false
+    },
+
+    {
+      "type": "effect",
+      "data": {
+        "hud_message": { "text": "3", "duration": 0.8 }
+      },
+      "duration": 0,
+      "parallel": true
+    },
+    {
+      "type": "audio",
+      "data": { "sfx": "countdown_beep" },
+      "duration": 0,
+      "parallel": true
+    },
+    {
+      "type": "camera",
+      "data": {
+        "move": "teleport",
+        "position": [0, 0.6, -7],
+        "look_at": [0, 0.5, -10]
+      },
+      "duration": 0,
+      "parallel": true,
+      "comment": "Ground level — tires on asphalt"
+    },
+    {
+      "type": "wait",
+      "data": {},
+      "duration": 1.0,
+      "parallel": false
+    },
+
+    {
+      "type": "effect",
+      "data": {
+        "hud_message": { "text": "2", "duration": 0.8 }
+      },
+      "duration": 0,
+      "parallel": true
+    },
+    {
+      "type": "audio",
+      "data": { "sfx": "countdown_beep" },
+      "duration": 0,
+      "parallel": true
+    },
+    {
+      "type": "camera",
+      "data": {
+        "move": "teleport",
+        "position": [-1, 1.4, -4.5],
+        "look_at": [0, 1.4, -5]
+      },
+      "duration": 0,
+      "parallel": true,
+      "comment": "Driver's eyes — fire, determination"
+    },
+    {
+      "type": "wait",
+      "data": {},
+      "duration": 1.0,
+      "parallel": false
+    },
+
+    {
+      "type": "effect",
+      "data": {
+        "hud_message": { "text": "1", "duration": 0.8 }
+      },
+      "duration": 0,
+      "parallel": true
+    },
+    {
+      "type": "audio",
+      "data": { "sfx": "countdown_beep" },
+      "duration": 0,
+      "parallel": true
+    },
+    {
+      "type": "effect",
+      "data": {
+        "slow_motion": { "scale": 0.5, "active": true }
+      },
+      "duration": 0,
+      "parallel": true,
+      "comment": "Time slows for the final moment"
+    },
+    {
+      "type": "camera",
+      "data": {
+        "move": "teleport",
+        "position": [2, 1, -9],
+        "look_at": [0, 1, -8]
+      },
+      "duration": 0,
+      "parallel": true,
+      "comment": "Dramatic side angle — all cars poised"
+    },
+    {
+      "type": "wait",
+      "data": {},
+      "duration": 1.5,
+      "parallel": false
+    },
+
+    {
+      "type": "effect",
+      "data": {
+        "hud_message": { "text": "GO!", "duration": 1.5 }
+      },
+      "duration": 0,
+      "parallel": true
+    },
+    {
+      "type": "audio",
+      "data": { "sfx": "countdown_go" },
+      "duration": 0,
+      "parallel": true
+    },
+    {
+      "type": "effect",
+      "data": {
+        "slow_motion": { "active": false }
+      },
+      "duration": 0,
+      "parallel": true,
+      "comment": "Time snaps back to full speed"
+    },
+    {
+      "type": "camera",
+      "data": {
+        "move": "shake",
+        "intensity": 0.4,
+        "duration": 0.6
+      },
+      "duration": 0.6,
+      "parallel": false,
+      "comment": "Massive launch — all cars go"
+    },
+    {
+      "type": "audio",
+      "data": { "sfx": "tire_screech_chorus" },
+      "duration": 0,
+      "parallel": true
+    },
+    {
+      "type": "effect",
+      "data": { "letterbox": false },
+      "duration": 0.3,
+      "parallel": false,
+      "comment": "Bars retract — the final race begins"
+    }
+  ]
+}

@@ -1,0 +1,228 @@
+{
+  "id": "nikkos_gambit_pre",
+  "context": "Chapter 1.4 — Championship final setup. Driver vs Nikko. Debt collectors watching from the balcony.",
+  "lines": [
+    {
+      "type": "narration",
+      "text": "The Pit is at capacity. You've never seen it like this — bodies packed wall to wall, the air thick with smoke and sweat and anticipation. Somewhere in the back, someone is selling bootleg footage of your earlier wins. Your name is on everyone's lips."
+    },
+    {
+      "type": "narration",
+      "text": "But it's the balcony that catches your attention."
+    },
+    {
+      "type": "narration",
+      "text": "Two men. Standing apart from the crowd. Big — working-big. Thick necks, rolled sleeves. They're not here for the racing. They're here for the money. Specifically, they're here for Nikko's money."
+    },
+    {
+      "type": "narration",
+      "text": "You recognize them. Lau's collectors. They're leaning on the railing, watching the staging area with the patient focus of predators at a watering hole.",
+      "condition": {
+        "type": "has_flag",
+        "flag": "family_business_complete"
+      }
+    },
+    {
+      "type": "narration",
+      "text": "Nikko is in the staging area. His car is idling, freshly waxed, the engine note sharp and urgent. But Nikko himself — Nikko is fraying at the edges."
+    },
+    {
+      "type": "narration",
+      "text": "He's pacing behind his car, talking to himself. His lips are moving but no sound is coming out, and his hands are making small, jerky motions — adjusting his collar, cracking his knuckles, touching his split lip from two weeks ago."
+    },
+    {
+      "type": "narration",
+      "text": "You hear a fragment as you pass: '...one more. Just one more. That's all. Just one more and it's done...'",
+      "condition": {
+        "type": "has_flag",
+        "flag": "family_business_complete"
+      }
+    },
+    {
+      "type": "narration",
+      "text": "You hear a fragment as you pass: '...one more. Just one more...'",
+      "condition": {
+        "type": "flag_equals",
+        "flag": "family_business_complete",
+        "value": false
+      }
+    },
+    {
+      "type": "narration",
+      "text": "His mask is cracking. The swagger, the trash talk, the untouchable confidence — it's all still there on the surface, but underneath, the seams are showing. This isn't a man racing for glory. This is a man racing for survival."
+    },
+    {
+      "type": "narration",
+      "text": "He sees you watching. For a split second, something raw flashes across his face — fear, desperation, the naked need of a person who has run out of options. Then the mask snaps back so hard you can almost hear it click."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_cocky",
+      "text": "Well, well. The crowd favorite. You ready to lose in front of everyone who thinks you're something special?"
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "You good, Nikko?",
+          "choice_id": "nikko_concern",
+          "relationship_changes": {"nikko": 3},
+          "moral_shift": 5,
+          "jump_to": "nikko_mask_concern"
+        },
+        {
+          "text": "See you on the line.",
+          "choice_id": "nikko_line",
+          "relationship_changes": {"nikko": 3},
+          "moral_shift": 0,
+          "jump_to": "nikko_mask_line"
+        },
+        {
+          "text": "Those guys on the balcony bothering you again?",
+          "choice_id": "nikko_collectors",
+          "relationship_changes": {"nikko": -5},
+          "moral_shift": 0,
+          "condition": {
+            "type": "has_flag",
+            "flag": "family_business_complete"
+          },
+          "jump_to": "nikko_mask_collectors"
+        }
+      ]
+    },
+    {
+      "label": "nikko_mask_concern",
+      "type": "narration",
+      "text": "The mask flickers. For one heartbeat, you see the kid from the back room — the one with the split lip and the half-million-dollar anchor around his neck."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_cocky",
+      "text": "Good? I'm great. I'm better than great. I'm about to take your championship and your reputation in one lap."
+    },
+    {
+      "type": "narration",
+      "text": "The words are right but the delivery is off. Like an actor who's been doing the same play for too long and can't remember if he's performing or living."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_neutral",
+      "text": "...Just drive clean tonight. Okay? Drive clean."
+    },
+    {
+      "type": "narration",
+      "text": "He says it quietly. Almost to himself. Then he turns and climbs into his car, and the engine screams to life like a cornered animal.",
+      "jump_to": "pre_race_final"
+    },
+    {
+      "label": "nikko_mask_line",
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_cocky",
+      "text": "On the line. At the finish. And in your rearview mirror. That's where you'll see me tonight."
+    },
+    {
+      "type": "narration",
+      "text": "He grins. It's sharp and practiced and doesn't reach his eyes. But there's something else underneath — a desperation so deep it's almost dignified. He NEEDS this win. Not for pride. Not for money. For something more fundamental."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_neutral",
+      "text": "May the best driver win. And tonight, that's gonna be me."
+    },
+    {
+      "type": "narration",
+      "text": "He gives you a mock salute and climbs into his car. The engine fires up — loud, angry, a mirror of its driver. Through the windshield, you can see his hands gripping the wheel. White knuckles.",
+      "jump_to": "pre_race_final"
+    },
+    {
+      "label": "nikko_mask_collectors",
+      "type": "narration",
+      "text": "Nikko's face goes white. Not pale — white. Like you just pulled every drop of blood out of his body with six words."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_angry",
+      "text": "Don't."
+    },
+    {
+      "type": "narration",
+      "text": "One word. Barely audible over the crowd. His eyes are wild for a moment — cornered-animal eyes — and then the mask slams back."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_angry",
+      "text": "I don't know what you think you saw. But tonight isn't about them. Tonight is about you and me and who's faster. That's it. That's all it's ever been."
+    },
+    {
+      "type": "narration",
+      "text": "He's lying. You both know it. But calling him out further would break something — not in him, in between you. Some truths are weapons, and right now, you're holding a loaded one."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_neutral",
+      "text": "Just race me. That's all I'm asking. Just race me like it matters."
+    },
+    {
+      "type": "narration",
+      "text": "He turns away and gets into his car. The engine fires. Through the window, his face is already resetting — the cocky grin rebuilding itself piece by piece. But his hands on the wheel tell a different story.",
+      "jump_to": "pre_race_final"
+    },
+    {
+      "label": "pre_race_final",
+      "type": "narration",
+      "text": "You walk to your car. The staging area clears as crews fall back. The Pit Boss raises his hand."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Pit Boss",
+      "portrait": "pit_boss_hype",
+      "text": "FINAL RACE! Championship round! Downtown Circuit — full loop! Eight miles of everything this city has to offer!"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Pit Boss",
+      "portrait": "pit_boss_hype",
+      "text": "On my left — the challenger. Nikko Chen! Fastest lap time in Pit history. The man who has never finished lower than second!"
+    },
+    {
+      "type": "narration",
+      "text": "The crowd erupts. Nikko revs his engine. From the balcony, the collectors watch."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Pit Boss",
+      "portrait": "pit_boss_hype",
+      "text": "On my right — seven wins tonight. Seven. The one they're calling the future of Nova Pacifica. The one who came from nowhere and drove like they were born behind the wheel!"
+    },
+    {
+      "type": "narration",
+      "text": "The crowd is louder now. Your name — a name that didn't exist in this world three months ago — bounces off the concrete walls."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Pit Boss",
+      "portrait": "pit_boss_hype",
+      "text": "Drivers! On my signal! Three... two... one... GO!"
+    },
+    {
+      "type": "narration",
+      "text": "Tires scream. The crowd becomes a blur. The night swallows you whole."
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "championship_final_started",
+        "value": true
+      }
+    }
+  ]
+}

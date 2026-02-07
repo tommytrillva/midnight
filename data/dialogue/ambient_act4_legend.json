@@ -1,0 +1,210 @@
+{
+  "id": "ambient_act4_legend",
+  "district": "any",
+  "context": "Act 4: The Redemption — player is rebuilding, becoming legend",
+  "lines": [
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Spectator", "text": "That's them. THE one. In person."},
+        {"speaker": 1, "speaker_tag": "Spectator", "text": "I thought they were done."},
+        {"speaker": 0, "speaker_tag": "Spectator", "text": "Legends don't end. They just go quiet for a while."}
+      ],
+      "conditions": {"act": 4},
+      "weight": 1.2,
+      "tags": ["player_reference", "legend", "awe"]
+    },
+    {
+      "speakers": ["regular_1"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Father", "text": "My kid wants to be a racer because of them. I should be worried. But honestly? I get it."}
+      ],
+      "conditions": {"act": 4},
+      "weight": 1.0,
+      "tags": ["player_reference", "legend", "impact"]
+    },
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Regular", "text": "From nothing to legend. That's the story right there."},
+        {"speaker": 1, "speaker_tag": "Regular", "text": "Not from nothing. From the Fall. That's what makes it real."},
+        {"speaker": 0, "speaker_tag": "Regular", "text": "Anyone can rise. Only the real ones come back."}
+      ],
+      "conditions": {"act": 4},
+      "weight": 1.3,
+      "tags": ["player_reference", "legend", "philosophy"]
+    },
+    {
+      "speakers": ["regular_1"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Spectator", "text": "They say if you see them race at midnight, you never forget it."}
+      ],
+      "conditions": {"act": 4, "time_period": "late_night"},
+      "weight": 1.4,
+      "preferred_time": "late_night",
+      "tags": ["player_reference", "legend", "time"]
+    },
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Racer", "text": "They came back. After everything. They actually came back."},
+        {"speaker": 1, "speaker_tag": "Racer", "text": "Not just came back. Came back stronger."},
+        {"speaker": 0, "speaker_tag": "Racer", "text": "That's the part that scares people."}
+      ],
+      "conditions": {"act": 4},
+      "weight": 1.2,
+      "tags": ["player_reference", "legend", "comeback"]
+    },
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Regular", "text": "Torres rebuilt that car from scrap. SCRAP. And it's faster than anything on the street."},
+        {"speaker": 1, "speaker_tag": "Regular", "text": "Torres and them together... it's like watching art. Violent, loud, terrifying art."}
+      ],
+      "conditions": {"act": 4},
+      "weight": 1.0,
+      "tags": ["maya", "player_reference", "cars"]
+    },
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Regular", "text": "Diesel's smiling. I've never seen Diesel smile."},
+        {"speaker": 1, "speaker_tag": "Regular", "text": "He trained them. This is his legacy too."},
+        {"speaker": 0, "speaker_tag": "Regular", "text": "The student surpassed the master. And the master couldn't be happier."}
+      ],
+      "conditions": {"act": 4, "mission_completed": "diesels_test"},
+      "weight": 1.1,
+      "tags": ["diesel", "player_reference", "lore"]
+    },
+    {
+      "speakers": ["bookie"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Bookie", "text": "I stopped taking bets against them. It's not gambling anymore. It's charity."}
+      ],
+      "conditions": {"act": 4, "min_rep_tier": 4},
+      "weight": 1.0,
+      "tags": ["betting", "player_reference", "humor"]
+    },
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Young Racer", "text": "I want to race them someday."},
+        {"speaker": 1, "speaker_tag": "Old Timer", "text": "Then practice. Every day. And when you think you're ready, practice more."},
+        {"speaker": 0, "speaker_tag": "Young Racer", "text": "Did they practice that much?"},
+        {"speaker": 1, "speaker_tag": "Old Timer", "text": "They practiced until the car broke. Then they fixed it and practiced more."}
+      ],
+      "conditions": {"act": 4},
+      "weight": 1.0,
+      "tags": ["player_reference", "legend", "inspiration"]
+    },
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Regular", "text": "Zero underestimated them. That's a mistake you only make once."},
+        {"speaker": 1, "speaker_tag": "Regular", "text": "Zero doesn't make mistakes."},
+        {"speaker": 0, "speaker_tag": "Regular", "text": "Zero did this time."}
+      ],
+      "conditions": {"act": 4},
+      "weight": 1.1,
+      "tags": ["zero", "player_reference"]
+    },
+    {
+      "speakers": ["regular_1"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Regular", "text": "The Pit feels different now. Electric. Like the whole city knows something big is coming."}
+      ],
+      "conditions": {"act": 4, "min_chapter": 2},
+      "weight": 1.0,
+      "tags": ["atmosphere", "anticipation"]
+    },
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Regular", "text": "Every racer in the city wants a piece. Nobody's getting it."},
+        {"speaker": 1, "speaker_tag": "Regular", "text": "They're not racing for the Pit anymore. They're racing for something bigger."},
+        {"speaker": 0, "speaker_tag": "Regular", "text": "The Reckoning. Everyone feels it coming."}
+      ],
+      "conditions": {"act": 4, "min_chapter": 3},
+      "weight": 1.2,
+      "tags": ["player_reference", "anticipation", "climax"]
+    },
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Spectator", "text": "Win or lose tonight, they've already written their name in the streets."},
+        {"speaker": 1, "speaker_tag": "Spectator", "text": "Written? They carved it. In tire marks and exhaust smoke."}
+      ],
+      "conditions": {"act": 4, "min_chapter": 3},
+      "weight": 1.1,
+      "tags": ["player_reference", "legend"]
+    },
+    {
+      "speakers": ["girl_1", "girl_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Fan", "text": "I've been following them since the beginning. Since they were nobody."},
+        {"speaker": 1, "speaker_tag": "Fan", "text": "So were the rest of us. That's the thing. We all watched. We all believed."},
+        {"speaker": 0, "speaker_tag": "Fan", "text": "And we were right."}
+      ],
+      "conditions": {"act": 4},
+      "weight": 0.9,
+      "tags": ["player_reference", "legend", "fans"]
+    },
+    {
+      "speakers": ["regular_1"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Regular", "text": "This city's had a lot of kings. None of them came from nothing, fell to nothing, and built it all back. Until now."}
+      ],
+      "conditions": {"act": 4, "min_rep_tier": 4},
+      "weight": 1.2,
+      "tags": ["player_reference", "legend", "philosophy"]
+    },
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Regular", "text": "People come from other cities now. Just to watch."},
+        {"speaker": 1, "speaker_tag": "Regular", "text": "Nova Pacifica was always special. Now the world knows it."}
+      ],
+      "conditions": {"act": 4, "min_rep_tier": 5},
+      "weight": 1.1,
+      "tags": ["legend", "fame", "atmosphere"]
+    },
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Regular", "text": "Nikko races alongside them now. Not against. Together."},
+        {"speaker": 1, "speaker_tag": "Regular", "text": "After everything? That's respect. Real respect."}
+      ],
+      "conditions": {"act": 4, "has_flag": "saved_nikko"},
+      "weight": 1.3,
+      "tags": ["nikko", "player_reference", "loyalty"]
+    },
+    {
+      "speakers": ["regular_1"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Regular", "text": "Nikko still doesn't talk to them. Some bridges don't rebuild. Some choices don't un-make."}
+      ],
+      "conditions": {"act": 4, "has_flag": "kept_racing_nikko_crash"},
+      "weight": 1.3,
+      "tags": ["nikko", "player_reference", "consequences"]
+    },
+    {
+      "speakers": ["regular_1"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Old Timer", "text": "I've watched racers for thirty years. I've seen fast. I've seen talented. But I've never seen someone the road itself seems to bend for. Until them."}
+      ],
+      "conditions": {"act": 4, "min_rep_tier": 5},
+      "weight": 1.0,
+      "tags": ["player_reference", "legend", "awe"]
+    },
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Regular", "text": "After tonight, nothing will be the same."},
+        {"speaker": 1, "speaker_tag": "Regular", "text": "Nothing's been the same since they showed up in that rusty CRX. Tonight just makes it official."}
+      ],
+      "conditions": {"act": 4, "min_chapter": 4},
+      "weight": 1.3,
+      "tags": ["player_reference", "climax", "legend"]
+    }
+  ]
+}

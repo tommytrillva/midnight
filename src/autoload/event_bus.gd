@@ -47,6 +47,17 @@ signal choice_made(choice_id: String, option_index: int, option_data: Dictionary
 signal dialogue_started(dialogue_id: String)
 signal dialogue_ended(dialogue_id: String)
 signal dialogue_choice_presented(choices: Array)
+signal origin_chosen(origin_id: String)
+
+# --- Choice/Consequence Events ---
+signal choice_recorded(choice_id: String, category: String)
+signal consequence_applied(consequence: Dictionary, source: String)
+signal delayed_consequence_fired(mission_id: String, source_choice: String)
+signal cumulative_threshold_reached(counter_id: String)
+signal moral_alignment_shifted(old_value: float, new_value: float, reason: String)
+signal zero_awareness_changed(old_level: int, new_level: int)
+signal ending_determined(ending_id: String)
+signal path_diverged(path: String)
 
 # --- Garage/Customization Events ---
 signal part_installed(vehicle_id: String, slot: String, part_data: Dictionary)
@@ -136,7 +147,30 @@ signal circuit_dnf_warning(racer_id: int, seconds_behind: float)
 signal circuit_dnf_timeout(racer_id: int)
 signal circuit_leaderboard_updated(positions: Array)
 
+# --- Ambient Dialogue Events ---
+signal ambient_line_started(group_id: String, line_data: Dictionary)
+signal ambient_line_finished(group_id: String)
+signal ambient_exchange_started(group_id: String, exchange_data: Dictionary)
+signal ambient_exchange_finished(group_id: String)
+signal npc_group_entered(group_id: String)
+signal npc_group_exited(group_id: String)
+
+# --- Cinematic Events ---
+signal cinematic_started(cinematic_id: String)
+signal cinematic_finished(cinematic_id: String)
+signal cinematic_skipped(cinematic_id: String)
+signal letterbox_shown()
+signal letterbox_hidden()
+signal slow_motion_activated(scale: float)
+signal slow_motion_deactivated()
+
 # --- Ghost Events ---
 signal ghost_appeared()
 signal ghost_race_started()
 signal ghost_escaped()
+
+# --- Ending Events ---
+signal ending_started(ending_id: String, ending_title: String)
+signal ending_completed(ending_id: String, ending_title: String)
+signal credits_started(ending_id: String, ending_title: String)
+signal credits_finished(ending_id: String)

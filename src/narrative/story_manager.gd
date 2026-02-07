@@ -47,8 +47,11 @@ func start_new_story() -> void:
 	chosen_path = ""
 	_refresh_available_missions()
 
-	# Auto-start the arrival mission on new game
-	if "arrival" in available_missions:
+	# Auto-start the prologue opening on new game
+	if "prologue_opening" in available_missions:
+		start_mission("prologue_opening")
+	elif "arrival" in available_missions:
+		# Fallback if prologue missions are not loaded
 		start_mission("arrival")
 
 
@@ -166,39 +169,14 @@ func get_current_act_name() -> String:
 
 
 func determine_ending() -> String:
-	## Determine which of the 6+ endings the player gets based on cumulative choices.
-	## Per GDD Section 4.4.
-	var maya_level := GameManager.relationships.get_level("maya")
-	var diesel_level := GameManager.relationships.get_level("diesel")
-	var jade_level := GameManager.relationships.get_level("jade")
-	var nikko_level := GameManager.relationships.get_level("nikko")
-	var moral := GameManager.player_data._moral_alignment
-	var zero_awareness := GameManager.player_data._zero_awareness
-	var beat_ghost := story_flags.get("beat_ghost", false)
-	var accepted_zero_offer := story_flags.get("accepted_zero_offer", false)
+	## Determine which of the 7 endings the player gets based on cumulative choices.
+	## Per GDD Section 4.4. Delegates to EndingSystem for the full evaluation.
+	## Returns the ending_id that can be passed to EndingSystem.trigger_ending().
+	if GameManager.ending_system:
+		return GameManager.ending_system.determine_ending()
 
-	# The Ghost ending (secret, highest priority)
-	if beat_ghost and story_flags.get("ghost_secret_conditions", false):
-		return "the_ghost"
-
-	# Become Zero
-	if accepted_zero_offer and moral < -30:
-		return "become_zero"
-
-	# Destroy Zero
-	if zero_awareness >= 4 and diesel_level >= 4 and not accepted_zero_offer:
-		return "destroy_zero"
-
-	# The Escape
-	if maya_level >= 5 and abs(moral) < 30:
-		return "the_escape"
-
-	# The Professional
-	if chosen_path == "corporate" and jade_level >= 4:
-		return "the_professional"
-
-	# Default: Legend of the Streets
-	return "legend_of_the_streets"
+	# Fallback if EndingSystem is not yet initialized
+	return "legend"
 
 
 func _check_progression() -> void:
@@ -323,7 +301,7 @@ func _on_choice_made(choice_id: String, _option_index: int, option_data: Diction
 
 func _get_chapter_name() -> String:
 	var names := {
-		"1_1": "Arrival", "1_2": "Proving Ground",
+		"1_1": "The Spark", "1_2": "Proving Ground",
 		"1_3": "The Undercard", "1_4": "Rising Heat",
 		"2_1": "New Levels", "2_2": "The Fork",
 		"2_3": "Empire Building", "2_4": "The Summit",
@@ -356,12 +334,48 @@ func _load_mission_data() -> void:
 
 func _load_default_missions() -> void:
 	var missions := [
+		# --- Prologue Missions (before Act 1 proper) ---
+		{
+			"id": "prologue_opening", "name": "The Spark", "act": 1, "chapter": 1,
+			"type": "scripted", "required": true,
+			"description": "Rain-soaked streets. A GT-R. A green light. Something wakes up.",
+			"pre_dialogue": "prologue_opening",
+			"auto_trigger": true,
+			"prerequisites": [],
+		},
+		{
+			"id": "prologue_maya_meeting", "name": "Torres Auto", "act": 1, "chapter": 1,
+			"type": "scripted", "required": true,
+			"description": "Meet Maya Torres. Choose your origin. Accept the deal.",
+			"pre_dialogue": "prologue_maya_meeting",
+			"auto_trigger": true,
+			"prerequisites": ["prologue_opening"],
+			"rewards": {"relationship": {"maya": 5}},
+		},
+		{
+			"id": "prologue_first_day", "name": "Day One", "act": 1, "chapter": 1,
+			"type": "scripted", "required": true,
+			"description": "Learn the basics at the shop. Oil changes, tire rotations, and a glimpse of something more.",
+			"pre_dialogue": "prologue_first_day",
+			"auto_trigger": true,
+			"prerequisites": ["prologue_maya_meeting"],
+		},
+		{
+			"id": "prologue_underground", "name": "The Pit", "act": 1, "chapter": 1,
+			"type": "scripted", "required": true,
+			"description": "A young racer brings word of The Pit. $500 entry. Everything to gain, everything to lose.",
+			"pre_dialogue": "prologue_underground_intro",
+			"auto_trigger": true,
+			"prerequisites": ["prologue_first_day"],
+		},
+		# --- Act 1 Chapter 1 (post-prologue) ---
 		{
 			"id": "arrival", "name": "Arrival", "act": 1, "chapter": 1,
 			"type": "scripted", "required": true,
-			"description": "Arrive in Nova Pacifica. A new beginning.",
+			"description": "Arrive at The Pit. A new beginning.",
 			"pre_dialogue": "arrival_intro",
-			"prerequisites": [],
+			"auto_trigger": true,
+			"prerequisites": ["prologue_underground"],
 		},
 		{
 			"id": "torres_garage", "name": "Torres Garage", "act": 1, "chapter": 1,

@@ -337,8 +337,13 @@ func _transition_to_game() -> void:
 	if free_roam_scene:
 		var free_roam := free_roam_scene.instantiate()
 		add_child(free_roam)
-		# Start the arrival story mission
-		GameManager.story.start_mission("arrival")
+		# The prologue missions auto-trigger via story.start_new_story()
+		# which was called in GameManager.start_new_game(). The chain is:
+		# prologue_opening -> prologue_maya_meeting -> prologue_first_day
+		# -> prologue_underground -> arrival
+		# If the prologue is already done (loaded save), check for auto-triggers
+		if GameManager.story.is_mission_completed("prologue_opening"):
+			GameManager.story.check_auto_trigger_missions()
 	else:
 		push_error("[Main] Failed to load free_roam.tscn")
 

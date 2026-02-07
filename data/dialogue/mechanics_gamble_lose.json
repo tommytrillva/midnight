@@ -1,0 +1,120 @@
+{
+  "id": "mechanics_gamble_lose",
+  "context": "Act 1 Chapter 1.1 — Lost the Mechanic's Gamble against Preston Wells",
+  "lines": [
+    {
+      "type": "narration",
+      "text": "The 911 crosses the line three car lengths ahead. It's not even close. The crowd's reaction is muted — they expected this. Everyone expected this. Everyone except you."
+    },
+    {
+      "type": "narration",
+      "text": "You coast past the line. The CRX's engine sounds tired. You feel tired. The kind of tired that has nothing to do with sleep."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Preston Wells",
+      "portrait": "preston_smug",
+      "text": "Oh, don't look so broken up about it."
+    },
+    {
+      "type": "narration",
+      "text": "Preston leans against the 911, arms crossed. Not even winded. Not even satisfied — just bored. Like this was an errand he had to run before dinner."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Preston Wells",
+      "portrait": "preston_smug",
+      "text": "You know, for a second there — in the technical section — I almost felt something. Concern? No. More like... amusement."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Preston Wells",
+      "portrait": "preston_smug",
+      "text": "I'll have my lawyer send the papers over Monday. Don't bother cleaning the place up. I've got a demolition crew on retainer."
+    },
+    {
+      "type": "narration",
+      "text": "He slides into the 911 and pulls away. The crowd parts for him like water."
+    },
+    {
+      "type": "narration",
+      "text": "You look for Maya. She's standing where she was before the race — same spot, same posture. But everything is different now. She hasn't moved. She might not be breathing."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_devastated",
+      "text": "That was Mrs. Delgado's car."
+    },
+    {
+      "type": "narration",
+      "text": "Her voice is small. Broken. Not angry — worse. Empty."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_devastated",
+      "text": "She brought it in every six months for twenty years. My dad used to give her a discount because she'd bring empanadas. Her car. My dad's shop."
+    },
+    {
+      "type": "narration",
+      "text": "You try to say something. Anything."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_devastated",
+      "text": "Don't."
+    },
+    {
+      "type": "narration",
+      "text": "She turns and walks away. No dramatic exit. No door slam. She just... walks. Into the dark, between the warehouses, until the shadows take her and there's nothing left but the sound of your own failure ringing in your ears."
+    },
+    {
+      "type": "narration",
+      "text": "The Pit empties around you. The floodlights click off one by one. You sit in the CRX — the car that wasn't enough — and stare at nothing."
+    },
+    {
+      "type": "narration",
+      "text": "Your phone buzzes. A text from Maya."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya (Text)",
+      "portrait": "maya_text",
+      "text": "The shop opens at 7. Don't be late."
+    },
+    {
+      "type": "narration",
+      "text": "Seven words. No emotion. No forgiveness. Just the next morning, and the morning after that, and whatever's left when the dust settles."
+    },
+    {
+      "type": "narration",
+      "text": "You lost the race. You might have lost the shop. But Maya Torres is still expecting you at seven. In Nova Pacifica, that has to count for something."
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "mechanics_gamble_lost",
+        "value": true
+      }
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "change_relationship",
+        "character": "maya",
+        "amount": -10
+      }
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "shop_in_danger",
+        "value": true
+      }
+    }
+  ]
+}

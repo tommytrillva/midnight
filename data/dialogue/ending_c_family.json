@@ -1,0 +1,194 @@
+{
+  "id": "ending_c_family",
+  "context": "Ending C: The Family — Maya, Nikko, and Diesel all at affinity 60+. No race, no fanfare. A dinner at Maya's garage.",
+  "ending_id": "family",
+  "ending_title": "The Family",
+  "lines": [
+    {
+      "type": "narration",
+      "text": "No race tonight."
+    },
+    {
+      "type": "narration",
+      "text": "No crowd. No finish line. No engines."
+    },
+    {
+      "type": "narration",
+      "text": "Just this."
+    },
+    {
+      "type": "narration",
+      "text": "Maya's garage. The original one — not the new building downtown with the glass front and the sponsorship wall. The one with the corrugated roof and the oil stain on the floor that's been there since her grandfather's time."
+    },
+    {
+      "type": "narration",
+      "text": "She upgraded it. New lift. Better lights. Climate control that actually works now. But the bones are the same. The walls remember."
+    },
+    {
+      "type": "narration",
+      "text": "A folding table set up in bay three. Mismatched chairs. Plates that don't match either. Someone found a tablecloth — it's got a crease down the middle from being in a drawer too long."
+    },
+    {
+      "type": "narration",
+      "text": "Food everywhere. Maya made adobo — her grandmother's recipe, the one she guards like a state secret. Diesel brought something in a cast-iron pot that he refuses to name but smells like Sunday mornings."
+    },
+    {
+      "type": "narration",
+      "text": "Nikko brought beer. Of course Nikko brought beer."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_relaxed",
+      "text": "I also brought dessert."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_smile",
+      "text": "That's more beer."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_grin",
+      "text": "Dessert beer. It's Belgian. There's a difference."
+    },
+    {
+      "type": "narration",
+      "text": "Diesel shakes his head but doesn't say anything. There's something on his face that takes you a moment to recognize because you've seen it so rarely."
+    },
+    {
+      "type": "narration",
+      "text": "He's smiling."
+    },
+    {
+      "type": "narration",
+      "text": "You sit. Everyone sits. For a moment nobody says anything and the silence isn't empty — it's full. Full of all the things that don't need to be said because everyone at this table already knows."
+    },
+    {
+      "type": "narration",
+      "text": "Nobody talks about racing."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_neutral",
+      "text": "It's supposed to rain tomorrow."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "Good. The garden needs it."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_relaxed",
+      "text": "Since when do you have a garden?"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "Since I decided to grow tomatoes."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_grin",
+      "text": "Diesel. The legend of Route 9. Growing tomatoes."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_approval",
+      "text": "They're good tomatoes."
+    },
+    {
+      "type": "narration",
+      "text": "Laughter. Real laughter. The kind that comes from the belly, not the throat."
+    },
+    {
+      "type": "narration",
+      "text": "Food gets passed. Stories get told — not racing stories. Regular stories. Nikko's neighbor who accidentally adopted three cats. Maya's apprentice who put a turbo on a lawnmower. Diesel's tomatoes."
+    },
+    {
+      "type": "narration",
+      "text": "Nothing and everything."
+    },
+    {
+      "type": "narration",
+      "text": "The light outside changes. Golden hour through the garage door, painting everything amber. Dust motes floating like they've got nowhere to be."
+    },
+    {
+      "type": "narration",
+      "text": "Maya stands. Raises her glass — it's actually a coffee mug, the one with the chipped handle she's had since the beginning."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_emotional",
+      "text": "To the people who stayed."
+    },
+    {
+      "type": "narration",
+      "text": "Diesel raises his glass. Nikko raises his bottle. You raise yours."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_approval",
+      "text": "To the people who stayed."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_sincere",
+      "text": "To the people who stayed."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Driver",
+      "portrait": "player_emotional",
+      "text": "To the people who stayed."
+    },
+    {
+      "type": "narration",
+      "text": "Glasses clink. The sound is small and perfect."
+    },
+    {
+      "type": "narration",
+      "text": "The camera pulls back. Through the garage window. Past the tools hanging on the pegboard. Past the photo wall — years of pictures, builds, faces, moments."
+    },
+    {
+      "type": "narration",
+      "text": "Through the window, you can see them. Laughing. Talking. Being."
+    },
+    {
+      "type": "narration",
+      "text": "Outside, parked against the curb, the CRX. Still there. A little more worn. A little more character. Still running."
+    },
+    {
+      "type": "narration",
+      "text": "The engine ticks as it cools in the evening air. A sound like a heartbeat slowing down. Not stopping. Never stopping."
+    },
+    {
+      "type": "narration",
+      "text": "Just... resting."
+    },
+    {
+      "type": "narration",
+      "text": "THE FAMILY"
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "ending_completed_family",
+        "value": true
+      }
+    }
+  ]
+}

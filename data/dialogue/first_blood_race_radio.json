@@ -1,0 +1,110 @@
+{
+  "id": "first_blood_race_radio",
+  "context": "Act 1 Chapter 1.1 — Maya's radio comms during the first Pit race",
+  "lines": [
+    {
+      "type": "dialogue",
+      "speaker": "Maya (Radio)",
+      "portrait": "maya_radio",
+      "text": "Your RPMs are too high in third! Short-shift! Short-shift into fourth NOW!"
+    },
+    {
+      "type": "narration",
+      "text": "The radio crackles. Maya's voice cuts through the engine noise like a scalpel."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya (Radio)",
+      "portrait": "maya_radio",
+      "text": "You're in third. Closing on second. Don't overdrive it — let the gap come to you."
+    },
+    {
+      "type": "narration",
+      "text": "The car ahead weaves, trying to block your line. The crowd is a blur of faces and phone screens on either side."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya (Radio)",
+      "portrait": "maya_radio",
+      "text": "Easy... easy... wait for the corner. He'll go wide. He always goes wide.",
+      "condition": {
+        "type": "has_flag",
+        "flag": "race_position_closing"
+      }
+    },
+    {
+      "label": "overtaking",
+      "type": "dialogue",
+      "speaker": "Maya (Radio)",
+      "portrait": "maya_radio_excited",
+      "text": "That's it! That's IT! Now don't get greedy — hold your line!",
+      "condition": {
+        "type": "has_flag",
+        "flag": "race_overtaking"
+      }
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya (Radio)",
+      "portrait": "maya_radio_excited",
+      "text": "You've got him. Smooth inputs. Don't throw it away now.",
+      "condition": {
+        "type": "has_flag",
+        "flag": "race_overtaking"
+      }
+    },
+    {
+      "label": "leading",
+      "type": "dialogue",
+      "speaker": "Maya (Radio)",
+      "portrait": "maya_radio_shocked",
+      "text": "Are you kidding me? Are you KIDDING me right now?!",
+      "condition": {
+        "type": "has_flag",
+        "flag": "race_leading"
+      }
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya (Radio)",
+      "portrait": "maya_radio_excited",
+      "text": "You're leading! In a CRX! I — okay. Okay. Focus. Just bring it home.",
+      "condition": {
+        "type": "has_flag",
+        "flag": "race_leading"
+      }
+    },
+    {
+      "label": "falling_behind",
+      "type": "dialogue",
+      "speaker": "Maya (Radio)",
+      "portrait": "maya_radio",
+      "text": "You're losing ground. Don't panic — find your braking point and trust it.",
+      "condition": {
+        "type": "has_flag",
+        "flag": "race_falling_behind"
+      }
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya (Radio)",
+      "portrait": "maya_radio",
+      "text": "Stop watching his taillights. Watch the road. Drive YOUR race.",
+      "condition": {
+        "type": "has_flag",
+        "flag": "race_falling_behind"
+      }
+    },
+    {
+      "label": "final_stretch",
+      "type": "dialogue",
+      "speaker": "Maya (Radio)",
+      "portrait": "maya_radio",
+      "text": "Last stretch. Whatever you've got left — give it everything."
+    },
+    {
+      "type": "narration",
+      "text": "The radio cuts to static. It's just you and the engine and the finish line burning in the distance."
+    }
+  ]
+}

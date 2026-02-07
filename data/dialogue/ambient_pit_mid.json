@@ -1,0 +1,215 @@
+{
+  "id": "ambient_pit_mid",
+  "district": "downtown",
+  "context": "The Pit — mid game, player is becoming known in the scene",
+  "lines": [
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Spectator", "text": "That's the one who beat Nikko. Don't make eye contact."},
+        {"speaker": 1, "speaker_tag": "Spectator", "text": "Beat Nikko? I thought nobody beats Nikko."},
+        {"speaker": 0, "speaker_tag": "Spectator", "text": "Nobody used to."}
+      ],
+      "conditions": {"min_rep_tier": 2},
+      "weight": 1.2,
+      "tags": ["player_reference", "reputation"]
+    },
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Racer", "text": "Torres built that car from nothing. She's a witch with a wrench."},
+        {"speaker": 1, "speaker_tag": "Racer", "text": "She won't even look at my ride. Says I don't 'deserve the attention.'"},
+        {"speaker": 0, "speaker_tag": "Racer", "text": "That's Maya. She picks her projects like they're family."}
+      ],
+      "conditions": {"mission_completed": "torres_garage"},
+      "weight": 1.0,
+      "tags": ["maya", "lore"]
+    },
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Regular", "text": "I heard Zero's interested. That's either the best or worst thing that can happen."},
+        {"speaker": 1, "speaker_tag": "Regular", "text": "Zero doesn't get interested. Zero gets involved. There's a difference."},
+        {"speaker": 0, "speaker_tag": "Regular", "text": "And once Zero's involved, you don't get to walk away clean."}
+      ],
+      "conditions": {"min_rep_tier": 3},
+      "weight": 1.3,
+      "tags": ["zero", "lore", "ominous"]
+    },
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Bettor", "text": "Remember when they were just Fresh Meat? I bet against them. Worst decision of my life."},
+        {"speaker": 1, "speaker_tag": "Bettor", "text": "How much you lose?"},
+        {"speaker": 0, "speaker_tag": "Bettor", "text": "Enough to learn my lesson. And then I lost more."}
+      ],
+      "conditions": {"min_rep_tier": 2},
+      "weight": 1.1,
+      "tags": ["player_reference", "humor", "betting"]
+    },
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Spectator", "text": "Diesel's training them. DIESEL. When's the last time Diesel trained anyone?"},
+        {"speaker": 1, "speaker_tag": "Spectator", "text": "Never. That's the answer. Never."},
+        {"speaker": 0, "speaker_tag": "Spectator", "text": "Exactly. So what does that tell you?"}
+      ],
+      "conditions": {"mission_completed": "diesels_test"},
+      "weight": 1.3,
+      "tags": ["diesel", "player_reference", "lore"]
+    },
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Racer", "text": "The scene's changing. Used to be about the cars. Now it's about the money."},
+        {"speaker": 1, "speaker_tag": "Racer", "text": "Was always about the money, bro. You were just too young to notice."}
+      ],
+      "conditions": {},
+      "weight": 0.8,
+      "tags": ["atmosphere", "philosophy"]
+    },
+    {
+      "speakers": ["bookie"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Bookie", "text": "Odds on the kid from Torres's shop keep dropping. People are learning. I'm losing my margin here."}
+      ],
+      "conditions": {"min_rep_tier": 2},
+      "weight": 1.0,
+      "tags": ["betting", "player_reference"]
+    },
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Regular", "text": "Jade Chen was at the last race. THE Jade Chen. Scouting."},
+        {"speaker": 1, "speaker_tag": "Regular", "text": "Scouting who?"},
+        {"speaker": 0, "speaker_tag": "Regular", "text": "Who do you think?"}
+      ],
+      "conditions": {"min_rep_tier": 3},
+      "weight": 1.1,
+      "tags": ["jade", "lore", "player_reference"]
+    },
+    {
+      "speakers": ["regular_1"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Regular", "text": "Nikko's been different since the loss. Quieter. Either he's broken or he's plotting. Neither one's good."}
+      ],
+      "conditions": {"min_rep_tier": 2},
+      "weight": 0.9,
+      "tags": ["nikko", "lore"]
+    },
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Racer", "text": "Pink slips tonight. You in?"},
+        {"speaker": 1, "speaker_tag": "Racer", "text": "I like my car too much. Some of us work for a living."},
+        {"speaker": 0, "speaker_tag": "Racer", "text": "That's the problem. You like the car. Winners love winning more."}
+      ],
+      "conditions": {},
+      "weight": 0.9,
+      "tags": ["pink_slip", "atmosphere"]
+    },
+    {
+      "speakers": ["mechanic", "regular_1"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Mechanic", "text": "Whoever built that exhaust system should be arrested. And then hired."},
+        {"speaker": 1, "speaker_tag": "Driver", "text": "Torres did it in one night. Said she was bored."}
+      ],
+      "conditions": {"mission_completed": "torres_garage"},
+      "weight": 0.8,
+      "tags": ["maya", "cars", "humor"]
+    },
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Regular", "text": "Cops are getting serious. New task force, undercover cars, the works."},
+        {"speaker": 1, "speaker_tag": "Regular", "text": "Good. It keeps the amateurs out."},
+        {"speaker": 0, "speaker_tag": "Regular", "text": "It keeps everyone out, genius. Including us."}
+      ],
+      "conditions": {"min_act": 2},
+      "weight": 0.9,
+      "tags": ["police", "atmosphere"]
+    },
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Spectator", "text": "That car sounds different. Torres did something to it."},
+        {"speaker": 1, "speaker_tag": "Spectator", "text": "Torres always does something. Question is whether the driver can handle it."},
+        {"speaker": 0, "speaker_tag": "Spectator", "text": "From what I've seen? Yeah. They can handle it."}
+      ],
+      "conditions": {"min_rep_tier": 2},
+      "weight": 1.0,
+      "tags": ["maya", "player_reference", "cars"]
+    },
+    {
+      "speakers": ["regular_1"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Old Timer", "text": "This scene used to have honor. You raced, you shook hands, you went home. Now it's all politics and power plays."}
+      ],
+      "conditions": {"min_act": 2},
+      "weight": 0.7,
+      "tags": ["atmosphere", "philosophy"]
+    },
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Regular", "text": "They say if you win enough, the corporate teams come calling."},
+        {"speaker": 1, "speaker_tag": "Regular", "text": "Sell out to drive in circles with sponsors? Some people want that."},
+        {"speaker": 0, "speaker_tag": "Regular", "text": "Some people want to eat, man."}
+      ],
+      "conditions": {"min_rep_tier": 3},
+      "weight": 0.8,
+      "tags": ["corporate", "atmosphere"]
+    },
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Racer", "text": "You hear they escaped a pursuit last night? Three cop cars. Ditched them all."},
+        {"speaker": 1, "speaker_tag": "Racer", "text": "That's either talent or insanity."},
+        {"speaker": 0, "speaker_tag": "Racer", "text": "In this city? Same thing."}
+      ],
+      "conditions": {"recent_event": "escaped_cops"},
+      "weight": 1.4,
+      "tags": ["player_reference", "police"]
+    },
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Racer", "text": "Got busted last night. Lost everything in fines."},
+        {"speaker": 1, "speaker_tag": "Racer", "text": "That's the tax of this life. You either pay it in cash or in speed."}
+      ],
+      "conditions": {"recent_event": "busted"},
+      "weight": 1.3,
+      "tags": ["player_reference", "police"]
+    },
+    {
+      "speakers": ["girl_1", "girl_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Spectator", "text": "They're going to the top. I can feel it."},
+        {"speaker": 1, "speaker_tag": "Spectator", "text": "Everyone feels that way about someone. Then they crash and burn."},
+        {"speaker": 0, "speaker_tag": "Spectator", "text": "Not this one. This one's different."}
+      ],
+      "conditions": {"min_rep_tier": 2},
+      "weight": 0.9,
+      "tags": ["player_reference", "atmosphere"]
+    },
+    {
+      "speakers": ["regular_1"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Regular", "text": "They just took a pink slip. Won somebody's whole ride. Cold-blooded."}
+      ],
+      "conditions": {"recent_event": "pink_slip_won"},
+      "weight": 1.5,
+      "tags": ["player_reference", "pink_slip"]
+    },
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Spectator", "text": "The Pit's packed tonight. Something big going down?"},
+        {"speaker": 1, "speaker_tag": "Spectator", "text": "It's always packed when they show up. People want to see what happens next."}
+      ],
+      "conditions": {"min_rep_tier": 3},
+      "weight": 0.9,
+      "tags": ["player_reference", "atmosphere"]
+    }
+  ]
+}

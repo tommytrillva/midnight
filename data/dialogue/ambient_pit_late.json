@@ -1,0 +1,187 @@
+{
+  "id": "ambient_pit_late",
+  "district": "downtown",
+  "context": "The Pit — late game, player is the Underground King or legendary",
+  "lines": [
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Spectator", "text": "That's the Underground King right there. Don't even breathe wrong."},
+        {"speaker": 1, "speaker_tag": "Spectator", "text": "The Underground King? I thought that was just a title."},
+        {"speaker": 0, "speaker_tag": "Spectator", "text": "It's a title you earn by making everyone else irrelevant."}
+      ],
+      "conditions": {"min_rep_tier": 4},
+      "weight": 1.3,
+      "tags": ["player_reference", "reputation", "awe"]
+    },
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Regular", "text": "I remember when they slept in that CRX. Now look."},
+        {"speaker": 1, "speaker_tag": "Regular", "text": "From sleeping in a car to owning the streets. That's the Nova Pacifica dream."},
+        {"speaker": 0, "speaker_tag": "Regular", "text": "Or the Nova Pacifica nightmare, depending who you ask."}
+      ],
+      "conditions": {"min_rep_tier": 4},
+      "weight": 1.1,
+      "tags": ["player_reference", "lore"]
+    },
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Racer", "text": "You think they'll go pro?"},
+        {"speaker": 1, "speaker_tag": "Racer", "text": "Nah. Streets made them. Streets keep them."},
+        {"speaker": 0, "speaker_tag": "Racer", "text": "Some people can't be bought. They can only be beaten. And nobody's doing that."}
+      ],
+      "conditions": {"min_rep_tier": 4},
+      "weight": 1.0,
+      "tags": ["player_reference", "philosophy"]
+    },
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Spectator", "text": "They stopped mid-race to pull Nikko out. Who does that?"},
+        {"speaker": 1, "speaker_tag": "Spectator", "text": "Someone who cares more about people than trophies."},
+        {"speaker": 0, "speaker_tag": "Spectator", "text": "Or someone crazy enough to know they'll win anyway."}
+      ],
+      "conditions": {"has_flag": "saved_nikko"},
+      "weight": 1.5,
+      "tags": ["player_reference", "nikko", "moral"]
+    },
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Spectator", "text": "Yeah they won, but... Nikko almost died. Some people don't forget that."},
+        {"speaker": 1, "speaker_tag": "Spectator", "text": "Winning's winning. That's what matters."},
+        {"speaker": 0, "speaker_tag": "Spectator", "text": "Tell that to Nikko."}
+      ],
+      "conditions": {"has_flag": "kept_racing_nikko_crash"},
+      "weight": 1.5,
+      "tags": ["player_reference", "nikko", "moral"]
+    },
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Regular", "text": "Diesel taught them everything. Now they've surpassed the teacher."},
+        {"speaker": 1, "speaker_tag": "Regular", "text": "Diesel doesn't look surpassed. He looks proud."},
+        {"speaker": 0, "speaker_tag": "Regular", "text": "That's the thing about Diesel. He never wanted to be King. He wanted to build one."}
+      ],
+      "conditions": {"mission_completed": "diesels_test", "min_rep_tier": 4},
+      "weight": 1.2,
+      "tags": ["diesel", "player_reference", "lore"]
+    },
+    {
+      "speakers": ["bookie", "regular_1"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Bookie", "text": "I can't even set odds anymore. Nobody bets against them."},
+        {"speaker": 1, "speaker_tag": "Bettor", "text": "So what do you do?"},
+        {"speaker": 0, "speaker_tag": "Bookie", "text": "I bet on how many seconds they win by. That's the only action I can get."}
+      ],
+      "conditions": {"min_rep_tier": 4},
+      "weight": 1.0,
+      "tags": ["betting", "player_reference", "humor"]
+    },
+    {
+      "speakers": ["regular_1"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Old Timer", "text": "I've been coming to the Pit for twenty years. I've never seen anyone like them. Not once."}
+      ],
+      "conditions": {"min_rep_tier": 5},
+      "weight": 1.3,
+      "tags": ["player_reference", "awe"]
+    },
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Regular", "text": "Zero's been quiet lately. That's never good."},
+        {"speaker": 1, "speaker_tag": "Regular", "text": "Zero's quiet when Zero's planning. And Zero's always planning."},
+        {"speaker": 0, "speaker_tag": "Regular", "text": "Whatever happens next, it's going to be big."}
+      ],
+      "conditions": {"min_rep_tier": 4},
+      "weight": 1.0,
+      "tags": ["zero", "ominous", "lore"]
+    },
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Racer", "text": "People come from three districts over just to watch them race."},
+        {"speaker": 1, "speaker_tag": "Racer", "text": "It's not a race. It's a show. And the ending's always the same."}
+      ],
+      "conditions": {"min_rep_tier": 4},
+      "weight": 0.9,
+      "tags": ["player_reference", "atmosphere"]
+    },
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Regular", "text": "Torres won't take anyone else's cars now. Says she's only got time for one project."},
+        {"speaker": 1, "speaker_tag": "Regular", "text": "Must be nice to have a personal engineer."},
+        {"speaker": 0, "speaker_tag": "Regular", "text": "She's not their engineer. She's their partner. There's a difference."}
+      ],
+      "conditions": {"min_rep_tier": 4},
+      "weight": 1.0,
+      "tags": ["maya", "player_reference", "lore"]
+    },
+    {
+      "speakers": ["girl_1", "girl_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Fan", "text": "I want a picture. Think they'd let me?"},
+        {"speaker": 1, "speaker_tag": "Fan", "text": "Girl, they're a street racer, not a celebrity."},
+        {"speaker": 0, "speaker_tag": "Fan", "text": "In this city? Same thing."}
+      ],
+      "conditions": {"min_rep_tier": 5},
+      "weight": 0.9,
+      "tags": ["player_reference", "humor", "fame"]
+    },
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Racer", "text": "I raced them once. ONCE. That was enough to know where I stand."},
+        {"speaker": 1, "speaker_tag": "Racer", "text": "Where's that?"},
+        {"speaker": 0, "speaker_tag": "Racer", "text": "Behind them. Like everyone else."}
+      ],
+      "conditions": {"min_rep_tier": 4},
+      "weight": 1.0,
+      "tags": ["player_reference", "reputation"]
+    },
+    {
+      "speakers": ["regular_1"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Regular", "text": "The Pit exists because of them now. They put this place on the map. Every racer in the city knows this is where it started."}
+      ],
+      "conditions": {"min_rep_tier": 5},
+      "weight": 0.8,
+      "tags": ["player_reference", "atmosphere", "lore"]
+    },
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Regular", "text": "I heard Jade Chen offered them a contract. Corporate racing. Real money."},
+        {"speaker": 1, "speaker_tag": "Regular", "text": "Did they take it?"},
+        {"speaker": 0, "speaker_tag": "Regular", "text": "What do you think? You see them in a uniform?"}
+      ],
+      "conditions": {"min_rep_tier": 4, "story_flag": "jade_offer_made"},
+      "weight": 1.1,
+      "tags": ["jade", "corporate", "player_reference"]
+    },
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Regular", "text": "They took the corporate deal. Can you believe it?"},
+        {"speaker": 1, "speaker_tag": "Regular", "text": "Everyone's got a price. Even the King."}
+      ],
+      "conditions": {"story_flag_equals": {"flag": "chosen_path", "value": "corporate"}},
+      "weight": 1.2,
+      "tags": ["corporate", "player_reference"]
+    },
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Spectator", "text": "Underground all the way. No sponsors, no contracts, no masters."},
+        {"speaker": 1, "speaker_tag": "Spectator", "text": "That's the real king. The one who can't be bought."}
+      ],
+      "conditions": {"story_flag_equals": {"flag": "chosen_path", "value": "underground"}},
+      "weight": 1.2,
+      "tags": ["underground", "player_reference"]
+    }
+  ]
+}

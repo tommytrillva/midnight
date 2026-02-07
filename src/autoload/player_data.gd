@@ -3,6 +3,11 @@
 class_name PlayerData
 extends RefCounted
 
+# --- Origin System ---
+enum Origin { FALLEN, OUTSIDER, GHOST_ORIGIN }
+var origin: Origin = Origin.OUTSIDER
+var origin_id: String = "outsider"  # For dialogue condition checking
+
 var player_name: String = "Racer"
 var current_vehicle_id: String = ""
 var owned_vehicle_ids: Array[String] = []
@@ -19,6 +24,22 @@ var play_time_seconds: float = 0.0
 var _moral_alignment: float = 0.0 # -100 (ruthless) to +100 (honorable)
 var _zero_awareness: int = 0 # 0-5, tracks knowledge of Zero
 var _choice_flags: Dictionary = {} # Tracks specific narrative decisions
+
+
+func set_origin(new_origin: Origin) -> void:
+	origin = new_origin
+	match origin:
+		Origin.FALLEN:
+			origin_id = "fallen"
+		Origin.OUTSIDER:
+			origin_id = "outsider"
+		Origin.GHOST_ORIGIN:
+			origin_id = "ghost_origin"
+	print("[PlayerData] Origin set: %s" % origin_id)
+
+
+func get_origin_id() -> String:
+	return origin_id
 
 
 func record_race_result(won: bool, dnf: bool = false) -> void:
@@ -67,6 +88,8 @@ func set_zero_awareness(level: int) -> void:
 func serialize() -> Dictionary:
 	return {
 		"player_name": player_name,
+		"origin": origin,
+		"origin_id": origin_id,
 		"current_vehicle_id": current_vehicle_id,
 		"owned_vehicle_ids": owned_vehicle_ids,
 		"current_district": current_district,
@@ -85,6 +108,8 @@ func serialize() -> Dictionary:
 
 func deserialize(data: Dictionary) -> void:
 	player_name = data.get("player_name", "Racer")
+	origin = data.get("origin", Origin.OUTSIDER)
+	origin_id = data.get("origin_id", "outsider")
 	current_vehicle_id = data.get("current_vehicle_id", "")
 	owned_vehicle_ids.assign(data.get("owned_vehicle_ids", []))
 	current_district = data.get("current_district", "downtown")

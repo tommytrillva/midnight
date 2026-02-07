@@ -1,0 +1,435 @@
+{
+  "id": "the_fall",
+  "description": "Act 3: The Fall — Everything is stripped away. The montage of ruin.",
+  "skippable": false,
+  "steps": [
+    {
+      "type": "effect",
+      "data": { "letterbox": true, "aspect": "cinematic" },
+      "duration": 0.5,
+      "parallel": false
+    },
+    {
+      "type": "environment",
+      "data": { "weather": "clear", "time": "late_night" },
+      "duration": 0,
+      "parallel": true
+    },
+    {
+      "type": "audio",
+      "data": {
+        "music": { "track": "the_fall", "artist": "Midnight OST", "action": "play" }
+      },
+      "duration": 0,
+      "parallel": true
+    },
+
+    {
+      "type": "camera",
+      "data": {
+        "move": "teleport",
+        "position": [2, 1.5, -3],
+        "look_at": [0, 0.8, 0]
+      },
+      "duration": 0,
+      "parallel": true,
+      "comment": "Scene: Penthouse bedroom, 3 AM"
+    },
+    {
+      "type": "effect",
+      "data": { "fade": "black", "direction": "out" },
+      "duration": 1.5,
+      "parallel": false
+    },
+    {
+      "type": "audio",
+      "data": { "sfx": "phone_ring_vibrate" },
+      "duration": 0,
+      "parallel": true,
+      "comment": "Phone buzzing on nightstand — 3 AM"
+    },
+    {
+      "type": "camera",
+      "data": {
+        "move": "dolly",
+        "distance": 1.5,
+        "ease": "ease_in"
+      },
+      "duration": 2.0,
+      "parallel": false,
+      "comment": "Slow push toward phone glowing on nightstand"
+    },
+    {
+      "type": "camera",
+      "data": {
+        "move": "shake",
+        "intensity": 0.05,
+        "duration": 1.0
+      },
+      "duration": 1.0,
+      "parallel": false,
+      "comment": "Phone vibration rattle"
+    },
+    {
+      "type": "wait",
+      "data": {},
+      "duration": 1.5,
+      "parallel": false
+    },
+
+    {
+      "type": "transition",
+      "data": { "transition": "fade_black" },
+      "duration": 0.8,
+      "parallel": false,
+      "comment": "CUT TO: Living room — TV on, news ticker scrolling"
+    },
+    {
+      "type": "camera",
+      "data": {
+        "move": "teleport",
+        "position": [-2, 1.5, 4],
+        "look_at": [0, 1.2, 0]
+      },
+      "duration": 0,
+      "parallel": true
+    },
+    {
+      "type": "audio",
+      "data": { "sfx": "tv_news_static" },
+      "duration": 0,
+      "parallel": true
+    },
+    {
+      "type": "camera",
+      "data": {
+        "move": "pan",
+        "from": [-2, 1.5, 4],
+        "to": [0, 1.3, 2],
+        "look_at": [0, 1.2, 0],
+        "ease": "ease_in_out"
+      },
+      "duration": 3.0,
+      "parallel": false,
+      "comment": "Slow push toward TV screen — scandal breaking"
+    },
+    {
+      "type": "effect",
+      "data": {
+        "hud_message": { "text": "BREAKING: Underground Racing Syndicate Exposed", "duration": 4.0 }
+      },
+      "duration": 0,
+      "parallel": true
+    },
+    {
+      "type": "wait",
+      "data": {},
+      "duration": 3.0,
+      "parallel": false
+    },
+
+    {
+      "type": "transition",
+      "data": { "transition": "fade_black" },
+      "duration": 0.6,
+      "parallel": false,
+      "comment": "CUT TO: Phone call — Jade's panicked voice"
+    },
+    {
+      "type": "camera",
+      "data": {
+        "move": "teleport",
+        "position": [0.3, 1.6, 0],
+        "look_at": [0, 1.5, -1]
+      },
+      "duration": 0,
+      "parallel": true,
+      "comment": "Close-up on Driver holding phone to ear"
+    },
+    {
+      "type": "dialogue",
+      "data": { "dialogue_id": "the_fall_jade_call" },
+      "duration": 0,
+      "parallel": false,
+      "comment": "Jade: 'It's over. They know everything. Get out NOW.'"
+    },
+
+    {
+      "type": "effect",
+      "data": {
+        "slow_motion": { "scale": 0.4, "active": true }
+      },
+      "duration": 0.5,
+      "parallel": true,
+      "comment": "Time slows — the weight of it hitting"
+    },
+    {
+      "type": "transition",
+      "data": { "transition": "fade_white" },
+      "duration": 0.8,
+      "parallel": false,
+      "comment": "MONTAGE BEGINS — flash cuts of everything falling apart"
+    },
+
+    {
+      "type": "camera",
+      "data": {
+        "move": "teleport",
+        "position": [10, 3, -20],
+        "look_at": [0, 1, -15]
+      },
+      "duration": 0,
+      "parallel": true,
+      "comment": "Montage 1: Garage — tow trucks pulling cars away"
+    },
+    {
+      "type": "audio",
+      "data": { "sfx": "tow_truck_chain" },
+      "duration": 0,
+      "parallel": true
+    },
+    {
+      "type": "camera",
+      "data": {
+        "move": "pan",
+        "from": [10, 3, -20],
+        "to": [5, 2, -15],
+        "look_at": [0, 1, -15],
+        "ease": "ease_in"
+      },
+      "duration": 2.5,
+      "parallel": false
+    },
+    {
+      "type": "camera",
+      "data": {
+        "move": "shake",
+        "intensity": 0.2,
+        "duration": 0.5
+      },
+      "duration": 0.5,
+      "parallel": false
+    },
+
+    {
+      "type": "transition",
+      "data": { "transition": "fade_white" },
+      "duration": 0.4,
+      "parallel": false,
+      "comment": "Flash cut"
+    },
+    {
+      "type": "camera",
+      "data": {
+        "move": "teleport",
+        "position": [0, 2, 5],
+        "look_at": [0, 1.5, 0]
+      },
+      "duration": 0,
+      "parallel": true,
+      "comment": "Montage 2: Penthouse — lock changed, belongings outside"
+    },
+    {
+      "type": "camera",
+      "data": {
+        "move": "crane",
+        "height": -1,
+        "ease": "ease_in"
+      },
+      "duration": 2.0,
+      "parallel": false,
+      "comment": "Crane down — dejection, things piled on the curb"
+    },
+
+    {
+      "type": "transition",
+      "data": { "transition": "fade_white" },
+      "duration": 0.4,
+      "parallel": false,
+      "comment": "Flash cut"
+    },
+    {
+      "type": "camera",
+      "data": {
+        "move": "teleport",
+        "position": [1, 1.5, -2],
+        "look_at": [0, 1.4, 0]
+      },
+      "duration": 0,
+      "parallel": true,
+      "comment": "Montage 3: Bank — 'Account Frozen' on screen"
+    },
+    {
+      "type": "effect",
+      "data": {
+        "hud_message": { "text": "ACCOUNT FROZEN", "duration": 2.0 }
+      },
+      "duration": 0,
+      "parallel": true
+    },
+    {
+      "type": "wait",
+      "data": {},
+      "duration": 2.0,
+      "parallel": false
+    },
+
+    {
+      "type": "transition",
+      "data": { "transition": "fade_white" },
+      "duration": 0.4,
+      "parallel": false,
+      "comment": "Flash cut"
+    },
+    {
+      "type": "camera",
+      "data": {
+        "move": "teleport",
+        "position": [-5, 1.5, 0],
+        "look_at": [0, 1.2, 0]
+      },
+      "duration": 0,
+      "parallel": true,
+      "comment": "Montage 4: Contacts — phones going to voicemail, doors closing"
+    },
+    {
+      "type": "audio",
+      "data": { "sfx": "phone_voicemail_beep" },
+      "duration": 0,
+      "parallel": true
+    },
+    {
+      "type": "wait",
+      "data": {},
+      "duration": 2.0,
+      "parallel": false
+    },
+
+    {
+      "type": "effect",
+      "data": {
+        "slow_motion": { "active": false }
+      },
+      "duration": 0.5,
+      "parallel": false,
+      "comment": "Time returns to normal"
+    },
+
+    {
+      "type": "transition",
+      "data": { "transition": "fade_black" },
+      "duration": 1.5,
+      "parallel": false,
+      "comment": "CUT TO: Rock bottom — back in the old CRX"
+    },
+    {
+      "type": "environment",
+      "data": { "weather": "rain", "time": "night" },
+      "duration": 0,
+      "parallel": true
+    },
+    {
+      "type": "audio",
+      "data": {
+        "music": { "track": "rock_bottom", "artist": "Midnight OST", "action": "play" },
+        "ambient": "car_interior_rain"
+      },
+      "duration": 0,
+      "parallel": true
+    },
+    {
+      "type": "camera",
+      "data": {
+        "move": "teleport",
+        "position": [0.8, 1.3, 0.2],
+        "look_at": [-0.5, 1.2, 2]
+      },
+      "duration": 0,
+      "parallel": true,
+      "comment": "Interior CRX — rain on windshield, full circle"
+    },
+    {
+      "type": "effect",
+      "data": { "color_grade": "desaturated" },
+      "duration": 0,
+      "parallel": true
+    },
+    {
+      "type": "camera",
+      "data": {
+        "move": "dolly",
+        "distance": -0.3,
+        "ease": "ease_out"
+      },
+      "duration": 5.0,
+      "parallel": false,
+      "comment": "Extremely slow pull back — Driver alone in the car, rain pattering"
+    },
+    {
+      "type": "dialogue",
+      "data": { "dialogue_id": "the_fall_rock_bottom" },
+      "duration": 0,
+      "parallel": false,
+      "comment": "Driver's monologue: back where they started, nothing left but the drive"
+    },
+    {
+      "type": "wait",
+      "data": {},
+      "duration": 2.0,
+      "parallel": false
+    },
+    {
+      "type": "camera",
+      "data": {
+        "move": "teleport",
+        "position": [0, 3, -8],
+        "look_at": [0, 1, 0]
+      },
+      "duration": 0,
+      "parallel": true
+    },
+    {
+      "type": "camera",
+      "data": {
+        "move": "crane",
+        "height": 5,
+        "ease": "ease_in_out"
+      },
+      "duration": 4.0,
+      "parallel": false,
+      "comment": "Final shot: crane up from CRX parked alone, rain, city lights distant"
+    },
+    {
+      "type": "effect",
+      "data": {
+        "hud_message": { "text": "ACT III: THE FALL", "duration": 4.0 }
+      },
+      "duration": 0,
+      "parallel": true
+    },
+    {
+      "type": "effect",
+      "data": { "fade": "black", "direction": "in" },
+      "duration": 2.0,
+      "parallel": false
+    },
+    {
+      "type": "effect",
+      "data": { "letterbox": false },
+      "duration": 0.5,
+      "parallel": true
+    },
+    {
+      "type": "effect",
+      "data": { "color_grade": "default" },
+      "duration": 0,
+      "parallel": true
+    },
+    {
+      "type": "effect",
+      "data": { "fade": "black", "direction": "out" },
+      "duration": 1.5,
+      "parallel": false
+    }
+  ]
+}

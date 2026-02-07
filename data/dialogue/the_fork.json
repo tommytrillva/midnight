@@ -1,0 +1,514 @@
+{
+  "id": "the_fork",
+  "context": "Chapter 1.4 — THE MAJOR CHOICE. End of Act 1. Three visitors at Maya's garage. Corporate vs Underground path.",
+  "lines": [
+    {
+      "type": "narration",
+      "text": "Three days after the Underground Classic. Maya's garage. The afternoon light cuts through the bay windows in golden slats, illuminating the dust motes that float like tiny planets above the engine you've been rebuilding."
+    },
+    {
+      "type": "narration",
+      "text": "It should be a quiet day. It won't be."
+    },
+    {
+      "type": "narration",
+      "text": "The first visitor arrives at 2:15 PM."
+    },
+    {
+      "type": "narration",
+      "text": "Jade Winters. Same designer coat. Same corporate poise. She walks into the garage like she's entering a conference room — purposeful, measured, every step an intention."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_professional",
+      "text": "I watched the Classic. All ten races. I have to say — I've been doing this for fifteen years, and I've rarely seen a performance like that."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_professional",
+      "text": "I'm here to make a formal offer. Not an audition. Not a trial. A professional sponsorship contract with Apex Dynamics."
+    },
+    {
+      "type": "narration",
+      "text": "She sets a folder on the workbench. Inside: documents, figures, a career trajectory mapped out in clean corporate typography."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_professional",
+      "text": "Salary. Equipment. A dedicated engineering team. Medical coverage. Access to every professional circuit in the Pacific Rim. A real career — not prize money from basements."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_professional",
+      "text": "This is the kind of offer that doesn't come around twice. You have the talent to make it at the highest level. I'm offering you the infrastructure to get there."
+    },
+    {
+      "type": "narration",
+      "text": "Before you can respond, the bay door opens."
+    },
+    {
+      "type": "narration",
+      "text": "Diesel. He takes one look at Jade — the coat, the folder, the corporate body language — and his jaw sets. He doesn't say hello. He walks in and stands against the far wall with his arms crossed, a silent counterweight to everything Jade represents."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "Don't let the suit talk you into a cage."
+    },
+    {
+      "type": "narration",
+      "text": "Jade turns. She's not surprised — she's annoyed, but she hides it well."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_professional",
+      "text": "I don't think we've met."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "We haven't. And we don't need to."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_professional",
+      "text": "Let me guess. You're the mentor figure. The wise old hand from the underground who thinks corporate racing is selling out."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "I'm someone who's watched your industry chew up every talented kid it's ever gotten its hands on. You put them in your cars, you put them on your tracks, and when they burn out — and they always burn out — you find the next one. The kid's just fuel to you."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_professional",
+      "text": "With respect, the underground burns through people faster than any corporation. At least we offer health insurance."
+    },
+    {
+      "type": "narration",
+      "text": "The tension in the room is a physical thing. Two worlds staring at each other across a workbench."
+    },
+    {
+      "type": "narration",
+      "text": "And then Maya walks in from the back office. She stops, taking in the scene — Jade with her folder, Diesel with his arms crossed, you in the middle with engine grease on your hands and two futures laid out in front of you."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_neutral",
+      "text": "Wow. Okay. Did someone send out invitations I didn't know about?"
+    },
+    {
+      "type": "narration",
+      "text": "Nobody laughs. Maya reads the room instantly."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_neutral",
+      "text": "Let me guess. She's offering you the big leagues. He's telling you not to take it. And I'm supposed to be the tiebreaker."
+    },
+    {
+      "type": "narration",
+      "text": "She walks to the workbench. Picks up the folder. Reads the first page. Sets it down."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_neutral",
+      "text": "That's a lot of money. A lot of security. A lot of things this garage can't give you."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "Maya—"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_determined",
+      "text": "I'm not done."
+    },
+    {
+      "type": "narration",
+      "text": "Diesel goes quiet. Maya turns to you."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_determined",
+      "text": "I've known you since you rolled into my lot with a car that barely ran and a look in your eyes like you were trying to outrun something you couldn't name."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_determined",
+      "text": "I've watched you become something. Not because of the wins — because of how you drive. Why you drive. What it means to you."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_determined",
+      "text": "I'm not going to tell you what to do. Because this isn't about what I want, or what Diesel wants, or what she wants."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_determined",
+      "text": "I just want to know what YOU want."
+    },
+    {
+      "type": "narration",
+      "text": "The garage is silent. Three people. Three perspectives. Three versions of your future, waiting to be spoken into existence."
+    },
+    {
+      "type": "narration",
+      "text": "Jade stands with her folder, offering a world of money and structure and corporate ambition. Diesel stands against the wall, offering a world of independence and grit and the purity of the road. Maya stands in the middle, offering nothing except the question that matters most."
+    },
+    {
+      "type": "narration",
+      "text": "What do you want?"
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "I want to see how fast I can really go.",
+          "choice_id": "go_pro",
+          "relationship_changes": {"jade": 10},
+          "moral_shift": -5,
+          "set_flags": {"act2_path": "corporate", "act1_complete": true},
+          "jump_to": "go_pro"
+        },
+        {
+          "text": "I'm not done here.",
+          "choice_id": "stay_underground",
+          "relationship_changes": {"diesel": 10, "maya": 5},
+          "moral_shift": 5,
+          "set_flags": {"act2_path": "underground", "act1_complete": true},
+          "jump_to": "stay_underground"
+        }
+      ]
+    },
+    {
+      "label": "go_pro",
+      "type": "narration",
+      "text": "The words come out steady. Certain. Like they've been waiting inside you for weeks, fully formed, just looking for the exit."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_happy",
+      "text": "Smart decision. I'll have the paperwork drawn up by end of week. We'll start with a training camp at the Apex facility — two weeks, full immersion. You'll learn more in fourteen days than you have in three months down here."
+    },
+    {
+      "type": "narration",
+      "text": "She's professional about it, but you can see it — the flash of genuine excitement behind the corporate facade. She found what she came looking for. That matters to her more than she'll ever admit."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_professional",
+      "text": "I'll be in touch. Welcome to Apex Dynamics."
+    },
+    {
+      "type": "narration",
+      "text": "She picks up her folder and walks out. Measured steps. But faster than she came in."
+    },
+    {
+      "type": "narration",
+      "text": "Diesel hasn't moved. He's looking at the floor. His jaw is working."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_sad",
+      "text": "Be careful up there."
+    },
+    {
+      "type": "narration",
+      "text": "It's not what he wants to say. You can see the words he's swallowing — 'don't go,' 'you're making a mistake,' 'I've seen this before and it doesn't end well.' But he swallows them because he respects you enough to let you make your own choices. Even the ones he thinks are wrong."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "The things I taught you — the corners, the patience, the way to listen to the car. That doesn't change because the track has better pavement. Take it with you."
+    },
+    {
+      "type": "narration",
+      "text": "He pushes off the wall. Walks to the door. Stops."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "And if it goes bad up there — if they try to make you something you're not — you know where to find me."
+    },
+    {
+      "type": "narration",
+      "text": "He walks out. No handshake. No goodbye. That's not how Diesel operates. He just leaves a space where he used to be and lets you fill it however you need to."
+    },
+    {
+      "type": "narration",
+      "text": "Maya is leaning against the car. Her arms are crossed, but not in the defensive way. In the holding-herself-together way."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_bittersweet",
+      "text": "So. The big leagues."
+    },
+    {
+      "type": "narration",
+      "text": "She tries to smile. It's complicated — proud and sad and scared all woven together."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_bittersweet",
+      "text": "Don't forget who fixed the car that got you there."
+    },
+    {
+      "type": "narration",
+      "text": "She says it lightly. But underneath the lightness is something heavy and real — a fear that you're about to step into a world that doesn't have room for a mechanic from a garage in Downtown Nova Pacifica."
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "I couldn't forget that if I tried.",
+          "choice_id": "maya_remember",
+          "relationship_changes": {"maya": 10},
+          "moral_shift": 5,
+          "jump_to": "pro_ending"
+        },
+        {
+          "text": "Come with me. I'm going to need a mechanic.",
+          "choice_id": "maya_come_with",
+          "relationship_changes": {"maya": 15},
+          "moral_shift": 5,
+          "jump_to": "maya_come_response"
+        }
+      ]
+    },
+    {
+      "label": "maya_come_response",
+      "type": "narration",
+      "text": "Maya blinks. Her composure cracks — just for a second — and you see everything underneath. Hope. Fear. The part of her that wants to say yes so badly it hurts."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_happy",
+      "text": "You can't just... I have a garage. I have clients. I have—"
+    },
+    {
+      "type": "narration",
+      "text": "She stops. Takes a breath."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_happy",
+      "text": "Let me think about it. Okay? Just... let me think."
+    },
+    {
+      "type": "narration",
+      "text": "She's going to say yes. You both know it.",
+      "jump_to": "pro_ending"
+    },
+    {
+      "label": "pro_ending",
+      "type": "narration",
+      "text": "That night, you drive through Nova Pacifica one more time. Not racing. Just driving."
+    },
+    {
+      "type": "narration",
+      "text": "The harbor, where you ran your first race. The Pit, where you became someone. Route 9, where Diesel taught you to listen. Maya's garage, where a car that barely ran became a machine that changed your life."
+    },
+    {
+      "type": "narration",
+      "text": "This city gave you everything. And now you're leaving it behind for something bigger. Something unknown. Something that might be a dream or might be a trap."
+    },
+    {
+      "type": "narration",
+      "text": "The skyline of Nova Pacifica shrinks in your rearview mirror. Ahead, the highway stretches north toward the Apex facility, toward a new kind of race, a new kind of danger."
+    },
+    {
+      "type": "narration",
+      "text": "You press the gas. The engine responds — faithful, familiar, the last honest thing in a world about to get very complicated."
+    },
+    {
+      "type": "narration",
+      "text": "Act 1 — COMPLETE."
+    },
+    {
+      "type": "narration",
+      "text": "THE COME-UP ends. THE RISE begins.",
+      "jump_to": "the_fork_end"
+    },
+    {
+      "label": "stay_underground",
+      "type": "narration",
+      "text": "Five words. They come from somewhere deep — not your head, not your ambition, but from the place where the engine meets the road and the road meets the night."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_professional",
+      "text": "Hmm."
+    },
+    {
+      "type": "narration",
+      "text": "She studies you. Not disappointed — recalculating. She's been rejected before. It's part of the job."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_professional",
+      "text": "The offer doesn't expire. I've learned that the best ones always come around eventually. The underground is a springboard, not a destination."
+    },
+    {
+      "type": "narration",
+      "text": "She picks up her folder. Smooth, professional. No wounded pride."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_professional",
+      "text": "You have my number. When you're ready — and you will be — call me."
+    },
+    {
+      "type": "narration",
+      "text": "She walks out. The click of her heels on concrete fades into the afternoon traffic."
+    },
+    {
+      "type": "narration",
+      "text": "Diesel exhales. You didn't realize he'd been holding his breath."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_approving",
+      "text": "Good."
+    },
+    {
+      "type": "narration",
+      "text": "One word. But the way he says it — the relief, the pride, the quiet vindication — fills the entire garage."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "You've got the talent to go pro. You know that. I know that. But the underground isn't finished with you yet. And you're not finished with it."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "There are things you can only learn down here. Things the corporate world can't teach because it doesn't know they exist. When you've learned them — all of them — then you go up. On your terms. Not theirs."
+    },
+    {
+      "type": "narration",
+      "text": "He nods once. That's all. Then he walks out, and the garage feels both emptier and more solid at the same time."
+    },
+    {
+      "type": "narration",
+      "text": "Maya hasn't moved. She's standing by the workbench, one hand resting on a torque wrench, a look on her face that she's trying very hard to keep neutral and failing."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_happy",
+      "text": "Good. I just bought a new lift."
+    },
+    {
+      "type": "narration",
+      "text": "She says it casually. Like your decision to stay didn't just make her entire year."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_happy",
+      "text": "It's a four-post. Rated for three tons. I got it from a guy in the port district who owed me a favor. It's being delivered Tuesday."
+    },
+    {
+      "type": "narration",
+      "text": "She's rambling. Maya rambles when she's happy and doesn't want to show it."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_determined",
+      "text": "Look — if you're staying, we're doing this right. The Sakura needs a full overhaul for the next season. New exhaust manifold, upgraded ECU, and I've been sketching out a suspension geometry that'll cut your corner times by—"
+    },
+    {
+      "type": "narration",
+      "text": "She stops. Catches herself. Smiles — a real one, unguarded, the kind she almost never shows."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_happy",
+      "text": "I'm glad you're staying."
+    },
+    {
+      "type": "narration",
+      "text": "Four words. Worth more than anything in Jade's folder."
+    },
+    {
+      "type": "narration",
+      "text": "That night, you drive through Nova Pacifica. Not racing. Just driving."
+    },
+    {
+      "type": "narration",
+      "text": "The harbor, where you ran your first race. The Pit, where you became someone. Route 9, where Diesel taught you to listen. Maya's garage, where a car that barely ran became a machine that changed your life."
+    },
+    {
+      "type": "narration",
+      "text": "This city is yours now. Not in the way a king owns a kingdom — in the way a river owns its banks. You flow through it. You shape it. It shapes you."
+    },
+    {
+      "type": "narration",
+      "text": "Somewhere above, the corporate world turns its gears without you. Somewhere in the shadows, Zero watches and waits. And somewhere in a hospital room, Nikko Chen stares at the ceiling and thinks about a debt he can't pay and a person who pulled him from a fire."
+    },
+    {
+      "type": "narration",
+      "text": "The underground is deep. The underground is dangerous. The underground is home."
+    },
+    {
+      "type": "narration",
+      "text": "And you're not done here. Not by a long shot."
+    },
+    {
+      "type": "narration",
+      "text": "Act 1 — COMPLETE."
+    },
+    {
+      "type": "narration",
+      "text": "THE COME-UP ends. THE RISE begins.",
+      "jump_to": "the_fork_end"
+    },
+    {
+      "label": "the_fork_end",
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "the_fork_complete",
+        "value": true
+      }
+    }
+  ]
+}

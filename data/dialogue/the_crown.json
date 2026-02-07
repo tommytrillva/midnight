@@ -1,0 +1,186 @@
+{
+  "id": "the_crown",
+  "context": "Chapter 1.4 — Post-championship. Player is Underground King/Queen. Adjusts based on whether they stopped for Nikko or kept racing.",
+  "lines": [
+    {
+      "type": "narration",
+      "text": "The morning after the Underground Classic, Nova Pacifica feels different. Not the city — the city never changes. You're what changed."
+    },
+    {
+      "label": "crown_stopped",
+      "type": "narration",
+      "text": "You didn't win the championship. Technically. The Pit Boss never awarded the title — the final race was ruled incomplete, no winner declared. On paper, the Underground Classic has no champion this year.",
+      "condition": {
+        "type": "flag_equals",
+        "flag": "stopped_for_nikko",
+        "value": true
+      }
+    },
+    {
+      "type": "narration",
+      "text": "But paper doesn't run these streets. People do. And people saw what you did.",
+      "condition": {
+        "type": "flag_equals",
+        "flag": "stopped_for_nikko",
+        "value": true
+      }
+    },
+    {
+      "type": "narration",
+      "text": "The story spread overnight. By dawn, every racer, mechanic, and spectator in the underground knew: you had the championship in your hands, four hundred meters from the finish, and you stopped. You pulled a man from a burning car. You chose a life over a trophy.",
+      "condition": {
+        "type": "flag_equals",
+        "flag": "stopped_for_nikko",
+        "value": true
+      }
+    },
+    {
+      "type": "narration",
+      "text": "In the world above — the world of contracts and sponsors and corporate racing — that decision would be called reckless. Foolish. Career suicide.",
+      "condition": {
+        "type": "flag_equals",
+        "flag": "stopped_for_nikko",
+        "value": true
+      }
+    },
+    {
+      "type": "narration",
+      "text": "In the underground, it made you a legend.",
+      "condition": {
+        "type": "flag_equals",
+        "flag": "stopped_for_nikko",
+        "value": true
+      }
+    },
+    {
+      "type": "narration",
+      "text": "They're calling you the Underground King of Nova Pacifica. Not because you won seven races — though you did. But because you proved something that the underground has always believed and rarely seen: that there's a code. That the people matter more than the prize. That when the moment came, you knew who you were.",
+      "condition": {
+        "type": "flag_equals",
+        "flag": "stopped_for_nikko",
+        "value": true
+      }
+    },
+    {
+      "type": "narration",
+      "text": "Your phone has been buzzing all morning. Crews you've never met want to race with you. Mechanics are offering discounts. The Pit Boss called to say your drinks are free for life — a gesture that, in the underground, is roughly equivalent to being knighted.",
+      "condition": {
+        "type": "flag_equals",
+        "flag": "stopped_for_nikko",
+        "value": true
+      }
+    },
+    {
+      "type": "narration",
+      "text": "At the garage, Maya has already pinned a newspaper clipping to the wall. Someone took a photo last night — you, on your knees, pulling Nikko through the wreckage. The image is blurry, shot on a phone, but it's already iconic. She didn't add a caption. She didn't need to.",
+      "condition": {
+        "type": "flag_equals",
+        "flag": "stopped_for_nikko",
+        "value": true
+      },
+      "jump_to": "crown_aftermath"
+    },
+    {
+      "label": "crown_won",
+      "type": "narration",
+      "text": "You won the championship. Underground King of Nova Pacifica. The title is yours. The trophy sits on the workbench at Maya's garage, catching the morning light.",
+      "condition": {
+        "type": "flag_equals",
+        "flag": "championship_won",
+        "value": true
+      }
+    },
+    {
+      "type": "narration",
+      "text": "It should feel like everything you've been working for. It doesn't.",
+      "condition": {
+        "type": "flag_equals",
+        "flag": "championship_won",
+        "value": true
+      }
+    },
+    {
+      "type": "narration",
+      "text": "Your phone has been buzzing. Messages of congratulations, but they feel thin. Polite. The kind of congratulations people give when they saw what happened and don't know how to say it.",
+      "condition": {
+        "type": "flag_equals",
+        "flag": "championship_won",
+        "value": true
+      }
+    },
+    {
+      "type": "narration",
+      "text": "Nikko is in the hospital. You've checked. Burns on his forearms, three broken ribs, a concussion. He'll recover. But the word around the Pit is that he was in the car for almost three minutes before anyone reached him. Three minutes of fire and metal and fear.",
+      "condition": {
+        "type": "flag_equals",
+        "flag": "championship_won",
+        "value": true
+      }
+    },
+    {
+      "type": "narration",
+      "text": "Three minutes you could have shortened to thirty seconds.",
+      "condition": {
+        "type": "flag_equals",
+        "flag": "championship_won",
+        "value": true
+      }
+    },
+    {
+      "type": "narration",
+      "text": "Nobody says it to your face. But you catch looks. Quick glances that slide away when you turn. A pause in conversation when you enter a room. The underground has a long memory, and what it remembers isn't always what you want it to.",
+      "condition": {
+        "type": "flag_equals",
+        "flag": "championship_won",
+        "value": true
+      }
+    },
+    {
+      "type": "narration",
+      "text": "You're the Underground King. You have the crown, the title, the hundred-and-fifty-thousand-dollar purse. You have everything you wanted.",
+      "condition": {
+        "type": "flag_equals",
+        "flag": "championship_won",
+        "value": true
+      }
+    },
+    {
+      "type": "narration",
+      "text": "And in the quiet hours of the morning, staring at a trophy that reflects a face you're not sure you recognize, you wonder if it was worth it.",
+      "condition": {
+        "type": "flag_equals",
+        "flag": "championship_won",
+        "value": true
+      }
+    },
+    {
+      "label": "crown_aftermath",
+      "type": "narration",
+      "text": "One thing is certain: everything changes now. You're not a nobody anymore. You're not an up-and-comer or a promising talent or a name-to-watch. You're the name. The one they'll measure every future champion against."
+    },
+    {
+      "type": "narration",
+      "text": "And with that comes attention. The kind that comes from above and below and from places you can't see yet."
+    },
+    {
+      "type": "narration",
+      "text": "Your phone rings. Three missed calls. One from a number you don't recognize. One from Maya. One from a number with a corporate area code."
+    },
+    {
+      "type": "narration",
+      "text": "The underground is watching. The corporate world is watching. And somewhere in the shadows of Nova Pacifica, Zero is watching too."
+    },
+    {
+      "type": "narration",
+      "text": "The crown is on your head. The question now is what you do with it."
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "the_crown_complete",
+        "value": true
+      }
+    }
+  ]
+}

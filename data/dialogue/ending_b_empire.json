@@ -1,0 +1,144 @@
+{
+  "id": "ending_b_empire",
+  "context": "Ending B: The Empire — Owner path, business success. Driver watches their racing team compete, reflecting on legacy.",
+  "ending_id": "empire",
+  "ending_title": "The Empire",
+  "lines": [
+    {
+      "type": "narration",
+      "text": "The grandstand seats three thousand. Tonight, every seat is taken."
+    },
+    {
+      "type": "narration",
+      "text": "Below, on the grid, six cars idle in formation. Your livery. Your colors. Your team."
+    },
+    {
+      "type": "narration",
+      "text": "Young drivers. Hungry eyes, steady hands. Some from Downtown. Some from the harbor. One from the same broken block you slept on when you first arrived in Nova Pacifica."
+    },
+    {
+      "type": "narration",
+      "text": "You watch from the owner's box. Hands on the railing. The vibration of the engines travels up through the steel and into your chest and for a moment — just a moment — your foot reaches for a clutch that isn't there."
+    },
+    {
+      "type": "narration",
+      "text": "Old habits."
+    },
+    {
+      "type": "narration",
+      "text": "The lights cycle. Red. Red. Red. Green."
+    },
+    {
+      "type": "narration",
+      "text": "The roar hits you like a wave. Six engines screaming in unison, tires biting asphalt, the whole grandstand on its feet."
+    },
+    {
+      "type": "narration",
+      "text": "Your driver — Kai, the kid from the harbor — takes the inside line on turn one. Clean. Aggressive. Smart."
+    },
+    {
+      "type": "narration",
+      "text": "You taught that line."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Driver",
+      "portrait": "player_older",
+      "text": "I used to think racing was about being the fastest. It's not."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Driver",
+      "portrait": "player_older",
+      "text": "It's about making sure the next person is faster than you were."
+    },
+    {
+      "type": "narration",
+      "text": "Beside you, Maya leans on the railing. Hair streaked with grey at the temples now. Hands still calloused from the shop. Still beautiful in the way that real things are beautiful — earned, not given."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_older",
+      "text": "Kai's running your line. Turn three, the late apex. She's got your instincts."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Driver",
+      "portrait": "player_older",
+      "text": "She's better than I was."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_smile_older",
+      "text": "She is. Don't tell her that though. Not yet."
+    },
+    {
+      "type": "narration",
+      "text": "Kai takes the lead on lap four. The crowd erupts. Your team radio crackles with voices — pit crew, strategist, the other drivers calling positions. An orchestra you built from nothing."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_older",
+      "text": "You're doing what my grandfather did. Building something that outlasts you."
+    },
+    {
+      "type": "narration",
+      "text": "You think about that. Torres Garage. A tin-roof shop that became a legend. Maya's grandfather turned wrenches until his hands couldn't hold them anymore, and then he taught other hands to hold them instead."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Driver",
+      "portrait": "player_older",
+      "text": "Is that enough?"
+    },
+    {
+      "type": "narration",
+      "text": "Maya looks at you. Really looks at you. The way she did the first time you rolled that smoking CRX into her bay and asked for a miracle."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_smile_older",
+      "text": "It's everything."
+    },
+    {
+      "type": "narration",
+      "text": "Below, Kai crosses the finish line. First place. The grandstand shakes."
+    },
+    {
+      "type": "narration",
+      "text": "You don't stand. You don't cheer. You just watch. The way Diesel used to watch you — from the shadows, seeing something nobody else could see yet."
+    },
+    {
+      "type": "narration",
+      "text": "Maya's hand finds yours on the railing."
+    },
+    {
+      "type": "narration",
+      "text": "The empire isn't the cars. It isn't the team. It isn't the grandstand or the trophies or the name on the building."
+    },
+    {
+      "type": "narration",
+      "text": "It's the next person. And the one after that. And the one after that."
+    },
+    {
+      "type": "narration",
+      "text": "It's everything."
+    },
+    {
+      "type": "narration",
+      "text": "THE EMPIRE"
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "ending_completed_empire",
+        "value": true
+      }
+    }
+  ]
+}

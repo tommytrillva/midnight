@@ -1,0 +1,403 @@
+{
+  "id": "diesels_past",
+  "context": "Chapter 1.3 — Diesel invites the player to his private garage. The crash revelation. Marcus Webb.",
+  "lines": [
+    {
+      "type": "narration",
+      "text": "Diesel's text was two words: 'Come over.' Followed by an address you've never seen before — an industrial block near the port, warehouse district. The kind of place where nobody asks questions because nobody wants answers."
+    },
+    {
+      "type": "narration",
+      "text": "You park outside a nondescript building. Roll-up door, no signage, no windows. If Diesel hadn't sent you here, you'd drive right past it."
+    },
+    {
+      "type": "narration",
+      "text": "You knock. The door rolls up to reveal something you weren't prepared for."
+    },
+    {
+      "type": "narration",
+      "text": "It's immaculate. Not garage-immaculate — museum-immaculate. The concrete floor is polished to a mirror sheen. Tools hang on pegboards in perfect geometric order, every wrench and socket in its designated outline. Fluorescent tubes overhead cast everything in clean, even light."
+    },
+    {
+      "type": "narration",
+      "text": "And the cars. Four of them, parked in a row under canvas covers. You can see their silhouettes — low, aggressive, purposeful. Cars built for one thing. Cars that have stories."
+    },
+    {
+      "type": "narration",
+      "text": "Diesel is sitting on a stool near the back wall, a mug of something steaming in his hand. He doesn't get up. He just watches you take it all in."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "Close the door behind you."
+    },
+    {
+      "type": "narration",
+      "text": "You do. The outside world disappears. In here, it's just you, Diesel, and the ghosts of whatever these cars have seen."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "Nobody knows about this place. Maya doesn't. The Pit doesn't. You're the first person to stand where you're standing in a very long time."
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "Why me?",
+          "choice_id": "diesel_why_me",
+          "relationship_changes": {"diesel": 3},
+          "moral_shift": 0,
+          "jump_to": "diesel_why"
+        },
+        {
+          "text": "This is incredible.",
+          "choice_id": "diesel_impressed",
+          "relationship_changes": {"diesel": 3},
+          "moral_shift": 0,
+          "jump_to": "diesel_not_about_cars"
+        }
+      ]
+    },
+    {
+      "label": "diesel_why",
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "Because you need to understand something about me before we go any further. And I need to say it out loud to someone. It's been... a long time since I've said it out loud.",
+      "jump_to": "diesel_photograph"
+    },
+    {
+      "label": "diesel_not_about_cars",
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "It's not about the cars. It was never about the cars."
+    },
+    {
+      "type": "narration",
+      "text": "He says it quietly. Like he's reminding himself.",
+      "jump_to": "diesel_photograph"
+    },
+    {
+      "label": "diesel_photograph",
+      "type": "narration",
+      "text": "He stands and walks to the back wall. There, between the pegboard and a fire extinguisher, is a framed photograph. Small. Easy to miss if you weren't looking."
+    },
+    {
+      "type": "narration",
+      "text": "Two men. Young — mid-twenties, maybe. Standing in front of a car with their arms crossed, grinning like they've just stolen the sun. The one on the left is unmistakably Diesel, twenty years and a thousand regrets ago. Leaner. Brighter. A version of himself that still believed the world was fair."
+    },
+    {
+      "type": "narration",
+      "text": "The man on the right is taller, darker skin, with a laugh so big you can feel it through the glass. He's wearing a racing jacket with a name stitched across the chest."
+    },
+    {
+      "type": "narration",
+      "text": "Marcus."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_sad",
+      "text": "His name was Marcus. Marcus Webb."
+    },
+    {
+      "type": "narration",
+      "text": "Diesel takes the photograph off the wall. Holds it in both hands like it weighs a hundred pounds."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_sad",
+      "text": "We raced together for twelve years. Same crew, same circuits, same dream. We were going to go pro. Both of us. We had the talent, we had the cars, we had the hunger. Nobody could touch us when we drove together."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "Marcus was the better driver. I'll say that till the day I die. He had this thing — this instinct — where the car would do what he wanted before he asked. Like they were having a conversation nobody else could hear."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "I was faster. Marcus was better. There's a difference, and it took me too long to understand it."
+    },
+    {
+      "type": "narration",
+      "text": "He sets the photograph on the workbench. Doesn't sit down. Just stands there, hands at his sides, staring at it."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_sad",
+      "text": "Cascade Circuit. You know it?"
+    },
+    {
+      "type": "narration",
+      "text": "You shake your head."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_sad",
+      "text": "Mountain pass north of the city. Before your time — they shut it down after. Twelve miles of switchbacks above a gorge. Beautiful road. Dangerous road. The kind of road that rewards skill and punishes arrogance in equal measure."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_sad",
+      "text": "It had been raining. The surface was slick — not wet enough to cancel, just wet enough to change everything. Marcus was leading. I was second. We were pushing each other the way we always did. Harder than we should have. Harder than the road deserved."
+    },
+    {
+      "type": "narration",
+      "text": "His voice is steady. Practiced. He's told this story to himself a thousand times in this garage. But never to another person. You can feel the difference."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_sad",
+      "text": "Turn fourteen. Long right-hander above the gorge. Marcus went wide. Just a few inches — that's all it takes. His rear tire caught the wet grass beyond the pavement."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_sad",
+      "text": "I can still hear the sound. Not the crash. The guardrail. Metal on metal. It sounded like the mountain was screaming."
+    },
+    {
+      "type": "narration",
+      "text": "Silence. The fluorescent lights hum overhead. Somewhere outside, a ship horn sounds in the harbor."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_sad",
+      "text": "I stopped the car. Ran back. The guardrail held, but the car was... the car was done. Marcus was inside."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_sad",
+      "text": "I walked away from Cascade Circuit. Marcus didn't walk away."
+    },
+    {
+      "type": "narration",
+      "text": "The words hang in the air. You feel them settle on your shoulders. The weight of them. The permanence."
+    },
+    {
+      "type": "narration",
+      "text": "Diesel doesn't cry. You suspect he burned through his tears years ago. What's left is something harder. Something that lives in his bones like cold weather."
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "Is that why you stopped racing?",
+          "choice_id": "diesel_stopped",
+          "relationship_changes": {"diesel": 5},
+          "moral_shift": 0,
+          "jump_to": "diesel_guardrail"
+        },
+        {
+          "text": "Is that why you're teaching me?",
+          "choice_id": "diesel_teaching",
+          "relationship_changes": {"diesel": 15},
+          "moral_shift": 5,
+          "jump_to": "diesel_purpose"
+        },
+        {
+          "text": "...",
+          "choice_id": "diesel_silence",
+          "relationship_changes": {"diesel": 10},
+          "moral_shift": 5,
+          "jump_to": "diesel_marcus_silence"
+        }
+      ]
+    },
+    {
+      "label": "diesel_guardrail",
+      "type": "narration",
+      "text": "Diesel looks at you. Really looks at you. For the first time, you see the full weight of the years behind those eyes."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_sad",
+      "text": "I tried. After the funeral, I tried to get back in the car. Drove to Cascade at 3 AM. Sat at the starting point."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_sad",
+      "text": "I made it one mile before I had to pull over. Because every turn — every single turn — I heard that sound. The guardrail. Metal screaming. And I couldn't tell if it was a memory or a premonition."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "So yes. That's why I stopped. Not because I lost my nerve. Because every time I push a car to its limit, I hear Marcus hitting that rail. And I can't make it stop."
+    },
+    {
+      "type": "narration",
+      "text": "He picks up the photograph again. Runs his thumb across the glass, across the face of the man who isn't here.",
+      "jump_to": "diesel_lesson"
+    },
+    {
+      "label": "diesel_purpose",
+      "type": "narration",
+      "text": "Diesel goes still. Completely still. Like you just hit a nerve he didn't know was exposed."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_sad",
+      "text": "..."
+    },
+    {
+      "type": "narration",
+      "text": "He opens his mouth. Closes it. Opens it again. You've never seen Diesel search for words before."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_sad",
+      "text": "Maybe."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_sad",
+      "text": "Maybe if I can teach someone to be better than I was — smarter, more careful, more aware — then maybe it means something. Maybe Marcus didn't die just because the road was wet and I pushed him too hard."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_sad",
+      "text": "Maybe if I teach you to be better... Marcus didn't die for nothing."
+    },
+    {
+      "type": "narration",
+      "text": "He says it like a confession. Like he's been carrying that sentence in his chest for twelve years and this is the first time it's ever escaped.",
+      "jump_to": "diesel_lesson"
+    },
+    {
+      "label": "diesel_marcus_silence",
+      "type": "narration",
+      "text": "You don't say anything. There is nothing to say. Some stories don't need a response — they need a witness."
+    },
+    {
+      "type": "narration",
+      "text": "The silence stretches. Not uncomfortable. Necessary. The space between two people who understand that words would only cheapen what just happened."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "Most people fill silence with noise. You don't."
+    },
+    {
+      "type": "narration",
+      "text": "He looks at the photograph. Then back at you."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_sad",
+      "text": "Marcus was like that too. He'd listen to an engine for ten minutes before touching a single bolt. Said you had to hear what the car was telling you before you could tell it anything."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "You remind me of him. That scares me. But it also makes me think you might be the one who gets it right.",
+      "jump_to": "diesel_lesson"
+    },
+    {
+      "label": "diesel_lesson",
+      "type": "narration",
+      "text": "Diesel puts the photograph back on the wall. Carefully. Precisely. Like hanging it is a ritual he performs every time."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "I brought you here because you need to understand something that nobody at the Pit will ever teach you."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "The car doesn't care about you."
+    },
+    {
+      "type": "narration",
+      "text": "He says it flatly. No drama. Just fact."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "It doesn't care if you win. It doesn't care if you crash. It doesn't care if you live or die. It's a machine. It does what physics tells it to do, and physics doesn't negotiate."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "But the people watching from the sidelines? They care. Maya, standing at the finish line with a wrench in her hand because she can't watch without fidgeting. The crowd that holds its breath when you take a corner too fast. The person waiting for you to come home."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_sad",
+      "text": "The car doesn't care about you. The people watching from the sidelines do. That's what Marcus never understood. That's what I need you to understand."
+    },
+    {
+      "type": "narration",
+      "text": "He finishes his coffee. Sets the mug down. For a moment, the two of you stand in his private cathedral of steel and memory, and the silence feels holy."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "Go home. Get some sleep. The Underground Classic is coming, and you're not ready yet."
+    },
+    {
+      "type": "narration",
+      "text": "He pauses at the light switch."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "But you will be."
+    },
+    {
+      "type": "narration",
+      "text": "The lights go out. You walk to your car in the dark, carrying the weight of a story that isn't yours but somehow belongs to you now. Marcus Webb. Turn fourteen. The sound of a guardrail screaming."
+    },
+    {
+      "type": "narration",
+      "text": "You start the engine. It sounds different tonight. Not faster. Not louder. Just... more honest. Like it's finally telling you what it's always been saying: I'm a machine. Love the people, not the metal."
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "diesels_past_complete",
+        "value": true
+      }
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "knows_about_marcus",
+        "value": true
+      }
+    }
+  ]
+}

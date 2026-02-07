@@ -1,0 +1,457 @@
+{
+  "id": "nikkos_shadow",
+  "context": "Act 1 Chapter 1.2 — First ranked 1v1 race against Nikko Cross",
+  "lines": [
+    {
+      "type": "narration",
+      "text": "The Pit's ranking board. You've been climbing — slowly, methodically, one race at a time. But tonight the board tells a different story."
+    },
+    {
+      "type": "narration",
+      "text": "Your name. Nikko Cross's name. A line drawn between them in red marker. The crowd has already gathered. Word travels fast when a ranked racer draws a newcomer."
+    },
+    {
+      "type": "narration",
+      "text": "Murmuring ripples through the bodies pressed against the chain-link. You catch fragments — 'CRX kid' and 'Nikko's gonna eat him alive' and 'remember Fresh Meat night?' The betting is active. You're not the favorite."
+    },
+    {
+      "type": "narration",
+      "text": "The 350Z materializes from the warehouse entrance like a rumor given form. Midnight blue under the floodlights, widebody fenders catching shadows. Nikko Cross steps out with the same controlled precision you remember — every movement a calculation."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko Cross",
+      "portrait": "nikko_cold",
+      "text": "Well, well. Somebody moved up the board."
+    },
+    {
+      "type": "narration",
+      "text": "He looks at the matchup listing. Then at you. Then back at the listing, like he's confirming a mistake that isn't one."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko Cross",
+      "portrait": "nikko_cold",
+      "text": "I thought Fresh Meat night was a fluke. Now you're ranked, and they're pairing you with me. Either someone up top has a sense of humor, or you've been making noise."
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "Maybe your reputation needs updating.",
+          "choice_id": "nikko_shadow_confident",
+          "relationship_changes": {"nikko": 3},
+          "moral_shift": -5,
+          "rep": 5,
+          "jump_to": "nikko_responds_confident"
+        },
+        {
+          "text": "Just race.",
+          "choice_id": "nikko_shadow_direct",
+          "relationship_changes": {"nikko": 5},
+          "moral_shift": 0,
+          "jump_to": "nikko_responds_direct"
+        },
+        {
+          "text": "What's your problem with me?",
+          "choice_id": "nikko_shadow_confront",
+          "relationship_changes": {"nikko": 2},
+          "moral_shift": 5,
+          "jump_to": "nikko_responds_confront"
+        }
+      ]
+    },
+    {
+      "label": "nikko_responds_confident",
+      "type": "narration",
+      "text": "Nikko's eyes narrow. Not angry — interested. Like a cat watching something it hasn't decided to kill yet."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko Cross",
+      "portrait": "nikko_cold",
+      "text": "Reputation. That's cute. You know what reputation is? It's the story people tell about you when you're not in the room. You want to change my story? Do it on the road. Not with your mouth.",
+      "jump_to": "pre_race_prep"
+    },
+    {
+      "label": "nikko_responds_direct",
+      "type": "narration",
+      "text": "Nikko stops. Studies you. There's a flicker of something — respect, maybe. Or recognition. Like he's seeing himself from a few years ago."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko Cross",
+      "portrait": "nikko_neutral",
+      "text": "Hm. No trash talk. No posturing. Just 'race.'"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko Cross",
+      "portrait": "nikko_neutral",
+      "text": "Fine. Let's race.",
+      "jump_to": "pre_race_prep"
+    },
+    {
+      "label": "nikko_responds_confront",
+      "type": "dialogue",
+      "speaker": "Nikko Cross",
+      "portrait": "nikko_cold",
+      "text": "Problem? I don't have a problem with you. You're not significant enough for a problem."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko Cross",
+      "portrait": "nikko_cold",
+      "text": "I have a problem with everyone who thinks showing up is the same as belonging. This scene has standards. The board has meaning. Every spot on it was earned in blood and brake dust."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko Cross",
+      "portrait": "nikko_cold",
+      "text": "You've been here — what — a few weeks? And you think you deserve to share a race grid with me?",
+      "jump_to": "pre_race_prep"
+    },
+    {
+      "label": "pre_race_prep",
+      "type": "dialogue",
+      "speaker": "Maya (Radio)",
+      "portrait": "maya_radio",
+      "text": "Hey. Listen to me carefully.",
+      "condition": {
+        "type": "has_flag",
+        "flag": "maya_radio_active"
+      }
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya (Radio)",
+      "portrait": "maya_radio",
+      "text": "Nikko Cross has not lost a ranked race in fourteen months. Fourteen. That's twenty-three consecutive wins. He drives a tuned 350Z with at least three hundred wheel horsepower and he knows every inch of every Pit circuit.",
+      "condition": {
+        "type": "has_flag",
+        "flag": "maya_radio_active"
+      }
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya (Radio)",
+      "portrait": "maya_radio",
+      "text": "His weakness — IF he has one — is that he's mechanical. Perfect lines, perfect inputs, no improvisation. He drives the same race every time because it works every time.",
+      "condition": {
+        "type": "has_flag",
+        "flag": "maya_radio_active"
+      }
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya (Radio)",
+      "portrait": "maya_radio",
+      "text": "If you can force him off his program — make him react instead of execute — you might find a gap. MIGHT. I'm not promising anything.",
+      "condition": {
+        "type": "has_flag",
+        "flag": "maya_radio_active"
+      }
+    },
+    {
+      "type": "narration",
+      "text": "The two cars roll to the start line. The 350Z sits beside you, engine murmuring like a contained explosion. Nikko stares straight ahead. No showmanship. No pre-race drama. Just focus."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko Cross",
+      "portrait": "nikko_cold",
+      "text": "Last chance to learn something tonight. Watch my mirrors. That's as close as you'll get."
+    },
+    {
+      "type": "narration",
+      "text": "The starter's hand goes up. The crowd presses in. The night holds its breath."
+    },
+    {
+      "type": "narration",
+      "text": "Drop."
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "nikko_ranked_race_started",
+        "value": true
+      }
+    },
+    {
+      "label": "race_radio",
+      "type": "dialogue",
+      "speaker": "Maya (Radio)",
+      "portrait": "maya_radio",
+      "text": "He's pulling ahead. Don't panic. His launch is always clean — he gains a car length off the line every time. You'll close up in the technical section.",
+      "condition": {
+        "type": "has_flag",
+        "flag": "maya_radio_active"
+      }
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya (Radio)",
+      "portrait": "maya_radio",
+      "text": "Watch his braking into turn three. See how late he goes? His technique is immaculate. You need to be just as late but find a different line — something he's not expecting.",
+      "condition": {
+        "type": "has_flag",
+        "flag": "maya_radio_active"
+      }
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya (Radio)",
+      "portrait": "maya_radio",
+      "text": "He's fast. God, he's fast. Every corner is the same — same entry speed, same apex, same exit. Like a machine.",
+      "condition": {
+        "type": "has_flag",
+        "flag": "maya_radio_active"
+      }
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya (Radio)",
+      "portrait": "maya_radio",
+      "text": "Last section. Give it everything. Whatever happens, you raced Nikko Cross. That means something.",
+      "condition": {
+        "type": "has_flag",
+        "flag": "maya_radio_active"
+      }
+    },
+    {
+      "label": "post_race_loss",
+      "type": "narration",
+      "text": "Nikko crosses the line a full second ahead. A full second — in a street race, that's a canyon. The crowd reacts with the resigned acceptance of people watching the inevitable.",
+      "condition": {
+        "type": "flag_equals",
+        "flag": "nikko_ranked_win",
+        "value": false
+      }
+    },
+    {
+      "type": "narration",
+      "text": "You coast past the finish. Second place. Against the eighth-ranked driver in Nova Pacifica. In a CRX. Two months ago you were sleeping in this car. Progress is relative.",
+      "condition": {
+        "type": "flag_equals",
+        "flag": "nikko_ranked_win",
+        "value": false
+      }
+    },
+    {
+      "type": "narration",
+      "text": "Nikko pulls alongside. His window is already down. His face is unreadable — the same expression before the race, during the race, after the race. Like he runs on a different emotional operating system.",
+      "condition": {
+        "type": "flag_equals",
+        "flag": "nikko_ranked_win",
+        "value": false
+      }
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko Cross",
+      "portrait": "nikko_neutral",
+      "text": "Closer than I thought.",
+      "condition": {
+        "type": "flag_equals",
+        "flag": "nikko_ranked_win",
+        "value": false
+      }
+    },
+    {
+      "type": "narration",
+      "text": "A pause. He checks his mirror. Adjusts his rearview. The small rituals of a man who controls every variable.",
+      "condition": {
+        "type": "flag_equals",
+        "flag": "nikko_ranked_win",
+        "value": false
+      }
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko Cross",
+      "portrait": "nikko_cold",
+      "text": "Still not close enough.",
+      "condition": {
+        "type": "flag_equals",
+        "flag": "nikko_ranked_win",
+        "value": false
+      }
+    },
+    {
+      "type": "narration",
+      "text": "The 350Z pulls away. Clean. Quiet. Nikko Cross, twenty-three wins and counting. But for the first time, someone made him acknowledge the gap wasn't infinite.",
+      "condition": {
+        "type": "flag_equals",
+        "flag": "nikko_ranked_win",
+        "value": false
+      }
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya (Radio)",
+      "portrait": "maya_radio",
+      "text": "You lost. But you made him work for it. He was pushing in the last section — I could see it in his lines. Tighter, more aggressive. You got in his head.",
+      "condition": {
+        "type": "flag_equals",
+        "flag": "nikko_ranked_win",
+        "value": false
+      }
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya (Radio)",
+      "portrait": "maya_radio",
+      "text": "Next time.",
+      "condition": {
+        "type": "flag_equals",
+        "flag": "nikko_ranked_win",
+        "value": false
+      },
+      "jump_to": "scene_end"
+    },
+    {
+      "label": "post_race_win",
+      "type": "narration",
+      "text": "The CRX crosses the line first. By half a car length. The world goes silent.",
+      "condition": {
+        "type": "has_flag",
+        "flag": "nikko_ranked_win"
+      }
+    },
+    {
+      "type": "narration",
+      "text": "Not quiet — silent. The absolute absence of sound that happens when reality breaks a promise. Nikko Cross does not lose ranked races. That's not an opinion. That's a law of Nova Pacifica physics. And you just violated it.",
+      "condition": {
+        "type": "has_flag",
+        "flag": "nikko_ranked_win"
+      }
+    },
+    {
+      "type": "narration",
+      "text": "Then the noise comes. All at once. Every voice in The Pit, every phone recording, every horn honking. The sound of a city recalibrating its understanding of what's possible.",
+      "condition": {
+        "type": "has_flag",
+        "flag": "nikko_ranked_win"
+      }
+    },
+    {
+      "type": "narration",
+      "text": "Nikko sits in the 350Z for a long time. The engine is off. Through his windshield, you can see his hands on the wheel. They're not shaking. They're gripping. White-knuckled. Holding onto something that's slipping away.",
+      "condition": {
+        "type": "has_flag",
+        "flag": "nikko_ranked_win"
+      }
+    },
+    {
+      "type": "narration",
+      "text": "When he steps out, the mask is on. Perfect composure. Perfect posture. But you've been learning to read people in this city, and the mask has a crack now. A hairline fracture running from his eyes to his jaw.",
+      "condition": {
+        "type": "has_flag",
+        "flag": "nikko_ranked_win"
+      }
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko Cross",
+      "portrait": "nikko_mask_slipped",
+      "text": "Good race.",
+      "condition": {
+        "type": "has_flag",
+        "flag": "nikko_ranked_win"
+      }
+    },
+    {
+      "type": "narration",
+      "text": "Two words. But his voice is different. The ice is there, the control is there, but underneath — something desperate. Something that sounds like a man who just watched the thing he built his identity on crack under the weight of a kid in a CRX.",
+      "condition": {
+        "type": "has_flag",
+        "flag": "nikko_ranked_win"
+      }
+    },
+    {
+      "type": "narration",
+      "text": "He extends his hand. You take it. His grip is iron — not threatening, but holding on. Like he needs the contact to confirm this is real.",
+      "condition": {
+        "type": "has_flag",
+        "flag": "nikko_ranked_win"
+      }
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko Cross",
+      "portrait": "nikko_mask_slipped",
+      "text": "Don't think this changes anything. The board resets. I'll see you next time.",
+      "condition": {
+        "type": "has_flag",
+        "flag": "nikko_ranked_win"
+      }
+    },
+    {
+      "type": "narration",
+      "text": "He walks to the 350Z. Opens the door. Stops. Doesn't look back.",
+      "condition": {
+        "type": "has_flag",
+        "flag": "nikko_ranked_win"
+      }
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko Cross",
+      "portrait": "nikko_cold",
+      "text": "I won't underestimate you again.",
+      "condition": {
+        "type": "has_flag",
+        "flag": "nikko_ranked_win"
+      }
+    },
+    {
+      "type": "narration",
+      "text": "The 350Z fires up and rolls out of The Pit. No tire squeal. No drama. Just gone. But you saw it — in the handshake, in the voice, in the way he didn't look at the crowd. Nikko Cross just lost more than a race. He lost the certainty that he couldn't.",
+      "condition": {
+        "type": "has_flag",
+        "flag": "nikko_ranked_win"
+      }
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya (Radio)",
+      "portrait": "maya_radio_shocked",
+      "text": "I... I need a minute. Did that just happen? Did you just beat Nikko Cross?",
+      "condition": {
+        "type": "has_flag",
+        "flag": "nikko_ranked_win"
+      }
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya (Radio)",
+      "portrait": "maya_radio_excited",
+      "text": "Get home. Now. Before someone tries to challenge you while you're still hot. And don't you DARE wreck that car on the drive back.",
+      "condition": {
+        "type": "has_flag",
+        "flag": "nikko_ranked_win"
+      }
+    },
+    {
+      "label": "scene_end",
+      "type": "narration",
+      "text": "The Pit thins out. The floodlights hum. Your name sits on the ranking board — higher now, climbing. In Nova Pacifica, the board is the only truth that matters. And tonight, the truth shifted."
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "nikko_first_ranked_complete",
+        "value": true
+      }
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "give_rep",
+        "amount": 20
+      }
+    }
+  ]
+}

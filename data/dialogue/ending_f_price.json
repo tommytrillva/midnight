@@ -1,0 +1,200 @@
+{
+  "id": "ending_f_price",
+  "context": "Ending F: The Price — Moral compromises, Zero alliance. The Driver inherits Zero's car cathedral. Wealth, power, emptiness.",
+  "ending_id": "price",
+  "ending_title": "The Price",
+  "lines": [
+    {
+      "type": "narration",
+      "text": "The cathedral."
+    },
+    {
+      "type": "narration",
+      "text": "That's what Zero called it. A warehouse the size of an airplane hangar, converted into something between a museum and a mausoleum. Climate-controlled. Humidity-regulated. Every surface polished to a mirror finish."
+    },
+    {
+      "type": "narration",
+      "text": "Hundreds of cars."
+    },
+    {
+      "type": "narration",
+      "text": "Rows upon rows, arranged by era. By origin. By the story of how they were taken. Because every car in here was taken. Won. Claimed. Extracted from someone who loved it by someone who loved power more."
+    },
+    {
+      "type": "narration",
+      "text": "Zero's collection. Your collection now."
+    },
+    {
+      "type": "narration",
+      "text": "You walk the aisles. Footsteps echo in the silence — the kind of silence that expensive spaces have. The absence of everything that isn't money."
+    },
+    {
+      "type": "narration",
+      "text": "A Skyline R34. Midnight purple. The paint alone is worth more than the apartment you slept in when you first arrived. You touch the hood. Cold."
+    },
+    {
+      "type": "narration",
+      "text": "A Porsche 964 RS. Arena red. Two hundred miles on the odometer. It has never been driven in anger. It has never been driven at all. It sits and waits and gleams."
+    },
+    {
+      "type": "narration",
+      "text": "A Lancia Delta Integrale. Rally history in sheet metal. Won from a collector in Zurich. The story of that night is legendary. You weren't there for it, but you heard it. Everyone heard it."
+    },
+    {
+      "type": "narration",
+      "text": "Beautiful."
+    },
+    {
+      "type": "narration",
+      "text": "Every single one of them."
+    },
+    {
+      "type": "narration",
+      "text": "Empty."
+    },
+    {
+      "type": "narration",
+      "text": "You stop at the far end. The newest addition — a GT-R. Maya built the engine in that car. Back when Maya still spoke to you. Back when there was a Maya to speak to."
+    },
+    {
+      "type": "narration",
+      "text": "Your phone rings."
+    },
+    {
+      "type": "narration",
+      "text": "You look at it. Unknown number. Probably a dealer. Probably someone wanting something. Everyone who calls now wants something."
+    },
+    {
+      "type": "narration",
+      "text": "Nobody calls just to call anymore."
+    },
+    {
+      "type": "narration",
+      "text": "You let it ring."
+    },
+    {
+      "type": "narration",
+      "text": "Maya didn't stay."
+    },
+    {
+      "type": "narration",
+      "text": "She didn't leave all at once. It was gradual. Fewer calls. Shorter conversations. That last time at the garage, she looked at you like she was looking at a car she couldn't fix — not because the damage was too great, but because the car didn't want to be fixed."
+    },
+    {
+      "type": "narration",
+      "text": "She closed the bay door. You heard it from outside. The sound of a chapter ending."
+    },
+    {
+      "type": "narration",
+      "text": "Diesel left."
+    },
+    {
+      "type": "narration",
+      "text": "Not a speech. Not a confrontation. He just stopped showing up at Route 9. His phone went to a recording. His house was dark. One day the matte black coupe was gone from its spot at the harbor overlook and it never came back."
+    },
+    {
+      "type": "narration",
+      "text": "Nikko said it."
+    },
+    {
+      "type": "narration",
+      "text": "Out loud. To your face. The only one brave enough or angry enough."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_angry",
+      "text": "You became what you hated."
+    },
+    {
+      "type": "narration",
+      "text": "Four words. He didn't wait for an answer. He already knew there wasn't one."
+    },
+    {
+      "type": "narration",
+      "text": "You became what you hated."
+    },
+    {
+      "type": "narration",
+      "text": "The cathedral hums. Climate control. Keeping three hundred cars at the perfect temperature. Protecting paint that nobody sees. Preserving history that nobody visits."
+    },
+    {
+      "type": "narration",
+      "text": "You walk to the most expensive car in the collection. A one-of-one prototype. Worth more than most buildings. You slide into the driver's seat. The leather remembers nobody because nobody has ever sat here."
+    },
+    {
+      "type": "narration",
+      "text": "You start the engine."
+    },
+    {
+      "type": "narration",
+      "text": "The sound fills the cathedral. Bounces off the walls. A thousand horsepower talking to itself in an empty room."
+    },
+    {
+      "type": "narration",
+      "text": "You put it in gear. Roll forward. Past the Skyline. Past the Porsche. Past the Lancia. Past Maya's GT-R."
+    },
+    {
+      "type": "narration",
+      "text": "Through the cathedral. Down the center aisle. The most expensive drive in the world and there is no one to see it."
+    },
+    {
+      "type": "narration",
+      "text": "Alone."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Driver",
+      "portrait": "player_hollow",
+      "text": "I won everything."
+    },
+    {
+      "type": "narration",
+      "text": "Beat."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Driver",
+      "portrait": "player_hollow",
+      "text": "Everything."
+    },
+    {
+      "type": "narration",
+      "text": "Longer beat."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Driver",
+      "portrait": "player_hollow",
+      "text": "...Everything."
+    },
+    {
+      "type": "narration",
+      "text": "The word gets emptier each time. Like a room you keep walking through that keeps getting bigger. Like an engine revving in neutral — all noise, no movement."
+    },
+    {
+      "type": "narration",
+      "text": "The prototype rolls to a stop at the cathedral doors. Beyond them, the city. Nova Pacifica. A grid of light and opportunity and a hundred people who would kill to be where you are."
+    },
+    {
+      "type": "narration",
+      "text": "They don't know what it costs."
+    },
+    {
+      "type": "narration",
+      "text": "The engine idles. The cathedral waits. The phone has stopped ringing."
+    },
+    {
+      "type": "narration",
+      "text": "THE PRICE"
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "ending_completed_price",
+        "value": true
+      }
+    }
+  ]
+}

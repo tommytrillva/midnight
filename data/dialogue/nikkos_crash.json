@@ -1,0 +1,432 @@
+{
+  "id": "nikkos_crash",
+  "context": "Chapter 1.4 — THE DEFINING CHOICE. Final lap of championship. Nikko crashes. Stop and help, or keep racing.",
+  "lines": [
+    {
+      "type": "narration",
+      "text": "Final lap. You're ahead by two car lengths. Nikko is driving like a man possessed — no, like a man who has nothing left to lose. Every corner, he's inches from the wall. Every straight, he's pushing his engine past the redline, chasing RPMs that don't exist."
+    },
+    {
+      "type": "narration",
+      "text": "You can hear his engine through your closed windows. It's screaming. Not the good kind of scream — the kind that says something is about to break."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_radio",
+      "text": "[RADIO] He's pushing too hard. His rear end is loose — I can see it from here. Just maintain your line. Don't let him bait you into a mistake."
+    },
+    {
+      "type": "narration",
+      "text": "Turn six. The sweeping right-hander along the waterfront. You take it clean — late apex, smooth throttle, textbook. Behind you, Nikko dives inside. Too fast. Way too fast."
+    },
+    {
+      "type": "narration",
+      "text": "You see it happen in your rearview mirror."
+    },
+    {
+      "type": "narration",
+      "text": "His rear tires lose grip. The car snaps sideways — violent, instant — and he's sliding toward the concrete barrier at the outside of the turn. He overcorrects. The car whips the other way."
+    },
+    {
+      "type": "narration",
+      "text": "Time slows."
+    },
+    {
+      "type": "narration",
+      "text": "You see every detail. The sparks as his bumper catches the pavement. The way his car lifts — actually lifts — as the right-side wheels catch the curb. The sickening, geometric inevitability of a car that has exceeded the limits of what physics allows."
+    },
+    {
+      "type": "narration",
+      "text": "He hits the barrier. Not a glancing blow. A full-force, driver's-side impact that crumples the door like tin foil. The car bounces off, spins, and rolls. Once. Twice. It comes to rest on its roof, and for one terrible second, everything is silent."
+    },
+    {
+      "type": "narration",
+      "text": "Then the fire starts."
+    },
+    {
+      "type": "narration",
+      "text": "A tongue of orange flame licks out from under the hood. Small at first. Then growing. The fuel line. It has to be the fuel line."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_radio",
+      "text": "[RADIO] Oh my god. Oh my god, Nikko—"
+    },
+    {
+      "type": "narration",
+      "text": "The radio cuts to static. Ahead of you, the road is clear. The finish line is four hundred meters away. You can see the lights, the crowd, the banner. Four hundred meters and the championship is yours."
+    },
+    {
+      "type": "narration",
+      "text": "Behind you, a man is trapped in a burning car."
+    },
+    {
+      "type": "narration",
+      "text": "The finish line. Nikko. The finish line. Nikko."
+    },
+    {
+      "type": "narration",
+      "text": "You have seconds to decide."
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "Stop the car. Help Nikko.",
+          "choice_id": "stop_and_help",
+          "relationship_changes": {"nikko": 30, "maya": 10, "diesel": 15},
+          "moral_shift": 25,
+          "rep": 25,
+          "set_flags": {"stopped_for_nikko": true, "championship_won": false},
+          "jump_to": "stop_and_help"
+        },
+        {
+          "text": "Keep racing. Win the championship.",
+          "choice_id": "keep_racing",
+          "relationship_changes": {"maya": -15, "diesel": -10},
+          "moral_shift": -25,
+          "rep": -10,
+          "set_flags": {"stopped_for_nikko": false, "championship_won": true},
+          "jump_to": "keep_racing"
+        }
+      ]
+    },
+    {
+      "label": "stop_and_help",
+      "type": "narration",
+      "text": "Your foot moves from the gas to the brake. It's not a decision — it's a reflex. Something deeper than thought. Something that lives in the part of you that existed before racing, before the Pit, before any of this."
+    },
+    {
+      "type": "narration",
+      "text": "The tires shriek. The car stops. You're out of the door before it finishes rocking on its suspension."
+    },
+    {
+      "type": "narration",
+      "text": "The heat hits you first. Nikko's car is fully engulfed on the engine side now, flames crawling backward toward the cabin. You can smell burning rubber, melting plastic, gasoline. Your eyes water. Your lungs burn."
+    },
+    {
+      "type": "narration",
+      "text": "Nikko is hanging upside down in his harness. His eyes are open — wide, terrified, conscious. Blood is running from a gash on his forehead, dripping upward into his hair. He's pulling at his seatbelt with one hand, but the buckle is jammed."
+    },
+    {
+      "type": "narration",
+      "text": "You drop to your knees beside the car. The asphalt is hot enough to burn through your jeans. You reach in through the shattered window."
+    },
+    {
+      "type": "narration",
+      "text": "The seatbelt. You grab it with both hands. The release is bent — the impact warped it. You pull a pocket knife from your jacket — the one Maya gave you for cutting zip ties — and saw through the nylon strap."
+    },
+    {
+      "type": "narration",
+      "text": "Nikko drops. You grab him under the arms and pull. He's heavier than he looks, or maybe you're weaker than you think, or maybe adrenaline only carries you so far. But you pull, and he slides through the window, and you drag him across the asphalt, away from the car, away from the fire, ten feet, twenty feet, thirty."
+    },
+    {
+      "type": "narration",
+      "text": "The car's fuel tank goes. A whump that you feel in your chest, a column of flame that turns the night orange. If you'd been thirty seconds slower, neither of you would be breathing."
+    },
+    {
+      "type": "narration",
+      "text": "You're both on the ground. Panting. Alive."
+    },
+    {
+      "type": "narration",
+      "text": "Nikko stares at you. His face is a mess — blood, soot, tears he'll deny later. His mask is gone. Completely gone. What's left is just a person who almost died."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_broken",
+      "text": "You just lost the championship."
+    },
+    {
+      "type": "narration",
+      "text": "His voice is raw. Cracked. Barely audible over the sound of his car burning behind you."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Driver",
+      "portrait": "",
+      "text": "I know."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_broken",
+      "text": "Why?"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Driver",
+      "portrait": "",
+      "text": "Because it's a race. Not a funeral."
+    },
+    {
+      "type": "narration",
+      "text": "Nikko stares at you. For a long time. The fire crackles. Sirens in the distance."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_broken",
+      "text": "I owe you."
+    },
+    {
+      "type": "narration",
+      "text": "Three words. From a man who has spent his entire life making sure he owes nothing to anyone. Three words that cost him more than the half-million dollars hanging over his head."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_broken",
+      "text": "I owe you, and I don't say that. I don't say that to anyone. But I owe you."
+    },
+    {
+      "type": "narration",
+      "text": "The crowd arrives. People running from the Pit, from the spectator points, phones out, shouting. In the chaos, you hear your name — not as a cheer, but as something else. Something bigger."
+    },
+    {
+      "type": "narration",
+      "text": "Maya finds you first. She's running, actually running, and when she reaches you, she doesn't know whether to hit you or hug you. She does both. Her fist connects with your shoulder and then her arms are around you and she's shaking."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_crying",
+      "text": "You idiot. You absolute idiot. You could have died."
+    },
+    {
+      "type": "narration",
+      "text": "She pulls back. Her eyes are red. Her face is streaked with tears and grease."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_crying",
+      "text": "Don't you EVER do that again."
+    },
+    {
+      "type": "narration",
+      "text": "She's lying. She's glad you did it. You both know it."
+    },
+    {
+      "type": "narration",
+      "text": "And then you see Diesel."
+    },
+    {
+      "type": "narration",
+      "text": "He's standing at the edge of the crowd. Not moving. Not speaking. Just watching. And as your eyes meet, he does something you've never seen him do before."
+    },
+    {
+      "type": "narration",
+      "text": "The smallest nod. Almost imperceptible. A movement so slight that if you blinked, you'd miss it."
+    },
+    {
+      "type": "narration",
+      "text": "Then he turns and walks away. Into the dark. Without a word."
+    },
+    {
+      "type": "narration",
+      "text": "That nod meant everything."
+    },
+    {
+      "type": "narration",
+      "text": "The car doesn't care about you. The people watching from the sidelines do. You understood the lesson. And tonight, you proved it."
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "nikkos_crash_complete",
+        "value": true
+      }
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "give_rep",
+        "amount": 25
+      }
+    },
+    {
+      "label": "keep_racing",
+      "type": "narration",
+      "text": "Your foot stays on the gas."
+    },
+    {
+      "type": "narration",
+      "text": "Something in you screams to stop. But the finish line is right there — four hundred meters of clear road and a championship waiting at the end of it. The throttle is open. The engine is pulling. Every second you hesitate is a second you'll never get back."
+    },
+    {
+      "type": "narration",
+      "text": "In the rearview mirror, Nikko's car burns. You see the orange glow. You see the smoke. You don't see people running to help because you're already too far away."
+    },
+    {
+      "type": "narration",
+      "text": "The finish line arrives. You cross it. Alone."
+    },
+    {
+      "type": "narration",
+      "text": "The crowd at the finish is cheering, but it's wrong. The sound is hollow. Confused. People have their phones out — not pointed at you, but at the smoke rising from turn six. Word is spreading faster than your car traveled."
+    },
+    {
+      "type": "narration",
+      "text": "You stop the car. Get out. The Pit Boss is running toward you with the trophy, but he slows down when he sees your face. Or maybe when he sees the fire behind you."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Pit Boss",
+      "portrait": "pit_boss_neutral",
+      "text": "We, uh... we got a situation at turn six. Emergency crews are rolling."
+    },
+    {
+      "type": "narration",
+      "text": "He hands you the trophy. It feels like lead. You hold it and stare at it and feel nothing."
+    },
+    {
+      "type": "narration",
+      "text": "Twenty minutes later, they pull Nikko from the wreck. He's alive — barely. Burns on his arms. Broken ribs. A concussion that will keep him in the hospital for a week. The injuries are worse than they should have been because help arrived late."
+    },
+    {
+      "type": "narration",
+      "text": "Because you didn't stop."
+    },
+    {
+      "type": "narration",
+      "text": "The podium ceremony happens, but it feels like a wake. You stand on the top step with the trophy and the crowd makes noise, but it's polite noise. Dutiful noise. The energy that filled the Pit an hour ago has drained away like water through a cracked foundation."
+    },
+    {
+      "type": "narration",
+      "text": "You won. You won everything. And it tastes like ash."
+    },
+    {
+      "type": "narration",
+      "text": "Maya finds you afterward. She's standing by your car, arms crossed. She doesn't look at you the way she usually does."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_distant",
+      "text": "You won."
+    },
+    {
+      "type": "narration",
+      "text": "Two words. She won't meet your eyes. Her arms are wrapped around herself like she's cold, but it's seventy degrees in the Pit. She's not cold. She's holding herself together."
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "Maya, I—",
+          "choice_id": "maya_explain",
+          "relationship_changes": {},
+          "moral_shift": 0,
+          "jump_to": "maya_cuts_off"
+        },
+        {
+          "text": "Is Nikko okay?",
+          "choice_id": "maya_nikko_status",
+          "relationship_changes": {},
+          "moral_shift": 5,
+          "jump_to": "maya_nikko_update"
+        }
+      ]
+    },
+    {
+      "label": "maya_cuts_off",
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_distant",
+      "text": "Don't."
+    },
+    {
+      "type": "narration",
+      "text": "She holds up a hand. Not angry. Something worse than angry. Disappointed."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_distant",
+      "text": "I don't want to hear the reason. Whatever it is — the championship, the money, the moment — I don't want to hear it. Because any reason you give me is going to make it worse."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_distant",
+      "text": "I'll see you at the garage. Whenever."
+    },
+    {
+      "type": "narration",
+      "text": "She walks away. She doesn't look back. The space she leaves behind feels like a wound.",
+      "jump_to": "diesel_keep_racing"
+    },
+    {
+      "label": "maya_nikko_update",
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_distant",
+      "text": "He's alive. Burns. Broken ribs. He'll be in the hospital for a while."
+    },
+    {
+      "type": "narration",
+      "text": "A pause. Long enough to hear your own heartbeat."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_distant",
+      "text": "They said he was in the car for almost three minutes before anyone got to him. Three minutes in a burning car."
+    },
+    {
+      "type": "narration",
+      "text": "She doesn't say what you're both thinking. That you were thirty feet away. That you could have been there in seconds."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_distant",
+      "text": "I'll see you at the garage."
+    },
+    {
+      "type": "narration",
+      "text": "She walks away without looking back.",
+      "jump_to": "diesel_keep_racing"
+    },
+    {
+      "label": "diesel_keep_racing",
+      "type": "narration",
+      "text": "You see Diesel across the Pit. He's leaning against the far wall, arms crossed. He's not coming over. He's not going to congratulate you."
+    },
+    {
+      "type": "narration",
+      "text": "He looks at you. And in that look is every word he'll never say. Every lesson you just failed. Every memory of Marcus Webb and Turn 14 and a guardrail that screamed."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_disappointed",
+      "text": "Marcus would've stopped."
+    },
+    {
+      "type": "narration",
+      "text": "He pushes off the wall and walks away. He doesn't look back either."
+    },
+    {
+      "type": "narration",
+      "text": "You stand alone in the Pit with a trophy in your hands and the smell of smoke in your clothes and the knowledge that you won something tonight and lost something bigger."
+    },
+    {
+      "type": "narration",
+      "text": "The car doesn't care about you. The people watching from the sidelines do. And tonight, you proved you didn't understand the lesson at all."
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "nikkos_crash_complete",
+        "value": true
+      }
+    }
+  ]
+}

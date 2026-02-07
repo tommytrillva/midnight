@@ -1,0 +1,379 @@
+{
+  "id": "the_final_race_pre",
+  "context": "Pre-final race dialogue. Every surviving character present at the grid. Dynamic based on relationship states and story flags.",
+  "lines": [
+    {
+      "type": "narration",
+      "text": "The grid."
+    },
+    {
+      "type": "narration",
+      "text": "Everything ends here. Everything begins here. The harbor circuit — the same stretch of asphalt where legends were made and broken long before you arrived in Nova Pacifica."
+    },
+    {
+      "type": "narration",
+      "text": "Tonight it's yours. Tonight it's everyone's."
+    },
+    {
+      "type": "narration",
+      "text": "The crowd is the biggest you've ever seen. Word travels in this city — through garages and diners and the kind of group chats that don't have names. Everyone knows. The final race."
+    },
+    {
+      "label": "nikko_ally",
+      "type": "narration",
+      "text": "Nikko is already at the grid. His car gleaming under the sodium lights — every bolt torqued, every line bled. He's been here since sundown. Preparing. The way he always does.",
+      "condition": {
+        "type": "relationship_min",
+        "character": "nikko",
+        "level": 4
+      }
+    },
+    {
+      "type": "narration",
+      "text": "He sees you pull in. Walks over. No rush. Hands in his jacket.",
+      "condition": {
+        "type": "relationship_min",
+        "character": "nikko",
+        "level": 4
+      }
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_sincere",
+      "text": "Last ride?",
+      "condition": {
+        "type": "relationship_min",
+        "character": "nikko",
+        "level": 4
+      }
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Driver",
+      "portrait": "player_determined",
+      "text": "Last race. Never the last ride.",
+      "condition": {
+        "type": "relationship_min",
+        "character": "nikko",
+        "level": 4
+      }
+    },
+    {
+      "type": "narration",
+      "text": "Nikko nods. Pulls on his gloves. One finger at a time, the way his father taught him.",
+      "condition": {
+        "type": "relationship_min",
+        "character": "nikko",
+        "level": 4
+      }
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_grin",
+      "text": "I'm going to beat you.",
+      "condition": {
+        "type": "relationship_min",
+        "character": "nikko",
+        "level": 4
+      }
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Driver",
+      "portrait": "player_smirk",
+      "text": "You can try.",
+      "condition": {
+        "type": "relationship_min",
+        "character": "nikko",
+        "level": 4
+      }
+    },
+    {
+      "type": "narration",
+      "text": "The grin he gives you is the realest thing you've ever seen on his face. Not rivalry. Not ego. Brotherhood, distilled into a challenge.",
+      "condition": {
+        "type": "relationship_min",
+        "character": "nikko",
+        "level": 4
+      }
+    },
+    {
+      "label": "nikko_rival",
+      "type": "narration",
+      "text": "Nikko is at the far end of the grid. He doesn't come over. Doesn't need to. The look he gives you from across the asphalt says everything — tonight, one of you proves it. For good.",
+      "condition": {
+        "type": "relationship_min",
+        "character": "nikko",
+        "level": 2
+      }
+    },
+    {
+      "label": "diesel_present",
+      "type": "narration",
+      "text": "A matte black coupe slides into the lot behind the grid. No fanfare. No crowd. Just Diesel, emerging from the driver's side like he materialized from the shadows themselves.",
+      "condition": {
+        "type": "relationship_min",
+        "character": "diesel",
+        "level": 3
+      }
+    },
+    {
+      "type": "narration",
+      "text": "He walks to your car. Doesn't look at anyone else. The crowd parts for him — not out of fear anymore. Out of respect. The kind you can't buy or demand.",
+      "condition": {
+        "type": "relationship_min",
+        "character": "diesel",
+        "level": 3
+      }
+    },
+    {
+      "type": "narration",
+      "text": "He reaches into his jacket. Pulls out a photograph. Small. Creased. Dog-eared from being carried too long.",
+      "condition": {
+        "type": "relationship_min",
+        "character": "diesel",
+        "level": 3
+      }
+    },
+    {
+      "type": "narration",
+      "text": "Marcus Torres. Young. Grinning. Leaning against a car you've never seen. The photo is from before — before the city took him, before Diesel became Diesel.",
+      "condition": {
+        "type": "relationship_min",
+        "character": "diesel",
+        "level": 3
+      }
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_emotional",
+      "text": "One more. For Marcus.",
+      "condition": {
+        "type": "relationship_min",
+        "character": "diesel",
+        "level": 3
+      }
+    },
+    {
+      "type": "narration",
+      "text": "He tucks the photo against your dashboard. Presses it flat with two fingers. Marcus Torres, riding shotgun one last time.",
+      "condition": {
+        "type": "relationship_min",
+        "character": "diesel",
+        "level": 3
+      }
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_approval",
+      "text": "I'm proud of you.",
+      "condition": {
+        "type": "relationship_min",
+        "character": "diesel",
+        "level": 3
+      }
+    },
+    {
+      "type": "narration",
+      "text": "Three words that hit harder than any engine note you've ever heard. He turns before you can respond. Walks to the sideline. Folds his arms. Watches.",
+      "condition": {
+        "type": "relationship_min",
+        "character": "diesel",
+        "level": 3
+      }
+    },
+    {
+      "type": "narration",
+      "text": "The way he always watches.",
+      "condition": {
+        "type": "relationship_min",
+        "character": "diesel",
+        "level": 3
+      }
+    },
+    {
+      "label": "maya_section",
+      "type": "narration",
+      "text": "Maya is under the hood. Where she always is. Where she belongs.",
+      "condition": {
+        "type": "relationship_min",
+        "character": "maya",
+        "level": 3
+      }
+    },
+    {
+      "type": "narration",
+      "text": "She's not racing tonight. She never races. Her war is fought with torque wrenches and timing lights, with dyno sheets and the kind of intuition that comes from growing up inside an engine bay.",
+      "condition": {
+        "type": "relationship_min",
+        "character": "maya",
+        "level": 3
+      }
+    },
+    {
+      "type": "narration",
+      "text": "She's making adjustments. Small ones. The kind only she would notice — a half-turn here, a recalibration there. Her hands move with the certainty of someone who has done this ten thousand times and will do it ten thousand more.",
+      "condition": {
+        "type": "relationship_min",
+        "character": "maya",
+        "level": 3
+      }
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_focused",
+      "text": "This is the best car I've ever built.",
+      "condition": {
+        "type": "relationship_min",
+        "character": "maya",
+        "level": 3
+      }
+    },
+    {
+      "type": "narration",
+      "text": "She closes the hood. Runs her hand across it once — not checking for anything. Just saying goodbye to the version of the car that exists before the race. After tonight, it'll be different. Everything will be different.",
+      "condition": {
+        "type": "relationship_min",
+        "character": "maya",
+        "level": 3
+      }
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_emotional",
+      "text": "Every lesson I've ever learned. Every mistake my grandfather made that I fixed. Every late night and every early morning. It's all in there.",
+      "condition": {
+        "type": "relationship_min",
+        "character": "maya",
+        "level": 3
+      }
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_smile",
+      "text": "It's not a machine anymore. It's us. Everything we built together.",
+      "condition": {
+        "type": "relationship_min",
+        "character": "maya",
+        "level": 3
+      }
+    },
+    {
+      "type": "narration",
+      "text": "She hands you the key. Her fingers brush yours and linger — just for a moment. The briefest pause in time.",
+      "condition": {
+        "type": "relationship_min",
+        "character": "maya",
+        "level": 3
+      }
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_determined",
+      "text": "I'll be on the radio. Every corner. Every straight. You won't be alone out there.",
+      "condition": {
+        "type": "relationship_min",
+        "character": "maya",
+        "level": 3
+      }
+    },
+    {
+      "type": "narration",
+      "text": "You climb in. The seat molds to you — shaped by a hundred races. The steering wheel is warm from Maya's hands. The gauges glow like familiar constellations."
+    },
+    {
+      "type": "narration",
+      "text": "Marcus Torres looks at you from the dashboard. Frozen in a grin. Riding shotgun.",
+      "condition": {
+        "type": "relationship_min",
+        "character": "diesel",
+        "level": 3
+      }
+    },
+    {
+      "type": "narration",
+      "text": "The radio crackles."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_radio",
+      "text": "Radio check. Maya here. I've got your telemetry.",
+      "condition": {
+        "type": "relationship_min",
+        "character": "maya",
+        "level": 3
+      }
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_radio",
+      "text": "Nikko on channel. Try to keep up.",
+      "condition": {
+        "type": "relationship_min",
+        "character": "nikko",
+        "level": 4
+      }
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_radio",
+      "text": "Diesel. Watching from the ridge. I can see the whole circuit from here.",
+      "condition": {
+        "type": "relationship_min",
+        "character": "diesel",
+        "level": 3
+      }
+    },
+    {
+      "type": "narration",
+      "text": "Engines fire. One by one, then all at once. The grid vibrates. The crowd presses forward."
+    },
+    {
+      "type": "narration",
+      "text": "The lights cycle."
+    },
+    {
+      "type": "narration",
+      "text": "Red."
+    },
+    {
+      "type": "narration",
+      "text": "Red."
+    },
+    {
+      "type": "narration",
+      "text": "Red."
+    },
+    {
+      "type": "narration",
+      "text": "Your hands tighten on the wheel. Everything you've built. Everyone who believed in you. Every midnight run and sunrise return. Every fall and every time you got back up."
+    },
+    {
+      "type": "narration",
+      "text": "It all comes down to this."
+    },
+    {
+      "type": "narration",
+      "text": "Green."
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "final_race_started",
+        "value": true
+      }
+    }
+  ]
+}

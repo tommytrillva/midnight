@@ -77,8 +77,13 @@ func _advance() -> void:
 
 	var line: Dictionary = _current_lines[_current_line_index]
 
-	# Check conditions
-	if line.has("condition"):
+	# Check conditions — supports both single-type "condition" and multi-key "conditions"
+	if line.has("conditions"):
+		if not _check_conditions(line.conditions):
+			_current_line_index += 1
+			_advance()
+			return
+	elif line.has("condition"):
 		if not _check_condition(line.condition):
 			_current_line_index += 1
 			_advance()
@@ -97,9 +102,13 @@ func _advance() -> void:
 		"choice":
 			_waiting_for_choice = true
 			var choices: Array = line.get("choices", [])
-			# Filter choices by conditions
+			# Filter choices by conditions (supports both "condition" and "conditions")
 			var available := choices.filter(func(c):
-				return not c.has("condition") or _check_condition(c.condition)
+				if c.has("conditions"):
+					return _check_conditions(c.conditions)
+				elif c.has("condition"):
+					return _check_condition(c.condition)
+				return true
 			)
 			choices_displayed.emit(available)
 			EventBus.dialogue_choice_presented.emit(available)
@@ -107,6 +116,13 @@ func _advance() -> void:
 		"narration":
 			var text: String = line.get("text", "")
 			dialogue_line_displayed.emit("", text, "")
+
+		"cinematic":
+			# Cinematic scene descriptions — displayed like narration
+			# but can be styled differently by the UI (e.g. centered,
+			# uppercase, letterboxed)
+			var text: String = line.get("text", "")
+			dialogue_line_displayed.emit("__cinematic__", text, "")
 
 		"action":
 			_execute_action(line.get("action", {}))
@@ -136,10 +152,15 @@ func _apply_choice_consequences(choice: Dictionary) -> void:
 	for char_id in rel_changes:
 		GameManager.relationships.change_affinity(char_id, rel_changes[char_id])
 
-	# Moral alignment
+	# Moral alignment — route through MoralTracker if available
 	var moral: float = choice.get("moral_shift", 0.0)
 	if moral != 0.0:
-		GameManager.player_data.shift_moral_alignment(moral)
+		if GameManager.has_node("MoralTracker"):
+			var tracker: MoralTracker = GameManager.get_node("MoralTracker")
+			var reason: String = choice.get("choice_id", _current_dialogue_id)
+			tracker.shift_alignment(moral, reason)
+		else:
+			GameManager.player_data.shift_moral_alignment(moral)
 
 	# Set flags
 	var flags: Dictionary = choice.get("set_flags", {})
@@ -160,9 +181,140 @@ func _apply_choice_consequences(choice: Dictionary) -> void:
 	elif rep < 0:
 		GameManager.reputation.lose_rep(-rep, "dialogue_choice")
 
+	# Delayed consequences — register through ConsequenceManager if available
+	var delayed: Array = choice.get("delayed_consequences", [])
+	if not delayed.is_empty() and GameManager.has_node("ConsequenceManager"):
+		var cm: ConsequenceManager = GameManager.get_node("ConsequenceManager")
+		var choice_id: String = choice.get("choice_id", _current_dialogue_id)
+		for dc in delayed:
+			cm.register_delayed(
+				dc.get("trigger_mission", ""),
+				dc.get("consequence", {}),
+				choice_id
+			)
+
+
+func _check_conditions(conditions: Dictionary) -> bool:
+	## Evaluate a multi-key conditions dictionary. ALL conditions must be true.
+	## Supports:
+	##   "origin": "fallen"                   — only if player chose Fallen origin
+	##   "moral_min": 20                      — only if moral alignment >= 20
+	##   "moral_max": -10                     — only if moral alignment <= -10
+	##   "path": "corporate"                  — only in corporate path
+	##   "flag": "nikko_saved"                — only if specific choice flag is set
+	##   "flag_equals": {"flag": "x", "value": "y"} — flag equals specific value
+	##   "relationship_min": {"diesel": 40}   — character affinity minimums
+	##   "relationship_level_min": {"maya": 3} — character level minimums
+	##   "rep_tier_min": 3                    — reputation tier minimum
+	##   "cash_min": 1000                     — cash minimum
+	##   "zero_awareness_min": 2              — zero awareness minimum
+	##   "mission_completed": "first_blood"   — specific mission must be completed
+	##   "act_min": 2                         — must be at or past this act
+	##   "choice_made": "sabotage_accept"     — specific choice recorded in ChoiceSystem
+
+	# Origin check
+	if conditions.has("origin"):
+		var required_origin: String = conditions["origin"]
+		if GameManager.player_data.get_origin_id() != required_origin:
+			return false
+
+	# Moral alignment minimum
+	if conditions.has("moral_min"):
+		var min_moral: float = conditions["moral_min"]
+		var current_moral := _get_moral_alignment()
+		if current_moral < min_moral:
+			return false
+
+	# Moral alignment maximum
+	if conditions.has("moral_max"):
+		var max_moral: float = conditions["moral_max"]
+		var current_moral := _get_moral_alignment()
+		if current_moral > max_moral:
+			return false
+
+	# Path check
+	if conditions.has("path"):
+		var required_path: String = conditions["path"]
+		if GameManager.story.chosen_path != required_path:
+			return false
+
+	# Flag check (boolean — flag must exist and be truthy)
+	if conditions.has("flag"):
+		var flag_id: String = conditions["flag"]
+		if not GameManager.player_data.has_choice_flag(flag_id):
+			return false
+
+	# Flag equals check
+	if conditions.has("flag_equals"):
+		var flag_check: Dictionary = conditions["flag_equals"]
+		var flag_id: String = flag_check.get("flag", "")
+		var expected_value: Variant = flag_check.get("value", true)
+		if GameManager.player_data.get_choice_flag(flag_id) != expected_value:
+			return false
+
+	# Relationship affinity minimums (Dictionary: character_id -> min_affinity)
+	if conditions.has("relationship_min"):
+		var rel_mins: Dictionary = conditions["relationship_min"]
+		for char_id in rel_mins:
+			if GameManager.relationships.get_affinity(char_id) < rel_mins[char_id]:
+				return false
+
+	# Relationship level minimums (Dictionary: character_id -> min_level)
+	if conditions.has("relationship_level_min"):
+		var level_mins: Dictionary = conditions["relationship_level_min"]
+		for char_id in level_mins:
+			if GameManager.relationships.get_level(char_id) < level_mins[char_id]:
+				return false
+
+	# Reputation tier minimum
+	if conditions.has("rep_tier_min"):
+		var min_tier: int = conditions["rep_tier_min"]
+		if GameManager.reputation.get_tier() < min_tier:
+			return false
+
+	# Cash minimum
+	if conditions.has("cash_min"):
+		var min_cash: int = conditions["cash_min"]
+		if GameManager.economy.cash < min_cash:
+			return false
+
+	# Zero awareness minimum
+	if conditions.has("zero_awareness_min"):
+		var min_awareness: int = conditions["zero_awareness_min"]
+		var current_awareness := _get_zero_awareness()
+		if current_awareness < min_awareness:
+			return false
+
+	# Mission completed check
+	if conditions.has("mission_completed"):
+		var mission_id: String = conditions["mission_completed"]
+		if not GameManager.story.is_mission_completed(mission_id):
+			return false
+
+	# Act minimum check
+	if conditions.has("act_min"):
+		var min_act: int = conditions["act_min"]
+		if GameManager.story.current_act < min_act:
+			return false
+
+	# Choice made check (via ChoiceSystem)
+	if conditions.has("choice_made"):
+		var choice_id: String = conditions["choice_made"]
+		if GameManager.has_node("ChoiceSystem"):
+			var cs: ChoiceSystem = GameManager.get_node("ChoiceSystem")
+			if not cs.has_made_choice(choice_id):
+				return false
+		else:
+			# Fall back to player_data flags
+			if not GameManager.player_data.has_choice_flag(choice_id):
+				return false
+
+	return true
+
 
 func _check_condition(condition: Dictionary) -> bool:
-	## Evaluate a condition dictionary. Supports relationship, flag, rep, and cash checks.
+	## Evaluate a single-type condition dictionary.
+	## Supports relationship, flag, rep, cash, origin, moral, path checks.
 	var cond_type: String = condition.get("type", "")
 
 	match cond_type:
@@ -195,9 +347,52 @@ func _check_condition(condition: Dictionary) -> bool:
 
 		"zero_awareness_min":
 			var min_level: int = condition.get("level", 0)
-			return GameManager.player_data._zero_awareness >= min_level
+			return _get_zero_awareness() >= min_level
+
+		"origin":
+			var required_origin: String = condition.get("origin", "")
+			return GameManager.player_data.get_origin_id() == required_origin
+
+		"moral_min":
+			var min_moral: float = condition.get("value", 0.0)
+			return _get_moral_alignment() >= min_moral
+
+		"moral_max":
+			var max_moral: float = condition.get("value", 0.0)
+			return _get_moral_alignment() <= max_moral
+
+		"path":
+			var required_path: String = condition.get("path", "")
+			return GameManager.story.chosen_path == required_path
+
+		"mission_completed":
+			var mission_id: String = condition.get("mission", "")
+			return GameManager.story.is_mission_completed(mission_id)
+
+		"choice_made":
+			var choice_id: String = condition.get("choice", "")
+			if GameManager.has_node("ChoiceSystem"):
+				var cs: ChoiceSystem = GameManager.get_node("ChoiceSystem")
+				return cs.has_made_choice(choice_id)
+			return GameManager.player_data.has_choice_flag(choice_id)
 
 	return true # Unknown conditions pass
+
+
+func _get_moral_alignment() -> float:
+	## Get moral alignment from MoralTracker if available, otherwise from player_data.
+	if GameManager.has_node("MoralTracker"):
+		var tracker: MoralTracker = GameManager.get_node("MoralTracker")
+		return tracker.get_alignment()
+	return GameManager.player_data._moral_alignment
+
+
+func _get_zero_awareness() -> int:
+	## Get zero awareness from MoralTracker if available, otherwise from player_data.
+	if GameManager.has_node("MoralTracker"):
+		var tracker: MoralTracker = GameManager.get_node("MoralTracker")
+		return tracker.get_zero_awareness()
+	return GameManager.player_data._zero_awareness
 
 
 func _execute_action(action: Dictionary) -> void:
