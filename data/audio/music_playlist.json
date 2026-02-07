@@ -1,0 +1,232 @@
+{
+	"main_menu": {
+		"description": "Atmospheric, moody intro — the neon city awaits.",
+		"mood": ["dreamy", "melancholy", "late_night"],
+		"shuffle": false,
+		"tracks": [
+			{
+				"title": "City of Ghosts",
+				"artist": "NOVA STATIC",
+				"genre": "synthwave",
+				"bpm": 92,
+				"mood_tags": ["dreamy", "melancholy"],
+				"path": "res://assets/audio/music/menu_city_of_ghosts.ogg",
+				"duration_seconds": 210
+			},
+			{
+				"title": "Midnight Protocol",
+				"artist": "Zero Signal",
+				"genre": "ambient_electronic",
+				"bpm": 80,
+				"mood_tags": ["dreamy", "late_night"],
+				"path": "res://assets/audio/music/menu_midnight_protocol.ogg",
+				"duration_seconds": 240
+			}
+		]
+	},
+
+	"free_roam_chill": {
+		"description": "Cruising downtown at low heat — lo-fi beats and city lights.",
+		"mood": ["chill", "cruising", "late_night"],
+		"shuffle": true,
+		"tracks": [
+			{
+				"title": "Pacific Drive",
+				"artist": "Akira Haze",
+				"genre": "lo_fi",
+				"bpm": 85,
+				"mood_tags": ["chill", "cruising"],
+				"path": "res://assets/audio/music/roam_pacific_drive.ogg",
+				"duration_seconds": 195
+			},
+			{
+				"title": "Neon Rain",
+				"artist": "DJ Turbo",
+				"genre": "lo_fi",
+				"bpm": 90,
+				"mood_tags": ["chill", "late_night"],
+				"path": "res://assets/audio/music/roam_neon_rain.ogg",
+				"duration_seconds": 180
+			},
+			{
+				"title": "Sidewinder",
+				"artist": "Chrome Lotus",
+				"genre": "garage",
+				"bpm": 130,
+				"mood_tags": ["cruising", "chill"],
+				"path": "res://assets/audio/music/roam_sidewinder.ogg",
+				"duration_seconds": 205
+			},
+			{
+				"title": "Lanterns & Asphalt",
+				"artist": "Yuki Tanaka",
+				"genre": "j_pop",
+				"bpm": 118,
+				"mood_tags": ["chill", "dreamy"],
+				"path": "res://assets/audio/music/roam_lanterns_asphalt.ogg",
+				"duration_seconds": 220
+			},
+			{
+				"title": "Harbor Lights",
+				"artist": "Akira Haze",
+				"genre": "lo_fi",
+				"bpm": 78,
+				"mood_tags": ["chill", "early_morning"],
+				"path": "res://assets/audio/music/roam_harbor_lights.ogg",
+				"duration_seconds": 200
+			}
+		]
+	},
+
+	"free_roam_night": {
+		"description": "Late night vibes — darker, moodier, deeper into the city.",
+		"mood": ["late_night", "melancholy", "cruising"],
+		"shuffle": true,
+		"tracks": [
+			{
+				"title": "3AM Expressway",
+				"artist": "NOVA STATIC",
+				"genre": "synthwave",
+				"bpm": 100,
+				"mood_tags": ["late_night", "melancholy"],
+				"path": "res://assets/audio/music/night_3am_expressway.ogg",
+				"duration_seconds": 230
+			},
+			{
+				"title": "Ghost Frequencies",
+				"artist": "Zero Signal",
+				"genre": "ambient_electronic",
+				"bpm": 72,
+				"mood_tags": ["late_night", "dreamy"],
+				"path": "res://assets/audio/music/night_ghost_frequencies.ogg",
+				"duration_seconds": 260
+			},
+			{
+				"title": "Underpass",
+				"artist": "Chrome Lotus",
+				"genre": "garage",
+				"bpm": 138,
+				"mood_tags": ["late_night", "aggressive"],
+				"path": "res://assets/audio/music/night_underpass.ogg",
+				"duration_seconds": 190
+			}
+		]
+	},
+
+	"racing_sprint": {
+		"description": "Sprint / point-to-point races — high energy, aggressive.",
+		"mood": ["hype", "aggressive"],
+		"shuffle": true,
+		"tracks": [
+			{
+				"title": "Full Send",
+				"artist": "REDLINE",
+				"genre": "drum_and_bass",
+				"bpm": 174,
+				"mood_tags": ["hype", "aggressive"],
+				"path": "res://assets/audio/music/race_full_send.ogg",
+				"duration_seconds": 195,
+				"intensity_layer_path": "res://assets/audio/music/race_full_send_intensity.ogg"
+			},
+			{
+				"title": "Nitrous",
+				"artist": "DJ Turbo",
+				"genre": "drum_and_bass",
+				"bpm": 170,
+				"mood_tags": ["hype", "aggressive"],
+				"path": "res://assets/audio/music/race_nitrous.ogg",
+				"duration_seconds": 210,
+				"intensity_layer_path": "res://assets/audio/music/race_nitrous_intensity.ogg"
+			},
+			{
+				"title": "Redline Anthem",
+				"artist": "REDLINE",
+				"genre": "drum_and_bass",
+				"bpm": 176,
+				"mood_tags": ["hype"],
+				"path": "res://assets/audio/music/race_redline_anthem.ogg",
+				"duration_seconds": 185
+			},
+			{
+				"title": "Apex Predator",
+				"artist": "Chrome Lotus",
+				"genre": "garage",
+				"bpm": 140,
+				"mood_tags": ["aggressive", "hype"],
+				"path": "res://assets/audio/music/race_apex_predator.ogg",
+				"duration_seconds": 200
+			}
+		]
+	},
+
+	"racing_touge": {
+		"description": "Mountain pass / touge battles — tense, focused, rhythmic.",
+		"mood": ["aggressive", "late_night"],
+		"shuffle": true,
+		"tracks": [
+			{
+				"title": "Downhill Spec",
+				"artist": "Akira Haze",
+				"genre": "synthwave",
+				"bpm": 148,
+				"mood_tags": ["aggressive", "late_night"],
+				"path": "res://assets/audio/music/touge_downhill_spec.ogg",
+				"duration_seconds": 215,
+				"intensity_layer_path": "res://assets/audio/music/touge_downhill_spec_intensity.ogg"
+			},
+			{
+				"title": "Hairpin",
+				"artist": "Zero Signal",
+				"genre": "ambient_electronic",
+				"bpm": 136,
+				"mood_tags": ["aggressive"],
+				"path": "res://assets/audio/music/touge_hairpin.ogg",
+				"duration_seconds": 190
+			},
+			{
+				"title": "Guardrail Kiss",
+				"artist": "NOVA STATIC",
+				"genre": "synthwave",
+				"bpm": 152,
+				"mood_tags": ["hype", "aggressive"],
+				"path": "res://assets/audio/music/touge_guardrail_kiss.ogg",
+				"duration_seconds": 200
+			}
+		]
+	},
+
+	"garage": {
+		"description": "Chill vibes while wrenching — tools, grease, and good tunes.",
+		"mood": ["chill", "cruising"],
+		"shuffle": true,
+		"tracks": [
+			{
+				"title": "Socket Set",
+				"artist": "Akira Haze",
+				"genre": "lo_fi",
+				"bpm": 82,
+				"mood_tags": ["chill"],
+				"path": "res://assets/audio/music/garage_socket_set.ogg",
+				"duration_seconds": 240
+			},
+			{
+				"title": "Torque Wrench Blues",
+				"artist": "Chrome Lotus",
+				"genre": "lo_fi",
+				"bpm": 88,
+				"mood_tags": ["chill", "cruising"],
+				"path": "res://assets/audio/music/garage_torque_wrench_blues.ogg",
+				"duration_seconds": 210
+			},
+			{
+				"title": "Bay 4",
+				"artist": "Yuki Tanaka",
+				"genre": "j_pop",
+				"bpm": 110,
+				"mood_tags": ["chill", "dreamy"],
+				"path": "res://assets/audio/music/garage_bay_4.ogg",
+				"duration_seconds": 195
+			}
+		]
+	}
+}

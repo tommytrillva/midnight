@@ -46,6 +46,11 @@ max_value = 100.0
 value = 0.0
 show_percentage = false
 
+[node name="SkillsBtn" type="Button" parent="HUD/TopBar"]
+layout_mode = 2
+text = "SKILLS [K]"
+custom_minimum_size = Vector2(80, 0)
+
 [node name="BottomBar" type="HBoxContainer" parent="HUD"]
 layout_mode = 1
 anchors_preset = 12

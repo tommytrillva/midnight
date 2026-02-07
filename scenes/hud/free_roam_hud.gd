@@ -2,6 +2,8 @@
 ## and current district. Visible during exploration.
 extends CanvasLayer
 
+signal skills_button_pressed
+
 @onready var time_label: Label = $HUD/TopBar/Time
 @onready var weather_label: Label = $HUD/TopBar/Weather
 @onready var cash_label: Label = $HUD/TopBar/Cash
@@ -10,6 +12,7 @@ extends CanvasLayer
 @onready var heat_indicator: Label = $HUD/BottomBar/Heat
 @onready var district_label: Label = $HUD/BottomBar/District
 @onready var speed_label: Label = $HUD/BottomBar/Speed
+@onready var skills_button: Button = $HUD/TopBar/SkillsBtn
 @onready var notification: Label = $HUD/Notification
 
 var _notif_timer: float = 0.0
@@ -33,6 +36,10 @@ func _ready() -> void:
 	EventBus.district_entered.connect(_on_district_entered)
 	EventBus.hud_message.connect(show_notification)
 	EventBus.notification_popup.connect(_on_notification)
+
+	# Skills button
+	if skills_button:
+		skills_button.pressed.connect(_on_skills_pressed)
 
 	notification.visible = false
 	_refresh_all()
@@ -111,6 +118,10 @@ func _on_district_entered(district_id: String) -> void:
 
 func _on_notification(title: String, body: String, _icon: String) -> void:
 	show_notification("%s: %s" % [title, body], 4.0)
+
+
+func _on_skills_pressed() -> void:
+	skills_button_pressed.emit()
 
 
 func _format_number(num: int) -> String:

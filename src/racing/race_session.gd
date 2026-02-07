@@ -1,8 +1,16 @@
 ## Orchestrates a complete race from start to finish.
 ## Handles vehicle spawning, AI setup, HUD wiring, and result transitions.
+## Detects race type from RaceData and instantiates the appropriate mode controller
+## (DriftScoring, TougeRace, CircuitRace) or falls through to the default sprint flow.
 extends Node3D
 
 const PlayerVehicleScene := preload("res://scenes/vehicles/player_vehicle.tscn")
+const AIRacerScene := preload("res://scenes/racing/ai_racer.tscn")
+const PauseMenuScene := preload("res://scenes/ui/pause_menu.tscn")
+
+const DriftArenaScene := preload("res://scenes/racing/drift_arena.tscn")
+const TougeTrackScene := preload("res://scenes/racing/touge_track.tscn")
+const CircuitTrackScene := preload("res://scenes/racing/circuit_track.tscn")
 
 @onready var race_track: RaceTrack = $SprintTrack
 @onready var race_hud_node: Node = $RaceHUD
@@ -13,6 +21,12 @@ var player_vehicle: VehicleController = null
 var ai_vehicles: Array[Node3D] = []
 var _results_shown: bool = false
 
+# --- Race-type-specific controllers ---
+var drift_scoring: DriftScoring = null
+var touge_race: TougeRace = null
+var circuit_race: CircuitRace = null
+var pause_menu: PauseMenu = null
+
 signal race_session_complete(results: Dictionary)
 
 
@@ -21,16 +35,202 @@ func _ready() -> void:
 		results_panel.visible = false
 	EventBus.race_finished.connect(_on_race_finished)
 
+	# Instantiate pause menu with race restrictions (save disabled)
+	pause_menu = PauseMenuScene.instantiate()
+	pause_menu.race_mode = true
+	add_child(pause_menu)
+
 
 func setup_race(data: RaceData) -> void:
 	race_data = data
+
+	# Swap in the correct track scene based on race type
+	_setup_track_for_type(data.race_type)
+
 	_spawn_player()
 	_spawn_ai()
 	_wire_hud()
+	_wire_race_type(data)
+
 	GameManager.change_state(GameManager.GameState.RACING)
 	GameManager.race_manager.start_race(data)
-	print("[RaceSession] Race ready: %s" % data.race_name)
+	print("[RaceSession] Race ready: %s (%s)" % [
+		data.race_name,
+		RaceManager.RaceType.keys()[data.race_type]
+	])
 
+
+# ---------------------------------------------------------------------------
+# Track Setup
+# ---------------------------------------------------------------------------
+
+func _setup_track_for_type(race_type: RaceManager.RaceType) -> void:
+	## Replace the default SprintTrack child with the correct track scene.
+	## For STREET_SPRINT or unknown types we keep the default.
+	var new_track_scene: PackedScene = null
+
+	match race_type:
+		RaceManager.RaceType.DRIFT:
+			new_track_scene = DriftArenaScene
+		RaceManager.RaceType.TOUGE:
+			new_track_scene = TougeTrackScene
+		RaceManager.RaceType.CIRCUIT:
+			new_track_scene = CircuitTrackScene
+
+	if new_track_scene == null:
+		# Keep default sprint track
+		return
+
+	# Remove the default track
+	if race_track:
+		race_track.queue_free()
+		race_track = null
+
+	# Instantiate and add the new track
+	var new_track := new_track_scene.instantiate() as RaceTrack
+	add_child(new_track)
+	move_child(new_track, 0)
+	race_track = new_track
+
+	print("[RaceSession] Loaded track scene for %s" % RaceManager.RaceType.keys()[race_type])
+
+
+# ---------------------------------------------------------------------------
+# Race-Type-Specific Wiring
+# ---------------------------------------------------------------------------
+
+func _wire_race_type(data: RaceData) -> void:
+	match data.race_type:
+		RaceManager.RaceType.DRIFT:
+			_setup_drift_mode()
+		RaceManager.RaceType.TOUGE:
+			_setup_touge_mode()
+		RaceManager.RaceType.CIRCUIT:
+			_setup_circuit_mode(data)
+
+
+func _setup_drift_mode() -> void:
+	drift_scoring = DriftScoring.new()
+	add_child(drift_scoring)
+
+	# Build section list from checkpoint nodes (each checkpoint doubles as section boundary)
+	var sections: Array[DriftScoring.DriftSection] = []
+	if race_track:
+		for i in range(race_track.checkpoints.size()):
+			var section := DriftScoring.DriftSection.new()
+			section.section_name = "Section %d" % (i + 1)
+			section.section_index = i
+			sections.append(section)
+
+	drift_scoring.activate(player_vehicle, sections)
+
+	# Wire drift zone Area3Ds if the track has them
+	var drift_zones_node := race_track.get_node_or_null("DriftZones")
+	if drift_zones_node:
+		for zone_child in drift_zones_node.get_children():
+			if zone_child is Area3D:
+				var zone_name: String = zone_child.name
+				# Determine multiplier from zone name or default
+				var multiplier := 1.5
+				if "x2" in zone_name or "Loop" in zone_name:
+					multiplier = 2.0
+				elif "x3" in zone_name:
+					multiplier = 3.0
+
+				zone_child.body_entered.connect(func(body: Node3D):
+					if body == player_vehicle:
+						drift_scoring.on_drift_zone_entered(zone_name, multiplier)
+				)
+				zone_child.body_exited.connect(func(body: Node3D):
+					if body == player_vehicle:
+						drift_scoring.on_drift_zone_exited(zone_name)
+				)
+
+	# Wire section advancement to checkpoints
+	EventBus.checkpoint_reached.connect(func(racer_id: int, _cp_index: int):
+		if racer_id == 0 and drift_scoring:
+			drift_scoring.advance_section()
+	)
+
+	# Wire drift HUD overlay updates
+	if race_hud_node and race_hud_node.has_method("show_drift_overlay"):
+		race_hud_node.show_drift_overlay()
+	EventBus.drift_combo_updated.connect(_on_drift_combo_updated)
+	EventBus.drift_combo_dropped.connect(_on_drift_combo_dropped)
+	EventBus.drift_near_miss.connect(_on_drift_near_miss)
+	EventBus.drift_section_scored.connect(_on_drift_section_scored)
+
+	print("[RaceSession] Drift mode initialized")
+
+
+func _setup_touge_mode() -> void:
+	touge_race = TougeRace.new()
+	add_child(touge_race)
+
+	# Touge is 1v1 — use only the first AI
+	var opponent: Node3D = ai_vehicles[0] if ai_vehicles.size() > 0 else null
+	var p_name: String = GameManager.player_data.player_name if GameManager.player_data else "Player"
+	var o_name: String = race_data.ai_names[0] if race_data.ai_names.size() > 0 else "Opponent"
+
+	touge_race.activate(race_track, player_vehicle, opponent, p_name, o_name, 0, 1)
+
+	# Wire touge gap HUD display
+	EventBus.touge_gap_updated.connect(_on_touge_gap_updated)
+	EventBus.touge_round_started.connect(_on_touge_round_started)
+	EventBus.touge_round_ended.connect(_on_touge_round_ended)
+	EventBus.touge_overtake.connect(_on_touge_overtake)
+	EventBus.touge_match_result.connect(_on_touge_match_result)
+
+	if race_hud_node and race_hud_node.has_method("show_touge_overlay"):
+		race_hud_node.show_touge_overlay()
+
+	print("[RaceSession] Touge mode initialized — 1v1: %s vs %s" % [p_name, o_name])
+
+
+func _setup_circuit_mode(data: RaceData) -> void:
+	circuit_race = CircuitRace.new()
+	add_child(circuit_race)
+
+	# Determine settings from race data
+	var laps := data.lap_count if data.lap_count > 0 else 3
+	var enable_pits := laps >= 5  # Pits for longer races
+	var enable_rubber := data.ai_difficulty < 0.8  # No rubber band on hard races
+	var pit_area: Area3D = null
+
+	if race_track:
+		var pit_lane := race_track.get_node_or_null("PitLane")
+		if pit_lane:
+			pit_area = pit_lane.get_node_or_null("PitArea") as Area3D
+
+	circuit_race.activate(
+		race_track,
+		player_vehicle,
+		laps,
+		enable_pits,
+		enable_rubber,
+		data.ai_difficulty,
+		pit_area,
+	)
+
+	# Wire circuit HUD: lap counter, leaderboard, pit stop prompt
+	EventBus.circuit_lap_time.connect(_on_circuit_lap_time)
+	EventBus.circuit_best_lap.connect(_on_circuit_best_lap)
+	EventBus.circuit_leaderboard_updated.connect(_on_circuit_leaderboard_updated)
+	EventBus.circuit_dnf_warning.connect(_on_circuit_dnf_warning)
+	EventBus.circuit_pit_entered.connect(_on_circuit_pit_entered)
+	EventBus.circuit_pit_exited.connect(_on_circuit_pit_exited)
+
+	if race_hud_node and race_hud_node.has_method("show_circuit_overlay"):
+		race_hud_node.show_circuit_overlay(laps)
+
+	print("[RaceSession] Circuit mode initialized — %d laps, pits: %s" % [
+		laps, "ON" if enable_pits else "OFF"
+	])
+
+
+# ---------------------------------------------------------------------------
+# Vehicle Spawning
+# ---------------------------------------------------------------------------
 
 func _spawn_player() -> void:
 	player_vehicle = PlayerVehicleScene.instantiate() as VehicleController
@@ -61,17 +261,18 @@ func _spawn_ai() -> void:
 	if race_data == null:
 		return
 	for i in range(race_data.ai_count):
-		# For MVP, AI uses simplified path following (no full VehicleBody3D)
-		var ai := RaceAI.new()
+		var ai := AIRacerScene.instantiate() as RaceAI
 		ai.racer_id = i + 1
 		ai.display_name = race_data.ai_names[i] if i < race_data.ai_names.size() else "Racer %d" % (i + 1)
 		ai.difficulty = race_data.ai_difficulty
 		ai.path = race_track.racing_line
 		add_child(ai)
-		ai_vehicles.append(ai)
 
 		var spawn := race_track.get_spawn_position(i + 1)
 		ai.global_transform = spawn
+
+		ai.setup_track(race_track)
+		ai_vehicles.append(ai)
 
 
 func _wire_hud() -> void:
@@ -81,6 +282,22 @@ func _wire_hud() -> void:
 	# HUD auto-connects via EventBus signals, but we update speed manually
 	pass
 
+
+# ---------------------------------------------------------------------------
+# Pause
+# ---------------------------------------------------------------------------
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("pause"):
+		if pause_menu and not pause_menu.is_open():
+			if GameManager.current_state == GameManager.GameState.RACING:
+				pause_menu.open_menu()
+				get_viewport().set_input_as_handled()
+
+
+# ---------------------------------------------------------------------------
+# Main Process
+# ---------------------------------------------------------------------------
 
 func _process(_delta: float) -> void:
 	if player_vehicle == null:
@@ -104,11 +321,50 @@ func _process(_delta: float) -> void:
 	if race_hud_node and race_hud_node.has_method("update_nitro"):
 		race_hud_node.update_nitro(player_vehicle.nitro_amount, player_vehicle.nitro_max)
 
+	# Drift scoring live display
+	if drift_scoring and drift_scoring.is_active:
+		if race_hud_node and race_hud_node.has_method("update_drift_score"):
+			race_hud_node.update_drift_score(drift_scoring.total_score, drift_scoring._combo_count, drift_scoring._combo_multiplier)
+
+	# Touge gap live display
+	if touge_race and touge_race.state == TougeRace.TougeState.ROUND_ACTIVE:
+		if race_hud_node and race_hud_node.has_method("update_touge_gap"):
+			race_hud_node.update_touge_gap(touge_race.gap_meters, touge_race.gap_seconds)
+
+	# Circuit lap counter display
+	if circuit_race and circuit_race.state == CircuitRace.CircuitState.RACING:
+		if race_hud_node and race_hud_node.has_method("update_lap_counter"):
+			var player_data: CircuitRace.RacerLapData = circuit_race.get_racer_data(0)
+			if player_data:
+				race_hud_node.update_lap_counter(player_data.current_lap, circuit_race.total_laps)
+
+	# Circuit pit stop input
+	if circuit_race and circuit_race.state == CircuitRace.CircuitState.RACING:
+		if circuit_race.pit_stops_enabled and circuit_race._player_in_pit:
+			if Input.is_action_just_pressed("interact"):
+				circuit_race.begin_pit_stop()
+
+
+# ---------------------------------------------------------------------------
+# Race Finish
+# ---------------------------------------------------------------------------
 
 func _on_race_finished(results: Dictionary) -> void:
 	if _results_shown:
 		return
 	_results_shown = true
+
+	# Deactivate mode controllers and merge their results
+	if drift_scoring:
+		drift_scoring.deactivate()
+		results["drift_results"] = drift_scoring.get_results()
+	if touge_race:
+		touge_race.deactivate()
+		results["touge_results"] = touge_race.get_results()
+	if circuit_race:
+		circuit_race.deactivate()
+		results["circuit_results"] = circuit_race.get_results()
+
 	_show_results(results)
 
 
@@ -121,7 +377,7 @@ func _show_results(results: Dictionary) -> void:
 
 	results_panel.visible = true
 
-	# Populate results
+	# --- Common results ---
 	var position_label := results_panel.get_node_or_null("Position") as Label
 	if position_label:
 		var pos: int = results.get("player_position", 0)
@@ -134,10 +390,14 @@ func _show_results(results: Dictionary) -> void:
 	var cash_label := results_panel.get_node_or_null("Cash") as Label
 	if cash_label:
 		var won: bool = results.get("player_won", false)
+		var race_type_key := RaceManager.RaceType.keys()[race_data.race_type].to_lower() if race_data else "street_sprint"
 		var payout := GameManager.economy.get_race_payout(
-			"street_sprint", 0 if won else 1, race_data.tier if race_data else 1
+			race_type_key, 0 if won else 1, race_data.tier if race_data else 1
 		)
 		cash_label.text = "+$%d" % payout if won else "$0"
+
+	# --- Race-type-specific result details ---
+	_show_type_specific_results(results)
 
 	var continue_btn := results_panel.get_node_or_null("ContinueButton") as Button
 	if continue_btn:
@@ -150,7 +410,153 @@ func _show_results(results: Dictionary) -> void:
 		race_session_complete.emit(results)
 
 
+func _show_type_specific_results(results: Dictionary) -> void:
+	var title_label := results_panel.get_node_or_null("Title") as Label
+	if title_label == null:
+		return
+
+	if results.has("drift_results"):
+		var dr: Dictionary = results["drift_results"]
+		title_label.text = "DRIFT COMPLETE — RANK: %s" % dr.get("overall_rank", "?")
+		var time_label := results_panel.get_node_or_null("Time") as Label
+		if time_label:
+			time_label.text = "Score: %.0f" % dr.get("total_score", 0.0)
+
+	elif results.has("touge_results"):
+		var tr: Dictionary = results["touge_results"]
+		var won: bool = tr.get("player_won", false)
+		title_label.text = "TOUGE %s" % ("VICTORY" if won else "DEFEAT")
+		var time_label := results_panel.get_node_or_null("Time") as Label
+		if time_label:
+			time_label.text = "You: %d pts — Rival: %d pts" % [
+				tr.get("player_total_points", 0),
+				tr.get("opponent_total_points", 0),
+			]
+
+	elif results.has("circuit_results"):
+		title_label.text = "RACE COMPLETE"
+		var cr: Dictionary = results["circuit_results"]
+		var lb: Array = cr.get("leaderboard", [])
+		# Show best lap in time label
+		var time_label := results_panel.get_node_or_null("Time") as Label
+		if time_label:
+			var rd: Dictionary = cr.get("racer_lap_data", {})
+			if rd.has(0):
+				var player_laps: Dictionary = rd[0]
+				time_label.text = "Best Lap: %s" % _format_time(player_laps.get("best_lap_time", 0.0))
+
+	else:
+		title_label.text = "RACE COMPLETE"
+
+
+# ---------------------------------------------------------------------------
+# HUD Callbacks — Drift
+# ---------------------------------------------------------------------------
+
+func _on_drift_combo_updated(combo_count: int, multiplier: float, current_score: float) -> void:
+	if race_hud_node and race_hud_node.has_method("show_drift_combo"):
+		race_hud_node.show_drift_combo(combo_count, multiplier, current_score)
+
+
+func _on_drift_combo_dropped() -> void:
+	if race_hud_node and race_hud_node.has_method("hide_drift_combo"):
+		race_hud_node.hide_drift_combo()
+
+
+func _on_drift_near_miss(distance: float, bonus: float) -> void:
+	if race_hud_node and race_hud_node.has_method("show_near_miss"):
+		race_hud_node.show_near_miss(distance, bonus)
+
+
+func _on_drift_section_scored(section_index: int, score: float, rank: String) -> void:
+	if race_hud_node and race_hud_node.has_method("show_section_rank"):
+		race_hud_node.show_section_rank(section_index, score, rank)
+
+
+# ---------------------------------------------------------------------------
+# HUD Callbacks — Touge
+# ---------------------------------------------------------------------------
+
+func _on_touge_gap_updated(gap_meters: float, gap_seconds: float) -> void:
+	if race_hud_node and race_hud_node.has_method("update_touge_gap"):
+		race_hud_node.update_touge_gap(gap_meters, gap_seconds)
+
+
+func _on_touge_round_started(round_number: int, leader_id: int, chaser_id: int) -> void:
+	if race_hud_node and race_hud_node.has_method("show_touge_round_start"):
+		var leader_name := "You" if leader_id == 0 else "Rival"
+		race_hud_node.show_touge_round_start(round_number, leader_name)
+
+
+func _on_touge_round_ended(round_number: int, leader_id: int, gap_seconds: float) -> void:
+	if race_hud_node and race_hud_node.has_method("show_touge_round_result"):
+		race_hud_node.show_touge_round_result(round_number, gap_seconds)
+
+
+func _on_touge_overtake(chaser_id: int) -> void:
+	if race_hud_node and race_hud_node.has_method("show_touge_overtake"):
+		var is_player := chaser_id == 0
+		race_hud_node.show_touge_overtake(is_player)
+
+
+func _on_touge_match_result(winner_id: int, scores: Array) -> void:
+	# Match result will be shown in _on_race_finished -> _show_results
+	pass
+
+
+# ---------------------------------------------------------------------------
+# HUD Callbacks — Circuit
+# ---------------------------------------------------------------------------
+
+func _on_circuit_lap_time(racer_id: int, lap: int, time: float) -> void:
+	if racer_id == 0 and race_hud_node and race_hud_node.has_method("show_lap_time"):
+		race_hud_node.show_lap_time(lap, time)
+
+
+func _on_circuit_best_lap(racer_id: int, lap: int, time: float) -> void:
+	if racer_id == 0 and race_hud_node and race_hud_node.has_method("show_best_lap"):
+		race_hud_node.show_best_lap(lap, time)
+
+
+func _on_circuit_leaderboard_updated(positions: Array) -> void:
+	if race_hud_node and race_hud_node.has_method("update_leaderboard"):
+		race_hud_node.update_leaderboard(positions)
+
+
+func _on_circuit_dnf_warning(racer_id: int, seconds_behind: float) -> void:
+	if racer_id == 0 and race_hud_node and race_hud_node.has_method("show_dnf_warning"):
+		race_hud_node.show_dnf_warning(seconds_behind)
+
+
+func _on_circuit_pit_entered(racer_id: int) -> void:
+	if racer_id == 0 and race_hud_node and race_hud_node.has_method("show_pit_stop_active"):
+		race_hud_node.show_pit_stop_active()
+
+
+func _on_circuit_pit_exited(racer_id: int, repairs: Dictionary) -> void:
+	if racer_id == 0 and race_hud_node and race_hud_node.has_method("show_pit_stop_complete"):
+		race_hud_node.show_pit_stop_complete(repairs)
+
+
+# ---------------------------------------------------------------------------
+# Cleanup
+# ---------------------------------------------------------------------------
+
 func cleanup() -> void:
+	# Clean up mode controllers
+	if drift_scoring:
+		drift_scoring.deactivate()
+		drift_scoring.queue_free()
+		drift_scoring = null
+	if touge_race:
+		touge_race.deactivate()
+		touge_race.queue_free()
+		touge_race = null
+	if circuit_race:
+		circuit_race.deactivate()
+		circuit_race.queue_free()
+		circuit_race = null
+
 	if player_vehicle:
 		player_vehicle.queue_free()
 	for ai in ai_vehicles:
@@ -158,6 +564,10 @@ func cleanup() -> void:
 	ai_vehicles.clear()
 	GameManager.race_manager.cleanup_race()
 
+
+# ---------------------------------------------------------------------------
+# Utility
+# ---------------------------------------------------------------------------
 
 func _ordinal(n: int) -> String:
 	match n:

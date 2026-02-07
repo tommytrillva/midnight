@@ -1,0 +1,159 @@
+[gd_scene load_steps=2 format=3 uid="uid://pause_menu"]
+
+[ext_resource type="Script" path="res://scenes/ui/pause_menu.gd" id="1"]
+
+[node name="PauseMenu" type="CanvasLayer"]
+layer = 100
+process_mode = 2
+visible = false
+script = ExtResource("1")
+
+; ---------- Dark Overlay ----------
+
+[node name="Overlay" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 0.7)
+
+; ---------- Main Menu Panel (centered) ----------
+
+[node name="MainPanel" type="PanelContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -230.0
+offset_right = 200.0
+offset_bottom = 230.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MainVBox" type="VBoxContainer" parent="MainPanel"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="TitleLabel" type="Label" parent="MainPanel/MainVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0.6, 1)
+theme_override_font_sizes/font_size = 28
+text = "MIDNIGHT GRIND"
+horizontal_alignment = 1
+
+[node name="Separator" type="HSeparator" parent="MainPanel/MainVBox"]
+layout_mode = 2
+theme_override_colors/separator = Color(1, 0, 0.6, 0.3)
+
+[node name="MenuButtons" type="VBoxContainer" parent="MainPanel/MainVBox"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="ResumeBtn" type="Button" parent="MainPanel/MainVBox/MenuButtons"]
+layout_mode = 2
+text = "RESUME"
+
+[node name="SaveBtn" type="Button" parent="MainPanel/MainVBox/MenuButtons"]
+layout_mode = 2
+text = "SAVE GAME"
+
+[node name="LoadBtn" type="Button" parent="MainPanel/MainVBox/MenuButtons"]
+layout_mode = 2
+text = "LOAD GAME"
+
+[node name="SettingsBtn" type="Button" parent="MainPanel/MainVBox/MenuButtons"]
+layout_mode = 2
+text = "SETTINGS"
+
+[node name="QuitMenuBtn" type="Button" parent="MainPanel/MainVBox/MenuButtons"]
+layout_mode = 2
+text = "QUIT TO MENU"
+
+[node name="QuitGameBtn" type="Button" parent="MainPanel/MainVBox/MenuButtons"]
+layout_mode = 2
+text = "QUIT GAME"
+
+; ---------- Settings Panel (centered, hidden by default) ----------
+
+[node name="SettingsPanel" type="PanelContainer" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -270.0
+offset_right = 300.0
+offset_bottom = 270.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SettingsVBox" type="VBoxContainer" parent="SettingsPanel"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="SettingsTitle" type="Label" parent="SettingsPanel/SettingsVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+theme_override_font_sizes/font_size = 24
+text = "SETTINGS"
+horizontal_alignment = 1
+
+[node name="SettingsScroll" type="ScrollContainer" parent="SettingsPanel/SettingsVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+custom_minimum_size = Vector2(0, 380)
+
+[node name="SettingsContent" type="VBoxContainer" parent="SettingsPanel/SettingsVBox/SettingsScroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 6
+
+[node name="SettingsBackBtn" type="Button" parent="SettingsPanel/SettingsVBox"]
+layout_mode = 2
+text = "BACK"
+
+; ---------- Confirmation Dialog (centered, hidden by default) ----------
+
+[node name="ConfirmDialog" type="PanelContainer" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -230.0
+offset_top = -80.0
+offset_right = 230.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ConfirmVBox" type="VBoxContainer" parent="ConfirmDialog"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="ConfirmText" type="Label" parent="ConfirmDialog/ConfirmVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+text = "Are you sure?"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="ConfirmButtons" type="HBoxContainer" parent="ConfirmDialog/ConfirmVBox"]
+layout_mode = 2
+alignment = 1
+theme_override_constants/separation = 20
+
+[node name="ConfirmYes" type="Button" parent="ConfirmDialog/ConfirmVBox/ConfirmButtons"]
+layout_mode = 2
+custom_minimum_size = Vector2(100, 0)
+text = "YES"
+
+[node name="ConfirmNo" type="Button" parent="ConfirmDialog/ConfirmVBox/ConfirmButtons"]
+layout_mode = 2
+custom_minimum_size = Vector2(100, 0)
+text = "NO"

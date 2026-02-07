@@ -23,6 +23,7 @@ EventBus="*res://src/autoload/event_bus.gd"
 GameManager="*res://src/autoload/game_manager.gd"
 SaveManager="*res://src/autoload/save_manager.gd"
 AudioManager="*res://src/autoload/audio_manager.gd"
+SettingsManager="*res://src/ui/settings_manager.gd"
 
 [display]
 

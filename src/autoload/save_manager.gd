@@ -87,13 +87,37 @@ func get_save_info(slot: int) -> Dictionary:
 		return {}
 	file.close()
 	var data: Dictionary = json.data
+
+	# Extract current vehicle display name from garage data
+	var vehicle_name := "No Vehicle"
+	var current_vid: String = data.get("player", {}).get("current_vehicle_id", "")
+	if not current_vid.is_empty():
+		var garage_vehicles: Dictionary = data.get("garage", {}).get("vehicles", {})
+		if garage_vehicles.has(current_vid):
+			var vdata: Dictionary = garage_vehicles[current_vid]
+			var mfr: String = vdata.get("manufacturer", "")
+			var dname: String = vdata.get("display_name", current_vid)
+			vehicle_name = ("%s %s" % [mfr, dname]).strip_edges()
+
 	return {
 		"slot": slot,
 		"timestamp": data.get("timestamp", "Unknown"),
 		"version": data.get("version", "0.0.0"),
 		"story_act": data.get("story", {}).get("current_act", 1),
 		"story_chapter": data.get("story", {}).get("current_chapter", 1),
+		"player_name": data.get("player", {}).get("player_name", "Racer"),
+		"play_time_seconds": data.get("player", {}).get("play_time_seconds", 0.0),
+		"cash": data.get("economy", {}).get("cash", 0),
+		"rep": data.get("reputation", {}).get("current_rep", 0),
+		"vehicle_name": vehicle_name,
 	}
+
+
+func has_any_save() -> bool:
+	for slot in range(0, MAX_SLOTS + 1):
+		if has_save(slot):
+			return true
+	return false
 
 
 func delete_save(slot: int) -> bool:

@@ -1,9 +1,12 @@
 ## Free roam gameplay controller. Manages the player driving around
-## Downtown Nova Pacifica, triggering races, garage visits, and dialogue.
+## Nova Pacifica districts, triggering races, garage visits, dialogue,
+## and district transitions via DistrictManager.
 extends Node3D
 
 const PlayerVehicleScene := preload("res://scenes/vehicles/player_vehicle.tscn")
 const RaceSessionScene := preload("res://scenes/racing/race_session.tscn")
+const SkillTreeScene := preload("res://scenes/ui/skill_tree_ui.tscn")
+const PauseMenuScene := preload("res://scenes/ui/pause_menu.tscn")
 
 @onready var downtown: Node3D = $Downtown
 @onready var free_roam_hud: Node = $FreeRoamHUD
@@ -14,10 +17,20 @@ var player_vehicle: VehicleController = null
 var _in_garage_zone: bool = false
 var _in_race_zone: bool = false
 var _race_session: Node3D = null
+var _skill_tree_ui: Node = null
+var pause_menu: PauseMenu = null
+
+## District management
+var district_manager: DistrictManager = null
+var _current_district_node: Node3D = null
 
 
 func _ready() -> void:
 	_spawn_player_vehicle()
+
+	# Initialize district manager
+	_setup_district_manager()
+
 	_setup_interactions()
 	_setup_dialogue()
 
@@ -27,10 +40,35 @@ func _ready() -> void:
 	EventBus.mission_started.connect(_on_mission_started)
 	EventBus.dialogue_ended.connect(_on_dialogue_ended)
 
+	# Listen for district changes to re-setup interactions
+	EventBus.district_entered.connect(_on_district_entered)
+
 	if garage_ui:
 		garage_ui.visible = false
 
-	print("[FreeRoam] Downtown loaded. Drive around!")
+	# Connect skills button from HUD
+	if free_roam_hud and free_roam_hud.has_signal("skills_button_pressed"):
+		free_roam_hud.skills_button_pressed.connect(_open_skill_tree)
+
+	# Instantiate pause menu
+	pause_menu = PauseMenuScene.instantiate()
+	add_child(pause_menu)
+
+	_update_hud_district_name()
+	print("[FreeRoam] %s loaded. Drive around!" % district_manager.get_current_district_name())
+
+
+func _setup_district_manager() -> void:
+	district_manager = DistrictManager.new()
+	district_manager.name = "DistrictManager"
+	add_child(district_manager)
+
+	# Set up with this node as the district parent and the player vehicle
+	district_manager.setup(self, player_vehicle)
+
+	# Register Downtown as the initially loaded district
+	_current_district_node = downtown
+	district_manager.set_initial_district(downtown, "downtown")
 
 
 func _spawn_player_vehicle() -> void:
@@ -59,17 +97,61 @@ func _spawn_player_vehicle() -> void:
 
 
 func _setup_interactions() -> void:
-	# Torres Garage trigger
-	var garage_trigger := downtown.get_node_or_null("InteractionPoints/TorresGarage") as Area3D
-	if garage_trigger:
-		garage_trigger.body_entered.connect(_on_garage_entered)
-		garage_trigger.body_exited.connect(_on_garage_exited)
+	_setup_district_interactions(_current_district_node)
 
-	# Race start trigger
-	var race_trigger := downtown.get_node_or_null("InteractionPoints/RaceStartPoint") as Area3D
+
+func _setup_district_interactions(district_node: Node3D) -> void:
+	## Connects interaction Area3D signals for the given district.
+	if district_node == null:
+		return
+
+	# Disconnect previous district interaction signals (safe even if not connected)
+	_in_garage_zone = false
+	_in_race_zone = false
+
+	# Torres Garage trigger (Downtown-specific)
+	var garage_trigger := district_node.get_node_or_null("InteractionPoints/TorresGarage") as Area3D
+	if garage_trigger:
+		if not garage_trigger.body_entered.is_connected(_on_garage_entered):
+			garage_trigger.body_entered.connect(_on_garage_entered)
+			garage_trigger.body_exited.connect(_on_garage_exited)
+
+	# Race start trigger — generic name used across districts
+	var race_trigger := district_node.get_node_or_null("InteractionPoints/RaceStartPoint") as Area3D
 	if race_trigger:
-		race_trigger.body_entered.connect(_on_race_zone_entered)
-		race_trigger.body_exited.connect(_on_race_zone_exited)
+		if not race_trigger.body_entered.is_connected(_on_race_zone_entered):
+			race_trigger.body_entered.connect(_on_race_zone_entered)
+			race_trigger.body_exited.connect(_on_race_zone_exited)
+
+	# Harbor: Dock Race Start
+	var dock_race := district_node.get_node_or_null("InteractionPoints/DockRaceStart") as Area3D
+	if dock_race:
+		if not dock_race.body_entered.is_connected(_on_race_zone_entered):
+			dock_race.body_entered.connect(_on_race_zone_entered)
+			dock_race.body_exited.connect(_on_race_zone_exited)
+
+	# Industrial: Illegal Race Meetup
+	var illegal_race := district_node.get_node_or_null("InteractionPoints/IllegalRaceMeetup") as Area3D
+	if illegal_race:
+		if not illegal_race.body_entered.is_connected(_on_race_zone_entered):
+			illegal_race.body_entered.connect(_on_race_zone_entered)
+			illegal_race.body_exited.connect(_on_race_zone_exited)
+
+	# Industrial: Diesel's Garage
+	var diesel_garage := district_node.get_node_or_null("InteractionPoints/DieselsGarage") as Area3D
+	if diesel_garage:
+		if not diesel_garage.body_entered.is_connected(_on_garage_entered):
+			diesel_garage.body_entered.connect(_on_garage_entered)
+			diesel_garage.body_exited.connect(_on_garage_exited)
+
+	# Hillside: Route 9 Start (touge race)
+	var route9 := district_node.get_node_or_null("InteractionPoints/Route9Start") as Area3D
+	if route9:
+		if not route9.body_entered.is_connected(_on_race_zone_entered):
+			route9.body_entered.connect(_on_race_zone_entered)
+			route9.body_exited.connect(_on_race_zone_exited)
+
+	print("[FreeRoam] Interactions setup for %s" % district_node.name)
 
 
 func _setup_dialogue() -> void:
@@ -89,17 +171,68 @@ func _process(_delta: float) -> void:
 
 
 func _input(event: InputEvent) -> void:
+	# Pause menu toggle
+	if event.is_action_pressed("pause"):
+		if pause_menu and not pause_menu.is_open():
+			if GameManager.current_state not in [
+				GameManager.GameState.MENU,
+				GameManager.GameState.LOADING,
+				GameManager.GameState.PAUSED,
+			]:
+				pause_menu.open_menu()
+				get_viewport().set_input_as_handled()
+				return
+
 	if event.is_action_pressed("interact"):
-		if _in_garage_zone and GameManager.current_state == GameManager.GameState.FREE_ROAM:
+		if GameManager.current_state != GameManager.GameState.FREE_ROAM:
+			return
+
+		# District transition takes priority when in a transition zone
+		if district_manager and district_manager.in_transition_zone:
+			var target := district_manager.pending_target_id
+			if not target.is_empty():
+				print("[FreeRoam] Player requested transition to %s" % target)
+				district_manager.request_transition(target)
+				return
+
+		if _in_garage_zone:
 			_open_garage()
-		elif _in_race_zone and GameManager.current_state == GameManager.GameState.FREE_ROAM:
+		elif _in_race_zone:
 			_start_available_race()
+
+	# Open skill tree with K key
+	if event is InputEventKey and event.pressed and not event.echo:
+		if event.keycode == KEY_K and GameManager.current_state == GameManager.GameState.FREE_ROAM:
+			_open_skill_tree()
+
+
+func _on_district_entered(district_id: String) -> void:
+	## Called when the player arrives in a new district.
+	# Update the current district node reference
+	if district_manager and district_manager._current_district_node:
+		_current_district_node = district_manager._current_district_node
+
+	# Reconnect interaction zones for the new district
+	_setup_district_interactions(_current_district_node)
+
+	# Update HUD
+	_update_hud_district_name()
+
+	print("[FreeRoam] Entered district: %s" % district_id)
+
+
+func _update_hud_district_name() -> void:
+	if free_roam_hud == null or district_manager == null:
+		return
+	var district_label := free_roam_hud.get_node_or_null("HUD/TopBar/DistrictName") as Label
+	if district_label:
+		district_label.text = district_manager.get_current_district_name()
 
 
 func _on_garage_entered(body: Node3D) -> void:
 	if body == player_vehicle:
 		_in_garage_zone = true
-		EventBus.hud_message.emit("Press [F] to enter Torres Garage", 3.0)
+		EventBus.hud_message.emit("Press [F] to enter garage", 3.0)
 
 
 func _on_garage_exited(body: Node3D) -> void:
@@ -130,6 +263,24 @@ func close_garage() -> void:
 	GameManager.change_state(GameManager.GameState.FREE_ROAM)
 	if garage_ui:
 		garage_ui.visible = false
+
+
+func _open_skill_tree() -> void:
+	if GameManager.current_state != GameManager.GameState.FREE_ROAM:
+		return
+	GameManager.change_state(GameManager.GameState.PAUSED)
+	if _skill_tree_ui == null:
+		_skill_tree_ui = SkillTreeScene.instantiate()
+		add_child(_skill_tree_ui)
+	_skill_tree_ui.visible = true
+	print("[FreeRoam] Skill tree opened.")
+
+
+func close_skill_tree() -> void:
+	GameManager.change_state(GameManager.GameState.FREE_ROAM)
+	if _skill_tree_ui:
+		_skill_tree_ui.visible = false
+	print("[FreeRoam] Skill tree closed.")
 
 
 func _start_available_race() -> void:
@@ -252,7 +403,8 @@ func _hide_free_roam() -> void:
 	if player_vehicle:
 		player_vehicle.visible = false
 		player_vehicle.set_physics_process(false)
-	downtown.visible = false
+	if _current_district_node:
+		_current_district_node.visible = false
 	if free_roam_hud:
 		free_roam_hud.visible = false
 
@@ -261,6 +413,7 @@ func _show_free_roam() -> void:
 	if player_vehicle:
 		player_vehicle.visible = true
 		player_vehicle.set_physics_process(true)
-	downtown.visible = true
+	if _current_district_node:
+		_current_district_node.visible = true
 	if free_roam_hud:
 		free_roam_hud.visible = true

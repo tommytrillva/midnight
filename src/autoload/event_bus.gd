@@ -14,9 +14,11 @@ signal race_position_changed(racer_id: int, new_position: int)
 signal vehicle_collision(vehicle_id: int, impact_force: float)
 signal vehicle_damaged(vehicle_id: int, damage_amount: float)
 signal vehicle_totaled(vehicle_id: int)
+signal speed_changed(vehicle_id: int, speed_kmh: float)
+signal gear_shifted(vehicle_id: int, gear: int)
 signal nitro_activated(vehicle_id: int)
 signal nitro_depleted(vehicle_id: int)
-signal gear_shifted(vehicle_id: int, gear: int)
+signal nitro_flame(vehicle_id: int, active: bool)
 
 # --- Economy Events ---
 signal cash_changed(old_amount: int, new_amount: int)
@@ -83,11 +85,56 @@ signal hud_message(text: String, duration: float)
 signal notification_popup(title: String, body: String, icon: String)
 signal screen_fade_in(duration: float)
 signal screen_fade_out(duration: float)
+signal save_screen_requested()
+signal load_screen_requested()
 
 # --- Save Events ---
 signal game_saved(slot: int)
 signal game_loaded(slot: int)
 signal save_failed(reason: String)
+
+# --- Audio Events ---
+signal music_track_changed(track_title: String, artist: String)
+signal music_playlist_changed(playlist_id: String)
+signal radio_next_track()
+signal radio_previous_track()
+signal radio_toggle()
+signal game_state_audio_changed(state: String)
+signal drift_started(vehicle_id: int)
+signal drift_ended(vehicle_id: int, score: float)
+signal tire_screech(vehicle_id: int, slip_intensity: float)
+signal engine_rpm_updated(vehicle_id: int, rpm: float, throttle: float)
+signal turbo_blowoff(vehicle_id: int)
+signal exhaust_pop(vehicle_id: int)
+signal countdown_beep(count: int)
+signal countdown_go()
+signal ambient_zone_entered(zone_type: String)
+
+# --- Drift Scoring Events ---
+signal drift_zone_entered(zone_name: String, multiplier: float)
+signal drift_zone_exited(zone_name: String)
+signal drift_combo_updated(combo_count: int, multiplier: float, current_score: float)
+signal drift_combo_dropped()
+signal drift_section_scored(section_index: int, score: float, rank: String)
+signal drift_near_miss(distance: float, bonus: float)
+signal drift_total_scored(total_score: float, rank: String, breakdown: Dictionary)
+
+# --- Touge Events ---
+signal touge_round_started(round_number: int, leader_id: int, chaser_id: int)
+signal touge_round_ended(round_number: int, leader_id: int, gap_seconds: float)
+signal touge_gap_updated(gap_meters: float, gap_seconds: float)
+signal touge_overtake(chaser_id: int)
+signal touge_leader_escaped(leader_id: int)
+signal touge_match_result(winner_id: int, scores: Array)
+
+# --- Circuit Events ---
+signal circuit_lap_time(racer_id: int, lap: int, time: float)
+signal circuit_best_lap(racer_id: int, lap: int, time: float)
+signal circuit_pit_entered(racer_id: int)
+signal circuit_pit_exited(racer_id: int, repairs: Dictionary)
+signal circuit_dnf_warning(racer_id: int, seconds_behind: float)
+signal circuit_dnf_timeout(racer_id: int)
+signal circuit_leaderboard_updated(positions: Array)
 
 # --- Ghost Events ---
 signal ghost_appeared()

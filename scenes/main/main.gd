@@ -7,6 +7,7 @@ extends Node
 @onready var continue_btn: Button = $UI/MainMenu/VBox/Continue
 @onready var quit_btn: Button = $UI/MainMenu/VBox/Quit
 @onready var fade_overlay: ColorRect = $UI/FadeOverlay
+@onready var save_load_ui: SaveLoadUI = $SaveLoadUI
 
 
 func _ready() -> void:
@@ -14,12 +15,21 @@ func _ready() -> void:
 	continue_btn.pressed.connect(_on_continue)
 	quit_btn.pressed.connect(_on_quit)
 
-	# Check if save exists
-	continue_btn.disabled = not SaveManager.has_save(0)
+	# Enable Continue if any save exists across all slots
+	continue_btn.disabled = not SaveManager.has_any_save()
 
 	# Connect to events
 	EventBus.screen_fade_in.connect(_fade_in)
 	EventBus.screen_fade_out.connect(_fade_out)
+
+	# Save/Load UI signals
+	save_load_ui.load_completed.connect(_on_load_completed)
+	save_load_ui.save_completed.connect(_on_save_completed)
+	save_load_ui.closed.connect(_on_save_load_closed)
+
+	# Allow any system (pause menu, etc.) to request save/load screens
+	EventBus.save_screen_requested.connect(_open_save_screen)
+	EventBus.load_screen_requested.connect(_open_load_screen)
 
 	GameManager.change_state(GameManager.GameState.MENU)
 	print("[Main] MIDNIGHT GRIND v0.1.0 initialized.")
@@ -34,17 +44,49 @@ func _on_new_game() -> void:
 
 
 func _on_continue() -> void:
-	if SaveManager.load_game(0):
-		print("[Main] Loading save...")
-		_fade_out(0.5)
-		await get_tree().create_timer(0.5).timeout
-		_transition_to_game()
-	else:
-		print("[Main] No save data found.")
+	# Open the save/load UI in LOAD mode so the player can pick a slot
+	save_load_ui.open(SaveLoadUI.Mode.LOAD)
 
 
 func _on_quit() -> void:
 	get_tree().quit()
+
+
+func _on_load_completed(_slot: int) -> void:
+	## Called when the player loads a save from the save/load UI.
+	GameManager.change_state(GameManager.GameState.LOADING)
+	main_menu.visible = false
+	print("[Main] Loading save from slot %d..." % _slot)
+	_fade_out(0.5)
+	await get_tree().create_timer(0.5).timeout
+	_transition_to_game()
+
+
+func _on_save_completed(_slot: int) -> void:
+	## Called when the player saves from the save/load UI.
+	# Re-check continue button in case this was the first save
+	continue_btn.disabled = not SaveManager.has_any_save()
+	print("[Main] Save completed to slot %d." % _slot)
+
+
+func _on_save_load_closed() -> void:
+	## Called when the save/load UI is dismissed.
+	if GameManager.current_state == GameManager.GameState.MENU:
+		# Ensure main menu is visible when returning from load screen
+		main_menu.visible = true
+	elif GameManager.current_state == GameManager.GameState.PAUSED:
+		# Return to paused state — a future pause menu can re-show itself here
+		pass
+
+
+func _open_save_screen() -> void:
+	## Opens the save screen. Can be called from pause menu via EventBus.
+	save_load_ui.open(SaveLoadUI.Mode.SAVE)
+
+
+func _open_load_screen() -> void:
+	## Opens the load screen. Can be called from pause menu via EventBus.
+	save_load_ui.open(SaveLoadUI.Mode.LOAD)
 
 
 func _transition_to_game() -> void:
@@ -85,11 +127,5 @@ func _fade_out(duration: float) -> void:
 	tween.tween_property(fade_overlay, "modulate:a", 1.0, duration)
 
 
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("pause"):
-		if GameManager.current_state == GameManager.GameState.PAUSED:
-			GameManager.change_state(GameManager.previous_state)
-			get_tree().paused = false
-		elif GameManager.current_state != GameManager.GameState.MENU:
-			GameManager.change_state(GameManager.GameState.PAUSED)
-			get_tree().paused = true
+## Pause input is handled by the PauseMenu (instanced in free_roam and race_session).
+## main.gd no longer manages pause toggling directly.
