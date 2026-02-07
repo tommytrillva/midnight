@@ -1,0 +1,23 @@
+{
+  "vehicle_id": "sakura_gtr",
+  "display_name": "Sakura GTR",
+  "manufacturer": "Sakura",
+  "year": 1997,
+  "body_style": "coupe",
+  "culture": "jdm",
+  "description": "A legendary JDM coupe that defined a generation. Twin-turbo inline-6, rear-wheel drive, and a chassis that practically begs to be pushed to the limit. The GTR isn't just a car — it's a statement.",
+  "base_speed": 85.0,
+  "base_acceleration": 70.0,
+  "base_handling": 75.0,
+  "base_braking": 65.0,
+  "base_durability": 80.0,
+  "engine_type": "i6",
+  "displacement_cc": 2600,
+  "stock_hp": 280.0,
+  "stock_torque": 260.0,
+  "redline_rpm": 8000,
+  "weight_kg": 1450.0,
+  "drivetrain": "rwd",
+  "starting_value": 15000,
+  "class": "B"
+}

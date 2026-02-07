@@ -1,0 +1,126 @@
+{
+  "id": "torres_garage_intro",
+  "context": "First meeting with Maya Torres at her garage",
+  "lines": [
+    {
+      "type": "narration",
+      "text": "Torres Garage. The sign is hand-painted, faded by years of sun and salt air. Through the open bay door, you can hear the sharp crack of a ratchet and the low hum of a radio."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya Torres",
+      "portrait": "maya_neutral",
+      "text": "You lost? This isn't a parking lot."
+    },
+    {
+      "type": "narration",
+      "text": "She doesn't look up from the engine she's working on. Grease-stained hands, focused eyes, zero patience for small talk."
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "I heard you're the best mechanic in Nova Pacifica.",
+          "choice_id": "torres_intro_flattery",
+          "relationship_changes": {"maya": 5},
+          "moral_shift": 0,
+          "jump_to": "maya_responds_flattery"
+        },
+        {
+          "text": "My car needs work. I've got cash.",
+          "choice_id": "torres_intro_business",
+          "relationship_changes": {"maya": 3},
+          "moral_shift": 0,
+          "jump_to": "maya_responds_business"
+        },
+        {
+          "text": "Nice garage. You run this place alone?",
+          "choice_id": "torres_intro_personal",
+          "relationship_changes": {"maya": 8},
+          "moral_shift": 5,
+          "jump_to": "maya_responds_personal"
+        }
+      ]
+    },
+    {
+      "label": "maya_responds_flattery",
+      "type": "dialogue",
+      "speaker": "Maya Torres",
+      "portrait": "maya_skeptical",
+      "text": "Flattery doesn't pay the bills. But... you're not wrong. What're you driving?"
+    },
+    {
+      "type": "narration",
+      "text": "She finally looks up. Her eyes scan your car through the garage door — and you can see the exact moment she catalogs every problem with it.",
+      "jump_to": "maya_sees_car"
+    },
+    {
+      "label": "maya_responds_business",
+      "type": "dialogue",
+      "speaker": "Maya Torres",
+      "portrait": "maya_neutral",
+      "text": "Cash talks. Pull it in, let me take a look."
+    },
+    {
+      "type": "narration",
+      "text": "She wipes her hands on a shop rag and walks toward the bay door. All business.",
+      "jump_to": "maya_sees_car"
+    },
+    {
+      "label": "maya_responds_personal",
+      "type": "dialogue",
+      "speaker": "Maya Torres",
+      "portrait": "maya_guarded",
+      "text": "...Yeah. Just me now."
+    },
+    {
+      "type": "narration",
+      "text": "Something flickers across her face — there and gone. She turns away, but her shoulders relax just slightly."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya Torres",
+      "portrait": "maya_neutral",
+      "text": "So. You here for a reason or just sightseeing?"
+    },
+    {
+      "label": "maya_sees_car",
+      "type": "dialogue",
+      "speaker": "Maya Torres",
+      "portrait": "maya_amused",
+      "text": "...You're racing THIS? In Nova Pacifica?"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya Torres",
+      "portrait": "maya_thinking",
+      "text": "Okay look. It's not hopeless. The bones are there. Barely. But the intake is shot, and I wouldn't trust those brakes past 40. Let me see what I can do."
+    },
+    {
+      "type": "narration",
+      "text": "She's already rolling under the car before you can answer. You hear her muttering — half to herself, half to the engine, like she's having a conversation with it."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya Torres",
+      "portrait": "maya_working",
+      "text": "This one's on the house. But next time? You're paying. And you better not wreck my work."
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "change_relationship",
+        "character": "maya",
+        "amount": 5
+      }
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "met_maya",
+        "value": true
+      }
+    }
+  ]
+}

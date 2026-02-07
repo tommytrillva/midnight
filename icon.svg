@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <rect width="128" height="128" fill="#0D0520"/>
+  <text x="64" y="50" font-family="monospace" font-size="14" fill="#FF0066" text-anchor="middle" font-weight="bold">MIDNIGHT</text>
+  <text x="64" y="75" font-family="monospace" font-size="18" fill="#00FFCC" text-anchor="middle" font-weight="bold">GRIND</text>
+  <line x1="20" y1="90" x2="108" y2="90" stroke="#FF0066" stroke-width="2"/>
+  <line x1="20" y1="95" x2="108" y2="95" stroke="#00FFCC" stroke-width="1"/>
+</svg>

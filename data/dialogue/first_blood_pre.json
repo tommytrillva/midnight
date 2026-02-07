@@ -1,0 +1,106 @@
+{
+  "id": "first_blood_pre",
+  "context": "Before the first race — at a car meet in Downtown Nova Pacifica",
+  "lines": [
+    {
+      "type": "narration",
+      "text": "The parking lot behind the strip mall is alive. Bass thumps from someone's system. Engines idle and rev. The air smells like tire rubber and cheap cologne."
+    },
+    {
+      "type": "narration",
+      "text": "You pull in slow, keeping your head down. Nobody knows you here. Nobody cares about your rusted sedan or your empty wallet. Not yet."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "???",
+      "portrait": "",
+      "text": "Yo, fresh face! You here to race or you here to watch?"
+    },
+    {
+      "type": "narration",
+      "text": "A wiry guy with a backwards cap and a confident grin leans against a modified hatchback. Two hundred horses at least, judging by the sound."
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "Race. Point me to the start line.",
+          "choice_id": "first_blood_confident",
+          "relationship_changes": {},
+          "moral_shift": 0,
+          "rep": 10,
+          "jump_to": "race_accepted"
+        },
+        {
+          "text": "How much are we talking?",
+          "choice_id": "first_blood_money",
+          "relationship_changes": {},
+          "moral_shift": 0,
+          "jump_to": "discuss_stakes"
+        },
+        {
+          "text": "I just got here. What's the scene like?",
+          "choice_id": "first_blood_curious",
+          "relationship_changes": {},
+          "moral_shift": 5,
+          "jump_to": "learn_scene"
+        }
+      ]
+    },
+    {
+      "label": "race_accepted",
+      "type": "dialogue",
+      "speaker": "Street Racer",
+      "text": "Ha! I like that. Straight to the point. $300 buy-in, winner takes all. Two miles down Harbor Road to the overpass. You in?"
+    },
+    {
+      "type": "narration",
+      "text": "Three hundred dollars. More than half your cash. But you didn't come to Nova Pacifica to play it safe.",
+      "jump_to": "pre_race_final"
+    },
+    {
+      "label": "discuss_stakes",
+      "type": "dialogue",
+      "speaker": "Street Racer",
+      "text": "$300 buy-in. Winner takes the pot. Simple as it gets around here."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Street Racer",
+      "text": "Don't worry about your ride. We'll handicap it fair — it's a gentleman's race. Mostly.",
+      "jump_to": "pre_race_final"
+    },
+    {
+      "label": "learn_scene",
+      "type": "dialogue",
+      "speaker": "Street Racer",
+      "text": "Scene? It's simple. You race, you win, you earn. You lose, you pay. Nobody cares where you came from — only how fast you go."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Street Racer",
+      "text": "Tonight's light. Just a few sprint races. $300 buy-in if you want a piece. What do you say?",
+      "jump_to": "pre_race_final"
+    },
+    {
+      "label": "pre_race_final",
+      "type": "narration",
+      "text": "The crowd starts drifting toward Harbor Road. Headlights flick on one by one. The race is happening with or without you."
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "Let's do this.",
+          "choice_id": "first_blood_go",
+          "set_flags": {"first_race_accepted": true},
+          "cash": -300
+        }
+      ]
+    },
+    {
+      "type": "narration",
+      "text": "You roll to the line. Your engine sounds pathetic next to his. But engines can lie. Let's see what this thing can do."
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "id": "arrival_intro",
+  "context": "Act 1 Chapter 1 — Player arrives in Nova Pacifica",
+  "lines": [
+    {
+      "type": "narration",
+      "text": "The highway splits the darkness like a scar. Ahead, the skyline of Nova Pacifica glows — neon bleeding through the haze of a city that never truly sleeps."
+    },
+    {
+      "type": "narration",
+      "text": "Your car groans beneath you. It's held together by rust, tape, and stubbornness. Just like you."
+    },
+    {
+      "type": "narration",
+      "text": "You came here with $500, a half-dead engine, and something to prove. You don't know anyone. Nobody knows you. That's about to change."
+    },
+    {
+      "type": "narration",
+      "text": "The exit sign reads: DOWNTOWN — NOVA PACIFICA. This is it."
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "arrived_nova_pacifica",
+        "value": true
+      }
+    }
+  ]
+}
