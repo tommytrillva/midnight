@@ -49,9 +49,24 @@ func _on_quit() -> void:
 
 func _transition_to_game() -> void:
 	main_menu.visible = false
-	# Load the free roam / game world scene
-	# For MVP, start the story mission sequence
-	GameManager.story.start_mission("arrival")
+
+	# Give the player their starter vehicle if they don't have one
+	if GameManager.garage.get_vehicle_count() == 0:
+		var starter := VehicleFactory.create_from_json("starter_beater")
+		if starter:
+			GameManager.garage.add_vehicle(starter, "story")
+			GameManager.player_data.current_vehicle_id = "starter_beater"
+
+	# Load the free roam world
+	var free_roam_scene := load("res://scenes/world/free_roam.tscn")
+	if free_roam_scene:
+		var free_roam := free_roam_scene.instantiate()
+		add_child(free_roam)
+		# Start the arrival story mission
+		GameManager.story.start_mission("arrival")
+	else:
+		push_error("[Main] Failed to load free_roam.tscn")
+
 	_fade_in(1.0)
 
 

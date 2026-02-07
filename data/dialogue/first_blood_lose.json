@@ -1,0 +1,127 @@
+{
+  "id": "first_blood_lose",
+  "context": "Post-race — player lost their first street race on Harbor Road",
+  "lines": [
+    {
+      "type": "narration",
+      "text": "His taillights pull away from you like a bad dream. By the time you hit the overpass, he's already parked, leaning against his hatchback, arms crossed."
+    },
+    {
+      "type": "narration",
+      "text": "Three hundred dollars gone. The crowd — what little there is — barely reacts. Just another nobody who bet more than his car could handle."
+    },
+    {
+      "type": "narration",
+      "text": "You pull up slow. Kill the engine. The silence hits harder than the loss."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Street Racer",
+      "portrait": "",
+      "text": "Hey."
+    },
+    {
+      "type": "narration",
+      "text": "He walks over. You're expecting trash talk. That's how it works, right? Winner gets to rub it in."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Street Racer",
+      "portrait": "",
+      "text": "You showed up. That's more than most people do. Half the guys out here talk about racing and never put a dollar on the line."
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "I'll be back. And I'll be faster.",
+          "choice_id": "lose_determined",
+          "relationship_changes": {},
+          "moral_shift": 0,
+          "rep": 5,
+          "jump_to": "racer_responds_determined"
+        },
+        {
+          "text": "My car just couldn't keep up.",
+          "choice_id": "lose_blame_car",
+          "relationship_changes": {},
+          "moral_shift": 0,
+          "jump_to": "racer_responds_blame"
+        },
+        {
+          "text": "Three hundred bucks... that was everything.",
+          "choice_id": "lose_honest",
+          "relationship_changes": {},
+          "moral_shift": 5,
+          "rep": 3,
+          "jump_to": "racer_responds_honest"
+        }
+      ]
+    },
+    {
+      "label": "racer_responds_determined",
+      "type": "dialogue",
+      "speaker": "Street Racer",
+      "portrait": "",
+      "text": "Yeah? Good. That's the right answer. Most people lose once and you never see them again. Come back when you're ready — I'll give you another shot."
+    },
+    {
+      "type": "narration",
+      "text": "There's no mockery in his voice. On these streets, coming back after a loss earns more than a lucky win ever could.",
+      "jump_to": "post_loss_wrapup"
+    },
+    {
+      "label": "racer_responds_blame",
+      "type": "dialogue",
+      "speaker": "Street Racer",
+      "portrait": "",
+      "text": "Nah, man. Don't do that. A good driver makes a bad car work. That's the whole point out here. Nobody's got a fair ride — you just gotta drive smarter."
+    },
+    {
+      "type": "narration",
+      "text": "He's not being cruel. He's being honest. And honest stings worse.",
+      "jump_to": "post_loss_wrapup"
+    },
+    {
+      "label": "racer_responds_honest",
+      "type": "dialogue",
+      "speaker": "Street Racer",
+      "portrait": "",
+      "text": "Damn. For real?"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Street Racer",
+      "portrait": "",
+      "text": "...Look. I'm not giving the money back. That's not how this works. But I respect you for being straight about it. Most guys would never admit that."
+    },
+    {
+      "type": "narration",
+      "text": "He reaches into his car and pulls out a business card. Worn edges, oil-stained.",
+      "jump_to": "post_loss_wrapup"
+    },
+    {
+      "label": "post_loss_wrapup",
+      "type": "dialogue",
+      "speaker": "Street Racer",
+      "portrait": "",
+      "text": "You know Torres Garage? Over on 5th? If you're serious about running these streets, get your ride sorted first. Maya's the real deal. Tell her Rico sent you — or don't. She doesn't care either way."
+    },
+    {
+      "type": "narration",
+      "text": "He climbs back in his car and rolls off. The parking lot empties fast. You're left alone with a lighter wallet and a heavier question: is this city going to eat you alive, or are you going to eat back?"
+    },
+    {
+      "type": "narration",
+      "text": "You lost tonight. But you raced. In Nova Pacifica, that's where every story starts."
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "first_race_lost",
+        "value": true
+      }
+    }
+  ]
+}

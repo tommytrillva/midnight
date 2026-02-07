@@ -1,0 +1,131 @@
+{
+  "id": "proving_grounds_pre",
+  "context": "Before the Proving Grounds circuit race — an organized event in the warehouse district",
+  "lines": [
+    {
+      "type": "narration",
+      "text": "The warehouse district at midnight. The usual chaos of a street meet is replaced by something tighter — organized. Cars are lined up in formation. Somebody runs this operation."
+    },
+    {
+      "type": "narration",
+      "text": "Floodlights on tripods. A guy with a clipboard. Cones marking the circuit through the industrial lots. This isn't some parking lot sprint — this is the Proving Grounds."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Organizer",
+      "portrait": "",
+      "text": "You the new one? Word got around after Harbor Road. Didn't think you'd actually show up here."
+    },
+    {
+      "type": "narration",
+      "text": "She's got a stopwatch around her neck and eyes that have seen a thousand races. Mid-thirties, short hair, zero tolerance for nonsense."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Organizer",
+      "portrait": "",
+      "text": "Here's how this works. Four laps around the circuit. Six drivers. No contact — you hit somebody, you're out. You wreck a cone on the chicane, ten-second penalty."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Organizer",
+      "portrait": "",
+      "text": "Buy-in is $500. Winner takes seventy percent of the pot. Second place gets their money back. Everyone else walks home lighter."
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "I didn't come here to finish second.",
+          "choice_id": "proving_confident",
+          "relationship_changes": {},
+          "moral_shift": -5,
+          "rep": 5,
+          "jump_to": "organizer_confident"
+        },
+        {
+          "text": "Six drivers and no contact? That's a lot of trust.",
+          "choice_id": "proving_nervous",
+          "relationship_changes": {},
+          "moral_shift": 5,
+          "jump_to": "organizer_nervous"
+        },
+        {
+          "text": "How much is the pot looking like tonight?",
+          "choice_id": "proving_money",
+          "relationship_changes": {},
+          "moral_shift": 0,
+          "jump_to": "organizer_money"
+        }
+      ]
+    },
+    {
+      "label": "organizer_confident",
+      "type": "dialogue",
+      "speaker": "Organizer",
+      "portrait": "",
+      "text": "Confidence. That's cute. Half the guys in this lineup have been running the Grounds for months. But sure — bring that energy to the start line and see what happens."
+    },
+    {
+      "type": "narration",
+      "text": "She marks something on her clipboard. You're in.",
+      "jump_to": "proving_field"
+    },
+    {
+      "label": "organizer_nervous",
+      "type": "dialogue",
+      "speaker": "Organizer",
+      "portrait": "",
+      "text": "Trust? No. Rules. Anybody makes contact, they answer to me. And the people I work with are a lot less forgiving than a ten-second penalty."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Organizer",
+      "portrait": "",
+      "text": "Relax. Drive clean, drive fast. That's all you gotta do.",
+      "jump_to": "proving_field"
+    },
+    {
+      "label": "organizer_money",
+      "type": "dialogue",
+      "speaker": "Organizer",
+      "portrait": "",
+      "text": "Six drivers at five hundred each — that's three grand in the pot. Winner walks with twenty-one hundred. Not bad for fifteen minutes of work, if you're fast enough."
+    },
+    {
+      "type": "narration",
+      "text": "Twenty-one hundred dollars. That's real money. Enough to upgrade the car. Enough to matter.",
+      "jump_to": "proving_field"
+    },
+    {
+      "label": "proving_field",
+      "type": "narration",
+      "text": "You look at the competition. A tuned-up sedan with a hood scoop that means business. A low-slung coupe with mismatched panels — built, not bought. A clean hatchback running straight-pipe exhaust that rumbles through your chest."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Organizer",
+      "portrait": "",
+      "text": "Drivers — line up. We go on the third horn blast. Keep it clean, keep it fast, and don't embarrass yourselves."
+    },
+    {
+      "type": "narration",
+      "text": "You strap in. The floodlights cut hard shadows across the asphalt. Your hands find the wheel. This is a step up from Harbor Road, and everyone here knows it. Including you."
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "Let's race.",
+          "choice_id": "proving_go",
+          "set_flags": {"proving_grounds_accepted": true},
+          "cash": -500
+        }
+      ]
+    },
+    {
+      "type": "narration",
+      "text": "The first horn blast cuts through the night. Engines rev in response — a wall of sound that rattles the warehouse windows. This is the Proving Grounds. Time to prove something."
+    }
+  ]
+}

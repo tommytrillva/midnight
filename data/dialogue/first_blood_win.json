@@ -1,0 +1,121 @@
+{
+  "id": "first_blood_win",
+  "context": "Post-race — player won their first street race on Harbor Road",
+  "lines": [
+    {
+      "type": "narration",
+      "text": "You cross the overpass line first. Your engine is screaming, your hands are shaking, and the whole world narrows to the sound of your own heartbeat catching up with you."
+    },
+    {
+      "type": "narration",
+      "text": "Behind you, the hatchback's headlights slow. He's not chasing anymore."
+    },
+    {
+      "type": "narration",
+      "text": "You did it. Three hundred dollars richer and a lifetime of doubt lighter. The crowd at the finish is thin, but they saw it. That's what matters."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Street Racer",
+      "portrait": "",
+      "text": "...Alright. Alright. I see you."
+    },
+    {
+      "type": "narration",
+      "text": "He pulls up beside you, window down. He's not angry. He's sizing you up — differently now. Like you just became real to him."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Street Racer",
+      "portrait": "",
+      "text": "That bucket of yours has no business winning that race. Which means you drove the hell out of it."
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "It's not the car. It's the driver.",
+          "choice_id": "win_cocky",
+          "relationship_changes": {},
+          "moral_shift": -5,
+          "rep": 15,
+          "jump_to": "racer_responds_cocky"
+        },
+        {
+          "text": "Good race. You had me sweating at the bridge.",
+          "choice_id": "win_respect",
+          "relationship_changes": {},
+          "moral_shift": 5,
+          "rep": 10,
+          "jump_to": "racer_responds_respect"
+        },
+        {
+          "text": "Just here to make money.",
+          "choice_id": "win_money",
+          "relationship_changes": {},
+          "moral_shift": 0,
+          "jump_to": "racer_responds_money"
+        }
+      ]
+    },
+    {
+      "label": "racer_responds_cocky",
+      "type": "dialogue",
+      "speaker": "Street Racer",
+      "portrait": "",
+      "text": "Ha. Big talk from someone whose bumper is held on with zip ties. But hey — tonight? You backed it up."
+    },
+    {
+      "type": "narration",
+      "text": "A few people in the crowd nod. Word travels fast on these streets. You can already feel it — the shift. People are going to remember your name after tonight.",
+      "jump_to": "post_win_wrapup"
+    },
+    {
+      "label": "racer_responds_respect",
+      "type": "dialogue",
+      "speaker": "Street Racer",
+      "portrait": "",
+      "text": "Yeah, well... next time I won't brake so early into that last turn. Don't get comfortable."
+    },
+    {
+      "type": "narration",
+      "text": "He says it like a threat, but there's a grin underneath. You just earned something money can't buy in Nova Pacifica — a nod from someone who was here before you.",
+      "jump_to": "post_win_wrapup"
+    },
+    {
+      "label": "racer_responds_money",
+      "type": "dialogue",
+      "speaker": "Street Racer",
+      "portrait": "",
+      "text": "Cold. I respect it. Take your cash. You earned it tonight."
+    },
+    {
+      "type": "narration",
+      "text": "He peels a wad of bills from his pocket and tosses them through your window. Six hundred dollars. Not a fortune, but it feels like one.",
+      "jump_to": "post_win_wrapup"
+    },
+    {
+      "label": "post_win_wrapup",
+      "type": "narration",
+      "text": "The crowd starts to scatter. Sirens somewhere in the distance — probably unrelated, but nobody sticks around to find out. That's the rhythm of Nova Pacifica."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Street Racer",
+      "portrait": "",
+      "text": "Word of advice? Tonight was small time. If you want real money, real rep — look for the organized runs. Proving Grounds. That's where the scene really lives."
+    },
+    {
+      "type": "narration",
+      "text": "He taps his roof twice and pulls away. His taillights disappear into the city grid. You sit there for a moment, engine ticking, feeling like you just took the first step into something much bigger."
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "first_race_won",
+        "value": true
+      }
+    }
+  ]
+}
