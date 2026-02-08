@@ -221,11 +221,14 @@ func _setup_track_for_type(race_type: RaceManager.RaceType) -> void:
 
 	match race_type:
 		RaceManager.RaceType.DRIFT:
-			new_track_scene = DriftArenaScene
+			# TODO: Fix DriftArenaScene
+			pass
 		RaceManager.RaceType.TOUGE:
-			new_track_scene = TougeTrackScene
+			# TODO: Fix TougeTrackScene
+			pass
 		RaceManager.RaceType.CIRCUIT:
-			new_track_scene = CircuitTrackScene
+			# TODO: Fix CircuitTrackScene
+			pass
 
 	if new_track_scene == null:
 		# Keep default sprint track
