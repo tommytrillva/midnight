@@ -9,10 +9,10 @@ const PlayerVehicleScene := preload("res://scenes/vehicles/player_vehicle.tscn")
 const AIRacerScene := preload("res://scenes/racing/ai_racer.tscn")
 const PauseMenuScene := preload("res://scenes/ui/pause_menu.tscn")
 
-# TODO: Fix drift_arena.tscn SubResource definitions
+# TODO: Fix race track scene SubResource definitions before enabling these
 # const DriftArenaScene := preload("res://scenes/racing/drift_arena.tscn")
-const TougeTrackScene := preload("res://scenes/racing/touge_track.tscn")
-const CircuitTrackScene := preload("res://scenes/racing/circuit_track.tscn")
+# const TougeTrackScene := preload("res://scenes/racing/touge_track.tscn")
+# const CircuitTrackScene := preload("res://scenes/racing/circuit_track.tscn")
 
 const PinkSlipUIScene := preload("res://scenes/ui/pink_slip_ui.tscn")
 const PinkSlipResultScene := preload("res://scenes/ui/pink_slip_result.tscn")
