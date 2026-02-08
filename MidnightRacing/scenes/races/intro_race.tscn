@@ -1,0 +1,282 @@
+[gd_scene load_steps=4 format=3 uid="uid://intro_race_scene"]
+
+[ext_resource type="PackedScene" path="res://scenes/ui/race_hud.tscn" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/vehicles/honda_crx_si.tscn" id="2"]
+[ext_resource type="Script" path="res://scripts/managers/race_manager.gd" id="3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ground"]
+size = Vector3(500, 1, 500)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ground"]
+albedo_color = Color(0.2, 0.2, 0.2, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_track"]
+albedo_color = Color(0.15, 0.15, 0.15, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_checkpoint"]
+size = Vector3(15, 5, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_checkpoint"]
+albedo_color = Color(0, 1, 0, 0.3)
+transparency = 1
+
+[sub_resource type="Curve3D" id="Curve3D_racepath"]
+# Oval race track path - counter-clockwise
+# Starting at bottom (south), going to right (east), top (north), left (west), back to start
+resource_local_to_scene = false
+_data = {
+"points": PackedVector3Array(
+	0, 0, 0,       # Point 0 in control
+	0, 0, 0,       # Point 0 out control
+	0, 0.5, -90,   # Point 0 position (start/finish line)
+	0, 0, 0,       # Point 1 in control
+	0, 0, 0,       # Point 1 out control
+	0, 0.5, -80,   # Point 1 position (checkpoint 1)
+	0, 0, 0,       # Point 2 in control
+	0, 0, 0,       # Point 2 out control
+	0, 0.5, -50,   # Point 2 position
+	0, 0, 0,       # Point 3 in control
+	0, 0, 0,       # Point 3 out control
+	20, 0.5, -20,  # Point 3 position (entering turn)
+	0, 0, 0,       # Point 4 in control
+	0, 0, 0,       # Point 4 out control
+	50, 0.5, 0,    # Point 4 position (turn apex)
+	0, 0, 0,       # Point 5 in control
+	0, 0, 0,       # Point 5 out control
+	80, 0.5, 0,    # Point 5 position (checkpoint 2 - east)
+	0, 0, 0,       # Point 6 in control
+	0, 0, 0,       # Point 6 out control
+	50, 0.5, 20,   # Point 6 position (exit turn)
+	0, 0, 0,       # Point 7 in control
+	0, 0, 0,       # Point 7 out control
+	20, 0.5, 50,   # Point 7 position
+	0, 0, 0,       # Point 8 in control
+	0, 0, 0,       # Point 8 out control
+	0, 0.5, 80,    # Point 8 position (checkpoint 3 - north)
+	0, 0, 0,       # Point 9 in control
+	0, 0, 0,       # Point 9 out control
+	-20, 0.5, 50,  # Point 9 position
+	0, 0, 0,       # Point 10 in control
+	0, 0, 0,       # Point 10 out control
+	-50, 0.5, 20,  # Point 10 position (entering turn)
+	0, 0, 0,       # Point 11 in control
+	0, 0, 0,       # Point 11 out control
+	-80, 0.5, 0,   # Point 11 position (checkpoint 4 - west)
+	0, 0, 0,       # Point 12 in control
+	0, 0, 0,       # Point 12 out control
+	-50, 0.5, -20, # Point 12 position (turn apex)
+	0, 0, 0,       # Point 13 in control
+	0, 0, 0,       # Point 13 out control
+	-20, 0.5, -50, # Point 13 position (exit turn)
+	0, 0, 0,       # Point 14 in control
+	0, 0, 0,       # Point 14 out control
+	0, 0.5, -90    # Point 14 position (back to start - closing loop)
+),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 15
+bake_interval = 0.5
+
+[node name="IntroRace" type="Node3D"]
+
+[node name="Environment" type="Node3D" parent="."]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment"]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0, 25, 0)
+light_energy = 1.2
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Environment"]
+
+[node name="Ground" type="StaticBody3D" parent="." groups=["ground"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+shape = SubResource("BoxShape3D_ground")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
+mesh = BoxMesh.new()
+surface_material_override/0 = SubResource("StandardMaterial3D_ground")
+transform = Transform3D(500, 0, 0, 0, 1, 0, 0, 0, 500, 0, 0, 0)
+
+[node name="Track" type="Node3D" parent="."]
+
+[node name="TrackStraight1" type="StaticBody3D" parent="Track" groups=["track"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, -50)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Track/TrackStraight1"]
+shape = SubResource("BoxShape3D_track_straight1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Track/TrackStraight1"]
+mesh = BoxMesh.new()
+surface_material_override/0 = SubResource("StandardMaterial3D_track")
+transform = Transform3D(12, 0, 0, 0, 0.2, 0, 0, 0, 80, 0, 0, 0)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_track_straight1"]
+size = Vector3(12, 0.2, 80)
+
+[node name="TrackCurve1" type="StaticBody3D" parent="Track" groups=["track"]]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 50, 0.1, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Track/TrackCurve1"]
+shape = SubResource("BoxShape3D_track_curve1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Track/TrackCurve1"]
+mesh = CylinderMesh.new()
+surface_material_override/0 = SubResource("StandardMaterial3D_track")
+transform = Transform3D(44, 0, 0, 0, 0.2, 0, 0, 0, 44, 0, 0, 0)
+
+[sub_resource type="CylinderShape3D" id="BoxShape3D_track_curve1"]
+radius = 44.0
+height = 0.2
+
+[node name="TrackStraight2" type="StaticBody3D" parent="Track" groups=["track"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 50)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Track/TrackStraight2"]
+shape = SubResource("BoxShape3D_track_straight2")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Track/TrackStraight2"]
+mesh = BoxMesh.new()
+surface_material_override/0 = SubResource("StandardMaterial3D_track")
+transform = Transform3D(12, 0, 0, 0, 0.2, 0, 0, 0, 80, 0, 0, 0)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_track_straight2"]
+size = Vector3(12, 0.2, 80)
+
+[node name="TrackCurve2" type="StaticBody3D" parent="Track" groups=["track"]]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -50, 0.1, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Track/TrackCurve2"]
+shape = SubResource("BoxShape3D_track_curve2")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Track/TrackCurve2"]
+mesh = CylinderMesh.new()
+surface_material_override/0 = SubResource("StandardMaterial3D_track")
+transform = Transform3D(44, 0, 0, 0, 0.2, 0, 0, 0, 44, 0, 0, 0)
+
+[sub_resource type="CylinderShape3D" id="BoxShape3D_track_curve2"]
+radius = 44.0
+height = 0.2
+
+[node name="RacePath" type="Path3D" parent="." groups=["race_path"]]
+curve = SubResource("Curve3D_racepath")
+
+[node name="Checkpoints" type="Node3D" parent="."]
+
+[node name="Checkpoint1" type="Area3D" parent="Checkpoints" groups=["checkpoint"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -80)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Checkpoints/Checkpoint1"]
+shape = SubResource("BoxShape3D_checkpoint")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Checkpoints/Checkpoint1"]
+mesh = BoxMesh.new()
+surface_material_override/0 = SubResource("StandardMaterial3D_checkpoint")
+transform = Transform3D(15, 0, 0, 0, 5, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="Label3D" type="Label3D" parent="Checkpoints/Checkpoint1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+text = "CHECKPOINT 1"
+font_size = 32
+
+[node name="Checkpoint2" type="Area3D" parent="Checkpoints" groups=["checkpoint"]]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 80, 2.5, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Checkpoints/Checkpoint2"]
+shape = SubResource("BoxShape3D_checkpoint")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Checkpoints/Checkpoint2"]
+mesh = BoxMesh.new()
+surface_material_override/0 = SubResource("StandardMaterial3D_checkpoint")
+transform = Transform3D(15, 0, 0, 0, 5, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="Label3D" type="Label3D" parent="Checkpoints/Checkpoint2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+text = "CHECKPOINT 2"
+font_size = 32
+
+[node name="Checkpoint3" type="Area3D" parent="Checkpoints" groups=["checkpoint"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 80)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Checkpoints/Checkpoint3"]
+shape = SubResource("BoxShape3D_checkpoint")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Checkpoints/Checkpoint3"]
+mesh = BoxMesh.new()
+surface_material_override/0 = SubResource("StandardMaterial3D_checkpoint")
+transform = Transform3D(15, 0, 0, 0, 5, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="Label3D" type="Label3D" parent="Checkpoints/Checkpoint3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+text = "CHECKPOINT 3"
+font_size = 32
+
+[node name="Checkpoint4" type="Area3D" parent="Checkpoints" groups=["checkpoint"]]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -80, 2.5, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Checkpoints/Checkpoint4"]
+shape = SubResource("BoxShape3D_checkpoint")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Checkpoints/Checkpoint4"]
+mesh = BoxMesh.new()
+surface_material_override/0 = SubResource("StandardMaterial3D_checkpoint")
+transform = Transform3D(15, 0, 0, 0, 5, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="Label3D" type="Label3D" parent="Checkpoints/Checkpoint4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+text = "CHECKPOINT 4"
+font_size = 32
+
+[node name="StartFinishLine" type="Area3D" parent="Checkpoints" groups=["start_finish"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -90)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Checkpoints/StartFinishLine"]
+shape = SubResource("BoxShape3D_checkpoint")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Checkpoints/StartFinishLine"]
+mesh = BoxMesh.new()
+surface_material_override/0 = SubResource("StandardMaterial3D_startfinish")
+transform = Transform3D(15, 0, 0, 0, 5, 0, 0, 0, 2, 0, 0, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_startfinish"]
+albedo_color = Color(1, 1, 1, 0.5)
+transparency = 1
+
+[node name="Label3D" type="Label3D" parent="Checkpoints/StartFinishLine"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+text = "START / FINISH"
+font_size = 48
+
+[node name="SpawnPoints" type="Node3D" parent="."]
+
+[node name="PlayerSpawn" type="Marker3D" parent="SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1, -85)
+
+[node name="AISpawn1" type="Marker3D" parent="SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -85)
+
+[node name="AISpawn2" type="Marker3D" parent="SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, -85)
+
+[node name="AISpawn3" type="Marker3D" parent="SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1, -80)
+
+[node name="AISpawn4" type="Marker3D" parent="SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -80)
+
+[node name="AISpawn5" type="Marker3D" parent="SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, -80)
+
+[node name="RaceManager" type="Node" parent="."]
+script = ExtResource("3")
+total_laps = 3
+countdown_time = 3.0
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 30, -100)
+current = true
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="RaceHUD" parent="UI" instance=ExtResource("1")]

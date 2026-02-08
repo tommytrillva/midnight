@@ -1,0 +1,114 @@
+[gd_scene load_steps=7 format=3 uid="uid://vehicle_test"]
+
+[ext_resource type="PackedScene" uid="uid://honda_crx_si" path="res://scenes/vehicles/honda_crx_si.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://race_hud" path="res://scenes/ui/race_hud.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://freeroam_hud" path="res://scenes/ui/freeroam_hud.tscn" id="3"]
+[ext_resource type="Script" path="res://scenes/test/vehicle_test.gd" id="4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ground"]
+size = Vector3(100, 1, 100)
+
+[sub_resource type="Environment" id="Environment_1"]
+background_mode = 1
+background_color = Color(0.5, 0.7, 1, 1)
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+
+[node name="VehicleTest" type="Node3D"]
+script = ExtResource("4")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, -0.75, 0.433013, 0, 10, 0)
+light_energy = 1.5
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_1")
+
+[node name="Ground" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_ground")
+
+[node name="GroundMesh" type="MeshInstance3D" parent="Ground"]
+transform = Transform3D(100, 0, 0, 0, 1, 0, 0, 0, 100, 0, -0.5, 0)
+mesh = BoxMesh.new()
+
+[node name="HondaCRXSi" parent="." instance=ExtResource("1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="RaceHUD" parent="CanvasLayer" instance=ExtResource("2")]
+
+[node name="FreeRoamHUD" parent="CanvasLayer" instance=ExtResource("3")]
+visible = false
+
+[node name="TestControls" type="VBoxContainer" parent="CanvasLayer"]
+offset_left = 800.0
+offset_top = 50.0
+offset_right = 1100.0
+offset_bottom = 400.0
+
+[node name="Title" type="Label" parent="CanvasLayer/TestControls"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "HUD Test Controls"
+
+[node name="HSeparator" type="HSeparator" parent="CanvasLayer/TestControls"]
+layout_mode = 2
+
+[node name="ToggleHUD" type="Button" parent="CanvasLayer/TestControls"]
+layout_mode = 2
+text = "Toggle HUD Mode (Race/Free Roam)"
+
+[node name="RefillNitrous" type="Button" parent="CanvasLayer/TestControls"]
+layout_mode = 2
+text = "Refill Nitrous"
+
+[node name="AddCash" type="Button" parent="CanvasLayer/TestControls"]
+layout_mode = 2
+text = "Add $1000 Cash"
+
+[node name="AddRep" type="Button" parent="CanvasLayer/TestControls"]
+layout_mode = 2
+text = "Add +50 Rep"
+
+[node name="HSeparator2" type="HSeparator" parent="CanvasLayer/TestControls"]
+layout_mode = 2
+
+[node name="StatusLabel" type="Label" parent="CanvasLayer/TestControls"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Status: Initializing..."
+
+[node name="SpeedCheck" type="Label" parent="CanvasLayer/TestControls"]
+layout_mode = 2
+text = "Speed Signal: Not Connected"
+
+[node name="RPMCheck" type="Label" parent="CanvasLayer/TestControls"]
+layout_mode = 2
+text = "RPM Signal: Not Connected"
+
+[node name="GearCheck" type="Label" parent="CanvasLayer/TestControls"]
+layout_mode = 2
+text = "Gear Signal: Not Connected"
+
+[node name="HSeparator3" type="HSeparator" parent="CanvasLayer/TestControls"]
+layout_mode = 2
+
+[node name="Instructions" type="Label" parent="CanvasLayer/TestControls"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Controls:
+W/S - Accelerate/Brake
+A/D - Steer
+Space - Handbrake
+Shift - Nitrous"
+autowrap_mode = 3
+
+[connection signal="pressed" from="CanvasLayer/TestControls/ToggleHUD" to="." method="_on_toggle_hud_pressed"]
+[connection signal="pressed" from="CanvasLayer/TestControls/RefillNitrous" to="." method="_on_refill_nitrous_pressed"]
+[connection signal="pressed" from="CanvasLayer/TestControls/AddCash" to="." method="_on_add_cash_pressed"]
+[connection signal="pressed" from="CanvasLayer/TestControls/AddRep" to="." method="_on_add_rep_pressed"]
