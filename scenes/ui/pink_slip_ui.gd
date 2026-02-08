@@ -176,7 +176,7 @@ func _populate_player_panel(vehicle_id: String) -> void:
 	if _player_speed_label:
 		_player_speed_label.text = "SPD: %.0f" % stats.get("speed", vehicle.base_speed)
 
-	var value := vehicle.calculate_value()
+	var value: int = vehicle.calculate_value()
 	if _player_value_label:
 		_player_value_label.text = "$%s" % _format_number(value)
 
@@ -350,7 +350,7 @@ func _populate_vehicle_selector() -> void:
 	for vehicle in vehicles:
 		if vehicle is VehicleData:
 			var btn := Button.new()
-			var value := vehicle.calculate_value()
+			var value: int = vehicle.calculate_value()
 			btn.text = "%s — $%s" % [vehicle.display_name, _format_number(value)]
 			btn.alignment = HORIZONTAL_ALIGNMENT_LEFT
 
@@ -439,10 +439,10 @@ func _on_confirm_no() -> void:
 
 func _animate_entrance() -> void:
 	## Dramatic entrance animation for the pink slip screen.
-	# Fade in the dark overlay
-	modulate.a = 0.0
+	# Note: CanvasLayer doesn't have modulate property
+	# Animation handled by child Control nodes instead
 	var tween := create_tween()
-	tween.tween_property(self, "modulate:a", 1.0, 0.4).set_ease(Tween.EASE_OUT)
+	# Fade animation would go here if we had a main Control child
 
 	# Slide panels in from sides
 	if _player_panel:

@@ -213,7 +213,7 @@ func _populate_stats(vehicle: VehicleData) -> void:
 	if _speed_label:
 		_speed_label.text = "SPD: %.0f" % stats.get("speed", vehicle.base_speed)
 	if _value_label:
-		var value := vehicle.calculate_value()
+		var value: int = vehicle.calculate_value()
 		_value_label.text = "$%s" % _format_number(value)
 
 
@@ -357,9 +357,8 @@ func _on_continue() -> void:
 
 
 func hide_result() -> void:
-	var tween := create_tween()
-	tween.tween_property(self, "modulate:a", 0.0, 0.3)
-	tween.tween_callback(func(): visible = false; modulate.a = 1.0)
+	# CanvasLayer doesn't have modulate, just hide it
+	visible = false
 
 
 # ---------------------------------------------------------------------------
