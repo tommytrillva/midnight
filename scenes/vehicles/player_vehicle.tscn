@@ -14,7 +14,7 @@ top_radius = 0.33
 bottom_radius = 0.33
 height = 0.2
 
-[node name="PlayerVehicle" type="VehicleBody3D"]
+[node name="PlayerVehicle" type="VehicleBody3D" groups=["player"]]
 mass = 1200.0
 script = ExtResource("1")
 

@@ -186,7 +186,22 @@ func _setup_district_interactions(district_node: Node3D) -> void:
 			route9.body_entered.connect(_on_race_zone_entered)
 			route9.body_exited.connect(_on_race_zone_exited)
 
+	# Setup all RaceTrigger nodes in the RaceEvents group
+	_setup_race_triggers(district_node)
+
 	print("[FreeRoam] Interactions setup for %s" % district_node.name)
+
+
+func _setup_race_triggers(district_node: Node3D) -> void:
+	## Find and setup all RaceTrigger nodes in the district.
+	var race_events := district_node.get_node_or_null("RaceEvents") as Node3D
+	if race_events:
+		for child in race_events.get_children():
+			if child is RaceTrigger:
+				# RaceTrigger handles its own body_entered/exited signals
+				# We just need to track it for the interact action
+				pass
+	print("[FreeRoam] Race triggers setup for %s" % district_node.name)
 
 
 func _setup_dialogue() -> void:
@@ -382,8 +397,39 @@ func _start_available_race() -> void:
 		GameManager.story.start_mission(race_mission_id)
 		return
 
-	# Freeplay race
+	# Check for RaceTrigger in current district
+	var race_trigger := _get_active_race_trigger()
+	if race_trigger:
+		if not race_trigger.can_enter_race():
+			if race_trigger.entry_fee > 0 and GameManager.economy.get_cash() < race_trigger.entry_fee:
+				EventBus.hud_message.emit("Not enough cash! Need $%d" % race_trigger.entry_fee, 3.0)
+			else:
+				EventBus.hud_message.emit("Rep tier too low for this race!", 3.0)
+			return
+
+		# Deduct entry fee
+		if race_trigger.entry_fee > 0:
+			GameManager.economy.spend(race_trigger.entry_fee, "race_entry")
+
+		_launch_race(race_trigger.create_race_data())
+		return
+
+	# Fallback to freeplay race
 	_launch_race(_create_freeplay_race())
+
+
+func _get_active_race_trigger() -> RaceTrigger:
+	## Find the RaceTrigger that the player is currently in.
+	if _current_district_node == null:
+		return null
+
+	var race_events := _current_district_node.get_node_or_null("RaceEvents") as Node3D
+	if race_events:
+		for child in race_events.get_children():
+			if child is RaceTrigger and child.is_player_in_zone():
+				return child
+
+	return null
 
 
 func _create_freeplay_race() -> RaceData:

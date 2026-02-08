@@ -11,96 +11,106 @@ extends VehicleBody3D
 # ── Engine ───────────────────────────────────────────────────────────────────
 @export_group("Engine")
 ## Base engine force per driven wheel (overridden by VehicleData).
-@export var max_engine_force: float = 2500.0
+@export var max_engine_force: float = 3200.0
 ## Brake force fed to VehicleBody3D.brake (rear wheels for RWD).
-@export var max_brake_force: float = 120.0
+@export var max_brake_force: float = 180.0
 ## Passive deceleration force when neither throttle nor brake is held.
-@export var engine_brake_force: float = 12.0
+@export var engine_brake_force: float = 8.0
 ## Fraction of redline where peak torque lives (0.0-1.0).
-@export var torque_peak_frac: float = 0.55
+@export var torque_peak_frac: float = 0.48
 
 # ── Transmission ─────────────────────────────────────────────────────────────
 @export_group("Transmission")
-@export var gear_ratios: Array[float] = [3.4, 2.5, 1.8, 1.4, 1.1, 0.9]
-@export var reverse_ratio: float = -3.2
-@export var final_drive: float = 3.7
+@export var gear_ratios: Array[float] = [3.8, 2.7, 2.0, 1.6, 1.25, 1.0]
+@export var reverse_ratio: float = -3.5
+@export var final_drive: float = 4.1
 ## Duration of the clutch-out dead zone during a shift (seconds).
-@export var shift_time: float = 0.12
+@export var shift_time: float = 0.08
 @export var auto_shift: bool = true
 ## RPM fraction that triggers an auto up-shift.
-@export var shift_up_frac: float = 0.92
+@export var shift_up_frac: float = 0.94
 ## RPM fraction that triggers an auto down-shift.
-@export var shift_down_frac: float = 0.38
+@export var shift_down_frac: float = 0.42
 
 # ── Steering ─────────────────────────────────────────────────────────────────
 @export_group("Steering")
 ## Maximum wheel angle at crawl speed (radians).
-@export var max_steer_angle: float = 0.45
+@export var max_steer_angle: float = 0.52
 ## How fast (rad/s) steering moves toward player input.
-@export var steer_speed: float = 4.5
+@export var steer_speed: float = 7.5
 ## How fast steering centres when input is released.
-@export var steer_return_speed: float = 7.0
+@export var steer_return_speed: float = 9.0
 ## Steering authority retained at top speed (0.3 = 30%).
-@export var high_speed_steer_mult: float = 0.32
+@export var high_speed_steer_mult: float = 0.42
+## Low-speed steering boost multiplier (arcade-style responsiveness).
+@export var low_speed_steer_boost: float = 1.35
+## Speed (km/h) below which low-speed boost applies.
+@export var low_speed_threshold: float = 60.0
 
 # ── Drift ────────────────────────────────────────────────────────────────────
 @export_group("Drift")
 ## Slip angle (degrees) required to enter drift state.
-@export var drift_entry_angle: float = 12.0
+@export var drift_entry_angle: float = 8.5
 ## Minimum speed (km/h) to start or sustain a drift.
-@export var drift_min_speed: float = 25.0
+@export var drift_min_speed: float = 20.0
 ## Rear friction when the handbrake is yanked (initiates slide).
-@export var handbrake_friction: float = 0.9
+@export var handbrake_friction: float = 0.55
 ## Rear friction during sustained drift (higher = tighter arc).
-@export var drift_rear_friction: float = 1.6
+@export var drift_rear_friction: float = 1.4
 ## Front friction during drift (boosted for countersteer authority).
-@export var drift_front_friction: float = 4.5
+@export var drift_front_friction: float = 5.2
 ## Resting rear friction (recovery target after drift).
 @export var normal_rear_friction: float = 4.2
 ## Resting front friction.
 @export var normal_front_friction: float = 3.8
 ## Extra steering responsiveness when countersteering in a drift.
-@export var countersteer_mult: float = 1.5
+@export var countersteer_mult: float = 1.8
 ## Yaw-damping strength during drift (prevents spin, keeps it smooth).
-@export var drift_stability: float = 4.0
+@export var drift_stability: float = 5.5
 ## Additional yaw-damping awarded for proper countersteer input.
-@export var countersteer_stability: float = 3.0
+@export var countersteer_stability: float = 4.5
 ## How much throttle lowers rear friction to widen the drift (0-1).
-@export var throttle_angle_push: float = 0.35
+@export var throttle_angle_push: float = 0.42
 ## Lerp rate for friction dropping into drift / handbrake.
-@export var friction_attack: float = 10.0
+@export var friction_attack: float = 15.0
 ## Lerp rate for friction recovering after drift ends.
-@export var friction_release: float = 3.5
+@export var friction_release: float = 4.5
 ## Slip angle above which the drift becomes a spin-out (score lost).
-@export var spinout_angle: float = 110.0
+@export var spinout_angle: float = 125.0
+## Handbrake weight transfer: lateral force applied to rear for drift initiation.
+@export var handbrake_weight_transfer: float = 850.0
 
 # ── Nitro ────────────────────────────────────────────────────────────────────
 @export_group("Nitro")
 ## Engine-force multiplier while nitro is firing.
-@export var nitro_force_mult: float = 1.6
+@export var nitro_force_mult: float = 2.2
 ## Tank capacity (set to 0 by _apply_vehicle_data if no NOS part).
 @export var nitro_max: float = 100.0
 ## Fuel burned per second while active.
-@export var nitro_drain: float = 28.0
+@export var nitro_drain: float = 22.0
 ## Fuel gained per second while drifting.
-@export var nitro_drift_regen: float = 14.0
+@export var nitro_drift_regen: float = 16.0
 ## Fuel gained per second while drafting another vehicle.
-@export var nitro_draft_regen: float = 8.0
+@export var nitro_draft_regen: float = 10.0
 ## Trickle fuel gain per second (always on).
-@export var nitro_passive_regen: float = 1.5
+@export var nitro_passive_regen: float = 2.0
+## Initial acceleration burst when nitro activates.
+@export var nitro_burst_mult: float = 1.8
+## Duration of nitro activation burst (seconds).
+@export var nitro_burst_duration: float = 0.25
 
 # ── Physics ──────────────────────────────────────────────────────────────────
 @export_group("Physics")
 ## Downforce (N) per km/h above threshold.
-@export var downforce_factor: float = 1.0
+@export var downforce_factor: float = 1.4
 ## Speed threshold (km/h) where downforce starts.
-@export var downforce_start: float = 40.0
+@export var downforce_start: float = 50.0
 ## Traction-control yaw-damping (0 = disabled).
-@export var tc_strength: float = 5.0
+@export var tc_strength: float = 3.5
 ## Yaw rate (rad/s) threshold before TC intervenes (outside drift).
-@export var tc_yaw_limit: float = 3.0
+@export var tc_yaw_limit: float = 3.8
 ## Handbrake brake value sent to VehicleBody3D.
-@export var handbrake_brake: float = 100.0
+@export var handbrake_brake: float = 85.0
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
@@ -120,6 +130,8 @@ var shift_timer: float = 0.0
 var nitro_amount: float = 0.0
 ## True when nitro is actively firing this frame.
 var nitro_active: bool = false
+## Timer for nitro activation burst effect.
+var nitro_burst_timer: float = 0.0
 ## True when handbrake input is held.
 var is_handbraking: bool = false
 ## Angle (degrees) between heading and velocity direction.
@@ -246,9 +258,11 @@ func _read_input() -> void:
 	var wants_nitro := Input.is_action_pressed("nitro")
 	if wants_nitro and nitro_amount > 0.0 and not nitro_active:
 		nitro_active = true
+		nitro_burst_timer = nitro_burst_duration
 		EventBus.nitro_activated.emit(get_instance_id())
 	elif (not wants_nitro or nitro_amount <= 0.0) and nitro_active:
 		nitro_active = false
+		nitro_burst_timer = 0.0
 
 	# Manual shifting (ignored when auto_shift is true, but still wired up)
 	if Input.is_action_just_pressed("shift_up"):
@@ -313,11 +327,10 @@ func _update_shifting(delta: float) -> void:
 
 
 func _get_torque_curve(norm_rpm: float) -> float:
-	## Bell-shaped torque multiplier peaking at torque_peak_frac.
-	## Returns 0.3 .. 1.0 — keeps some power even outside the sweet spot
-	## so the car never feels completely dead at any RPM.
-	var x: float = (norm_rpm - torque_peak_frac) / 0.45
-	return clampf(1.0 - x * x * 0.6, 0.3, 1.0)
+	## Improved torque curve for snappier low-end response.
+	## Returns 0.4 .. 1.0 — broader power band feels more responsive.
+	var x: float = (norm_rpm - torque_peak_frac) / 0.5
+	return clampf(1.0 - x * x * 0.5, 0.4, 1.0)
 
 
 func shift_up() -> void:
@@ -341,9 +354,14 @@ func shift_down() -> void:
 # ═══════════════════════════════════════════════════════════════════════════════
 
 func _apply_steering(delta: float) -> void:
-	# Speed-dependent authority: full at crawl, reduced at vmax
+	# Speed-dependent authority: improved curve for better low-speed response
 	var speed_ratio: float = clampf(current_speed_kmh / maxf(_top_speed_kmh, 1.0), 0.0, 1.0)
-	var speed_steer := lerpf(1.0, high_speed_steer_mult, speed_ratio)
+	var speed_steer := lerpf(1.0, high_speed_steer_mult, speed_ratio * speed_ratio)
+
+	# Low-speed boost for arcade responsiveness
+	if current_speed_kmh < low_speed_threshold:
+		var low_speed_factor: float = 1.0 - (current_speed_kmh / low_speed_threshold)
+		speed_steer *= lerpf(1.0, low_speed_steer_boost, low_speed_factor)
 
 	# Handling stat + skill modifier
 	var handling: float = clampf(_handling_mult * _skill_handling_mult, 0.4, 1.8)
@@ -374,14 +392,14 @@ func _apply_engine_force(delta: float) -> void:
 		engine_force = 0.0
 		return
 
-	# Arcade power curve: quadratic fall-off toward top speed gives a
-	# strong launch that tapers naturally instead of a hard limiter.
+	# Arcade power curve: improved for more exciting acceleration
 	var top := maxf(_top_speed_kmh, 1.0)
 	if nitro_active:
-		top *= 1.15  # nitro lets you push past normal vmax slightly
+		top *= 1.2  # nitro lets you push past normal vmax more
 
 	var speed_ratio: float = clampf(current_speed_kmh / top, 0.0, 1.0)
-	var power_curve: float = maxf(1.0 - speed_ratio * speed_ratio, 0.0)
+	# Softer falloff for better high-speed pulling power
+	var power_curve: float = maxf(1.0 - speed_ratio * speed_ratio * 0.85, 0.0)
 
 	# Torque-band feel from RPM position
 	var max_rpm := 7000.0
@@ -390,20 +408,23 @@ func _apply_engine_force(delta: float) -> void:
 	var norm_rpm: float = clampf(current_rpm / maxf(max_rpm, 1.0), 0.0, 1.0)
 	var torque_mult := _get_torque_curve(norm_rpm)
 
-	# Lower gears multiply torque at the wheel (simple arcade model)
+	# Improved gear multipliers for better power delivery
 	var gear_mult: float = 1.0
 	if current_gear > 0 and current_gear <= gear_ratios.size():
 		var t: float = float(current_gear - 1) / maxf(float(gear_ratios.size() - 1), 1.0)
-		gear_mult = lerpf(1.3, 0.85, t)
+		gear_mult = lerpf(1.5, 0.9, t)
 
 	var force: float = input_throttle * max_engine_force * power_curve * torque_mult * gear_mult
 
 	# Skill speed bonus
 	force *= _skill_speed_mult
 
-	# Nitro
+	# Nitro with burst effect
 	if nitro_active:
-		force *= nitro_force_mult
+		var nitro_mult := nitro_force_mult
+		if nitro_burst_timer > 0.0:
+			nitro_mult += (nitro_burst_mult - nitro_force_mult) * (nitro_burst_timer / nitro_burst_duration)
+		force *= nitro_mult
 
 	# Launch boost (brief burst awarded for holding throttle through countdown)
 	if _launch_boost_timer > 0.0:
@@ -425,20 +446,23 @@ func _apply_braking(_delta: float) -> void:
 
 	if is_handbraking:
 		brake_val = handbrake_brake
+		# Handbrake weight transfer: apply lateral yaw to help initiate drift
+		if current_speed_kmh > drift_min_speed and absf(input_steer) > 0.1:
+			var weight_shift := input_steer * handbrake_weight_transfer * (current_speed_kmh / 100.0)
+			apply_torque(Vector3(0.0, weight_shift * 0.8, 0.0))
 	elif input_brake > 0.05:
 		brake_val = input_brake * max_brake_force
-		# VehicleBody3D.brake only acts on driven (rear) wheels.  Apply a
-		# supplemental central force so front brakes contribute too.
+		# Improved braking force for better stopping power
 		if current_speed_kmh > 2.0:
 			var front_force := -linear_velocity.normalized() \
-				* input_brake * max_brake_force * 8.0
+				* input_brake * max_brake_force * 12.0
 			apply_central_force(front_force)
 	elif input_throttle < 0.05:
 		# Engine braking — gentle drag when coasting
 		brake_val = engine_brake_force
 		if current_speed_kmh > 5.0:
 			apply_central_force(
-				-linear_velocity.normalized() * engine_brake_force * 3.0)
+				-linear_velocity.normalized() * engine_brake_force * 2.5)
 
 	self.brake = brake_val
 
@@ -557,12 +581,17 @@ func _is_countersteering() -> bool:
 # ═══════════════════════════════════════════════════════════════════════════════
 
 func _update_nitro(delta: float) -> void:
+	# Update nitro burst timer
+	if nitro_burst_timer > 0.0:
+		nitro_burst_timer -= delta
+
 	# Drain while firing
 	if nitro_active and nitro_amount > 0.0:
 		nitro_amount -= nitro_drain * delta
 		if nitro_amount <= 0.0:
 			nitro_amount = 0.0
 			nitro_active = false
+			nitro_burst_timer = 0.0
 			EventBus.nitro_depleted.emit(get_instance_id())
 
 	# Regeneration (stacks: passive + drift + drafting)
@@ -611,10 +640,10 @@ func _apply_vehicle_data() -> void:
 
 	var stats := vehicle_data.get_effective_stats()
 
-	# Force / speed / handling from stats
-	max_engine_force = stats.acceleration * 40.0 + stats.hp * 5.0
-	max_brake_force = stats.braking * 2.5 + 30.0
-	_top_speed_kmh = stats.speed * 2.0 + 50.0
+	# Improved force/speed/handling scaling for more exciting feel
+	max_engine_force = stats.acceleration * 50.0 + stats.hp * 6.5
+	max_brake_force = stats.braking * 3.2 + 40.0
+	_top_speed_kmh = stats.speed * 2.3 + 60.0
 	_handling_mult = clampf(stats.handling / 50.0, 0.4, 2.0)
 	mass = stats.weight
 

@@ -1,12 +1,14 @@
-[gd_scene load_steps=29 format=3 uid="uid://downtown"]
+[gd_scene load_steps=51 format=3 uid="uid://downtown"]
 
 [ext_resource type="Script" path="res://src/visual/day_night_cycle.gd" id="day_night_cycle_script"]
+[ext_resource type="Script" path="res://src/world/race_trigger.gd" id="race_trigger_script"]
 
 [sub_resource type="ProceduralSkyMaterial" id="sky_mat"]
-sky_top_color = Color(0.02, 0.01, 0.06, 1)
-sky_horizon_color = Color(0.08, 0.03, 0.15, 1)
-ground_bottom_color = Color(0.02, 0.01, 0.04, 1)
-ground_horizon_color = Color(0.05, 0.02, 0.1, 1)
+sky_top_color = Color(0.01, 0.01, 0.08, 1)
+sky_horizon_color = Color(0.15, 0.05, 0.25, 1)
+ground_bottom_color = Color(0.02, 0.01, 0.05, 1)
+ground_horizon_color = Color(0.08, 0.03, 0.15, 1)
+energy_multiplier = 0.8
 
 [sub_resource type="Sky" id="sky"]
 sky_material = SubResource("sky_mat")
@@ -15,16 +17,87 @@ sky_material = SubResource("sky_mat")
 background_mode = 2
 sky = SubResource("sky")
 ambient_light_source = 1
-ambient_light_color = Color(0.08, 0.05, 0.15, 1)
-ambient_light_energy = 0.3
+ambient_light_color = Color(0.12, 0.08, 0.2, 1)
+ambient_light_energy = 0.4
+tonemap_mode = 2
+tonemap_exposure = 1.1
+tonemap_white = 0.95
+ssr_enabled = true
+ssao_enabled = true
+ssil_enabled = false
+glow_enabled = true
+glow_intensity = 1.2
+glow_strength = 0.9
+glow_bloom = 0.3
+glow_blend_mode = 0
 fog_enabled = true
-fog_light_color = Color(0.05, 0.02, 0.08, 1)
-fog_density = 0.005
-volumetric_fog_enabled = false
+fog_light_color = Color(0.08, 0.04, 0.12, 1)
+fog_density = 0.008
+fog_height = -10.0
+fog_height_density = 0.15
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.02
+volumetric_fog_albedo = Color(0.1, 0.06, 0.15, 1)
+volumetric_fog_emission = Color(0.05, 0.02, 0.08, 1)
+volumetric_fog_emission_energy = 0.5
+adjustment_enabled = true
+adjustment_brightness = 1.05
+adjustment_contrast = 1.08
+adjustment_saturation = 1.15
 
 [sub_resource type="StandardMaterial3D" id="road_mat"]
-albedo_color = Color(0.15, 0.15, 0.18, 1)
-roughness = 0.9
+albedo_color = Color(0.12, 0.12, 0.15, 1)
+metallic = 0.1
+roughness = 0.85
+rim_enabled = true
+rim = 0.05
+rim_tint = 0.5
+
+[sub_resource type="StandardMaterial3D" id="road_line_mat"]
+albedo_color = Color(0.95, 0.9, 0.5, 1)
+emission_enabled = true
+emission = Color(0.8, 0.7, 0.3, 1)
+emission_energy_multiplier = 0.5
+roughness = 0.7
+
+[sub_resource type="StandardMaterial3D" id="start_line_mat"]
+albedo_color = Color(1, 1, 1, 1)
+emission_enabled = true
+emission = Color(0.9, 0.9, 0.9, 1)
+emission_energy_multiplier = 1.2
+roughness = 0.6
+
+[sub_resource type="StandardMaterial3D" id="neon_cyan_mat"]
+albedo_color = Color(0, 1, 1, 1)
+emission_enabled = true
+emission = Color(0, 1, 1, 1)
+emission_energy_multiplier = 3.0
+roughness = 0.3
+metallic = 0.2
+
+[sub_resource type="StandardMaterial3D" id="neon_pink_mat"]
+albedo_color = Color(1, 0.2, 0.8, 1)
+emission_enabled = true
+emission = Color(1, 0.2, 0.8, 1)
+emission_energy_multiplier = 3.0
+roughness = 0.3
+metallic = 0.2
+
+[sub_resource type="StandardMaterial3D" id="neon_purple_mat"]
+albedo_color = Color(0.6, 0.2, 1, 1)
+emission_enabled = true
+emission = Color(0.6, 0.2, 1, 1)
+emission_energy_multiplier = 3.0
+roughness = 0.3
+metallic = 0.2
+
+[sub_resource type="StandardMaterial3D" id="neon_green_mat"]
+albedo_color = Color(0.2, 1, 0.4, 1)
+emission_enabled = true
+emission = Color(0.2, 1, 0.4, 1)
+emission_energy_multiplier = 2.5
+roughness = 0.3
+metallic = 0.2
 
 [node name="Downtown" type="Node3D"]
 
@@ -34,9 +107,14 @@ metadata/_groups = ["world_environment"]
 
 [node name="Moonlight" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.866, -0.25, 0.433, 0, 0.866, 0.5, -0.5, -0.433, 0.75, 0, 50, 0)
-light_color = Color(0.4, 0.45, 0.7, 1)
-light_energy = 0.4
+light_color = Color(0.5, 0.55, 0.8, 1)
+light_energy = 0.6
 shadow_enabled = true
+shadow_bias = 0.02
+shadow_normal_bias = 1.5
+shadow_blur = 2.0
+directional_shadow_mode = 2
+directional_shadow_max_distance = 200.0
 metadata/_groups = ["sun_light"]
 
 [node name="Ground" type="StaticBody3D" parent="."]
@@ -123,56 +201,252 @@ material_override = SubResource("road_mat")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -200, 0.02, 0)
 shape = SubResource("BoxShape_loop_ew")
 
+[node name="SideStreet1" type="StaticBody3D" parent="Roads"]
+collision_layer = 2
+
+[node name="Mesh" type="MeshInstance3D" parent="Roads/SideStreet1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0.02, 0)
+mesh = SubResource("BoxMesh_side_street")
+material_override = SubResource("road_mat")
+
+[node name="Collision" type="CollisionShape3D" parent="Roads/SideStreet1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0.02, 0)
+shape = SubResource("BoxShape_side_street")
+
+[node name="SideStreet2" type="StaticBody3D" parent="Roads"]
+collision_layer = 2
+
+[node name="Mesh" type="MeshInstance3D" parent="Roads/SideStreet2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50, 0.02, 0)
+mesh = SubResource("BoxMesh_side_street")
+material_override = SubResource("road_mat")
+
+[node name="Collision" type="CollisionShape3D" parent="Roads/SideStreet2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50, 0.02, 0)
+shape = SubResource("BoxShape_side_street")
+
+[node name="BackAlley1" type="StaticBody3D" parent="Roads"]
+collision_layer = 2
+
+[node name="Mesh" type="MeshInstance3D" parent="Roads/BackAlley1"]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 0, 0.02, 75)
+mesh = SubResource("BoxMesh_alley")
+material_override = SubResource("road_mat")
+
+[node name="Collision" type="CollisionShape3D" parent="Roads/BackAlley1"]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 0, 0.02, 75)
+shape = SubResource("BoxShape_alley")
+
+[node name="BackAlley2" type="StaticBody3D" parent="Roads"]
+collision_layer = 2
+
+[node name="Mesh" type="MeshInstance3D" parent="Roads/BackAlley2"]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 0, 0.02, -75)
+mesh = SubResource("BoxMesh_alley")
+material_override = SubResource("road_mat")
+
+[node name="Collision" type="CollisionShape3D" parent="Roads/BackAlley2"]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 0, 0.02, -75)
+shape = SubResource("BoxShape_alley")
+
 [node name="StreetLights" type="Node3D" parent="."]
 
 [node name="Light1" type="OmniLight3D" parent="StreetLights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 8, 30)
-light_color = Color(1, 0.7, 0.4, 1)
-light_energy = 2.0
-omni_range = 25.0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 9, 50)
+light_color = Color(1, 0.75, 0.45, 1)
+light_energy = 2.5
+omni_range = 30.0
+shadow_enabled = true
+omni_shadow_mode = 1
 metadata/_groups = ["street_lights"]
 
 [node name="Light2" type="OmniLight3D" parent="StreetLights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 8, 80)
-light_color = Color(1, 0.7, 0.4, 1)
-light_energy = 2.0
-omni_range = 25.0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 9, 100)
+light_color = Color(1, 0.75, 0.45, 1)
+light_energy = 2.5
+omni_range = 30.0
+shadow_enabled = true
+omni_shadow_mode = 1
 metadata/_groups = ["street_lights"]
 
 [node name="Light3" type="OmniLight3D" parent="StreetLights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 8, 130)
-light_color = Color(1, 0.7, 0.4, 1)
-light_energy = 2.0
-omni_range = 25.0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 9, 150)
+light_color = Color(1, 0.75, 0.45, 1)
+light_energy = 2.5
+omni_range = 30.0
+shadow_enabled = true
+omni_shadow_mode = 1
 metadata/_groups = ["street_lights"]
 
 [node name="Light4" type="OmniLight3D" parent="StreetLights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 8, -30)
-light_color = Color(1, 0.7, 0.4, 1)
-light_energy = 2.0
-omni_range = 25.0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 9, -50)
+light_color = Color(1, 0.75, 0.45, 1)
+light_energy = 2.5
+omni_range = 30.0
+shadow_enabled = true
+omni_shadow_mode = 1
 metadata/_groups = ["street_lights"]
 
-[node name="NeonSign1" type="OmniLight3D" parent="StreetLights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 6, 50)
-light_color = Color(1, 0, 0.4, 1)
-light_energy = 3.0
-omni_range = 15.0
+[node name="Light5" type="OmniLight3D" parent="StreetLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 9, -100)
+light_color = Color(1, 0.75, 0.45, 1)
+light_energy = 2.5
+omni_range = 30.0
+shadow_enabled = true
+omni_shadow_mode = 1
+metadata/_groups = ["street_lights"]
+
+[node name="Light6" type="OmniLight3D" parent="StreetLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 9, 0)
+light_color = Color(1, 0.75, 0.45, 1)
+light_energy = 2.5
+omni_range = 30.0
+shadow_enabled = true
+omni_shadow_mode = 1
+metadata/_groups = ["street_lights"]
+
+[node name="Light7" type="OmniLight3D" parent="StreetLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 100, 9, 10)
+light_color = Color(1, 0.75, 0.45, 1)
+light_energy = 2.5
+omni_range = 30.0
+shadow_enabled = true
+omni_shadow_mode = 1
+metadata/_groups = ["street_lights"]
+
+[node name="Light8" type="OmniLight3D" parent="StreetLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -100, 9, -10)
+light_color = Color(1, 0.75, 0.45, 1)
+light_energy = 2.5
+omni_range = 30.0
+shadow_enabled = true
+omni_shadow_mode = 1
+metadata/_groups = ["street_lights"]
+
+[node name="Light9" type="OmniLight3D" parent="StreetLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 150, 9, 10)
+light_color = Color(1, 0.75, 0.45, 1)
+light_energy = 2.5
+omni_range = 30.0
+shadow_enabled = true
+omni_shadow_mode = 1
+metadata/_groups = ["street_lights"]
+
+[node name="Light10" type="OmniLight3D" parent="StreetLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -150, 9, -10)
+light_color = Color(1, 0.75, 0.45, 1)
+light_energy = 2.5
+omni_range = 30.0
+shadow_enabled = true
+omni_shadow_mode = 1
+metadata/_groups = ["street_lights"]
+
+[node name="NeonCyan1" type="OmniLight3D" parent="StreetLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 7, 50)
+light_color = Color(0, 1, 1, 1)
+light_energy = 4.0
+omni_range = 18.0
 metadata/_groups = ["neon_lights"]
 
-[node name="NeonSign2" type="OmniLight3D" parent="StreetLights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 6, 100)
-light_color = Color(0, 1, 0.8, 1)
-light_energy = 3.0
-omni_range = 15.0
+[node name="NeonPink1" type="OmniLight3D" parent="StreetLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 7, 100)
+light_color = Color(1, 0.2, 0.8, 1)
+light_energy = 4.0
+omni_range = 18.0
 metadata/_groups = ["neon_lights"]
 
-[node name="NeonSign3" type="OmniLight3D" parent="StreetLights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 5, -50)
-light_color = Color(0.4, 0, 1, 1)
-light_energy = 3.0
-omni_range = 15.0
+[node name="NeonPurple1" type="OmniLight3D" parent="StreetLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 6, -50)
+light_color = Color(0.6, 0.2, 1, 1)
+light_energy = 4.0
+omni_range = 18.0
 metadata/_groups = ["neon_lights"]
+
+[node name="NeonCyan2" type="OmniLight3D" parent="StreetLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 8, -80)
+light_color = Color(0, 1, 1, 1)
+light_energy = 4.0
+omni_range = 18.0
+metadata/_groups = ["neon_lights"]
+
+[node name="NeonPink2" type="OmniLight3D" parent="StreetLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 9, 120)
+light_color = Color(1, 0.2, 0.8, 1)
+light_energy = 4.0
+omni_range = 18.0
+metadata/_groups = ["neon_lights"]
+
+[node name="NeonGreen1" type="OmniLight3D" parent="StreetLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 7, 20)
+light_color = Color(0.2, 1, 0.4, 1)
+light_energy = 3.5
+omni_range = 16.0
+metadata/_groups = ["neon_lights"]
+
+[node name="NeonPurple2" type="OmniLight3D" parent="StreetLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 8, -120)
+light_color = Color(0.6, 0.2, 1, 1)
+light_energy = 4.0
+omni_range = 18.0
+metadata/_groups = ["neon_lights"]
+
+[node name="NeonCyan3" type="OmniLight3D" parent="StreetLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35, 7, 150)
+light_color = Color(0, 1, 1, 1)
+light_energy = 4.0
+omni_range = 18.0
+metadata/_groups = ["neon_lights"]
+
+[node name="AccentLight1" type="OmniLight3D" parent="StreetLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 100, 12, 100)
+light_color = Color(0.3, 0.2, 0.5, 1)
+light_energy = 2.0
+omni_range = 40.0
+metadata/_groups = ["accent_lights"]
+
+[node name="AccentLight2" type="OmniLight3D" parent="StreetLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -100, 12, -100)
+light_color = Color(0.5, 0.3, 0.4, 1)
+light_energy = 2.0
+omni_range = 40.0
+metadata/_groups = ["accent_lights"]
+
+[node name="AccentLight3" type="OmniLight3D" parent="StreetLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -100, 12, 100)
+light_color = Color(0.2, 0.4, 0.5, 1)
+light_energy = 2.0
+omni_range = 40.0
+metadata/_groups = ["accent_lights"]
+
+[node name="AccentLight4" type="OmniLight3D" parent="StreetLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 100, 12, -100)
+light_color = Color(0.5, 0.2, 0.3, 1)
+light_energy = 2.0
+omni_range = 40.0
+metadata/_groups = ["accent_lights"]
+
+[node name="FillLight1" type="OmniLight3D" parent="StreetLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25, 0)
+light_color = Color(0.15, 0.12, 0.25, 1)
+light_energy = 1.5
+omni_range = 100.0
+metadata/_groups = ["fill_lights"]
+
+[node name="RimLight1" type="SpotLight3D" parent="StreetLights"]
+transform = Transform3D(0.707, -0.5, 0.5, 0, 0.707, 0.707, -0.707, -0.5, 0.5, 150, 30, 150)
+light_color = Color(0.6, 0.5, 0.8, 1)
+light_energy = 1.5
+spot_range = 80.0
+spot_angle = 45.0
+metadata/_groups = ["rim_lights"]
+
+[node name="RimLight2" type="SpotLight3D" parent="StreetLights"]
+transform = Transform3D(-0.707, -0.5, -0.5, 0, 0.707, -0.707, 0.707, -0.5, -0.5, -150, 30, -150)
+light_color = Color(0.5, 0.6, 0.8, 1)
+light_energy = 1.5
+spot_range = 80.0
+spot_angle = 45.0
+metadata/_groups = ["rim_lights"]
 
 [node name="DayNightCycle" type="Node" parent="."]
 script = ExtResource("day_night_cycle_script")
@@ -191,6 +465,11 @@ material_override = SubResource("building_mat1")
 [node name="Collision" type="CollisionShape3D" parent="Buildings/Block1"]
 shape = SubResource("BoxShape_building1")
 
+[node name="NeonSign" type="MeshInstance3D" parent="Buildings/Block1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 5, 0)
+mesh = SubResource("BoxMesh_neon_sign")
+material_override = SubResource("neon_cyan_mat")
+
 [node name="Block2" type="StaticBody3D" parent="Buildings"]
 collision_layer = 2
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 15, 80)
@@ -201,6 +480,11 @@ material_override = SubResource("building_mat2")
 
 [node name="Collision" type="CollisionShape3D" parent="Buildings/Block2"]
 shape = SubResource("BoxShape_building2")
+
+[node name="NeonSign" type="MeshInstance3D" parent="Buildings/Block2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 8, 0)
+mesh = SubResource("BoxMesh_neon_sign")
+material_override = SubResource("neon_pink_mat")
 
 [node name="Block3" type="StaticBody3D" parent="Buildings"]
 collision_layer = 2
@@ -213,6 +497,11 @@ material_override = SubResource("building_mat1")
 [node name="Collision" type="CollisionShape3D" parent="Buildings/Block3"]
 shape = SubResource("BoxShape_building3")
 
+[node name="NeonSign" type="MeshInstance3D" parent="Buildings/Block3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 3, 0)
+mesh = SubResource("BoxMesh_neon_sign")
+material_override = SubResource("neon_purple_mat")
+
 [node name="Block4" type="StaticBody3D" parent="Buildings"]
 collision_layer = 2
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 12, 0)
@@ -223,6 +512,257 @@ material_override = SubResource("building_mat2")
 
 [node name="Collision" type="CollisionShape3D" parent="Buildings/Block4"]
 shape = SubResource("BoxShape_building4")
+
+[node name="NeonSign" type="MeshInstance3D" parent="Buildings/Block4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 6, 0)
+mesh = SubResource("BoxMesh_neon_sign")
+material_override = SubResource("neon_green_mat")
+
+[node name="Block5" type="StaticBody3D" parent="Buildings"]
+collision_layer = 2
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 18, 120)
+
+[node name="Mesh" type="MeshInstance3D" parent="Buildings/Block5"]
+mesh = SubResource("BoxMesh_building5")
+material_override = SubResource("building_mat1")
+
+[node name="Collision" type="CollisionShape3D" parent="Buildings/Block5"]
+shape = SubResource("BoxShape_building5")
+
+[node name="NeonSign" type="MeshInstance3D" parent="Buildings/Block5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 10, 0)
+mesh = SubResource("BoxMesh_neon_sign")
+material_override = SubResource("neon_pink_mat")
+
+[node name="Block6" type="StaticBody3D" parent="Buildings"]
+collision_layer = 2
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 14, -120)
+
+[node name="Mesh" type="MeshInstance3D" parent="Buildings/Block6"]
+mesh = SubResource("BoxMesh_building6")
+material_override = SubResource("building_mat2")
+
+[node name="Collision" type="CollisionShape3D" parent="Buildings/Block6"]
+shape = SubResource("BoxShape_building6")
+
+[node name="NeonSign" type="MeshInstance3D" parent="Buildings/Block6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 7, 0)
+mesh = SubResource("BoxMesh_neon_sign")
+material_override = SubResource("neon_cyan_mat")
+
+[node name="Block7" type="StaticBody3D" parent="Buildings"]
+collision_layer = 2
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 11, -80)
+
+[node name="Mesh" type="MeshInstance3D" parent="Buildings/Block7"]
+mesh = SubResource("BoxMesh_building7")
+material_override = SubResource("building_mat1")
+
+[node name="Collision" type="CollisionShape3D" parent="Buildings/Block7"]
+shape = SubResource("BoxShape_building7")
+
+[node name="NeonSign" type="MeshInstance3D" parent="Buildings/Block7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 4, 0)
+mesh = SubResource("BoxMesh_neon_sign")
+material_override = SubResource("neon_purple_mat")
+
+[node name="Block8" type="StaticBody3D" parent="Buildings"]
+collision_layer = 2
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50, 16, 150)
+
+[node name="Mesh" type="MeshInstance3D" parent="Buildings/Block8"]
+mesh = SubResource("BoxMesh_building8")
+material_override = SubResource("building_mat2")
+
+[node name="Collision" type="CollisionShape3D" parent="Buildings/Block8"]
+shape = SubResource("BoxShape_building8")
+
+[node name="NeonSign" type="MeshInstance3D" parent="Buildings/Block8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 9, 0)
+mesh = SubResource("BoxMesh_neon_sign")
+material_override = SubResource("neon_cyan_mat")
+
+[node name="RoadMarkings" type="Node3D" parent="."]
+
+[node name="CenterLine1" type="MeshInstance3D" parent="RoadMarkings"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.03, 0)
+mesh = SubResource("BoxMesh_center_line")
+material_override = SubResource("road_line_mat")
+
+[node name="CenterLine2" type="MeshInstance3D" parent="RoadMarkings"]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 0, 0.03, 0)
+mesh = SubResource("BoxMesh_center_line")
+material_override = SubResource("road_line_mat")
+
+[node name="StartLine" type="MeshInstance3D" parent="RoadMarkings"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.04, -18)
+mesh = SubResource("BoxMesh_start_line")
+material_override = SubResource("start_line_mat")
+
+[node name="Arrow1" type="MeshInstance3D" parent="RoadMarkings"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.03, 100)
+mesh = SubResource("BoxMesh_arrow")
+material_override = SubResource("road_line_mat")
+
+[node name="Arrow2" type="MeshInstance3D" parent="RoadMarkings"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.03, -100)
+mesh = SubResource("BoxMesh_arrow")
+material_override = SubResource("road_line_mat")
+
+[node name="Puddles" type="Node3D" parent="."]
+
+[node name="Puddle1" type="MeshInstance3D" parent="Puddles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.025, 30)
+mesh = SubResource("BoxMesh_puddle")
+material_override = SubResource("puddle_mat")
+
+[node name="Puddle2" type="MeshInstance3D" parent="Puddles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.025, 90)
+mesh = SubResource("BoxMesh_puddle")
+material_override = SubResource("puddle_mat")
+
+[node name="Puddle3" type="MeshInstance3D" parent="Puddles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0.025, -40)
+mesh = SubResource("BoxMesh_puddle")
+material_override = SubResource("puddle_mat")
+
+[node name="Puddle4" type="MeshInstance3D" parent="Puddles"]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 80, 0.025, 5)
+mesh = SubResource("BoxMesh_puddle")
+material_override = SubResource("puddle_mat")
+
+[node name="StreetProps" type="Node3D" parent="."]
+
+[node name="TrafficLight1" type="StaticBody3D" parent="StreetProps"]
+collision_layer = 2
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
+
+[node name="Pole" type="MeshInstance3D" parent="StreetProps/TrafficLight1"]
+mesh = SubResource("BoxMesh_pole")
+material_override = SubResource("prop_mat")
+
+[node name="Light" type="MeshInstance3D" parent="StreetProps/TrafficLight1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5, 0)
+mesh = SubResource("BoxMesh_traffic_light")
+material_override = SubResource("neon_green_mat")
+
+[node name="Collision" type="CollisionShape3D" parent="StreetProps/TrafficLight1"]
+shape = SubResource("BoxShape_pole")
+
+[node name="TrafficLight2" type="StaticBody3D" parent="StreetProps"]
+collision_layer = 2
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)
+
+[node name="Pole" type="MeshInstance3D" parent="StreetProps/TrafficLight2"]
+mesh = SubResource("BoxMesh_pole")
+material_override = SubResource("prop_mat")
+
+[node name="Light" type="MeshInstance3D" parent="StreetProps/TrafficLight2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5, 0)
+mesh = SubResource("BoxMesh_traffic_light")
+material_override = SubResource("neon_green_mat")
+
+[node name="Collision" type="CollisionShape3D" parent="StreetProps/TrafficLight2"]
+shape = SubResource("BoxShape_pole")
+
+[node name="Barrier1" type="StaticBody3D" parent="StreetProps"]
+collision_layer = 2
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0.5, 40)
+
+[node name="Mesh" type="MeshInstance3D" parent="StreetProps/Barrier1"]
+mesh = SubResource("BoxMesh_barrier")
+material_override = SubResource("barrier_mat")
+
+[node name="Collision" type="CollisionShape3D" parent="StreetProps/Barrier1"]
+shape = SubResource("BoxShape_barrier")
+
+[node name="Barrier2" type="StaticBody3D" parent="StreetProps"]
+collision_layer = 2
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0.5, 60)
+
+[node name="Mesh" type="MeshInstance3D" parent="StreetProps/Barrier2"]
+mesh = SubResource("BoxMesh_barrier")
+material_override = SubResource("barrier_mat")
+
+[node name="Collision" type="CollisionShape3D" parent="StreetProps/Barrier2"]
+shape = SubResource("BoxShape_barrier")
+
+[node name="ParkedCar1" type="StaticBody3D" parent="StreetProps"]
+collision_layer = 2
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 1, 75)
+
+[node name="Body" type="MeshInstance3D" parent="StreetProps/ParkedCar1"]
+mesh = SubResource("BoxMesh_car_body")
+material_override = SubResource("car_mat1")
+
+[node name="Collision" type="CollisionShape3D" parent="StreetProps/ParkedCar1"]
+shape = SubResource("BoxShape_car")
+
+[node name="ParkedCar2" type="StaticBody3D" parent="StreetProps"]
+collision_layer = 2
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 1, 110)
+
+[node name="Body" type="MeshInstance3D" parent="StreetProps/ParkedCar2"]
+mesh = SubResource("BoxMesh_car_body")
+material_override = SubResource("car_mat2")
+
+[node name="Collision" type="CollisionShape3D" parent="StreetProps/ParkedCar2"]
+shape = SubResource("BoxShape_car")
+
+[node name="ParkedCar3" type="StaticBody3D" parent="StreetProps"]
+collision_layer = 2
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 1, -70)
+
+[node name="Body" type="MeshInstance3D" parent="StreetProps/ParkedCar3"]
+mesh = SubResource("BoxMesh_car_body")
+material_override = SubResource("car_mat1")
+
+[node name="Collision" type="CollisionShape3D" parent="StreetProps/ParkedCar3"]
+shape = SubResource("BoxShape_car")
+
+[node name="LampPost1" type="StaticBody3D" parent="StreetProps"]
+collision_layer = 2
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 50)
+
+[node name="Pole" type="MeshInstance3D" parent="StreetProps/LampPost1"]
+mesh = SubResource("BoxMesh_lamp_pole")
+material_override = SubResource("prop_mat")
+
+[node name="Collision" type="CollisionShape3D" parent="StreetProps/LampPost1"]
+shape = SubResource("BoxShape_lamp_pole")
+
+[node name="LampPost2" type="StaticBody3D" parent="StreetProps"]
+collision_layer = 2
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 100)
+
+[node name="Pole" type="MeshInstance3D" parent="StreetProps/LampPost2"]
+mesh = SubResource("BoxMesh_lamp_pole")
+material_override = SubResource("prop_mat")
+
+[node name="Collision" type="CollisionShape3D" parent="StreetProps/LampPost2"]
+shape = SubResource("BoxShape_lamp_pole")
+
+[node name="LampPost3" type="StaticBody3D" parent="StreetProps"]
+collision_layer = 2
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 150)
+
+[node name="Pole" type="MeshInstance3D" parent="StreetProps/LampPost3"]
+mesh = SubResource("BoxMesh_lamp_pole")
+material_override = SubResource("prop_mat")
+
+[node name="Collision" type="CollisionShape3D" parent="StreetProps/LampPost3"]
+shape = SubResource("BoxShape_lamp_pole")
+
+[node name="LampPost4" type="StaticBody3D" parent="StreetProps"]
+collision_layer = 2
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -50)
+
+[node name="Pole" type="MeshInstance3D" parent="StreetProps/LampPost4"]
+mesh = SubResource("BoxMesh_lamp_pole")
+material_override = SubResource("prop_mat")
+
+[node name="Collision" type="CollisionShape3D" parent="StreetProps/LampPost4"]
+shape = SubResource("BoxShape_lamp_pole")
 
 [node name="InteractionPoints" type="Node3D" parent="."]
 
@@ -253,6 +793,62 @@ text = "RACE"
 font_size = 48
 outline_size = 4
 modulate = Color(0, 1, 0.8, 1)
+
+[node name="RaceEvents" type="Node3D" parent="."]
+
+[node name="HarborSprintTrigger" type="Area3D" parent="RaceEvents"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -180, 0.5, 0)
+collision_layer = 32
+script = ExtResource("race_trigger_script")
+race_name = "Harbor Sprint"
+race_type = 0
+track_scene_path = "res://scenes/racing/harbor_sprint.tscn"
+entry_fee = 500
+base_payout = 1500
+lap_count = 1
+ai_count = 5
+required_rep_tier = 0
+marker_color = Color(0, 1, 1, 1)
+label_text = "HARBOR SPRINT - $500 Entry"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RaceEvents/HarborSprintTrigger"]
+shape = SubResource("BoxShape_trigger")
+
+[node name="IndustrialCircuitTrigger" type="Area3D" parent="RaceEvents"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 180, 0.5, 0)
+collision_layer = 32
+script = ExtResource("race_trigger_script")
+race_name = "Industrial Circuit"
+race_type = 1
+track_scene_path = "res://scenes/racing/industrial_circuit.tscn"
+entry_fee = 750
+base_payout = 2000
+lap_count = 3
+ai_count = 4
+required_rep_tier = 0
+marker_color = Color(1, 0.5, 0, 1)
+label_text = "INDUSTRIAL CIRCUIT - 3 Laps"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RaceEvents/IndustrialCircuitTrigger"]
+shape = SubResource("BoxShape_trigger")
+
+[node name="DowntownDriftTrigger" type="Area3D" parent="RaceEvents"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -180)
+collision_layer = 32
+script = ExtResource("race_trigger_script")
+race_name = "Drift Challenge"
+race_type = 5
+track_scene_path = "res://scenes/racing/downtown_drift.tscn"
+entry_fee = 300
+base_payout = 1200
+lap_count = 1
+ai_count = 3
+required_rep_tier = 0
+marker_color = Color(0.8, 0.2, 1, 1)
+label_text = "DRIFT CHALLENGE"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RaceEvents/DowntownDriftTrigger"]
+shape = SubResource("BoxShape_trigger")
 
 [node name="PlayerSpawn" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -317,8 +913,10 @@ modulate = Color(0.4, 0.8, 1.0, 1)
 size = Vector2(600, 600)
 
 [sub_resource type="StandardMaterial3D" id="ground_mat"]
-albedo_color = Color(0.08, 0.06, 0.1, 1)
-roughness = 1.0
+albedo_color = Color(0.06, 0.05, 0.08, 1)
+roughness = 0.95
+ao_enabled = true
+ao_light_affect = 0.5
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_ground"]
 
@@ -354,7 +952,11 @@ size = Vector3(15, 20, 25)
 
 [sub_resource type="StandardMaterial3D" id="building_mat1"]
 albedo_color = Color(0.12, 0.1, 0.15, 1)
-roughness = 0.8
+metallic = 0.1
+roughness = 0.75
+rim_enabled = true
+rim = 0.03
+rim_tint = 0.4
 
 [sub_resource type="BoxMesh" id="BoxMesh_building2"]
 size = Vector3(20, 30, 20)
@@ -364,7 +966,11 @@ size = Vector3(20, 30, 20)
 
 [sub_resource type="StandardMaterial3D" id="building_mat2"]
 albedo_color = Color(0.08, 0.06, 0.12, 1)
+metallic = 0.15
 roughness = 0.7
+rim_enabled = true
+rim = 0.03
+rim_tint = 0.4
 
 [sub_resource type="BoxMesh" id="BoxMesh_building3"]
 size = Vector3(18, 16, 30)
@@ -383,3 +989,110 @@ size = Vector3(10, 4, 10)
 
 [sub_resource type="BoxShape3D" id="BoxShape_transition"]
 size = Vector3(20, 5, 20)
+
+[sub_resource type="BoxMesh" id="BoxMesh_neon_sign"]
+size = Vector3(0.5, 2, 4)
+
+[sub_resource type="BoxMesh" id="BoxMesh_building5"]
+size = Vector3(26, 36, 22)
+
+[sub_resource type="BoxShape3D" id="BoxShape_building5"]
+size = Vector3(26, 36, 22)
+
+[sub_resource type="BoxMesh" id="BoxMesh_building6"]
+size = Vector3(22, 28, 24)
+
+[sub_resource type="BoxShape3D" id="BoxShape_building6"]
+size = Vector3(22, 28, 24)
+
+[sub_resource type="BoxMesh" id="BoxMesh_building7"]
+size = Vector3(18, 22, 20)
+
+[sub_resource type="BoxShape3D" id="BoxShape_building7"]
+size = Vector3(18, 22, 20)
+
+[sub_resource type="BoxMesh" id="BoxMesh_building8"]
+size = Vector3(20, 32, 25)
+
+[sub_resource type="BoxShape3D" id="BoxShape_building8"]
+size = Vector3(20, 32, 25)
+
+[sub_resource type="BoxMesh" id="BoxMesh_center_line"]
+size = Vector3(0.3, 0.02, 500)
+
+[sub_resource type="BoxMesh" id="BoxMesh_start_line"]
+size = Vector3(12, 0.02, 0.8)
+
+[sub_resource type="BoxMesh" id="BoxMesh_arrow"]
+size = Vector3(2, 0.02, 3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_pole"]
+size = Vector3(0.3, 5, 0.3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_traffic_light"]
+size = Vector3(0.6, 0.8, 0.4)
+
+[sub_resource type="BoxShape3D" id="BoxShape_pole"]
+size = Vector3(0.3, 5, 0.3)
+
+[sub_resource type="StandardMaterial3D" id="prop_mat"]
+albedo_color = Color(0.25, 0.25, 0.25, 1)
+metallic = 0.3
+roughness = 0.7
+
+[sub_resource type="BoxMesh" id="BoxMesh_barrier"]
+size = Vector3(0.2, 1, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape_barrier"]
+size = Vector3(0.2, 1, 4)
+
+[sub_resource type="StandardMaterial3D" id="barrier_mat"]
+albedo_color = Color(1, 0.8, 0, 1)
+emission_enabled = true
+emission = Color(0.8, 0.6, 0, 1)
+emission_energy_multiplier = 0.8
+roughness = 0.6
+
+[sub_resource type="BoxMesh" id="BoxMesh_car_body"]
+size = Vector3(2, 1.5, 4.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape_car"]
+size = Vector3(2, 1.5, 4.5)
+
+[sub_resource type="StandardMaterial3D" id="car_mat1"]
+albedo_color = Color(0.15, 0.15, 0.2, 1)
+metallic = 0.8
+roughness = 0.3
+
+[sub_resource type="StandardMaterial3D" id="car_mat2"]
+albedo_color = Color(0.3, 0.1, 0.1, 1)
+metallic = 0.8
+roughness = 0.3
+
+[sub_resource type="BoxMesh" id="BoxMesh_lamp_pole"]
+size = Vector3(0.25, 9, 0.25)
+
+[sub_resource type="BoxShape3D" id="BoxShape_lamp_pole"]
+size = Vector3(0.25, 9, 0.25)
+
+[sub_resource type="BoxMesh" id="BoxMesh_side_street"]
+size = Vector3(10, 0.05, 300)
+
+[sub_resource type="BoxShape3D" id="BoxShape_side_street"]
+size = Vector3(10, 0.05, 300)
+
+[sub_resource type="BoxMesh" id="BoxMesh_alley"]
+size = Vector3(6, 0.05, 120)
+
+[sub_resource type="BoxShape3D" id="BoxShape_alley"]
+size = Vector3(6, 0.05, 120)
+
+[sub_resource type="BoxMesh" id="BoxMesh_puddle"]
+size = Vector3(3, 0.01, 4)
+
+[sub_resource type="StandardMaterial3D" id="puddle_mat"]
+albedo_color = Color(0.08, 0.08, 0.12, 0.8)
+metallic = 0.95
+roughness = 0.05
+transparency = 1
+blend_mode = 1
