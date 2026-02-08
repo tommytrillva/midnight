@@ -231,7 +231,7 @@ func _apply_racer_color() -> void:
 	var mesh := get_node_or_null("MeshInstance3D") as MeshInstance3D
 	if mesh == null:
 		return
-	var idx := (racer_id - 1) % SLOT_COLORS.size()
+	var idx: int = (racer_id - 1) % SLOT_COLORS.size()
 	var mat := StandardMaterial3D.new()
 	mat.albedo_color = SLOT_COLORS[idx]
 	mat.roughness = 0.35
@@ -252,7 +252,7 @@ func _poll_player_progress() -> void:
 func _update_rubber_banding() -> void:
 	## Adjust _speed_multiplier so the AI speeds up when behind and eases off
 	## when ahead. Strength is scaled by difficulty (easier = stronger band).
-	var gap := _player_progress - _progress
+	var gap: float = _player_progress - _progress
 	if absf(gap) < 0.02:
 		_speed_multiplier = 1.0
 	elif gap > 0.0:
@@ -267,14 +267,14 @@ func _update_rubber_banding() -> void:
 func _calculate_target_speed() -> void:
 	## Determine the ideal speed considering rubber banding, corners, and
 	## natural variation.
-	var base := _max_speed * _speed_multiplier
+	var base: float = _max_speed * _speed_multiplier
 
 	# Scale down for upcoming curvature.
 	var corner_factor := _detect_curvature_ahead()
-	var cornering_speed := base * corner_factor
+	var cornering_speed: float = base * corner_factor
 
 	# Natural per-racer speed oscillation so AI doesn't feel robotic.
-	var noise := sinf(
+	var noise := sin(
 		Time.get_ticks_msec() * 0.001 + float(racer_id) * 2.71
 	) * _speed_noise_amp
 
@@ -293,8 +293,8 @@ func _detect_curvature_ahead() -> float:
 	var prev_dir := Vector3.ZERO
 
 	for i in range(CURVE_SAMPLE_COUNT + 1):
-		var ofs_a := base_ofs + float(i) * CURVE_SAMPLE_SPACING
-		var ofs_b := ofs_a + CURVE_SAMPLE_SPACING
+		var ofs_a: float = base_ofs + float(i) * CURVE_SAMPLE_SPACING
+		var ofs_b: float = ofs_a + CURVE_SAMPLE_SPACING
 
 		ofs_a = _wrap_or_clamp_offset(ofs_a)
 		ofs_b = _wrap_or_clamp_offset(ofs_b)
@@ -302,7 +302,7 @@ func _detect_curvature_ahead() -> float:
 		var pa := path.curve.sample_baked(ofs_a)
 		var pb := path.curve.sample_baked(ofs_b)
 
-		var seg_dir := pb - pa
+		var seg_dir: Vector3 = pb - pa
 		seg_dir.y = 0.0
 		if seg_dir.length_squared() < 0.001:
 			continue
@@ -316,7 +316,7 @@ func _detect_curvature_ahead() -> float:
 
 	# Map worst detected angle to a 0-1 sharpness value.  Angles above
 	# ~35 degrees between 5 m segments are treated as maximum sharpness.
-	var sharpness := clampf(worst_angle / deg_to_rad(35.0), 0.0, 1.0)
+	var sharpness: float = clampf(worst_angle / deg_to_rad(35.0), 0.0, 1.0)
 	return lerpf(1.0, _corner_min_speed, sharpness)
 
 
@@ -326,7 +326,7 @@ func _apply_reaction_delay(delta: float) -> void:
 	if _reaction_delay < 0.001:
 		_delayed_speed = _target_speed
 		return
-	var rate := 1.0 / maxf(_reaction_delay, 0.01)
+	var rate: float = 1.0 / maxf(_reaction_delay, 0.01)
 	_delayed_speed = lerpf(_delayed_speed, _target_speed, rate * delta)
 
 
@@ -352,7 +352,7 @@ func _advance_path_offset(delta: float) -> void:
 	# Compute overall progress [0, 1] for RaceManager position sorting.
 	if _path_length > 0.0:
 		if _is_circuit and _lap_count > 0:
-			var total_dist := _path_length * float(_lap_count)
+			var total_dist: float = _path_length * float(_lap_count)
 			_progress = clampf(_path_offset / total_dist, 0.0, 1.0)
 		else:
 			_progress = clampf(_path_offset / _path_length, 0.0, 1.0)
@@ -373,24 +373,24 @@ func _steer_and_move(delta: float) -> void:
 	var path_pos := path.to_global(path.curve.sample_baked(curve_ofs))
 
 	# Where we are steering toward (ahead on the curve).
-	var look_ofs := _wrap_or_clamp_offset(curve_ofs + _lookahead_dist)
+	var look_ofs: float = _wrap_or_clamp_offset(curve_ofs + _lookahead_dist)
 	var look_pos := path.to_global(path.curve.sample_baked(look_ofs))
 
 	# --- Horizontal steering -------------------------------------------
-	var to_path := path_pos - global_position
+	var to_path: Vector3 = path_pos - global_position
 	to_path.y = 0.0
-	var to_look := look_pos - global_position
+	var to_look: Vector3 = look_pos - global_position
 	to_look.y = 0.0
 
-	var off_track := to_path.length()
-	var correction := clampf(off_track / PATH_CORRECTION_RANGE, 0.0, 0.7)
+	var off_track: float = to_path.length()
+	var correction: float = clampf(off_track / PATH_CORRECTION_RANGE, 0.0, 0.7)
 
 	var steer_dir := _blend_steering(to_path, to_look, correction, curve_ofs, path_pos)
 
 	# Line-accuracy wobble: less accurate AI swerves slightly.
 	if _line_accuracy < 1.0:
-		var wobble_rad := (1.0 - _line_accuracy) * 0.18
-		var noise_angle := sinf(
+		var wobble_rad: float = (1.0 - _line_accuracy) * 0.18
+		var noise_angle := sin(
 			Time.get_ticks_msec() * 0.002 + float(racer_id) * 1.93
 		) * wobble_rad
 		steer_dir = steer_dir.rotated(Vector3.UP, noise_angle)
@@ -400,8 +400,8 @@ func _steer_and_move(delta: float) -> void:
 	velocity.z = steer_dir.z * _current_speed
 
 	# --- Vertical: track path height with gravity ----------------------
-	var target_y := path_pos.y
-	var y_diff := target_y - global_position.y
+	var target_y: float = path_pos.y
+	var y_diff: float = target_y - global_position.y
 
 	if is_on_floor():
 		_gravity_vel = 0.0
@@ -450,9 +450,9 @@ func _blend_steering(
 		return to_path.normalized()
 
 	# Both are zero — use the path tangent as fallback direction.
-	var tangent_ofs := _wrap_or_clamp_offset(curve_ofs + 0.5)
-	var tangent_pos := path.to_global(path.curve.sample_baked(tangent_ofs))
-	var t := tangent_pos - path_pos
+	var tangent_ofs: float = _wrap_or_clamp_offset(curve_ofs + 0.5)
+	var tangent_pos: Vector3 = path.to_global(path.curve.sample_baked(tangent_ofs))
+	var t: Vector3 = tangent_pos - path_pos
 	t.y = 0.0
 	if t.length_squared() > 0.001:
 		return t.normalized()
@@ -485,7 +485,7 @@ func _rotate_toward_velocity(delta: float) -> void:
 		look_at(global_position + desired, Vector3.UP)
 		return
 
-	var smoothed := current_n.slerp(desired, minf(8.0 * delta, 1.0))
+	var smoothed: Vector3 = current_n.slerp(desired, minf(8.0 * delta, 1.0))
 	if smoothed.length_squared() > 0.001:
 		look_at(global_position + smoothed, Vector3.UP)
 
@@ -498,7 +498,7 @@ func _check_checkpoints() -> void:
 		return
 
 	# Absolute offset of next checkpoint, accounting for current lap.
-	var cp_absolute := _checkpoint_offsets[_next_checkpoint_idx]
+	var cp_absolute: float = _checkpoint_offsets[_next_checkpoint_idx]
 	if _is_circuit:
 		cp_absolute += float(_current_lap) * _path_length
 

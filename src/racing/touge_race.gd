@@ -169,7 +169,7 @@ func _update_gap() -> void:
 
 	# Convert to seconds using leader's speed (or reference speed if leader is slow/stopped)
 	leader_speed_ms = _get_leader_speed()
-	var effective_speed := maxf(leader_speed_ms, REFERENCE_SPEED_MS * 0.3)
+	var effective_speed: float = maxf(leader_speed_ms, REFERENCE_SPEED_MS * 0.3)
 	gap_seconds = gap_meters / effective_speed
 
 	EventBus.touge_gap_updated.emit(gap_meters, gap_seconds)
@@ -294,7 +294,7 @@ func _finish_match() -> void:
 	else:
 		# Tie-break: whoever had a better round 2 (the pressure round)
 		if round_scores.size() >= 2:
-			var r2 := round_scores[1] as Dictionary
+			var r2: Dictionary = round_scores[1] as Dictionary
 			winner_id = player_id if r2.get("player_points", 0) >= r2.get("opponent_points", 0) else opponent_id
 		else:
 			winner_id = player_id  # Fallback

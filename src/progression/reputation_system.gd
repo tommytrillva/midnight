@@ -70,7 +70,7 @@ func get_tier_name() -> String:
 func get_tier_progress() -> float:
 	## Returns 0.0-1.0 progress within current tier.
 	var tier_data: Dictionary = TIERS[current_tier]
-	var range_size := tier_data.max - tier_data.min
+	var range_size: int = tier_data.max - tier_data.min
 	if range_size <= 0:
 		return 1.0
 	return clampf(float(current_rep - tier_data.min) / float(range_size), 0.0, 1.0)

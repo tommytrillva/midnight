@@ -161,10 +161,10 @@ func _finish_race() -> void:
 func _build_results() -> Dictionary:
 	var player_position := 0
 	var player_dnf := false
-	var positions := []
+	var positions: Array = []
 
 	for i in range(racers.size()):
-		var racer := racers[i]
+		var racer: RacerState = racers[i]
 		positions.append({
 			"racer_id": racer.racer_id,
 			"name": racer.display_name,

@@ -389,7 +389,7 @@ func _on_draw() -> void:
 			var col: Color = poi.get("color", Color.WHITE)
 
 			# Glow effect for selected POI
-			var is_selected := (not _selected_poi.is_empty() and
+			var is_selected: bool = (not _selected_poi.is_empty() and
 				_selected_poi.get("label", "") == poi.get("label", "") and
 				_selected_poi.get("district_id", "") == district_id)
 

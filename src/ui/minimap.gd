@@ -158,7 +158,7 @@ func _update_other_vehicles() -> void:
 	if vehicle == null:
 		return
 
-	var view_radius := ZOOM_LEVELS[_zoom_index]
+	var view_radius: float = ZOOM_LEVELS[_zoom_index]
 	# Find AI vehicles in the scene
 	var vehicles := get_tree().get_nodes_in_group("vehicles")
 	for v in vehicles:
@@ -194,7 +194,7 @@ func _draw() -> void:
 	# Background circle
 	draw_circle(center, half, bg_color)
 
-	var view_radius := ZOOM_LEVELS[_zoom_index]
+	var view_radius: float = ZOOM_LEVELS[_zoom_index]
 	var rotation_angle := 0.0
 	if not north_up:
 		rotation_angle = -_player_heading
@@ -225,10 +225,10 @@ func _draw() -> void:
 
 func _world_to_minimap(world_pos: Vector2, center: Vector2, half: float, view_radius: float, rotation: float) -> Vector2:
 	## Converts a world XZ position to minimap pixel coordinates.
-	var offset := world_pos - _player_position
+	var offset: Vector2 = world_pos - _player_position
 	# Scale to minimap pixels
-	var scale := half / view_radius
-	var mapped := offset * scale
+	var scale: float = half / view_radius
+	var mapped: Vector2 = offset * scale
 	# Rotate around center
 	if rotation != 0.0:
 		mapped = mapped.rotated(rotation)
@@ -248,7 +248,7 @@ func _draw_roads(center: Vector2, half: float, view_radius: float, rotation: flo
 		var end_px := _world_to_minimap(road.end, center, half, view_radius, rotation)
 
 		# Clip lines that extend outside the circle - simple approach: draw and let mask handle it
-		var width_px := maxf(road.width * (half / view_radius), 1.0)
+		var width_px: float = maxf(road.width * (half / view_radius), 1.0)
 		width_px = clampf(width_px, 1.0, 4.0)
 		draw_line(start_px, end_px, road_col, width_px, true)
 
@@ -266,7 +266,7 @@ func _draw_pois(center: Vector2, half: float, view_radius: float, rotation: floa
 
 		# Mission markers pulse
 		if poi.type == "mission":
-			var pulse := 0.5 + 0.5 * sin(_mission_pulse_time)
+			var pulse: float = 0.5 + 0.5 * sin(_mission_pulse_time)
 			col.a = 0.5 + 0.5 * pulse
 
 		_draw_poi_shape(px, shape, col)
@@ -284,7 +284,7 @@ func _draw_poi_shape(pos: Vector2, shape: int, color: Color) -> void:
 		POIShape.FLAG:
 			# Flag on a pole
 			draw_line(pos + Vector2(0, s), pos + Vector2(0, -s), color, 1.5)
-			var flag_points := PackedVector2Array([
+			var flag_points: PackedVector2Array = PackedVector2Array([
 				pos + Vector2(0, -s),
 				pos + Vector2(s, -s * 0.5),
 				pos + Vector2(0, 0),
@@ -293,16 +293,16 @@ func _draw_poi_shape(pos: Vector2, shape: int, color: Color) -> void:
 
 		POIShape.STAR:
 			# 4-pointed star
-			var points := PackedVector2Array()
+			var points: PackedVector2Array = PackedVector2Array()
 			for i in range(8):
-				var angle := i * TAU / 8.0 - PI / 2.0
-				var r := s if i % 2 == 0 else s * 0.4
+				var angle: float = i * TAU / 8.0 - PI / 2.0
+				var r: float = s if i % 2 == 0 else s * 0.4
 				points.append(pos + Vector2(cos(angle), sin(angle)) * r)
 			draw_colored_polygon(points, color)
 
 		POIShape.ARROW:
 			# Arrow pointing up (transition)
-			var arrow := PackedVector2Array([
+			var arrow: PackedVector2Array = PackedVector2Array([
 				pos + Vector2(0, -s),
 				pos + Vector2(s * 0.6, s * 0.3),
 				pos + Vector2(0, 0),
@@ -313,7 +313,7 @@ func _draw_poi_shape(pos: Vector2, shape: int, color: Color) -> void:
 		POIShape.PERSON:
 			# Simple person icon: circle head + triangle body
 			draw_circle(pos + Vector2(0, -s * 0.5), 2.5, color)
-			var body := PackedVector2Array([
+			var body: PackedVector2Array = PackedVector2Array([
 				pos + Vector2(-s * 0.4, s * 0.7),
 				pos + Vector2(s * 0.4, s * 0.7),
 				pos + Vector2(0, -s * 0.1),
@@ -344,14 +344,14 @@ func _draw_player_arrow(center: Vector2, _rotation: float) -> void:
 	if north_up:
 		angle = _player_heading
 
-	var forward := Vector2(sin(angle), -cos(angle))
-	var right := Vector2(cos(angle), sin(angle))
+	var forward: Vector2 = Vector2(sin(angle), -cos(angle))
+	var right: Vector2 = Vector2(cos(angle), sin(angle))
 
-	var tip := center + forward * arrow_size
-	var left_pt := center - forward * arrow_size * 0.6 - right * arrow_size * 0.5
-	var right_pt := center - forward * arrow_size * 0.6 + right * arrow_size * 0.5
+	var tip: Vector2 = center + forward * arrow_size
+	var left_pt: Vector2 = center - forward * arrow_size * 0.6 - right * arrow_size * 0.5
+	var right_pt: Vector2 = center - forward * arrow_size * 0.6 + right * arrow_size * 0.5
 
-	var points := PackedVector2Array([tip, right_pt, center - forward * arrow_size * 0.2, left_pt])
+	var points: PackedVector2Array = PackedVector2Array([tip, right_pt, center - forward * arrow_size * 0.2, left_pt])
 	draw_colored_polygon(points, player_color)
 	# Outline for visibility
 	draw_polyline(PackedVector2Array([tip, right_pt, center - forward * arrow_size * 0.2, left_pt, tip]),
@@ -361,8 +361,8 @@ func _draw_player_arrow(center: Vector2, _rotation: float) -> void:
 func _draw_north_indicator(center: Vector2, half: float, rotation: float) -> void:
 	## Draws 'N' at the top of the minimap, rotated appropriately.
 	var north_angle := rotation  # When north_up, rotation is 0, so N is at top
-	var north_dir := Vector2(sin(north_angle), -cos(north_angle))
-	var north_pos := center + north_dir * (half - 14.0)
+	var north_dir: Vector2 = Vector2(sin(north_angle), -cos(north_angle))
+	var north_pos: Vector2 = center + north_dir * (half - 14.0)
 
 	if _is_in_circle(north_pos, center, half - 4.0):
 		# Draw a small 'N' indicator
@@ -377,8 +377,8 @@ func _draw_zoom_indicator(center: Vector2, half: float) -> void:
 	var font := ThemeDB.fallback_font
 	if font == null:
 		return
-	var text := ZOOM_NAMES[_zoom_index]
-	var pos := center + Vector2(-12, half - 8.0)
+	var text: String = ZOOM_NAMES[_zoom_index]
+	var pos: Vector2 = center + Vector2(-12, half - 8.0)
 	draw_string(font, pos, text, HORIZONTAL_ALIGNMENT_CENTER, -1, 9,
 		Color(0.6, 0.6, 0.6, 0.7))
 
@@ -395,21 +395,21 @@ func _draw_circular_mask(center: Vector2, half: float) -> void:
 	var mask_bg := Color(0.0, 0.0, 0.0, 1.0)
 
 	for i in range(segments):
-		var angle_a := float(i) / segments * TAU
-		var angle_b := float(i + 1) / segments * TAU
+		var angle_a: float = float(i) / segments * TAU
+		var angle_b: float = float(i + 1) / segments * TAU
 
-		var inner_a := center + Vector2(cos(angle_a), sin(angle_a)) * half
-		var inner_b := center + Vector2(cos(angle_b), sin(angle_b)) * half
+		var inner_a: Vector2 = center + Vector2(cos(angle_a), sin(angle_a)) * half
+		var inner_b: Vector2 = center + Vector2(cos(angle_b), sin(angle_b)) * half
 
 		# Extend to the bounding box edge
-		var outer_a := center + Vector2(cos(angle_a), sin(angle_a)) * (half * 1.5)
-		var outer_b := center + Vector2(cos(angle_b), sin(angle_b)) * (half * 1.5)
+		var outer_a: Vector2 = center + Vector2(cos(angle_a), sin(angle_a)) * (half * 1.5)
+		var outer_b: Vector2 = center + Vector2(cos(angle_b), sin(angle_b)) * (half * 1.5)
 
 		# Clamp to control rect
 		outer_a = outer_a.clamp(Vector2.ZERO, rect_size)
 		outer_b = outer_b.clamp(Vector2.ZERO, rect_size)
 
-		var poly := PackedVector2Array([inner_a, outer_a, outer_b, inner_b])
+		var poly: PackedVector2Array = PackedVector2Array([inner_a, outer_a, outer_b, inner_b])
 		draw_colored_polygon(poly, mask_bg)
 
 

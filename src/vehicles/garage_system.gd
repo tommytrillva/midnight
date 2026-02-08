@@ -24,7 +24,7 @@ func add_vehicle(vehicle: VehicleData, source: String = "purchased") -> void:
 
 func remove_vehicle(vehicle_id: String, reason: String = "sold") -> void:
 	if vehicles.has(vehicle_id):
-		var vehicle := vehicles[vehicle_id]
+		var vehicle: VehicleData = vehicles[vehicle_id]
 		vehicles.erase(vehicle_id)
 		_active_combos.erase(vehicle_id)
 		GameManager.player_data.owned_vehicle_ids.erase(vehicle_id)

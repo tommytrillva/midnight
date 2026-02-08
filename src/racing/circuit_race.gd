@@ -153,7 +153,7 @@ func _on_lap_completed(racer_id: int, lap: int, race_time: float) -> void:
 		return
 
 	var data: RacerLapData = racer_laps[racer_id]
-	var lap_time := race_time - data.last_lap_timestamp
+	var lap_time: float = race_time - data.last_lap_timestamp
 	data.last_lap_timestamp = race_time
 	data.lap_times.append(lap_time)
 	data.current_lap = lap
@@ -280,12 +280,12 @@ func _check_dnf_timeouts() -> void:
 				racer_progress = entry.progress
 				break
 
-		var progress_diff := leader_progress - racer_progress
+		var progress_diff: float = leader_progress - racer_progress
 		if progress_diff <= 0.0:
 			continue
 
 		# Very rough time estimate based on progress gap
-		var estimated_gap := progress_diff * _race_manager.race_timer
+		var estimated_gap: float = progress_diff * _race_manager.race_timer
 		if estimated_gap <= 0.0:
 			continue
 
@@ -327,8 +327,8 @@ func _apply_rubber_banding() -> void:
 		return
 
 	# If player is behind, AI slows slightly. If player is ahead, AI speeds up slightly.
-	var position_ratio := float(player_position - 1) / float(maxi(total - 1, 1))
-	var band_strength := RUBBER_BAND_BASE_STRENGTH * rubber_band_difficulty
+	var position_ratio: float = float(player_position - 1) / float(maxi(total - 1, 1))
+	var band_strength: float = RUBBER_BAND_BASE_STRENGTH * rubber_band_difficulty
 
 	# Apply to RaceAI instances via their difficulty property
 	for racer_id in racer_laps:
@@ -384,7 +384,7 @@ func begin_pit_stop() -> void:
 		damage = 100.0 - vehicle_data.condition  # condition is 0-100
 
 	# Duration scales with damage
-	var duration := PIT_STOP_BASE_DURATION + (damage / 100.0) * (PIT_STOP_MAX_DURATION - PIT_STOP_BASE_DURATION)
+	var duration: float = PIT_STOP_BASE_DURATION + (damage / 100.0) * (PIT_STOP_MAX_DURATION - PIT_STOP_BASE_DURATION)
 	_pit_timer = duration
 
 	EventBus.circuit_pit_entered.emit(0)
@@ -486,9 +486,9 @@ func get_results() -> Dictionary:
 func _format_time(seconds: float) -> String:
 	if seconds <= 0.0:
 		return "--:--.---"
-	var mins := int(seconds) / 60
-	var secs := int(seconds) % 60
-	var ms := int((seconds - int(seconds)) * 1000)
+	var mins: int = int(seconds) / 60
+	var secs: int = int(seconds) % 60
+	var ms: int = int((seconds - int(seconds)) * 1000)
 	return "%d:%02d.%03d" % [mins, secs, ms]
 
 

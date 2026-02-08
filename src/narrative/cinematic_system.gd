@@ -223,7 +223,7 @@ func _run_sequence() -> void:
 			_apply_skip_state()
 			return
 
-		var step := _steps[_step_index]
+		var step: CinematicStep = _steps[_step_index]
 		cinematic_step.emit(_step_index, {"type": step.type, "data": step.data})
 
 		if step.parallel:
@@ -294,7 +294,7 @@ func _step_camera(data: Dictionary, duration: float) -> void:
 			if from.size() == 3:
 				_camera.global_position = Vector3(from[0], from[1], from[2])
 			if to.size() == 3:
-				var target := Vector3(to[0], to[1], to[2])
+				var target: Vector3 = Vector3(to[0], to[1], to[2])
 				# If there's a look_at specified, face it during the pan
 				var look_at_arr: Array = data.get("look_at", [])
 				if look_at_arr.size() == 3:
@@ -309,7 +309,7 @@ func _step_camera(data: Dictionary, duration: float) -> void:
 
 		"orbit":
 			var target_arr: Array = data.get("target", [0, 0, 0])
-			var target := Vector3(target_arr[0], target_arr[1], target_arr[2])
+			var target: Vector3 = Vector3(target_arr[0], target_arr[1], target_arr[2])
 			var angle: float = data.get("angle", 90.0)
 			await _camera.orbit(target, angle, duration, ease_type)
 
@@ -337,7 +337,7 @@ func _step_camera(data: Dictionary, duration: float) -> void:
 
 		"teleport":
 			var pos_arr: Array = data.get("position", [0, 0, 0])
-			var pos := Vector3(pos_arr[0], pos_arr[1], pos_arr[2])
+			var pos: Vector3 = Vector3(pos_arr[0], pos_arr[1], pos_arr[2])
 			var look_arr: Array = data.get("look_at", [])
 			if look_arr.size() == 3:
 				_camera.teleport(pos, Vector3(look_arr[0], look_arr[1], look_arr[2]))
@@ -556,12 +556,12 @@ func _step_move_to(data: Dictionary, duration: float) -> void:
 	tween.set_parallel(true)
 
 	if pos_arr.size() == 3:
-		var target_pos := Vector3(pos_arr[0], pos_arr[1], pos_arr[2])
+		var target_pos: Vector3 = Vector3(pos_arr[0], pos_arr[1], pos_arr[2])
 		tween.tween_property(node_3d, "global_position", target_pos, duration) \
 			.set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_CUBIC)
 
 	if rot_arr.size() == 3:
-		var target_rot := Vector3(rot_arr[0], rot_arr[1], rot_arr[2])
+		var target_rot: Vector3 = Vector3(rot_arr[0], rot_arr[1], rot_arr[2])
 		tween.tween_property(node_3d, "rotation_degrees", target_rot, duration) \
 			.set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_CUBIC)
 
@@ -694,7 +694,7 @@ func _apply_skip_state() -> void:
 
 	# Walk remaining steps and apply only "permanent" side effects
 	while _step_index < _steps.size():
-		var step := _steps[_step_index]
+		var step: CinematicStep = _steps[_step_index]
 
 		match step.type:
 			"dialogue":

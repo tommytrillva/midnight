@@ -36,34 +36,55 @@ var debug_mode: bool = false
 
 
 func _ready() -> void:
+	print("[GameManager] Initializing...")
 	player_data = PlayerData.new()
+	print("[GameManager] ✓ PlayerData created")
 	reputation = ReputationSystem.new()
+	print("[GameManager] ✓ ReputationSystem created")
 	economy = EconomySystem.new()
+	print("[GameManager] ✓ EconomySystem created")
 	relationships = RelationshipSystem.new()
+	print("[GameManager] ✓ RelationshipSystem created")
 	skills = SkillTreeSystem.new()
+	print("[GameManager] ✓ SkillTreeSystem created")
 	story = StoryManager.new()
+	print("[GameManager] ✓ StoryManager created")
 	race_manager = RaceManager.new()
+	print("[GameManager] ✓ RaceManager created")
 	police = PoliceSystem.new()
+	print("[GameManager] ✓ PoliceSystem created")
 	world_time = WorldTimeSystem.new()
+	print("[GameManager] ✓ WorldTimeSystem created")
 	garage = GarageSystem.new()
+	print("[GameManager] ✓ GarageSystem created")
 	origin = OriginSystem.new()
+	print("[GameManager] ✓ OriginSystem created")
 	choice_system = ChoiceSystem.new()
 	choice_system.name = "ChoiceSystem"
+	print("[GameManager] ✓ ChoiceSystem created")
 	consequence_manager = ConsequenceManager.new()
 	consequence_manager.name = "ConsequenceManager"
+	print("[GameManager] ✓ ConsequenceManager created")
 	moral_tracker = MoralTracker.new()
 	moral_tracker.name = "MoralTracker"
+	print("[GameManager] ✓ MoralTracker created")
 	ending_calculator = EndingCalculator.new()
 	ending_calculator.name = "EndingCalculator"
+	print("[GameManager] ✓ EndingCalculator created")
 	ending_system = EndingSystem.new()
 	ending_system.name = "EndingSystem"
+	print("[GameManager] ✓ EndingSystem created")
 	ambient_dialogue = AmbientDialogue.new()
 	ambient_dialogue.name = "AmbientDialogue"
+	print("[GameManager] ✓ AmbientDialogue created")
 	housing = HousingSystem.new()
 	housing.name = "HousingSystem"
+	print("[GameManager] ✓ HousingSystem created")
 	phone = PhoneSystem.new()
 	phone.name = "PhoneSystem"
+	print("[GameManager] ✓ PhoneSystem created")
 
+	print("[GameManager] Adding subsystems as children...")
 	# Add subsystems as children so they process
 	add_child(reputation)
 	add_child(economy)
@@ -84,11 +105,12 @@ func _ready() -> void:
 	add_child(housing)
 	add_child(phone)
 
+	print("[GameManager] Setting initial values...")
 	# Initialize with default state
 	economy.set_cash(500) # Starting cash per GDD
 	reputation.set_rep(0)
 
-	print("[GameManager] All subsystems initialized.")
+	print("[GameManager] ✓✓✓ All subsystems initialized successfully!")
 
 
 func change_state(new_state: GameState) -> void:

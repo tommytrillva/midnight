@@ -200,11 +200,11 @@ func _apply_screen_shake(intensity: float, duration: float) -> void:
 	if camera == null:
 		return
 
-	var original_offset := camera.h_offset
+	var original_offset: float = camera.h_offset
 	var shake_tween := create_tween()
-	var steps := int(duration / 0.03)
+	var steps: int = int(duration / 0.03)
 	for s in range(steps):
-		var offset := randf_range(-intensity, intensity) * 0.01
+		var offset: float = randf_range(-intensity, intensity) * 0.01
 		shake_tween.tween_property(camera, "h_offset", original_offset + offset, 0.03)
 	shake_tween.tween_property(camera, "h_offset", original_offset, 0.03)
 
@@ -417,7 +417,7 @@ func _spawn_ai() -> void:
 		ai.path = race_track.racing_line
 		add_child(ai)
 
-		var spawn := race_track.get_spawn_position(i + 1)
+		var spawn: Transform3D = race_track.get_spawn_position(i + 1)
 		ai.global_transform = spawn
 
 		ai.setup_track(race_track)
@@ -581,7 +581,7 @@ func _show_results(results: Dictionary) -> void:
 	var cash_label := results_panel.get_node_or_null("Cash") as Label
 	if cash_label:
 		var won: bool = results.get("player_won", false)
-		var race_type_key := RaceManager.RaceType.keys()[race_data.race_type].to_lower() if race_data else "street_sprint"
+		var race_type_key: String = RaceManager.RaceType.keys()[race_data.race_type].to_lower() if race_data else "street_sprint"
 		var payout := GameManager.economy.get_race_payout(
 			race_type_key, 0 if won else 1, race_data.tier if race_data else 1
 		)
@@ -953,7 +953,7 @@ func _ordinal(n: int) -> String:
 
 
 func _format_time(seconds: float) -> String:
-	var mins := int(seconds) / 60
-	var secs := int(seconds) % 60
-	var ms := int((seconds - int(seconds)) * 1000)
+	var mins: int = int(seconds) / 60
+	var secs: int = int(seconds) % 60
+	var ms: int = int((seconds - int(seconds)) * 1000)
 	return "%d:%02d.%03d" % [mins, secs, ms]

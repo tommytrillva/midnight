@@ -276,10 +276,10 @@ func _update_rpm(delta: float) -> void:
 		return
 
 	# Derive RPM from wheel surface speed through the drivetrain
-	var wheel_rps := (current_speed_kmh / 3.6) / (TAU * WHEEL_RADIUS)
+	var wheel_rps: float = (current_speed_kmh / 3.6) / (TAU * WHEEL_RADIUS)
 
 	if current_gear > 0 and current_gear <= gear_ratios.size():
-		var total_ratio := gear_ratios[current_gear - 1] * final_drive
+		var total_ratio: float = gear_ratios[current_gear - 1] * final_drive
 		current_rpm = wheel_rps * 60.0 * total_ratio
 	elif current_gear == -1:
 		current_rpm = wheel_rps * 60.0 * absf(reverse_ratio) * final_drive
@@ -288,7 +288,7 @@ func _update_rpm(delta: float) -> void:
 
 	# When nearly stationary, let throttle rev the engine freely
 	if current_speed_kmh < 5.0 and input_throttle > 0.1:
-		var rev_target := RPM_IDLE + input_throttle * (max_rpm * 0.7 - RPM_IDLE)
+		var rev_target: float = RPM_IDLE + input_throttle * (max_rpm * 0.7 - RPM_IDLE)
 		current_rpm = maxf(current_rpm, lerpf(current_rpm, rev_target, 6.0 * delta))
 
 	current_rpm = clampf(current_rpm, RPM_IDLE, max_rpm + RPM_REDLINE_BUFFER)
@@ -316,7 +316,7 @@ func _get_torque_curve(norm_rpm: float) -> float:
 	## Bell-shaped torque multiplier peaking at torque_peak_frac.
 	## Returns 0.3 .. 1.0 — keeps some power even outside the sweet spot
 	## so the car never feels completely dead at any RPM.
-	var x := (norm_rpm - torque_peak_frac) / 0.45
+	var x: float = (norm_rpm - torque_peak_frac) / 0.45
 	return clampf(1.0 - x * x * 0.6, 0.3, 1.0)
 
 
@@ -342,19 +342,19 @@ func shift_down() -> void:
 
 func _apply_steering(delta: float) -> void:
 	# Speed-dependent authority: full at crawl, reduced at vmax
-	var speed_ratio := clampf(current_speed_kmh / maxf(_top_speed_kmh, 1.0), 0.0, 1.0)
+	var speed_ratio: float = clampf(current_speed_kmh / maxf(_top_speed_kmh, 1.0), 0.0, 1.0)
 	var speed_steer := lerpf(1.0, high_speed_steer_mult, speed_ratio)
 
 	# Handling stat + skill modifier
-	var handling := clampf(_handling_mult * _skill_handling_mult, 0.4, 1.8)
+	var handling: float = clampf(_handling_mult * _skill_handling_mult, 0.4, 1.8)
 
-	var effective_angle := max_steer_angle * speed_steer * handling
-	var target_steer := input_steer * effective_angle
+	var effective_angle: float = max_steer_angle * speed_steer * handling
+	var target_steer: float = input_steer * effective_angle
 
 	# Countersteer boost during drift — snappier response when steering
 	# into the slide lets the player sustain the drift more easily.
 	if is_drifting and _is_countersteering():
-		var boost := (countersteer_mult - 1.0) * absf(input_steer)
+		var boost: float = (countersteer_mult - 1.0) * absf(input_steer)
 		target_steer *= (1.0 + boost)
 
 	# Damage-induced pull (oscillating, worsens with damage %)
@@ -380,23 +380,23 @@ func _apply_engine_force(delta: float) -> void:
 	if nitro_active:
 		top *= 1.15  # nitro lets you push past normal vmax slightly
 
-	var speed_ratio := clampf(current_speed_kmh / top, 0.0, 1.0)
-	var power_curve := maxf(1.0 - speed_ratio * speed_ratio, 0.0)
+	var speed_ratio: float = clampf(current_speed_kmh / top, 0.0, 1.0)
+	var power_curve: float = maxf(1.0 - speed_ratio * speed_ratio, 0.0)
 
 	# Torque-band feel from RPM position
 	var max_rpm := 7000.0
 	if vehicle_data:
 		max_rpm = float(vehicle_data.redline_rpm)
-	var norm_rpm := clampf(current_rpm / maxf(max_rpm, 1.0), 0.0, 1.0)
+	var norm_rpm: float = clampf(current_rpm / maxf(max_rpm, 1.0), 0.0, 1.0)
 	var torque_mult := _get_torque_curve(norm_rpm)
 
 	# Lower gears multiply torque at the wheel (simple arcade model)
-	var gear_mult := 1.0
+	var gear_mult: float = 1.0
 	if current_gear > 0 and current_gear <= gear_ratios.size():
-		var t := float(current_gear - 1) / maxf(float(gear_ratios.size() - 1), 1.0)
+		var t: float = float(current_gear - 1) / maxf(float(gear_ratios.size() - 1), 1.0)
 		gear_mult = lerpf(1.3, 0.85, t)
 
-	var force := input_throttle * max_engine_force * power_curve * torque_mult * gear_mult
+	var force: float = input_throttle * max_engine_force * power_curve * torque_mult * gear_mult
 
 	# Skill speed bonus
 	force *= _skill_speed_mult
@@ -460,7 +460,7 @@ func _update_drift(delta: float) -> void:
 	# Angle between car's forward vector and its actual velocity
 	var forward := -global_transform.basis.z.normalized()
 	var vel_dir := linear_velocity.normalized()
-	drift_angle = rad_to_deg(acosf(clampf(forward.dot(vel_dir), -1.0, 1.0)))
+	drift_angle = rad_to_deg(acos(clampf(forward.dot(vel_dir), -1.0, 1.0)))
 
 	# Direction: which side is the tail swinging toward
 	var cross_y := forward.cross(vel_dir).y
@@ -478,8 +478,8 @@ func _update_drift(delta: float) -> void:
 				drift_angle, current_speed_kmh])
 	else:
 		# EXIT conditions (hysteresis prevents flicker at the boundary)
-		var exit_angle := drift_entry_angle * DRIFT_EXIT_FACTOR
-		var exit_speed := drift_min_speed * 0.8
+		var exit_angle: float = drift_entry_angle * DRIFT_EXIT_FACTOR
+		var exit_speed: float = drift_min_speed * 0.8
 
 		if drift_angle < exit_angle or current_speed_kmh < exit_speed:
 			_end_drift(false)
@@ -507,16 +507,16 @@ func _apply_wheel_friction(delta: float) -> void:
 	## Dynamically adjusts per-wheel friction to create drift feel.
 	## Handbrake -> sharp rear grip loss.  Sustained drift -> moderate rear
 	## loss with boosted front for countersteer.  Recovery -> smooth return.
-	var target_front := normal_front_friction
-	var target_rear := normal_rear_friction
-	var lerp_speed := friction_release * _handling_mult * _skill_handling_mult
+	var target_front: float = normal_front_friction
+	var target_rear: float = normal_rear_friction
+	var lerp_speed: float = friction_release * _handling_mult * _skill_handling_mult
 
 	if is_handbraking and current_speed_kmh > 10.0:
 		target_rear = handbrake_friction
 		lerp_speed = friction_attack
 	elif is_drifting:
 		# Throttle input pushes rear friction lower = wider drift angle
-		var throttle_loss := throttle_angle_push * input_throttle
+		var throttle_loss: float = throttle_angle_push * input_throttle
 		target_rear = lerpf(drift_rear_friction, handbrake_friction, throttle_loss)
 		target_front = drift_front_friction
 		lerp_speed = friction_attack
@@ -536,11 +536,11 @@ func _apply_drift_forces(_delta: float) -> void:
 	if not is_drifting:
 		return
 
-	var damping := drift_stability
+	var damping: float = drift_stability
 	if _is_countersteering():
 		damping += countersteer_stability * absf(input_steer)
 
-	var correction := -angular_velocity.y * damping
+	var correction: float = -angular_velocity.y * damping
 	apply_torque(Vector3(0.0, correction, 0.0))
 
 
@@ -582,7 +582,7 @@ func _update_nitro(delta: float) -> void:
 
 func _apply_downforce() -> void:
 	if current_speed_kmh > downforce_start:
-		var force := (current_speed_kmh - downforce_start) * downforce_factor
+		var force: float = (current_speed_kmh - downforce_start) * downforce_factor
 		apply_central_force(Vector3.DOWN * force)
 
 
@@ -593,10 +593,10 @@ func _apply_traction_control() -> void:
 	if is_drifting or is_handbraking or tc_strength <= 0.0:
 		return
 
-	var yaw := absf(angular_velocity.y)
+	var yaw: float = absf(angular_velocity.y)
 	if yaw > tc_yaw_limit:
-		var overshoot := yaw - tc_yaw_limit
-		var correction := -signf(angular_velocity.y) * overshoot * tc_strength
+		var overshoot: float = yaw - tc_yaw_limit
+		var correction: float = -signf(angular_velocity.y) * overshoot * tc_strength
 		apply_torque(Vector3(0.0, correction, 0.0))
 
 
@@ -638,7 +638,7 @@ func _apply_damage_effects() -> void:
 		return
 
 	if vehicle_data.damage_percentage > 20.0:
-		var severity := (vehicle_data.damage_percentage - 20.0) / 80.0
+		var severity: float = (vehicle_data.damage_percentage - 20.0) / 80.0
 		_damage_steer_pull = sin(
 			Time.get_ticks_msec() * 0.002) * severity * 0.03
 	else:
@@ -663,14 +663,14 @@ func _apply_skill_effects() -> void:
 
 func _emit_telemetry() -> void:
 	# Speed — bucketed so we emit ~every 2 km/h instead of every frame
-	var bucket := int(current_speed_kmh / SPEED_SIGNAL_BUCKET)
+	var bucket: int = int(current_speed_kmh / SPEED_SIGNAL_BUCKET)
 	if bucket != _prev_speed_bucket:
 		_prev_speed_bucket = bucket
 		EventBus.speed_changed.emit(get_instance_id(), current_speed_kmh)
 
 	# Tire screech intensity for audio / VFX
 	if is_drifting or (is_handbraking and current_speed_kmh > 15.0):
-		var intensity := clampf(drift_angle / 50.0, 0.2, 1.0)
+		var intensity: float = clampf(drift_angle / 50.0, 0.2, 1.0)
 		EventBus.tire_screech.emit(get_instance_id(), intensity)
 
 	# Nitro flame VFX toggle
@@ -736,7 +736,7 @@ func _apply_weather_effects(_delta: float) -> void:
 
 	# Wet oversteer: reduce rear friction more than front when wet
 	if _road_wetness > 0.1 and not is_drifting:
-		var wet_factor := _road_wetness * WET_OVERSTEER_MULT
+		var wet_factor: float = _road_wetness * WET_OVERSTEER_MULT
 		for w: VehicleWheel3D in _rear_wheels:
 			w.wheel_friction_slip *= (1.0 - wet_factor * 0.15)
 
@@ -752,10 +752,10 @@ func _update_hydroplaning() -> void:
 	if _road_wetness >= HYDROPLANE_WETNESS_THRESHOLD \
 			and current_speed_kmh >= HYDROPLANE_SPEED_THRESHOLD:
 		# Chance of hydroplaning scales with speed and wetness
-		var risk := (_road_wetness - HYDROPLANE_WETNESS_THRESHOLD) \
+		var risk: float = (_road_wetness - HYDROPLANE_WETNESS_THRESHOLD) \
 			/ (1.0 - HYDROPLANE_WETNESS_THRESHOLD)
-		var speed_risk := (current_speed_kmh - HYDROPLANE_SPEED_THRESHOLD) / 80.0
-		var total_risk := clampf(risk * speed_risk * 0.02, 0.0, 0.05)
+		var speed_risk: float = (current_speed_kmh - HYDROPLANE_SPEED_THRESHOLD) / 80.0
+		var total_risk: float = clampf(risk * speed_risk * 0.02, 0.0, 0.05)
 
 		if not _is_hydroplaning and randf() < total_risk:
 			_is_hydroplaning = true

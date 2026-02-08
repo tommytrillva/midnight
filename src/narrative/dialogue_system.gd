@@ -43,7 +43,7 @@ func select_choice(choice_index: int) -> void:
 	if not _waiting_for_choice:
 		return
 
-	var line := _current_lines[_current_line_index]
+	var line: Dictionary = _current_lines[_current_line_index]
 	var choices: Array = line.get("choices", [])
 	if choice_index < 0 or choice_index >= choices.size():
 		return

@@ -279,7 +279,7 @@ func determine_ending() -> String:
 
 	# --- Ending E: The Contradiction ---
 	# Mixed choices, balanced moral alignment, no dominant path
-	var balanced_moral := abs(moral) < 25.0
+	var balanced_moral: bool = abs(moral) < 25.0
 	var mixed_paths: bool = flags.get("made_corporate_choices", false) and \
 		flags.get("made_underground_choices", false)
 	if balanced_moral and mixed_paths:

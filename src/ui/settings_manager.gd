@@ -2,7 +2,7 @@
 ## Applies audio, display, and gameplay settings on startup and when changed.
 extends Node
 
-class_name SettingsManager
+# Note: No class_name to avoid conflict with autoload singleton name
 
 const SETTINGS_PATH := "user://settings.cfg"
 

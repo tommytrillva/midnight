@@ -209,8 +209,8 @@ func _compute_indicator(wp: Waypoint, player_pos: Vector3) -> Dictionary:
 		var margin := ARROW_MARGIN
 		var half := _viewport_size * 0.5 - Vector2(margin, margin)
 		if abs(dir.x) > 0.001 and abs(dir.y) > 0.001:
-			var scale_x := half.x / abs(dir.x)
-			var scale_y := half.y / abs(dir.y)
+			var scale_x: float = half.x / abs(dir.x)
+			var scale_y: float = half.y / abs(dir.y)
 			var t := minf(scale_x, scale_y)
 			edge_pos = center + dir * t
 		elif abs(dir.x) > 0.001:

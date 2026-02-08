@@ -81,7 +81,7 @@ func get_moral_alignment() -> float:
 	return GameManager.player_data._moral_alignment
 
 
-func get_path() -> String:
+func get_story_path() -> String:
 	## Returns the player's chosen path: "corporate" or "underground".
 	## Returns empty string if The Fork hasn't been reached yet.
 	return GameManager.story.chosen_path

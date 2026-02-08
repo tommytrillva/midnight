@@ -335,7 +335,7 @@ func _transition_to_game() -> void:
 	# Load the free roam world
 	var free_roam_scene := load("res://scenes/world/free_roam.tscn")
 	if free_roam_scene:
-		var free_roam := free_roam_scene.instantiate()
+		var free_roam: Node = free_roam_scene.instantiate()
 		add_child(free_roam)
 		# The prologue missions auto-trigger via story.start_new_story()
 		# which was called in GameManager.start_new_game(). The chain is:

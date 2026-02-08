@@ -8,13 +8,17 @@
 
 config_version=5
 
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
 [application]
 
 config/name="MIDNIGHT GRIND"
 config/description="Narrative Arcade Racing / Car Culture RPG set in Nova Pacifica"
 config/version="0.1.0"
 run/main_scene="res://scenes/main/main.tscn"
-config/features=PackedStringArray("4.2", "GL Compatibility")
+config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
@@ -29,7 +33,6 @@ SettingsManager="*res://src/ui/settings_manager.gd"
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
-window/size/resizable=true
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
@@ -106,7 +109,6 @@ ui_select_choice={
 
 [rendering]
 
-renderer/rendering_method="gl_compatibility"
 textures/canvas_textures/default_texture_filter=0
+renderer/rendering_method="gl_compatibility"
 environment/defaults/default_clear_color=Color(0.05, 0.02, 0.08, 1)
-anti_aliasing/quality/msaa_3d=0

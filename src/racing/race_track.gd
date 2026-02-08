@@ -28,7 +28,7 @@ func setup(player: VehicleController) -> void:
 
 	# Connect checkpoint area signals
 	for i in range(checkpoints.size()):
-		var cp := checkpoints[i]
+		var cp: Area3D = checkpoints[i]
 		var idx := i
 		cp.body_entered.connect(func(body): _on_checkpoint_entered(body, idx))
 
@@ -46,7 +46,7 @@ func get_player_progress() -> float:
 	var total_length := racing_line.curve.get_baked_length()
 	if total_length <= 0:
 		return 0.0
-	var lap_progress := closest / total_length
+	var lap_progress: float = closest / total_length
 	if is_circuit and lap_count > 1:
 		return (float(_player_lap) + lap_progress) / float(lap_count)
 	return lap_progress
@@ -56,7 +56,7 @@ func get_spawn_position(index: int) -> Transform3D:
 	if index < spawn_points.size():
 		return spawn_points[index].global_transform
 	# Fallback: offset from first spawn
-	var base := spawn_points[0].global_transform if spawn_points.size() > 0 else Transform3D.IDENTITY
+	var base: Transform3D = spawn_points[0].global_transform if spawn_points.size() > 0 else Transform3D.IDENTITY
 	base.origin += base.basis.x * (index * 3.0) # Side by side
 	return base
 
@@ -96,7 +96,7 @@ func _on_finish_line_entered(body: Node3D) -> void:
 	if body != _player_vehicle:
 		return
 	# Must have hit all checkpoints this lap
-	var expected := (_player_lap + 1) * _total_checkpoints
+	var expected: int = (_player_lap + 1) * _total_checkpoints
 	if _player_checkpoints_hit < expected and _total_checkpoints > 0:
 		return # Shortcut detected
 
