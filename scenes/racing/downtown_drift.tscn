@@ -1,0 +1,485 @@
+[gd_scene load_steps=3 format=3 uid="uid://downtown_drift"]
+
+[ext_resource type="Script" path="res://src/racing/race_track.gd" id="1"]
+
+[node name="DowntownDrift" type="Node3D"]
+script = ExtResource("1")
+is_circuit = false
+lap_count = 1
+
+; ---- Racing Line (winding mountain/hillside path with hairpins) ----
+[node name="RacingLine" type="Path3D" parent="." groups=["race_path"]]
+curve = SubResource("Curve3D_downtown_drift")
+
+; ---- Finish Line (end of drift course) ----
+[node name="FinishLine" type="Area3D" parent="."]
+transform = Transform3D(0.707, 0, 0.707, 0, 1, 0, -0.707, 0, 0.707, -80, 1, 120)
+collision_layer = 32
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FinishLine"]
+shape = SubResource("BoxShape_finish")
+
+[node name="FinishLabel" type="Label3D" parent="FinishLine"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+text = "FINISH"
+font_size = 64
+modulate = Color(1, 0.3, 0.8, 1)
+
+; ---- Checkpoints (marking major turns) ----
+[node name="Checkpoints" type="Node3D" parent="."]
+
+; CP0 — First hairpin approach
+[node name="CP0" type="Area3D" parent="Checkpoints"]
+transform = Transform3D(0.866, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866, 20, 3, 25)
+collision_layer = 32
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Checkpoints/CP0"]
+shape = SubResource("BoxShape_cp")
+
+; CP1 — Second hairpin
+[node name="CP1" type="Area3D" parent="Checkpoints"]
+transform = Transform3D(-0.5, 0, 0.866, 0, 1, 0, -0.866, 0, -0.5, 45, 8, 50)
+collision_layer = 32
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Checkpoints/CP1"]
+shape = SubResource("BoxShape_cp")
+
+; CP2 — Mid-course sweeper
+[node name="CP2" type="Area3D" parent="Checkpoints"]
+transform = Transform3D(-0.866, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866, 15, 15, 75)
+collision_layer = 32
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Checkpoints/CP2"]
+shape = SubResource("BoxShape_cp")
+
+; CP3 — Final hairpin before descent
+[node name="CP3" type="Area3D" parent="Checkpoints"]
+transform = Transform3D(0.5, 0, -0.866, 0, 1, 0, 0.866, 0, 0.5, -25, 20, 95)
+collision_layer = 32
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Checkpoints/CP3"]
+shape = SubResource("BoxShape_cp")
+
+; ---- Spawn Points (player + 3 AI) ----
+[node name="SpawnPoints" type="Node3D" parent="."]
+
+[node name="Player" type="Marker3D" parent="SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -5)
+
+[node name="AI1" type="Marker3D" parent="SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, -5)
+
+[node name="AI2" type="Marker3D" parent="SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -10)
+
+[node name="AI3" type="Marker3D" parent="SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, -10)
+
+; ---- Drift Scoring Zones (Area3D for bonus points) ----
+[node name="DriftZones" type="Node3D" parent="."]
+
+[node name="Hairpin1_Zone" type="Area3D" parent="DriftZones"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 5, 35)
+collision_layer = 64
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DriftZones/Hairpin1_Zone"]
+shape = SubResource("BoxShape_drift_zone")
+
+[node name="ZoneLabel" type="Label3D" parent="DriftZones/Hairpin1_Zone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+text = "DRIFT ZONE x2.0"
+font_size = 42
+modulate = Color(1, 0.3, 0.3, 1)
+
+[node name="Hairpin2_Zone" type="Area3D" parent="DriftZones"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 10, 60)
+collision_layer = 64
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DriftZones/Hairpin2_Zone"]
+shape = SubResource("BoxShape_drift_zone")
+
+[node name="ZoneLabel" type="Label3D" parent="DriftZones/Hairpin2_Zone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+text = "DRIFT ZONE x2.0"
+font_size = 42
+modulate = Color(1, 0.3, 0.3, 1)
+
+[node name="Sweeper_Zone" type="Area3D" parent="DriftZones"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 17, 85)
+collision_layer = 64
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DriftZones/Sweeper_Zone"]
+shape = SubResource("BoxShape_drift_zone_long")
+
+[node name="ZoneLabel" type="Label3D" parent="DriftZones/Sweeper_Zone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+text = "DRIFT ZONE x1.5"
+font_size = 42
+modulate = Color(0.3, 1, 0.6, 1)
+
+[node name="Hairpin3_Zone" type="Area3D" parent="DriftZones"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35, 22, 100)
+collision_layer = 64
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DriftZones/Hairpin3_Zone"]
+shape = SubResource("BoxShape_drift_zone")
+
+[node name="ZoneLabel" type="Label3D" parent="DriftZones/Hairpin3_Zone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+text = "DRIFT ZONE x2.5"
+font_size = 42
+modulate = Color(1, 0, 0.3, 1)
+
+[node name="Descent_Zone" type="Area3D" parent="DriftZones"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 12, 115)
+collision_layer = 64
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DriftZones/Descent_Zone"]
+shape = SubResource("BoxShape_drift_zone_long")
+
+[node name="ZoneLabel" type="Label3D" parent="DriftZones/Descent_Zone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+text = "DRIFT ZONE x1.8"
+font_size = 42
+modulate = Color(0.6, 0.3, 1, 1)
+
+; ---- Ground (multi-level hillside road) ----
+[node name="Ground" type="Node3D" parent="."]
+
+; Lower section
+[node name="GroundLower" type="StaticBody3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15)
+collision_layer = 1
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground/GroundLower"]
+mesh = SubResource("BoxMesh_ground_lower")
+material_override = SubResource("mat_ground_mountain")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/GroundLower"]
+shape = SubResource("BoxShape_ground_lower")
+
+; Mid section (elevated)
+[node name="GroundMid" type="StaticBody3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 7, 50)
+collision_layer = 1
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground/GroundMid"]
+mesh = SubResource("BoxMesh_ground_mid")
+material_override = SubResource("mat_ground_mountain")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/GroundMid"]
+shape = SubResource("BoxShape_ground_mid")
+
+; Upper section (peak)
+[node name="GroundUpper" type="StaticBody3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18, 90)
+collision_layer = 1
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground/GroundUpper"]
+mesh = SubResource("BoxMesh_ground_upper")
+material_override = SubResource("mat_ground_mountain")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/GroundUpper"]
+shape = SubResource("BoxShape_ground_upper")
+
+; Descent section
+[node name="GroundDescent" type="StaticBody3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50, 10, 115)
+collision_layer = 1
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground/GroundDescent"]
+mesh = SubResource("BoxMesh_ground_descent")
+material_override = SubResource("mat_ground_mountain")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/GroundDescent"]
+shape = SubResource("BoxShape_ground_descent")
+
+; ---- Guardrails & Barriers ----
+[node name="Barriers" type="Node3D" parent="."]
+
+; Section 1 outer guardrail
+[node name="GuardrailOuter1" type="StaticBody3D" parent="Barriers"]
+transform = Transform3D(0.866, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866, 12, 2, 20)
+collision_layer = 2
+
+[node name="Mesh" type="MeshInstance3D" parent="Barriers/GuardrailOuter1"]
+mesh = SubResource("BoxMesh_guardrail")
+material_override = SubResource("mat_guardrail")
+
+[node name="Collision" type="CollisionShape3D" parent="Barriers/GuardrailOuter1"]
+shape = SubResource("BoxShape_guardrail")
+
+; Hairpin 1 inner barrier
+[node name="HairpinBarrier1" type="StaticBody3D" parent="Barriers"]
+transform = Transform3D(-0.707, 0, 0.707, 0, 1, 0, -0.707, 0, -0.707, 35, 5, 40)
+collision_layer = 2
+
+[node name="Mesh" type="MeshInstance3D" parent="Barriers/HairpinBarrier1"]
+mesh = SubResource("BoxMesh_tire_stack")
+material_override = SubResource("mat_tire")
+
+[node name="Collision" type="CollisionShape3D" parent="Barriers/HairpinBarrier1"]
+shape = SubResource("BoxShape_tire_stack")
+
+; Mountain wall outer
+[node name="MountainWall1" type="StaticBody3D" parent="Barriers"]
+transform = Transform3D(-0.5, 0, 0.866, 0, 1, 0, -0.866, 0, -0.5, 55, 9, 55)
+collision_layer = 2
+
+[node name="Mesh" type="MeshInstance3D" parent="Barriers/MountainWall1"]
+mesh = SubResource("BoxMesh_mountain_wall")
+material_override = SubResource("mat_mountain_rock")
+
+[node name="Collision" type="CollisionShape3D" parent="Barriers/MountainWall1"]
+shape = SubResource("BoxShape_mountain_wall")
+
+; Hairpin 2 inner barrier
+[node name="HairpinBarrier2" type="StaticBody3D" parent="Barriers"]
+transform = Transform3D(0.5, 0, -0.866, 0, 1, 0, 0.866, 0, 0.5, 8, 16, 80)
+collision_layer = 2
+
+[node name="Mesh" type="MeshInstance3D" parent="Barriers/HairpinBarrier2"]
+mesh = SubResource("BoxMesh_tire_stack")
+material_override = SubResource("mat_tire")
+
+[node name="Collision" type="CollisionShape3D" parent="Barriers/HairpinBarrier2"]
+shape = SubResource("BoxShape_tire_stack")
+
+; Upper section outer guardrail
+[node name="GuardrailOuter2" type="StaticBody3D" parent="Barriers"]
+transform = Transform3D(0.707, 0, -0.707, 0, 1, 0, 0.707, 0, 0.707, -15, 20, 95)
+collision_layer = 2
+
+[node name="Mesh" type="MeshInstance3D" parent="Barriers/GuardrailOuter2"]
+mesh = SubResource("BoxMesh_guardrail")
+material_override = SubResource("mat_guardrail")
+
+[node name="Collision" type="CollisionShape3D" parent="Barriers/GuardrailOuter2"]
+shape = SubResource("BoxShape_guardrail")
+
+; Descent outer wall
+[node name="DescentWall" type="StaticBody3D" parent="Barriers"]
+transform = Transform3D(0.866, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866, -72, 12, 118)
+collision_layer = 2
+
+[node name="Mesh" type="MeshInstance3D" parent="Barriers/DescentWall"]
+mesh = SubResource("BoxMesh_guardrail")
+material_override = SubResource("mat_guardrail")
+
+[node name="Collision" type="CollisionShape3D" parent="Barriers/DescentWall"]
+shape = SubResource("BoxShape_guardrail")
+
+; ---- Mountain Props ----
+[node name="MountainProps" type="Node3D" parent="."]
+
+; Rocks
+[node name="Rock1" type="MeshInstance3D" parent="MountainProps"]
+transform = Transform3D(1.2, 0, 0.5, 0, 1.5, 0, -0.5, 0, 1.2, 8, 0.8, 10)
+mesh = SubResource("SphereMesh_rock")
+material_override = SubResource("mat_rock")
+
+[node name="Rock2" type="MeshInstance3D" parent="MountainProps"]
+transform = Transform3D(0.8, 0, -0.6, 0, 1.2, 0, 0.6, 0, 0.8, 42, 7, 48)
+mesh = SubResource("SphereMesh_rock")
+material_override = SubResource("mat_rock")
+
+[node name="Rock3" type="MeshInstance3D" parent="MountainProps"]
+transform = Transform3D(1.5, 0, 0.3, 0, 1.8, 0, -0.3, 0, 1.5, -8, 17, 88)
+mesh = SubResource("SphereMesh_rock")
+material_override = SubResource("mat_rock")
+
+[node name="Rock4" type="MeshInstance3D" parent="MountainProps"]
+transform = Transform3D(0.9, 0, 0.4, 0, 1.3, 0, -0.4, 0, 0.9, -45, 21, 102)
+mesh = SubResource("SphereMesh_rock")
+material_override = SubResource("mat_rock")
+
+; Trees (simple cylinders)
+[node name="Tree1" type="MeshInstance3D" parent="MountainProps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 2, 8)
+mesh = SubResource("CylinderMesh_tree")
+material_override = SubResource("mat_tree")
+
+[node name="Tree2" type="MeshInstance3D" parent="MountainProps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 6, 45)
+mesh = SubResource("CylinderMesh_tree")
+material_override = SubResource("mat_tree")
+
+[node name="Tree3" type="MeshInstance3D" parent="MountainProps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 16, 82)
+mesh = SubResource("CylinderMesh_tree")
+material_override = SubResource("mat_tree")
+
+[node name="Tree4" type="MeshInstance3D" parent="MountainProps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -62, 11, 110)
+mesh = SubResource("CylinderMesh_tree")
+material_override = SubResource("mat_tree")
+
+; ---- Lighting (mountain/hillside sunset) ----
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.5, -0.707, 0.5, 0, 0.707, 0.707, -0.707, -0.354, 0.354, 0, 30, 0)
+light_color = Color(1, 0.85, 0.6, 1)
+light_energy = 1.2
+shadow_enabled = true
+
+; Hairpin accent lights
+[node name="HairpinLight1" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 6, 40)
+light_color = Color(1, 0.3, 0.3, 1)
+light_energy = 4.0
+omni_range = 20.0
+
+[node name="HairpinLight2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 11, 60)
+light_color = Color(1, 0.3, 0.3, 1)
+light_energy = 4.0
+omni_range = 20.0
+
+[node name="HairpinLight3" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35, 23, 100)
+light_color = Color(1, 0.3, 0.3, 1)
+light_energy = 4.0
+omni_range = 20.0
+
+; Course lighting
+[node name="CourseLight1" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.866, 0.5, 0, -0.5, -0.866, 15, 8, 25)
+light_color = Color(1, 0.9, 0.8, 1)
+light_energy = 2.0
+spot_range = 35.0
+spot_angle = 50.0
+
+[node name="CourseLight2" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.866, 0.5, 0, -0.5, -0.866, 20, 18, 75)
+light_color = Color(1, 0.9, 0.8, 1)
+light_energy = 2.0
+spot_range = 35.0
+spot_angle = 50.0
+
+[node name="CourseLight3" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.866, 0.5, 0, -0.5, -0.866, -50, 13, 115)
+light_color = Color(1, 0.9, 0.8, 1)
+light_energy = 2.0
+spot_range = 35.0
+spot_angle = 50.0
+
+; ---- World Environment ----
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_mountain")
+
+; ---- Sub-Resources ----
+
+; Winding mountain path with hairpin turns (point-to-point, elevation changes)
+[sub_resource type="Curve3D" id="Curve3D_downtown_drift"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0.5, 0, 0, 0, -5, 0, 0, 5, 5, 1.5, 12, 5, 0, -5, -5, 0, 5, 15, 3, 22, 5, 0, -8, -5, 0, 8, 28, 5, 35, -8, 0, 5, 8, 0, -5, 42, 6.5, 48, -5, 0, -10, 5, 0, 10, 50, 9, 58, 10, 0, -5, -10, 0, 5, 45, 11, 68, -8, 0, -8, 8, 0, 8, 25, 14, 78, -10, 0, 0, 10, 0, 0, 8, 17, 88, 8, 0, 10, -8, 0, -10, -10, 19, 97, -10, 0, 5, 10, 0, -5, -32, 21, 102, 5, 0, -10, -5, 0, 10, -55, 18, 110, -10, 0, 0, 10, 0, 0, -72, 12, 118, 0, 0, 5, 0, 0, -5, -80, 1, 120),
+"tilts": PackedFloat32Array(0, -0.05, 0.08, -0.12, 0.15, -0.18, 0.12, -0.08, 0.15, -0.2, 0.18, -0.15, 0.1, -0.05, 0)
+}
+
+; Collision shapes
+[sub_resource type="BoxShape3D" id="BoxShape_finish"]
+size = Vector3(18, 5, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape_cp"]
+size = Vector3(18, 5, 2)
+
+; Drift zones
+[sub_resource type="BoxShape3D" id="BoxShape_drift_zone"]
+size = Vector3(20, 5, 18)
+
+[sub_resource type="BoxShape3D" id="BoxShape_drift_zone_long"]
+size = Vector3(32, 5, 22)
+
+; Ground sections
+[sub_resource type="BoxMesh" id="BoxMesh_ground_lower"]
+size = Vector3(35, 0.3, 40)
+
+[sub_resource type="BoxShape3D" id="BoxShape_ground_lower"]
+size = Vector3(35, 0.3, 40)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ground_mid"]
+size = Vector3(45, 0.3, 35)
+
+[sub_resource type="BoxShape3D" id="BoxShape_ground_mid"]
+size = Vector3(45, 0.3, 35)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ground_upper"]
+size = Vector3(55, 0.3, 30)
+
+[sub_resource type="BoxShape3D" id="BoxShape_ground_upper"]
+size = Vector3(55, 0.3, 30)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ground_descent"]
+size = Vector3(50, 0.3, 20)
+
+[sub_resource type="BoxShape3D" id="BoxShape_ground_descent"]
+size = Vector3(50, 0.3, 20)
+
+[sub_resource type="StandardMaterial3D" id="mat_ground_mountain"]
+albedo_color = Color(0.22, 0.22, 0.25, 1)
+roughness = 0.88
+
+; Guardrails
+[sub_resource type="BoxMesh" id="BoxMesh_guardrail"]
+size = Vector3(0.3, 0.8, 25)
+
+[sub_resource type="BoxShape3D" id="BoxShape_guardrail"]
+size = Vector3(0.3, 0.8, 25)
+
+[sub_resource type="StandardMaterial3D" id="mat_guardrail"]
+albedo_color = Color(0.85, 0.8, 0.3, 1)
+metallic = 0.7
+roughness = 0.3
+
+; Tire barriers
+[sub_resource type="BoxMesh" id="BoxMesh_tire_stack"]
+size = Vector3(2, 1, 6)
+
+[sub_resource type="BoxShape3D" id="BoxShape_tire_stack"]
+size = Vector3(2, 1, 6)
+
+[sub_resource type="StandardMaterial3D" id="mat_tire"]
+albedo_color = Color(0.08, 0.08, 0.1, 1)
+roughness = 0.95
+
+; Mountain walls
+[sub_resource type="BoxMesh" id="BoxMesh_mountain_wall"]
+size = Vector3(1.5, 4, 20)
+
+[sub_resource type="BoxShape3D" id="BoxShape_mountain_wall"]
+size = Vector3(1.5, 4, 20)
+
+[sub_resource type="StandardMaterial3D" id="mat_mountain_rock"]
+albedo_color = Color(0.35, 0.32, 0.3, 1)
+roughness = 0.9
+
+; Props
+[sub_resource type="SphereMesh" id="SphereMesh_rock"]
+radius = 1.2
+height = 2.4
+
+[sub_resource type="StandardMaterial3D" id="mat_rock"]
+albedo_color = Color(0.4, 0.38, 0.35, 1)
+roughness = 0.85
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_tree"]
+top_radius = 0.3
+bottom_radius = 0.35
+height = 4.5
+
+[sub_resource type="StandardMaterial3D" id="mat_tree"]
+albedo_color = Color(0.2, 0.35, 0.18, 1)
+roughness = 0.9
+
+; Environment
+[sub_resource type="Environment" id="Environment_mountain"]
+background_mode = 1
+background_color = Color(0.45, 0.35, 0.5, 1)
+ambient_light_source = 2
+ambient_light_color = Color(0.7, 0.6, 0.65, 1)
+ambient_light_energy = 0.7
+tonemap_mode = 2
+fog_enabled = true
+fog_light_color = Color(0.6, 0.5, 0.55, 1)
+fog_density = 0.001
+fog_height = 15.0
+fog_height_density = 0.08

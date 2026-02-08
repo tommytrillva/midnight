@@ -1,0 +1,280 @@
+[gd_scene load_steps=3 format=3 uid="uid://harbor_sprint"]
+
+[ext_resource type="Script" path="res://src/racing/race_track.gd" id="1"]
+
+[node name="HarborSprint" type="Node3D"]
+script = ExtResource("1")
+is_circuit = false
+lap_count = 1
+
+; ---- Racing Line (2km straight sprint along docks) ----
+[node name="RacingLine" type="Path3D" parent="." groups=["race_path"]]
+curve = SubResource("Curve3D_harbor")
+
+; ---- Finish Line (at end of 2km sprint) ----
+[node name="FinishLine" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 2000)
+collision_layer = 32
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FinishLine"]
+shape = SubResource("BoxShape_finish")
+
+[node name="FinishLabel" type="Label3D" parent="FinishLine"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+text = "FINISH"
+font_size = 72
+modulate = Color(1, 1, 0, 1)
+
+; ---- Checkpoints (4 evenly spaced along sprint) ----
+[node name="Checkpoints" type="Node3D" parent="."]
+
+; CP0 — 500m mark
+[node name="CP0" type="Area3D" parent="Checkpoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 500)
+collision_layer = 32
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Checkpoints/CP0"]
+shape = SubResource("BoxShape_cp")
+
+[node name="Label3D" type="Label3D" parent="Checkpoints/CP0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+text = "500m"
+font_size = 48
+modulate = Color(0, 1, 1, 1)
+
+; CP1 — 1000m mark
+[node name="CP1" type="Area3D" parent="Checkpoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1000)
+collision_layer = 32
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Checkpoints/CP1"]
+shape = SubResource("BoxShape_cp")
+
+[node name="Label3D" type="Label3D" parent="Checkpoints/CP1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+text = "1000m"
+font_size = 48
+modulate = Color(0, 1, 1, 1)
+
+; CP2 — 1500m mark
+[node name="CP2" type="Area3D" parent="Checkpoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1500)
+collision_layer = 32
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Checkpoints/CP2"]
+shape = SubResource("BoxShape_cp")
+
+[node name="Label3D" type="Label3D" parent="Checkpoints/CP2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+text = "1500m"
+font_size = 48
+modulate = Color(0, 1, 1, 1)
+
+; CP3 — 1900m mark (final checkpoint before finish)
+[node name="CP3" type="Area3D" parent="Checkpoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1900)
+collision_layer = 32
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Checkpoints/CP3"]
+shape = SubResource("BoxShape_cp")
+
+[node name="Label3D" type="Label3D" parent="Checkpoints/CP3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+text = "FINAL 100m"
+font_size = 48
+modulate = Color(1, 0.5, 0, 1)
+
+; ---- Spawn Points (player + 5 AI in 2x3 grid) ----
+[node name="SpawnPoints" type="Node3D" parent="."]
+
+[node name="Player" type="Marker3D" parent="SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, -15)
+
+[node name="AI1" type="Marker3D" parent="SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, -15)
+
+[node name="AI2" type="Marker3D" parent="SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, -20)
+
+[node name="AI3" type="Marker3D" parent="SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, -20)
+
+[node name="AI4" type="Marker3D" parent="SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, -25)
+
+[node name="AI5" type="Marker3D" parent="SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, -25)
+
+; ---- Ground (dock surface - darker asphalt) ----
+[node name="Ground" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1000)
+collision_layer = 1
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
+mesh = SubResource("BoxMesh_ground")
+material_override = SubResource("mat_ground_harbor")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+shape = SubResource("BoxShape_ground")
+
+; ---- Dock Barriers (left and right sides) ----
+[node name="Barriers" type="Node3D" parent="."]
+
+; Left barrier
+[node name="BarrierLeft" type="StaticBody3D" parent="Barriers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0.8, 1000)
+collision_layer = 2
+
+[node name="Mesh" type="MeshInstance3D" parent="Barriers/BarrierLeft"]
+mesh = SubResource("BoxMesh_barrier_long")
+material_override = SubResource("mat_barrier_harbor")
+
+[node name="Collision" type="CollisionShape3D" parent="Barriers/BarrierLeft"]
+shape = SubResource("BoxShape_barrier_long")
+
+; Right barrier
+[node name="BarrierRight" type="StaticBody3D" parent="Barriers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0.8, 1000)
+collision_layer = 2
+
+[node name="Mesh" type="MeshInstance3D" parent="Barriers/BarrierRight"]
+mesh = SubResource("BoxMesh_barrier_long")
+material_override = SubResource("mat_barrier_harbor")
+
+[node name="Collision" type="CollisionShape3D" parent="Barriers/BarrierRight"]
+shape = SubResource("BoxShape_barrier_long")
+
+; ---- Dock Containers (visual obstacles along sides) ----
+[node name="DockProps" type="Node3D" parent="."]
+
+[node name="Container1" type="MeshInstance3D" parent="DockProps"]
+transform = Transform3D(0.866, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866, -18, 1.5, 250)
+mesh = SubResource("BoxMesh_container")
+material_override = SubResource("mat_container_red")
+
+[node name="Container2" type="MeshInstance3D" parent="DockProps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 1.5, 600)
+mesh = SubResource("BoxMesh_container")
+material_override = SubResource("mat_container_blue")
+
+[node name="Container3" type="MeshInstance3D" parent="DockProps"]
+transform = Transform3D(0.707, 0, -0.707, 0, 1, 0, 0.707, 0, 0.707, -18, 1.5, 950)
+mesh = SubResource("BoxMesh_container")
+material_override = SubResource("mat_container_green")
+
+[node name="Container4" type="MeshInstance3D" parent="DockProps"]
+transform = Transform3D(0.866, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866, 18, 1.5, 1350)
+mesh = SubResource("BoxMesh_container")
+material_override = SubResource("mat_container_red")
+
+[node name="Container5" type="MeshInstance3D" parent="DockProps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 1.5, 1700)
+mesh = SubResource("BoxMesh_container")
+material_override = SubResource("mat_container_blue")
+
+; ---- Lighting (harbor/dock atmosphere) ----
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.866, -0.433, 0.25, 0, 0.5, 0.866, -0.5, -0.75, 0.433, 0, 20, 0)
+light_color = Color(1, 0.95, 0.85, 1)
+light_energy = 0.8
+shadow_enabled = true
+
+; Harbor flood lights
+[node name="FloodLight1" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.707, 0.707, 0, -0.707, -0.707, -15, 12, 400)
+light_color = Color(1, 0.9, 0.7, 1)
+light_energy = 3.0
+spot_range = 60.0
+spot_angle = 45.0
+
+[node name="FloodLight2" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.707, 0.707, 0, -0.707, -0.707, 15, 12, 800)
+light_color = Color(1, 0.9, 0.7, 1)
+light_energy = 3.0
+spot_range = 60.0
+spot_angle = 45.0
+
+[node name="FloodLight3" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.707, 0.707, 0, -0.707, -0.707, -15, 12, 1200)
+light_color = Color(1, 0.9, 0.7, 1)
+light_energy = 3.0
+spot_range = 60.0
+spot_angle = 45.0
+
+[node name="FloodLight4" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.707, 0.707, 0, -0.707, -0.707, 15, 12, 1600)
+light_color = Color(1, 0.9, 0.7, 1)
+light_energy = 3.0
+spot_range = 60.0
+spot_angle = 45.0
+
+; ---- World Environment ----
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_harbor")
+
+; ---- Sub-Resources ----
+
+; 2km straight racing line along docks
+[sub_resource type="Curve3D" id="Curve3D_harbor"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 400, 0, 0, 0, 0, 0, 0, 0, 0.5, 800, 0, 0, 0, 0, 0, 0, 0, 0.5, 1200, 0, 0, 0, 0, 0, 0, 0, 0.5, 1600, 0, 0, 0, 0, 0, 0, 0, 0.5, 2000),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0)
+}
+
+; Collision shapes
+[sub_resource type="BoxShape3D" id="BoxShape_finish"]
+size = Vector3(24, 5, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape_cp"]
+size = Vector3(24, 5, 2)
+
+; Ground
+[sub_resource type="BoxMesh" id="BoxMesh_ground"]
+size = Vector3(24, 0.2, 2100)
+
+[sub_resource type="BoxShape3D" id="BoxShape_ground"]
+size = Vector3(24, 0.2, 2100)
+
+[sub_resource type="StandardMaterial3D" id="mat_ground_harbor"]
+albedo_color = Color(0.18, 0.18, 0.2, 1)
+roughness = 0.85
+
+; Barriers
+[sub_resource type="BoxMesh" id="BoxMesh_barrier_long"]
+size = Vector3(0.5, 1.6, 2100)
+
+[sub_resource type="BoxShape3D" id="BoxShape_barrier_long"]
+size = Vector3(0.5, 1.6, 2100)
+
+[sub_resource type="StandardMaterial3D" id="mat_barrier_harbor"]
+albedo_color = Color(0.8, 0.7, 0.3, 1)
+metallic = 0.6
+roughness = 0.4
+
+; Container props
+[sub_resource type="BoxMesh" id="BoxMesh_container"]
+size = Vector3(6, 3, 2.5)
+
+[sub_resource type="StandardMaterial3D" id="mat_container_red"]
+albedo_color = Color(0.65, 0.1, 0.1, 1)
+roughness = 0.75
+
+[sub_resource type="StandardMaterial3D" id="mat_container_blue"]
+albedo_color = Color(0.1, 0.2, 0.6, 1)
+roughness = 0.75
+
+[sub_resource type="StandardMaterial3D" id="mat_container_green"]
+albedo_color = Color(0.1, 0.55, 0.2, 1)
+roughness = 0.75
+
+; Environment
+[sub_resource type="Environment" id="Environment_harbor"]
+background_mode = 1
+background_color = Color(0.3, 0.4, 0.5, 1)
+ambient_light_source = 2
+ambient_light_color = Color(0.5, 0.55, 0.6, 1)
+ambient_light_energy = 0.6
+tonemap_mode = 2
+fog_enabled = true
+fog_light_color = Color(0.6, 0.65, 0.7, 1)
+fog_density = 0.002
