@@ -1,0 +1,33 @@
+{
+  "vehicle_id": "bmw_z4m_coupe",
+  "display_name": "2007 BMW Z4 M Coupe",
+  "manufacturer": "BMW",
+  "year": 2007,
+  "description": "The clown shoe. Love it or hate the shape, the Z4 M Coupe packs the legendary S54 inline-six into a stiff coupe body with a short wheelbase and rear-wheel drive. It's twitchy, demanding, and absolutely alive in a way that makes modern BMWs feel like appliances.",
+  "base_stats": {
+    "top_speed": 0.64,
+    "acceleration": 0.62,
+    "handling": 0.68,
+    "braking": 0.64,
+    "nitro_capacity": 0.46,
+    "weight_lbs": 3100
+  },
+  "engine": {
+    "horsepower": 330.0,
+    "torque_lbft": 262.0,
+    "displacement_cc": 3246,
+    "configuration": "I6",
+    "aspiration": "naturally_aspirated"
+  },
+  "drivetrain": "rwd",
+  "tier": 3,
+  "price": 60000,
+  "rarity": "uncommon",
+  "cosmetics": {
+    "default_color": "#FF4500",
+    "available_colors": ["#FF4500", "#000000", "#C0C0C0", "#FFFFFF", "#191970", "#2F4F4F"]
+  },
+  "special_traits": ["straight_six", "rev_happy", "cult_classic"],
+  "lore": "BMW only made a handful of Z4 M Coupes, and every single one ended up in the hands of someone who understands that the best driving experiences come from cars that try to kill you a little. The S54 screams to 8000 RPM, the rear end steps out with zero warning, and the smile never leaves your face.",
+  "category": "Euro"
+}

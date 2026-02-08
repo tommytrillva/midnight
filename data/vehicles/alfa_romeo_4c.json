@@ -1,0 +1,40 @@
+{
+  "vehicle_id": "alfa_romeo_4c",
+  "display_name": "2015 Alfa Romeo 4C",
+  "manufacturer": "Alfa Romeo",
+  "year": 2015,
+  "body_style": "coupe",
+  "category": "Euro",
+  "culture": "euro",
+  "tier": 4,
+  "rarity": "uncommon",
+  "description": "Carbon tub exotic. The 4C is proof that the Italians still know how to make a car that stirs the soul. A carbon fiber monocoque chassis, mid-mounted turbocharged four-cylinder, and a weight figure that makes sports car engineers weep with envy. 2,100 pounds of pure driving passion.",
+  "lore": "Alfa Romeo built the 4C with a carbon fiber tub — the same construction technique used by Ferrari and McLaren in their million-dollar hypercars — and sold it for the price of a loaded BMW 3-series. It has no power steering because adding it would compromise the feel. It has no automatic climate control because the weight budget wouldn't allow it. Everything about the 4C is a compromise in favor of driving. The Italians have a word for it: passione.",
+
+  "base_stats": {
+    "top_speed": 0.65,
+    "acceleration": 0.68,
+    "handling": 0.85,
+    "braking": 0.72,
+    "nitro_capacity": 0.34,
+    "weight": 953.0
+  },
+
+  "engine": {
+    "horsepower": 237.0,
+    "torque": 258.0,
+    "displacement": "1.75L",
+    "configuration": "I4",
+    "aspiration": "turbo"
+  },
+
+  "drivetrain": "mr",
+  "price": 110000,
+
+  "cosmetics": {
+    "default_color": "#FF2400",
+    "available_colors": ["#FF2400", "#FFFFFF", "#000000", "#C0C0C0", "#191970", "#FFD700"]
+  },
+
+  "special_traits": ["turbo", "carbon_tub", "featherweight"]
+}

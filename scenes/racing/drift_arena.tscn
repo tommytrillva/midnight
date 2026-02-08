@@ -1,0 +1,349 @@
+[gd_scene load_steps=2 format=3 uid="uid://drift_arena"]
+
+[ext_resource type="Script" path="res://src/racing/race_track.gd" id="1"]
+
+[node name="DriftArena" type="Node3D"]
+script = ExtResource("1")
+is_circuit = false
+lap_count = 1
+
+; ---- Racing Line (loose figure-8 path through the arena) ----
+[node name="RacingLine" type="Path3D" parent="."]
+curve = SubResource("Curve3D_drift")
+
+; ---- Finish Line (end of scoring run) ----
+[node name="FinishLine" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 90)
+collision_layer = 32
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FinishLine"]
+shape = SubResource("BoxShape_drift_finish")
+
+[node name="FinishLabel" type="Label3D" parent="FinishLine"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+text = "FINISH"
+font_size = 64
+modulate = Color(1, 0, 0.6, 1)
+
+; ---- Section Dividers (checkpoints that also mark drift scoring sections) ----
+[node name="Checkpoints" type="Node3D" parent="."]
+
+[node name="CP0" type="Area3D" parent="Checkpoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 25)
+collision_layer = 32
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Checkpoints/CP0"]
+shape = SubResource("BoxShape_drift_cp")
+
+[node name="CP1" type="Area3D" parent="Checkpoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 50)
+collision_layer = 32
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Checkpoints/CP1"]
+shape = SubResource("BoxShape_drift_cp")
+
+[node name="CP2" type="Area3D" parent="Checkpoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 75)
+collision_layer = 32
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Checkpoints/CP2"]
+shape = SubResource("BoxShape_drift_cp")
+
+; ---- Spawn Points ----
+[node name="SpawnPoints" type="Node3D" parent="."]
+
+[node name="Player" type="Marker3D" parent="SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -5)
+
+[node name="AI1" type="Marker3D" parent="SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, -5)
+
+; ---- Drift Zones (Area3D triggers for bonus scoring) ----
+[node name="DriftZones" type="Node3D" parent="."]
+
+[node name="DriftZone_Dock" type="Area3D" parent="DriftZones"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 1, 30)
+collision_layer = 64
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DriftZones/DriftZone_Dock"]
+shape = SubResource("BoxShape_drift_zone_large")
+
+[node name="ZoneLabel" type="Label3D" parent="DriftZones/DriftZone_Dock"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+text = "DRIFT ZONE x1.5"
+font_size = 48
+modulate = Color(0, 1, 0.8, 1)
+
+[node name="DriftZone_Loop" type="Area3D" parent="DriftZones"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 1, 60)
+collision_layer = 64
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DriftZones/DriftZone_Loop"]
+shape = SubResource("BoxShape_drift_zone_medium")
+
+[node name="ZoneLabel" type="Label3D" parent="DriftZones/DriftZone_Loop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+text = "DRIFT ZONE x2.0"
+font_size = 48
+modulate = Color(1, 0, 0.6, 1)
+
+[node name="DriftZone_Spiral" type="Area3D" parent="DriftZones"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 45)
+collision_layer = 64
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DriftZones/DriftZone_Spiral"]
+shape = SubResource("BoxShape_drift_zone_large")
+
+[node name="ZoneLabel" type="Label3D" parent="DriftZones/DriftZone_Spiral"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+text = "DRIFT ZONE x1.5"
+font_size = 48
+modulate = Color(0, 1, 0.8, 1)
+
+; ---- Walls & Obstacles (for near-miss scoring) ----
+[node name="Walls" type="Node3D" parent="."]
+
+; -- Outer perimeter walls --
+[node name="WallNorth" type="StaticBody3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 100)
+collision_layer = 2
+
+[node name="Mesh" type="MeshInstance3D" parent="Walls/WallNorth"]
+mesh = SubResource("BoxMesh_wall_long")
+material_override = SubResource("mat_wall_concrete")
+
+[node name="Collision" type="CollisionShape3D" parent="Walls/WallNorth"]
+shape = SubResource("BoxShape_wall_long")
+
+[node name="WallSouth" type="StaticBody3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -10)
+collision_layer = 2
+
+[node name="Mesh" type="MeshInstance3D" parent="Walls/WallSouth"]
+mesh = SubResource("BoxMesh_wall_long")
+material_override = SubResource("mat_wall_concrete")
+
+[node name="Collision" type="CollisionShape3D" parent="Walls/WallSouth"]
+shape = SubResource("BoxShape_wall_long")
+
+[node name="WallEast" type="StaticBody3D" parent="Walls"]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 35, 1.5, 45)
+collision_layer = 2
+
+[node name="Mesh" type="MeshInstance3D" parent="Walls/WallEast"]
+mesh = SubResource("BoxMesh_wall_long")
+material_override = SubResource("mat_wall_concrete")
+
+[node name="Collision" type="CollisionShape3D" parent="Walls/WallEast"]
+shape = SubResource("BoxShape_wall_long")
+
+[node name="WallWest" type="StaticBody3D" parent="Walls"]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -35, 1.5, 45)
+collision_layer = 2
+
+[node name="Mesh" type="MeshInstance3D" parent="Walls/WallWest"]
+mesh = SubResource("BoxMesh_wall_long")
+material_override = SubResource("mat_wall_concrete")
+
+[node name="Collision" type="CollisionShape3D" parent="Walls/WallWest"]
+shape = SubResource("BoxShape_wall_long")
+
+; -- Interior obstacles (containers, pillars) --
+[node name="Container1" type="StaticBody3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 1, 20)
+collision_layer = 2
+
+[node name="Mesh" type="MeshInstance3D" parent="Walls/Container1"]
+mesh = SubResource("BoxMesh_container")
+material_override = SubResource("mat_container_red")
+
+[node name="Collision" type="CollisionShape3D" parent="Walls/Container1"]
+shape = SubResource("BoxShape_container")
+
+[node name="Container2" type="StaticBody3D" parent="Walls"]
+transform = Transform3D(0.866, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866, -12, 1, 40)
+collision_layer = 2
+
+[node name="Mesh" type="MeshInstance3D" parent="Walls/Container2"]
+mesh = SubResource("BoxMesh_container")
+material_override = SubResource("mat_container_blue")
+
+[node name="Collision" type="CollisionShape3D" parent="Walls/Container2"]
+shape = SubResource("BoxShape_container")
+
+[node name="Container3" type="StaticBody3D" parent="Walls"]
+transform = Transform3D(0.707, 0, 0.707, 0, 1, 0, -0.707, 0, 0.707, 18, 1, 65)
+collision_layer = 2
+
+[node name="Mesh" type="MeshInstance3D" parent="Walls/Container3"]
+mesh = SubResource("BoxMesh_container")
+material_override = SubResource("mat_container_red")
+
+[node name="Collision" type="CollisionShape3D" parent="Walls/Container3"]
+shape = SubResource("BoxShape_container")
+
+[node name="Pillar1" type="StaticBody3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 35)
+collision_layer = 2
+
+[node name="Mesh" type="MeshInstance3D" parent="Walls/Pillar1"]
+mesh = SubResource("CylinderMesh_pillar")
+material_override = SubResource("mat_wall_concrete")
+
+[node name="Collision" type="CollisionShape3D" parent="Walls/Pillar1"]
+shape = SubResource("CylinderShape_pillar")
+
+[node name="Pillar2" type="StaticBody3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 2, 55)
+collision_layer = 2
+
+[node name="Mesh" type="MeshInstance3D" parent="Walls/Pillar2"]
+mesh = SubResource("CylinderMesh_pillar")
+material_override = SubResource("mat_wall_concrete")
+
+[node name="Collision" type="CollisionShape3D" parent="Walls/Pillar2"]
+shape = SubResource("CylinderShape_pillar")
+
+; ---- Spectator Areas (Marker3Ds for future crowd placement) ----
+[node name="SpectatorAreas" type="Node3D" parent="."]
+
+[node name="Spectator_Bleachers_A" type="Marker3D" parent="SpectatorAreas"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 20)
+
+[node name="Spectator_Bleachers_B" type="Marker3D" parent="SpectatorAreas"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, 60)
+
+[node name="Spectator_Rooftop_A" type="Marker3D" parent="SpectatorAreas"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 6, 45)
+
+[node name="Spectator_Rooftop_B" type="Marker3D" parent="SpectatorAreas"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 6, 30)
+
+[node name="Spectator_Ground_A" type="Marker3D" parent="SpectatorAreas"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 80)
+
+[node name="Spectator_Ground_B" type="Marker3D" parent="SpectatorAreas"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 10)
+
+; ---- Neon Lighting (dock/lot night atmosphere) ----
+[node name="Lighting" type="Node3D" parent="."]
+
+[node name="NeonPink1" type="OmniLight3D" parent="Lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 6, 15)
+light_color = Color(1, 0, 0.5, 1)
+light_energy = 4.0
+omni_range = 18.0
+
+[node name="NeonPink2" type="OmniLight3D" parent="Lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 6, 70)
+light_color = Color(1, 0, 0.5, 1)
+light_energy = 4.0
+omni_range = 18.0
+
+[node name="NeonCyan1" type="OmniLight3D" parent="Lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 6, 25)
+light_color = Color(0, 1, 0.9, 1)
+light_energy = 4.0
+omni_range = 18.0
+
+[node name="NeonCyan2" type="OmniLight3D" parent="Lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 6, 60)
+light_color = Color(0, 1, 0.9, 1)
+light_energy = 4.0
+omni_range = 18.0
+
+[node name="NeonPurple1" type="OmniLight3D" parent="Lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 45)
+light_color = Color(0.6, 0, 1, 1)
+light_energy = 5.0
+omni_range = 22.0
+
+[node name="NeonOrange1" type="OmniLight3D" parent="Lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 4, 80)
+light_color = Color(1, 0.4, 0, 1)
+light_energy = 3.0
+omni_range = 14.0
+
+[node name="NeonOrange2" type="OmniLight3D" parent="Lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 4, 5)
+light_color = Color(1, 0.4, 0, 1)
+light_energy = 3.0
+omni_range = 14.0
+
+; Street lights for general illumination
+[node name="StreetLight1" type="OmniLight3D" parent="Lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 8, 0)
+light_color = Color(1, 0.75, 0.4, 1)
+light_energy = 2.0
+omni_range = 25.0
+
+[node name="StreetLight2" type="OmniLight3D" parent="Lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 8, 45)
+light_color = Color(1, 0.75, 0.4, 1)
+light_energy = 2.0
+omni_range = 25.0
+
+[node name="StreetLight3" type="OmniLight3D" parent="Lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 8, 90)
+light_color = Color(1, 0.75, 0.4, 1)
+light_energy = 2.0
+omni_range = 25.0
+
+; ---- Sub-Resources ----
+
+; Racing line: loose figure-8 through the arena (open lot layout)
+[sub_resource type="Curve3D" id="Curve3D_drift"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0.5, 0, 5, 0, 0, -5, 0, 0, 15, 0.5, 15, -5, 0, 0, 5, 0, 0, 25, 0.5, 30, 0, 0, 5, 0, 0, -5, 10, 0.5, 45, -5, 0, 0, 5, 0, 0, -15, 0.5, 60, 5, 0, 0, -5, 0, 0, -5, 0.5, 75, 0, 0, -5, 0, 0, 5, 5, 0.5, 90),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0)
+}
+
+; Collision shapes
+[sub_resource type="BoxShape3D" id="BoxShape_drift_finish"]
+size = Vector3(20, 4, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape_drift_cp"]
+size = Vector3(20, 4, 2)
+
+; Drift zone collision volumes
+[sub_resource type="BoxShape3D" id="BoxShape_drift_zone_large"]
+size = Vector3(24, 4, 20)
+
+[sub_resource type="BoxShape3D" id="BoxShape_drift_zone_medium"]
+size = Vector3(18, 4, 16)
+
+; Wall meshes and shapes
+[sub_resource type="BoxMesh" id="BoxMesh_wall_long"]
+size = Vector3(70, 3, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape_wall_long"]
+size = Vector3(70, 3, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="mat_wall_concrete"]
+albedo_color = Color(0.25, 0.22, 0.2, 1)
+roughness = 0.95
+
+; Container obstacles
+[sub_resource type="BoxMesh" id="BoxMesh_container"]
+size = Vector3(6, 2.5, 2.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape_container"]
+size = Vector3(6, 2.5, 2.5)
+
+[sub_resource type="StandardMaterial3D" id="mat_container_red"]
+albedo_color = Color(0.6, 0.1, 0.1, 1)
+roughness = 0.8
+
+[sub_resource type="StandardMaterial3D" id="mat_container_blue"]
+albedo_color = Color(0.1, 0.15, 0.5, 1)
+roughness = 0.8
+
+; Pillar obstacles
+[sub_resource type="CylinderMesh" id="CylinderMesh_pillar"]
+top_radius = 0.4
+bottom_radius = 0.4
+height = 4.0
+
+[sub_resource type="CylinderShape3D" id="CylinderShape_pillar"]
+radius = 0.4
+height = 4.0

@@ -1,0 +1,174 @@
+{
+  "id": "ending_a_legend",
+  "context": "Ending A: The Legend Never Dies — High overall relationships, Legend path. Time-lapse of Driver's legacy across years.",
+  "ending_id": "legend",
+  "ending_title": "The Legend Never Dies",
+  "lines": [
+    {
+      "type": "narration",
+      "text": "Years pass. The way years do — in flashes."
+    },
+    {
+      "type": "narration",
+      "text": "A mural on the side of Maya's garage. Fresh paint, bright colors. Your car, mid-drift, trailing light like a comet."
+    },
+    {
+      "type": "narration",
+      "text": "A kid stops to stare at it on the way to school. Every morning. Same kid. Same hungry eyes."
+    },
+    {
+      "type": "narration",
+      "text": "The Downtown strip renamed. Not officially — the city council would never. But everyone who matters calls it by your name."
+    },
+    {
+      "type": "narration",
+      "text": "Race nights dedicated to you. Trophies with your silhouette. Stories told in garages at 2 AM by people who weren't even born when you ran Route 9."
+    },
+    {
+      "type": "narration",
+      "text": "The stories get bigger every year. The times get faster. The margins get wider. That's how legends work — they grow in the telling."
+    },
+    {
+      "type": "narration",
+      "text": "Five years out. Ten. Twenty."
+    },
+    {
+      "type": "narration",
+      "text": "Nova Pacifica changes. Buildings go up. Buildings come down. The harbor road gets widened. Route 9 stays the same — it's protected now. Historical landmark. Someone fought for that."
+    },
+    {
+      "type": "narration",
+      "text": "Maya fought for that."
+    },
+    {
+      "type": "narration",
+      "text": "The garage is still there. Bigger now. A school, really. Young mechanics learning the way Maya learned — hands-on, oil under fingernails, no shortcuts."
+    },
+    {
+      "type": "narration",
+      "text": "Nikko runs a team. Legitimate. Sponsors, liveries, the whole deal. He never stops telling people he beat you once. Nobody believes him. He doesn't care."
+    },
+    {
+      "type": "narration",
+      "text": "And Diesel..."
+    },
+    {
+      "label": "diesel_alive",
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_older",
+      "text": "People ask me about those days. The early days.",
+      "condition": {
+        "type": "has_flag",
+        "flag": "diesel_survived"
+      }
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_older",
+      "text": "They want the races. The times. The cars. They want to know if the stories are true.",
+      "condition": {
+        "type": "has_flag",
+        "flag": "diesel_survived"
+      }
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_older",
+      "text": "I tell them the stories don't do it justice. They never do.",
+      "condition": {
+        "type": "has_flag",
+        "flag": "diesel_survived"
+      }
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_older",
+      "text": "They came from nothing. They lost everything. And then they built something that can never be taken away.",
+      "condition": {
+        "type": "has_flag",
+        "flag": "diesel_survived"
+      }
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_approval",
+      "text": "A legend.",
+      "condition": {
+        "type": "has_flag",
+        "flag": "diesel_survived"
+      }
+    },
+    {
+      "label": "diesel_gone",
+      "type": "narration",
+      "text": "Diesel's coupe sits in a glass case at the harbor overlook. Untouched. The plaque just says his name and two dates. Nothing else needed.",
+      "condition": {
+        "type": "flag_equals",
+        "flag": "diesel_survived",
+        "value": false
+      }
+    },
+    {
+      "type": "narration",
+      "text": "People leave flowers on the hood sometimes. And photos of their builds. He would have hated that. He would have secretly loved it.",
+      "condition": {
+        "type": "flag_equals",
+        "flag": "diesel_survived",
+        "value": false
+      }
+    },
+    {
+      "type": "narration",
+      "text": "Dawn. The harbor district. A statue unveiled last year — not a statue of you, exactly. A figure leaning against a car, looking at the horizon. Could be anyone. But everyone knows."
+    },
+    {
+      "type": "narration",
+      "text": "A kid stops in front of it. Beat-up sneakers. Hands in pockets. Eyes that have seen more than they should at that age."
+    },
+    {
+      "type": "narration",
+      "text": "Behind the kid, parked crooked against the curb, a car. Old. Dented. Held together by will and wire and something the kid can't name yet."
+    },
+    {
+      "type": "narration",
+      "text": "The kid looks at the statue. Looks at the car. Looks back at the statue."
+    },
+    {
+      "type": "narration",
+      "text": "Same hungry eyes."
+    },
+    {
+      "type": "narration",
+      "text": "Same beat-up car."
+    },
+    {
+      "type": "narration",
+      "text": "Same city that takes everything and gives nothing back — unless you take it."
+    },
+    {
+      "type": "narration",
+      "text": "The kid gets in the car. The engine coughs, catches, holds. A sound like a promise."
+    },
+    {
+      "type": "narration",
+      "text": "The cycle begins again."
+    },
+    {
+      "type": "narration",
+      "text": "THE LEGEND NEVER DIES"
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "ending_completed_legend",
+        "value": true
+      }
+    }
+  ]
+}

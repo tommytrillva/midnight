@@ -1,0 +1,40 @@
+{
+  "vehicle_id": "mclaren_765lt",
+  "display_name": "2021 McLaren 765LT",
+  "manufacturer": "McLaren",
+  "year": 2021,
+  "body_style": "coupe",
+  "category": "Hyper",
+  "culture": "euro",
+  "tier": 6,
+  "rarity": "epic",
+  "description": "The Longtail ultimate. McLaren took the already-devastating 720S, added 45 horsepower, removed 176 pounds, extended the body, and created a track weapon so capable it makes professional racing drivers question their life choices.",
+  "lore": "The Longtail designation traces back to the McLaren F1 GTR Longtail that dominated Le Mans in the late 1990s. The 765LT carries on that legacy with a lengthened carbon fiber body, titanium exhaust, carbon fiber racing seats, and a twin-turbo V8 tuned to 755 horsepower. McLaren removed the air conditioning, audio system, and carpet to save weight. If you want comfort, buy a 720S. If you want to set lap records, this is the one.",
+
+  "base_stats": {
+    "top_speed": 0.92,
+    "acceleration": 0.91,
+    "handling": 0.89,
+    "braking": 0.89,
+    "nitro_capacity": 0.40,
+    "weight": 1225.0
+  },
+
+  "engine": {
+    "horsepower": 755.0,
+    "torque": 590.0,
+    "displacement": "4.0L",
+    "configuration": "V8",
+    "aspiration": "twin_turbo"
+  },
+
+  "drivetrain": "mr",
+  "price": 1200000,
+
+  "cosmetics": {
+    "default_color": "#FF4500",
+    "available_colors": ["#FF4500", "#00FF7F", "#FFFFFF", "#000000", "#C0C0C0", "#4169E1"]
+  },
+
+  "special_traits": ["twin_turbo", "longtail", "track_weapon"]
+}

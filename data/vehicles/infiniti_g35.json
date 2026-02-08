@@ -1,0 +1,33 @@
+{
+  "vehicle_id": "infiniti_g35",
+  "display_name": "2003 Infiniti G35",
+  "manufacturer": "Infiniti",
+  "year": 2003,
+  "description": "The same VQ35DE as the 350Z, wrapped in leather and luxury. The G35 shares its platform with Nissan's Z-car but adds weight, refinement, and the kind of anonymity that makes it the perfect sleeper. Nobody expects the luxury sedan to keep up — until it does.",
+  "base_stats": {
+    "top_speed": 0.60,
+    "acceleration": 0.58,
+    "handling": 0.60,
+    "braking": 0.58,
+    "nitro_capacity": 0.44,
+    "weight_lbs": 3400
+  },
+  "engine": {
+    "horsepower": 260.0,
+    "torque_lbft": 260.0,
+    "displacement_cc": 3498,
+    "configuration": "V6",
+    "aspiration": "naturally_aspirated"
+  },
+  "drivetrain": "rwd",
+  "tier": 3,
+  "price": 40000,
+  "rarity": "common",
+  "cosmetics": {
+    "default_color": "#1C1C1C",
+    "available_colors": ["#1C1C1C", "#C0C0C0", "#FFFFFF", "#000000", "#191970", "#8B0000"]
+  },
+  "special_traits": ["vq_power", "grand_tourer", "sleeper"],
+  "lore": "The G35 is the car you buy when you want 350Z performance with grown-up manners. It's the car that shows up to meets in a suit and tie, then quietly runs mid-13s at the strip. Half the G35s in Nova Pacifica are secretly faster than they look — and that's exactly the point.",
+  "category": "JDM"
+}

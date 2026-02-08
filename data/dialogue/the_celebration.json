@@ -1,0 +1,241 @@
+{
+  "id": "the_celebration",
+  "context": "Act 2A Chapter 2.4 — Victory party. But something's wrong. Jade is distant. Hints of conspiracy.",
+  "lines": [
+    {
+      "type": "narration",
+      "text": "The Apex victory party. Rooftop bar overlooking Nova Pacifica harbor. The entire team is here — engineers, mechanics, marketing, PR. Everyone who touched the championship campaign is drinking champagne that the company can finally afford."
+    },
+    {
+      "type": "narration",
+      "text": "You are the center of gravity. People orbit you — handshakes, photographs, congratulations that blur together like mile markers on a highway."
+    },
+    {
+      "type": "narration",
+      "text": "Henrik is by the bar, nursing a single beer with the satisfied air of a man whose plan worked. He catches your eye and raises his glass. The nod that follows says more than any speech."
+    },
+    {
+      "type": "narration",
+      "text": "But Jade is wrong."
+    },
+    {
+      "type": "narration",
+      "text": "She is here — of course she is, this is her night more than anyone's — but she is on the periphery. Checking her phone. Stepping away for calls. Her smile, when she deploys it, doesn't quite connect to her eyes."
+    },
+    {
+      "type": "narration",
+      "text": "You have spent enough time with Jade Winters to know when the mask is performing and when it is malfunctioning. Right now, it is malfunctioning."
+    },
+    {
+      "type": "narration",
+      "text": "You find her at the edge of the rooftop, looking out at the harbor."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_distant",
+      "text": "Congratulations. You earned this."
+    },
+    {
+      "type": "narration",
+      "text": "She says it without turning around. Her voice is flat in a way that Jade's voice is never flat."
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "What's wrong, Jade?",
+          "choice_id": "celeb_direct",
+          "relationship_changes": {"jade": 5},
+          "moral_shift": 5,
+          "jump_to": "jade_tells"
+        },
+        {
+          "text": "We earned this. This was your championship too.",
+          "choice_id": "celeb_inclusive",
+          "relationship_changes": {"jade": 8},
+          "moral_shift": 0,
+          "jump_to": "jade_deflects"
+        },
+        {
+          "text": "You've been on your phone all night. What's happening?",
+          "choice_id": "celeb_observant",
+          "relationship_changes": {"jade": 3},
+          "moral_shift": 0,
+          "jump_to": "jade_caught"
+        }
+      ]
+    },
+    {
+      "label": "jade_tells",
+      "type": "narration",
+      "text": "She takes a breath. Holds it. Lets it go."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_pained",
+      "text": "The board meeting was this afternoon. While you were at the photoshoot. They gave me the partnership. Fifteen years, and they finally—"
+    },
+    {
+      "type": "narration",
+      "text": "She stops. Her jaw tightens."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_pained",
+      "text": "And then Dominic Weir showed me what the partnership really means. What being 'inside' really looks like.",
+      "jump_to": "jade_revelation"
+    },
+    {
+      "label": "jade_deflects",
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_distant",
+      "text": "My championship. Right."
+    },
+    {
+      "type": "narration",
+      "text": "The bitterness is so faint you almost miss it. Almost."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_pained",
+      "text": "Can I tell you something? And can it stay between us?",
+      "jump_to": "jade_revelation"
+    },
+    {
+      "label": "jade_caught",
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_cold",
+      "text": "You're observant. That's going to be a problem."
+    },
+    {
+      "type": "narration",
+      "text": "She pockets the phone. Turns to face you fully for the first time tonight.",
+      "jump_to": "jade_revelation"
+    },
+    {
+      "label": "jade_revelation",
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_pained",
+      "text": "The championship we just won. It's real — your driving is real, Henrik's support was real, every lap you drove was genuine."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_pained",
+      "text": "But the field wasn't. Three of the races were managed. Competitors were paid to underperform. The championship was always going to come down to us and Kessler — because that's the story the league wanted to sell."
+    },
+    {
+      "type": "narration",
+      "text": "The words hit you like a wall at the end of a straight."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_pained",
+      "text": "I didn't know. I swear to you, I didn't know until today. Dominic showed me because now I'm 'inside' and insiders know how the machine works."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_anguished",
+      "text": "Fifteen years. I built my career on believing this was real. And now I find out I was just another part of the show."
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "We expose them. All of it. Burn it down.",
+          "choice_id": "celeb_expose",
+          "relationship_changes": {"jade": 10},
+          "moral_shift": 15,
+          "set_flags": {"wants_to_expose": true},
+          "jump_to": "jade_afraid"
+        },
+        {
+          "text": "Our driving was real. That's what matters.",
+          "choice_id": "celeb_rationalize",
+          "relationship_changes": {"jade": -5},
+          "moral_shift": -10,
+          "jump_to": "jade_disappointed"
+        },
+        {
+          "text": "What do you want to do about it?",
+          "choice_id": "celeb_her_call",
+          "relationship_changes": {"jade": 8},
+          "moral_shift": 5,
+          "jump_to": "jade_decides"
+        }
+      ]
+    },
+    {
+      "label": "jade_afraid",
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_vulnerable",
+      "text": "You don't understand what you're saying. These people — Dominic, the board, the sponsors — they are powerful in ways that transcend racing. They have lawyers. They have connections. They have the ability to make people disappear from this industry like they never existed."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_vulnerable",
+      "text": "I want to expose them. I do. But I'm afraid. And I'm not used to being afraid.",
+      "jump_to": "celebration_end"
+    },
+    {
+      "label": "jade_disappointed",
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_cold",
+      "text": "That's what you take from this? That your driving was real? Three teams cheated to lose and you think that doesn't taint every result on the board?"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_distant",
+      "text": "I thought you were different. I thought the underground taught you that integrity matters.",
+      "jump_to": "celebration_end"
+    },
+    {
+      "label": "jade_decides",
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_determined",
+      "text": "I want to do what's right. I just don't know what that looks like yet. Give me time. I need to be smart about this."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_determined",
+      "text": "For now — enjoy tonight. You deserve to. Whatever's rotten underneath, you drove every lap honestly. Hold onto that.",
+      "jump_to": "celebration_end"
+    },
+    {
+      "label": "celebration_end",
+      "type": "narration",
+      "text": "She walks back to the party. The mask reassembles. The smile returns. She accepts a glass of champagne and laughs at someone's joke and nobody in the room can tell that the ground just shifted beneath her."
+    },
+    {
+      "type": "narration",
+      "text": "You stay at the edge of the rooftop. The harbor lights reflect off the water in wavering lines that look like the path you've driven to get here — beautiful from a distance, turbulent up close."
+    },
+    {
+      "type": "narration",
+      "text": "Champion. The word tastes different now. Not bitter. Not sweet. Just... complicated."
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "the_celebration_complete",
+        "value": true
+      }
+    }
+  ]
+}

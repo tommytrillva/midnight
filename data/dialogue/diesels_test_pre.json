@@ -1,0 +1,183 @@
+{
+  "id": "diesels_test_pre",
+  "context": "Diesel approaches the player directly for the first time and challenges them to a touge duel",
+  "lines": [
+    {
+      "type": "narration",
+      "text": "You're checking your tires in the lot behind the ramen place on 7th when a shadow falls across your hood. You look up."
+    },
+    {
+      "type": "narration",
+      "text": "It's him. The man from that night — the one who watched you from the dark. Up close, he's older than you expected. Late forties, maybe. Deep lines around his eyes. Hands that have turned a million wrenches."
+    },
+    {
+      "type": "narration",
+      "text": "He doesn't smile. He doesn't introduce himself. He just stands there and lets the silence do the talking."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "I've been watching you."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "Harbor Road. The Proving Grounds. You drive like someone with something to lose."
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "Who are you?",
+          "choice_id": "diesel_who",
+          "relationship_changes": {"diesel": 3},
+          "moral_shift": 0,
+          "jump_to": "diesel_answers_who"
+        },
+        {
+          "text": "Yeah, I saw you that night. What do you want?",
+          "choice_id": "diesel_direct",
+          "relationship_changes": {"diesel": 5},
+          "moral_shift": 0,
+          "jump_to": "diesel_answers_direct"
+        },
+        {
+          "text": "Watching me? That's not creepy at all.",
+          "choice_id": "diesel_joke",
+          "relationship_changes": {"diesel": 0},
+          "moral_shift": 0,
+          "jump_to": "diesel_answers_joke"
+        }
+      ]
+    },
+    {
+      "label": "diesel_answers_who",
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "Doesn't matter."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "Names are for people who need to be remembered. I need to see something first.",
+      "jump_to": "diesel_challenge"
+    },
+    {
+      "label": "diesel_answers_direct",
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "Good. You pay attention. That matters more than speed."
+    },
+    {
+      "type": "narration",
+      "text": "He nods once — barely perceptible. Like you just passed some test you didn't know you were taking.",
+      "jump_to": "diesel_challenge"
+    },
+    {
+      "label": "diesel_answers_joke",
+      "type": "narration",
+      "text": "Nothing. Not even a flicker. The joke dies in the air between you like a spent match."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "Listen.",
+      "jump_to": "diesel_challenge"
+    },
+    {
+      "label": "diesel_challenge",
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "Route 9. The mountain pass above the harbor. You know it?"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "Touge run. You and me. Downhill."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "No money. No crowd. No prize."
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "If there's no prize, what's the point?",
+          "choice_id": "diesel_why",
+          "relationship_changes": {"diesel": 0},
+          "moral_shift": 0,
+          "jump_to": "diesel_explains"
+        },
+        {
+          "text": "When?",
+          "choice_id": "diesel_when",
+          "relationship_changes": {"diesel": 5},
+          "moral_shift": 0,
+          "jump_to": "diesel_time"
+        }
+      ]
+    },
+    {
+      "label": "diesel_explains",
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "The point."
+    },
+    {
+      "type": "narration",
+      "text": "He pauses. Looks up at the sky like he's pulling the words from somewhere deep."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "I don't care if you win. I want to see how you drive when nothing's on the line. That's when the truth comes out."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "Anybody can drive fast for money. I want to see your heart.",
+      "jump_to": "diesel_time"
+    },
+    {
+      "label": "diesel_time",
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "Tomorrow. 2 AM. Top of Route 9. Be there or don't. I won't ask twice."
+    },
+    {
+      "type": "narration",
+      "text": "He turns and walks back to his car — that same matte black coupe. No badge, no decals, no vanity. Just machine."
+    },
+    {
+      "type": "narration",
+      "text": "The engine starts with a sound that makes your stomach drop. Deep, mechanical, alive. Whatever is under that hood has no business being on a public road."
+    },
+    {
+      "type": "narration",
+      "text": "He pulls away without looking back. You stand in the lot, heart hammering, and realize you've already decided. You'll be there."
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "diesel_challenge_accepted",
+        "value": true
+      }
+    }
+  ]
+}

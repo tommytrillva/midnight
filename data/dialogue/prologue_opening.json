@@ -1,0 +1,90 @@
+{
+  "id": "prologue_opening",
+  "context": "Prologue — Rain-soaked streets, the race that changes everything",
+  "lines": [
+    {
+      "type": "cinematic",
+      "text": "NOVA PACIFICA — 2:47 AM"
+    },
+    {
+      "type": "cinematic",
+      "text": "Rain hammers the windshield. Wipers fight a losing battle. The streets are slicked black and shining with reflected neon — reds, blues, greens bleeding together like a fever dream."
+    },
+    {
+      "type": "narration",
+      "text": "You sit behind the wheel of a '94 CRX that has no business still running. The check engine light gave up months ago. The heater doesn't work. But the engine turns over, and right now, that's enough."
+    },
+    {
+      "type": "narration",
+      "text": "Your phone buzzes on the passenger seat. You already know what it says. FINAL NOTICE — EVICTION. 30 DAYS. The words blur through rain-spotted glass."
+    },
+    {
+      "type": "narration",
+      "text": "You shove the phone under the seat. Thirty days. Or tonight."
+    },
+    {
+      "type": "cinematic",
+      "text": "A red light. The intersection is empty — just you and the rain and the hum of a dying engine."
+    },
+    {
+      "type": "cinematic",
+      "text": "Then you hear it. A low, guttural rumble. The kind of sound that makes your chest vibrate."
+    },
+    {
+      "type": "narration",
+      "text": "A GT-R slides up next to you. Matte black. Aftermarket exhaust growling like something caged. The driver glances over — gold chain, confident smirk, the kind of look that says 'I own this road.'"
+    },
+    {
+      "type": "narration",
+      "text": "He revs. Once. Twice. The GT-R barks and crackles, daring you."
+    },
+    {
+      "type": "narration",
+      "text": "You know what your car is. You know the odds. You grip the steering wheel anyway."
+    },
+    {
+      "type": "cinematic",
+      "text": "The light turns green."
+    },
+    {
+      "type": "narration",
+      "text": "You floor it."
+    },
+    {
+      "type": "cinematic",
+      "text": "The CRX screams. The GT-R launches like a bullet. In two seconds he's a car length ahead. In five, he's gone — taillights shrinking into the rain."
+    },
+    {
+      "type": "narration",
+      "text": "You lose. Badly. The kind of loss that isn't even close enough to hurt. It should make you stop. Should make you turn around, go home, accept the eviction notice and the dead-end life waiting behind it."
+    },
+    {
+      "type": "narration",
+      "text": "But something happened when that light turned green. Something in your chest — a spark, a hunger, a sound louder than the engine."
+    },
+    {
+      "type": "narration",
+      "text": "Something just woke up."
+    },
+    {
+      "type": "cinematic",
+      "text": "The CRX idles at the side of the road. Rain streaks the windows. The city hums around you, indifferent and alive."
+    },
+    {
+      "type": "narration",
+      "text": "You don't go home. You drive. Through downtown, past the docks, along the waterfront. Looking for something you can't name yet."
+    },
+    {
+      "type": "narration",
+      "text": "Eventually, the CRX coughs, sputters, and dies in front of a garage with a hand-painted sign: TORRES AUTO."
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "prologue_opening_complete",
+        "value": true
+      }
+    }
+  ]
+}

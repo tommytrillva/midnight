@@ -1,0 +1,40 @@
+{
+  "vehicle_id": "lambo_aventador_svj",
+  "display_name": "2019 Lamborghini Aventador SVJ",
+  "manufacturer": "Lamborghini",
+  "year": 2019,
+  "body_style": "coupe",
+  "category": "Hyper",
+  "culture": "euro",
+  "tier": 6,
+  "rarity": "epic",
+  "description": "The V12 monster. SVJ stands for Super Veloce Jota — the most extreme designation Lamborghini bestows. 770 horsepower from a naturally aspirated V12, all-wheel drive, active aerodynamics, and a design that looks like it was forged in a volcano. This is Lamborghini at maximum volume.",
+  "lore": "The Aventador SVJ took the Nürburgring production car lap record with a time of 6:44.97 — a number that shouldn't be physically possible for a car that weighs 3,300 pounds and has a 6.5-liter V12 mounted lengthwise behind the cabin. The ALA 2.0 active aero system, four-wheel steering, and magneto-rheological suspension work together to make the impossible merely improbable. Limited to 900 units worldwide.",
+
+  "base_stats": {
+    "top_speed": 0.92,
+    "acceleration": 0.89,
+    "handling": 0.86,
+    "braking": 0.87,
+    "nitro_capacity": 0.45,
+    "weight": 1497.0
+  },
+
+  "engine": {
+    "horsepower": 770.0,
+    "torque": 531.0,
+    "displacement": "6.5L",
+    "configuration": "V12",
+    "aspiration": "naturally_aspirated"
+  },
+
+  "drivetrain": "awd",
+  "price": 1200000,
+
+  "cosmetics": {
+    "default_color": "#32CD32",
+    "available_colors": ["#32CD32", "#FFD700", "#FF4500", "#000000", "#FFFFFF", "#4169E1"]
+  },
+
+  "special_traits": ["v12", "awd", "active_aero", "dramatic"]
+}

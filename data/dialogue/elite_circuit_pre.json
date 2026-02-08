@@ -1,0 +1,134 @@
+{
+  "id": "elite_circuit_pre",
+  "context": "Act 3 Chapter 3.1 — First race among Zero's elite. Different rules. Different stakes. Different world entirely.",
+  "lines": [
+    {
+      "type": "narration",
+      "text": "A private road through the mountains. Not the public mountains — a privately owned stretch of tarmac that winds through forests and ridgelines and views that belong on postcards."
+    },
+    {
+      "type": "narration",
+      "text": "Six cars at the starting line. Each one worth more than most people's houses. You recognize a Porsche GT2 RS, a Ferrari 488 Pista, a Lamborghini Huracan Performante. The other three are custom builds — no badges, no marks, cars that exist outside the catalog."
+    },
+    {
+      "type": "narration",
+      "text": "The drivers stand beside their machines. They do not socialize. They do not banter. They exist in the space between concentration and prayer."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Echo",
+      "portrait": "echo_hooded",
+      "text": "The rules are simple. Six laps. No contact. No team orders. No radio. The car speaks. You listen. The road judges."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Echo",
+      "portrait": "echo_hooded",
+      "text": "There is no prize money. The winner receives an invitation to the next event. The loser receives nothing — not even the memory of this road. You are forbidden from speaking about what happens here."
+    },
+    {
+      "type": "narration",
+      "text": "Your car — provided by Zero — is a machine you have never driven before. A custom GT car with no nameplate. When you turn the key, the engine note is unlike anything you have heard. Not aggressive. Not loud. Precise. Like a scalpel that happens to produce sound."
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "Study the other drivers. Learn before racing.",
+          "choice_id": "elite_study",
+          "relationship_changes": {},
+          "moral_shift": 0,
+          "set_flags": {"elite_studied_opponents": true},
+          "jump_to": "study_drivers"
+        },
+        {
+          "text": "Focus on the car. Trust what it tells you.",
+          "choice_id": "elite_car_focus",
+          "relationship_changes": {},
+          "moral_shift": 0,
+          "jump_to": "car_focus"
+        },
+        {
+          "text": "Trust your instincts. The road is the same everywhere.",
+          "choice_id": "elite_instinct",
+          "relationship_changes": {},
+          "moral_shift": 0,
+          "jump_to": "instinct_drive"
+        }
+      ]
+    },
+    {
+      "label": "study_drivers",
+      "type": "narration",
+      "text": "You watch them during the warm-up lap. The Porsche driver brakes early and precisely — a data-driven racer, every input calculated. The Ferrari driver is aggressive on corner entry but gentle on exit — a feel driver, like you. The Lamborghini driver doesn't brake at all where you expect — either insane or operating on a level you haven't reached."
+    },
+    {
+      "type": "narration",
+      "text": "The others are harder to read. Their driving is clean to the point of being invisible. No tells. No habits. Just speed.",
+      "jump_to": "race_start"
+    },
+    {
+      "label": "car_focus",
+      "type": "narration",
+      "text": "You spend the warm-up lap listening. The car talks — not in sounds but in sensations. The steering weight, the brake pedal travel, the throttle response. Every input has a reply. The car is asking you questions and you are learning its language."
+    },
+    {
+      "type": "narration",
+      "text": "By the end of the warm-up lap, you understand: this car wants to be driven hard but clean. No sliding, no drama. Just the fastest possible line through every corner, connected by the straightest possible straights.",
+      "jump_to": "race_start"
+    },
+    {
+      "label": "instinct_drive",
+      "type": "narration",
+      "text": "The underground taught you that every road speaks the same language. Asphalt, grip, gravity, momentum. The vocabulary changes but the grammar is universal."
+    },
+    {
+      "type": "narration",
+      "text": "You close your eyes for three seconds. Breathe. When you open them, the road is just a road. The car is just a car. And you are just a driver. Everything else is noise.",
+      "jump_to": "race_start"
+    },
+    {
+      "label": "race_start",
+      "type": "narration",
+      "text": "The start is not a start — it is a detonation. Six cars launch into the first corner with violence disguised as precision. The speed is beyond anything you have experienced. The turns arrive faster. The braking zones are shorter. The margin for error is measured in millimeters."
+    },
+    {
+      "type": "narration",
+      "text": "You are fifth after the first lap. Then fourth. Then third. The car responds to your hands like it was built for your DNA. Every correction, every adjustment, every moment of intuition translates into speed."
+    },
+    {
+      "type": "narration",
+      "text": "Lap four. You are second. The leader — the Lamborghini — is two seconds ahead and pulling away. They are driving at a level you didn't know existed."
+    },
+    {
+      "type": "narration",
+      "text": "Final lap. Final corner. You close the gap to half a second. You see the finish — a line painted on the road, nothing more, no banners, no crowds, no cameras."
+    },
+    {
+      "type": "narration",
+      "text": "You finish second. The Lamborghini crosses first. The driver steps out, removes their helmet, and you see a face you will never be able to describe. Not because of secrecy — because in this moment, their face is just a face. It is the driving that mattered."
+    },
+    {
+      "type": "narration",
+      "text": "No podium. No champagne. No applause. Just the sound of engines cooling in the mountain air and the knowledge that you just competed at a level most drivers will never reach."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Echo",
+      "portrait": "echo_hooded",
+      "text": "Second. On your first attempt. Zero is... recalibrating expectations."
+    },
+    {
+      "type": "narration",
+      "text": "The mountain road disappears in your rearview mirror. The world below — with its championships and scandals and underground empires — feels very small from up here."
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "elite_circuit_complete",
+        "value": true
+      }
+    }
+  ]
+}

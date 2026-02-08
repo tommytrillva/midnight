@@ -1,0 +1,41 @@
+{
+  "vehicle_id": "nissan_r34_vspec2",
+  "display_name": "2000 Nissan Skyline R34 GT-R V-Spec II N\u00fcr",
+  "manufacturer": "Nissan",
+  "year": 2000,
+  "body_style": "coupe",
+  "category": "JDM",
+  "culture": "jdm",
+  "tier": 4,
+  "rarity": "epic",
+  "description": "The final evolution of the Skyline GT-R lineage. The V-Spec II N\u00fcr was Nissan's send-off for the RB26 — a hand-built engine in a chassis refined by decades of Group A racing. Only 750 were made, and every single one became a holy relic of JDM culture.",
+  "lore": "N\u00fcr stands for N\u00fcrburgring, where Nissan tested and tuned the R34 to perfection. The V-Spec II got an N1-spec engine block with improved oiling, gold valve covers, and a suspension setup that made the car feel telepathic on circuit. The Japanese government rated it at 280 horsepower — nobody believed them. Dyno sheets told a different story.",
+
+  "base_stats": {
+    "top_speed": 0.75,
+    "acceleration": 0.74,
+    "handling": 0.78,
+    "braking": 0.76,
+    "nitro_capacity": 0.40,
+    "weight": 1520.0
+  },
+
+  "engine": {
+    "code": "RB26DETT",
+    "horsepower": 280.0,
+    "torque": 293.0,
+    "displacement": "2.6L",
+    "configuration": "I6",
+    "aspiration": "twin_turbo"
+  },
+
+  "drivetrain": "awd",
+  "price": 250000,
+
+  "cosmetics": {
+    "default_color": "#3A75C4",
+    "available_colors": ["#3A75C4", "#FFFFFF", "#000000", "#C0C0C0", "#1C1C1C", "#8B0000"]
+  },
+
+  "special_traits": ["rb26", "awd", "nur_edition"]
+}

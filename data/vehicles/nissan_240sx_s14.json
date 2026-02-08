@@ -1,0 +1,52 @@
+{
+  "vehicle_id": "nissan_240sx_s14",
+  "display_name": "1995 Nissan 240SX (S14)",
+  "manufacturer": "Nissan",
+  "year": 1995,
+  "body_style": "coupe",
+  "category": "JDM/Drift",
+  "culture": "jdm",
+  "tier": 2,
+  "rarity": "common",
+  "description": "The S14 is the evolved form of Nissan's drift legacy. Wider, stiffer, and more aggressive than the S13, it's the chassis that professional drifters choose when they need precision and presence. The KA24DE is just a placeholder for the SR20DET that's already in the budget spreadsheet.",
+  "lore": "The drift king's throne. Cleaner than most S-chassis on the market, this zenki S14 still wears its factory paint. The previous owner was saving for an SR swap but ran out of patience. His loss is your gain.",
+
+  "base_stats": {
+    "top_speed": 56.0,
+    "acceleration": 44.0,
+    "handling": 55.0,
+    "braking": 42.0,
+    "nitro_capacity": 38.0,
+    "weight_kg": 1270.0
+  },
+
+  "engine": {
+    "code": "KA24DE",
+    "horsepower": 155.0,
+    "torque_lbft": 160.0,
+    "displacement_cc": 2389,
+    "configuration": "I4",
+    "aspiration": "naturally_aspirated",
+    "valvetrain": "DOHC 16V",
+    "redline_rpm": 6500
+  },
+
+  "drivetrain": "rwd",
+  "price": 20000,
+  "class": "C",
+
+  "cosmetics": {
+    "available_colors": ["super_black", "pearl_white", "ruby_red", "emerald_green"],
+    "body_kits": ["stock_zenki", "kouki_conversion", "rocket_bunny_v2", "origin_lab_raijin"],
+    "spoiler_options": ["none", "factory_lip", "kouki_wing", "rocket_bunny_ducktail"],
+    "wheel_options": ["stock_16", "work_emotion_cr_17", "rays_te37_17", "ssr_professor_sp1"]
+  },
+
+  "special_traits": ["drift_king", "sr20_swappable"],
+
+  "mod_potential": {
+    "engine_swaps": ["sr20det", "rb25det", "2jz-gte", "ls1"],
+    "max_hp_potential": 700,
+    "upgrade_ceiling": "S"
+  }
+}

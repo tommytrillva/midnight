@@ -1,0 +1,40 @@
+{
+  "vehicle_id": "amg_gt_r",
+  "display_name": "2018 Mercedes-AMG GT R",
+  "manufacturer": "Mercedes-AMG",
+  "year": 2018,
+  "body_style": "coupe",
+  "category": "Euro/Pro",
+  "culture": "euro",
+  "tier": 5,
+  "rarity": "rare",
+  "description": "The Green Hell beast. Developed on the Nürburgring Nordschleife — a track the Germans literally call 'The Green Hell' — the AMG GT R is Mercedes' answer to the question nobody asked: what if we made a front-engine car that could humiliate mid-engine supercars?",
+  "lore": "AMG's engineers spent hundreds of hours on the Nordschleife refining the GT R's active aerodynamics, rear-wheel steering, and electronically controlled differential. The signature 'AMG Green Hell Magno' paint isn't just a color — it's a warning. This car set a production car lap record at the Nürburgring, and it wants you to know it.",
+
+  "base_stats": {
+    "top_speed": 0.83,
+    "acceleration": 0.81,
+    "handling": 0.82,
+    "braking": 0.82,
+    "nitro_capacity": 0.40,
+    "weight": 1542.0
+  },
+
+  "engine": {
+    "horsepower": 577.0,
+    "torque": 516.0,
+    "displacement": "4.0L",
+    "configuration": "V8",
+    "aspiration": "twin_turbo"
+  },
+
+  "drivetrain": "rwd",
+  "price": 350000,
+
+  "cosmetics": {
+    "default_color": "#556B2F",
+    "available_colors": ["#556B2F", "#C0C0C0", "#000000", "#FFFFFF", "#FFD700", "#1C1C1C"]
+  },
+
+  "special_traits": ["twin_turbo", "track_weapon", "green_hell"]
+}

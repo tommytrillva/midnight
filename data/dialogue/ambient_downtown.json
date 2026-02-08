@@ -1,0 +1,199 @@
+{
+  "id": "ambient_downtown",
+  "district": "downtown",
+  "context": "Downtown district — city streets, neon, nightlife, general atmosphere",
+  "lines": [
+    {
+      "speakers": ["pedestrian_1"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Pedestrian", "text": "Another night, another race. This city never sleeps."}
+      ],
+      "conditions": {},
+      "weight": 1.0,
+      "tags": ["atmosphere"]
+    },
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Local", "text": "Heard there's a meet at the docks tonight."},
+        {"speaker": 1, "speaker_tag": "Local", "text": "Docks? That's Harbor territory. You got a death wish?"},
+        {"speaker": 0, "speaker_tag": "Local", "text": "I got a car with 400 horses. Same thing."}
+      ],
+      "conditions": {},
+      "weight": 1.0,
+      "tags": ["racing", "harbor"]
+    },
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Local", "text": "Torres Automotive? Best mechanic in the city. If she likes you."},
+        {"speaker": 1, "speaker_tag": "Local", "text": "And if she doesn't?"},
+        {"speaker": 0, "speaker_tag": "Local", "text": "Then you don't exist. Simple as that."}
+      ],
+      "conditions": {},
+      "weight": 1.0,
+      "tags": ["maya", "lore"]
+    },
+    {
+      "speakers": ["pedestrian_1"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Pedestrian", "text": "Traffic's backed up three blocks because some idiot decided to drift through the intersection. Again."}
+      ],
+      "conditions": {},
+      "weight": 0.8,
+      "tags": ["atmosphere", "humor"]
+    },
+    {
+      "speakers": ["pedestrian_1", "pedestrian_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Pedestrian", "text": "You smell that? Burning rubber and cheap ramen. The essence of Downtown."},
+        {"speaker": 1, "speaker_tag": "Pedestrian", "text": "I think that's just the food truck."},
+        {"speaker": 0, "speaker_tag": "Pedestrian", "text": "Same energy."}
+      ],
+      "conditions": {},
+      "weight": 0.7,
+      "tags": ["atmosphere", "humor"]
+    },
+    {
+      "speakers": ["vendor"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Food Truck Guy", "text": "Noodles! Get your noodles! Fuel for the fast and the reckless!"}
+      ],
+      "conditions": {},
+      "weight": 0.6,
+      "tags": ["atmosphere", "vendor"]
+    },
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Regular", "text": "Neon's out on Fifth Street again. Whole block looks like a blackout."},
+        {"speaker": 1, "speaker_tag": "Regular", "text": "Someone keeps stealing the wiring. Copper's worth more than the signs."}
+      ],
+      "conditions": {},
+      "weight": 0.7,
+      "tags": ["atmosphere", "city"]
+    },
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Local", "text": "Cops rolled through twice already tonight."},
+        {"speaker": 1, "speaker_tag": "Local", "text": "Let them roll. They can't catch what they can't see."}
+      ],
+      "conditions": {},
+      "weight": 0.9,
+      "tags": ["police", "atmosphere"]
+    },
+    {
+      "speakers": ["regular_1"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Pedestrian", "text": "Every car in this city sounds like it's got something to prove."}
+      ],
+      "conditions": {},
+      "weight": 0.6,
+      "tags": ["atmosphere", "cars"]
+    },
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Regular", "text": "That ramen spot on Third? Open till 4 AM. Only reason half the racers are still alive."},
+        {"speaker": 1, "speaker_tag": "Regular", "text": "That and adrenaline. Mostly adrenaline."}
+      ],
+      "conditions": {},
+      "weight": 0.7,
+      "tags": ["atmosphere", "food"]
+    },
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Regular", "text": "I love this city at night. Everything's alive."},
+        {"speaker": 1, "speaker_tag": "Regular", "text": "Everything's dangerous, you mean."},
+        {"speaker": 0, "speaker_tag": "Regular", "text": "Same thing."}
+      ],
+      "conditions": {},
+      "weight": 0.8,
+      "tags": ["atmosphere", "philosophy"]
+    },
+    {
+      "speakers": ["pedestrian_1"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Pedestrian", "text": "Sirens again. Third time tonight. Nova Pacifica's finest doing their finest."}
+      ],
+      "conditions": {},
+      "weight": 0.7,
+      "tags": ["atmosphere", "police"]
+    },
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Local", "text": "My cousin works at that body shop on Eighth. Says they do more off-the-books repairs than legit ones."},
+        {"speaker": 1, "speaker_tag": "Local", "text": "That's every body shop in Downtown. The whole district runs on secrets."}
+      ],
+      "conditions": {},
+      "weight": 0.7,
+      "tags": ["atmosphere", "cars"]
+    },
+    {
+      "speakers": ["regular_1"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Pedestrian", "text": "Some kid just peeled out so hard the tires left marks on the building. The BUILDING."}
+      ],
+      "conditions": {},
+      "weight": 0.6,
+      "tags": ["humor", "atmosphere"]
+    },
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Local", "text": "Dawn's coming. Time to pretend we have real jobs."},
+        {"speaker": 1, "speaker_tag": "Local", "text": "I do have a real job. It just doesn't pay as well as racing."}
+      ],
+      "conditions": {"time_period": "dawn"},
+      "weight": 1.2,
+      "preferred_time": "dawn",
+      "tags": ["atmosphere", "time"]
+    },
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Regular", "text": "The city looks different at dusk. Like it's waking up instead of going to sleep."},
+        {"speaker": 1, "speaker_tag": "Regular", "text": "That's because it is. The real Nova Pacifica starts after dark."}
+      ],
+      "conditions": {"time_period": "dusk"},
+      "weight": 1.1,
+      "preferred_time": "dusk",
+      "tags": ["atmosphere", "time"]
+    },
+    {
+      "speakers": ["regular_1"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Pedestrian", "text": "Rain's coming down. Roads are gonna be slick. That's either a nightmare or an opportunity."}
+      ],
+      "conditions": {"weather": "light_rain"},
+      "weight": 1.3,
+      "preferred_weather": "light_rain",
+      "tags": ["weather", "atmosphere"]
+    },
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Local", "text": "Storm's nasty tonight. Only the crazy ones are out."},
+        {"speaker": 1, "speaker_tag": "Local", "text": "So... all of us."}
+      ],
+      "conditions": {"weather": "storm"},
+      "weight": 1.4,
+      "preferred_weather": "storm",
+      "tags": ["weather", "atmosphere"]
+    },
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Local", "text": "Fog's rolling in thick. Can't see past two blocks."},
+        {"speaker": 1, "speaker_tag": "Local", "text": "Perfect drifting weather. If you're suicidal."}
+      ],
+      "conditions": {"weather": "fog"},
+      "weight": 1.3,
+      "preferred_weather": "fog",
+      "tags": ["weather", "atmosphere"]
+    }
+  ]
+}

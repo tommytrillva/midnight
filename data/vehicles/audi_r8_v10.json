@@ -1,0 +1,40 @@
+{
+  "vehicle_id": "audi_r8_v10",
+  "display_name": "2014 Audi R8 V10",
+  "manufacturer": "Audi",
+  "year": 2014,
+  "body_style": "coupe",
+  "category": "Euro/Pro",
+  "culture": "euro",
+  "tier": 4,
+  "rarity": "uncommon",
+  "description": "Everyday supercar. The R8 V10 shares its engine with the Lamborghini Gallardo but wraps it in Audi's understated design and all-wheel-drive confidence. It's the supercar you can drive in the rain, park at the grocery store, and still feel your soul leave your body when you floor it through a tunnel.",
+  "lore": "Audi built the R8 because they won Le Mans and needed a halo car to prove it wasn't a fluke. The 5.2-liter V10 sits behind the driver, visible through a glass engine cover, revving to 8,700 RPM with a sound that bounces off parking garage walls like a symphony. Quattro all-wheel drive means it puts the power down in conditions that would leave a rear-drive Italian exotic in a ditch. It's the thinking person's supercar.",
+
+  "base_stats": {
+    "top_speed": 0.78,
+    "acceleration": 0.76,
+    "handling": 0.78,
+    "braking": 0.80,
+    "nitro_capacity": 0.40,
+    "weight": 1588.0
+  },
+
+  "engine": {
+    "horsepower": 525.0,
+    "torque": 391.0,
+    "displacement": "5.2L",
+    "configuration": "V10",
+    "aspiration": "naturally_aspirated"
+  },
+
+  "drivetrain": "awd",
+  "price": 175000,
+
+  "cosmetics": {
+    "default_color": "#C0C0C0",
+    "available_colors": ["#C0C0C0", "#FFFFFF", "#000000", "#FF2400", "#4169E1", "#1C1C1C"]
+  },
+
+  "special_traits": ["v10", "awd", "mid_engine"]
+}

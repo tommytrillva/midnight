@@ -1,0 +1,194 @@
+{
+  "id": "ambient_industrial",
+  "district": "industrial",
+  "context": "Industrial district — factories, diesel smell, gritty, old school racing culture",
+  "lines": [
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Regular", "text": "Diesel's garage is around here somewhere. Nobody knows exactly where."},
+        {"speaker": 1, "speaker_tag": "Regular", "text": "I heard it moves. Like a ghost shop."},
+        {"speaker": 0, "speaker_tag": "Regular", "text": "Garages don't move."},
+        {"speaker": 1, "speaker_tag": "Regular", "text": "Diesel's does."}
+      ],
+      "conditions": {},
+      "weight": 1.0,
+      "tags": ["diesel", "lore", "mystery"]
+    },
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Old Timer", "text": "Old school racers built this scene. Before the money. Before the cameras."},
+        {"speaker": 1, "speaker_tag": "Old Timer", "text": "Back when a race was a handshake and a quarter mile. Nothing else."},
+        {"speaker": 0, "speaker_tag": "Old Timer", "text": "Simpler times. Better times? Depends who you ask."}
+      ],
+      "conditions": {},
+      "weight": 1.0,
+      "tags": ["lore", "philosophy", "atmosphere"]
+    },
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Racer", "text": "This is where the real races happen. No crowds. No bets. Just driving."},
+        {"speaker": 1, "speaker_tag": "Racer", "text": "Nobody comes here to show off. You come here to test yourself."},
+        {"speaker": 0, "speaker_tag": "Racer", "text": "And if the car breaks, nobody hears the explosion. Win-win."}
+      ],
+      "conditions": {},
+      "weight": 1.0,
+      "tags": ["racing", "atmosphere", "philosophy"]
+    },
+    {
+      "speakers": ["regular_1"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Worker", "text": "Factory shut down six months ago. Now it's just us and the rats. The rats are better company."}
+      ],
+      "conditions": {},
+      "weight": 0.7,
+      "tags": ["atmosphere"]
+    },
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Regular", "text": "Smell that? Diesel fuel and regret. The signature scent of Industrial."},
+        {"speaker": 1, "speaker_tag": "Regular", "text": "I thought that was just you."},
+        {"speaker": 0, "speaker_tag": "Regular", "text": "Funny. Your car smells worse."}
+      ],
+      "conditions": {},
+      "weight": 0.8,
+      "tags": ["humor", "atmosphere"]
+    },
+    {
+      "speakers": ["mechanic", "regular_1"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Mechanic", "text": "This warehouse has better tools than most shops. Everything you need, if you know where to look."},
+        {"speaker": 1, "speaker_tag": "Racer", "text": "And if you don't?"},
+        {"speaker": 0, "speaker_tag": "Mechanic", "text": "Then you don't belong here."}
+      ],
+      "conditions": {},
+      "weight": 0.8,
+      "tags": ["atmosphere", "cars"]
+    },
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Racer", "text": "Straight-line racing through the factory corridor. Two thousand feet, no margin."},
+        {"speaker": 1, "speaker_tag": "Racer", "text": "What's at the end?"},
+        {"speaker": 0, "speaker_tag": "Racer", "text": "A wall. That's why you brake. Or you don't, and we talk about you in past tense."}
+      ],
+      "conditions": {},
+      "weight": 0.9,
+      "tags": ["racing", "danger"]
+    },
+    {
+      "speakers": ["regular_1"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Old Timer", "text": "Diesel used to race here every night. Twenty years ago, he owned these streets. Now he just watches."}
+      ],
+      "conditions": {},
+      "weight": 0.9,
+      "tags": ["diesel", "lore"]
+    },
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Regular", "text": "Power plant's still running. Whole block vibrates at night. You can feel it through the steering wheel."},
+        {"speaker": 1, "speaker_tag": "Regular", "text": "That's not the power plant. That's my subwoofer."},
+        {"speaker": 0, "speaker_tag": "Regular", "text": "Your subwoofer doesn't shake a city block. Sit down."}
+      ],
+      "conditions": {},
+      "weight": 0.7,
+      "tags": ["humor", "atmosphere"]
+    },
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Racer", "text": "No streetlights down this stretch. Pure headlights."},
+        {"speaker": 1, "speaker_tag": "Racer", "text": "That's how it should be. Your car, your lights, your skill. Nothing else."}
+      ],
+      "conditions": {},
+      "weight": 0.8,
+      "tags": ["atmosphere", "philosophy"]
+    },
+    {
+      "speakers": ["regular_1"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Regular", "text": "There's an engine bay in the back of the old foundry. Guys strip cars there. No questions asked."}
+      ],
+      "conditions": {},
+      "weight": 0.6,
+      "tags": ["lore", "crime"]
+    },
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Racer", "text": "Security guard here does a loop every forty-five minutes. That's our window."},
+        {"speaker": 1, "speaker_tag": "Racer", "text": "You timed the security guard?"},
+        {"speaker": 0, "speaker_tag": "Racer", "text": "Preparation isn't paranoia. It's professionalism."}
+      ],
+      "conditions": {},
+      "weight": 0.7,
+      "tags": ["humor", "atmosphere"]
+    },
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Regular", "text": "They tested an engine in there last week. Shook the windows three buildings over."},
+        {"speaker": 1, "speaker_tag": "Regular", "text": "What kind of engine?"},
+        {"speaker": 0, "speaker_tag": "Regular", "text": "The kind that makes you religious. Because you start praying it doesn't explode."}
+      ],
+      "conditions": {},
+      "weight": 0.8,
+      "tags": ["humor", "cars"]
+    },
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Racer", "text": "The concrete here is perfect. Smooth, flat, endless. Factories did one thing right."},
+        {"speaker": 1, "speaker_tag": "Racer", "text": "Built for forklifts. Inherited by us. Circle of life."}
+      ],
+      "conditions": {},
+      "weight": 0.7,
+      "tags": ["atmosphere", "racing"]
+    },
+    {
+      "speakers": ["regular_1"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Old Timer", "text": "This is hallowed ground. Champions were made on this concrete. Legends too. They're not always the same thing."}
+      ],
+      "conditions": {},
+      "weight": 0.7,
+      "tags": ["philosophy", "lore"]
+    },
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Racer", "text": "Did Diesel really build a car out of spare parts from this factory?"},
+        {"speaker": 1, "speaker_tag": "Racer", "text": "That's what they say. Took factory steel, forged his own headers. The man's a blacksmith with an engine."}
+      ],
+      "conditions": {},
+      "weight": 0.8,
+      "tags": ["diesel", "lore", "legend"]
+    },
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Racer", "text": "Rain turns this whole district into a skating rink."},
+        {"speaker": 1, "speaker_tag": "Racer", "text": "Oil on concrete plus water. Might as well be ice."}
+      ],
+      "conditions": {"weather": "heavy_rain"},
+      "weight": 1.3,
+      "preferred_weather": "heavy_rain",
+      "tags": ["weather", "danger"]
+    },
+    {
+      "speakers": ["regular_1"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Regular", "text": "Late night in Industrial. Nothing but factory hum and engine noise. This is my church."}
+      ],
+      "conditions": {"time_period": "late_night"},
+      "weight": 1.1,
+      "preferred_time": "late_night",
+      "tags": ["atmosphere", "time", "philosophy"]
+    }
+  ]
+}

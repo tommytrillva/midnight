@@ -1,0 +1,380 @@
+{
+  "id": "sparks_fly",
+  "context": "Act 1 Chapter 1.2 — Maya in danger: loan sharks come for Torres Garage equipment",
+  "lines": [
+    {
+      "type": "narration",
+      "text": "Something's wrong the moment you walk into Torres Garage. The lights are on but the bay doors are closed. Music's off. Maya doesn't close the bay doors. Ever."
+    },
+    {
+      "type": "narration",
+      "text": "She's in the back, throwing things into cardboard boxes with a frantic energy that makes your stomach drop. Diagnostic tools. Torque wrenches. Her dad's old calibration set. Things she normally won't let anyone touch."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_panicked",
+      "text": "Oh. You're here. Good. I need — can you grab those boxes? The ones by the lift. We need to move. Now."
+    },
+    {
+      "type": "narration",
+      "text": "Her hands are shaking. Not the usual Maya-level of controlled intensity — actually shaking. She drops a socket wrench and doesn't pick it up."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_panicked",
+      "text": "Loan sharks. They're coming for the equipment. The big stuff — the lift, the alignment rack, the engine hoist. They can take that. Insurance. Whatever. But the hand tools, the diagnostic gear, my dad's things — I am NOT letting them take those."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_panicked",
+      "text": "We've got forty minutes. Maybe less. I have a storage unit on Pier 12. If we can get three carloads there before they show up—"
+    },
+    {
+      "type": "narration",
+      "text": "She stops. Leans against the workbench. Her breathing is ragged."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_vulnerable",
+      "text": "My dad took the loan in '09. The shop was underwater. He thought he could pay it back with one good year. One good year turned into two, turned into ten, turned into him dying with the debt still growing."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_vulnerable",
+      "text": "I've been making payments. Every month. But the interest — it never goes down. It's designed not to go down. They don't want the money. They want the leverage."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_angry",
+      "text": "And now Preston Wells buys the note and suddenly the grace period evaporates. Funny how that works."
+    },
+    {
+      "type": "narration",
+      "text": "The sound of tires on gravel. Headlights sweep across the bay doors."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_panicked",
+      "text": "They're early. THEY'RE EARLY."
+    },
+    {
+      "type": "narration",
+      "text": "Car doors. Footsteps. A fist hammering on the bay door hard enough to rattle the frame."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Loan Shark",
+      "portrait": "",
+      "text": "Torres! Open up! We're here for the collateral!"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_determined",
+      "text": "Back door. There's an alley — it connects to 4th Street. You take the CRX with the first load. I'll stall them."
+    },
+    {
+      "type": "narration",
+      "text": "She's already shoving boxes into your arms. Two heavy cases of diagnostic equipment. A canvas bag of her father's hand tools, each one wrapped in cloth like artifacts."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_determined",
+      "text": "Pier 12. Unit 7C. The code is 0-6-1-5. Go. GO."
+    },
+    {
+      "type": "narration",
+      "text": "You hit the back door. The alley is tight — barely wide enough for the CRX. You can hear shouting behind you as Maya opens the bay door. Her voice, sharp and controlled, cutting through the chaos."
+    },
+    {
+      "type": "narration",
+      "text": "The CRX fishtails onto 4th Street. Your mirrors show nothing — they haven't followed. Not yet."
+    },
+    {
+      "label": "chase_radio",
+      "type": "dialogue",
+      "speaker": "Maya (Radio)",
+      "portrait": "maya_radio",
+      "text": "One of them's in a car. Black SUV. He's heading for 4th — he'll try to cut you off at the intersection."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya (Radio)",
+      "portrait": "maya_radio",
+      "text": "Take the next right. Then left on Harbor. It's one-way the wrong direction but nobody's out at this hour."
+    },
+    {
+      "type": "narration",
+      "text": "You jerk the wheel right. The boxes slide. Something clinks — metal on metal. Your dad's tools, Maya. I've got them."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya (Radio)",
+      "portrait": "maya_radio",
+      "text": "He's still behind you. Three blocks back. Take the alley behind the fish market — it's too narrow for the SUV."
+    },
+    {
+      "type": "narration",
+      "text": "The alley smells like the ocean and old decisions. The CRX scrapes through with inches to spare on both sides. Behind you, the SUV's headlights fill the alley entrance, then stop. Too wide. He's stuck."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya (Radio)",
+      "portrait": "maya_radio",
+      "text": "You lost him. Pier 12, straight ahead. Park in the loading zone. I'll be there in ten minutes."
+    },
+    {
+      "type": "narration",
+      "text": "--- Storage unit 7C. Pier 12. ---"
+    },
+    {
+      "type": "narration",
+      "text": "The storage unit is small and cold and smells like salt air and old concrete. You stack the boxes against the back wall. The diagnostic equipment. The hand tools. Twenty years of Torres Garage, compressed into a ten-by-ten metal box."
+    },
+    {
+      "type": "narration",
+      "text": "Maya arrives on foot. She must have walked. Her jacket's zipped to her chin and her eyes are red, but she's not crying. Maya Torres doesn't cry. She just goes quiet."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_exhausted",
+      "text": "They took the lift. The alignment rack. The compressor. All the stuff that's bolted down."
+    },
+    {
+      "type": "narration",
+      "text": "She leans against the storage unit wall. Slides down until she's sitting on the cold concrete floor. Hugs her knees."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_vulnerable",
+      "text": "I'm sorry."
+    },
+    {
+      "type": "narration",
+      "text": "She says it to the floor."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_vulnerable",
+      "text": "I dragged you into this. The racing, the shop, Preston, all of it. You came to Nova Pacifica to drive and I turned you into a pawn in my family's debt spiral."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_vulnerable",
+      "text": "You're just another bet, right? That's what everyone is to me. My dad bet the shop. I bet on you. Same game, different stakes."
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "That's not the same thing.",
+          "choice_id": "sparks_not_same",
+          "relationship_changes": {"maya": 20},
+          "moral_shift": 10,
+          "jump_to": "maya_responds_not_same"
+        },
+        {
+          "text": "Is that what this is? A bet?",
+          "choice_id": "sparks_is_bet",
+          "relationship_changes": {"maya": 20},
+          "moral_shift": 0,
+          "jump_to": "maya_responds_bet"
+        },
+        {
+          "text": "Your dad sounds complicated.",
+          "choice_id": "sparks_dad",
+          "relationship_changes": {"maya": 20},
+          "moral_shift": 5,
+          "jump_to": "maya_responds_dad"
+        }
+      ]
+    },
+    {
+      "label": "maya_responds_not_same",
+      "type": "narration",
+      "text": "She looks up. Her eyes are raw. Searching."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_vulnerable",
+      "text": "Isn't it?"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_vulnerable",
+      "text": "He bet on the shop because he loved it more than anything. I bet on you because I thought you could save it. Both times, someone else pays the price if it goes wrong."
+    },
+    {
+      "type": "narration",
+      "text": "You sit down on the floor across from her. The storage unit hums around you — metal walls, harbor wind, the distant sound of ships."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_fragile_smile",
+      "text": "But maybe... maybe you chose to be here. That's the difference, right? He never gave the shop a choice. You could have walked away a dozen times."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_fragile_smile",
+      "text": "Why didn't you?",
+      "jump_to": "aftermath"
+    },
+    {
+      "label": "maya_responds_bet",
+      "type": "narration",
+      "text": "The question hangs between you. Maya flinches — not at the accusation, but at the truth of it."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_pained",
+      "text": "At first? Yeah. Maybe. You showed up with a broken car and no money and I saw... an opportunity. Someone I could point at a problem and say 'go.'"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_vulnerable",
+      "text": "But somewhere between the first race and tonight — I don't know when — it stopped being about the bet."
+    },
+    {
+      "type": "narration",
+      "text": "She picks at a thread on her jacket sleeve. Won't look at you."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_vulnerable",
+      "text": "You came back. Every time. Even when you didn't have to. People don't do that for me. They do it for the shop, or the cars, or what I can do for their engines. Not for me.",
+      "jump_to": "aftermath"
+    },
+    {
+      "label": "maya_responds_dad",
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_sad_smile",
+      "text": "Ha. Yeah. That's one word for it."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_vulnerable",
+      "text": "He was the best mechanic I ever saw. Hands like a surgeon. He could listen to an engine and tell you which cylinder was misfiring. I learned everything from watching him."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_vulnerable",
+      "text": "He was also the worst businessman in Nova Pacifica. Gave away labor for free. Extended credit to everyone. Took a predatory loan because a man in a suit told him it was standard."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_pained",
+      "text": "He died thinking he'd failed. The shop was all he wanted to leave me and he left it with a chain around its neck."
+    },
+    {
+      "type": "narration",
+      "text": "She's quiet for a long time. When she speaks again, her voice is steady. Like she's decided something."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_determined",
+      "text": "I'm not going to let that be how the story ends. I refuse.",
+      "jump_to": "aftermath"
+    },
+    {
+      "label": "aftermath",
+      "type": "narration",
+      "text": "The harbor wind rattles the storage unit door. Somewhere out on the water, a foghorn sounds — low, mournful, patient."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_tired",
+      "text": "We should go. Can't stay here."
+    },
+    {
+      "type": "narration",
+      "text": "She stands. Brushes off her jeans. Pulls her composure back on like armor."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_neutral",
+      "text": "Thank you. For tonight. For the tools. For... not asking questions first."
+    },
+    {
+      "type": "narration",
+      "text": "She opens the storage unit door. The harbor stretches out beyond the pier — dark water, distant lights, a city that doesn't care about your problems but somehow keeps generating more of them."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_tired",
+      "text": "I'll figure out the shop. I always figure it out. I just need—"
+    },
+    {
+      "type": "narration",
+      "text": "She stops. Looks at you."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_fragile_smile",
+      "text": "I just need you to keep driving. Can you do that?"
+    },
+    {
+      "type": "narration",
+      "text": "You nod. It's enough."
+    },
+    {
+      "type": "narration",
+      "text": "Maya Torres locks the storage unit. The key goes into her pocket, next to the crumpled invoice she's been carrying for weeks. She walks toward the street, and after a moment, you follow."
+    },
+    {
+      "type": "narration",
+      "text": "Something changed tonight. In the cold of a storage unit on Pier 12, between the fear and the fury, a line was crossed. Whatever you are to each other now, it's more than a mechanic and a driver."
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "change_relationship",
+        "character": "maya",
+        "amount": 20
+      }
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "sparks_fly_complete",
+        "value": true
+      }
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "maya_debt_revealed",
+        "value": true
+      }
+    }
+  ]
+}

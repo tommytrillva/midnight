@@ -1,0 +1,40 @@
+{
+  "vehicle_id": "porsche_gt3_rs",
+  "display_name": "2019 Porsche 911 GT3 RS (991.2)",
+  "manufacturer": "Porsche",
+  "year": 2019,
+  "body_style": "coupe",
+  "category": "Euro/Pro",
+  "culture": "euro",
+  "tier": 5,
+  "rarity": "rare",
+  "description": "Naturally aspirated perfection. While the rest of the world chases turbo lag and boost curves, the GT3 RS screams to 9,000 RPM with a 4.0-liter flat-six that responds to throttle input like it's reading your mind. Pure, analog, and utterly magnificent.",
+  "lore": "In an era of forced induction and hybrid complexity, Porsche built a car that does one thing better than anything else on the planet: turn a racetrack into a personal playground. The GT3 RS is a street-legal race car with a naturally aspirated engine that revs to the heavens and a chassis tuned by people who've spent their lives at the Nürburgring.",
+
+  "base_stats": {
+    "top_speed": 0.80,
+    "acceleration": 0.78,
+    "handling": 0.85,
+    "braking": 0.84,
+    "nitro_capacity": 0.35,
+    "weight": 1406.0
+  },
+
+  "engine": {
+    "horsepower": 520.0,
+    "torque": 346.0,
+    "displacement": "4.0L",
+    "configuration": "Flat-6",
+    "aspiration": "naturally_aspirated"
+  },
+
+  "drivetrain": "rwd",
+  "price": 400000,
+
+  "cosmetics": {
+    "default_color": "#7CFC00",
+    "available_colors": ["#7CFC00", "#FFFFFF", "#000000", "#FF6347", "#4169E1", "#C0C0C0"]
+  },
+
+  "special_traits": ["naturally_aspirated", "flat_six", "track_perfection"]
+}

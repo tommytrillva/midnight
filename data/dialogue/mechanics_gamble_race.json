@@ -1,0 +1,192 @@
+{
+  "id": "mechanics_gamble_race",
+  "context": "Act 1 Chapter 1.1 — Pre-race night for the Mechanic's Gamble against Preston Wells",
+  "lines": [
+    {
+      "type": "narration",
+      "text": "Saturday night. The Pit is electric. Word spread about the pink slip race and the crowd doubled. Triple the usual betting action. The air smells like high-octane fuel and bad decisions."
+    },
+    {
+      "type": "narration",
+      "text": "The CRX and the 911 sit nose to nose under the floodlights. David and Goliath. The crowd loves it — not because they think you'll win, but because they love watching someone try."
+    },
+    {
+      "label": "sabotage_done",
+      "type": "narration",
+      "text": "Maya stands by the CRX. She won't meet your eyes. Her arms are crossed, her jaw set. She's been like this all day.",
+      "condition": {
+        "type": "has_flag",
+        "flag": "preston_sabotage"
+      }
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_pained",
+      "text": "It's done. His throttle response will lag above six thousand RPM. He'll have full power through the straights but he'll lose a half-second every time he pushes into the red on corner exit.",
+      "condition": {
+        "type": "has_flag",
+        "flag": "preston_sabotage"
+      }
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_pained",
+      "text": "Just... win. And then we never talk about this again.",
+      "condition": {
+        "type": "has_flag",
+        "flag": "preston_sabotage"
+      }
+    },
+    {
+      "label": "clean_race",
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_focused",
+      "text": "Okay. Listen. I've been over this a hundred times.",
+      "condition": {
+        "type": "has_flag",
+        "flag": "sabotage_refused"
+      }
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_focused",
+      "text": "The 911 has you on raw horsepower. By a lot. He'll pull ahead on the straights — don't chase him. You'll burn your tires and your engine trying to keep pace.",
+      "condition": {
+        "type": "has_flag",
+        "flag": "sabotage_refused"
+      }
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_focused",
+      "text": "Your advantage is the technical section — turns four through nine. The CRX is three hundred kilos lighter. You can brake later, carry more speed through the apex, and get on the throttle sooner. That's where you claw back every second he takes on the straight.",
+      "condition": {
+        "type": "has_flag",
+        "flag": "sabotage_refused"
+      }
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_determined",
+      "text": "I retuned the suspension last night. Stiffer rear, softer front. She'll rotate better under braking. Trust the car. I built her for this.",
+      "condition": {
+        "type": "has_flag",
+        "flag": "sabotage_refused"
+      }
+    },
+    {
+      "type": "narration",
+      "text": "Preston steps out of the 911. He adjusts his gloves — actual racing gloves, monogrammed — and surveys the crowd like a king addressing peasants."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Preston Wells",
+      "portrait": "preston_smug",
+      "text": "Nice turnout. They all came to watch me take your little shop, Maya."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Preston Wells",
+      "portrait": "preston_smug",
+      "text": "I'm thinking condos. Maybe a juice bar. Something this neighborhood actually needs."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_angry",
+      "text": "Drive your car, Preston. Your mouth's faster than your feet."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Preston Wells",
+      "portrait": "preston_neutral",
+      "text": "See you at the finish line. Or not. I might not see the CRX in my mirrors."
+    },
+    {
+      "type": "narration",
+      "text": "He climbs back in. The flat-six barks to life — angry, precise, German. The crowd cheers. They love a villain. They love a victim more."
+    },
+    {
+      "type": "narration",
+      "text": "You settle into the CRX. The seat holds you like a hand. Maya's voice crackles through the radio."
+    },
+    {
+      "label": "race_radio_start",
+      "type": "dialogue",
+      "speaker": "Maya (Radio)",
+      "portrait": "maya_radio",
+      "text": "Remember — don't fight him on the straights. Let him have them. Take it back in the corners."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya (Radio)",
+      "portrait": "maya_radio",
+      "text": "Brake markers are the jersey barriers. You see the first one, you start scrubbing speed. You see the second one, you better be turning."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya (Radio)",
+      "portrait": "maya_radio",
+      "text": "And for God's sake — smooth inputs. This isn't The Pit scrub race. This is for everything."
+    },
+    {
+      "type": "narration",
+      "text": "The starter raises her hand. The crowd goes quiet. Just engines and heartbeats."
+    },
+    {
+      "type": "narration",
+      "text": "Three fingers. Two. One."
+    },
+    {
+      "type": "narration",
+      "text": "The hand drops. The night explodes."
+    },
+    {
+      "label": "mid_race_radio",
+      "type": "dialogue",
+      "speaker": "Maya (Radio)",
+      "portrait": "maya_radio",
+      "text": "He's pulling away on the straight. That's fine. That's FINE. Let him go."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya (Radio)",
+      "portrait": "maya_radio",
+      "text": "Technical section coming up. This is your territory. Late brake into four — trail-brake through the apex — then stay tight through five and six."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya (Radio)",
+      "portrait": "maya_radio_excited",
+      "text": "There! He went wide on six! He's fighting the weight! Close that gap NOW!",
+      "condition": {
+        "type": "has_flag",
+        "flag": "race_gaining"
+      }
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya (Radio)",
+      "portrait": "maya_radio",
+      "text": "Last corner complex. Whatever you've got, leave it on the road. This is it."
+    },
+    {
+      "type": "narration",
+      "text": "The finish line glows ahead. Two cars. One chance. Everything Maya has rides on the next eight seconds."
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "mechanics_gamble_race_started",
+        "value": true
+      }
+    }
+  ]
+}

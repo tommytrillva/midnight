@@ -1,0 +1,341 @@
+{
+  "id": "family_business",
+  "context": "Chapter 1.3 — The Pit back rooms. Driver stumbles on Nikko's debt collector confrontation.",
+  "lines": [
+    {
+      "type": "narration",
+      "text": "The Pit's back hallways smell like concrete and stale beer. You're looking for the bathroom — the one that actually works — when you hear it."
+    },
+    {
+      "type": "narration",
+      "text": "Shouting. Muffled by a closed door but sharp enough to cut through the bass bleeding from the main floor. You recognize one of the voices. Nikko Chen."
+    },
+    {
+      "type": "narration",
+      "text": "You stop. The smart move is to keep walking. The Pit's back rooms are full of conversations that aren't yours, and poking around is a good way to lose teeth."
+    },
+    {
+      "type": "narration",
+      "text": "But the other voices — two, maybe three — are low and flat. Professional. The kind of calm that comes from knowing you don't need to raise your voice to make a point."
+    },
+    {
+      "type": "narration",
+      "text": "Through the crack in the door, you see them. Two men. Big — not gym-big, but working-big. Thick necks, rolled sleeves, the kind of hands that have done things their owners don't talk about at dinner."
+    },
+    {
+      "type": "narration",
+      "text": "Nikko is between them. His usual swagger is gone. He looks smaller in this room. Younger."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Debt Collector",
+      "portrait": "",
+      "text": "Two weeks, Nikko. That's what we said last time. That's what we said the time before."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_afraid",
+      "text": "I'll have it. I swear. The Underground Classic is coming up and the purse is—"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Debt Collector",
+      "portrait": "",
+      "text": "The purse isn't five hundred thousand dollars, kid. Nothing in this basement is worth five hundred thousand dollars."
+    },
+    {
+      "type": "narration",
+      "text": "Five hundred thousand. The number hangs in the air like a guillotine blade. You feel your stomach drop."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_afraid",
+      "text": "It's not my debt! I didn't—"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Debt Collector",
+      "portrait": "",
+      "text": "Your father's debt is your debt. That's how this works. You know that."
+    },
+    {
+      "type": "narration",
+      "text": "One of them grabs Nikko by the collar. The other says something quiet — too quiet to hear. Then a sound. Sharp. Flesh on flesh."
+    },
+    {
+      "type": "narration",
+      "text": "Nikko hits the ground. The men straighten their jackets. One of them drops a business card on Nikko's chest."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Debt Collector",
+      "portrait": "",
+      "text": "Two weeks. Win your little race. Sell your little car. Rob a bank. We don't care how. But if Mr. Lau doesn't see movement on this balance, the next visit won't be a conversation."
+    },
+    {
+      "type": "narration",
+      "text": "They walk toward the door. You press yourself flat against the wall, heart slamming. They pass without looking — you're beneath their notice. Just another face in a basement full of faces."
+    },
+    {
+      "type": "narration",
+      "text": "The hallway is empty. The door is open. Through it, you can see Nikko on the floor, sitting up slowly. His lip is split. Blood on his chin. He's staring at the business card like it's a death sentence."
+    },
+    {
+      "type": "narration",
+      "text": "He hasn't seen you yet."
+    },
+    {
+      "type": "narration",
+      "text": "You could walk away. Pretend you were never here. Or you could step inside."
+    },
+    {
+      "type": "narration",
+      "text": "You step inside."
+    },
+    {
+      "type": "narration",
+      "text": "Nikko's head snaps up. For a split second, you see it — raw, unfiltered terror. Then the mask slams back into place so fast it's almost audible."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_angry",
+      "text": "The hell are you doing back here?"
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "Are you okay?",
+          "choice_id": "nikko_okay",
+          "relationship_changes": {"nikko": 5},
+          "moral_shift": 5,
+          "jump_to": "nikko_rage"
+        },
+        {
+          "text": "Who were they?",
+          "choice_id": "nikko_who",
+          "relationship_changes": {"nikko": 5},
+          "moral_shift": 0,
+          "jump_to": "nikko_reveals"
+        },
+        {
+          "text": "Wrong hallway. I didn't see anything.",
+          "choice_id": "nikko_nothing",
+          "relationship_changes": {"nikko": 10},
+          "moral_shift": 0,
+          "jump_to": "nikko_surprised"
+        }
+      ]
+    },
+    {
+      "label": "nikko_rage",
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_angry",
+      "text": "Am I OKAY? Do I look okay? Does this look okay to you?"
+    },
+    {
+      "type": "narration",
+      "text": "He gestures at his face. Blood is dripping onto his shirt — the expensive one, the one he wears to project an image of someone who has everything under control."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_angry",
+      "text": "Get out. This isn't your business. This isn't anyone's—"
+    },
+    {
+      "type": "narration",
+      "text": "He stops. His jaw works. The mask cracks — just a hairline fracture — and you see the kid underneath. Exhausted. Drowning."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_sad",
+      "text": "...Please."
+    },
+    {
+      "type": "narration",
+      "text": "One word. Barely above a whisper. It costs him everything to say it."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_sad",
+      "text": "Please don't tell anyone you saw this. I can handle it. I just need time."
+    },
+    {
+      "type": "narration",
+      "text": "He wipes his lip with the back of his hand. Stands up. Straightens his collar. The mask rebuilds itself, brick by brick, but you've seen what's behind it now. You can't unsee it.",
+      "jump_to": "nikko_internal"
+    },
+    {
+      "label": "nikko_reveals",
+      "type": "narration",
+      "text": "Nikko's eyes dart to the door behind you. Checking. When he sees it's empty, something in him deflates."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_sad",
+      "text": "Collectors. Working for a man named Lau. My father..."
+    },
+    {
+      "type": "narration",
+      "text": "He laughs. It's the worst laugh you've ever heard — thin, bitter, and aimed inward."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_sad",
+      "text": "My father was a great driver. One of the best this city ever saw. He was also a degenerate gambler who couldn't walk past a card table without sitting down."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_sad",
+      "text": "Half a million. That's what he left me when he disappeared. Not money. Debt. To the kind of people you can't file bankruptcy with."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_angry",
+      "text": "So yeah. That's who they were. That's who they always are. Every three weeks, like clockwork, reminding me that I'm not a person — I'm a payment plan."
+    },
+    {
+      "type": "narration",
+      "text": "He picks up the business card, tears it in half, and drops it on the floor. Then he straightens his collar and wipes the blood from his chin.",
+      "jump_to": "nikko_internal"
+    },
+    {
+      "label": "nikko_surprised",
+      "type": "narration",
+      "text": "Nikko stares at you. Searching for the angle. The leverage. The inevitable betrayal."
+    },
+    {
+      "type": "narration",
+      "text": "He doesn't find it."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_neutral",
+      "text": "Wrong hallway."
+    },
+    {
+      "type": "narration",
+      "text": "He nods slowly. Once. Twice. Like he's testing the words, seeing if they hold weight."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_neutral",
+      "text": "Yeah. Wrong hallway. Happens to everyone."
+    },
+    {
+      "type": "narration",
+      "text": "He stands. Wipes the blood with practiced efficiency — he's done this before. His hands are trembling, but his face is already rebuilding itself. The swagger. The smirk. The armor."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_neutral",
+      "text": "Bathroom's two doors down on the left, by the way. Since you're lost."
+    },
+    {
+      "type": "narration",
+      "text": "There's something in his eyes you haven't seen before. Not gratitude — Nikko doesn't do gratitude. But recognition. You just gave him the one thing nobody in his life gives him: the dignity of pretending this didn't happen.",
+      "jump_to": "nikko_internal"
+    },
+    {
+      "label": "nikko_internal",
+      "type": "narration",
+      "text": "You walk back to the main floor. The bass hits you like a wall. People are laughing, drinking, talking about the next race. The world out here doesn't know what just happened twenty feet away."
+    },
+    {
+      "type": "narration",
+      "text": "Half a million dollars. His father's debt. That explains everything — the reckless driving, the trash talk, the desperation that bleeds through every race. Nikko isn't chasing glory. He's running from men who will hurt him if he stops."
+    },
+    {
+      "type": "narration",
+      "text": "You think about the Underground Classic. The biggest purse on the underground calendar. For most people, it's a trophy. For Nikko, it's a lifeline."
+    },
+    {
+      "type": "narration",
+      "text": "And you're going to be racing against him for it."
+    },
+    {
+      "type": "narration",
+      "text": "Your phone buzzes. A text from Maya."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_neutral",
+      "text": "[TEXT] Hey. Heard some noise at the Pit tonight. Something about Nikko and some guys in suits. You there? What happened?"
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "[REPLY] Nikko's in trouble. Debt collectors. It's bad, Maya.",
+          "choice_id": "tell_maya",
+          "relationship_changes": {"maya": 5, "nikko": -15},
+          "moral_shift": -5,
+          "set_flags": {"told_maya_nikko_secret": true},
+          "jump_to": "maya_response_told"
+        },
+        {
+          "text": "[REPLY] Wasn't there. Didn't see anything.",
+          "choice_id": "keep_secret",
+          "relationship_changes": {"nikko": 5},
+          "moral_shift": 5,
+          "set_flags": {"kept_nikko_secret": true},
+          "jump_to": "maya_response_secret"
+        }
+      ]
+    },
+    {
+      "label": "maya_response_told",
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_worried",
+      "text": "[TEXT] Debt collectors? Oh god. I knew something was wrong with him. He's been driving like he's trying to die out there."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_worried",
+      "text": "[TEXT] Don't tell anyone else. If this gets around the Pit, people will use it against him. Whatever he is, he doesn't deserve that."
+    },
+    {
+      "type": "narration",
+      "text": "You put your phone away. Maya's right. But the question lingers — when you line up against Nikko at the Classic, will you be able to race him the same way? Knowing what a loss means for him?",
+      "jump_to": "family_business_end"
+    },
+    {
+      "label": "maya_response_secret",
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_neutral",
+      "text": "[TEXT] Okay. Probably nothing. You know how this place is. See you tomorrow?"
+    },
+    {
+      "type": "narration",
+      "text": "You put your phone away. The lie sits in your chest like a stone. But it's Nikko's stone to carry, not Maya's. Sometimes keeping a secret is the only kindness available.",
+      "jump_to": "family_business_end"
+    },
+    {
+      "label": "family_business_end",
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "family_business_complete",
+        "value": true
+      }
+    }
+  ]
+}

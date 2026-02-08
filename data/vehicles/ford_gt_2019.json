@@ -1,0 +1,40 @@
+{
+  "vehicle_id": "ford_gt_2019",
+  "display_name": "2019 Ford GT",
+  "manufacturer": "Ford",
+  "year": 2019,
+  "body_style": "coupe",
+  "category": "Muscle/Pro",
+  "culture": "american",
+  "tier": 5,
+  "rarity": "epic",
+  "description": "Le Mans heritage in carbon fiber form. Ford built the GT to win at Le Mans, and it did — then they made a street version so the rest of us could pretend. A twin-turbo V6 in a car that weighs nothing, shaped by a wind tunnel and driven by revenge.",
+  "lore": "Ford built the GT for one reason: to go back to Le Mans and beat Ferrari again, fifty years after the original GT40 did it in 1966. Mission accomplished. The road car uses a 3.5-liter twin-turbo EcoBoost V6 that produces 647 horsepower, mounted in a carbon fiber monocoque that weighs just 3,000 pounds. The flying buttress rear design isn't just beautiful — it's functional aerodynamics. You needed an application to buy one, and Ford rejected most people.",
+
+  "base_stats": {
+    "top_speed": 0.85,
+    "acceleration": 0.83,
+    "handling": 0.84,
+    "braking": 0.83,
+    "nitro_capacity": 0.38,
+    "weight": 1361.0
+  },
+
+  "engine": {
+    "horsepower": 647.0,
+    "torque": 550.0,
+    "displacement": "3.5L",
+    "configuration": "V6",
+    "aspiration": "twin_turbo"
+  },
+
+  "drivetrain": "mr",
+  "price": 500000,
+
+  "cosmetics": {
+    "default_color": "#4169E1",
+    "available_colors": ["#4169E1", "#FFFFFF", "#000000", "#FF4500", "#C0C0C0", "#FFD700"]
+  },
+
+  "special_traits": ["twin_turbo", "mid_engine", "le_mans", "aero_focused"]
+}

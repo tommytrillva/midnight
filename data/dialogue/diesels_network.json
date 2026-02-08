@@ -1,0 +1,232 @@
+{
+  "id": "diesels_network",
+  "context": "Act 2B Chapter 2.1 — Diesel opens his underground map. Hidden race circuits across Nova Pacifica. Old-school code of honor.",
+  "lines": [
+    {
+      "type": "narration",
+      "text": "Diesel's garage. Not the one he shows people — the real one. Behind the auto body shop on Industrial Row, through a door that looks like it leads to a storage closet but actually opens into a space the size of a small aircraft hangar."
+    },
+    {
+      "type": "narration",
+      "text": "Inside: three cars, a wall of tools organized with military precision, and a table covered in maps. Hand-drawn maps. The kind that exist because the roads they describe don't appear on any GPS."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "You chose to stay. Now I'm going to show you what that means."
+    },
+    {
+      "type": "narration",
+      "text": "He unfolds a map across the table. Nova Pacifica, but not the city you know. This version has routes drawn in red ink, crossing through warehouses, along harbor roads, through mountain passes you've never seen."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "The underground in Nova Pacifica isn't just The Pit. The Pit is the front door. Behind it are circuits that have been running for thirty years — some of them older than you."
+    },
+    {
+      "type": "narration",
+      "text": "His finger traces lines on the map."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "Downtown circuit. You know that one. Harbor sprint — runs along the docks, through the container yards. Industrial loop — the one I tested you on. Hillside climb — switchbacks up through the residential hills. And the Coastal — a twenty-minute run along the cliffs that's been killing reckless drivers since before I was born."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_serious",
+      "text": "Each circuit has a king. A driver who's held it the longest, won the most, earned the right to call it theirs. You want to own the underground? You take their crowns. One by one."
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "Tell me about the kings.",
+          "choice_id": "network_kings",
+          "relationship_changes": {"diesel": 5},
+          "moral_shift": 0,
+          "jump_to": "diesel_describes_kings"
+        },
+        {
+          "text": "Why now? You could have shown me this weeks ago.",
+          "choice_id": "network_why_now",
+          "relationship_changes": {"diesel": 3},
+          "moral_shift": 0,
+          "jump_to": "diesel_why_now"
+        },
+        {
+          "text": "Let's start tonight.",
+          "choice_id": "network_eager",
+          "relationship_changes": {"diesel": -3},
+          "moral_shift": -5,
+          "jump_to": "diesel_patience"
+        }
+      ]
+    },
+    {
+      "label": "diesel_describes_kings",
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "Harbor: Mateo Reyes. Drives a stripped-down Skyline from the nineties. Knows every container stack, every crane shadow, every bump in that asphalt. He's been unbeaten for two years."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "Industrial: Sofia Voss. Yes — related to the Voss you've already raced. His sister. She's better. Much better. She drives a BMW that she rebuilt herself from a salvage title."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "Hillside: Takeshi — no last name. Japanese expat. Touge specialist. His car is a modified AE86 that shouldn't be as fast as it is. He drives like the mountain is alive and he's having a conversation with it."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_serious",
+      "text": "And the Coastal: nobody. The last king died on it. Three years ago. The circuit's been open ever since. Whoever claims it earns it the hard way.",
+      "jump_to": "diesel_code"
+    },
+    {
+      "label": "diesel_why_now",
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_serious",
+      "text": "Because you weren't ready weeks ago. You'd won some races, earned some rep. That's not ready. Ready is when you've been offered something better and turned it down. Ready is when you've chosen the road, not the destination."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_approving",
+      "text": "You turned down Jade's money. You chose the underground. That tells me you understand what this is about. Now I can show you the rest.",
+      "jump_to": "diesel_code"
+    },
+    {
+      "label": "diesel_patience",
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_disappointed",
+      "text": "No."
+    },
+    {
+      "type": "narration",
+      "text": "One word. The weight of it fills the garage."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_serious",
+      "text": "You don't challenge a king without preparation. You don't walk into someone's house and start rearranging furniture. There's a code. Break it and you'll be blacklisted from every circuit on this map.",
+      "jump_to": "diesel_code"
+    },
+    {
+      "label": "diesel_code",
+      "type": "narration",
+      "text": "Diesel sits on the edge of the table. For a moment, he looks old — not tired-old, but the kind of old that comes from carrying history in your bones."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_serious",
+      "text": "There's a code in the underground. It's not written down anywhere. It's older than any of us. And it's the only thing keeping this world from tearing itself apart."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_serious",
+      "text": "Rule one: you race for the road, not for the money. Money is a byproduct. The moment it becomes the goal, you've already lost."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_serious",
+      "text": "Rule two: you help a fallen driver. Always. No exceptions. The car doesn't care about you — the people watching from the sidelines do."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_serious",
+      "text": "Rule three: a challenge must be earned. You don't race the king until you've proven you belong on their circuit. Win three open races first. That's the entry ticket."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_serious",
+      "text": "Rule four: what happens in the underground stays in the underground. No names to outsiders. No footage for social media. No snitching to cops. This is a family."
+    },
+    {
+      "type": "narration",
+      "text": "He folds the map carefully. Precisely. Like it is something sacred."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "I followed this code for twenty years. Marcus followed it before me. Every driver on these circuits follows it. Break it and you answer to me."
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "I understand. The code comes first.",
+          "choice_id": "network_honor",
+          "relationship_changes": {"diesel": 15},
+          "moral_shift": 10,
+          "set_flags": {"accepted_underground_code": true},
+          "jump_to": "diesel_satisfied"
+        },
+        {
+          "text": "Rules are important. But so is winning.",
+          "choice_id": "network_pragmatic",
+          "relationship_changes": {"diesel": -5},
+          "moral_shift": -5,
+          "jump_to": "diesel_warning"
+        }
+      ]
+    },
+    {
+      "label": "diesel_satisfied",
+      "type": "narration",
+      "text": "Diesel nods. That nod — the one that means more than any trophy."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_approving",
+      "text": "Good. Then let's get to work. Your car needs upgrading, your skills need sharpening, and you have four circuits to conquer.",
+      "jump_to": "network_end"
+    },
+    {
+      "label": "diesel_warning",
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_disappointed",
+      "text": "Winning without honor is just noise. Remember that when the road gets dark and nobody's watching.",
+      "jump_to": "network_end"
+    },
+    {
+      "label": "network_end",
+      "type": "narration",
+      "text": "He hands you the map. Your map now. A network of roads and circuits and kings waiting to be challenged."
+    },
+    {
+      "type": "narration",
+      "text": "The underground is deeper than you knew. And you are only beginning to learn how far down it goes."
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "underground_map_revealed",
+        "value": true
+      }
+    }
+  ]
+}

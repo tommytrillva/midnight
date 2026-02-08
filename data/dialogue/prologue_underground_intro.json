@@ -1,0 +1,256 @@
+{
+  "id": "prologue_underground_intro",
+  "context": "Prologue — A young racer introduces the underground scene. Gateway to The Pit.",
+  "lines": [
+    {
+      "type": "cinematic",
+      "text": "TORRES AUTO — THREE DAYS LATER. Late afternoon. You're under the CRX when a modified Civic pulls into the lot, bass thumping."
+    },
+    {
+      "type": "narration",
+      "text": "A kid — maybe nineteen, maybe younger — hops out with the energy of someone who's had too much energy drink and not enough sleep. He's wearing a racing jacket two sizes too big and a grin that hasn't learned about consequences yet."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Young Racer",
+      "portrait": "",
+      "text": "Yo! Maya! You in?"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya Torres",
+      "portrait": "maya_neutral",
+      "text": "Tommy. What did I tell you about revving in my parking lot?"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Tommy",
+      "portrait": "",
+      "text": "Yeah, yeah, sorry. Listen — big news. The Pit is open tonight. Kai's running a fresh meat bracket. Five hundred entry, winner takes two grand."
+    },
+    {
+      "type": "narration",
+      "text": "Tommy notices you sliding out from under the CRX. He looks at the car, then at you, then back at Maya."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Tommy",
+      "portrait": "",
+      "text": "Who's this? New hire? Hey — you race?"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya Torres",
+      "portrait": "maya_annoyed",
+      "text": "Don't even think about it, Tommy."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Tommy",
+      "portrait": "",
+      "text": "What? I'm just asking! The Pit's always looking for new blood. Fresh meat bracket means low-tier cars only. Even that thing—"
+    },
+    {
+      "type": "narration",
+      "text": "He points at the CRX."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Tommy",
+      "portrait": "",
+      "text": "—could technically qualify. If it runs. Does it run?"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya Torres",
+      "portrait": "maya_neutral",
+      "text": "Tommy. Enough."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Tommy",
+      "portrait": "",
+      "text": "Alright, alright. Just saying — The Pit, tonight, ten PM, under the Harborview overpass. Five hundred gets you in. And Maya — Kai says he still owes you for that transmission job."
+    },
+    {
+      "type": "narration",
+      "text": "Tommy hops back in his Civic and peels out of the lot, leaving tire marks Maya will definitely make him clean up later."
+    },
+    {
+      "type": "cinematic",
+      "text": "The garage is quiet again. Maya is staring at the door where Tommy left. She hasn't moved."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya Torres",
+      "portrait": "maya_guarded",
+      "text": "Don't."
+    },
+    {
+      "type": "narration",
+      "text": "She turns to look at you. She already knows what you're thinking."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya Torres",
+      "portrait": "maya_guarded",
+      "text": "The Pit is not a parking lot race. It's organized. It's dangerous. People get hurt. Cars get totaled. And $500 is everything you have."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya Torres",
+      "portrait": "maya_neutral",
+      "text": "Your car isn't ready. YOU aren't ready. Give it time. Build up, learn the streets, save your money."
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "I'm going.",
+          "choice_id": "pit_going_solo",
+          "relationship_changes": {"maya": -5},
+          "moral_shift": -5,
+          "set_flags": {"pit_decision": "solo", "going_to_pit": true},
+          "jump_to": "maya_response_solo"
+        },
+        {
+          "text": "Come with me.",
+          "choice_id": "pit_come_with",
+          "relationship_changes": {"maya": 8},
+          "moral_shift": 5,
+          "set_flags": {"pit_decision": "together", "going_to_pit": true, "maya_came_to_pit": true},
+          "jump_to": "maya_response_together"
+        },
+        {
+          "text": "What if I win?",
+          "choice_id": "pit_what_if",
+          "relationship_changes": {"maya": 2},
+          "moral_shift": 0,
+          "set_flags": {"pit_decision": "pragmatic", "going_to_pit": true},
+          "jump_to": "maya_response_pragmatic"
+        }
+      ]
+    },
+    {
+      "label": "maya_response_solo",
+      "type": "narration",
+      "text": "Maya's expression goes cold. Not angry — something worse. Disappointed."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya Torres",
+      "portrait": "maya_guarded",
+      "text": "Just like that? Three days and you already think you know better than me?"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya Torres",
+      "portrait": "maya_neutral",
+      "text": "Fine. Go. Wreck the car I've been fixing on my own time. But when you limp back here — and you WILL limp back — don't expect me to say I told you so."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya Torres",
+      "portrait": "maya_guarded",
+      "text": "I'll just fix whatever's left.",
+      "jump_to": "pit_end"
+    },
+    {
+      "label": "maya_response_together",
+      "type": "narration",
+      "text": "Maya blinks. Whatever she expected you to say, it wasn't that."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya Torres",
+      "portrait": "maya_skeptical",
+      "text": "Come with — are you serious right now?"
+    },
+    {
+      "type": "narration",
+      "text": "She stares at you. You don't look away. Something passes between you — an understanding that neither of you could put into words."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya Torres",
+      "portrait": "maya_thinking",
+      "text": "..."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya Torres",
+      "portrait": "maya_neutral",
+      "text": "I know those streets. I know that crowd. And I know your car better than you do."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya Torres",
+      "portrait": "maya_amused",
+      "text": "If you're going to do something stupid, at least have someone smart in the passenger seat. I'll be your eyes. Don't make me regret this.",
+      "jump_to": "pit_end"
+    },
+    {
+      "label": "maya_response_pragmatic",
+      "type": "dialogue",
+      "speaker": "Maya Torres",
+      "portrait": "maya_skeptical",
+      "text": "What if you win? Two thousand dollars. Enough to buy real parts for the CRX. Enough to actually compete."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya Torres",
+      "portrait": "maya_thinking",
+      "text": "And what if you lose? You're out five hundred — that's your food money, your safety net, your everything. One bad turn, one blown tire, and you're walking home with nothing."
+    },
+    {
+      "type": "narration",
+      "text": "She studies your face. Looking for doubt. She doesn't find any."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya Torres",
+      "portrait": "maya_neutral",
+      "text": "You've already decided, haven't you? I can see it. Same look you had when you told me your story."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya Torres",
+      "portrait": "maya_neutral",
+      "text": "Go. But if anything goes wrong — and it will — you call me. I mean it.",
+      "jump_to": "pit_end"
+    },
+    {
+      "label": "pit_end",
+      "type": "cinematic",
+      "text": "NIGHT FALLS. The city transforms. Streetlights flicker on one by one. Somewhere in the distance, an engine revs."
+    },
+    {
+      "type": "narration",
+      "text": "You sit in the CRX. The engine turns over — rough, reluctant, but alive. Maya did good work. The brakes are new. The intake is patched. It's not fast, but it's not dead."
+    },
+    {
+      "type": "narration",
+      "text": "$500 sits in your pocket. Everything you have in the world."
+    },
+    {
+      "type": "narration",
+      "text": "You pull out of Torres Auto and point the CRX toward the harbor. Toward The Pit. Toward the beginning of everything."
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "prologue_underground_intro_complete",
+        "value": true
+      }
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "prologue_complete",
+        "value": true
+      }
+    }
+  ]
+}

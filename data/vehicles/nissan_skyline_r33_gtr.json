@@ -1,0 +1,33 @@
+{
+  "vehicle_id": "nissan_skyline_r33_gtr",
+  "display_name": "1995 Nissan Skyline R33 GT-R",
+  "manufacturer": "Nissan",
+  "year": 1995,
+  "description": "The refined beast. Where the R32 was a blunt instrument, the R33 smoothed the edges without dulling the blade. Bigger, more comfortable, and faster around the Nürburgring than its predecessor — yet somehow always living in the shadow of its siblings.",
+  "base_stats": {
+    "top_speed": 0.66,
+    "acceleration": 0.64,
+    "handling": 0.62,
+    "braking": 0.61,
+    "nitro_capacity": 0.50,
+    "weight_lbs": 3400
+  },
+  "engine": {
+    "horsepower": 280.0,
+    "torque_lbft": 266.0,
+    "displacement_cc": 2568,
+    "configuration": "I6",
+    "aspiration": "twin_turbo"
+  },
+  "drivetrain": "awd",
+  "tier": 3,
+  "price": 75000,
+  "rarity": "uncommon",
+  "cosmetics": {
+    "default_color": "#FFFFFF",
+    "available_colors": ["#FFFFFF", "#000000", "#191970", "#C0C0C0", "#4B0082", "#2F4F4F"]
+  },
+  "special_traits": ["rb26", "awd", "grand_tourer"],
+  "lore": "The middle child of the GT-R family. Enthusiasts overlooked it for years, chasing R32s and R34s while the R33 quietly appreciated. Those who drove one knew the truth — it's the most composed Skyline ever built. The smart money was always here.",
+  "category": "JDM"
+}

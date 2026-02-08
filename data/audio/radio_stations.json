@@ -1,0 +1,145 @@
+{
+	"stations": [
+		{
+			"id": 0,
+			"name": "OFF",
+			"frequency": "--.-",
+			"description": "Radio off"
+		},
+		{
+			"id": 1,
+			"name": "NOVA FM",
+			"frequency": "98.7",
+			"genre": "Electronic / Synthwave",
+			"dj_name": "Neon Nina",
+			"color": "#FF00FF",
+			"playlist": [
+				"neon_highway",
+				"digital_sunset",
+				"chrome_dreams",
+				"midnight_protocol",
+				"electric_avenue",
+				"synth_city",
+				"retrowave_runner",
+				"pixel_rain"
+			],
+			"dj_lines": [
+				"You're listening to Nova FM. Where the future sounds like the past.",
+				"That was Chrome Dreams. If you're driving with the windows down, this next one's for you.",
+				"Nova FM — painting the night in neon since 2019.",
+				"Neon Nina here. The city looks different at 3 AM, doesn't it?",
+				"Ninety-eight-seven, Nova FM. Your frequency for the night shift.",
+				"Close your eyes — wait, no, keep them on the road. But FEEL this next one.",
+				"We don't do daylight here on Nova FM. This is night music."
+			]
+		},
+		{
+			"id": 2,
+			"name": "STREET HEAT",
+			"frequency": "103.1",
+			"genre": "Hip-Hop / Trap",
+			"dj_name": "Big Torque",
+			"color": "#FF4444",
+			"playlist": [
+				"block_party",
+				"no_brakes",
+				"asphalt_anthem",
+				"hood_classic",
+				"turbo_talk",
+				"concrete_jungle",
+				"money_shift",
+				"exhaust_note"
+			],
+			"dj_lines": [
+				"STREET HEAT one-oh-three-one! Big Torque in the building!",
+				"Shout out to everyone hitting The Pit tonight. Y'all already know.",
+				"That track goes HARD. Like a turbo at full boost, you feel me?",
+				"If you ain't listening to Street Heat, you ain't listening.",
+				"Big Torque keeping it real for the streets of Nova Pacifica.",
+				"This next one goes out to every whip running on empty and still sending it.",
+				"One-oh-three-one, baby. Turn it UP."
+			]
+		},
+		{
+			"id": 3,
+			"name": "PACIFIC DRIFT",
+			"frequency": "91.3",
+			"genre": "Lo-fi / Chillhop",
+			"dj_name": "Smooth K",
+			"color": "#44AAFF",
+			"playlist": [
+				"harbor_breeze",
+				"rooftop_views",
+				"slow_lane",
+				"coffee_run",
+				"rain_drive",
+				"ocean_park",
+				"lazy_sunday",
+				"moonlight_cruise"
+			],
+			"dj_lines": [
+				"Pacific Drift... take it easy out there.",
+				"Smooth K here. No rush. The road's not going anywhere.",
+				"This one goes out to everyone driving home alone tonight. You're not alone.",
+				"Pacific Drift ninety-one-three. Music for the long way home.",
+				"Breathe in... breathe out... next song, coming up slow.",
+				"The harbor looks beautiful at this hour. Smooth K, keeping you company.",
+				"Life's too short to rush. Pacific Drift understands."
+			]
+		},
+		{
+			"id": 4,
+			"name": "REDLINE RADIO",
+			"frequency": "106.9",
+			"genre": "Rock / Metal",
+			"dj_name": "Piston Pete",
+			"color": "#FF8800",
+			"playlist": [
+				"full_throttle",
+				"burnout",
+				"rev_limiter",
+				"nitro_fury",
+				"engine_scream",
+				"road_rage",
+				"piston_break",
+				"overdrive"
+			],
+			"dj_lines": [
+				"REDLINE RADIO! Piston Pete keeping your RPMs in the red!",
+				"If your engine isn't screaming, you're not going fast enough!",
+				"That was Nitro Fury! Now FLOOR IT!",
+				"Redline one-oh-six-nine! Music that hits like a nitrous hit!",
+				"Piston Pete here — and I haven't slept in THREE DAYS! LET'S GOOO!",
+				"Your check engine light is on? GOOD. That means you're TRYING.",
+				"Rev it. REV IT. This next song demands it."
+			]
+		},
+		{
+			"id": 5,
+			"name": "UNDERGROUND",
+			"frequency": "87.6",
+			"genre": "Drum & Bass / Jungle",
+			"dj_name": "Phantom",
+			"color": "#AA44FF",
+			"playlist": [
+				"shadow_step",
+				"bass_tunnel",
+				"breakbeat_highway",
+				"jungle_concrete",
+				"subfrequency",
+				"dark_matter",
+				"pulse_code",
+				"ghost_signal"
+			],
+			"dj_lines": [
+				"...Underground...",
+				"Phantom. You know the frequency. Tell no one.",
+				"If you found this station, you're already one of us.",
+				"This signal doesn't exist. Neither do we. Underground.",
+				"...eighty-seven-six... the frequency between frequencies...",
+				"They tried to shut us down. The signal persists.",
+				"No ads. No sponsors. Just bass. Underground."
+			]
+		}
+	]
+}

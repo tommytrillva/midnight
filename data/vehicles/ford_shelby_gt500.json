@@ -1,0 +1,40 @@
+{
+  "vehicle_id": "ford_shelby_gt500",
+  "display_name": "2013 Ford Mustang Shelby GT500",
+  "manufacturer": "Ford",
+  "year": 2013,
+  "body_style": "coupe",
+  "category": "Muscle",
+  "culture": "american",
+  "tier": 4,
+  "rarity": "uncommon",
+  "description": "662 horsepower from a supercharged 5.8-liter V8 crammed into a live-axle Mustang chassis. The GT500 is a straight-line missile that treats corners as suggestions and drag strips as destiny. Subtlety was never part of the equation.",
+  "lore": "When Ford announced that the 2013 GT500 would make 662 horsepower, the internet called it irresponsible. They were right. The Trinity supercharger force-feeds the 5.8-liter V8 until it produces more power than a Lamborghini Aventador. The live rear axle hops and skips over bumps while the supercharger whine drowns out your survival instincts. Carroll Shelby signed off on this car. It was one of his last acts. He knew exactly what he was doing.",
+
+  "base_stats": {
+    "top_speed": 0.79,
+    "acceleration": 0.77,
+    "handling": 0.65,
+    "braking": 0.68,
+    "nitro_capacity": 0.42,
+    "weight": 1724.0
+  },
+
+  "engine": {
+    "horsepower": 662.0,
+    "torque": 631.0,
+    "displacement": "5.8L",
+    "configuration": "V8",
+    "aspiration": "supercharged"
+  },
+
+  "drivetrain": "rwd",
+  "price": 130000,
+
+  "cosmetics": {
+    "default_color": "#191970",
+    "available_colors": ["#191970", "#000000", "#FFFFFF", "#FF0000", "#C0C0C0", "#4169E1"]
+  },
+
+  "special_traits": ["supercharged", "muscle_king"]
+}

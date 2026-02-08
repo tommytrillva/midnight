@@ -1,0 +1,40 @@
+{
+  "vehicle_id": "ford_focus_rs",
+  "display_name": "2017 Ford Focus RS",
+  "manufacturer": "Ford",
+  "year": 2017,
+  "body_style": "hatchback",
+  "category": "Euro/Tuner",
+  "culture": "euro",
+  "tier": 4,
+  "rarity": "uncommon",
+  "description": "Drift mode included. Ford's engineers in Cologne built a hot hatchback with a party trick — a torque-vectoring AWD system that can send the majority of power to the rear wheels and let the tail slide on command. A turbo EcoBoost four and aggressive suspension make it a genuine rally car for the road.",
+  "lore": "The Focus RS was developed at Ford's performance center in Cologne, Germany, by engineers who grew up watching Group B rally cars. The 2.3-liter EcoBoost four-cylinder is the same block found in the Mustang, retuned for boost and mated to a GKN twin-clutch rear differential that enables the infamous Drift Mode. Ford's lawyers tried to kill the feature. The engineers won. It's the most fun you can have in a hatchback with the traction control doing exactly what you tell it to.",
+
+  "base_stats": {
+    "top_speed": 0.68,
+    "acceleration": 0.70,
+    "handling": 0.76,
+    "braking": 0.72,
+    "nitro_capacity": 0.38,
+    "weight": 1542.0
+  },
+
+  "engine": {
+    "horsepower": 350.0,
+    "torque": 350.0,
+    "displacement": "2.3L",
+    "configuration": "I4",
+    "aspiration": "turbo"
+  },
+
+  "drivetrain": "awd",
+  "price": 100000,
+
+  "cosmetics": {
+    "default_color": "#0047AB",
+    "available_colors": ["#0047AB", "#FFFFFF", "#000000", "#808080", "#C0C0C0", "#2F4F4F"]
+  },
+
+  "special_traits": ["turbo", "awd", "drift_mode"]
+}

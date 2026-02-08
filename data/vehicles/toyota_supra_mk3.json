@@ -1,0 +1,52 @@
+{
+  "vehicle_id": "toyota_supra_mk3",
+  "display_name": "1989 Toyota Supra Mk3 (A70)",
+  "manufacturer": "Toyota",
+  "year": 1989,
+  "body_style": "coupe",
+  "category": "JDM/GT",
+  "culture": "jdm",
+  "tier": 2,
+  "rarity": "uncommon",
+  "description": "Living in the shadow of its younger brother, the Mk3 Supra is the underrated classic that purists quietly hoard. The 7M-GTE makes real turbo power, the chassis is grand-tourer stiff, and the price is a fraction of what the Mk4 commands.",
+  "lore": "Underrated classic. Everyone wants the Mk4, but the Mk3 was making boost before boost was cool. The 7M has a reputation for head gasket failure, but the previous owner did the ARP stud fix. Probably. The receipt is around here somewhere.",
+
+  "base_stats": {
+    "top_speed": 68.0,
+    "acceleration": 58.0,
+    "handling": 50.0,
+    "braking": 48.0,
+    "nitro_capacity": 42.0,
+    "weight_kg": 1588.0
+  },
+
+  "engine": {
+    "code": "7M-GTE",
+    "horsepower": 230.0,
+    "torque_lbft": 254.0,
+    "displacement_cc": 2954,
+    "configuration": "I6",
+    "aspiration": "turbo",
+    "valvetrain": "DOHC 24V",
+    "redline_rpm": 6200
+  },
+
+  "drivetrain": "rwd",
+  "price": 22000,
+  "class": "C",
+
+  "cosmetics": {
+    "available_colors": ["super_white", "black", "dark_blue_metallic", "red_mica"],
+    "body_kits": ["stock", "trd_aero", "ridox_style", "do_luck"],
+    "spoiler_options": ["none", "factory_turbo", "trd_wing", "wangan_gt"],
+    "wheel_options": ["stock_16", "work_meister_s1_17", "rays_te37_17", "ssr_professor_sp3"]
+  },
+
+  "special_traits": ["turbo", "grand_tourer", "underrated"],
+
+  "mod_potential": {
+    "engine_swaps": ["1jz-gte", "2jz-gte"],
+    "max_hp_potential": 900,
+    "upgrade_ceiling": "S"
+  }
+}

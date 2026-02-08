@@ -1,0 +1,155 @@
+{
+  "id": "zero_revealed",
+  "context": "Act 3 Chapter 3.2 — The truth about Zero finally exposed. Not a person — a system. A network. An ideology.",
+  "lines": [
+    {
+      "type": "narration",
+      "text": "Nikko's revelation on the Coastal changes everything. The gambling debts, the race fixing, the corporate corruption, the elite circle — all connected. All leading back to the same name."
+    },
+    {
+      "type": "narration",
+      "text": "You spend three days pulling threads. Mina Park's investigation notes. Reyes's intelligence files. Jade's internal documents. Diesel's decades of underground knowledge. Every thread leads to the same knot."
+    },
+    {
+      "type": "narration",
+      "text": "And when the picture finally assembles, it is worse than you imagined."
+    },
+    {
+      "type": "narration",
+      "text": "Zero is not a person."
+    },
+    {
+      "type": "narration",
+      "text": "Zero is a system. A network of interconnected operations that spans the globe — professional racing corruption, underground infrastructure exploitation, gambling manipulation, driver debt slavery, sponsor blackmail. Every piece supports every other piece, and at the center is not a face but a philosophy."
+    },
+    {
+      "type": "narration",
+      "text": "The philosophy is simple: control the sport from the outside. Never own a team. Never sponsor a driver. Never appear on a document. Instead, own the ecosystem — the debts, the corruption, the secrets, the infrastructure that makes racing possible."
+    },
+    {
+      "type": "narration",
+      "text": "Zero is the invisible hand that shaped your career from the moment you arrived in Nova Pacifica."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_grim",
+      "text": "I knew pieces of this. For years. I knew something was wrong — the money in the underground that didn't come from racing. The races that felt managed even when they shouldn't have been."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_grim",
+      "text": "But I didn't see the whole picture. Nobody does. That's the design — everyone sees their piece. Nobody sees the machine."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_angry",
+      "text": "The garage. My father's garage. Zero's network has been laundering money through parts suppliers that I've been buying from for years. Every invoice, every delivery — I was part of the pipeline without knowing it."
+    },
+    {
+      "type": "narration",
+      "text": "Maya's hands are shaking. Not with fear. With fury."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_tired",
+      "text": "And me. The gambling — the games were rigged. The debts were designed. They needed drivers they could control, and they built the trap around me before I even knew I was in one.",
+      "conditions": {"nikko_saved": true}
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "We take Zero down. All of us. Together.",
+          "choice_id": "zero_rev_fight",
+          "relationship_changes": {"maya": 10, "diesel": 10, "nikko": 10},
+          "moral_shift": 15,
+          "set_flags": {"zero_fight_united": true},
+          "jump_to": "unite_against_zero"
+        },
+        {
+          "text": "We need help. The journalist. The detective. Everyone.",
+          "choice_id": "zero_rev_allies",
+          "relationship_changes": {"maya": 5, "diesel": 5},
+          "moral_shift": 10,
+          "set_flags": {"zero_fight_coalition": true},
+          "jump_to": "build_coalition"
+        },
+        {
+          "text": "If Zero is a system, you can't fight it with fists. You fight it with exposure.",
+          "choice_id": "zero_rev_expose",
+          "relationship_changes": {},
+          "moral_shift": 15,
+          "set_flags": {"zero_fight_exposure": true},
+          "jump_to": "exposure_plan"
+        }
+      ]
+    },
+    {
+      "label": "unite_against_zero",
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_determined",
+      "text": "Together. That's the only way. Zero's power is that nobody sees the whole thing. If we show everyone the whole thing — every driver, every team, every person who's been used — Zero loses the only advantage it has."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_determined",
+      "text": "I'll pull every invoice, every receipt, every transaction from the last five years. If the money trail is there, I'll find it.",
+      "jump_to": "zero_rev_end"
+    },
+    {
+      "label": "build_coalition",
+      "type": "narration",
+      "text": "You make calls. Mina Park, the journalist. Detective Reyes. Jade, who has her own reasons to see Zero burn. Henrik, who discovered that his entire career was managed by forces he never saw."
+    },
+    {
+      "type": "narration",
+      "text": "One by one, they join. Not because they trust each other — some of them have every reason not to. But because Zero used all of them, and the only thing stronger than distrust is shared outrage.",
+      "jump_to": "zero_rev_end"
+    },
+    {
+      "label": "exposure_plan",
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_serious",
+      "text": "Exposure means going public. Going public means burning every bridge you have — corporate, underground, elite. Zero's people are everywhere. When you pull the pin, there's no putting it back."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_determined",
+      "text": "Then we make sure the explosion is big enough that Zero can't survive it.",
+      "jump_to": "zero_rev_end"
+    },
+    {
+      "label": "zero_rev_end",
+      "type": "narration",
+      "text": "The garage is quiet. Four people — five if Nikko is there — sitting among oil stains and wrenches and the remnants of a world that used to make sense."
+    },
+    {
+      "type": "narration",
+      "text": "Zero isn't anyone. Zero is an idea. And the only way to kill an idea is with a better one."
+    },
+    {
+      "type": "narration",
+      "text": "The plan takes shape. Not a simple plan — a layered one, built by a mechanic, a mentor, a journalist, a detective, a corporate insider, and a driver who has raced in every world that Zero corrupted."
+    },
+    {
+      "type": "narration",
+      "text": "But first — the World Championship final. Because the plan requires a stage. And there is no bigger stage than the race the entire world is watching."
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "zero_truth_known",
+        "value": true
+      }
+    }
+  ]
+}

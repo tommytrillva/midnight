@@ -1,0 +1,417 @@
+{
+  "id": "fresh_meat_between",
+  "context": "Act 1 Chapter 1.2 — Between Fresh Meat Night races, culminating in Race 5 vs Nikko Cross",
+  "lines": [
+    {
+      "label": "after_race_1",
+      "type": "dialogue",
+      "speaker": "Maya (Radio)",
+      "portrait": "maya_radio",
+      "text": "Race one — done. Good. You're in one piece. That's all that matters right now.",
+      "condition": {
+        "type": "has_flag",
+        "flag": "fresh_meat_race_1_complete"
+      }
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya (Radio)",
+      "portrait": "maya_radio",
+      "text": "Your brakes are going to start fading after race three. Go easy on them in the early laps — save them for when you really need to stop.",
+      "condition": {
+        "type": "has_flag",
+        "flag": "fresh_meat_race_1_complete"
+      }
+    },
+    {
+      "type": "narration",
+      "text": "The Silvia driver — the one who shouldered you earlier — pulled a second-place finish. He catches your eye across the staging area. Doesn't say a word. Doesn't need to.",
+      "condition": {
+        "type": "has_flag",
+        "flag": "fresh_meat_race_1_complete"
+      }
+    },
+    {
+      "label": "after_race_2",
+      "type": "dialogue",
+      "speaker": "Maya (Radio)",
+      "portrait": "maya_radio",
+      "text": "Two down, three to go. The Miata spun out in race two — she's out. Don't think about it. Focus on your car.",
+      "condition": {
+        "type": "has_flag",
+        "flag": "fresh_meat_race_2_complete"
+      }
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya (Radio)",
+      "portrait": "maya_radio",
+      "text": "I'm seeing some tire degradation on the right front. You're loading it too hard in the left-handers. Try to balance your inputs.",
+      "condition": {
+        "type": "has_flag",
+        "flag": "fresh_meat_race_2_complete"
+      }
+    },
+    {
+      "type": "narration",
+      "text": "The field is thinning. Three cars gone already — one spun out, one mechanical failure, one just... left. Pulled into the staging area, killed the engine, and walked away without a word.",
+      "condition": {
+        "type": "has_flag",
+        "flag": "fresh_meat_race_2_complete"
+      }
+    },
+    {
+      "label": "after_race_3",
+      "type": "dialogue",
+      "speaker": "Maya (Radio)",
+      "portrait": "maya_radio",
+      "text": "Halfway there. Three races done. You're still standing. Some people bet against you making it past two.",
+      "condition": {
+        "type": "has_flag",
+        "flag": "fresh_meat_race_3_complete"
+      }
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya (Radio)",
+      "portrait": "maya_radio",
+      "text": "Race four is the long circuit — the harbor loop. It's twice the distance. Conserve your brakes for the back section. The hairpin at the dock will eat whatever pad you've got left.",
+      "condition": {
+        "type": "has_flag",
+        "flag": "fresh_meat_race_3_complete"
+      }
+    },
+    {
+      "type": "narration",
+      "text": "The tall racer with the Silvia passes your window. This time he slows down. Tips his chin — just barely.",
+      "condition": {
+        "type": "has_flag",
+        "flag": "fresh_meat_race_3_complete"
+      }
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Tall Racer",
+      "portrait": "",
+      "text": "Not bad, Fresh Meat. Not bad.",
+      "condition": {
+        "type": "has_flag",
+        "flag": "fresh_meat_race_3_complete"
+      }
+    },
+    {
+      "label": "after_race_4",
+      "type": "dialogue",
+      "speaker": "Maya (Radio)",
+      "portrait": "maya_radio",
+      "text": "Four down. One more. One more and you're in. I can hear your brakes from here — they sound like a dying animal. But they'll hold. I built them to hold.",
+      "condition": {
+        "type": "has_flag",
+        "flag": "fresh_meat_race_4_complete"
+      }
+    },
+    {
+      "type": "narration",
+      "text": "The staging area goes quiet. Not the usual between-race buzz — this is something else. Something shifting in the atmosphere like a pressure change before a storm.",
+      "condition": {
+        "type": "has_flag",
+        "flag": "fresh_meat_race_4_complete"
+      }
+    },
+    {
+      "type": "narration",
+      "text": "Headlights cut through the warehouse entrance. A Nissan 350Z rolls in — midnight blue, widebody, aftermarket everything. But it's not the car that silences the crowd. It's the driver."
+    },
+    {
+      "type": "narration",
+      "text": "He steps out with the economy of movement that comes from knowing exactly who you are and what you're worth. Early twenties. Sharp jaw. Eyes that catalog everything and dismiss most of it. Everything about him is deliberate — the way he closes the door, the way he checks his watch, the way he doesn't look at the crowd even though the crowd is looking at nothing else."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Crowd Voice",
+      "portrait": "",
+      "text": "That's Nikko Cross."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Crowd Voice 2",
+      "portrait": "",
+      "text": "What's he doing at Fresh Meat night? He's ranked. Top ten."
+    },
+    {
+      "type": "narration",
+      "text": "Nikko walks past the other cars without glancing at them. He stops at yours. Studies the CRX like he's reading a resume."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko Cross",
+      "portrait": "nikko_cold",
+      "text": "Fresh Meat night? Really?"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko Cross",
+      "portrait": "nikko_cold",
+      "text": "I've been hearing your name. People in The Pit talk about you like you're something. So I came to see for myself."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko Cross",
+      "portrait": "nikko_smirk",
+      "text": "The kid in the CRX who thinks heart is a substitute for horsepower."
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "Guess we'll find out.",
+          "choice_id": "nikko_fm_confident",
+          "relationship_changes": {"nikko": 3},
+          "moral_shift": 0,
+          "rep": 3,
+          "jump_to": "nikko_responds_confident"
+        },
+        {
+          "text": "Just drive.",
+          "choice_id": "nikko_fm_curt",
+          "relationship_changes": {"nikko": 5},
+          "moral_shift": 0,
+          "jump_to": "nikko_responds_curt"
+        },
+        {
+          "text": "(Rev the engine)",
+          "choice_id": "nikko_fm_rev",
+          "relationship_changes": {"nikko": 0},
+          "moral_shift": 0,
+          "rep": 5,
+          "jump_to": "nikko_responds_rev"
+        }
+      ]
+    },
+    {
+      "label": "nikko_responds_confident",
+      "type": "narration",
+      "text": "Nikko's expression doesn't change. But something behind his eyes sharpens — a blade being drawn from a sheath."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko Cross",
+      "portrait": "nikko_cold",
+      "text": "Yeah. We will.",
+      "jump_to": "race_5_setup"
+    },
+    {
+      "label": "nikko_responds_curt",
+      "type": "narration",
+      "text": "Two words. Nikko tilts his head — the smallest measure of reassessment. Like you said something he didn't expect."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko Cross",
+      "portrait": "nikko_neutral",
+      "text": "Alright then.",
+      "jump_to": "race_5_setup"
+    },
+    {
+      "label": "nikko_responds_rev",
+      "type": "narration",
+      "text": "The CRX barks. It's not impressive — not compared to the 350Z's rumble — but it's an answer. The crowd loves it. Someone whistles."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko Cross",
+      "portrait": "nikko_smirk",
+      "text": "Cute.",
+      "jump_to": "race_5_setup"
+    },
+    {
+      "label": "race_5_setup",
+      "type": "narration",
+      "text": "The Pit Boss calls the final grid. Race five. The 350Z pulls up beside you. The engine sounds like it was built in a different universe than yours — smooth, surgical, lethal."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya (Radio)",
+      "portrait": "maya_radio",
+      "text": "Nikko Cross. I know that name. He's ranked eighth on the board. He has not lost a ranked race in fourteen months.",
+      "condition": {
+        "type": "has_flag",
+        "flag": "maya_radio_active"
+      }
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya (Radio)",
+      "portrait": "maya_radio",
+      "text": "You don't have to beat him. You just have to finish. Remember that.",
+      "condition": {
+        "type": "has_flag",
+        "flag": "maya_radio_active"
+      }
+    },
+    {
+      "type": "narration",
+      "text": "The starter raises her hand. Nikko doesn't look at you. He stares straight ahead, hands at ten and two, perfectly still. Like he's already driving the race in his mind."
+    },
+    {
+      "type": "narration",
+      "text": "The hand drops. The 350Z launches like it was shot from a rail gun. By the first corner, Nikko is two car lengths ahead and pulling away with terrifying ease."
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "fresh_meat_race_5_started",
+        "value": true
+      }
+    },
+    {
+      "label": "post_race_5_loss",
+      "type": "narration",
+      "text": "Nikko finishes a full straightaway ahead. It's not even a race — it's a demonstration. He wasn't even pushing. You could see it in his lines — conservative, measured. He beat you with seventy percent effort.",
+      "condition": {
+        "type": "flag_equals",
+        "flag": "nikko_race5_win",
+        "value": false
+      }
+    },
+    {
+      "type": "narration",
+      "text": "But you finished. All five races. You crossed the line. The crowd cheers — not for you specifically, but for the spectacle. For anyone who survives the gauntlet.",
+      "condition": {
+        "type": "flag_equals",
+        "flag": "nikko_race5_win",
+        "value": false
+      }
+    },
+    {
+      "type": "narration",
+      "text": "Nikko is already out of his car. He walks past you on his way back to the staging area. Stops.",
+      "condition": {
+        "type": "flag_equals",
+        "flag": "nikko_race5_win",
+        "value": false
+      }
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko Cross",
+      "portrait": "nikko_neutral",
+      "text": "Not bad. For Fresh Meat.",
+      "condition": {
+        "type": "flag_equals",
+        "flag": "nikko_race5_win",
+        "value": false
+      }
+    },
+    {
+      "type": "narration",
+      "text": "He keeps walking. Doesn't look back. The 350Z starts up and rolls out of The Pit like a blue ghost.",
+      "condition": {
+        "type": "flag_equals",
+        "flag": "nikko_race5_win",
+        "value": false
+      },
+      "jump_to": "fresh_meat_complete"
+    },
+    {
+      "label": "post_race_5_win",
+      "type": "narration",
+      "text": "You don't understand what just happened. You're not sure anyone does.",
+      "condition": {
+        "type": "has_flag",
+        "flag": "nikko_race5_win"
+      }
+    },
+    {
+      "type": "narration",
+      "text": "The CRX crosses the line first. By a bumper. By a breath. The crowd doesn't cheer — it gasps. Then it goes deathly silent. Then it loses its mind.",
+      "condition": {
+        "type": "has_flag",
+        "flag": "nikko_race5_win"
+      }
+    },
+    {
+      "type": "narration",
+      "text": "You beat Nikko Cross. On Fresh Meat night. In a CRX. The impossibility of it hangs in the air like smoke.",
+      "condition": {
+        "type": "has_flag",
+        "flag": "nikko_race5_win"
+      }
+    },
+    {
+      "type": "narration",
+      "text": "Nikko sits in his car for a long time. When he finally gets out, his face is a mask — the same controlled expression, the same sharp eyes. But something underneath has shifted. Cracked.",
+      "condition": {
+        "type": "has_flag",
+        "flag": "nikko_race5_win"
+      }
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko Cross",
+      "portrait": "nikko_mask_slipped",
+      "text": "Good race.",
+      "condition": {
+        "type": "has_flag",
+        "flag": "nikko_race5_win"
+      }
+    },
+    {
+      "type": "narration",
+      "text": "Two words. But his voice is different. The confidence is there, but underneath it — something desperate. Something caged. Like you just rattled the bars of something he's been building for years.",
+      "condition": {
+        "type": "has_flag",
+        "flag": "nikko_race5_win"
+      }
+    },
+    {
+      "type": "narration",
+      "text": "He leaves without another word. The 350Z's taillights burn blue in the dark. You just made an enemy. Or something more complicated.",
+      "condition": {
+        "type": "has_flag",
+        "flag": "nikko_race5_win"
+      }
+    },
+    {
+      "label": "fresh_meat_complete",
+      "type": "narration",
+      "text": "The Pit Boss finds you in the staging area. He's got the clipboard and a grin."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Pit Boss",
+      "portrait": "pit_boss_amused",
+      "text": "Five races. All finished. Welcome to the board, kid."
+    },
+    {
+      "type": "narration",
+      "text": "He writes your name on the ranking board in white chalk. At the bottom. But it's there. You exist now. In The Pit, in the scene, in Nova Pacifica. You're no longer nobody."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya (Radio)",
+      "portrait": "maya_radio",
+      "text": "You did it. You actually did it. Bring the car home. I'll have a beer waiting. Don't tell anyone I said that.",
+      "condition": {
+        "type": "has_flag",
+        "flag": "maya_radio_active"
+      }
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "fresh_meat_complete",
+        "value": true
+      }
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "give_rep",
+        "amount": 30
+      }
+    }
+  ]
+}

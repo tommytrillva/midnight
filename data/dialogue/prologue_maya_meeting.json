@@ -1,0 +1,320 @@
+{
+  "id": "prologue_maya_meeting",
+  "context": "Prologue — First real meeting with Maya Torres. The origin choice happens here.",
+  "lines": [
+    {
+      "type": "cinematic",
+      "text": "TORRES AUTO — 6:14 AM. The rain has stopped. Dawn is a thin orange line behind the skyline."
+    },
+    {
+      "type": "narration",
+      "text": "You fell asleep in the CRX. Your neck aches. The windshield is fogged. Something is tapping on the driver's window."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya Torres",
+      "portrait": "maya_annoyed",
+      "text": "Hey. Sleeping Beauty. You're blocking my bay."
+    },
+    {
+      "type": "narration",
+      "text": "You wipe the fog and see a woman in a grease-stained tank top, arms crossed, coffee in one hand. She doesn't look amused."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya Torres",
+      "portrait": "maya_annoyed",
+      "text": "This is a garage, not a motel. You've got about thirty seconds before I call a tow."
+    },
+    {
+      "type": "narration",
+      "text": "You step out. The morning air is cold and damp. She looks at you, then at the CRX, then back at you."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya Torres",
+      "portrait": "maya_skeptical",
+      "text": "...The hell happened to this thing?"
+    },
+    {
+      "type": "narration",
+      "text": "She crouches next to the front wheel well, runs a finger along a cracked brake line. Pops the hood without asking. You watch her catalog every failure with surgical precision."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya Torres",
+      "portrait": "maya_thinking",
+      "text": "Blown head gasket. Warped rotors. Your intake manifold has a crack I could fit my thumb through. And is that... duct tape on the radiator hose?"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya Torres",
+      "portrait": "maya_skeptical",
+      "text": "You were driving this? On the street? At night? In the rain?"
+    },
+    {
+      "type": "narration",
+      "text": "She shakes her head slowly, but there's something in her eyes. Not pity. More like... recognition."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya Torres",
+      "portrait": "maya_neutral",
+      "text": "Alright. I'll bite. What's your story? Why are you parked in front of my shop at six in the morning with a car that should be in a junkyard?"
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "I used to be somebody. Got burned. Now I'm back.",
+          "choice_id": "origin_fallen",
+          "relationship_changes": {"maya": 3},
+          "moral_shift": 0,
+          "set_flags": {"fallen_origin": true},
+          "jump_to": "maya_responds_fallen"
+        },
+        {
+          "text": "Never had anything. Figured I'd take it.",
+          "choice_id": "origin_outsider",
+          "relationship_changes": {"maya": 5},
+          "moral_shift": 5,
+          "set_flags": {"outsider_origin": true},
+          "jump_to": "maya_responds_outsider"
+        },
+        {
+          "text": "...That's my business.",
+          "choice_id": "origin_ghost",
+          "relationship_changes": {"maya": -2},
+          "moral_shift": -5,
+          "set_flags": {"ghost_origin": true},
+          "jump_to": "maya_responds_ghost"
+        }
+      ]
+    },
+    {
+      "label": "maya_responds_fallen",
+      "type": "narration",
+      "text": "Maya's eyes narrow. She's reading you — the way you hold yourself, the way you talked about it. Past tense. 'Used to be.'"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya Torres",
+      "portrait": "maya_guarded",
+      "text": "Somebody. Got burned. Now you're sleeping in a CRX in front of a stranger's shop."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya Torres",
+      "portrait": "maya_neutral",
+      "text": "I've seen that look before. People who had it all and lost it — they either quit or they come back twice as dangerous."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya Torres",
+      "portrait": "maya_thinking",
+      "text": "Which one are you?",
+      "jump_to": "the_deal"
+    },
+    {
+      "label": "maya_responds_outsider",
+      "type": "narration",
+      "text": "Something shifts in Maya's expression. The hardness softens — just a fraction."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya Torres",
+      "portrait": "maya_neutral",
+      "text": "'Figured I'd take it.' Just like that, huh?"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya Torres",
+      "portrait": "maya_amused",
+      "text": "You know what? I respect that. No sob story. No excuses. Just hungry."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya Torres",
+      "portrait": "maya_thinking",
+      "text": "Hungry I can work with.",
+      "jump_to": "the_deal"
+    },
+    {
+      "label": "maya_responds_ghost",
+      "type": "narration",
+      "text": "Silence. Maya stares at you for a long moment. Most people would fill the gap — explain, justify, backpedal. You don't."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya Torres",
+      "portrait": "maya_guarded",
+      "text": "Your business. Sure."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya Torres",
+      "portrait": "maya_skeptical",
+      "text": "I don't trust people without stories. Everybody's got one. The ones who won't tell it? They're either running from something or hiding something."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya Torres",
+      "portrait": "maya_neutral",
+      "text": "Either way — you're interesting. And I don't get a lot of interesting around here.",
+      "jump_to": "the_deal"
+    },
+    {
+      "label": "the_deal",
+      "type": "narration",
+      "text": "Maya looks at the CRX again. You can see the gears turning behind her eyes."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya Torres",
+      "portrait": "maya_thinking",
+      "text": "Look. This car is a disaster, but the frame is solid. The engine... I can work with the engine. It'll take time and parts, but it's not dead yet."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya Torres",
+      "portrait": "maya_neutral",
+      "text": "Here's what I'm thinking. I need another pair of hands around the shop. Oil changes, tire rotations, the grunt work nobody wants to do."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya Torres",
+      "portrait": "maya_neutral",
+      "text": "You work for me — mornings and afternoons. In exchange, I fix your car on my time. Parts are on me. You just put in the hours."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya Torres",
+      "portrait": "maya_amused",
+      "text": "There's a couch in the back office that's seen better days. You can crash there until you figure your life out. No charge. But I hear one complaint about the springs, you're sleeping in the car."
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "Deal.",
+          "choice_id": "maya_deal_direct",
+          "relationship_changes": {"maya": 8},
+          "moral_shift": 5,
+          "set_flags": {"accepted_maya_deal": true, "maya_deal_response": "direct"},
+          "jump_to": "maya_deal_response_direct"
+        },
+        {
+          "text": "What's in it for you?",
+          "choice_id": "maya_deal_suspicious",
+          "relationship_changes": {"maya": 3},
+          "moral_shift": 0,
+          "set_flags": {"accepted_maya_deal": true, "maya_deal_response": "suspicious"},
+          "jump_to": "maya_deal_response_suspicious"
+        },
+        {
+          "text": "You always take in strays?",
+          "choice_id": "maya_deal_strays",
+          "relationship_changes": {"maya": 5},
+          "moral_shift": 0,
+          "set_flags": {"accepted_maya_deal": true, "maya_deal_response": "strays"},
+          "jump_to": "maya_deal_response_strays"
+        }
+      ]
+    },
+    {
+      "label": "maya_deal_response_direct",
+      "type": "dialogue",
+      "speaker": "Maya Torres",
+      "portrait": "maya_amused",
+      "text": "Ha. No negotiation? No 'let me think about it'?"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya Torres",
+      "portrait": "maya_neutral",
+      "text": "I like that. You either trust easy or you've got nothing to lose. Either way — welcome to Torres Auto.",
+      "jump_to": "meeting_end"
+    },
+    {
+      "label": "maya_deal_response_suspicious",
+      "type": "dialogue",
+      "speaker": "Maya Torres",
+      "portrait": "maya_guarded",
+      "text": "What's in it for me? I told you. I need help around the shop. That's it."
+    },
+    {
+      "type": "narration",
+      "text": "She pauses. Something flickers across her face — a memory, maybe. Gone before you can read it."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya Torres",
+      "portrait": "maya_neutral",
+      "text": "Maybe I'm just tired of doing everything alone. Maybe I see something in that car that's worth saving. Take the deal or don't. I won't offer twice.",
+      "jump_to": "meeting_end"
+    },
+    {
+      "label": "maya_deal_response_strays",
+      "type": "dialogue",
+      "speaker": "Maya Torres",
+      "portrait": "maya_guarded",
+      "text": "..."
+    },
+    {
+      "type": "narration",
+      "text": "The question lands harder than you expected. Maya's jaw tightens. For a second, she's somewhere else entirely."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya Torres",
+      "portrait": "maya_neutral",
+      "text": "Someone took a chance on me once. Didn't have to. Changed everything."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya Torres",
+      "portrait": "maya_amused",
+      "text": "Don't read too much into it. You're cheap labor with a busted car. That's the whole story.",
+      "jump_to": "meeting_end"
+    },
+    {
+      "label": "meeting_end",
+      "type": "narration",
+      "text": "She tosses you a shop rag and nods toward the garage bay."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya Torres",
+      "portrait": "maya_neutral",
+      "text": "Go get some coffee from the machine in the back. It tastes like motor oil, but it's hot. We start in an hour."
+    },
+    {
+      "type": "narration",
+      "text": "You walk into Torres Auto. The smell of oil, rubber, and old concrete wraps around you like a second skin. For the first time in months, something feels like a beginning."
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "met_maya",
+        "value": true
+      }
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "prologue_maya_meeting_complete",
+        "value": true
+      }
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "change_relationship",
+        "character": "maya",
+        "amount": 5
+      }
+    }
+  ]
+}

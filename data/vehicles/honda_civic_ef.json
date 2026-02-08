@@ -1,0 +1,52 @@
+{
+  "vehicle_id": "honda_civic_ef",
+  "display_name": "1991 Honda Civic EF",
+  "manufacturer": "Honda",
+  "year": 1991,
+  "body_style": "hatchback",
+  "category": "JDM/Tuner",
+  "culture": "jdm",
+  "tier": 1,
+  "rarity": "common",
+  "description": "The EF Civic is the blank canvas of Honda tuning. Weighing barely a ton and shaped like a doorstop, it's the car that proved you don't need money to go fast — just ingenuity, a B-series motor, and no regard for comfort.",
+  "lore": "VTEC dreams, current reality. The interior is stripped because the previous owner called it 'weight reduction.' The D16 wheezes, the exhaust is a coffee can, and the clear taillights are cracked. But the shell is straight, and that's all that matters for what comes next.",
+
+  "base_stats": {
+    "top_speed": 44.0,
+    "acceleration": 38.0,
+    "handling": 50.0,
+    "braking": 34.0,
+    "nitro_capacity": 28.0,
+    "weight_kg": 907.0
+  },
+
+  "engine": {
+    "code": "D16A6",
+    "horsepower": 108.0,
+    "torque_lbft": 100.0,
+    "displacement_cc": 1590,
+    "configuration": "I4",
+    "aspiration": "naturally_aspirated",
+    "valvetrain": "SOHC 16V",
+    "redline_rpm": 6800
+  },
+
+  "drivetrain": "fwd",
+  "price": 4000,
+  "class": "D",
+
+  "cosmetics": {
+    "available_colors": ["tahitian_green", "frost_white", "rio_red", "captiva_blue"],
+    "body_kits": ["stock", "sir_lip_kit", "j_blood", "backyard_special"],
+    "spoiler_options": ["none", "sir_factory", "spoon_carbon"],
+    "wheel_options": ["stock_13", "mugen_rg_14", "enkei_rpf1_15", "volk_te37_15"]
+  },
+
+  "special_traits": ["vtec", "lightweight", "k_swap_ready"],
+
+  "mod_potential": {
+    "engine_swaps": ["b16a", "b18c", "k20a", "k24_turbo"],
+    "max_hp_potential": 500,
+    "upgrade_ceiling": "B"
+  }
+}

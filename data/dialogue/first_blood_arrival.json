@@ -1,0 +1,201 @@
+{
+  "id": "first_blood_arrival",
+  "context": "Act 1 Chapter 1.1 — Arriving at The Pit for the first organized race",
+  "lines": [
+    {
+      "type": "narration",
+      "text": "The warehouse district swallows you whole. No streetlights here — just the glow of phone screens and the amber pulse of cigarettes in cupped hands. Bass thumps from somewhere deep inside the concrete maze, rattling your mirrors."
+    },
+    {
+      "type": "narration",
+      "text": "You turn the corner and The Pit opens up before you. A sunken loading dock ringed by abandoned warehouses, now repurposed as Nova Pacifica's most notorious proving ground. Cars line both sides — thirty, maybe forty — hoods up, engines breathing."
+    },
+    {
+      "type": "narration",
+      "text": "The air is thick with exhaust fumes, cheap beer, and adrenaline. Someone's running a generator for the floodlights. The whole place hums with a frequency you can feel in your teeth."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_nostalgic",
+      "text": "I haven't been here in years. Smells the same.",
+      "condition": {
+        "type": "has_flag",
+        "flag": "maya_came_to_pit"
+      }
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_neutral",
+      "text": "If you die, I'm not fixing your car for free anymore.",
+      "condition": {
+        "type": "flag_equals",
+        "flag": "maya_came_to_pit",
+        "value": false
+      }
+    },
+    {
+      "type": "narration",
+      "text": "A stocky man with a clipboard and a gold tooth catches you rolling in. He steps in front of your car like he's daring you to keep moving."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Pit Boss",
+      "portrait": "pit_boss_neutral",
+      "text": "Entry fee's five hundred. Cash."
+    },
+    {
+      "type": "narration",
+      "text": "He leans down, peers through your window at the CRX. His eyebrows climb his forehead like they're trying to escape."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Pit Boss",
+      "portrait": "pit_boss_amused",
+      "text": "You serious?"
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "Dead serious.",
+          "choice_id": "pit_arrival_serious",
+          "relationship_changes": {},
+          "moral_shift": 0,
+          "rep": 5,
+          "jump_to": "pit_boss_reacts_serious"
+        },
+        {
+          "text": "What, you got a problem?",
+          "choice_id": "pit_arrival_aggressive",
+          "relationship_changes": {},
+          "moral_shift": -5,
+          "rep": 3,
+          "jump_to": "pit_boss_reacts_aggressive"
+        },
+        {
+          "text": "(Silently hand over the cash)",
+          "choice_id": "pit_arrival_silent",
+          "relationship_changes": {},
+          "moral_shift": 0,
+          "cash": -500,
+          "jump_to": "pit_boss_reacts_silent"
+        }
+      ]
+    },
+    {
+      "label": "pit_boss_reacts_serious",
+      "type": "narration",
+      "text": "You hold his gaze. Don't blink. After a beat, the gold tooth flashes in a grin."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Pit Boss",
+      "portrait": "pit_boss_amused",
+      "text": "Alright. Alright, dead serious. Five hundred.",
+      "jump_to": "cash_paid"
+    },
+    {
+      "label": "pit_boss_reacts_aggressive",
+      "type": "narration",
+      "text": "His grin vanishes. He taps the clipboard against his palm — slow, deliberate."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Pit Boss",
+      "portrait": "pit_boss_neutral",
+      "text": "I got problems with everything in this city, kid. Your car just made the list. Five hundred.",
+      "jump_to": "cash_paid"
+    },
+    {
+      "label": "pit_boss_reacts_silent",
+      "type": "narration",
+      "text": "You count out the bills and push them through the window without a word. He takes them, counts them again, tucks them into the clipboard."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Pit Boss",
+      "portrait": "pit_boss_neutral",
+      "text": "Quiet type. Fine by me. Quiet types either win or wreck. No in-between.",
+      "jump_to": "crowd_mocking"
+    },
+    {
+      "label": "cash_paid",
+      "type": "action",
+      "action": {
+        "type": "give_cash",
+        "amount": -500
+      }
+    },
+    {
+      "label": "crowd_mocking",
+      "type": "narration",
+      "text": "You pull into the staging area. Heads turn. Not in admiration."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Crowd Voice",
+      "portrait": "",
+      "text": "Yo, is that a CRX? What year is that thing, 1988?"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Crowd Voice 2",
+      "portrait": "",
+      "text": "Somebody call a tow truck now, save us the wait."
+    },
+    {
+      "type": "narration",
+      "text": "Laughter ripples through the crowd. Someone takes a photo. You can hear the mockery spreading like a current through the bodies pressed against the chain-link fence."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Crowd Voice 3",
+      "portrait": "",
+      "text": "Hold up — is that...? Nah. Can't be.",
+      "condition": {
+        "type": "has_flag",
+        "flag": "origin_fallen"
+      }
+    },
+    {
+      "type": "narration",
+      "text": "You catch the voice but not the face. It came from deep in the crowd. Someone who thought they recognized something — or someone. The moment passes.",
+      "condition": {
+        "type": "has_flag",
+        "flag": "origin_fallen"
+      }
+    },
+    {
+      "type": "narration",
+      "text": "A woman with a starter pistol walks to the center of the strip. She raises one hand. The engines around you rise to a scream."
+    },
+    {
+      "type": "narration",
+      "text": "Your hands tighten on the wheel. Your heart hammers against your ribs. The bass from someone's sound system synchs with your pulse. For one perfect, terrifying moment, everything is still."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Starter",
+      "portrait": "",
+      "text": "RUNNERS READY!"
+    },
+    {
+      "type": "narration",
+      "text": "The pistol cracks the night open. Tires scream. The crowd roars. You dump the clutch and the CRX lurches forward like a dog off a chain."
+    },
+    {
+      "type": "narration",
+      "text": "The race is on."
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "first_pit_race_started",
+        "value": true
+      }
+    }
+  ]
+}

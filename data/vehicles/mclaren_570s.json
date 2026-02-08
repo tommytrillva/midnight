@@ -1,0 +1,40 @@
+{
+  "vehicle_id": "mclaren_570s",
+  "display_name": "2017 McLaren 570S",
+  "manufacturer": "McLaren",
+  "year": 2017,
+  "body_style": "coupe",
+  "category": "Euro/Pro",
+  "culture": "euro",
+  "tier": 5,
+  "rarity": "rare",
+  "description": "Carbon core accessibility — if accessibility means a $320,000 supercar with a carbon fiber tub borrowed from a million-dollar hypercar program. The 570S is McLaren's entry point, and it's faster than most manufacturers' flagships.",
+  "lore": "McLaren's 'Sports Series' was supposed to be the affordable option. It still has a carbon fiber monocoque chassis, a twin-turbo V8, dihedral doors, and performance that embarrasses cars costing twice as much. The 570S proves that McLaren doesn't know how to build a slow car — even when they're trying to build a cheap one.",
+
+  "base_stats": {
+    "top_speed": 0.82,
+    "acceleration": 0.80,
+    "handling": 0.81,
+    "braking": 0.80,
+    "nitro_capacity": 0.38,
+    "weight": 1315.0
+  },
+
+  "engine": {
+    "horsepower": 562.0,
+    "torque": 443.0,
+    "displacement": "3.8L",
+    "configuration": "V8",
+    "aspiration": "twin_turbo"
+  },
+
+  "drivetrain": "mr",
+  "price": 320000,
+
+  "cosmetics": {
+    "default_color": "#FF8C00",
+    "available_colors": ["#FF8C00", "#C0C0C0", "#000000", "#FFFFFF", "#4169E1", "#FFD700"]
+  },
+
+  "special_traits": ["twin_turbo", "mid_engine", "carbon_tub"]
+}

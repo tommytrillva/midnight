@@ -1,0 +1,33 @@
+{
+  "vehicle_id": "bmw_e46_m3",
+  "display_name": "2003 BMW E46 M3",
+  "manufacturer": "BMW",
+  "year": 2003,
+  "description": "The perfect M car. The E46 M3's S54 inline-six revs to 8000 RPM with a mechanical urgency that modern turbo engines can't replicate. Balanced chassis, communicative steering, and enough power to be exciting without being overwhelming — this is the benchmark every sport sedan is measured against.",
+  "base_stats": {
+    "top_speed": 0.64,
+    "acceleration": 0.62,
+    "handling": 0.66,
+    "braking": 0.64,
+    "nitro_capacity": 0.46,
+    "weight_lbs": 3400
+  },
+  "engine": {
+    "horsepower": 333.0,
+    "torque_lbft": 262.0,
+    "displacement_cc": 3246,
+    "configuration": "I6",
+    "aspiration": "naturally_aspirated"
+  },
+  "drivetrain": "rwd",
+  "tier": 3,
+  "price": 45000,
+  "rarity": "uncommon",
+  "cosmetics": {
+    "default_color": "#C0C0C0",
+    "available_colors": ["#C0C0C0", "#000000", "#FFFFFF", "#191970", "#4169E1", "#808080"]
+  },
+  "special_traits": ["straight_six", "rev_happy", "balanced"],
+  "lore": "BMW purists will argue about which M car is the greatest until the heat death of the universe. But put them behind the wheel of an E46 M3 on a canyon road at dawn, and the argument ends. This is the one.",
+  "category": "Euro"
+}

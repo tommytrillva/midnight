@@ -1,0 +1,40 @@
+{
+  "vehicle_id": "dodge_demon",
+  "display_name": "2018 Dodge Challenger SRT Demon",
+  "manufacturer": "Dodge",
+  "year": 2018,
+  "body_style": "coupe",
+  "category": "Muscle",
+  "culture": "american",
+  "tier": 5,
+  "rarity": "rare",
+  "description": "840 horsepower from the factory. Comes with a crate of drag racing tools. Dodge literally built a street-legal quarter-mile weapon.",
+  "lore": "The Demon was banned from NHRA competition for being too fast — it runs the quarter mile in 9.65 seconds on street tires, making it the first production car to pull a wheelie off the line. Dodge ships it with a crate containing skinny front runner wheels, a floor jack, and tools for converting it to full drag spec. The passenger seat is deleted to save weight. This is not a car for Sunday drives.",
+
+  "base_stats": {
+    "top_speed": 0.83,
+    "acceleration": 0.85,
+    "handling": 0.70,
+    "braking": 0.72,
+    "nitro_capacity": 0.50,
+    "weight": 1905.0
+  },
+
+  "engine": {
+    "horsepower": 840.0,
+    "torque": 770.0,
+    "displacement": "6.2L",
+    "configuration": "V8",
+    "aspiration": "supercharged"
+  },
+
+  "drivetrain": "rwd",
+  "price": 400000,
+
+  "cosmetics": {
+    "default_color": "#FF0000",
+    "available_colors": ["#FF0000", "#000000", "#FFFFFF", "#FF4500", "#808080", "#1C1C1C"]
+  },
+
+  "special_traits": ["supercharged", "drag_king", "wheelie_bar"]
+}

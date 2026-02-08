@@ -1,0 +1,33 @@
+{
+  "vehicle_id": "lotus_elise",
+  "display_name": "2005 Lotus Elise",
+  "manufacturer": "Lotus",
+  "year": 2005,
+  "description": "Colin Chapman's philosophy distilled to its purest form: simplify, then add lightness. At under 2000 pounds, the Elise doesn't need big power — its Toyota-sourced 1.8 liter four feels like twice its output when you're carrying half the weight of everything else on the road.",
+  "base_stats": {
+    "top_speed": 0.54,
+    "acceleration": 0.52,
+    "handling": 0.78,
+    "braking": 0.64,
+    "nitro_capacity": 0.40,
+    "weight_lbs": 1950
+  },
+  "engine": {
+    "horsepower": 190.0,
+    "torque_lbft": 133.0,
+    "displacement_cc": 1796,
+    "configuration": "I4",
+    "aspiration": "naturally_aspirated"
+  },
+  "drivetrain": "mr",
+  "tier": 3,
+  "price": 50000,
+  "rarity": "uncommon",
+  "cosmetics": {
+    "default_color": "#FFD700",
+    "available_colors": ["#FFD700", "#FF4500", "#000000", "#FFFFFF", "#228B22", "#4169E1"]
+  },
+  "special_traits": ["mid_engine", "featherweight", "track_focused"],
+  "lore": "Driving an Elise through Nova Pacifica's canyon roads is a religious experience. You feel every pebble, every crack, every degree of camber through the unassisted steering. It's not fast in a straight line. It doesn't need to be. Nothing catches it in the corners.",
+  "category": "Euro"
+}

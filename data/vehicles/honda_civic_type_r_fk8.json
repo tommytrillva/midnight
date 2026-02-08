@@ -1,0 +1,41 @@
+{
+  "vehicle_id": "honda_civic_type_r_fk8",
+  "display_name": "2018 Honda Civic Type R (FK8)",
+  "manufacturer": "Honda",
+  "year": 2018,
+  "body_style": "hatchback",
+  "category": "JDM/Tuner",
+  "culture": "jdm",
+  "tier": 4,
+  "rarity": "uncommon",
+  "description": "FWD track record holder. Honda took the humble Civic and engineered it into a front-wheel-drive weapon that held the N\u00fcrburgring FWD lap record. The K20C1 turbo four screams through a triple exhaust, and the limited-slip differential puts every one of its 306 horses to the ground.",
+  "lore": "The FK8 Type R set a 7:43 lap at the N\u00fcrburgring — through the front wheels only. Honda's engineers achieved this with a helical limited-slip differential, adaptive dampers, and a turbo K-series engine that responds to VTEC engagement with the same violence its naturally aspirated ancestors were famous for. The massive wing and aggressive body kit aren't for show. Every element was validated in the wind tunnel. Function over form, always.",
+
+  "base_stats": {
+    "top_speed": 0.70,
+    "acceleration": 0.70,
+    "handling": 0.78,
+    "braking": 0.74,
+    "nitro_capacity": 0.38,
+    "weight": 1406.0
+  },
+
+  "engine": {
+    "code": "K20C1",
+    "horsepower": 306.0,
+    "torque": 295.0,
+    "displacement": "2.0L",
+    "configuration": "I4",
+    "aspiration": "turbo"
+  },
+
+  "drivetrain": "fwd",
+  "price": 100000,
+
+  "cosmetics": {
+    "default_color": "#FFFFFF",
+    "available_colors": ["#FFFFFF", "#FF0000", "#000000", "#4169E1", "#808080", "#C0C0C0"]
+  },
+
+  "special_traits": ["turbo", "fwd_legend", "track_record"]
+}

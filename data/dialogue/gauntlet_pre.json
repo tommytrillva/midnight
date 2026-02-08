@@ -1,0 +1,295 @@
+{
+  "id": "gauntlet_pre",
+  "context": "Chapter 1.4 — The Underground Classic pre-race. The Pit transformed. 10 races, 7 wins to claim the championship.",
+  "lines": [
+    {
+      "type": "narration",
+      "text": "You've never seen the Pit like this."
+    },
+    {
+      "type": "narration",
+      "text": "The concrete basement you've come to know — the oil stains, the bare bulbs, the smell of exhaust and cheap beer — has been transformed. Banners hang from the ceiling, hand-painted in the colors of Nova Pacifica's racing crews. A staging area has been roped off with chain-link fencing, and beyond it, twenty cars gleam under portable halogen lamps like gladiators waiting for the arena."
+    },
+    {
+      "type": "narration",
+      "text": "Hundreds of people. Maybe more. They're packed into every corner, standing on crates and old tires for a better view. The energy isn't just electric — it's nuclear. You can feel it in your teeth."
+    },
+    {
+      "type": "narration",
+      "text": "The Underground Classic. The biggest event on the underground calendar. Once a year, every crew, every rival, every ambitious nobody with a tuned engine and a death wish converges on the Pit. One night. Ten races. One crown."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Pit Boss",
+      "portrait": "pit_boss_hype",
+      "text": "LISTEN UP! Tonight is the night we've been waiting for all year. The Underground Classic. Ten races. Ten chances to prove you belong."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Pit Boss",
+      "portrait": "pit_boss_hype",
+      "text": "Win seven — SEVEN — and you claim the championship. The crown. The Underground King of Nova Pacifica. Lose four, and you're out. No second chances. No appeals. The road decides."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Pit Boss",
+      "portrait": "pit_boss_hype",
+      "text": "Circuits are randomized. You won't know the route until you're on the line. Matchups are seeded by reputation. The strongest race the strongest. That's how legends get made."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Pit Boss",
+      "portrait": "pit_boss_hype",
+      "text": "Prize pool is a hundred and fifty thousand dollars. Winner takes all. Second place takes a handshake and a bruised ego. That's the underground, baby."
+    },
+    {
+      "type": "narration",
+      "text": "The crowd roars. You feel it in your chest like a second heartbeat."
+    },
+    {
+      "type": "narration",
+      "text": "Maya finds you in the staging area. She's been in the garage since dawn — you know because you stopped by at 6 AM and she was already elbow-deep in your engine bay, hair tied back, grease on her forehead, muttering about valve clearances."
+    },
+    {
+      "type": "narration",
+      "text": "She hands you the keys. Her hands are trembling — not from fear. From something else. Something that looks like faith."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_determined",
+      "text": "I put everything into this car. Every trick I know. Every late night. Every part I could beg, borrow, or fabricate."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_determined",
+      "text": "The timing is perfect. Suspension is dialed in for mixed surfaces. I adjusted the turbo mapping for the elevation changes on the harbor routes — you'll have more power coming out of uphill corners."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_worried",
+      "text": "This car is the best it's ever been. Which means if something goes wrong tonight, it's not the car."
+    },
+    {
+      "type": "narration",
+      "text": "She looks you in the eyes. Dead center. No flinching."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_determined",
+      "text": "So don't let anything go wrong."
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "I won't let you down.",
+          "choice_id": "maya_promise",
+          "relationship_changes": {"maya": 5},
+          "moral_shift": 0,
+          "jump_to": "maya_response_promise"
+        },
+        {
+          "text": "Ten races. Seven wins. Let's do this.",
+          "choice_id": "maya_focused",
+          "relationship_changes": {"maya": 3},
+          "moral_shift": 0,
+          "jump_to": "maya_response_focused"
+        },
+        {
+          "text": "Thank you. For everything.",
+          "choice_id": "maya_grateful",
+          "relationship_changes": {"maya": 5},
+          "moral_shift": 5,
+          "jump_to": "maya_response_grateful"
+        }
+      ]
+    },
+    {
+      "label": "maya_response_promise",
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_neutral",
+      "text": "You already haven't."
+    },
+    {
+      "type": "narration",
+      "text": "She squeezes your arm once and steps back. That's Maya — says everything in five words that other people can't say in five hundred.",
+      "jump_to": "diesel_arrives"
+    },
+    {
+      "label": "maya_response_focused",
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_neutral",
+      "text": "That's the face I want to see. Go get it."
+    },
+    {
+      "type": "narration",
+      "text": "She punches your shoulder — harder than she needed to. Then she walks to the pit wall where she'll spend the next few hours talking you through every corner over the radio.",
+      "jump_to": "diesel_arrives"
+    },
+    {
+      "label": "maya_response_grateful",
+      "type": "narration",
+      "text": "Maya blinks. For a second — just a second — her composure cracks, and you see something vulnerable and fierce underneath."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_happy",
+      "text": "Don't thank me yet. Thank me when you're holding that trophy."
+    },
+    {
+      "type": "narration",
+      "text": "She turns away quickly. You pretend not to notice her wiping her eye with the back of her hand.",
+      "jump_to": "diesel_arrives"
+    },
+    {
+      "label": "diesel_arrives",
+      "type": "narration",
+      "text": "Diesel appears. He doesn't push through the crowd — the crowd simply opens for him. He's wearing the same thing he always wears. Dark jacket. Dark eyes. The gravity of a man who has seen this all before."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "Remember the corner."
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "Which corner?",
+          "choice_id": "which_corner",
+          "relationship_changes": {},
+          "moral_shift": 0,
+          "jump_to": "diesel_all_corners"
+        },
+        {
+          "text": "All of them.",
+          "choice_id": "all_corners",
+          "relationship_changes": {"diesel": 5},
+          "moral_shift": 0,
+          "jump_to": "diesel_all_correct"
+        }
+      ]
+    },
+    {
+      "label": "diesel_all_corners",
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "All of them."
+    },
+    {
+      "type": "narration",
+      "text": "He holds your gaze for a moment. Then he turns and disappears into the crowd. Lesson delivered.",
+      "jump_to": "race_begins"
+    },
+    {
+      "label": "diesel_all_correct",
+      "type": "narration",
+      "text": "The corner of Diesel's mouth twitches. It's not a smile. But it's the closest thing to one you've ever seen on his face."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_approving",
+      "text": "Good. You're ready."
+    },
+    {
+      "type": "narration",
+      "text": "He turns and melts back into the crowd. You watch him go, and for a moment, you feel the weight of everything — Marcus, the guardrail, the lesson. All of them. Every corner.",
+      "jump_to": "race_begins"
+    },
+    {
+      "label": "race_begins",
+      "type": "narration",
+      "text": "You climb into the car. The seat wraps around you like a familiar hand. The engine starts, and the sound fills the concrete chamber. Around you, nineteen other engines join the chorus. The staging lights cycle."
+    },
+    {
+      "type": "narration",
+      "text": "The Underground Classic has begun."
+    },
+    {
+      "type": "narration",
+      "text": "— RACE 1 —"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_radio",
+      "text": "[RADIO] First race. Harbor Loop. You know this route — we've practiced it. Smooth entry, late apex on the dock turns. Don't get aggressive early. Feel the car out. It's a long night."
+    },
+    {
+      "type": "narration",
+      "text": "— RACE 3 —"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_radio",
+      "text": "[RADIO] Two wins. You're on pace. This next one is the Industrial Circuit — tight corners, bad lighting. Watch for the rail crossing at the halfway point. The surface changes and I don't trust the patch job they did last month."
+    },
+    {
+      "type": "narration",
+      "text": "— RACE 5 —"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_radio",
+      "text": "[RADIO] Halfway mark. You need three more wins from five races. The field is thinning out — everyone left is fast. Stay sharp. Brake temps are climbing, so give yourself a longer cool-down on the straights. And drink some water. I mean it."
+    },
+    {
+      "type": "narration",
+      "text": "— RACE 7 —"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_radio",
+      "text": "[RADIO] Six wins. One more and the championship is yours. I can see Nikko in the staging area — he's watching you. Everyone is watching you. But you don't watch them. You watch the road. That's what got you here."
+    },
+    {
+      "type": "narration",
+      "text": "— RACE 9 —"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_radio",
+      "text": "[RADIO] You've done it. Seven wins. The championship is mathematically yours, but the Pit Boss is holding the ceremony until all ten races are done. That's tradition. Two more races. Drive smart. You've already won — don't give them a reason to call it a fluke."
+    },
+    {
+      "type": "narration",
+      "text": "— RACE 10 —"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_radio",
+      "text": "[RADIO] Last race. Championship final. And it's you versus Nikko. Of course it is. The whole Pit is watching. I've got nothing left to tell you that you don't already know. Just... come back safe. Okay? Just come back safe."
+    },
+    {
+      "type": "narration",
+      "text": "The radio clicks off. The staging lights cycle one last time. Nikko's car pulls up beside you — aggressive, loud, desperate. Through the window, you can see his face. His jaw is clenched so tight the muscles are visible."
+    },
+    {
+      "type": "narration",
+      "text": "This is it. The final race of the Underground Classic. Everything you've built leads to this moment."
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "gauntlet_started",
+        "value": true
+      }
+    }
+  ]
+}

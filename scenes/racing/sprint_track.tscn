@@ -1,0 +1,73 @@
+[gd_scene load_steps=2 format=3 uid="uid://sprint_track"]
+
+[ext_resource type="Script" path="res://src/racing/race_track.gd" id="1"]
+
+[node name="SprintTrack" type="Node3D"]
+script = ExtResource("1")
+is_circuit = false
+lap_count = 1
+
+[node name="RacingLine" type="Path3D" parent="."]
+curve = SubResource("Curve3D_sprint")
+
+[node name="FinishLine" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 180)
+collision_layer = 32
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FinishLine"]
+shape = SubResource("BoxShape_finish")
+
+[node name="FinishLabel" type="Label3D" parent="FinishLine"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+text = "FINISH"
+font_size = 64
+modulate = Color(1, 1, 0, 1)
+
+[node name="Checkpoints" type="Node3D" parent="."]
+
+[node name="CP0" type="Area3D" parent="Checkpoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 50)
+collision_layer = 32
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Checkpoints/CP0"]
+shape = SubResource("BoxShape_cp")
+
+[node name="CP1" type="Area3D" parent="Checkpoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 100)
+collision_layer = 32
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Checkpoints/CP1"]
+shape = SubResource("BoxShape_cp")
+
+[node name="CP2" type="Area3D" parent="Checkpoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 150)
+collision_layer = 32
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Checkpoints/CP2"]
+shape = SubResource("BoxShape_cp")
+
+[node name="SpawnPoints" type="Node3D" parent="."]
+
+[node name="Player" type="Marker3D" parent="SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -10)
+
+[node name="AI1" type="Marker3D" parent="SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, -10)
+
+[node name="AI2" type="Marker3D" parent="SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -16)
+
+[node name="AI3" type="Marker3D" parent="SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, -16)
+
+[sub_resource type="Curve3D" id="Curve3D_sprint"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 50, 0, 0, 0, 0, 0, 0, 0, 0.5, 100, 0, 0, 0, 0, 0, 0, 0, 0.5, 150, 0, 0, 0, 0, 0, 0, 0, 0.5, 190),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape_finish"]
+size = Vector3(14, 4, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape_cp"]
+size = Vector3(14, 4, 2)

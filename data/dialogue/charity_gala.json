@@ -1,0 +1,298 @@
+{
+  "id": "charity_gala",
+  "context": "Act 2A Chapter 2.2 — Jade's big event. Corporate elites, uncomfortable small talk. Nikko shows up unexpectedly.",
+  "lines": [
+    {
+      "type": "narration",
+      "text": "The Nova Pacifica Grand Ballroom. Crystal chandeliers that cost more than your childhood home. A string quartet playing something classical that makes expensive people nod like they understand it."
+    },
+    {
+      "type": "narration",
+      "text": "You are in a tuxedo. It fits perfectly because someone measured you for it three days ago, which is three more days of tuxedo planning than you have ever experienced."
+    },
+    {
+      "type": "narration",
+      "text": "Jade is in her element. She moves through the crowd like water through a riverbed — touching every bank, never stopping, always flowing toward the next conversation. She is wearing a black dress that costs more than the CRX and she looks like she was born in this room."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_elegant",
+      "text": "This is Marcus Holt — CEO of Pacific Tire. Marcus, meet our newest driver."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Marcus Holt",
+      "portrait": "corporate_neutral",
+      "text": "Ah, the underground sensation. Jade won't stop talking about you. Tell me — what's it like going from street racing to the big leagues?"
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "The cars are faster, but the politics are slower.",
+          "choice_id": "gala_witty",
+          "relationship_changes": {"jade": 5},
+          "moral_shift": 0,
+          "rep": 5,
+          "jump_to": "holt_laughs"
+        },
+        {
+          "text": "It's an honor to represent Apex at this level.",
+          "choice_id": "gala_corporate",
+          "relationship_changes": {"jade": 3},
+          "moral_shift": -5,
+          "jump_to": "holt_nods"
+        },
+        {
+          "text": "Honestly? I'd rather be racing.",
+          "choice_id": "gala_honest",
+          "relationship_changes": {"jade": -3},
+          "moral_shift": 5,
+          "rep": 3,
+          "jump_to": "holt_interested"
+        }
+      ]
+    },
+    {
+      "label": "holt_laughs",
+      "type": "narration",
+      "text": "Holt laughs — the genuine kind, not the boardroom kind. Jade's eyes flash with approval."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Marcus Holt",
+      "portrait": "corporate_neutral",
+      "text": "I like this one, Jade. Most of your drivers recite press releases. This one has a personality.",
+      "jump_to": "gala_mingle"
+    },
+    {
+      "label": "holt_nods",
+      "type": "narration",
+      "text": "Holt nods. The polite, empty nod of a man who has heard the same answer from a hundred athletes at a hundred galas."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Marcus Holt",
+      "portrait": "corporate_neutral",
+      "text": "Good attitude. Jade, you've trained this one well.",
+      "jump_to": "gala_mingle"
+    },
+    {
+      "label": "holt_interested",
+      "type": "dialogue",
+      "speaker": "Marcus Holt",
+      "portrait": "corporate_neutral",
+      "text": "Ha! Aren't we all. The food here is terrible anyway."
+    },
+    {
+      "type": "narration",
+      "text": "Jade's smile tightens by exactly one millimeter. You're off-script, but at least you're interesting.",
+      "jump_to": "gala_mingle"
+    },
+    {
+      "label": "gala_mingle",
+      "type": "narration",
+      "text": "An hour of handshakes, small talk, and champagne you don't drink. Every conversation follows the same pattern: smile, compliment, business card, promise to meet for lunch that neither party will keep."
+    },
+    {
+      "type": "narration",
+      "text": "You are standing by the window, looking at the city lights, when you hear a voice that doesn't belong in this room."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_suit",
+      "text": "Didn't think they let street rats in here."
+    },
+    {
+      "type": "narration",
+      "text": "Nikko Tanaka. In a suit that's slightly too big — rented, not tailored. His hair is different. His face is thinner. But his eyes are the same — sharp, hungry, carrying a weight that wasn't there before."
+    },
+    {
+      "type": "narration",
+      "text": "He looks out of place the way you feel out of place. Two underground kids in a ballroom full of people who were born above ground."
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "Nikko. What are you doing here?",
+          "choice_id": "gala_nikko_surprised",
+          "relationship_changes": {"nikko": 5},
+          "moral_shift": 0,
+          "jump_to": "nikko_explains"
+        },
+        {
+          "text": "Good to see you. You look... different.",
+          "choice_id": "gala_nikko_warm",
+          "relationship_changes": {"nikko": 10},
+          "moral_shift": 5,
+          "jump_to": "nikko_vulnerable"
+        },
+        {
+          "text": "Takes one to know one.",
+          "choice_id": "gala_nikko_banter",
+          "relationship_changes": {"nikko": 8},
+          "moral_shift": 0,
+          "jump_to": "nikko_smirk"
+        }
+      ]
+    },
+    {
+      "label": "nikko_explains",
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_guarded",
+      "text": "Kessler Racing invited me. Apparently my 'troubled youth narrative' plays well with sponsors. I'm their diversity hire for the season."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_bitter",
+      "text": "They don't want me to win. They want me to almost win. Just enough drama to sell ad space.",
+      "jump_to": "nikko_confession"
+    },
+    {
+      "label": "nikko_vulnerable",
+      "type": "narration",
+      "text": "Nikko's guard drops for a fraction of a second. Just a flash — like a card turned over and immediately hidden again."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_guarded",
+      "text": "Different. Yeah. That's one word for it.",
+      "jump_to": "nikko_confession"
+    },
+    {
+      "label": "nikko_smirk",
+      "type": "narration",
+      "text": "Nikko almost smiles. Almost. The muscles twitch but the expression doesn't quite land."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_guarded",
+      "text": "At least you own it. I feel like an imposter in a rented suit.",
+      "jump_to": "nikko_confession"
+    },
+    {
+      "label": "nikko_confession",
+      "type": "narration",
+      "text": "He takes a glass of champagne from a passing waiter and downs it in one motion. Not celebrating. Medicating."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_bitter",
+      "text": "I owe people money. A lot of money. The kind of money that comes with men who know where your family lives."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_bitter",
+      "text": "This corporate gig — Kessler — it's the only way I can pay it back. But the contract is a cage. They own my racing, my image, my schedule. I can't even enter an underground event without written permission."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_vulnerable",
+      "text": "I used to drive because I loved it. Now I drive because I have to. There's a difference."
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "How much do you owe?",
+          "choice_id": "gala_nikko_debt",
+          "relationship_changes": {"nikko": 5},
+          "moral_shift": 0,
+          "set_flags": {"knows_nikko_debt": true},
+          "jump_to": "nikko_debt_amount"
+        },
+        {
+          "text": "We'll figure it out. You're not alone in this.",
+          "choice_id": "gala_nikko_support",
+          "relationship_changes": {"nikko": 15},
+          "moral_shift": 10,
+          "set_flags": {"offered_nikko_help": true},
+          "jump_to": "nikko_grateful"
+        },
+        {
+          "text": "Welcome to the corporate world. It's all cages.",
+          "choice_id": "gala_nikko_cynical",
+          "relationship_changes": {"nikko": 3},
+          "moral_shift": -5,
+          "jump_to": "nikko_agrees"
+        }
+      ]
+    },
+    {
+      "label": "nikko_debt_amount",
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_bitter",
+      "text": "Half a million. Give or take. Gambling debts, mostly. Turns out I'm better at racing than I am at cards."
+    },
+    {
+      "type": "narration",
+      "text": "Half a million dollars. You think about Maya's shop — sixty thousand was life and death for her. Nikko's number is in another universe.",
+      "jump_to": "gala_end"
+    },
+    {
+      "label": "nikko_grateful",
+      "type": "narration",
+      "text": "Nikko looks at you. For a long moment. Something behind his eyes shifts — not trust, not yet, but the possibility of trust. The crack in the wall where light might eventually get through."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_vulnerable",
+      "text": "You pulled me out of a burning car once. I never forgot that. Maybe... maybe it's worth trying to be less of a disaster.",
+      "conditions": {"stopped_for_nikko": true}
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_guarded",
+      "text": "I don't need a hero. But I could use a friend. I don't have many of those.",
+      "jump_to": "gala_end"
+    },
+    {
+      "label": "nikko_agrees",
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_bitter",
+      "text": "At least underground, the cage had bigger bars."
+    },
+    {
+      "type": "narration",
+      "text": "He takes another champagne. You watch the city through the window and neither of you says anything for a while. Two underground racers in a ballroom, pretending they belong.",
+      "jump_to": "gala_end"
+    },
+    {
+      "label": "gala_end",
+      "type": "narration",
+      "text": "Jade finds you both twenty minutes later. She looks from you to Nikko and back, and something in her expression recalibrates."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_professional",
+      "text": "I see you found a friend. Don't let me interrupt — but remember, cameras are everywhere. Smile for the sponsors."
+    },
+    {
+      "type": "narration",
+      "text": "She melts back into the crowd. The gala swirls on around you — champagne and laughter and money and lies. Two worlds, separated by a dress code."
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "charity_gala_complete",
+        "value": true
+      }
+    }
+  ]
+}

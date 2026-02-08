@@ -1,0 +1,40 @@
+{
+  "vehicle_id": "ferrari_laferrari",
+  "display_name": "2015 Ferrari LaFerrari",
+  "manufacturer": "Ferrari",
+  "year": 2015,
+  "body_style": "coupe",
+  "category": "Hyper",
+  "culture": "euro",
+  "tier": 6,
+  "rarity": "legendary",
+  "description": "Hybrid V12 masterpiece. Ferrari took a 6.3-liter V12 that revs to 9,250 RPM, added an electric motor derived from their Formula 1 program, and created 950 horsepower of Italian fury wrapped in a body sculpted by the wind tunnel. LaFerrari — The Ferrari. Named with the confidence only Maranello could muster.",
+  "lore": "963 horsepower from a V12 and electric motors working in harmony. Ferrari said no one could buy it \u2014 they chose who was worthy. Zero was chosen.",
+
+  "base_stats": {
+    "top_speed": 0.94,
+    "acceleration": 0.95,
+    "handling": 0.90,
+    "braking": 0.92,
+    "nitro_capacity": 0.50,
+    "weight": 1406.0
+  },
+
+  "engine": {
+    "horsepower": 950.0,
+    "torque": 664.0,
+    "displacement": "6.3L",
+    "configuration": "V12",
+    "aspiration": "hybrid"
+  },
+
+  "drivetrain": "rwd",
+  "price": 2500000,
+
+  "cosmetics": {
+    "default_color": "#FF2400",
+    "available_colors": ["#FF2400", "#000000", "#FFFFFF", "#FFD700", "#191970", "#C0C0C0"]
+  },
+
+  "special_traits": ["v12", "hybrid", "masterpiece"]
+}

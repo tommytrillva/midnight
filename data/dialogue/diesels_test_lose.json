@@ -1,0 +1,185 @@
+{
+  "id": "diesels_test_lose",
+  "context": "Player loses Diesel's touge duel on Route 9 — Diesel judges how they drove, not the result",
+  "lines": [
+    {
+      "type": "narration",
+      "text": "The bottom of Route 9. Diesel's coupe is already parked, engine off, like he's been waiting for a while. He's leaning against the guardrail, staring at the harbor."
+    },
+    {
+      "type": "narration",
+      "text": "You lost. Somewhere around turn thirty, his taillights pulled away and never came back. The mountain ate you alive."
+    },
+    {
+      "type": "narration",
+      "text": "You roll to a stop and sit there. The engine ticks. Your pride stings. You expected him to be gone by now."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "You didn't quit."
+    },
+    {
+      "type": "narration",
+      "text": "He says it without turning around. Like he was counting your engine note the whole way down."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "Turn twenty-two. The off-camber right before the switchback. Your rear end stepped out."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "Most people lift off when that happens. Brake. Panic. You stayed in it. Corrected. Kept going."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "That's what I was looking for."
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "I still lost.",
+          "choice_id": "lose_bitter",
+          "relationship_changes": {"diesel": 3},
+          "moral_shift": 0,
+          "jump_to": "diesel_responds_bitter"
+        },
+        {
+          "text": "You weren't testing speed. You were testing something else.",
+          "choice_id": "lose_understands",
+          "relationship_changes": {"diesel": 8},
+          "moral_shift": 5,
+          "jump_to": "diesel_responds_understands"
+        },
+        {
+          "text": "That mountain is no joke. How long have you been running that road?",
+          "choice_id": "lose_curious",
+          "relationship_changes": {"diesel": 5},
+          "moral_shift": 0,
+          "jump_to": "diesel_responds_curious"
+        }
+      ]
+    },
+    {
+      "label": "diesel_responds_bitter",
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "Yeah. You did."
+    },
+    {
+      "type": "narration",
+      "text": "No sugarcoating. He lets the truth sit there between you like a cold engine block."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "But losing isn't the test. Everybody loses. The test is what you do at turn twenty-two when the car is sideways and the guardrail is right there.",
+      "jump_to": "diesel_verdict"
+    },
+    {
+      "label": "diesel_responds_understands",
+      "type": "narration",
+      "text": "He finally turns to look at you. His eyes are steady. Old. Like headlights that have seen too many miles."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_approval",
+      "text": "Smart."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "Speed is easy. Heart is rare. You can buy a faster car. You can't buy what kept you on that road when you knew you'd already lost.",
+      "jump_to": "diesel_verdict"
+    },
+    {
+      "label": "diesel_responds_curious",
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "Long enough."
+    },
+    {
+      "type": "narration",
+      "text": "He looks up at the mountain. In the dark, it's just a black shape against the stars, but you can tell he sees every curve, every drop, every ghost."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "That road taught me everything. It'll teach you too. If you let it.",
+      "jump_to": "diesel_verdict"
+    },
+    {
+      "label": "diesel_verdict",
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "I've watched a lot of drivers in this city. Some fast. Some talented. Most of them are gone now."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "The ones who lasted drove like they meant it. Not for the money. Not for the crowd. For the road."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_approval",
+      "text": "You drive like you mean it. That's enough. For now."
+    },
+    {
+      "type": "narration",
+      "text": "He straightens up. Rolls his shoulders like he's shaking off a memory."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "Diesel. That's what they call me."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "Get your car looked at. That left rear tire was begging for mercy the last ten turns. Then come find me."
+    },
+    {
+      "type": "narration",
+      "text": "He drops into the coupe and the engine rumbles to life — deep and low, like thunder rolling under the earth. He's gone before you can respond, swallowed by the night."
+    },
+    {
+      "type": "narration",
+      "text": "You lost the race. But standing here at the bottom of Route 9, harbor wind in your face, you feel like you gained something harder to name."
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "change_relationship",
+        "character": "diesel",
+        "amount": 10
+      }
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "diesel_test_done",
+        "value": true
+      }
+    }
+  ]
+}

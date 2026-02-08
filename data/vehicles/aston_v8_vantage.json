@@ -1,0 +1,40 @@
+{
+  "vehicle_id": "aston_v8_vantage",
+  "display_name": "2019 Aston Martin V8 Vantage",
+  "manufacturer": "Aston Martin",
+  "year": 2019,
+  "body_style": "coupe",
+  "category": "Euro/Exotic",
+  "culture": "euro",
+  "tier": 5,
+  "rarity": "rare",
+  "description": "AMG heart, British soul. Aston Martin took Mercedes-AMG's savage 4.0-liter twin-turbo V8 and wrapped it in the most beautiful body this side of an art gallery. The result is a grand tourer that can brawl with the best of them while looking effortlessly elegant.",
+  "lore": "The partnership between Aston Martin and Mercedes-AMG produced something neither company could have built alone. The German engine provides brutal, reliable power. The British chassis provides poise, grace, and that indefinable sense of occasion that only an Aston Martin can deliver. James Bond would approve.",
+
+  "base_stats": {
+    "top_speed": 0.78,
+    "acceleration": 0.76,
+    "handling": 0.77,
+    "braking": 0.76,
+    "nitro_capacity": 0.42,
+    "weight": 1542.0
+  },
+
+  "engine": {
+    "horsepower": 503.0,
+    "torque": 505.0,
+    "displacement": "4.0L",
+    "configuration": "V8",
+    "aspiration": "twin_turbo"
+  },
+
+  "drivetrain": "rwd",
+  "price": 300000,
+
+  "cosmetics": {
+    "default_color": "#191970",
+    "available_colors": ["#191970", "#006400", "#8B0000", "#C0C0C0", "#000000", "#FFFFFF"]
+  },
+
+  "special_traits": ["twin_turbo", "grand_tourer", "british"]
+}

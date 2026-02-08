@@ -1,0 +1,31 @@
+# Godot 4 specific ignores
+.godot/
+*.import
+
+# Godot exported files
+*.translation
+
+# Mono-specific ignores
+.mono/
+data_*/
+mono_crash.*.json
+
+# Build outputs
+build/
+export/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+*.tmp
+
+# IDE
+.vscode/
+*.swp
+*.swo
+
+# Blender backup files
+*.blend1
+
+# Imported assets temp
+*.stex

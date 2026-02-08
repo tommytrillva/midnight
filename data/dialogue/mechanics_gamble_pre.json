@@ -1,0 +1,407 @@
+{
+  "id": "mechanics_gamble_pre",
+  "context": "Act 1 Chapter 1.1 — The Mechanic's Gamble: Preston Wells challenges Maya's shop",
+  "lines": [
+    {
+      "type": "narration",
+      "text": "Torres Garage. Morning light cuts through the bay doors in dusty shafts. Maya's at the counter, hunched over something. She doesn't hear you come in."
+    },
+    {
+      "type": "narration",
+      "text": "You catch a glimpse — a piece of paper, numbers in red. An invoice. A big one. She crumples it the second she senses you."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_forced_smile",
+      "text": "Hey. You're early. Coffee's in the back if you want it."
+    },
+    {
+      "type": "narration",
+      "text": "She stuffs the crumpled paper into her apron pocket. Her smile doesn't reach her eyes."
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "What was that paper?",
+          "choice_id": "gamble_ask_paper",
+          "relationship_changes": {"maya": 3},
+          "moral_shift": 0,
+          "jump_to": "maya_paper_response"
+        },
+        {
+          "text": "You okay?",
+          "choice_id": "gamble_ask_okay",
+          "relationship_changes": {"maya": 5},
+          "moral_shift": 5,
+          "jump_to": "maya_okay_response"
+        },
+        {
+          "text": "(Grab coffee. Wait.)",
+          "choice_id": "gamble_wait",
+          "relationship_changes": {"maya": 2},
+          "moral_shift": 0,
+          "jump_to": "maya_wait_response"
+        }
+      ]
+    },
+    {
+      "label": "maya_paper_response",
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_defensive",
+      "text": "Nothing. Supplier invoice. You know how it is — everything costs more, everything pays less."
+    },
+    {
+      "type": "narration",
+      "text": "She says it too fast. The kind of nothing that means everything. But she changes the subject before you can push.",
+      "jump_to": "preston_arrives"
+    },
+    {
+      "label": "maya_okay_response",
+      "type": "narration",
+      "text": "She stops. Looks at you for a moment — really looks at you — like she's deciding whether to let you in or lock the door tighter."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_tired",
+      "text": "Yeah. I'm fine. Just... the shop's behind on some things. It'll sort itself out. It always does."
+    },
+    {
+      "type": "narration",
+      "text": "It doesn't sound like she believes that. But before you can say anything else, a shadow fills the bay door.",
+      "jump_to": "preston_arrives"
+    },
+    {
+      "label": "maya_wait_response",
+      "type": "narration",
+      "text": "You pour yourself coffee from the pot in the back. It tastes like it was made yesterday. Possibly the day before that."
+    },
+    {
+      "type": "narration",
+      "text": "Maya watches you not ask. Something in her shoulders relaxes — just a fraction. Sometimes silence is louder than prying."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_neutral",
+      "text": "Thanks for not asking.",
+      "jump_to": "preston_arrives"
+    },
+    {
+      "label": "preston_arrives",
+      "type": "narration",
+      "text": "The rumble announces him before the car does. A Porsche 911 GT3 — Arctic White, not a speck of dust — pulls into the garage entrance like it owns the building. Like it owns the block."
+    },
+    {
+      "type": "narration",
+      "text": "The door opens and out steps Preston Wells. Mid-thirties. Tailored jacket over a racing shirt that costs more than your car. Watch that costs more than three of your cars. Smile that costs nothing and is worth less."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Preston Wells",
+      "portrait": "preston_smug",
+      "text": "Maya Torres. Still running daddy's little oil stain, I see."
+    },
+    {
+      "type": "narration",
+      "text": "Maya's jaw tightens. Her hand on the counter goes white-knuckled."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Preston Wells",
+      "portrait": "preston_smug",
+      "text": "And what's this? The CRX from The Pit? Oh, that's rich. I heard about that. The whole scene's still laughing."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Preston Wells",
+      "portrait": "preston_smug",
+      "text": "You know, Maya, I came here to make you an offer on this dump. Very generous. But now..."
+    },
+    {
+      "type": "narration",
+      "text": "He runs a finger along the CRX's fender like he's checking for dust in a hotel room."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Preston Wells",
+      "portrait": "preston_smug",
+      "text": "Now I think I want something more entertaining."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_angry",
+      "text": "Get out, Preston."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Preston Wells",
+      "portrait": "preston_neutral",
+      "text": "Pink slip race. My 911 against your little rescue project here. You win? I tear up whatever debt's keeping you up at night. I can see it in your eyes, Maya. The numbers don't add up anymore."
+    },
+    {
+      "type": "narration",
+      "text": "Maya goes still. He knows about the debt. Of course he does — men like Preston Wells make it their business to know everyone's breaking point."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Preston Wells",
+      "portrait": "preston_smug",
+      "text": "I win? I get the shop. Fair and square. Signed and notarized."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_angry",
+      "text": "You're out of your mind."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Preston Wells",
+      "portrait": "preston_neutral",
+      "text": "Am I? You're three months behind on the lease. Two on the utilities. How long until you're working out of a van?"
+    },
+    {
+      "type": "narration",
+      "text": "He straightens his jacket. Tips an invisible hat."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Preston Wells",
+      "portrait": "preston_smug",
+      "text": "Saturday. The Pit. I'll have the papers drawn up. Think about it."
+    },
+    {
+      "type": "narration",
+      "text": "The 911 disappears down the street. The engine note lingers like an insult."
+    },
+    {
+      "type": "narration",
+      "text": "Maya stands there, vibrating. Her hands are shaking — not with fear. With fury."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_angry",
+      "text": "That entitled, silver-spoon, trust-fund PIECE of —"
+    },
+    {
+      "type": "narration",
+      "text": "She kicks a toolbox. Wrenches scatter across the concrete like shrapnel."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_determined",
+      "text": "We're racing him."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_determined",
+      "text": "I know that car. The GT3 is fast in a straight line, but it's heavy. Two turns in, the weight works against him. The CRX is lighter, tighter. If we tune it right, you can take him on the technical sections."
+    },
+    {
+      "type": "narration",
+      "text": "She's already moving. Pulling tools, dragging out the jack. Her mind's three steps ahead and her hands are trying to keep up."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_neutral",
+      "text": "We've got four days. I can get the suspension dialed, remap the ECU, and if I pull a favor from my parts guy—"
+    },
+    {
+      "type": "narration",
+      "text": "She stops. Turns to face you. Something crosses her face — a shadow."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_conflicted",
+      "text": "There's... one more thing."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_conflicted",
+      "text": "I know someone. Works the staging area at The Pit. For the right price, they could get under Preston's hood before the race. Nothing dangerous — just a throttle body restriction. His response would lag above six thousand RPM. He'd never know until it was too late."
+    },
+    {
+      "type": "narration",
+      "text": "She says it quietly. Like she's ashamed of the words even as they leave her mouth."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_conflicted",
+      "text": "It's your call. I'm not going to pretend it's clean. But this shop — it's all I have left of my dad. And Preston Wells doesn't get to take that from me."
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "No. We win clean or we don't win.",
+          "choice_id": "gamble_refuse_sabotage",
+          "relationship_changes": {"maya": 15},
+          "moral_shift": 15,
+          "rep": 10,
+          "set_flags": {"sabotage_refused": true, "preston_sabotage": false},
+          "jump_to": "refuse_sabotage"
+        },
+        {
+          "text": "Do it.",
+          "choice_id": "gamble_accept_sabotage",
+          "relationship_changes": {"maya": -5},
+          "moral_shift": -15,
+          "rep": -5,
+          "set_flags": {"sabotage_accepted": true, "preston_sabotage": true},
+          "jump_to": "accept_sabotage"
+        },
+        {
+          "text": "How risky is it?",
+          "choice_id": "gamble_hesitate_sabotage",
+          "relationship_changes": {},
+          "moral_shift": 0,
+          "jump_to": "hesitate_sabotage"
+        }
+      ]
+    },
+    {
+      "label": "refuse_sabotage",
+      "type": "narration",
+      "text": "The words come out firm. Final. No room for negotiation."
+    },
+    {
+      "type": "narration",
+      "text": "Maya stares at you. For a moment, you think she's going to argue. Instead, something in her face changes — shifts. The tension drains out of her shoulders like water."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_relieved",
+      "text": "Yeah. Yeah, you're right."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_relieved",
+      "text": "God, I can't believe I even suggested that. My dad would've — he never would have—"
+    },
+    {
+      "type": "narration",
+      "text": "She runs a hand through her hair. Breathes."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_determined",
+      "text": "Okay. Clean. That means we have to be perfect. Every bolt, every setting, every line through every corner. We out-prepare him and you out-drive him."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_neutral",
+      "text": "Four days. Let's get to work.",
+      "jump_to": "end_scene"
+    },
+    {
+      "label": "accept_sabotage",
+      "type": "narration",
+      "text": "Two words. That's all it takes. Maya's face falls — not in surprise, but in something worse. Confirmation."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_pained",
+      "text": "Okay."
+    },
+    {
+      "type": "narration",
+      "text": "She turns away. Picks up a wrench. Puts it back down. Her hands won't stay still."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_pained",
+      "text": "I'll make the call. We still prep the car — we still do everything right. The sabotage is just... insurance."
+    },
+    {
+      "type": "narration",
+      "text": "She doesn't look at you when she says it. The word 'insurance' tastes like copper in the air between you."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_neutral",
+      "text": "Four days. Let's get to work.",
+      "jump_to": "end_scene"
+    },
+    {
+      "label": "hesitate_sabotage",
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_conflicted",
+      "text": "Risky? Not really. My guy's done it before. The restriction is subtle — it just limits peak power. Preston will think his car's having an off night."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_conflicted",
+      "text": "The risk is if anyone finds out. If The Pit blacklists us, we're done. Not just with Preston — with everyone."
+    },
+    {
+      "type": "narration",
+      "text": "She crosses her arms. Waiting."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_conflicted",
+      "text": "So what's it gonna be? Clean or dirty?"
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "Clean. We do this the right way.",
+          "choice_id": "gamble_hesitate_then_refuse",
+          "relationship_changes": {"maya": 15},
+          "moral_shift": 10,
+          "rep": 10,
+          "set_flags": {"sabotage_refused": true, "preston_sabotage": false},
+          "jump_to": "refuse_sabotage"
+        },
+        {
+          "text": "Do it. We can't afford to lose.",
+          "choice_id": "gamble_hesitate_then_accept",
+          "relationship_changes": {"maya": -5},
+          "moral_shift": -15,
+          "rep": -5,
+          "set_flags": {"sabotage_accepted": true, "preston_sabotage": true},
+          "jump_to": "accept_sabotage"
+        }
+      ]
+    },
+    {
+      "label": "end_scene",
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "mechanics_gamble_accepted",
+        "value": true
+      }
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "start_mission",
+        "mission_id": "mechanics_gamble"
+      }
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "vehicle_id": "nissan_300zx_tt",
+  "display_name": "1990 Nissan 300ZX Twin Turbo (Z32)",
+  "manufacturer": "Nissan",
+  "year": 1990,
+  "body_style": "coupe",
+  "category": "JDM/GT",
+  "culture": "jdm",
+  "tier": 2,
+  "rarity": "uncommon",
+  "description": "The Z32 300ZX is Nissan's technological tour de force. Twin turbos, a quad-cam V6, four-wheel steering, and a body design that Car and Driver called the best of the 90s. It's a grand tourer with the heart of a sports car and the widebody stance of a supercar.",
+  "lore": "Widebody dreams. The T-bar roof rattles at highway speed, the twin turbo plumbing looks like modern art under the hood, and changing the spark plugs requires the hands of a surgeon. But when both turbos spool in unison, 300 horsepower arrives with the authority of a freight train.",
+
+  "base_stats": {
+    "top_speed": 78.0,
+    "acceleration": 65.0,
+    "handling": 55.0,
+    "braking": 52.0,
+    "nitro_capacity": 45.0,
+    "weight_kg": 1588.0
+  },
+
+  "engine": {
+    "code": "VG30DETT",
+    "horsepower": 300.0,
+    "torque_lbft": 283.0,
+    "displacement_cc": 2960,
+    "configuration": "V6",
+    "aspiration": "twin_turbo",
+    "valvetrain": "DOHC 24V",
+    "redline_rpm": 7000
+  },
+
+  "drivetrain": "rwd",
+  "price": 28000,
+  "class": "B",
+
+  "cosmetics": {
+    "available_colors": ["cherry_red", "black_pearl", "tahitian_blue", "platinum_pearl"],
+    "body_kits": ["stock", "stillen", "veilside", "bomex"],
+    "spoiler_options": ["none", "factory_tt", "stillen_rear", "veilside_gt"],
+    "wheel_options": ["stock_tt_16", "rays_te37_17", "work_emotion_cr_18", "ssr_professor_sp1_18"]
+  },
+
+  "special_traits": ["twin_turbo", "grand_tourer"],
+
+  "mod_potential": {
+    "engine_swaps": ["vg30dett_built", "rb25det", "ls1"],
+    "max_hp_potential": 700,
+    "upgrade_ceiling": "S"
+  }
+}

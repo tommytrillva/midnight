@@ -1,0 +1,40 @@
+{
+  "vehicle_id": "koenigsegg_ccx",
+  "display_name": "2008 Koenigsegg CCX",
+  "manufacturer": "Koenigsegg",
+  "year": 2008,
+  "body_style": "coupe",
+  "category": "Hyper",
+  "culture": "euro",
+  "tier": 6,
+  "rarity": "epic",
+  "description": "Swedish precision. Built by a company that started in a barn and ended up building the fastest cars on the planet. The CCX is 806 horsepower of twin-supercharged fury, wrapped in a carbon fiber body that weighs less than a Toyota Camry.",
+  "lore": "Christian von Koenigsegg started building cars in a rented hangar at a former Swedish Air Force base. The CCX — Competition Coupe X, celebrating the company's 10th anniversary — was designed to meet US crash regulations without compromising performance. The 4.7-liter twin-supercharged V8 produces 806 horsepower in a car that weighs just 2,600 pounds. Every CCX is hand-built, and Koenigsegg's total production across all models can be counted in the hundreds.",
+
+  "base_stats": {
+    "top_speed": 0.93,
+    "acceleration": 0.90,
+    "handling": 0.85,
+    "braking": 0.84,
+    "nitro_capacity": 0.42,
+    "weight": 1179.0
+  },
+
+  "engine": {
+    "horsepower": 806.0,
+    "torque": 678.0,
+    "displacement": "4.7L",
+    "configuration": "V8",
+    "aspiration": "twin_supercharged"
+  },
+
+  "drivetrain": "rwd",
+  "price": 1500000,
+
+  "cosmetics": {
+    "default_color": "#C0C0C0",
+    "available_colors": ["#C0C0C0", "#FFFFFF", "#000000", "#FF4500", "#4169E1", "#FFD700"]
+  },
+
+  "special_traits": ["supercharged", "lightweight", "swedish"]
+}

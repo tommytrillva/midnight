@@ -1,0 +1,95 @@
+{
+  "combos": [
+    {
+      "id": "full_turbo_build",
+      "name": "Full Boost",
+      "parts": ["large_turbo", "race_intake_manifold", "intercooler", "anti_lag_ecu"],
+      "bonus": {"acceleration": 8, "top_speed": 5},
+      "description": "Complete turbo setup -- all parts working in harmony."
+    },
+    {
+      "id": "drift_king",
+      "name": "Drift King Setup",
+      "parts": ["welded_diff", "drift_tires", "coilovers", "short_shifter"],
+      "bonus": {"drift_bonus": 0.15, "handling": 5},
+      "description": "Purpose-built drift machine. Sideways is the only way."
+    },
+    {
+      "id": "drag_monster",
+      "name": "Quarter Mile Monster",
+      "parts": ["drag_tires", "dry_shot_150", "full_engine_build", "sequential_gearbox"],
+      "bonus": {"acceleration": 12, "top_speed": 4},
+      "description": "Built for one thing: the quarter mile. Everything else is a compromise."
+    },
+    {
+      "id": "grip_machine",
+      "name": "Grip Machine",
+      "parts": ["full_slick", "race_coilovers", "full_aero_kit", "big_brake_kit"],
+      "bonus": {"handling": 10, "braking": 6},
+      "description": "Maximum mechanical grip. Corners like it's on rails."
+    },
+    {
+      "id": "street_sleeper",
+      "name": "Street Sleeper",
+      "parts": ["twin_scroll_turbo", "standalone_ecu", "stock_aero", "stock_weight"],
+      "bonus": {"top_speed": 6, "acceleration": 6},
+      "description": "Looks stock, runs nines. Nobody sees it coming."
+    },
+    {
+      "id": "weight_weenie",
+      "name": "Weight Weenie",
+      "parts": ["full_carbon", "titanium_exhaust", "carbon_ceramic", "lightweight_flywheel"],
+      "bonus": {"acceleration": 8, "handling": 6, "weight_reduction": 20},
+      "description": "Every gram counted, every ounce eliminated. Obsessively light."
+    },
+    {
+      "id": "na_hero",
+      "name": "NA Hero",
+      "parts": ["individual_throttle_bodies", "race_header_exhaust", "race_cams", "close_ratio_gearbox"],
+      "bonus": {"top_speed": 8, "acceleration": 6},
+      "description": "No boost, no nitrous, just displacement and airflow. Pure naturally aspirated perfection."
+    },
+    {
+      "id": "circuit_warrior",
+      "name": "Circuit Warrior",
+      "parts": ["semi_slick", "adjustable_coilovers", "big_brake_kit", "data_logging_ecu"],
+      "bonus": {"handling": 8, "braking": 4, "top_speed": 2},
+      "description": "Track-day ready. Balanced setup for lap after lap consistency."
+    },
+    {
+      "id": "touge_special",
+      "name": "Touge Special",
+      "parts": ["limited_slip_diff", "coilovers", "sport_tires", "short_shifter"],
+      "bonus": {"handling": 6, "drift_bonus": 0.08},
+      "description": "Mountain pass warrior. Light, nimble, and fearless through the corners."
+    },
+    {
+      "id": "midnight_runner",
+      "name": "Midnight Runner",
+      "parts": ["twin_turbo_kit", "dual_clutch", "active_aero", "carbon_ceramic"],
+      "bonus": {"top_speed": 10, "acceleration": 8, "braking": 4},
+      "description": "The ultimate highway weapon. Built for high-speed runs under cover of darkness."
+    },
+    {
+      "id": "budget_build",
+      "name": "Budget Build Special",
+      "parts": ["cold_air_intake", "street_exhaust", "piggyback_ecu", "lowering_springs"],
+      "bonus": {"acceleration": 3, "top_speed": 2, "handling": 2},
+      "description": "The classic bolt-on combo. Maximum gains per dollar. Everyone starts here."
+    },
+    {
+      "id": "supercharged_street",
+      "name": "Blown Street Machine",
+      "parts": ["supercharger", "forged_pistons", "intercooler", "standalone_ecu"],
+      "bonus": {"acceleration": 6, "top_speed": 4},
+      "description": "Supercharged and street-tuned. Instant throttle response with that classic whine."
+    },
+    {
+      "id": "legendary_collection",
+      "name": "Legendary Collection",
+      "parts": ["legendary_heart", "legendary_boost", "legendary_brain", "legendary_shift"],
+      "bonus": {"top_speed": 15, "acceleration": 15, "handling": 5},
+      "description": "Four legendary parts in one build. The stuff of urban myths. People will talk about this car for decades."
+    }
+  ]
+}

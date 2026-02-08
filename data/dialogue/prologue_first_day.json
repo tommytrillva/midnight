@@ -1,0 +1,227 @@
+{
+  "id": "prologue_first_day",
+  "context": "Prologue — First day working at Torres Auto. Tutorial mechanics introduction.",
+  "lines": [
+    {
+      "type": "cinematic",
+      "text": "TORRES AUTO — DAY 1. Morning light cuts through the dusty garage windows."
+    },
+    {
+      "type": "narration",
+      "text": "Maya hands you a pair of faded coveralls with 'TORRES' stitched across the back. They smell like transmission fluid and old decisions."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya Torres",
+      "portrait": "maya_neutral",
+      "text": "Rule one: don't touch anything I don't tell you to touch. Rule two: if you break it, you buy it. Rule three: the radio stays on my station."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya Torres",
+      "portrait": "maya_amused",
+      "text": "Any questions? Good. Let's start with the basics."
+    },
+    {
+      "type": "cinematic",
+      "text": "OIL CHANGE TUTORIAL"
+    },
+    {
+      "type": "narration",
+      "text": "Maya rolls a Honda Civic onto the lift. It belongs to a regular — Mrs. Delgado, who apparently brings cookies every third visit."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya Torres",
+      "portrait": "maya_neutral",
+      "text": "Oil change. Bread and butter of every shop. Drain plug is underneath — fourteen millimeter. Don't strip it, or I'll make you tap a new one by hand."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya Torres",
+      "portrait": "maya_thinking",
+      "text": "Old oil out. New filter on. Five quarts of 5W-30. Check the dipstick twice. Simple — but do it wrong and you'll seize an engine."
+    },
+    {
+      "type": "narration",
+      "text": "You work through the oil change step by step. Maya watches, corrects your grip on the wrench, and nods when you check the dipstick."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya Torres",
+      "portrait": "maya_neutral",
+      "text": "Not bad. You didn't strip anything or spill too much. That puts you ahead of the last guy who worked here."
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "tutorial_oil_change",
+        "value": true
+      }
+    },
+    {
+      "type": "cinematic",
+      "text": "TIRE ROTATION"
+    },
+    {
+      "type": "narration",
+      "text": "Next up: a tire rotation on a pickup truck that's seen better decades."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya Torres",
+      "portrait": "maya_neutral",
+      "text": "Tire rotation. Front to back, cross pattern. Torque spec is in the manual — don't guess. Under-torque and the wheel comes off at sixty. Over-torque and you'll crack the stud."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya Torres",
+      "portrait": "maya_thinking",
+      "text": "Check tread depth while you're at it. Penny test — if you can see Lincoln's whole head, they're done."
+    },
+    {
+      "type": "narration",
+      "text": "The work is monotonous but satisfying. There's a rhythm to it — loosen, lift, swap, torque. Your hands start to learn the language of the shop."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya Torres",
+      "portrait": "maya_amused",
+      "text": "You've got decent hands. Steady. That's more than most."
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "tutorial_tire_rotation",
+        "value": true
+      }
+    },
+    {
+      "type": "cinematic",
+      "text": "AFTERNOON — The shop quiets down. You're sweeping the bay when something catches your eye."
+    },
+    {
+      "type": "narration",
+      "text": "Behind a stack of parts catalogs on the workbench, a dog-eared magazine. UNDERGROUND SPEED — Nova Pacifica's Racing Scene. The cover shows a midnight street race, headlights blazing through fog."
+    },
+    {
+      "type": "narration",
+      "text": "You flip through it. Modified cars. Street circuits. Names like 'Diesel,' 'Jade,' 'The Ghost.' A whole world happening after dark, hidden in plain sight."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya Torres",
+      "portrait": "maya_guarded",
+      "text": "Hey. That's not — put that down."
+    },
+    {
+      "type": "narration",
+      "text": "She crosses the garage in three quick steps and takes the magazine from your hands. But she doesn't throw it away. She holds it for a moment, looking at the cover."
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "You know about the racing scene?",
+          "choice_id": "first_day_ask_racing",
+          "relationship_changes": {"maya": 3},
+          "moral_shift": 0,
+          "jump_to": "maya_racing_response"
+        },
+        {
+          "text": "Sorry. Wasn't trying to snoop.",
+          "choice_id": "first_day_apologize",
+          "relationship_changes": {"maya": 2},
+          "moral_shift": 5,
+          "jump_to": "maya_racing_response"
+        },
+        {
+          "text": "That's the world I'm trying to get into.",
+          "choice_id": "first_day_direct_racing",
+          "relationship_changes": {"maya": -1},
+          "moral_shift": 0,
+          "jump_to": "maya_racing_warning"
+        }
+      ]
+    },
+    {
+      "label": "maya_racing_response",
+      "type": "dialogue",
+      "speaker": "Maya Torres",
+      "portrait": "maya_guarded",
+      "text": "Know about it? I..."
+    },
+    {
+      "type": "narration",
+      "text": "She catches herself. Sets the magazine face-down on the workbench."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya Torres",
+      "portrait": "maya_neutral",
+      "text": "That scene is trouble. Fast cars, fast money, faster ways to end up dead or broke. I've seen it chew people up.",
+      "jump_to": "first_day_end"
+    },
+    {
+      "label": "maya_racing_warning",
+      "type": "dialogue",
+      "speaker": "Maya Torres",
+      "portrait": "maya_guarded",
+      "text": "That world will eat you alive. You don't have the car, the money, or the connections. And it doesn't care about your dreams."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya Torres",
+      "portrait": "maya_neutral",
+      "text": "Focus on the work. Get your car running. Then... we'll see.",
+      "jump_to": "first_day_end"
+    },
+    {
+      "label": "first_day_end",
+      "type": "cinematic",
+      "text": "EVENING — The last customer picks up their car. Maya kills the bay lights."
+    },
+    {
+      "type": "narration",
+      "text": "Your arms ache. Your coveralls are streaked with grease. But for the first time in a long time, the ache feels earned."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya Torres",
+      "portrait": "maya_neutral",
+      "text": "Not bad for day one. Couch is in the back. There's leftover takeout in the fridge — help yourself."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya Torres",
+      "portrait": "maya_amused",
+      "text": "Get some sleep. Tomorrow we start on YOUR car. And trust me — it's going to need everything."
+    },
+    {
+      "type": "narration",
+      "text": "The couch is lumpy, the springs protest, and the office smells like brake cleaner. But as you stare at the ceiling, you can still hear it — that GT-R's engine, the green light, the spark."
+    },
+    {
+      "type": "narration",
+      "text": "Something woke up last night. And it's not going back to sleep."
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "prologue_first_day_complete",
+        "value": true
+      }
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "change_relationship",
+        "character": "maya",
+        "amount": 5
+      }
+    }
+  ]
+}

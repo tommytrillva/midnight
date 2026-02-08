@@ -1,0 +1,183 @@
+{
+  "id": "ghosts_of_past",
+  "context": "Racing against the player's own ghost data from previous acts. A confrontation with who you used to be.",
+  "lines": [
+    {
+      "type": "narration",
+      "text": "The track loads something different this time."
+    },
+    {
+      "type": "narration",
+      "text": "Not an opponent. Not a rival. Not a stranger in a fast car with something to prove."
+    },
+    {
+      "type": "narration",
+      "text": "You."
+    },
+    {
+      "type": "narration",
+      "text": "Ghost data. Your ghost data. Recorded during Act 1 — every steering input, every throttle blip, every brake point. A transparent replica of your car, running the exact line you ran when you first came to Nova Pacifica."
+    },
+    {
+      "type": "narration",
+      "text": "You watch yourself drive. The Act 1 version. Sloppy. Fast, but reckless. Braking too late, turning in too early. Chasing the apex like it owed you money."
+    },
+    {
+      "type": "narration",
+      "text": "You were so hungry back then. You can see it in the data — the aggression, the desperation. Every millisecond clawed from the track by force, not finesse."
+    },
+    {
+      "type": "narration",
+      "text": "You line up beside yourself. The ghost shimmers — translucent, indifferent, locked in its replay. It doesn't know you're here. It doesn't know what comes next."
+    },
+    {
+      "type": "narration",
+      "text": "Green light. You both launch."
+    },
+    {
+      "type": "narration",
+      "text": "The ghost is fast. Recklessly, terrifyingly fast. It throws itself into corners with an abandon that makes your stomach drop just watching. No margin. No reserve. All or nothing."
+    },
+    {
+      "type": "narration",
+      "text": "But you're better now. Not faster — better. Your lines are cleaner. Your braking is precise. You carry speed where the ghost scrubs it off. You flow where the ghost fights."
+    },
+    {
+      "type": "narration",
+      "text": "You pass yourself on turn six. The ghost doesn't react. It can't. It's just data. Just a memory of someone you used to be."
+    },
+    {
+      "type": "narration",
+      "text": "You beat the Act 1 ghost. The transparent car fades at the finish line like steam."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_radio",
+      "text": "You beat your old time by four seconds.",
+      "condition": {
+        "type": "relationship_min",
+        "character": "maya",
+        "level": 2
+      }
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_emotional",
+      "text": "You were so hungry back then.",
+      "condition": {
+        "type": "relationship_min",
+        "character": "maya",
+        "level": 2
+      }
+    },
+    {
+      "type": "narration",
+      "text": "New ghost. Act 2 data."
+    },
+    {
+      "type": "narration",
+      "text": "This one is different. Smoother. Faster in the straights because the car was better by then — Maya's upgrades, real parts, real tuning. The ghost takes calculated risks. Controlled aggression."
+    },
+    {
+      "type": "narration",
+      "text": "The Act 2 version thought it had everything figured out. You can see it in the data — the confidence. The certainty. The way it commits to every line like there's no possibility of being wrong."
+    },
+    {
+      "type": "narration",
+      "text": "You know what came after that certainty. The Fall. The loss. The emptiness of learning that knowing everything isn't the same as understanding anything."
+    },
+    {
+      "type": "narration",
+      "text": "You catch the Act 2 ghost on the back straight. Clean pass. Surgical."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_radio",
+      "text": "That version thought they knew everything.",
+      "condition": {
+        "type": "relationship_min",
+        "character": "diesel",
+        "level": 3
+      }
+    },
+    {
+      "type": "narration",
+      "text": "The Act 2 ghost fades. You're alone on the track for a moment. Just you and the sound of the engine and the road."
+    },
+    {
+      "type": "narration",
+      "text": "New ghost. Act 3 data."
+    },
+    {
+      "type": "narration",
+      "text": "This one hurts to watch."
+    },
+    {
+      "type": "narration",
+      "text": "The Act 3 ghost is driving a worse car. The beater. The one you were left with when everything was taken. The ghost is slower — not from lack of skill but from lack of everything else. No grip. No power. No support."
+    },
+    {
+      "type": "narration",
+      "text": "But the ghost is fighting. God, it's fighting. Every corner is a war between will and physics. Every straight is a prayer to an engine that barely wants to run."
+    },
+    {
+      "type": "narration",
+      "text": "The Act 3 version didn't know if it would make it. You can see it in the data — the hesitations. The moments where the throttle dips for just a fraction of a second. Not braking. Doubting."
+    },
+    {
+      "type": "narration",
+      "text": "You run alongside the Act 3 ghost. Not racing it. Not yet. Just... being there. The way nobody was there then."
+    },
+    {
+      "type": "narration",
+      "text": "Then you pass. Gently. Like lifting a weight off your own shoulders."
+    },
+    {
+      "type": "narration",
+      "text": "The Act 3 ghost fades."
+    },
+    {
+      "type": "narration",
+      "text": "Silence."
+    },
+    {
+      "type": "narration",
+      "text": "No radio. No commentary. No one tells you what you already know."
+    },
+    {
+      "type": "narration",
+      "text": "Just the Driver, alone on the track. The engine note steady. The line perfect. Not perfect like a computer — perfect like a human who has made every possible mistake and learned from each one."
+    },
+    {
+      "type": "narration",
+      "text": "You cross the finish line. No ghost to beat this time. Just the empty track and the knowledge that you're here. You made it."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Driver",
+      "portrait": "player_peaceful",
+      "text": "I'm not faster than I was."
+    },
+    {
+      "type": "narration",
+      "text": "A breath. The engine ticks."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Driver",
+      "portrait": "player_peaceful",
+      "text": "I'm better than I was."
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "ghosts_of_past_completed",
+        "value": true
+      }
+    }
+  ]
+}

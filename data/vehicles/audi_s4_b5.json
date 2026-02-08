@@ -1,0 +1,33 @@
+{
+  "vehicle_id": "audi_s4_b5",
+  "display_name": "2000 Audi S4 (B5)",
+  "manufacturer": "Audi",
+  "year": 2000,
+  "description": "The original biturbo sleeper. The B5 S4 looks like a sensible German sedan your accountant might drive — until you hear the twin turbos spool and watch it launch from a dig with all four wheels clawing at the pavement. The 2.7T V6 responds to tuning like it was begging for more boost all along.",
+  "base_stats": {
+    "top_speed": 0.60,
+    "acceleration": 0.58,
+    "handling": 0.58,
+    "braking": 0.58,
+    "nitro_capacity": 0.46,
+    "weight_lbs": 3600
+  },
+  "engine": {
+    "horsepower": 265.0,
+    "torque_lbft": 258.0,
+    "displacement_cc": 2671,
+    "configuration": "V6",
+    "aspiration": "biturbo"
+  },
+  "drivetrain": "awd",
+  "tier": 3,
+  "price": 42000,
+  "rarity": "uncommon",
+  "cosmetics": {
+    "default_color": "#708090",
+    "available_colors": ["#708090", "#000000", "#FFFFFF", "#C0C0C0", "#191970", "#8B0000"]
+  },
+  "special_traits": ["biturbo", "awd", "sleeper"],
+  "lore": "The B5 S4 community figured out early that bigger turbos, a tune, and supporting mods could push the 2.7T past 400 horsepower reliably. In Nova Pacifica, the B5 S4 is the car that catches you off guard at a roll — you never expect the Audi sedan to pull that hard. That's the whole point.",
+  "category": "Euro/Tuner"
+}

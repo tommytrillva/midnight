@@ -1,0 +1,41 @@
+{
+  "vehicle_id": "chevy_camaro_zl1",
+  "display_name": "2017 Chevrolet Camaro ZL1",
+  "manufacturer": "Chevrolet",
+  "year": 2017,
+  "body_style": "coupe",
+  "category": "Muscle/Pro",
+  "culture": "american",
+  "tier": 4,
+  "rarity": "uncommon",
+  "description": "650 horsepower from a supercharged LT4 in a chassis that can actually use it. The sixth-gen ZL1 finally gave the Camaro the handling to match its power — magnetic ride dampers, an electronic limited-slip differential, and enough downforce to make it a genuine track car disguised as a muscle car.",
+  "lore": "For decades, the Camaro was the car you bought when you wanted straight-line speed and didn't care about corners. The ZL1 changed that. The LT4 supercharged V8 makes 650 horsepower, but it's the chassis that shocked the world — lapping the N\u00fcrburgring faster than a Porsche 911 Carrera S. American muscle learned to turn.",
+
+  "base_stats": {
+    "top_speed": 0.78,
+    "acceleration": 0.76,
+    "handling": 0.72,
+    "braking": 0.74,
+    "nitro_capacity": 0.42,
+    "weight": 1724.0
+  },
+
+  "engine": {
+    "code": "LT4",
+    "horsepower": 650.0,
+    "torque": 650.0,
+    "displacement": "6.2L",
+    "configuration": "V8",
+    "aspiration": "supercharged"
+  },
+
+  "drivetrain": "rwd",
+  "price": 120000,
+
+  "cosmetics": {
+    "default_color": "#000000",
+    "available_colors": ["#000000", "#FF0000", "#FFFFFF", "#C0C0C0", "#FFD700", "#4169E1"]
+  },
+
+  "special_traits": ["supercharged", "track_capable"]
+}

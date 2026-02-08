@@ -1,0 +1,41 @@
+{
+  "vehicle_id": "corvette_c7_zr1",
+  "display_name": "2019 Chevrolet Corvette C7 ZR1",
+  "manufacturer": "Chevrolet",
+  "year": 2019,
+  "body_style": "coupe",
+  "category": "Muscle/Pro",
+  "culture": "american",
+  "tier": 5,
+  "rarity": "rare",
+  "description": "755 horsepower from a supercharged American V8, mounted in a car that costs less than half the price of the European exotics it destroys. The C7 ZR1 is the last front-engine Corvette, and Chevrolet made damn sure it went out with a bang.",
+  "lore": "The LT5 is a 6.2-liter supercharged V8 that produces 755 horsepower — the most powerful engine Chevrolet has ever put in a production car. The massive wing generates 950 pounds of downforce. It set a lap record at VIR that stood for years. The C7 ZR1 is proof that you don't need a prancing horse badge to build a world-class supercar.",
+
+  "base_stats": {
+    "top_speed": 0.85,
+    "acceleration": 0.83,
+    "handling": 0.78,
+    "braking": 0.80,
+    "nitro_capacity": 0.44,
+    "weight": 1588.0
+  },
+
+  "engine": {
+    "code": "LT5",
+    "horsepower": 755.0,
+    "torque": 715.0,
+    "displacement": "6.2L",
+    "configuration": "V8",
+    "aspiration": "supercharged"
+  },
+
+  "drivetrain": "rwd",
+  "price": 350000,
+
+  "cosmetics": {
+    "default_color": "#FF4500",
+    "available_colors": ["#FF4500", "#000000", "#FFFFFF", "#FFD700", "#4169E1", "#C0C0C0"]
+  },
+
+  "special_traits": ["supercharged", "aero_monster", "american_power"]
+}

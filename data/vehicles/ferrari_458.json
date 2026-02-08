@@ -1,0 +1,40 @@
+{
+  "vehicle_id": "ferrari_458",
+  "display_name": "2014 Ferrari 458 Italia",
+  "manufacturer": "Ferrari",
+  "year": 2014,
+  "body_style": "coupe",
+  "category": "Euro/Exotic",
+  "culture": "euro",
+  "tier": 5,
+  "rarity": "rare",
+  "description": "The sound alone is worth the price. The last of the naturally aspirated V8 Ferraris — a species going extinct.",
+  "lore": "When Ferrari announced the 458's replacement would be turbocharged, collectors wept and prices skyrocketed. The 4.5-liter V8 revs to 9,000 RPM with a sound that makes grown men emotional. It's mid-engined, perfectly balanced, and represents the absolute peak of what a naturally aspirated Ferrari V8 can be. They will never make another one like it.",
+
+  "base_stats": {
+    "top_speed": 0.82,
+    "acceleration": 0.80,
+    "handling": 0.83,
+    "braking": 0.82,
+    "nitro_capacity": 0.38,
+    "weight": 1451.0
+  },
+
+  "engine": {
+    "horsepower": 562.0,
+    "torque": 398.0,
+    "displacement": "4.5L",
+    "configuration": "V8",
+    "aspiration": "naturally_aspirated"
+  },
+
+  "drivetrain": "mr",
+  "price": 350000,
+
+  "cosmetics": {
+    "default_color": "#FF2400",
+    "available_colors": ["#FF2400", "#FFFFFF", "#FFD700", "#000000", "#4169E1", "#C0C0C0"]
+  },
+
+  "special_traits": ["naturally_aspirated", "v8", "mid_engine", "ferrari_dna"]
+}

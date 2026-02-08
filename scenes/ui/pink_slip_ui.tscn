@@ -1,0 +1,408 @@
+[gd_scene load_steps=2 format=3 uid="uid://pink_slip_ui"]
+
+[ext_resource type="Script" path="res://scenes/ui/pink_slip_ui.gd" id="1"]
+
+[node name="PinkSlipUI" type="CanvasLayer"]
+layer = 90
+visible = false
+script = ExtResource("1")
+
+; ---------- Dark Overlay ----------
+
+[node name="Overlay" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 0.85)
+
+; ---------- Main Layout ----------
+
+[node name="MainContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="VBox" type="VBoxContainer" parent="MainContainer"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+; ---------- Title: PINK SLIP ----------
+
+[node name="TitleLabel" type="Label" parent="MainContainer/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.1, 0.2, 1)
+theme_override_font_sizes/font_size = 42
+text = "PINK SLIP"
+horizontal_alignment = 1
+
+; ---------- Opponent Dialogue ----------
+
+[node name="OpponentDialogueLabel" type="Label" parent="MainContainer/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.8, 0.7, 1)
+theme_override_font_sizes/font_size = 16
+text = ""
+horizontal_alignment = 1
+autowrap_mode = 2
+
+; ---------- Car Panels (HBox: Player | VS | Opponent) ----------
+
+[node name="CarPanelsHBox" type="HBoxContainer" parent="MainContainer/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 20
+alignment = 1
+
+; ===== YOUR CAR (Left Panel) =====
+
+[node name="PlayerPanel" type="PanelContainer" parent="MainContainer/VBox/CarPanelsHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.0
+custom_minimum_size = Vector2(320, 0)
+
+[node name="PlayerVBox" type="VBoxContainer" parent="MainContainer/VBox/CarPanelsHBox/PlayerPanel"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="PlayerHeader" type="Label" parent="MainContainer/VBox/CarPanelsHBox/PlayerPanel/PlayerVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 0.8, 1)
+theme_override_font_sizes/font_size = 14
+text = "YOUR CAR"
+horizontal_alignment = 1
+
+[node name="PlayerColorRect" type="ColorRect" parent="MainContainer/VBox/CarPanelsHBox/PlayerPanel/PlayerVBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 100)
+color = Color(0.3, 0.3, 0.6, 1)
+
+[node name="PlayerNameLabel" type="Label" parent="MainContainer/VBox/CarPanelsHBox/PlayerPanel/PlayerVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "Vehicle Name"
+horizontal_alignment = 1
+
+[node name="PlayerStatsGrid" type="GridContainer" parent="MainContainer/VBox/CarPanelsHBox/PlayerPanel/PlayerVBox"]
+layout_mode = 2
+columns = 2
+theme_override_constants/h_separation = 16
+theme_override_constants/v_separation = 4
+
+[node name="HPLabel" type="Label" parent="MainContainer/VBox/CarPanelsHBox/PlayerPanel/PlayerVBox/PlayerStatsGrid"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6, 0.6, 0.6, 1)
+theme_override_font_sizes/font_size = 14
+text = "POWER:"
+
+[node name="PlayerHPLabel" type="Label" parent="MainContainer/VBox/CarPanelsHBox/PlayerPanel/PlayerVBox/PlayerStatsGrid"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 14
+text = "--- HP"
+
+[node name="WeightLabel" type="Label" parent="MainContainer/VBox/CarPanelsHBox/PlayerPanel/PlayerVBox/PlayerStatsGrid"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6, 0.6, 0.6, 1)
+theme_override_font_sizes/font_size = 14
+text = "WEIGHT:"
+
+[node name="PlayerWeightLabel" type="Label" parent="MainContainer/VBox/CarPanelsHBox/PlayerPanel/PlayerVBox/PlayerStatsGrid"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 14
+text = "--- kg"
+
+[node name="SpeedLabel" type="Label" parent="MainContainer/VBox/CarPanelsHBox/PlayerPanel/PlayerVBox/PlayerStatsGrid"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6, 0.6, 0.6, 1)
+theme_override_font_sizes/font_size = 14
+text = "SPEED:"
+
+[node name="PlayerSpeedLabel" type="Label" parent="MainContainer/VBox/CarPanelsHBox/PlayerPanel/PlayerVBox/PlayerStatsGrid"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 14
+text = "SPD: ---"
+
+[node name="ValueStatLabel" type="Label" parent="MainContainer/VBox/CarPanelsHBox/PlayerPanel/PlayerVBox/PlayerStatsGrid"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6, 0.6, 0.6, 1)
+theme_override_font_sizes/font_size = 14
+text = "VALUE:"
+
+[node name="PlayerValueLabel" type="Label" parent="MainContainer/VBox/CarPanelsHBox/PlayerPanel/PlayerVBox/PlayerStatsGrid"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 0.5, 1)
+theme_override_font_sizes/font_size = 14
+text = "$---"
+
+[node name="PartsHeader" type="Label" parent="MainContainer/VBox/CarPanelsHBox/PlayerPanel/PlayerVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6, 0.6, 0.6, 1)
+theme_override_font_sizes/font_size = 12
+text = "INSTALLED PARTS:"
+
+[node name="PlayerPartsLabel" type="Label" parent="MainContainer/VBox/CarPanelsHBox/PlayerPanel/PlayerVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.8, 0.8, 1)
+theme_override_font_sizes/font_size = 12
+text = "Stock"
+autowrap_mode = 2
+
+; ===== VS Divider (Center) =====
+
+[node name="VSDivider" type="VBoxContainer" parent="MainContainer/VBox/CarPanelsHBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(80, 0)
+alignment = 1
+
+[node name="VSLabel" type="Label" parent="MainContainer/VBox/CarPanelsHBox/VSDivider"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.1, 0.2, 1)
+theme_override_font_sizes/font_size = 48
+text = "VS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VSGlow" type="Label" parent="MainContainer/VBox/CarPanelsHBox/VSDivider"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.3, 0.4, 0.3)
+theme_override_font_sizes/font_size = 56
+text = "VS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+; ===== THEIR CAR (Right Panel) =====
+
+[node name="OpponentPanel" type="PanelContainer" parent="MainContainer/VBox/CarPanelsHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.0
+custom_minimum_size = Vector2(320, 0)
+
+[node name="OpponentVBox" type="VBoxContainer" parent="MainContainer/VBox/CarPanelsHBox/OpponentPanel"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="OpponentHeader" type="Label" parent="MainContainer/VBox/CarPanelsHBox/OpponentPanel/OpponentVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.3, 0.3, 1)
+theme_override_font_sizes/font_size = 14
+text = "THEIR CAR"
+horizontal_alignment = 1
+
+[node name="OpponentColorRect" type="ColorRect" parent="MainContainer/VBox/CarPanelsHBox/OpponentPanel/OpponentVBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 100)
+color = Color(0.15, 0.15, 0.15, 1)
+
+[node name="OpponentNameLabel" type="Label" parent="MainContainer/VBox/CarPanelsHBox/OpponentPanel/OpponentVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "???"
+horizontal_alignment = 1
+
+[node name="OpponentStatsGrid" type="GridContainer" parent="MainContainer/VBox/CarPanelsHBox/OpponentPanel/OpponentVBox"]
+layout_mode = 2
+columns = 2
+theme_override_constants/h_separation = 16
+theme_override_constants/v_separation = 4
+
+[node name="OppHPStatLabel" type="Label" parent="MainContainer/VBox/CarPanelsHBox/OpponentPanel/OpponentVBox/OpponentStatsGrid"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6, 0.6, 0.6, 1)
+theme_override_font_sizes/font_size = 14
+text = "POWER:"
+
+[node name="OpponentHPLabel" type="Label" parent="MainContainer/VBox/CarPanelsHBox/OpponentPanel/OpponentVBox/OpponentStatsGrid"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.4, 0.4, 1)
+theme_override_font_sizes/font_size = 14
+text = "??? HP"
+
+[node name="OppWeightStatLabel" type="Label" parent="MainContainer/VBox/CarPanelsHBox/OpponentPanel/OpponentVBox/OpponentStatsGrid"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6, 0.6, 0.6, 1)
+theme_override_font_sizes/font_size = 14
+text = "WEIGHT:"
+
+[node name="OpponentWeightLabel" type="Label" parent="MainContainer/VBox/CarPanelsHBox/OpponentPanel/OpponentVBox/OpponentStatsGrid"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.4, 0.4, 1)
+theme_override_font_sizes/font_size = 14
+text = "??? kg"
+
+[node name="OppSpeedStatLabel" type="Label" parent="MainContainer/VBox/CarPanelsHBox/OpponentPanel/OpponentVBox/OpponentStatsGrid"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6, 0.6, 0.6, 1)
+theme_override_font_sizes/font_size = 14
+text = "SPEED:"
+
+[node name="OpponentSpeedLabel" type="Label" parent="MainContainer/VBox/CarPanelsHBox/OpponentPanel/OpponentVBox/OpponentStatsGrid"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.4, 0.4, 1)
+theme_override_font_sizes/font_size = 14
+text = "SPD: ???"
+
+[node name="OppValueStatLabel" type="Label" parent="MainContainer/VBox/CarPanelsHBox/OpponentPanel/OpponentVBox/OpponentStatsGrid"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6, 0.6, 0.6, 1)
+theme_override_font_sizes/font_size = 14
+text = "VALUE:"
+
+[node name="OpponentValueLabel" type="Label" parent="MainContainer/VBox/CarPanelsHBox/OpponentPanel/OpponentVBox/OpponentStatsGrid"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 0.5, 1)
+theme_override_font_sizes/font_size = 14
+text = "$???"
+
+[node name="OppPartsHeader" type="Label" parent="MainContainer/VBox/CarPanelsHBox/OpponentPanel/OpponentVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6, 0.6, 0.6, 1)
+theme_override_font_sizes/font_size = 12
+text = "MODS:"
+
+[node name="OpponentPartsLabel" type="Label" parent="MainContainer/VBox/CarPanelsHBox/OpponentPanel/OpponentVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.5, 0.5, 1)
+theme_override_font_sizes/font_size = 12
+text = "Unknown mods"
+autowrap_mode = 2
+
+; ---------- Vehicle Selector ----------
+
+[node name="SelectorLabel" type="Label" parent="MainContainer/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.7, 0.7, 1)
+theme_override_font_sizes/font_size = 13
+text = "SELECT VEHICLE TO WAGER:"
+
+[node name="VehicleSelector" type="ScrollContainer" parent="MainContainer/VBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 60)
+
+[node name="VehicleList" type="VBoxContainer" parent="MainContainer/VBox/VehicleSelector"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 4
+
+; ---------- Fairness Meter ----------
+
+[node name="FairnessHBox" type="HBoxContainer" parent="MainContainer/VBox"]
+layout_mode = 2
+alignment = 1
+theme_override_constants/separation = 12
+
+[node name="FairnessBar" type="ProgressBar" parent="MainContainer/VBox/FairnessHBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(200, 20)
+max_value = 100.0
+value = 50.0
+show_percentage = false
+
+[node name="FairnessLabel" type="Label" parent="MainContainer/VBox/FairnessHBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 0.3, 1)
+theme_override_font_sizes/font_size = 16
+text = "FAIR MATCH"
+
+; ---------- Stakes Display ----------
+
+[node name="StakesLabel" type="Label" parent="MainContainer/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.9, 0.6, 1)
+theme_override_font_sizes/font_size = 15
+text = "You win: their car. You lose: your car."
+horizontal_alignment = 1
+
+; ---------- Warning ----------
+
+[node name="WarningLabel" type="Label" parent="MainContainer/VBox"]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.2, 0.2, 1)
+theme_override_font_sizes/font_size = 14
+text = ""
+horizontal_alignment = 1
+
+; ---------- Accept / Decline Buttons ----------
+
+[node name="ButtonsHBox" type="HBoxContainer" parent="MainContainer/VBox"]
+layout_mode = 2
+alignment = 1
+theme_override_constants/separation = 40
+
+[node name="DeclineButton" type="Button" parent="MainContainer/VBox/ButtonsHBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(200, 50)
+theme_override_colors/font_color = Color(0.7, 0.7, 0.7, 1)
+theme_override_font_sizes/font_size = 18
+text = "DECLINE"
+
+[node name="AcceptButton" type="Button" parent="MainContainer/VBox/ButtonsHBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(200, 50)
+theme_override_colors/font_color = Color(1, 0.2, 0.2, 1)
+theme_override_font_sizes/font_size = 20
+text = "ACCEPT"
+
+; ---------- Confirmation Overlay ----------
+
+[node name="ConfirmationOverlay" type="PanelContainer" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -100.0
+offset_right = 250.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ConfirmVBox" type="VBoxContainer" parent="ConfirmationOverlay"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="ConfirmTitle" type="Label" parent="ConfirmationOverlay/ConfirmVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.2, 0.2, 1)
+theme_override_font_sizes/font_size = 22
+text = "ARE YOU SURE?"
+horizontal_alignment = 1
+
+[node name="ConfirmText" type="Label" parent="ConfirmationOverlay/ConfirmVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.9, 0.6, 1)
+theme_override_font_sizes/font_size = 14
+text = "If you lose, your vehicle is gone forever. No refunds. No take-backs."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="ConfirmButtons" type="HBoxContainer" parent="ConfirmationOverlay/ConfirmVBox"]
+layout_mode = 2
+alignment = 1
+theme_override_constants/separation = 30
+
+[node name="ConfirmNoButton" type="Button" parent="ConfirmationOverlay/ConfirmVBox/ConfirmButtons"]
+layout_mode = 2
+custom_minimum_size = Vector2(120, 40)
+theme_override_colors/font_color = Color(0.7, 0.7, 0.7, 1)
+theme_override_font_sizes/font_size = 16
+text = "BACK OUT"
+
+[node name="ConfirmYesButton" type="Button" parent="ConfirmationOverlay/ConfirmVBox/ConfirmButtons"]
+layout_mode = 2
+custom_minimum_size = Vector2(120, 40)
+theme_override_colors/font_color = Color(1, 0.2, 0.2, 1)
+theme_override_font_sizes/font_size = 16
+text = "DO IT"

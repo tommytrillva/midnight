@@ -1,0 +1,65 @@
+{
+  "id": "housing_upgrade_penthouse",
+  "context": "The penthouse. The top. Private elevator, city view, everything you dreamed of. Maya visits.",
+  "lines": [
+    {
+      "type": "narration",
+      "text": "The elevator opens directly into your apartment. There's a chandelier."
+    },
+    {
+      "type": "narration",
+      "text": "Floor-to-ceiling windows. Every district visible — downtown's neon, the harbor's fog, the industrial glow, the hillside curves winding up into darkness."
+    },
+    {
+      "type": "narration",
+      "text": "The private garage elevator can hold eight cars. Eight. The number feels obscene and perfect."
+    },
+    {
+      "type": "narration",
+      "text": "You pour a drink and stand at the window. The city hums sixty stories below. Every road, every alley — yours."
+    },
+    {
+      "type": "narration",
+      "text": "A knock at the door. No — the elevator chimes."
+    },
+    {
+      "speaker": "maya",
+      "portrait": "maya_impressed",
+      "text": "This is... wow."
+    },
+    {
+      "type": "narration",
+      "text": "She walks to the window. Presses her hand against the glass. The city reflects in her eyes."
+    },
+    {
+      "speaker": "maya",
+      "portrait": "maya_thoughtful",
+      "text": "You can see Torres Auto from here. That little dot with the yellow sign."
+    },
+    {
+      "type": "narration",
+      "text": "Something in her voice. Not jealousy. Not quite sadness. Something she hasn't named yet."
+    },
+    {
+      "speaker": "maya",
+      "portrait": "maya_casual",
+      "text": "Just... don't get lost up here. It's a long way down."
+    },
+    {
+      "type": "narration",
+      "text": "She stays for an hour. You talk about cars. It almost feels like the couch days."
+    },
+    {
+      "type": "narration",
+      "text": "Almost."
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "penthouse_acquired",
+        "value": true
+      }
+    }
+  ]
+}

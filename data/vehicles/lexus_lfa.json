@@ -1,0 +1,40 @@
+{
+  "vehicle_id": "lexus_lfa",
+  "display_name": "2012 Lexus LFA",
+  "manufacturer": "Lexus",
+  "year": 2012,
+  "body_style": "coupe",
+  "category": "JDM/Pro",
+  "culture": "jdm",
+  "tier": 4,
+  "rarity": "epic",
+  "description": "Yamaha V10 symphony. The LFA was Lexus proving it could build a supercar that rivaled anything from Italy or Germany — then going further by making it sound better than all of them. A 4.8-liter V10 that revs to 9,000 RPM, a carbon fiber reinforced polymer body, and a digital tachometer because the needle couldn't keep up with the engine.",
+  "lore": "Yamaha tuned the V10. It revs to 9,000 RPM and sounds like an angel screaming. Lexus lost money on every one they built. They didn't care.",
+
+  "base_stats": {
+    "top_speed": 0.78,
+    "acceleration": 0.75,
+    "handling": 0.80,
+    "braking": 0.82,
+    "nitro_capacity": 0.42,
+    "weight": 1497.0
+  },
+
+  "engine": {
+    "horsepower": 553.0,
+    "torque": 354.0,
+    "displacement": "4.8L",
+    "configuration": "V10",
+    "aspiration": "naturally_aspirated"
+  },
+
+  "drivetrain": "rwd",
+  "price": 300000,
+
+  "cosmetics": {
+    "default_color": "#FFFFFF",
+    "available_colors": ["#FFFFFF", "#000000", "#FFD700", "#FF4500", "#4169E1", "#C0C0C0"]
+  },
+
+  "special_traits": ["v10_symphony", "naturally_aspirated", "limited_edition"]
+}

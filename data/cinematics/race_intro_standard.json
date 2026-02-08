@@ -1,0 +1,309 @@
+{
+  "id": "race_intro_standard",
+  "description": "Standard race intro — hero shots, hand on wheel, rival eye contact, countdown.",
+  "skippable": true,
+  "steps": [
+    {
+      "type": "effect",
+      "data": { "letterbox": true, "aspect": "cinematic" },
+      "duration": 0.4,
+      "parallel": false
+    },
+    {
+      "type": "audio",
+      "data": {
+        "music": { "track": "race_tension", "artist": "Midnight OST", "action": "play" }
+      },
+      "duration": 0,
+      "parallel": true
+    },
+
+    {
+      "type": "camera",
+      "data": {
+        "move": "teleport",
+        "position": [15, 3, -30],
+        "look_at": [0, 1, -10]
+      },
+      "duration": 0,
+      "parallel": true,
+      "comment": "Wide shot: starting line, cars arriving"
+    },
+    {
+      "type": "effect",
+      "data": { "fade": "black", "direction": "out" },
+      "duration": 0.8,
+      "parallel": false
+    },
+    {
+      "type": "camera",
+      "data": {
+        "move": "pan",
+        "from": [15, 3, -30],
+        "to": [5, 2, -15],
+        "look_at": [0, 1, -10],
+        "ease": "ease_out"
+      },
+      "duration": 3.0,
+      "parallel": false,
+      "comment": "Pan in as cars roll to position"
+    },
+
+    {
+      "type": "camera",
+      "data": {
+        "move": "teleport",
+        "position": [-3, 1.2, -8],
+        "look_at": [0, 0.8, -8]
+      },
+      "duration": 0,
+      "parallel": true,
+      "comment": "Low angle hero shot — Driver's car"
+    },
+    {
+      "type": "camera",
+      "data": {
+        "move": "orbit",
+        "target": [0, 0.8, -8],
+        "angle": 60,
+        "ease": "ease_in_out"
+      },
+      "duration": 3.0,
+      "parallel": false,
+      "comment": "Slow orbit around Driver's car — hero shot"
+    },
+
+    {
+      "type": "camera",
+      "data": {
+        "move": "teleport",
+        "position": [3, 1.2, -6],
+        "look_at": [5, 0.8, -6]
+      },
+      "duration": 0,
+      "parallel": true,
+      "comment": "Cut to rival's car"
+    },
+    {
+      "type": "camera",
+      "data": {
+        "move": "dolly",
+        "distance": 2,
+        "ease": "ease_in_out"
+      },
+      "duration": 2.0,
+      "parallel": false,
+      "comment": "Push toward rival's car"
+    },
+
+    {
+      "type": "camera",
+      "data": {
+        "move": "teleport",
+        "position": [0.5, 1.4, -7.5],
+        "look_at": [0, 1.3, -7]
+      },
+      "duration": 0,
+      "parallel": true,
+      "comment": "Close-up: Driver's hands on steering wheel"
+    },
+    {
+      "type": "camera",
+      "data": {
+        "move": "dolly",
+        "distance": 0.3,
+        "ease": "ease_out"
+      },
+      "duration": 1.5,
+      "parallel": false,
+      "comment": "Slow push on hands gripping wheel"
+    },
+
+    {
+      "type": "camera",
+      "data": {
+        "move": "teleport",
+        "position": [-1, 1.5, -7],
+        "look_at": [0, 1.5, -8]
+      },
+      "duration": 0,
+      "parallel": true,
+      "comment": "Driver's eyes in rearview — determined"
+    },
+    {
+      "type": "wait",
+      "data": {},
+      "duration": 1.0,
+      "parallel": false
+    },
+
+    {
+      "type": "camera",
+      "data": {
+        "move": "teleport",
+        "position": [4.5, 1.5, -7],
+        "look_at": [5, 1.5, -8]
+      },
+      "duration": 0,
+      "parallel": true,
+      "comment": "Rival's eyes — confident smirk"
+    },
+    {
+      "type": "wait",
+      "data": {},
+      "duration": 1.0,
+      "parallel": false
+    },
+
+    {
+      "type": "camera",
+      "data": {
+        "move": "teleport",
+        "position": [2.5, 5, -5],
+        "look_at": [2.5, 0, -10]
+      },
+      "duration": 0,
+      "parallel": true,
+      "comment": "Bird's eye — both cars on the line"
+    },
+    {
+      "type": "camera",
+      "data": {
+        "move": "crane",
+        "height": -2,
+        "ease": "ease_in"
+      },
+      "duration": 2.0,
+      "parallel": false,
+      "comment": "Crane down toward the grid"
+    },
+
+    {
+      "type": "effect",
+      "data": {
+        "hud_message": { "text": "3", "duration": 0.8 }
+      },
+      "duration": 0,
+      "parallel": true
+    },
+    {
+      "type": "audio",
+      "data": { "sfx": "countdown_beep" },
+      "duration": 0,
+      "parallel": true
+    },
+    {
+      "type": "camera",
+      "data": {
+        "move": "shake",
+        "intensity": 0.05,
+        "duration": 0.3
+      },
+      "duration": 0.3,
+      "parallel": false
+    },
+    {
+      "type": "wait",
+      "data": {},
+      "duration": 0.7,
+      "parallel": false
+    },
+
+    {
+      "type": "effect",
+      "data": {
+        "hud_message": { "text": "2", "duration": 0.8 }
+      },
+      "duration": 0,
+      "parallel": true
+    },
+    {
+      "type": "audio",
+      "data": { "sfx": "countdown_beep" },
+      "duration": 0,
+      "parallel": true
+    },
+    {
+      "type": "camera",
+      "data": {
+        "move": "teleport",
+        "position": [0, 1, -6],
+        "look_at": [0, 0.8, -8]
+      },
+      "duration": 0,
+      "parallel": true,
+      "comment": "Low front angle — exhaust heat shimmer"
+    },
+    {
+      "type": "wait",
+      "data": {},
+      "duration": 1.0,
+      "parallel": false
+    },
+
+    {
+      "type": "effect",
+      "data": {
+        "hud_message": { "text": "1", "duration": 0.8 }
+      },
+      "duration": 0,
+      "parallel": true
+    },
+    {
+      "type": "audio",
+      "data": { "sfx": "countdown_beep" },
+      "duration": 0,
+      "parallel": true
+    },
+    {
+      "type": "camera",
+      "data": {
+        "move": "teleport",
+        "position": [2, 0.5, -10],
+        "look_at": [0, 1, -8]
+      },
+      "duration": 0,
+      "parallel": true,
+      "comment": "Ground-level behind — tires ready to spin"
+    },
+    {
+      "type": "wait",
+      "data": {},
+      "duration": 1.0,
+      "parallel": false
+    },
+
+    {
+      "type": "effect",
+      "data": {
+        "hud_message": { "text": "GO!", "duration": 1.0 }
+      },
+      "duration": 0,
+      "parallel": true
+    },
+    {
+      "type": "audio",
+      "data": { "sfx": "countdown_go" },
+      "duration": 0,
+      "parallel": true
+    },
+    {
+      "type": "camera",
+      "data": {
+        "move": "shake",
+        "intensity": 0.3,
+        "duration": 0.5
+      },
+      "duration": 0.5,
+      "parallel": false,
+      "comment": "Launch shake"
+    },
+    {
+      "type": "effect",
+      "data": { "letterbox": false },
+      "duration": 0.3,
+      "parallel": false,
+      "comment": "Bars retract — gameplay begins"
+    }
+  ]
+}

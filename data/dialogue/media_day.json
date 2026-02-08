@@ -1,0 +1,272 @@
+{
+  "id": "media_day",
+  "context": "Act 2A Chapter 2.1 — Media Day. First press conference as an Apex Dynamics driver. Jade coaches the player. Culture shock.",
+  "lines": [
+    {
+      "type": "narration",
+      "text": "The Apex Dynamics media center. Glass and chrome and money — so much money you can taste it in the recycled air. Screens the size of buildings flash your name alongside logos worth more than entire city blocks."
+    },
+    {
+      "type": "narration",
+      "text": "You are wearing clothes someone else picked out. A shirt that costs more than your first car. Shoes that have never touched asphalt. You catch your reflection in a mirrored wall and almost don't recognize the person looking back."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_professional",
+      "text": "Okay. Fifteen minutes until we go live. Let's go over the rules."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_professional",
+      "text": "Rule one: you are not from the underground. You are a grassroots talent discovered through our scouting program. If anyone asks about illegal racing, you smile and change the subject."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_professional",
+      "text": "Rule two: Henrik Vale is your teammate, not your rival. You respect him. You are excited to learn from him. Even if he spent the entire flight here pretending you don't exist."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_professional",
+      "text": "Rule three: Apex Dynamics is not just a sponsor. They are your family now. Everything you say reflects on the brand. Everything."
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "What if someone asks where I actually learned to drive?",
+          "choice_id": "media_ask_truth",
+          "relationship_changes": {"jade": 5},
+          "moral_shift": 5,
+          "jump_to": "jade_truth_response"
+        },
+        {
+          "text": "Got it. Smile, lie, sell the brand.",
+          "choice_id": "media_corporate_comply",
+          "relationship_changes": {"jade": 3},
+          "moral_shift": -5,
+          "jump_to": "jade_comply_response"
+        },
+        {
+          "text": "I'm not ashamed of where I came from.",
+          "choice_id": "media_defiant",
+          "relationship_changes": {"jade": -5},
+          "moral_shift": 10,
+          "jump_to": "jade_defiant_response"
+        }
+      ]
+    },
+    {
+      "label": "jade_truth_response",
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_thoughtful",
+      "text": "Then you tell them you drove competitively in unsanctioned events. Not illegal — unsanctioned. Language matters. A street racer is a criminal. An unsanctioned competitor is a rebel with a compelling origin story."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_professional",
+      "text": "The media loves a rags-to-riches narrative. Just make sure the rags aren't too dirty.",
+      "jump_to": "press_begins"
+    },
+    {
+      "label": "jade_comply_response",
+      "type": "narration",
+      "text": "Jade studies you. There is something in her eyes — not approval exactly. Recognition. Like she is watching you learn a lesson she learned a long time ago."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_professional",
+      "text": "You're a fast learner. That's good. You'll need to be.",
+      "jump_to": "press_begins"
+    },
+    {
+      "label": "jade_defiant_response",
+      "type": "narration",
+      "text": "Jade's expression doesn't change. Not a flicker. She has dealt with defiance before — probably over breakfast."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_cold",
+      "text": "Nobody is asking you to be ashamed. I'm asking you to be strategic. Pride is a luxury. Results buy you the right to have it. Today, you don't have results. You have a contract and a press conference. Work with me here."
+    },
+    {
+      "type": "narration",
+      "text": "She is not wrong. You hate that she is not wrong.",
+      "jump_to": "press_begins"
+    },
+    {
+      "label": "press_begins",
+      "type": "narration",
+      "text": "The doors open. A room full of journalists, cameras, microphones. Lights so bright they wash out the world behind them. You walk to the podium and the room goes quiet."
+    },
+    {
+      "type": "narration",
+      "text": "A hundred faces. A hundred phones. A hundred ways this could go wrong."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Reporter 1",
+      "portrait": "reporter_neutral",
+      "text": "Welcome to the professional circuit. Can you tell us about your background? Our records show no amateur league participation, no karting history. Where did you come from?"
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "I came from the streets. I raced underground in Nova Pacifica.",
+          "choice_id": "media_honest_answer",
+          "relationship_changes": {"jade": -10, "diesel": 10, "maya": 10},
+          "moral_shift": 15,
+          "rep": 15,
+          "set_flags": {"media_day_honest": true},
+          "jump_to": "honest_answer"
+        },
+        {
+          "text": "Grassroots competitive events. Apex's scouting program found me.",
+          "choice_id": "media_corporate_answer",
+          "relationship_changes": {"jade": 10},
+          "moral_shift": -10,
+          "set_flags": {"media_day_corporate": true},
+          "jump_to": "corporate_answer"
+        },
+        {
+          "text": "I came from a place where the only thing that matters is how you drive. Everything else is noise.",
+          "choice_id": "media_vague_answer",
+          "relationship_changes": {"jade": 5, "diesel": 5},
+          "moral_shift": 5,
+          "rep": 5,
+          "set_flags": {"media_day_vague": true},
+          "jump_to": "vague_answer"
+        }
+      ]
+    },
+    {
+      "label": "honest_answer",
+      "type": "narration",
+      "text": "The room stirs. Murmurs. Phones lifting higher. You just gave them a story — the kind that doesn't need spin."
+    },
+    {
+      "type": "narration",
+      "text": "In the back of the room, Jade closes her eyes for exactly one second. When she opens them, her face is perfect. Professional. But you can feel the temperature drop from here."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Reporter 2",
+      "portrait": "reporter_neutral",
+      "text": "Underground racing? So you're saying Apex Dynamics recruited an illegal street racer? Does the team have a comment on this?"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_professional",
+      "text": "Apex Dynamics scouts talent from all backgrounds. Our driver's unconventional path to professional racing is exactly what makes this sport exciting. Next question, please."
+    },
+    {
+      "type": "narration",
+      "text": "Smooth. Instant. Like she had the save ready before you even spoke. Maybe she did.",
+      "jump_to": "press_aftermath"
+    },
+    {
+      "label": "corporate_answer",
+      "type": "narration",
+      "text": "The words taste like cardboard. But they come out smooth, rehearsed, exactly the way Jade scripted them."
+    },
+    {
+      "type": "narration",
+      "text": "The reporters nod. They write it down. Nobody questions it. This is how the machine works — you feed it what it wants and it prints what you need."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Reporter 2",
+      "portrait": "reporter_neutral",
+      "text": "And how does it feel to be joining the Apex team alongside Henrik Vale, the defending regional champion?"
+    },
+    {
+      "type": "narration",
+      "text": "You glance at Jade. She gives you the smallest nod. You are doing fine. You are doing exactly what the brand requires.",
+      "jump_to": "press_aftermath"
+    },
+    {
+      "label": "vague_answer",
+      "type": "narration",
+      "text": "The room pauses. It is not the answer they expected. It is better. Mysterious. Quotable."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Reporter 2",
+      "portrait": "reporter_neutral",
+      "text": "That's quite the soundbite. Can you elaborate on what competitive events specifically?"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_professional",
+      "text": "Our driver competed in a variety of events across the Pacific Rim. Full details are in the press packet. What matters today is the future, not the past. Next question."
+    },
+    {
+      "type": "narration",
+      "text": "Jade takes control of the room like she was born in it. Which, in a way, she was.",
+      "jump_to": "press_aftermath"
+    },
+    {
+      "label": "press_aftermath",
+      "type": "narration",
+      "text": "Thirty minutes later, it is over. The cameras turn off. The journalists file out. The lights dim. You are still standing at the podium, blinking afterimages out of your eyes."
+    },
+    {
+      "type": "narration",
+      "text": "The silence after a press conference is nothing like the silence after a race. After a race, the silence is earned. This silence feels like the space between detonation and impact."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_professional",
+      "text": "Not bad. For a first time."
+    },
+    {
+      "type": "narration",
+      "text": "She does not specify whether she means 'not bad' as praise or 'not bad' as 'it could have been catastrophic and it wasn't.' With Jade, the distinction is everything."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_professional",
+      "text": "Tomorrow is the exhibition race. That's the part you're actually good at. Get some rest. There's a car waiting for you at the hotel — and before you ask, no, you can't take it to The Pit."
+    },
+    {
+      "type": "narration",
+      "text": "She almost smiles. Almost."
+    },
+    {
+      "type": "narration",
+      "text": "You walk out of the media center into Nova Pacifica sunlight. The city looks the same from up here — the towers, the harbor, the smog layer that turns sunset into a bruise."
+    },
+    {
+      "type": "narration",
+      "text": "But you are not the same. You are wearing someone else's clothes, speaking someone else's words, driving toward someone else's dream. And the worst part is — it might be better than yours."
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "media_day_complete",
+        "value": true
+      }
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "start_mission",
+        "mission_id": "media_day"
+      }
+    }
+  ]
+}

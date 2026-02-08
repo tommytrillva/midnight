@@ -1,0 +1,41 @@
+{
+  "vehicle_id": "amg_c63_black",
+  "display_name": "2012 Mercedes-AMG C63 Black Series",
+  "manufacturer": "Mercedes-AMG",
+  "year": 2012,
+  "body_style": "coupe",
+  "category": "Euro/Pro",
+  "culture": "euro",
+  "tier": 4,
+  "rarity": "uncommon",
+  "description": "NA aggression. The Black Series treatment turned the already brutal C63 into something feral. Wider fenders, stripped interior, retuned 6.2-liter V8 making 510 horsepower — all naturally aspirated, all fury. The last AMG to use the hand-built M156 engine before turbocharging took over.",
+  "lore": "AMG's Black Series badge means one thing: the engineers were given permission to stop being reasonable. The M156 6.2-liter V8 is naturally aspirated in an era of turbocharging — a deliberate choice that gives it a throttle response and soundtrack that forced-induction engines can't match. Wider fenders hide a track-width suspension setup borrowed from the SLS AMG GT3 race car. The back seats were removed and replaced with a strut brace. Mercedes called it a coupe. Everyone else called it a weapon.",
+
+  "base_stats": {
+    "top_speed": 0.75,
+    "acceleration": 0.74,
+    "handling": 0.74,
+    "braking": 0.76,
+    "nitro_capacity": 0.40,
+    "weight": 1588.0
+  },
+
+  "engine": {
+    "code": "M156",
+    "horsepower": 510.0,
+    "torque": 457.0,
+    "displacement": "6.2L",
+    "configuration": "V8",
+    "aspiration": "naturally_aspirated"
+  },
+
+  "drivetrain": "rwd",
+  "price": 150000,
+
+  "cosmetics": {
+    "default_color": "#000000",
+    "available_colors": ["#000000", "#FFFFFF", "#C0C0C0", "#FF2400", "#FF4500", "#1C1C1C"]
+  },
+
+  "special_traits": ["naturally_aspirated", "v8", "black_series"]
+}

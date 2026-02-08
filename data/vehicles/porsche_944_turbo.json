@@ -1,0 +1,33 @@
+{
+  "vehicle_id": "porsche_944_turbo",
+  "display_name": "1986 Porsche 944 Turbo",
+  "manufacturer": "Porsche",
+  "year": 1986,
+  "description": "Transaxle balance in a package that Porsche purists once dismissed and now desperately seek. The 944 Turbo's front-engine, rear-transaxle layout delivers 50:50 weight distribution that makes the 911's rear-engine pendulum feel archaic. The turbo 2.5 four-cylinder punches above its weight class.",
+  "base_stats": {
+    "top_speed": 0.58,
+    "acceleration": 0.55,
+    "handling": 0.68,
+    "braking": 0.60,
+    "nitro_capacity": 0.42,
+    "weight_lbs": 2800
+  },
+  "engine": {
+    "horsepower": 217.0,
+    "torque_lbft": 243.0,
+    "displacement_cc": 2479,
+    "configuration": "I4",
+    "aspiration": "turbo"
+  },
+  "drivetrain": "rwd",
+  "tier": 3,
+  "price": 50000,
+  "rarity": "uncommon",
+  "cosmetics": {
+    "default_color": "#8B0000",
+    "available_colors": ["#8B0000", "#FFFFFF", "#000000", "#C0C0C0", "#191970", "#FFD700"]
+  },
+  "special_traits": ["turbo", "transaxle", "balanced"],
+  "lore": "For decades, the 944 was the Porsche you bought when you couldn't afford a 911. Now the 911 crowd is buying 944 Turbos because they realized what the engineers knew all along — the transaxle cars are better balanced. Funny how that works.",
+  "category": "Euro"
+}

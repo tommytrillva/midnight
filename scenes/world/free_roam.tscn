@@ -1,0 +1,166 @@
+[gd_scene load_steps=6 format=3 uid="uid://free_roam"]
+
+[ext_resource type="Script" path="res://src/world/free_roam.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://downtown" path="res://scenes/world/downtown.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://free_roam_hud" path="res://scenes/hud/free_roam_hud.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://dialogue_ui" path="res://scenes/dialogue/dialogue_ui.tscn" id="4"]
+[ext_resource type="Script" path="res://scenes/garage/garage_ui.gd" id="5"]
+
+[node name="FreeRoam" type="Node3D"]
+script = ExtResource("1")
+
+[node name="Downtown" parent="." instance=ExtResource("2")]
+
+[node name="FreeRoamHUD" parent="." instance=ExtResource("3")]
+
+[node name="DialogueUI" parent="." instance=ExtResource("4")]
+
+[node name="GarageUI" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("5")
+
+[node name="Background" type="ColorRect" parent="GarageUI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.03, 0.01, 0.06, 0.9)
+
+[node name="Title" type="Label" parent="GarageUI"]
+layout_mode = 1
+offset_left = 40.0
+offset_top = 20.0
+offset_right = 400.0
+offset_bottom = 50.0
+text = "TORRES GARAGE"
+
+[node name="VehicleName" type="Label" parent="GarageUI"]
+layout_mode = 1
+offset_left = 40.0
+offset_top = 60.0
+offset_right = 400.0
+offset_bottom = 85.0
+text = "Vehicle"
+
+[node name="StatsPanel" type="VBoxContainer" parent="GarageUI"]
+layout_mode = 1
+offset_left = 40.0
+offset_top = 100.0
+offset_right = 300.0
+offset_bottom = 350.0
+theme_override_constants/separation = 6
+
+[node name="SpeedStat" type="Label" parent="GarageUI/StatsPanel"]
+layout_mode = 2
+text = "SPEED: 0"
+
+[node name="AccelStat" type="Label" parent="GarageUI/StatsPanel"]
+layout_mode = 2
+text = "ACCEL: 0"
+
+[node name="HandlingStat" type="Label" parent="GarageUI/StatsPanel"]
+layout_mode = 2
+text = "HANDLING: 0"
+
+[node name="BrakingStat" type="Label" parent="GarageUI/StatsPanel"]
+layout_mode = 2
+text = "BRAKING: 0"
+
+[node name="HPStat" type="Label" parent="GarageUI/StatsPanel"]
+layout_mode = 2
+text = "HP: 0"
+
+[node name="WeightStat" type="Label" parent="GarageUI/StatsPanel"]
+layout_mode = 2
+text = "WEIGHT: 0 KG"
+
+[node name="WearStat" type="Label" parent="GarageUI/StatsPanel"]
+layout_mode = 2
+text = "WEAR: 0%"
+
+[node name="DamageStat" type="Label" parent="GarageUI/StatsPanel"]
+layout_mode = 2
+text = "DAMAGE: 0%"
+
+[node name="PartsList" type="VBoxContainer" parent="GarageUI"]
+layout_mode = 1
+offset_left = 350.0
+offset_top = 60.0
+offset_right = 700.0
+offset_bottom = 500.0
+theme_override_constants/separation = 4
+
+[node name="PartsTitle" type="Label" parent="GarageUI/PartsList"]
+layout_mode = 2
+text = "INSTALLED PARTS"
+
+[node name="PartsScroll" type="ScrollContainer" parent="GarageUI/PartsList"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 400)
+
+[node name="PartSlots" type="VBoxContainer" parent="GarageUI/PartsList/PartsScroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 2
+
+[node name="ShopPanel" type="VBoxContainer" parent="GarageUI"]
+visible = false
+layout_mode = 1
+offset_left = 720.0
+offset_top = 60.0
+offset_right = 1050.0
+offset_bottom = 500.0
+theme_override_constants/separation = 4
+
+[node name="ShopTitle" type="Label" parent="GarageUI/ShopPanel"]
+layout_mode = 2
+text = "AVAILABLE PARTS"
+
+[node name="ShopScroll" type="ScrollContainer" parent="GarageUI/ShopPanel"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 400)
+
+[node name="ShopItems" type="VBoxContainer" parent="GarageUI/ShopPanel/ShopScroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 2
+
+[node name="CashLabel" type="Label" parent="GarageUI"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -200.0
+offset_top = 20.0
+offset_bottom = 45.0
+grow_horizontal = 0
+text = "$0"
+horizontal_alignment = 2
+
+[node name="Buttons" type="HBoxContainer" parent="GarageUI"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = -60.0
+offset_right = -40.0
+offset_bottom = -20.0
+theme_override_constants/separation = 20
+
+[node name="RepairBtn" type="Button" parent="GarageUI/Buttons"]
+layout_mode = 2
+text = "REPAIR"
+
+[node name="ServiceBtn" type="Button" parent="GarageUI/Buttons"]
+layout_mode = 2
+text = "SERVICE"
+
+[node name="ExitBtn" type="Button" parent="GarageUI/Buttons"]
+layout_mode = 2
+text = "EXIT GARAGE"

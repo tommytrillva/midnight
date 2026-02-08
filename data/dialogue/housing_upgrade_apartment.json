@@ -1,0 +1,43 @@
+{
+  "id": "housing_upgrade_apartment",
+  "context": "Moving into a real downtown apartment. Two rooms, neon views, arriving in life.",
+  "lines": [
+    {
+      "type": "narration",
+      "text": "First night in a place with two rooms. You open both doors just because you can."
+    },
+    {
+      "type": "narration",
+      "text": "The living room faces the street. Through the window, neon signs pulse — a bar called AFTER HOURS bathes your ceiling in hot pink every three seconds."
+    },
+    {
+      "type": "narration",
+      "text": "The parking garage underneath has space for three cars. Three. You remember when you didn't have one that ran."
+    },
+    {
+      "type": "narration",
+      "text": "You stand at the window and watch the city you're learning to own. A text comes through."
+    },
+    {
+      "speaker": "maya",
+      "portrait": "maya_phone",
+      "text": "Heard you upgraded. Fancy. Don't forget where you came from."
+    },
+    {
+      "type": "narration",
+      "text": "You look at the neon. Pink. Blue. Pink again."
+    },
+    {
+      "type": "narration",
+      "text": "You couldn't forget if you tried."
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "downtown_apartment",
+        "value": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,223 @@
+{
+  "id": "mechanics_gamble_win",
+  "context": "Act 1 Chapter 1.1 — Won the Mechanic's Gamble against Preston Wells",
+  "lines": [
+    {
+      "type": "narration",
+      "text": "Silence. For one impossible moment, the entire Pit holds its breath."
+    },
+    {
+      "type": "narration",
+      "text": "Then the noise hits you like a wall. The CRX crosses the line and the crowd erupts — not in celebration, but in disbelief. The CRX beat the 911. The nobody beat Preston Wells."
+    },
+    {
+      "type": "narration",
+      "text": "You coast to a stop. Your hands won't unclench from the wheel. The engine ticks. Smoke curls from your front brakes. Every joint in your body aches."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Pit Boss",
+      "portrait": "pit_boss_amused",
+      "text": "Well, I'll be damned."
+    },
+    {
+      "type": "narration",
+      "text": "The Pit Boss stands at the line, counting the spread on his stopwatch. He looks at you, looks at the CRX, and shakes his head like he's witnessing a miracle he doesn't believe in."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Pit Boss",
+      "portrait": "pit_boss_neutral",
+      "text": "Point-six seconds. In a CRX. Against a GT3."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Pit Boss",
+      "portrait": "pit_boss_amused",
+      "text": "Somebody write that down. Nobody's gonna believe it."
+    },
+    {
+      "type": "narration",
+      "text": "The 911 rolls across the line. Slow. The engine sounds wrong — defeated. The door swings open and Preston Wells unfolds from the cockpit, face the color of raw meat."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Preston Wells",
+      "portrait": "preston_angry",
+      "text": "That's BULLSHIT!"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Preston Wells",
+      "portrait": "preston_angry",
+      "text": "No way that heap beat me clean. No WAY. Check the car. Something's wrong with my car!"
+    },
+    {
+      "type": "narration",
+      "text": "He kicks his own tire. The crowd watches, delighted. There's nothing the scene loves more than a rich man losing his composure."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_cold",
+      "text": "Keys."
+    },
+    {
+      "type": "narration",
+      "text": "Maya steps forward. Her voice is flat. Her hand is out. She's not celebrating. She's collecting."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_cold",
+      "text": "The title, the registration, and the keys. That was the deal, Preston. Unless your word is as cheap as your taste."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Preston Wells",
+      "portrait": "preston_angry",
+      "text": "This isn't over, Torres. Not by a long shot."
+    },
+    {
+      "type": "narration",
+      "text": "He slams the keys into her palm hard enough to leave a mark. Pulls the title from his glovebox. Shoves through the crowd toward a waiting black car — his driver, his escape hatch. Preston Wells always has an exit strategy."
+    },
+    {
+      "type": "narration",
+      "text": "Maya stands there, keys in hand, staring at the 911. Her 911, now."
+    },
+    {
+      "label": "sabotage_aftermath",
+      "type": "narration",
+      "text": "But she's not smiling. She's quiet. Too quiet. The keys hang in her grip like they weigh a hundred pounds.",
+      "condition": {
+        "type": "has_flag",
+        "flag": "preston_sabotage"
+      }
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_pained",
+      "text": "He was right.",
+      "condition": {
+        "type": "has_flag",
+        "flag": "preston_sabotage"
+      }
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_pained",
+      "text": "Something was wrong with his car. Because we made it wrong.",
+      "condition": {
+        "type": "has_flag",
+        "flag": "preston_sabotage"
+      }
+    },
+    {
+      "type": "narration",
+      "text": "She pockets the keys. Won't look at you.",
+      "condition": {
+        "type": "has_flag",
+        "flag": "preston_sabotage"
+      }
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_pained",
+      "text": "Don't ever ask me to do that again. And don't ever let me offer.",
+      "condition": {
+        "type": "has_flag",
+        "flag": "preston_sabotage"
+      },
+      "jump_to": "scene_end"
+    },
+    {
+      "label": "clean_aftermath",
+      "type": "narration",
+      "text": "Maya turns the keys over in her hand. Once. Twice. Then she looks at you and something breaks through — just for a second.",
+      "condition": {
+        "type": "has_flag",
+        "flag": "sabotage_refused"
+      }
+    },
+    {
+      "type": "narration",
+      "text": "A smile. Small. Real. The kind she doesn't let people see.",
+      "condition": {
+        "type": "has_flag",
+        "flag": "sabotage_refused"
+      }
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_impressed",
+      "text": "That driving in the technical section — turns four through nine — you carried speed through apexes I didn't think the CRX could handle.",
+      "condition": {
+        "type": "has_flag",
+        "flag": "sabotage_refused"
+      }
+    },
+    {
+      "type": "narration",
+      "text": "She catches herself. The smile vanishes. The walls go back up.",
+      "condition": {
+        "type": "has_flag",
+        "flag": "sabotage_refused"
+      }
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_neutral",
+      "text": "It was adequate.",
+      "condition": {
+        "type": "has_flag",
+        "flag": "sabotage_refused"
+      }
+    },
+    {
+      "type": "narration",
+      "text": "Adequate. From Maya Torres, that's a standing ovation.",
+      "condition": {
+        "type": "has_flag",
+        "flag": "sabotage_refused"
+      }
+    },
+    {
+      "label": "scene_end",
+      "type": "narration",
+      "text": "The crowd disperses. The Pit empties. Under the floodlights, the CRX and the 911 sit side by side — the car that shouldn't have won, and the car that was never supposed to lose."
+    },
+    {
+      "type": "narration",
+      "text": "Tomorrow, the whole scene will be talking. The nobody in the CRX who took Preston Wells for his pink slip. Your name just became currency in Nova Pacifica."
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "mechanics_gamble_won",
+        "value": true
+      }
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "give_rep",
+        "amount": 25
+      }
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "owns_porsche_911",
+        "value": true
+      }
+    }
+  ]
+}

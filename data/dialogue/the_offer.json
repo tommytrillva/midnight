@@ -1,0 +1,256 @@
+{
+  "id": "the_offer",
+  "context": "Act 2A Chapter 2.3 — Competing sponsor approaches. Betray Apex for more money? Jade finds out. Trust broken or loyalty proven.",
+  "lines": [
+    {
+      "type": "narration",
+      "text": "A black envelope appears under your hotel room door after the third race. No name on it. Inside: a card with embossed gold lettering and a number that has too many zeros."
+    },
+    {
+      "type": "narration",
+      "text": "Meridian Motorsport. The card reads: 'We'd like to discuss your future. Suite 1401. 9 PM. Come alone.'"
+    },
+    {
+      "type": "narration",
+      "text": "Suite 1401 is the penthouse. You take the elevator because curiosity is a stronger force than loyalty."
+    },
+    {
+      "type": "narration",
+      "text": "Victor Calloway. CEO of Meridian Motorsport. Silver hair, silver tongue, a smile that has probably ended careers and started wars. He greets you at the door with a handshake and a whiskey."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Calloway",
+      "portrait": "calloway_charming",
+      "text": "I'll cut to it. I didn't get where I am by wasting talented people's time."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Calloway",
+      "portrait": "calloway_charming",
+      "text": "Your Apex contract pays you — what — two hundred thousand a year? Plus performance bonuses? Nice money for a kid from the underground. Life-changing, even."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Calloway",
+      "portrait": "calloway_charming",
+      "text": "Meridian will pay you one point five million. Per season. Three-year guaranteed. Your own engineering team. Choice of car. Full creative control over your racing strategy."
+    },
+    {
+      "type": "narration",
+      "text": "He sets a contract on the table. The numbers blur together — signing bonus, performance escalators, image rights, a housing allowance that exceeds the annual GDP of some small islands."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Calloway",
+      "portrait": "calloway_charming",
+      "text": "And between us — we don't manage our drivers the way Apex does. No leash. No team orders. You race for yourself, and Meridian takes a percentage of the glory. Simple."
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "I'm flattered, but I have a contract with Apex. And loyalty to Jade.",
+          "choice_id": "offer_refuse_loyal",
+          "relationship_changes": {"jade": 15},
+          "moral_shift": 15,
+          "set_flags": {"refused_meridian": true, "loyalty_to_jade": true},
+          "jump_to": "calloway_disappointed"
+        },
+        {
+          "text": "Tell me more. What's the catch?",
+          "choice_id": "offer_consider",
+          "relationship_changes": {},
+          "moral_shift": -5,
+          "set_flags": {"considering_meridian": true},
+          "jump_to": "calloway_details"
+        },
+        {
+          "text": "I'll think about it. Give me a week.",
+          "choice_id": "offer_delay",
+          "relationship_changes": {},
+          "moral_shift": 0,
+          "set_flags": {"meridian_pending": true},
+          "jump_to": "calloway_patient"
+        }
+      ]
+    },
+    {
+      "label": "calloway_disappointed",
+      "type": "dialogue",
+      "speaker": "Calloway",
+      "portrait": "calloway_neutral",
+      "text": "Loyalty. That's a rare commodity in this business. I respect it, even when it costs me."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Calloway",
+      "portrait": "calloway_charming",
+      "text": "But let me ask you something — has your loyalty to Jade earned you the truth? Do you know everything about how that organization operates?"
+    },
+    {
+      "type": "narration",
+      "text": "The question lands like a punch you didn't see coming. Because you don't know. Not everything. The spreadsheet, the fixed races, the things that happen in dark conference rooms — Jade might not know either, or she might know everything."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Calloway",
+      "portrait": "calloway_neutral",
+      "text": "The offer stands. My door is always open for people who drive the way you do.",
+      "jump_to": "jade_finds_out"
+    },
+    {
+      "label": "calloway_details",
+      "type": "dialogue",
+      "speaker": "Calloway",
+      "portrait": "calloway_charming",
+      "text": "No catch. The catch is Apex. They'll fight the transfer. They'll invoke the non-compete clause in your contract. It'll get ugly — lawyers, press, the whole circus."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Calloway",
+      "portrait": "calloway_charming",
+      "text": "Meridian's legal team has already reviewed your contract. There's a termination clause — if Apex fails to provide 'competitive equipment as defined in Appendix C,' the contract voids. And between us, their car is half a second slower than ours. We can make the case."
+    },
+    {
+      "type": "narration",
+      "text": "He is handing you a weapon wrapped in a contract. All you have to do is point it at Jade and pull the trigger.",
+      "jump_to": "jade_finds_out"
+    },
+    {
+      "label": "calloway_patient",
+      "type": "dialogue",
+      "speaker": "Calloway",
+      "portrait": "calloway_charming",
+      "text": "Take two. I'm a patient man when the investment is worth it."
+    },
+    {
+      "type": "narration",
+      "text": "He walks you to the door. His handshake is warm, confident, the handshake of a man who knows that time is on his side.",
+      "jump_to": "jade_finds_out"
+    },
+    {
+      "label": "jade_finds_out",
+      "type": "narration",
+      "text": "Two days later. Jade's office. She does not invite you to sit down."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_cold",
+      "text": "Meridian. Suite 1401. Nine PM. Tuesday."
+    },
+    {
+      "type": "narration",
+      "text": "She knows. Of course she knows. Jade Winters has eyes in every hotel, every lounge, every elevator in this circuit. Information is oxygen to her."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_cold",
+      "text": "I'm not going to ask what Calloway offered you. I can guess. He's been poaching Apex talent for a decade. The pitch never changes — more money, more freedom, less management.",
+      "conditions": {"refused_meridian": false}
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_cold",
+      "text": "What he doesn't tell you is that Meridian drivers burn out in two seasons because nobody manages them. They crash harder, they recover slower, and when they stop winning, Calloway drops them like a dead phone.",
+      "conditions": {"refused_meridian": false}
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_professional",
+      "text": "I know about Calloway's approach. I also know you turned him down.",
+      "conditions": {"refused_meridian": true}
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_vulnerable",
+      "text": "I'm not going to pretend that doesn't mean something to me. In this business, loyalty is a choice, not a reflex. And you chose.",
+      "conditions": {"refused_meridian": true}
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "I turned him down because I believe in what we're building here.",
+          "choice_id": "offer_jade_loyal_response",
+          "relationship_changes": {"jade": 10},
+          "moral_shift": 5,
+          "conditions": {"refused_meridian": true},
+          "jump_to": "jade_trusts"
+        },
+        {
+          "text": "I'm still here, Jade. That should tell you everything.",
+          "choice_id": "offer_jade_reassure",
+          "relationship_changes": {"jade": 5},
+          "moral_shift": 0,
+          "conditions": {"refused_meridian": false},
+          "jump_to": "jade_watches"
+        },
+        {
+          "text": "Maybe I should have taken it. At least Meridian doesn't fix races.",
+          "choice_id": "offer_jade_confrontation",
+          "relationship_changes": {"jade": -15},
+          "moral_shift": 5,
+          "conditions": {"corruption_discovered": true},
+          "jump_to": "jade_stunned"
+        }
+      ]
+    },
+    {
+      "label": "jade_trusts",
+      "type": "narration",
+      "text": "Something shifts in Jade's face. The corporate mask cracks — not all the way, just enough for you to see the person underneath. The one who gave up racing. The one who told you her story in a hotel bar."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_vulnerable",
+      "text": "Then let's win this thing. Together.",
+      "jump_to": "offer_end"
+    },
+    {
+      "label": "jade_watches",
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_professional",
+      "text": "Being here and being committed are two different things. Show me commitment on the track. That's the only language I trust.",
+      "jump_to": "offer_end"
+    },
+    {
+      "label": "jade_stunned",
+      "type": "narration",
+      "text": "The room goes cold. Jade's face empties — completely empties — like someone turned off the lights behind her eyes."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_cold",
+      "text": "What did you just say?"
+    },
+    {
+      "type": "narration",
+      "text": "The silence stretches. She is deciding whether to lie to you, and you can watch the decision happen in real time."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_pained",
+      "text": "I am handling it. In my way. On my timeline. And if you trust nothing else about me, trust this: I didn't know until recently. And it makes me sick.",
+      "jump_to": "offer_end"
+    },
+    {
+      "label": "offer_end",
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "the_offer_complete",
+        "value": true
+      }
+    }
+  ]
+}

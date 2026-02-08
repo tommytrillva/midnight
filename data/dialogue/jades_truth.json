@@ -1,0 +1,304 @@
+{
+  "id": "jades_truth",
+  "context": "Act 2A Chapter 2.1 — Late night hotel bar. Jade drops the corporate mask. Her background, dreams, compromises. Real connection forming.",
+  "lines": [
+    {
+      "type": "narration",
+      "text": "The Apex Grand Hotel. Twenty-second floor bar. The kind of place where the drinks don't have prices on the menu because if you have to ask, you can't afford to be here."
+    },
+    {
+      "type": "narration",
+      "text": "It is 1:47 AM. The bar is empty except for the bartender, a jazz pianist playing for nobody, and Jade Winters sitting at the far end with a glass of whiskey and her shoes on the floor beside her stool."
+    },
+    {
+      "type": "narration",
+      "text": "Without her heels, she is shorter than you expected. Without her corporate armor — the blazer draped over the next stool, the collar loosened — she looks younger. More human. Less weapon."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_casual",
+      "text": "Couldn't sleep either?"
+    },
+    {
+      "type": "narration",
+      "text": "She gestures to the stool beside her. There is already a drink waiting."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_casual",
+      "text": "I ordered you one when I saw you in the elevator lobby. Call it manager's intuition."
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "How did you know I'd come down?",
+          "choice_id": "jade_how_know",
+          "relationship_changes": {"jade": 3},
+          "moral_shift": 0,
+          "jump_to": "jade_knows"
+        },
+        {
+          "text": "You look different without the armor.",
+          "choice_id": "jade_different",
+          "relationship_changes": {"jade": 5},
+          "moral_shift": 0,
+          "jump_to": "jade_armor"
+        },
+        {
+          "text": "Thanks. Long day.",
+          "choice_id": "jade_simple",
+          "relationship_changes": {"jade": 2},
+          "moral_shift": 0,
+          "jump_to": "jade_long_day"
+        }
+      ]
+    },
+    {
+      "label": "jade_knows",
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_casual",
+      "text": "Because you're the kind of person who doesn't sleep after their first real race. The adrenaline doesn't know where to go when the engine stops. I remember the feeling."
+    },
+    {
+      "type": "narration",
+      "text": "She takes a sip of whiskey. Her eyes are distant — focused on something between the glass and the window.",
+      "jump_to": "jade_opens_up"
+    },
+    {
+      "label": "jade_armor",
+      "type": "narration",
+      "text": "Something crosses her face. Not offense — surprise. Like no one has said that to her in a very long time."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_vulnerable",
+      "text": "The armor weighs about forty pounds. Figuratively. You'd be amazed how heavy a smile can be when you've been wearing it for twelve hours.",
+      "jump_to": "jade_opens_up"
+    },
+    {
+      "label": "jade_long_day",
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_casual",
+      "text": "Long day. Long year. Long career."
+    },
+    {
+      "type": "narration",
+      "text": "She swirls the whiskey. The ice clinks against the glass. It is a lonely sound.",
+      "jump_to": "jade_opens_up"
+    },
+    {
+      "label": "jade_opens_up",
+      "type": "narration",
+      "text": "Silence. Comfortable silence, the kind that only exists between people who both know what it feels like to push a car past what it should be capable of."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_vulnerable",
+      "text": "I didn't always work for Apex."
+    },
+    {
+      "type": "narration",
+      "text": "She says it quietly. Like she is testing the words — seeing if they still sound true."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_vulnerable",
+      "text": "I used to race. Did you know that? I was good, too. Not great — I didn't have the thing you have, that ability to feel the car like it's part of your body. But I was smart. Strategic."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_vulnerable",
+      "text": "I started in endurance racing. Semi-pro, weekend events, sleeping in the back of my car between stages. For three years, I was happy. Broke, but happy."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_pained",
+      "text": "Then Apex approached me. Not to drive — to manage. They saw something in the way I analyzed races, the way I understood the business side. They offered me a salary that made my driving income look like pocket change."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_pained",
+      "text": "I said no. Three times. I was a driver. That's who I was."
+    },
+    {
+      "type": "narration",
+      "text": "She finishes the whiskey. Sets the glass down. Does not order another."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_pained",
+      "text": "The fourth time, they offered me enough to pay off my mother's medical debt. All of it. In one contract."
+    },
+    {
+      "type": "narration",
+      "text": "She looks at the empty glass."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_vulnerable",
+      "text": "I haven't been behind a wheel in seven years. Sometimes I dream about it. The engine note, the G-force in the corners, the way the world narrows to just the road and the car and the next apex."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_vulnerable",
+      "text": "Then I wake up in a hotel room and check my email and the dream evaporates. Like exhaust."
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "You gave up your dream to save your mother. That's not a compromise — that's love.",
+          "choice_id": "jade_compassion",
+          "relationship_changes": {"jade": 15},
+          "moral_shift": 10,
+          "set_flags": {"jade_connection_deep": true},
+          "jump_to": "jade_moved"
+        },
+        {
+          "text": "Do you regret it?",
+          "choice_id": "jade_regret",
+          "relationship_changes": {"jade": 8},
+          "moral_shift": 0,
+          "jump_to": "jade_regret_answer"
+        },
+        {
+          "text": "It's not too late. You could still race.",
+          "choice_id": "jade_still_race",
+          "relationship_changes": {"jade": 10},
+          "moral_shift": 5,
+          "set_flags": {"jade_inspired": true},
+          "jump_to": "jade_still_race_response"
+        }
+      ]
+    },
+    {
+      "label": "jade_moved",
+      "type": "narration",
+      "text": "Jade goes very still. Her hand on the bar tightens. For a moment, you think she might cry. She doesn't — she's had too much practice not crying — but the effort is visible."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_vulnerable",
+      "text": "Nobody's ever described it that way before. Most people say I made the smart choice."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_vulnerable",
+      "text": "Smart. Like love is a calculation.",
+      "jump_to": "jade_closing"
+    },
+    {
+      "label": "jade_regret_answer",
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_vulnerable",
+      "text": "Every single day."
+    },
+    {
+      "type": "narration",
+      "text": "She says it without hesitation. The fastest answer she has given all night."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_vulnerable",
+      "text": "And every single day, I know I'd do it again. That's the worst part — not the regret. The certainty.",
+      "jump_to": "jade_closing"
+    },
+    {
+      "label": "jade_still_race_response",
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_sad_smile",
+      "text": "You sound like me at twenty-five. Full of the belief that wanting something is enough to make it possible."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_vulnerable",
+      "text": "But you know what? Maybe that's why I recruited you. Not because you're the fastest — though you might be. Because you still believe the dream is the destination. I need to be around that. Even if I can't feel it myself anymore.",
+      "jump_to": "jade_closing"
+    },
+    {
+      "label": "jade_closing",
+      "type": "narration",
+      "text": "The pianist finishes his set. The last note hangs in the air like smoke."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_casual",
+      "text": "I don't usually talk like this. The whiskey, the hour, the — I don't know. Something about you makes me forget the script."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_professional",
+      "text": "Don't tell anyone I said any of this. I have a reputation to maintain."
+    },
+    {
+      "type": "narration",
+      "text": "She puts her shoes back on. The two inches of heel restore the Jade you met on Media Day — the corporate weapon, the brand manager, the woman who controls rooms with a glance."
+    },
+    {
+      "type": "narration",
+      "text": "But now you know who's underneath. And that changes everything."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_professional",
+      "text": "Early start tomorrow. Get some sleep."
+    },
+    {
+      "type": "narration",
+      "text": "She walks to the elevator. Pauses."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_vulnerable",
+      "text": "Thank you. For listening. Most people in this world don't listen — they just wait for their turn to talk."
+    },
+    {
+      "type": "narration",
+      "text": "The elevator doors close. You sit alone at the bar, watching the city lights through the window. Nova Pacifica at night, from twenty-two floors up, looks like a circuit board."
+    },
+    {
+      "type": "narration",
+      "text": "Somewhere down there, Maya is closing the garage. Diesel is nursing a drink in a bar that doesn't have a jazz pianist. The Pit is coming alive."
+    },
+    {
+      "type": "narration",
+      "text": "And up here, a woman who gave up her dream to save someone she loved just showed you the crack in her armor."
+    },
+    {
+      "type": "narration",
+      "text": "You finish your drink and take the stairs. The elevator feels too easy."
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "jades_truth_known",
+        "value": true
+      }
+    }
+  ]
+}

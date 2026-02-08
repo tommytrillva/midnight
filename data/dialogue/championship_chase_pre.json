@@ -1,0 +1,174 @@
+{
+  "id": "championship_chase_pre",
+  "context": "Act 2A Chapter 2.3 — Five-race professional championship series setup. Stakes, competitors, what winning means.",
+  "lines": [
+    {
+      "type": "narration",
+      "text": "Apex Racing Facility. The war room. Screens cover every wall — circuit maps, competitor analyses, weather forecasts, tire degradation models. It looks like mission control for a space launch."
+    },
+    {
+      "type": "narration",
+      "text": "Jade stands at the center, a pointer in one hand and a coffee in the other. She has not slept. You can tell because her coffee is the large size, and Jade Winters only drinks the large size when the stakes are large enough to match."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_professional",
+      "text": "Pacific Rim Championship. Five races. Five circuits. Five weeks. The most prestigious series in Asia-Pacific professional racing."
+    },
+    {
+      "type": "narration",
+      "text": "She clicks the screen. Five tracks appear — each one a snake of turns and straights that you could spend a lifetime memorizing."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_professional",
+      "text": "Race one: Nova Pacifica International. Home turf. Race two: the Kuala Lumpur sprint. Race three: Tokyo Bay Circuit. Race four: Sydney superspeedway. Race five: the Singapore night race under lights."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_professional",
+      "text": "Points system. Consistency wins championships — not heroics. Top five in every race gets us the title. Top three and we make history."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Henrik",
+      "portrait": "henrik_neutral",
+      "text": "The field is strong this year. Kessler Racing has three cars — including Nikko Tanaka. Meridian Motorsport brought in two European ringers. And Yoshida Racing has Takeshi Murakami, who hasn't lost in Singapore in four years."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_professional",
+      "text": "Apex has never won this championship. In fifteen years of competition, the best we've managed is second. The board wants first. The sponsors need first. I want first."
+    },
+    {
+      "type": "narration",
+      "text": "She looks at you and Henrik in turn."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_professional",
+      "text": "You two are the best pairing this team has ever fielded. Henrik's consistency. Your speed. If you work together — really work together — nobody can match us."
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "I'll win it for the team.",
+          "choice_id": "champ_team_player",
+          "relationship_changes": {"jade": 5, "henrik": 5},
+          "moral_shift": 0,
+          "jump_to": "team_strategy"
+        },
+        {
+          "text": "I'll win it for myself. The team benefits either way.",
+          "choice_id": "champ_individual",
+          "relationship_changes": {"jade": -3, "henrik": -5},
+          "moral_shift": -5,
+          "jump_to": "jade_corrects"
+        },
+        {
+          "text": "Tell me about Nikko's setup. If he's in this, I need to know what I'm facing.",
+          "choice_id": "champ_study_nikko",
+          "relationship_changes": {"nikko": 0},
+          "moral_shift": 0,
+          "set_flags": {"studied_nikko_championship": true},
+          "jump_to": "nikko_intel"
+        }
+      ]
+    },
+    {
+      "label": "team_strategy",
+      "type": "dialogue",
+      "speaker": "Henrik",
+      "portrait": "henrik_neutral",
+      "text": "Good. Then here's the strategy: I'll manage the early laps, hold position, conserve tires. You push hard in the middle stint. We swap roles based on track position. Whoever is ahead gets team priority on the final lap."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_happy",
+      "text": "That's what I like to hear. Two drivers, one goal.",
+      "jump_to": "championship_stakes"
+    },
+    {
+      "label": "jade_corrects",
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_cold",
+      "text": "Let me be clear about something. If you win and Henrik finishes eighth because you blocked him or refused to let him through when the team needed it — that's not a victory. That's a liability."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_professional",
+      "text": "Your talent got you here. Teamwork keeps you here. Understood?",
+      "jump_to": "championship_stakes"
+    },
+    {
+      "label": "nikko_intel",
+      "type": "dialogue",
+      "speaker": "Henrik",
+      "portrait": "henrik_neutral",
+      "text": "Kessler gave him a car that's fast on straights but compromised in slow corners. They're betting on his aggression to make up the difference. It's a street racer's car in a professional series."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_thoughtful",
+      "text": "Nikko is dangerous because he doesn't race the way professionals race. He races the way you used to race — on instinct, on emotion. That makes him unpredictable.",
+      "jump_to": "championship_stakes"
+    },
+    {
+      "label": "championship_stakes",
+      "type": "narration",
+      "text": "Jade kills the screens. The room goes dark except for the glow of her tablet."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_vulnerable",
+      "text": "One more thing. Off the record."
+    },
+    {
+      "type": "narration",
+      "text": "She glances at the door, making sure it is closed."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_vulnerable",
+      "text": "If we win this championship, the board has agreed to give me a seat at the table. Full partnership. It's been fifteen years of managing drivers, building brands, sacrificing everything — and this is the finish line."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_vulnerable",
+      "text": "I'm not telling you this to put pressure on you. I'm telling you because you deserve to know what's at stake for everyone in this room."
+    },
+    {
+      "type": "narration",
+      "text": "Henrik nods. He already knew. Of course he did."
+    },
+    {
+      "type": "narration",
+      "text": "Five races. Five weeks. A championship that's eluded Apex for fifteen years, a rivalry with Nikko that started in underground parking garages, and the future of a woman who gave up her own driving dream to build dreams for others."
+    },
+    {
+      "type": "narration",
+      "text": "No pressure."
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "championship_chase_briefed",
+        "value": true
+      }
+    }
+  ]
+}

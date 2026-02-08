@@ -1,0 +1,52 @@
+{
+  "vehicle_id": "chevy_camaro_z28",
+  "display_name": "1998 Chevrolet Camaro Z28",
+  "manufacturer": "Chevrolet",
+  "year": 1998,
+  "body_style": "coupe",
+  "category": "Muscle",
+  "culture": "american",
+  "tier": 2,
+  "rarity": "common",
+  "description": "The fourth-gen Z28 is one of the best performance bargains ever made. An LS1 V8 making 305 horsepower in a car that nobody respects because of its catfish face. That disrespect is your advantage — it's faster than it has any right to be.",
+  "lore": "LS1 power, catfish looks. Everyone laughs at the droopy headlights until the light goes green. The LS1 is bulletproof, the T56 six-speed shifts clean, and the car runs 13s bone stock. Let them keep laughing.",
+
+  "base_stats": {
+    "top_speed": 72.0,
+    "acceleration": 62.0,
+    "handling": 42.0,
+    "braking": 45.0,
+    "nitro_capacity": 48.0,
+    "weight_kg": 1542.0
+  },
+
+  "engine": {
+    "code": "LS1",
+    "horsepower": 305.0,
+    "torque_lbft": 335.0,
+    "displacement_cc": 5665,
+    "configuration": "V8",
+    "aspiration": "naturally_aspirated",
+    "valvetrain": "OHV 16V",
+    "redline_rpm": 6000
+  },
+
+  "drivetrain": "rwd",
+  "price": 19000,
+  "class": "B",
+
+  "cosmetics": {
+    "available_colors": ["sebring_silver", "black", "bright_red", "navy_blue_metallic"],
+    "body_kits": ["stock", "ss_ground_effects", "slp_firehawk", "custom_widebody"],
+    "spoiler_options": ["none", "factory_z28", "ss_wing", "slp_firehawk_rear"],
+    "wheel_options": ["stock_z28_16", "ss_17", "weld_s71_17", "american_racing_torq_thrust_ii_17"]
+  },
+
+  "special_traits": ["ls_power", "drag_potential"],
+
+  "mod_potential": {
+    "engine_swaps": ["ls2", "ls3", "lsx_454"],
+    "max_hp_potential": 900,
+    "upgrade_ceiling": "S"
+  }
+}

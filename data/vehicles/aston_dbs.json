@@ -1,0 +1,40 @@
+{
+  "vehicle_id": "aston_dbs",
+  "display_name": "2019 Aston Martin DBS Superleggera",
+  "manufacturer": "Aston Martin",
+  "year": 2019,
+  "body_style": "coupe",
+  "category": "Hyper",
+  "culture": "euro",
+  "tier": 6,
+  "rarity": "epic",
+  "description": "A V12 grand tourer with 715 horsepower and the kind of presence that makes valet attendants suddenly remember their manners. The DBS Superleggera is Aston Martin's flagship — brutal power wrapped in bespoke British luxury.",
+  "lore": "Superleggera — Italian for 'super light' — is a construction technique Aston Martin borrowed from the coachbuilding era. The carbon fiber body panels drape over an aluminum chassis, keeping weight manageable despite the massive 5.2-liter twin-turbo V12 up front. It's 715 horsepower of refined violence, the kind of car that crosses continents at 200 mph while keeping your champagne properly chilled.",
+
+  "base_stats": {
+    "top_speed": 0.88,
+    "acceleration": 0.86,
+    "handling": 0.83,
+    "braking": 0.84,
+    "nitro_capacity": 0.46,
+    "weight": 1724.0
+  },
+
+  "engine": {
+    "horsepower": 715.0,
+    "torque": 664.0,
+    "displacement": "5.2L",
+    "configuration": "V12",
+    "aspiration": "twin_turbo"
+  },
+
+  "drivetrain": "rwd",
+  "price": 800000,
+
+  "cosmetics": {
+    "default_color": "#191970",
+    "available_colors": ["#191970", "#006400", "#8B0000", "#C0C0C0", "#000000", "#FFFFFF"]
+  },
+
+  "special_traits": ["v12", "twin_turbo", "grand_tourer"]
+}

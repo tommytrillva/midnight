@@ -1,0 +1,52 @@
+{
+  "vehicle_id": "subaru_impreza_wrx",
+  "display_name": "2002 Subaru Impreza WRX",
+  "manufacturer": "Subaru",
+  "year": 2002,
+  "body_style": "sedan",
+  "category": "JDM/Rally",
+  "culture": "jdm",
+  "tier": 2,
+  "rarity": "common",
+  "description": "The bugeye WRX arrived on American shores and immediately changed the game. A turbocharged boxer four sending power to all four wheels, wrapped in a sedan body that your neighbors think is an economy car. Then the boost hits and the boxer rumble shakes windows.",
+  "lore": "Bugeye boxer rumble. The unequal-length headers make a sound that Subaru fans call 'the rumble' — a flat, syncopated heartbeat that marks you as a member of the tribe. Rally heritage in a car you can daily drive. Just check the ringlands.",
+
+  "base_stats": {
+    "top_speed": 66.0,
+    "acceleration": 60.0,
+    "handling": 55.0,
+    "braking": 48.0,
+    "nitro_capacity": 42.0,
+    "weight_kg": 1406.0
+  },
+
+  "engine": {
+    "code": "EJ205",
+    "horsepower": 227.0,
+    "torque_lbft": 217.0,
+    "displacement_cc": 1994,
+    "configuration": "Flat-4",
+    "aspiration": "turbo",
+    "valvetrain": "DOHC 16V",
+    "redline_rpm": 6500
+  },
+
+  "drivetrain": "awd",
+  "price": 22000,
+  "class": "C",
+
+  "cosmetics": {
+    "available_colors": ["wr_blue_pearl", "platinum_silver", "black_granite", "sedona_red"],
+    "body_kits": ["stock", "prodrive", "sti_lip_kit", "chargespeed"],
+    "spoiler_options": ["none", "factory_wrx", "sti_wing", "voltex_gt"],
+    "wheel_options": ["stock_16", "rays_te37_17", "enkei_rpf1_17", "prodrive_gc010e"]
+  },
+
+  "special_traits": ["awd", "turbo", "boxer_rumble", "rally_heritage"],
+
+  "mod_potential": {
+    "engine_swaps": ["ej207_sti", "ej257_sti"],
+    "max_hp_potential": 650,
+    "upgrade_ceiling": "A"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "id": "housing_upgrade_studio",
+  "context": "Moving out of Maya's place into your own studio apartment. Bittersweet independence.",
+  "lines": [
+    {
+      "type": "narration",
+      "text": "Your phone buzzes. Maya."
+    },
+    {
+      "speaker": "maya",
+      "portrait": "maya_phone",
+      "text": "You're moving out?"
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "Got a place near the harbor. Nothing fancy.",
+          "response_speaker": "maya",
+          "response_portrait": "maya_phone",
+          "response": "Near the docks? That area floods in winter. Did you check the ceiling for water stains?",
+          "relationship": {"maya": 0}
+        },
+        {
+          "text": "Yeah. It's time I had my own space.",
+          "response_speaker": "maya",
+          "response_portrait": "maya_phone",
+          "response": "Right. Yeah. That makes sense.",
+          "relationship": {"maya": -5}
+        },
+        {
+          "text": "Don't worry. I'll still be at the shop every day.",
+          "response_speaker": "maya",
+          "response_portrait": "maya_phone",
+          "response": "I wasn't worried. I was just... never mind. Good for you.",
+          "relationship": {"maya": 5}
+        }
+      ]
+    },
+    {
+      "type": "narration",
+      "text": "The studio is small. A bed, a kitchenette, a window overlooking the harbor. The ceiling has water stains. She was right."
+    },
+    {
+      "type": "narration",
+      "text": "You set your keys on the counter. Your keys. Your counter. Your door that locks."
+    },
+    {
+      "type": "narration",
+      "text": "It's the smallest place you've ever had. It feels enormous."
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "has_own_place",
+        "value": true
+      }
+    }
+  ]
+}

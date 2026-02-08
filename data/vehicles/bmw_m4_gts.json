@@ -1,0 +1,41 @@
+{
+  "vehicle_id": "bmw_m4_gts",
+  "display_name": "2016 BMW M4 GTS",
+  "manufacturer": "BMW",
+  "year": 2016,
+  "body_style": "coupe",
+  "category": "Euro/Pro",
+  "culture": "euro",
+  "tier": 5,
+  "rarity": "rare",
+  "description": "Water injection tech. BMW raided the parts bin from their DTM racing program and built a street-legal M4 with water injection, a roll cage, and lap times that make Porsche owners nervous. Limited to 700 units worldwide.",
+  "lore": "The M4 GTS introduced water injection to the automotive world — spraying a fine mist into the intake to cool the charge air and allow more aggressive timing. The result is 493 horsepower from a 3.0-liter inline-six, which BMW paired with a stripped interior, OLED taillights, and an adjustable carbon fiber wing. It's the most extreme road car BMW has ever built.",
+
+  "base_stats": {
+    "top_speed": 0.79,
+    "acceleration": 0.78,
+    "handling": 0.80,
+    "braking": 0.79,
+    "nitro_capacity": 0.38,
+    "weight": 1451.0
+  },
+
+  "engine": {
+    "code": "S55",
+    "horsepower": 493.0,
+    "torque": 442.0,
+    "displacement": "3.0L",
+    "configuration": "I6",
+    "aspiration": "twin_turbo"
+  },
+
+  "drivetrain": "rwd",
+  "price": 310000,
+
+  "cosmetics": {
+    "default_color": "#FF4500",
+    "available_colors": ["#FF4500", "#FFFFFF", "#000000", "#C0C0C0", "#808080", "#1C1C1C"]
+  },
+
+  "special_traits": ["twin_turbo", "water_injection", "track_focused"]
+}

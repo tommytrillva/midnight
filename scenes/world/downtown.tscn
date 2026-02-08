@@ -1,0 +1,385 @@
+[gd_scene load_steps=29 format=3 uid="uid://downtown"]
+
+[ext_resource type="Script" path="res://src/visual/day_night_cycle.gd" id="day_night_cycle_script"]
+
+[sub_resource type="ProceduralSkyMaterial" id="sky_mat"]
+sky_top_color = Color(0.02, 0.01, 0.06, 1)
+sky_horizon_color = Color(0.08, 0.03, 0.15, 1)
+ground_bottom_color = Color(0.02, 0.01, 0.04, 1)
+ground_horizon_color = Color(0.05, 0.02, 0.1, 1)
+
+[sub_resource type="Sky" id="sky"]
+sky_material = SubResource("sky_mat")
+
+[sub_resource type="Environment" id="env"]
+background_mode = 2
+sky = SubResource("sky")
+ambient_light_source = 1
+ambient_light_color = Color(0.08, 0.05, 0.15, 1)
+ambient_light_energy = 0.3
+fog_enabled = true
+fog_light_color = Color(0.05, 0.02, 0.08, 1)
+fog_density = 0.005
+volumetric_fog_enabled = false
+
+[sub_resource type="StandardMaterial3D" id="road_mat"]
+albedo_color = Color(0.15, 0.15, 0.18, 1)
+roughness = 0.9
+
+[node name="Downtown" type="Node3D"]
+
+[node name="WorldEnv" type="WorldEnvironment" parent="."]
+environment = SubResource("env")
+metadata/_groups = ["world_environment"]
+
+[node name="Moonlight" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.866, -0.25, 0.433, 0, 0.866, 0.5, -0.5, -0.433, 0.75, 0, 50, 0)
+light_color = Color(0.4, 0.45, 0.7, 1)
+light_energy = 0.4
+shadow_enabled = true
+metadata/_groups = ["sun_light"]
+
+[node name="Ground" type="StaticBody3D" parent="."]
+collision_layer = 2
+
+[node name="GroundMesh" type="MeshInstance3D" parent="Ground"]
+mesh = SubResource("PlaneMesh_ground")
+material_override = SubResource("ground_mat")
+
+[node name="GroundCollision" type="CollisionShape3D" parent="Ground"]
+shape = SubResource("WorldBoundaryShape3D_ground")
+
+[node name="Roads" type="Node3D" parent="."]
+
+[node name="MainStreet" type="StaticBody3D" parent="Roads"]
+collision_layer = 2
+
+[node name="Mesh" type="MeshInstance3D" parent="Roads/MainStreet"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.02, 0)
+mesh = SubResource("BoxMesh_main_road")
+material_override = SubResource("road_mat")
+
+[node name="Collision" type="CollisionShape3D" parent="Roads/MainStreet"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.02, 0)
+shape = SubResource("BoxShape_main_road")
+
+[node name="CrossStreet" type="StaticBody3D" parent="Roads"]
+collision_layer = 2
+
+[node name="Mesh" type="MeshInstance3D" parent="Roads/CrossStreet"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.02, 0)
+mesh = SubResource("BoxMesh_cross_road")
+material_override = SubResource("road_mat")
+
+[node name="Collision" type="CollisionShape3D" parent="Roads/CrossStreet"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.02, 0)
+shape = SubResource("BoxShape_cross_road")
+
+[node name="LoopNorth" type="StaticBody3D" parent="Roads"]
+collision_layer = 2
+
+[node name="Mesh" type="MeshInstance3D" parent="Roads/LoopNorth"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.02, 200)
+mesh = SubResource("BoxMesh_loop_ns")
+material_override = SubResource("road_mat")
+
+[node name="Collision" type="CollisionShape3D" parent="Roads/LoopNorth"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.02, 200)
+shape = SubResource("BoxShape_loop_ns")
+
+[node name="LoopSouth" type="StaticBody3D" parent="Roads"]
+collision_layer = 2
+
+[node name="Mesh" type="MeshInstance3D" parent="Roads/LoopSouth"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.02, -200)
+mesh = SubResource("BoxMesh_loop_ns")
+material_override = SubResource("road_mat")
+
+[node name="Collision" type="CollisionShape3D" parent="Roads/LoopSouth"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.02, -200)
+shape = SubResource("BoxShape_loop_ns")
+
+[node name="LoopEast" type="StaticBody3D" parent="Roads"]
+collision_layer = 2
+
+[node name="Mesh" type="MeshInstance3D" parent="Roads/LoopEast"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 200, 0.02, 0)
+mesh = SubResource("BoxMesh_loop_ew")
+material_override = SubResource("road_mat")
+
+[node name="Collision" type="CollisionShape3D" parent="Roads/LoopEast"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 200, 0.02, 0)
+shape = SubResource("BoxShape_loop_ew")
+
+[node name="LoopWest" type="StaticBody3D" parent="Roads"]
+collision_layer = 2
+
+[node name="Mesh" type="MeshInstance3D" parent="Roads/LoopWest"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -200, 0.02, 0)
+mesh = SubResource("BoxMesh_loop_ew")
+material_override = SubResource("road_mat")
+
+[node name="Collision" type="CollisionShape3D" parent="Roads/LoopWest"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -200, 0.02, 0)
+shape = SubResource("BoxShape_loop_ew")
+
+[node name="StreetLights" type="Node3D" parent="."]
+
+[node name="Light1" type="OmniLight3D" parent="StreetLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 8, 30)
+light_color = Color(1, 0.7, 0.4, 1)
+light_energy = 2.0
+omni_range = 25.0
+metadata/_groups = ["street_lights"]
+
+[node name="Light2" type="OmniLight3D" parent="StreetLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 8, 80)
+light_color = Color(1, 0.7, 0.4, 1)
+light_energy = 2.0
+omni_range = 25.0
+metadata/_groups = ["street_lights"]
+
+[node name="Light3" type="OmniLight3D" parent="StreetLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 8, 130)
+light_color = Color(1, 0.7, 0.4, 1)
+light_energy = 2.0
+omni_range = 25.0
+metadata/_groups = ["street_lights"]
+
+[node name="Light4" type="OmniLight3D" parent="StreetLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 8, -30)
+light_color = Color(1, 0.7, 0.4, 1)
+light_energy = 2.0
+omni_range = 25.0
+metadata/_groups = ["street_lights"]
+
+[node name="NeonSign1" type="OmniLight3D" parent="StreetLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 6, 50)
+light_color = Color(1, 0, 0.4, 1)
+light_energy = 3.0
+omni_range = 15.0
+metadata/_groups = ["neon_lights"]
+
+[node name="NeonSign2" type="OmniLight3D" parent="StreetLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 6, 100)
+light_color = Color(0, 1, 0.8, 1)
+light_energy = 3.0
+omni_range = 15.0
+metadata/_groups = ["neon_lights"]
+
+[node name="NeonSign3" type="OmniLight3D" parent="StreetLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 5, -50)
+light_color = Color(0.4, 0, 1, 1)
+light_energy = 3.0
+omni_range = 15.0
+metadata/_groups = ["neon_lights"]
+
+[node name="DayNightCycle" type="Node" parent="."]
+script = ExtResource("day_night_cycle_script")
+metadata/district = "downtown"
+
+[node name="Buildings" type="Node3D" parent="."]
+
+[node name="Block1" type="StaticBody3D" parent="Buildings"]
+collision_layer = 2
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 10, 50)
+
+[node name="Mesh" type="MeshInstance3D" parent="Buildings/Block1"]
+mesh = SubResource("BoxMesh_building1")
+material_override = SubResource("building_mat1")
+
+[node name="Collision" type="CollisionShape3D" parent="Buildings/Block1"]
+shape = SubResource("BoxShape_building1")
+
+[node name="Block2" type="StaticBody3D" parent="Buildings"]
+collision_layer = 2
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 15, 80)
+
+[node name="Mesh" type="MeshInstance3D" parent="Buildings/Block2"]
+mesh = SubResource("BoxMesh_building2")
+material_override = SubResource("building_mat2")
+
+[node name="Collision" type="CollisionShape3D" parent="Buildings/Block2"]
+shape = SubResource("BoxShape_building2")
+
+[node name="Block3" type="StaticBody3D" parent="Buildings"]
+collision_layer = 2
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 8, -30)
+
+[node name="Mesh" type="MeshInstance3D" parent="Buildings/Block3"]
+mesh = SubResource("BoxMesh_building3")
+material_override = SubResource("building_mat1")
+
+[node name="Collision" type="CollisionShape3D" parent="Buildings/Block3"]
+shape = SubResource("BoxShape_building3")
+
+[node name="Block4" type="StaticBody3D" parent="Buildings"]
+collision_layer = 2
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 12, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Buildings/Block4"]
+mesh = SubResource("BoxMesh_building4")
+material_override = SubResource("building_mat2")
+
+[node name="Collision" type="CollisionShape3D" parent="Buildings/Block4"]
+shape = SubResource("BoxShape_building4")
+
+[node name="InteractionPoints" type="Node3D" parent="."]
+
+[node name="TorresGarage" type="Area3D" parent="InteractionPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 30)
+collision_layer = 32
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionPoints/TorresGarage"]
+shape = SubResource("BoxShape_trigger")
+
+[node name="Label" type="Label3D" parent="InteractionPoints/TorresGarage"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+text = "TORRES GARAGE"
+font_size = 48
+outline_size = 4
+modulate = Color(1, 0, 0.4, 1)
+
+[node name="RaceStartPoint" type="Area3D" parent="InteractionPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20)
+collision_layer = 32
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionPoints/RaceStartPoint"]
+shape = SubResource("BoxShape_trigger")
+
+[node name="Label" type="Label3D" parent="InteractionPoints/RaceStartPoint"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+text = "RACE"
+font_size = 48
+outline_size = 4
+modulate = Color(0, 1, 0.8, 1)
+
+[node name="PlayerSpawn" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="SpawnFrom_harbor" type="Marker3D" parent="."]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -240, 1, 0)
+
+[node name="SpawnFrom_industrial" type="Marker3D" parent="."]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 240, 1, 0)
+
+[node name="SpawnFrom_hillside" type="Marker3D" parent="."]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 0, 1, -240)
+
+[node name="DistrictTransitions" type="Node3D" parent="."]
+
+[node name="ToHarbor" type="Area3D" parent="DistrictTransitions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -250, 2.5, 0)
+collision_layer = 64
+metadata/target_district = "harbor"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DistrictTransitions/ToHarbor"]
+shape = SubResource("BoxShape_transition")
+
+[node name="Label" type="Label3D" parent="DistrictTransitions/ToHarbor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+text = "<< HARBOR DISTRICT <<"
+font_size = 36
+outline_size = 4
+modulate = Color(0, 0.8, 1, 1)
+
+[node name="ToIndustrial" type="Area3D" parent="DistrictTransitions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 250, 2.5, 0)
+collision_layer = 64
+metadata/target_district = "industrial"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DistrictTransitions/ToIndustrial"]
+shape = SubResource("BoxShape_transition")
+
+[node name="Label" type="Label3D" parent="DistrictTransitions/ToIndustrial"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+text = ">> INDUSTRIAL ZONE >>"
+font_size = 36
+outline_size = 4
+modulate = Color(1.0, 0.6, 0.0, 1)
+
+[node name="ToHillside" type="Area3D" parent="DistrictTransitions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -250)
+collision_layer = 64
+metadata/target_district = "hillside"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DistrictTransitions/ToHillside"]
+shape = SubResource("BoxShape_transition")
+
+[node name="Label" type="Label3D" parent="DistrictTransitions/ToHillside"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+text = ">> HILLSIDE / ROUTE 9 >>"
+font_size = 36
+outline_size = 4
+modulate = Color(0.4, 0.8, 1.0, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ground"]
+size = Vector2(600, 600)
+
+[sub_resource type="StandardMaterial3D" id="ground_mat"]
+albedo_color = Color(0.08, 0.06, 0.1, 1)
+roughness = 1.0
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_ground"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_main_road"]
+size = Vector3(12, 0.05, 500)
+
+[sub_resource type="BoxShape3D" id="BoxShape_main_road"]
+size = Vector3(12, 0.05, 500)
+
+[sub_resource type="BoxMesh" id="BoxMesh_cross_road"]
+size = Vector3(500, 0.05, 12)
+
+[sub_resource type="BoxShape3D" id="BoxShape_cross_road"]
+size = Vector3(500, 0.05, 12)
+
+[sub_resource type="BoxMesh" id="BoxMesh_loop_ns"]
+size = Vector3(412, 0.05, 12)
+
+[sub_resource type="BoxShape3D" id="BoxShape_loop_ns"]
+size = Vector3(412, 0.05, 12)
+
+[sub_resource type="BoxMesh" id="BoxMesh_loop_ew"]
+size = Vector3(12, 0.05, 412)
+
+[sub_resource type="BoxShape3D" id="BoxShape_loop_ew"]
+size = Vector3(12, 0.05, 412)
+
+[sub_resource type="BoxMesh" id="BoxMesh_building1"]
+size = Vector3(15, 20, 25)
+
+[sub_resource type="BoxShape3D" id="BoxShape_building1"]
+size = Vector3(15, 20, 25)
+
+[sub_resource type="StandardMaterial3D" id="building_mat1"]
+albedo_color = Color(0.12, 0.1, 0.15, 1)
+roughness = 0.8
+
+[sub_resource type="BoxMesh" id="BoxMesh_building2"]
+size = Vector3(20, 30, 20)
+
+[sub_resource type="BoxShape3D" id="BoxShape_building2"]
+size = Vector3(20, 30, 20)
+
+[sub_resource type="StandardMaterial3D" id="building_mat2"]
+albedo_color = Color(0.08, 0.06, 0.12, 1)
+roughness = 0.7
+
+[sub_resource type="BoxMesh" id="BoxMesh_building3"]
+size = Vector3(18, 16, 30)
+
+[sub_resource type="BoxShape3D" id="BoxShape_building3"]
+size = Vector3(18, 16, 30)
+
+[sub_resource type="BoxMesh" id="BoxMesh_building4"]
+size = Vector3(22, 24, 18)
+
+[sub_resource type="BoxShape3D" id="BoxShape_building4"]
+size = Vector3(22, 24, 18)
+
+[sub_resource type="BoxShape3D" id="BoxShape_trigger"]
+size = Vector3(10, 4, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape_transition"]
+size = Vector3(20, 5, 20)

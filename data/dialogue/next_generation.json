@@ -1,0 +1,190 @@
+{
+  "id": "next_generation",
+  "context": "A young driver approaches at Maya's garage. The cycle continues. Full circle.",
+  "lines": [
+    {
+      "type": "narration",
+      "text": "Tuesday. Late afternoon. The kind of day where nothing is supposed to happen."
+    },
+    {
+      "type": "narration",
+      "text": "Maya's garage. You're sitting in the office — the small one in the back, the one with the window that overlooks the bays. Maya is somewhere under a hood. You can hear her wrench clicking in that steady rhythm she gets when she's in the zone."
+    },
+    {
+      "type": "narration",
+      "text": "A sound outside. An engine. Not a good engine — the kind of engine that's held together by optimism and zip ties. A rattle. A cough. A wheeze that turns into a sputter that turns into silence."
+    },
+    {
+      "type": "narration",
+      "text": "You look through the window."
+    },
+    {
+      "type": "narration",
+      "text": "A Civic. Beat-up doesn't begin to describe it. The paint is three colors — factory, primer, and rust. The bumper is attached by faith. There's a crack in the windshield that's been there so long it has its own weather patterns."
+    },
+    {
+      "type": "narration",
+      "text": "The driver's door opens. A kid gets out. Maybe nineteen. Maybe younger. Hard to tell with the ones who've had to grow up fast."
+    },
+    {
+      "type": "narration",
+      "text": "They stand there for a moment, looking at the garage like it's a church and they're not sure they're allowed inside. Hands in pockets. Shoulders tight. That specific body language of someone who needs help and hates needing it."
+    },
+    {
+      "type": "narration",
+      "text": "They walk in. Past the lift. Past the tool wall. Eyes everywhere — taking in the builds, the trophies on the shelf, the photo wall that spans three decades of Nova Pacifica racing history."
+    },
+    {
+      "type": "narration",
+      "text": "Their eyes stop on one photo. You, in the early days. CRX. Same hungry look they've got right now."
+    },
+    {
+      "type": "narration",
+      "text": "You step out of the office."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Young Driver",
+      "portrait": "young_driver_nervous",
+      "text": "Are you... are you the one who—"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Driver",
+      "portrait": "player_calm",
+      "text": "Depends on which story you heard."
+    },
+    {
+      "type": "narration",
+      "text": "The kid swallows. Straightens up. Tries to look like they belong here."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Young Driver",
+      "portrait": "young_driver_determined",
+      "text": "I heard you started with nothing. Slept in your car. Raced your way up from the bottom of Downtown with a CRX that had no business being on the same road as the cars you were beating."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Driver",
+      "portrait": "player_calm",
+      "text": "That's one version."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Young Driver",
+      "portrait": "young_driver_determined",
+      "text": "Is it true?"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Driver",
+      "portrait": "player_neutral",
+      "text": "Close enough. Why?"
+    },
+    {
+      "type": "narration",
+      "text": "The kid looks at the Civic outside. The one that barely made it here. The one that's leaking something onto Maya's clean floor."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Young Driver",
+      "portrait": "young_driver_vulnerable",
+      "text": "Because I need someone to believe I can do this."
+    },
+    {
+      "type": "narration",
+      "text": "The words hang in the air. Unprotected. No bravado, no angle, no performance. Just a kid who drove a dying car to the only place they thought might understand."
+    },
+    {
+      "type": "narration",
+      "text": "You look at them. Really look. Past the worn jacket and the too-old eyes and the hands that don't know what to do with themselves."
+    },
+    {
+      "type": "narration",
+      "text": "You see it. The thing Diesel saw in you. The thing Maya saw. The thing you can't teach or buy or fake."
+    },
+    {
+      "type": "narration",
+      "text": "You look at Maya."
+    },
+    {
+      "type": "narration",
+      "text": "She's already looking at you. Wrench still in hand. She saw the kid come in. She heard every word. And on her face is an expression you recognize because you've seen it once before — in the mirror, the day she let you into bay two for the first time."
+    },
+    {
+      "type": "narration",
+      "text": "The smallest smile."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_smile",
+      "text": "Pull it into bay two."
+    },
+    {
+      "type": "narration",
+      "text": "The kid's eyes go wide. They look at you, then Maya, then back at you. Like they're waiting for someone to say it's a joke."
+    },
+    {
+      "type": "narration",
+      "text": "Nobody says it's a joke."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Young Driver",
+      "portrait": "young_driver_hopeful",
+      "text": "Really?"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_determined",
+      "text": "Bay two. Before that thing leaks any more on my floor."
+    },
+    {
+      "type": "narration",
+      "text": "The kid nods. Turns. Practically runs back to the Civic. The engine takes three tries to start but it starts. It always starts. That's how you know."
+    },
+    {
+      "type": "narration",
+      "text": "Maya watches the Civic roll into the bay. That rattling, coughing, impossible car settling into the exact spot where your CRX sat all those lifetimes ago."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_emotional",
+      "text": "Full circle."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Driver",
+      "portrait": "player_emotional",
+      "text": "Full circle."
+    },
+    {
+      "type": "narration",
+      "text": "Bay two. Where it started. Where it starts again."
+    },
+    {
+      "type": "narration",
+      "text": "The kid pops the hood. The engine is a disaster. But Maya is already rolling up her sleeves, and something in her eyes is the same thing that was there the day she looked at your CRX and saw not what it was but what it could be."
+    },
+    {
+      "type": "narration",
+      "text": "You lean against the doorframe. Arms folded. Watching."
+    },
+    {
+      "type": "narration",
+      "text": "The way Diesel used to watch."
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "next_generation_completed",
+        "value": true
+      }
+    }
+  ]
+}

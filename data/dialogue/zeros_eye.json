@@ -1,0 +1,546 @@
+{
+  "id": "zeros_eye",
+  "context": "Chapter 1.3 — Working alone in Maya's garage at midnight. Zero makes first contact through Echo.",
+  "lines": [
+    {
+      "type": "narration",
+      "text": "It's past midnight. Maya left hours ago — something about dinner with her mother, an apology she owed. You stayed behind. The Sakura's timing belt needs adjusting, and the silence of the garage is the only company you want right now."
+    },
+    {
+      "type": "narration",
+      "text": "Fluorescent lights hum overhead. The radio is off. Just you, the engine, and the smell of oil and brake dust. This is where the world makes sense."
+    },
+    {
+      "type": "narration",
+      "text": "Three knocks on the bay door. Precise. Even. Like someone counting time signatures."
+    },
+    {
+      "type": "narration",
+      "text": "You freeze. Nobody knocks on Torres Garage at midnight. Nobody who should be here, anyway."
+    },
+    {
+      "type": "narration",
+      "text": "You wipe your hands on a rag and walk to the side entrance. Through the smudged window, you see a figure standing perfectly still under the single streetlight. Tailored gray suit. Hands clasped in front. Patient in a way that suggests they would wait all night if necessary."
+    },
+    {
+      "type": "narration",
+      "text": "You open the door."
+    },
+    {
+      "type": "narration",
+      "text": "The figure is a woman. Mid-thirties, maybe older — impossible to tell. Her face is composed with surgical precision. No smile. No frown. Just observation."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Echo",
+      "portrait": "echo_neutral",
+      "text": "Good evening. I apologize for the hour. My employer prefers discretion over convenience."
+    },
+    {
+      "type": "narration",
+      "text": "She produces a card from her breast pocket. Matte black. No name, no number. Just a single symbol embossed in silver — a zero. The absence of a number. The beginning and the end."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Echo",
+      "portrait": "echo_neutral",
+      "text": "I represent an interested party. You've been noticed."
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "Noticed by who?",
+          "choice_id": "zero_who",
+          "relationship_changes": {},
+          "moral_shift": 0,
+          "jump_to": "echo_deflects"
+        },
+        {
+          "text": "I'm in the middle of something.",
+          "choice_id": "zero_busy",
+          "relationship_changes": {},
+          "moral_shift": 0,
+          "jump_to": "echo_patient"
+        },
+        {
+          "text": "That card is supposed to impress me?",
+          "choice_id": "zero_unimpressed",
+          "relationship_changes": {},
+          "moral_shift": 0,
+          "jump_to": "echo_amused"
+        }
+      ]
+    },
+    {
+      "label": "echo_deflects",
+      "type": "dialogue",
+      "speaker": "Echo",
+      "portrait": "echo_neutral",
+      "text": "Everyone asks that. No one gets an answer."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Echo",
+      "portrait": "echo_neutral",
+      "text": "I can tell you this: my employer watches the racing scene in Nova Pacifica the way an astronomer watches the sky. Not for what's there — but for what's about to arrive.",
+      "jump_to": "echo_the_gift"
+    },
+    {
+      "label": "echo_patient",
+      "type": "dialogue",
+      "speaker": "Echo",
+      "portrait": "echo_neutral",
+      "text": "Of course. Timing belts don't adjust themselves."
+    },
+    {
+      "type": "narration",
+      "text": "She glances past you at the Sakura on the lift. Her eyes move across it with the practiced efficiency of someone who knows engines. She sees the car. She sees what it could be."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Echo",
+      "portrait": "echo_neutral",
+      "text": "Which is precisely why I'm here. You're working on a car that's beneath your talent. My employer would like to correct that imbalance.",
+      "jump_to": "echo_the_gift"
+    },
+    {
+      "label": "echo_amused",
+      "type": "narration",
+      "text": "Something flickers behind her eyes. Not offense. Something closer to... appreciation."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Echo",
+      "portrait": "echo_neutral",
+      "text": "The card isn't meant to impress. It's meant to inform. My employer doesn't need your admiration. They need your attention. For five minutes.",
+      "jump_to": "echo_the_gift"
+    },
+    {
+      "label": "echo_the_gift",
+      "type": "narration",
+      "text": "She steps aside and gestures toward the street. A flatbed truck is parked at the curb — you didn't even hear it arrive. On the bed, under a matte gray cover, is the unmistakable silhouette of a car. Something low. Something purposeful."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Echo",
+      "portrait": "echo_neutral",
+      "text": "A gift. No strings in the traditional sense. My employer believes in investing in potential. Consider it... a current."
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "A current?",
+          "choice_id": "zero_current",
+          "relationship_changes": {},
+          "moral_shift": 0,
+          "jump_to": "echo_philosophy"
+        },
+        {
+          "text": "Nothing's free. What's the catch?",
+          "choice_id": "zero_catch",
+          "relationship_changes": {},
+          "moral_shift": 0,
+          "jump_to": "echo_philosophy"
+        }
+      ]
+    },
+    {
+      "label": "echo_philosophy",
+      "type": "dialogue",
+      "speaker": "Echo",
+      "portrait": "echo_neutral",
+      "text": "My employer's philosophy is simple. Talent is a river. It flows whether you build a dam or not. The wise thing isn't to block it — it's to position yourself where the current is strongest."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Echo",
+      "portrait": "echo_neutral",
+      "text": "You are the current. This gift places my employer in your flow. Not as an obstacle. Not as a leash. As a presence."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Echo",
+      "portrait": "echo_neutral",
+      "text": "Win races. Lose races. It doesn't matter. What matters is that when the time comes — and it will — you remember who believed in you before anyone else did."
+    },
+    {
+      "type": "narration",
+      "text": "She lets the silence hang. Behind her, the covered car waits on the flatbed like a question you haven't answered yet."
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "Who sent you?",
+          "choice_id": "zero_who_again",
+          "relationship_changes": {},
+          "moral_shift": 0,
+          "jump_to": "echo_gravity"
+        },
+        {
+          "text": "I accept.",
+          "choice_id": "zero_accept",
+          "relationship_changes": {},
+          "moral_shift": -5,
+          "set_flags": {"zero_gift_accepted": true},
+          "jump_to": "accept_gift"
+        },
+        {
+          "text": "Take it back. I don't want it.",
+          "choice_id": "zero_refuse",
+          "relationship_changes": {"diesel": 10},
+          "moral_shift": 10,
+          "set_flags": {"zero_gift_refused": true},
+          "jump_to": "refuse_gift"
+        }
+      ]
+    },
+    {
+      "label": "echo_gravity",
+      "type": "dialogue",
+      "speaker": "Echo",
+      "portrait": "echo_neutral",
+      "text": "Everyone asks that. No one gets an answer."
+    },
+    {
+      "type": "narration",
+      "text": "She says it exactly the same way as before. Same cadence. Same inflection. Like a recording."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Echo",
+      "portrait": "echo_neutral",
+      "text": "Think of it this way. You don't ask gravity who sent it. You simply acknowledge that it's the reason you're standing on solid ground. My employer is gravity. Invisible. Inevitable. Always pulling things toward their purpose."
+    },
+    {
+      "type": "narration",
+      "text": "That should sound ridiculous. It doesn't. Something about the way she says it — the absolute conviction — makes the hair on your arms stand up."
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "...Fine. I'll take the car.",
+          "choice_id": "zero_accept_after_gravity",
+          "relationship_changes": {},
+          "moral_shift": -5,
+          "set_flags": {"zero_gift_accepted": true},
+          "jump_to": "accept_gift"
+        },
+        {
+          "text": "Take it back. I earn what I drive.",
+          "choice_id": "zero_refuse_after_gravity",
+          "relationship_changes": {"diesel": 10},
+          "moral_shift": 10,
+          "set_flags": {"zero_gift_refused": true},
+          "jump_to": "refuse_gift"
+        }
+      ]
+    },
+    {
+      "label": "accept_gift",
+      "type": "narration",
+      "text": "Echo nods. One small, precise movement."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Echo",
+      "portrait": "echo_neutral",
+      "text": "A wise decision. The car will be unloaded within the hour. Keys are in the glovebox. Registration is clean — don't ask how."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Echo",
+      "portrait": "echo_neutral",
+      "text": "One more thing. My employer doesn't call. They don't text. They don't visit. When they need to communicate, you'll know. The message will find you the way water finds the lowest point."
+    },
+    {
+      "type": "narration",
+      "text": "She turns and walks to a black sedan parked behind the flatbed. No plates. Tinted windows. She opens the rear door, pauses, and looks back."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Echo",
+      "portrait": "echo_neutral",
+      "text": "Drive well. That's all that's ever been asked."
+    },
+    {
+      "type": "narration",
+      "text": "The sedan pulls away. The flatbed driver — a man you barely noticed — begins unloading the car. When the cover comes off, your breath catches."
+    },
+    {
+      "type": "narration",
+      "text": "It's beautiful. Not flashy — beautiful in the way a blade is beautiful. Every line serves a purpose. The paint is deep midnight blue, almost black, and the body kit is custom work you've never seen on any catalog. Whoever built this car didn't build it for show. They built it for someone specific."
+    },
+    {
+      "type": "narration",
+      "text": "They built it for you. And that thought should scare you more than it does.",
+      "jump_to": "accept_morning"
+    },
+    {
+      "label": "accept_morning",
+      "type": "narration",
+      "text": "Morning. You haven't slept. The new car sits in the garage bay like a panther in a birdcage. You've been staring at it for hours, running your hands over the engine, trying to understand what you've just agreed to."
+    },
+    {
+      "type": "narration",
+      "text": "The bay door rattles open. Maya walks in with two coffees and stops dead."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_shocked",
+      "text": "What the hell is that?"
+    },
+    {
+      "type": "narration",
+      "text": "She sets both coffees down. Slowly. She walks around the car, touching nothing, seeing everything. Her eyes narrow."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_worried",
+      "text": "Where did you get this? And don't lie to me."
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "Someone sent it. A woman named Echo.",
+          "choice_id": "maya_truth",
+          "relationship_changes": {"maya": 5},
+          "moral_shift": 5,
+          "jump_to": "maya_recognizes"
+        },
+        {
+          "text": "I bought it. Got a deal.",
+          "choice_id": "maya_lie",
+          "relationship_changes": {"maya": -10},
+          "moral_shift": -10,
+          "jump_to": "maya_lie_response"
+        }
+      ]
+    },
+    {
+      "label": "maya_lie_response",
+      "type": "narration",
+      "text": "Maya stares at you. That stare that cuts through every layer of bullshit you've ever built."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_angry",
+      "text": "This is a sixty-thousand-dollar car with custom work that would cost another forty. You didn't buy this. Try again."
+    },
+    {
+      "type": "narration",
+      "text": "You tell her the truth. All of it. Echo. The card. The speech about currents and gravity. Maya's face goes pale.",
+      "jump_to": "maya_recognizes"
+    },
+    {
+      "label": "maya_recognizes",
+      "type": "narration",
+      "text": "Maya picks up the matte black card from the workbench. She holds it like it might bite her."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_worried",
+      "text": "I know this symbol. My dad got a card like this. Seven years ago."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_worried",
+      "text": "He was the best mechanic in Nova Pacifica. Could make any engine sing. Then someone — someone with no name, no face — started sending him parts. High-end stuff. Prototypes. Things that hadn't even hit the black market yet."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_sad",
+      "text": "He thought it was a gift. A patron of the craft, he called it. Built the fastest car this city has ever seen."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_sad",
+      "text": "Then the favors started. Small ones at first. Fix this car, no questions. Store these parts, don't look inside. And by the time the favors got big, he was in too deep to say no."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_angry",
+      "text": "He lost the shop. He lost his reputation. He lost... he lost a lot of things. All because someone gave him something for free and he was too proud to ask why."
+    },
+    {
+      "type": "narration",
+      "text": "She sets the card back down. Her hand is trembling."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_worried",
+      "text": "That symbol is Zero. I don't know if it's a person or an organization or something else entirely. But I know what it does. It finds people with talent, gives them everything they need, and then owns them."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_worried",
+      "text": "Please be careful. I can't watch that happen again."
+    },
+    {
+      "type": "narration",
+      "text": "She picks up her coffee, takes a long sip, and walks to the workbench. After a moment, she pulls on her gloves."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_neutral",
+      "text": "Well. We might as well see what's under the hood. If you're going to make a deal with the devil, at least let me make sure the devil gave you a good engine."
+    },
+    {
+      "type": "narration",
+      "text": "That's Maya. Scared, furious, and already reaching for a wrench. You don't deserve her."
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_zero_awareness",
+        "level": 1
+      }
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "zero_relationship",
+        "value": "entangled"
+      }
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "zeros_eye_complete",
+        "value": true
+      }
+    },
+    {
+      "label": "refuse_gift",
+      "type": "narration",
+      "text": "Echo blinks. Once. It's the first time she's shown any reaction at all, and it's small enough that you might have imagined it."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Echo",
+      "portrait": "echo_neutral",
+      "text": "You're refusing."
+    },
+    {
+      "type": "narration",
+      "text": "It's not a question. She's processing. Recalculating."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Echo",
+      "portrait": "echo_neutral",
+      "text": "May I ask why?"
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "I earn what I drive.",
+          "choice_id": "refuse_earn",
+          "relationship_changes": {},
+          "moral_shift": 5,
+          "jump_to": "echo_intrigued"
+        },
+        {
+          "text": "If I don't know who's giving, I don't take.",
+          "choice_id": "refuse_trust",
+          "relationship_changes": {},
+          "moral_shift": 5,
+          "jump_to": "echo_intrigued"
+        },
+        {
+          "text": "Tell your boss to come say hello in person.",
+          "choice_id": "refuse_bold",
+          "relationship_changes": {},
+          "moral_shift": 0,
+          "jump_to": "echo_intrigued"
+        }
+      ]
+    },
+    {
+      "label": "echo_intrigued",
+      "type": "narration",
+      "text": "A pause. Longer than any pause she's allowed so far. Then — and you could swear this is the first genuine expression you've seen on her face — a flicker of something. Interest. Real interest."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Echo",
+      "portrait": "echo_neutral",
+      "text": "Intrigued."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Echo",
+      "portrait": "echo_neutral",
+      "text": "My employer has given gifts to eleven people in this city over the past decade. You are the first to refuse."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Echo",
+      "portrait": "echo_neutral",
+      "text": "I will relay your decision. I suspect it will be... well-received."
+    },
+    {
+      "type": "narration",
+      "text": "She tucks the card back into her pocket. The flatbed driver starts the engine. The covered car — whatever it was — disappears down the street like it was never there."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Echo",
+      "portrait": "echo_neutral",
+      "text": "One last thing. Refusing the gift doesn't make you invisible. It makes you interesting. Whether that's better or worse... remains to be seen."
+    },
+    {
+      "type": "narration",
+      "text": "She gets into the black sedan. It pulls away without a sound. You stand in the doorway of the garage, heart pounding, oil still on your hands, and feel the weight of a choice you didn't fully understand."
+    },
+    {
+      "type": "narration",
+      "text": "You go back to the timing belt. Your hands are steady. The car you have is the car you earned. That has to be enough."
+    },
+    {
+      "type": "narration",
+      "text": "It is enough."
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_zero_awareness",
+        "level": 1
+      }
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "zero_relationship",
+        "value": "aware_independent"
+      }
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "zeros_eye_complete",
+        "value": true
+      }
+    }
+  ]
+}

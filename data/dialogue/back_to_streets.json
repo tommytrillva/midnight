@@ -1,0 +1,136 @@
+{
+  "id": "back_to_streets",
+  "context": "Act 3 Chapter 3.4 — Rebuilding from nothing. Underground racing again but different now. Humbled.",
+  "lines": [
+    {
+      "type": "narration",
+      "text": "Maya's garage. The CRX on the lift. Maya underneath it with a wrench and a flashlight and the expression of a surgeon performing an operation that no one else would attempt."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_neutral",
+      "text": "The exhaust manifold is cracked. The brake pads are down to metal. The transmission synchros are grinding on second and fourth. And I'm pretty sure something is living in the air filter."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_determined",
+      "text": "Give me two days."
+    },
+    {
+      "type": "narration",
+      "text": "Two days. She says it the way she says everything — like the impossible is just a to-do list."
+    },
+    {
+      "type": "narration",
+      "text": "While she works, you walk to The Pit. Not to race — to see. The underground that you built, or helped build, or was built around you while you were looking at bigger things."
+    },
+    {
+      "type": "narration",
+      "text": "The Pit is smaller than you remember. Or maybe you're bigger. Or maybe loss changes the scale of everything."
+    },
+    {
+      "type": "narration",
+      "text": "The faces are different. New drivers. Young. Hungry. They don't recognize you — or if they do, they don't care. In the underground, yesterday's champion is today's nobody."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Pit Boss",
+      "portrait": "pit_boss_neutral",
+      "text": "Entry's five hundred. Three-race card. You got a car that'll pass inspection?"
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "Yeah. I've got a car.",
+          "choice_id": "streets_humble",
+          "relationship_changes": {},
+          "moral_shift": 5,
+          "jump_to": "pit_entry"
+        },
+        {
+          "text": "I used to run this place.",
+          "choice_id": "streets_ego",
+          "relationship_changes": {},
+          "moral_shift": -5,
+          "jump_to": "pit_boss_unimpressed"
+        }
+      ]
+    },
+    {
+      "label": "pit_entry",
+      "type": "narration",
+      "text": "Five hundred dollars. A third of what you have left. You pay it the way you paid it the first time — with everything on the line and nothing to fall back on."
+    },
+    {
+      "type": "narration",
+      "text": "The CRX rolls to the line. It sounds different now — Maya's repairs gave it a voice again, rougher than the championship cars, rawer, more honest."
+    },
+    {
+      "type": "narration",
+      "text": "The other cars are better. Newer. Faster on paper. But paper doesn't race.",
+      "jump_to": "the_race"
+    },
+    {
+      "label": "pit_boss_unimpressed",
+      "type": "dialogue",
+      "speaker": "Pit Boss",
+      "portrait": "pit_boss_neutral",
+      "text": "Lots of people used to do lots of things. Entry's still five hundred."
+    },
+    {
+      "type": "narration",
+      "text": "Humility. The underground's favorite lesson. You pay the five hundred and take your place in line.",
+      "jump_to": "the_race"
+    },
+    {
+      "label": "the_race",
+      "type": "narration",
+      "text": "The lights drop. The CRX launches and everything — the scandal, the fall, the motel, the rain — disappears. What's left is the road and the car and the simplest equation in the world: go fast, turn left, don't crash."
+    },
+    {
+      "type": "narration",
+      "text": "You are not the championship driver. You are not the underground king. You are not the elite racer. You are just a person in a car on a road in the dark."
+    },
+    {
+      "type": "narration",
+      "text": "And you are fast. God, you are fast."
+    },
+    {
+      "type": "narration",
+      "text": "The CRX moves through the field like water through rock — finding the gaps, flowing through the corners, carrying speed that the car shouldn't be able to hold."
+    },
+    {
+      "type": "narration",
+      "text": "You win. Not by a car length — by half a straight. The kind of margin that makes people stop and stare and ask: who is that?"
+    },
+    {
+      "type": "narration",
+      "text": "Eight hundred dollars in prize money. Your starting capital for the comeback. It sits in your hand like a seed."
+    },
+    {
+      "type": "narration",
+      "text": "Maya is waiting when you pull back in. She doesn't ask if you won. She can tell by the sound of the engine — it sounds happy."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_happy",
+      "text": "Welcome back."
+    },
+    {
+      "type": "narration",
+      "text": "Two words. The beginning of everything."
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "racing_again",
+        "value": true
+      }
+    }
+  ]
+}

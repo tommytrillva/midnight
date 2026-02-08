@@ -1,0 +1,192 @@
+{
+  "id": "ending_d_ghost",
+  "context": "Ending D: The Ghost — Specific choices made, beat Ghost in Act 4. The Driver becomes the new Ghost of Nova Pacifica.",
+  "ending_id": "ghost",
+  "ending_title": "The Ghost",
+  "lines": [
+    {
+      "type": "narration",
+      "text": "Night."
+    },
+    {
+      "type": "narration",
+      "text": "The harbor highway. Empty. Three lanes of black glass stretching toward a horizon that doesn't exist — just the place where the road stops being road and becomes sky."
+    },
+    {
+      "type": "narration",
+      "text": "One car. Moving like a whisper."
+    },
+    {
+      "type": "narration",
+      "text": "No headlights. No taillights. Just the sound — if you could even call it a sound. More like a pressure change. A shift in the air. The kind of thing you feel in your sternum before your ears catch up."
+    },
+    {
+      "type": "narration",
+      "text": "The car takes the harbor curve at a speed that shouldn't be possible on public roads. No tire squeal. No drama. Just physics bending politely out of the way."
+    },
+    {
+      "type": "narration",
+      "text": "A young racer — can't be older than nineteen — is heading home. Civic with a coffee-can exhaust and ambitions three sizes too big. The stereo is loud. The night is normal."
+    },
+    {
+      "type": "narration",
+      "text": "Then the headlights appear in the mirror."
+    },
+    {
+      "type": "narration",
+      "text": "Not headlights. Just... light. Faint. Getting closer in a way that doesn't make geometric sense, like the distance itself is wrong."
+    },
+    {
+      "type": "narration",
+      "text": "The car pulls alongside."
+    },
+    {
+      "type": "narration",
+      "text": "Three seconds. That's all."
+    },
+    {
+      "type": "narration",
+      "text": "The young racer turns to look. The driver's face is hidden — visor down, or maybe it's the angle, or maybe it's that the light doesn't work right around this car, like it's bending around something it doesn't want to touch."
+    },
+    {
+      "type": "narration",
+      "text": "Three seconds of silence inside a bubble of speed."
+    },
+    {
+      "type": "narration",
+      "text": "Then gone."
+    },
+    {
+      "type": "narration",
+      "text": "Not fast. Not in a burst of acceleration or a scream of engine. Just... gone. Like it was never there. Like the highway decided to keep a secret."
+    },
+    {
+      "type": "narration",
+      "text": "The young racer's hands are shaking on the wheel. The stereo is still playing but they can't hear it. The air smells like ozone and something older — gasoline and midnight and a dare."
+    },
+    {
+      "type": "narration",
+      "text": "Next morning. A garage. Three young racers, hoods up, wrenches out. The kind of morning where nobody's in a hurry."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Young Racer",
+      "portrait": "young_racer_excited",
+      "text": "I saw the Ghost last night. I swear."
+    },
+    {
+      "type": "narration",
+      "text": "The other two stop what they're doing. Wrenches go still."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Racer's Friend",
+      "portrait": "young_racer_b",
+      "text": "Right. And I had dinner with Marcus Torres."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Young Racer",
+      "portrait": "young_racer_serious",
+      "text": "Harbor highway. Past midnight. It came out of nowhere. Pulled alongside me for maybe three seconds. No plates. No headlights. I couldn't see the driver."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Racer's Friend",
+      "portrait": "young_racer_b",
+      "text": "What kind of car?"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Young Racer",
+      "portrait": "young_racer_confused",
+      "text": "I... I don't know. I can't remember. It was dark and fast and then it was just gone."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Racer's Friend",
+      "portrait": "young_racer_b",
+      "text": "Nobody sees the Ghost."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Young Racer",
+      "portrait": "young_racer_serious",
+      "text": "I saw the Ghost."
+    },
+    {
+      "type": "narration",
+      "text": "Silence. Oil dripping somewhere. A compressor cycling on."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Third Racer",
+      "portrait": "young_racer_c",
+      "text": "My cousin says the Ghost used to be a real person. Someone who raced back in the day. Beat everyone. Beat Zero. Beat the whole city."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Racer's Friend",
+      "portrait": "young_racer_b",
+      "text": "So what happened to them?"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Third Racer",
+      "portrait": "young_racer_c",
+      "text": "Nobody knows. That's the point. One day they just... weren't there anymore. But the car still shows up. Late at night. When nobody's watching."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Young Racer",
+      "portrait": "young_racer_excited",
+      "text": "It was watching me. I could feel it."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Racer's Friend",
+      "portrait": "young_racer_b",
+      "text": "Watching you do what? Drive home at the speed limit?"
+    },
+    {
+      "type": "narration",
+      "text": "They laugh. But the young racer doesn't. Eyes somewhere else. Somewhere on that highway, in those three seconds, where something looked at them and they looked back."
+    },
+    {
+      "type": "narration",
+      "text": "The camera cuts. Before the car is described. Before the make, the model, the color — before any detail that would make it real."
+    },
+    {
+      "type": "narration",
+      "text": "Because that's the thing about ghosts."
+    },
+    {
+      "type": "narration",
+      "text": "Legends don't have details. They have feelings."
+    },
+    {
+      "type": "narration",
+      "text": "And somewhere on the harbor highway, in the space between midnight and whatever comes after, a car moves like a whisper. No headlights. No name."
+    },
+    {
+      "type": "narration",
+      "text": "Just the road. Just the speed. Just the dark."
+    },
+    {
+      "type": "narration",
+      "text": "Forever."
+    },
+    {
+      "type": "narration",
+      "text": "THE GHOST"
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "ending_completed_ghost",
+        "value": true
+      }
+    }
+  ]
+}

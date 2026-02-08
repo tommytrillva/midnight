@@ -1,0 +1,176 @@
+{
+  "id": "the_investigation",
+  "context": "Act 2A Chapter 2.4 — Journalist contacts Driver with evidence of race fixing going all the way to the top. Choice to help or bury it.",
+  "lines": [
+    {
+      "type": "narration",
+      "text": "A coffee shop in the commercial district. Not the kind Apex executives frequent — the kind with cracked vinyl booths and coffee that tastes like it has opinions."
+    },
+    {
+      "type": "narration",
+      "text": "She is already waiting. Mina Park. Investigative journalist for the Pacific Racing Chronicle. She looks like someone who hasn't slept in a week and has decided that sleep is for people who don't have stories to break."
+    },
+    {
+      "type": "narration",
+      "text": "In front of her: a laptop, a recorder, and a manila folder thick enough to stop a bullet."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Mina Park",
+      "portrait": "mina_intense",
+      "text": "Thank you for coming. I know this is a risk for you."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Mina Park",
+      "portrait": "mina_intense",
+      "text": "I've spent eighteen months investigating corruption in the Pacific Rim racing circuit. Fixed races. Bribed officials. Managed outcomes. And every thread leads to the same place."
+    },
+    {
+      "type": "narration",
+      "text": "She opens the folder. Spreadsheets. Emails. Bank transfers. Photographs of people you recognize in meetings they shouldn't be attending."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Mina Park",
+      "portrait": "mina_intense",
+      "text": "Dominic Weir. Apex Racing VP. He's been coordinating with race officials and rival teams to manage championship outcomes for at least four years."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Mina Park",
+      "portrait": "mina_intense",
+      "text": "But here's where it gets interesting. Weir doesn't answer to the Apex board. He answers to someone else. Someone who operates outside every corporate structure I've ever mapped."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Mina Park",
+      "portrait": "mina_intense",
+      "text": "The name that keeps appearing in encrypted communications is 'Zero.'"
+    },
+    {
+      "type": "narration",
+      "text": "Zero. There it is again. The name that exists in margins and whispers. The invitation on your windshield. The hooded figure on the coastal highway."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Mina Park",
+      "portrait": "mina_intense",
+      "text": "I need a source inside Apex. Someone who has seen things. Someone who can corroborate what I have. Without that, this is just conspiracy theory. With it, it's a story that brings down an empire."
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "I'll help. I've seen enough to know this is real.",
+          "choice_id": "investigation_help",
+          "relationship_changes": {},
+          "moral_shift": 15,
+          "set_flags": {"helping_investigation": true, "investigation_ally": true},
+          "jump_to": "mina_relieved"
+        },
+        {
+          "text": "I need to talk to Jade first. She deserves to know.",
+          "choice_id": "investigation_jade_first",
+          "relationship_changes": {"jade": 5},
+          "moral_shift": 10,
+          "set_flags": {"investigation_jade_informed": true},
+          "jump_to": "mina_warns"
+        },
+        {
+          "text": "I can't be involved. My career, my contract — there's too much at stake.",
+          "choice_id": "investigation_refuse",
+          "relationship_changes": {},
+          "moral_shift": -15,
+          "set_flags": {"investigation_refused": true},
+          "jump_to": "mina_understands"
+        }
+      ]
+    },
+    {
+      "label": "mina_relieved",
+      "type": "dialogue",
+      "speaker": "Mina Park",
+      "portrait": "mina_grateful",
+      "text": "Thank you. I know what you're risking. Your contract, your career, your safety — all of it."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Mina Park",
+      "portrait": "mina_intense",
+      "text": "Here's what I need: access records, meeting schedules, any communication between Weir and outside parties. And if you've seen anything — documents, spreadsheets, conversations — I need dates and details."
+    },
+    {
+      "type": "narration",
+      "text": "You think about the conference room. The projector. The spreadsheet with race results for races that hadn't happened yet."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Mina Park",
+      "portrait": "mina_intense",
+      "text": "One more thing. If they find out you're talking to me, they won't fire you. They'll bury you. Contractual penalties, defamation suits, industry blacklisting. These people don't lose gracefully.",
+      "jump_to": "investigation_end"
+    },
+    {
+      "label": "mina_warns",
+      "type": "dialogue",
+      "speaker": "Mina Park",
+      "portrait": "mina_cautious",
+      "text": "Jade Winters. Your manager. I've looked into her — she's clean, as far as I can tell. But she's also loyal to Apex. If she goes to Weir before we're ready—"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Mina Park",
+      "portrait": "mina_cautious",
+      "text": "Be careful what you share and how you share it. In my experience, even good people do bad things when their world is threatened.",
+      "jump_to": "investigation_end"
+    },
+    {
+      "label": "mina_understands",
+      "type": "dialogue",
+      "speaker": "Mina Park",
+      "portrait": "mina_neutral",
+      "text": "I understand. I do. The risk is enormous and the reward is... what? A clear conscience? That doesn't pay rent."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Mina Park",
+      "portrait": "mina_intense",
+      "text": "But let me leave you with this: the races they're fixing? Your championship might be one of them. Not your driving — that's real. But the field you drove against? The opponents who mysteriously underperformed?"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Mina Park",
+      "portrait": "mina_intense",
+      "text": "If this story breaks without your input, your name is in it either way. You can be the whistleblower or the accomplice. There's no third option.",
+      "jump_to": "investigation_end"
+    },
+    {
+      "label": "investigation_end",
+      "type": "narration",
+      "text": "She closes the folder. Finishes her coffee. Leaves a card on the table — a burner phone number written on the back."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Mina Park",
+      "portrait": "mina_intense",
+      "text": "The story runs in three weeks. With or without you."
+    },
+    {
+      "type": "narration",
+      "text": "She leaves. You sit in the booth staring at a cold cup of coffee and a phone number and the reflection of a champion who may have won a fixed championship."
+    },
+    {
+      "type": "narration",
+      "text": "Three weeks. The clock is ticking and the machine is turning and somewhere in the shadows, Zero is watching to see what you do."
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "the_investigation_complete",
+        "value": true
+      }
+    }
+  ]
+}

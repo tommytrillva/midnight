@@ -1,0 +1,33 @@
+{
+  "vehicle_id": "nissan_silvia_s15",
+  "display_name": "1999 Nissan Silvia S15 Spec-R",
+  "manufacturer": "Nissan",
+  "year": 1999,
+  "description": "The ultimate Silvia. The S15 Spec-R arrived at the end of an era — the last of a lineage that defined drift culture from Osaka to Nova Pacifica. Lighter, stiffer, and more powerful than any Silvia before it, the S15 is a chassis that communicates through your fingertips.",
+  "base_stats": {
+    "top_speed": 0.62,
+    "acceleration": 0.60,
+    "handling": 0.72,
+    "braking": 0.60,
+    "nitro_capacity": 0.48,
+    "weight_lbs": 2700
+  },
+  "engine": {
+    "horsepower": 250.0,
+    "torque_lbft": 203.0,
+    "displacement_cc": 1998,
+    "configuration": "I4",
+    "aspiration": "turbo"
+  },
+  "drivetrain": "rwd",
+  "tier": 3,
+  "price": 65000,
+  "rarity": "rare",
+  "cosmetics": {
+    "default_color": "#C0C0C0",
+    "available_colors": ["#C0C0C0", "#FFFFFF", "#000000", "#FFD700", "#1E90FF", "#8B0000"]
+  },
+  "special_traits": ["drift_king", "turbo", "sr20"],
+  "lore": "Never officially sold in America. That's what makes finding one in Nova Pacifica so special — and so expensive. Every S15 in the city has a story about how it got here, and none of those stories are boring.",
+  "category": "JDM"
+}

@@ -1,0 +1,70 @@
+{
+  "id": "housing_fall",
+  "context": "The Fall. Act 3. Back in the car. Everything gone. Rain on the windshield. Devastating.",
+  "lines": [
+    {
+      "type": "cinematic",
+      "text": "NOVA PACIFICA — 3:12 AM"
+    },
+    {
+      "type": "narration",
+      "text": "Rain on the windshield. Again."
+    },
+    {
+      "type": "narration",
+      "text": "The backseat of the CRX. The same backseat. The same cold. The same steering wheel imprint you thought you'd never feel again."
+    },
+    {
+      "type": "narration",
+      "text": "The penthouse keys are on the dash. They don't open anything anymore. The locks were changed this morning."
+    },
+    {
+      "type": "narration",
+      "text": "Your phone has seventeen missed calls. Twelve are lawyers. Three are journalists. Two are numbers you don't recognize."
+    },
+    {
+      "type": "narration",
+      "text": "None of them are Maya."
+    },
+    {
+      "type": "narration",
+      "text": "You try the heater. It doesn't work. Of course it doesn't. It never worked."
+    },
+    {
+      "type": "narration",
+      "text": "Through the rain-streaked glass, you can see the skyline. Your penthouse — someone else's penthouse now — is a lit rectangle sixty stories up. A life you can see but can't touch."
+    },
+    {
+      "type": "narration",
+      "text": "The city doesn't care. It hums the same hum it hummed when you had nothing. When you had everything. When you had nothing again."
+    },
+    {
+      "type": "narration",
+      "text": "You pull the blanket from behind the passenger seat. The same blanket. It still smells like motor oil."
+    },
+    {
+      "type": "narration",
+      "text": "You close your eyes. The rain sounds the same as it did on your first night. Full circle."
+    },
+    {
+      "type": "narration",
+      "text": "Something is different though. Last time, you had nothing to lose."
+    },
+    {
+      "type": "narration",
+      "text": "This time you know exactly what you lost."
+    },
+    {
+      "type": "cinematic",
+      "text": "The CRX idles. The rain falls. The city hums. And somewhere inside the wreckage, something refuses to go out."
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "experienced_fall_housing",
+        "value": true
+      }
+    }
+  ]
+}

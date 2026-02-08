@@ -1,0 +1,114 @@
+{
+	"event_lines": [
+		{
+			"event": "mission_complete:first_blood",
+			"station": 2,
+			"line": "Yo, heard some new kid just tore up The Pit in a BEATER. Street Heat salutes you, whoever you are."
+		},
+		{
+			"event": "mission_complete:first_blood",
+			"station": 1,
+			"line": "Nova FM is hearing whispers about a newcomer making waves downtown. We love a debut."
+		},
+		{
+			"event": "mission_complete:mechanics_gamble",
+			"station": 2,
+			"line": "Preston Wells got his car taken! Pink slips are NO JOKE, people!"
+		},
+		{
+			"event": "mission_complete:mechanics_gamble",
+			"station": 4,
+			"line": "SOMEBODY just pink-slipped Preston Wells! Piston Pete approves! That takes GUTS!"
+		},
+		{
+			"event": "rep_tier:KNOWN",
+			"station": 1,
+			"line": "There's a new name buzzing around Nova Pacifica. You know who you are. Nova FM sees you."
+		},
+		{
+			"event": "rep_tier:KNOWN",
+			"station": 3,
+			"line": "Smooth K here... hearing a name more and more lately. Take it slow, newcomer. The city tests everyone."
+		},
+		{
+			"event": "rep_tier:RESPECTED",
+			"station": 2,
+			"line": "Okay, okay, we gotta talk about this driver who's been CLEANING UP downtown. Respect. Big Torque sees you."
+		},
+		{
+			"event": "rep_tier:RESPECTED",
+			"station": 5,
+			"line": "...The underground has noticed. Respect is earned, not given. You earned it. Phantom acknowledges."
+		},
+		{
+			"event": "rep_tier:FEARED",
+			"station": 4,
+			"line": "Piston Pete here — and I gotta say, there's a driver in this city making EVERYONE nervous. I love it!"
+		},
+		{
+			"event": "rep_tier:FEARED",
+			"station": 2,
+			"line": "Real talk — there's a name out here that makes people look over their shoulder. Street Heat respects the grind."
+		},
+		{
+			"event": "rep_tier:LEGENDARY",
+			"station": 1,
+			"line": "Neon Nina here with a moment of silence... for every racer who has to share the road with a LEGEND. Nova FM salutes."
+		},
+		{
+			"event": "rep_tier:LEGENDARY",
+			"station": 5,
+			"line": "...Legend. The underground remembers every one. Your name joins the frequency. Phantom out."
+		},
+		{
+			"event": "act3_fall",
+			"station": 3,
+			"line": "Smooth K here... Sometimes the brightest lights burn out. But the road's still there in the morning."
+		},
+		{
+			"event": "act3_fall",
+			"station": 1,
+			"line": "Nova FM... we've seen stars rise and fall in this city. The neon doesn't judge. It just glows."
+		},
+		{
+			"event": "act3_fall",
+			"station": 5,
+			"line": "...The signal fades. But frequencies never truly die. Underground remembers."
+		},
+		{
+			"event": "act4_return",
+			"station": 5,
+			"line": "...They're back. Underground heard it first. Phantom out."
+		},
+		{
+			"event": "act4_return",
+			"station": 4,
+			"line": "WAIT. WAIT. Is that — they're BACK?! Piston Pete is LOSING IT right now! REDLINE RADIO, BABY!"
+		},
+		{
+			"event": "act4_return",
+			"station": 2,
+			"line": "Hold up, hold up... Big Torque just got word. The comeback is ON. Street Heat is HERE for this!"
+		},
+		{
+			"event": "pursuit_escaped",
+			"station": 2,
+			"line": "Scanner says someone just gave Nova Pacifica PD the SLIP. Big Torque salutes that driving!"
+		},
+		{
+			"event": "pursuit_escaped",
+			"station": 4,
+			"line": "Someone out there just outran the cops! Piston Pete says FLOOR IT AND NEVER LOOK BACK!"
+		},
+		{
+			"event": "vehicle_acquired",
+			"station": 4,
+			"line": "I hear there's a new machine on the streets of Nova Pacifica. Piston Pete wants to hear that engine ROAR!"
+		},
+		{
+			"event": "pink_slip_won",
+			"station": 2,
+			"line": "Another pink slip race, another title changed hands! That's how we do it on the streets!"
+		}
+	]
+}

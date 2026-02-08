@@ -1,0 +1,153 @@
+{
+  "id": "the_crown_world",
+  "context": "Act 3 Chapter 3.2 — World Championship final. Everything on the line.",
+  "lines": [
+    {
+      "type": "narration",
+      "text": "Iceland. The edge of the world."
+    },
+    {
+      "type": "narration",
+      "text": "The circuit runs along the base of a glacier — black volcanic rock on one side, ancient ice on the other. The road is carved into landscape that was not meant for cars. It exists because Zero decided it should, and in Zero's world, decision and reality are the same thing."
+    },
+    {
+      "type": "narration",
+      "text": "You are leading the championship by three points. Kenji Yoshida is second. Amira Hassan is third. The Monaco unknown — who turned out to be terrifyingly fast and unnervingly calm — is fourth."
+    },
+    {
+      "type": "narration",
+      "text": "Twelve laps. Twelve laps between you and a world championship. Between you and the stage you need for the plan."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Echo",
+      "portrait": "echo_hooded",
+      "text": "Zero sends a message: race well. The world is watching. In this context, 'the world' is literal."
+    },
+    {
+      "type": "narration",
+      "text": "The cars line up. The engines shake the volcanic rock. The glacier reflects the headlights back in fractured rainbows."
+    },
+    {
+      "type": "narration",
+      "text": "The flag drops."
+    },
+    {
+      "type": "narration",
+      "text": "The race is unlike anything you have experienced. The car handles differently on volcanic tarmac — less grip, more feedback, every input amplified. The glacier throws cold air across the road in unpredictable gusts. The track surface changes from corner to corner — smooth rock to rough gravel to patches of ice that appear and disappear like ghosts."
+    },
+    {
+      "type": "narration",
+      "text": "Kenji is fast. Impossibly fast. He drives with the precision of his Formula One heritage and the aggression of someone who chose the underground over the establishment. Every lap, he takes a tenth from you."
+    },
+    {
+      "type": "narration",
+      "text": "Lap six. Halfway. You are second. Kenji is pulling away. The championship math is brutal — second place gives you the title, but only if Amira finishes below fourth."
+    },
+    {
+      "type": "narration",
+      "text": "Amira is third. And closing."
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "Push for the win. Leave nothing on the table.",
+          "choice_id": "crown_world_push",
+          "relationship_changes": {},
+          "moral_shift": 0,
+          "rep": 15,
+          "set_flags": {"world_crown_pushed": true},
+          "jump_to": "push_for_win"
+        },
+        {
+          "text": "Manage the position. Second is enough for the title.",
+          "choice_id": "crown_world_manage",
+          "relationship_changes": {},
+          "moral_shift": 0,
+          "set_flags": {"world_crown_managed": true},
+          "jump_to": "manage_position"
+        }
+      ]
+    },
+    {
+      "label": "push_for_win",
+      "type": "narration",
+      "text": "You push. The car screams. The tires find grip where there shouldn't be any. You enter corners faster, brake later, trust the machine more than any sane driver would."
+    },
+    {
+      "type": "narration",
+      "text": "Lap nine. The gap to Kenji is half a second. You can see his exhaust flare in the cold air. You can feel the displacement of his car in the wind."
+    },
+    {
+      "type": "narration",
+      "text": "Lap eleven. Final lap. You are on his bumper. The glacier looms above you both, ancient and indifferent."
+    },
+    {
+      "type": "narration",
+      "text": "Last corner. A sweeping right-hander along the glacier wall. Kenji takes the inside. You go wide — wider than anyone would dare — and use the banking of the volcanic rock to carry speed that the inside line cannot match."
+    },
+    {
+      "type": "narration",
+      "text": "You exit the corner side by side. The finish line is three hundred meters away. Two cars. Two hundred miles per hour. The margin is less than a car length.",
+      "jump_to": "finish"
+    },
+    {
+      "label": "manage_position",
+      "type": "narration",
+      "text": "You hold. Second place. The math says this is enough. The instinct says push. You listen to the math."
+    },
+    {
+      "type": "narration",
+      "text": "But Amira doesn't care about your math. She catches you on lap ten. Aggressive, committed, driving through the ice patches like they are suggestions rather than obstacles."
+    },
+    {
+      "type": "narration",
+      "text": "You have to fight. Not for the win — for survival. The final two laps are a war between you and Amira, corner by corner, tenth by tenth.",
+      "jump_to": "finish"
+    },
+    {
+      "label": "finish",
+      "type": "narration",
+      "text": "The finish line passes. The results flash on a screen set into the volcanic rock."
+    },
+    {
+      "type": "narration",
+      "text": "World Champion."
+    },
+    {
+      "type": "narration",
+      "text": "The word exists in a space that is too large for this moment. World. Champion. Two words that contain multitudes — every race, every corner, every choice, every person who believed in you and every person who tried to stop you."
+    },
+    {
+      "type": "narration",
+      "text": "There is no podium. No champagne. No crowd. Just twelve drivers on volcanic rock in Iceland, the glacier above them ancient and eternal, and the knowledge that for this moment, on this road, you were the fastest human being alive."
+    },
+    {
+      "type": "narration",
+      "text": "Echo approaches."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Echo",
+      "portrait": "echo_hooded",
+      "text": "Zero congratulates you. The world is yours."
+    },
+    {
+      "type": "narration",
+      "text": "The world is yours. But the world is built on a lie. And the stage you needed — the attention, the spotlight, the global audience — is now exactly where you need it to be."
+    },
+    {
+      "type": "narration",
+      "text": "The plan begins now."
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "world_champion",
+        "value": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "vehicle_id": "amg_gt_black",
+  "display_name": "2021 Mercedes-AMG GT Black Series",
+  "manufacturer": "Mercedes-AMG",
+  "year": 2021,
+  "body_style": "coupe",
+  "category": "Hyper",
+  "culture": "euro",
+  "tier": 6,
+  "rarity": "epic",
+  "description": "Flat-plane crank AMG. Mercedes took their twin-turbo V8, gave it a flat-plane crankshaft from their GT3 racing program, and bolted on enough aerodynamic hardware to generate 400 kg of downforce. The Black Series is AMG's ultimate statement — a road-legal race car that just happens to have license plates.",
+  "lore": "The 'Black Series' badge has always meant AMG's most extreme offering, and the GT Black Series might be the most extreme car they've ever built. The flat-plane crank V8 revs higher and responds faster than the standard cross-plane unit, producing 720 horsepower. The massive rear wing, front splitter, and dive planes generate enough downforce to theoretically drive upside down at speed. It set a 6:43.616 at the Nürburgring — faster than a Porsche 918.",
+
+  "base_stats": {
+    "top_speed": 0.90,
+    "acceleration": 0.89,
+    "handling": 0.90,
+    "braking": 0.89,
+    "nitro_capacity": 0.40,
+    "weight": 1497.0
+  },
+
+  "engine": {
+    "horsepower": 720.0,
+    "torque": 590.0,
+    "displacement": "4.0L",
+    "configuration": "V8",
+    "aspiration": "twin_turbo"
+  },
+
+  "drivetrain": "rwd",
+  "price": 1000000,
+
+  "cosmetics": {
+    "default_color": "#000000",
+    "available_colors": ["#000000", "#FF8C00", "#C0C0C0", "#FFFFFF", "#1C1C1C", "#FFD700"]
+  },
+
+  "special_traits": ["flat_plane", "twin_turbo", "track_weapon"]
+}

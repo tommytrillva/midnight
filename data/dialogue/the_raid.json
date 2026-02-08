@@ -1,0 +1,118 @@
+{
+  "id": "the_raid",
+  "context": "Act 3 Chapter 3.3 — Law enforcement closes in. Escape or face arrest. Chase sequence.",
+  "lines": [
+    {
+      "type": "narration",
+      "text": "4:15 AM. A knock on the hotel door. Not a polite knock — the kind that announces itself with the authority of a warrant."
+    },
+    {
+      "type": "narration",
+      "text": "You're already awake. You haven't slept properly in days. Through the peephole: uniforms. Badges. The business end of a legal system that has decided you are a problem."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Police Officer",
+      "portrait": "police_neutral",
+      "text": "Open the door. We have a warrant for your arrest."
+    },
+    {
+      "type": "narration",
+      "text": "The window. Fifth floor. Fire escape. It's not a plan — it's a reflex. The underground taught you many things, and one of them is that running is always an option until it isn't."
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "Go out the fire escape. Run.",
+          "choice_id": "raid_run",
+          "relationship_changes": {},
+          "moral_shift": -10,
+          "set_flags": {"fled_arrest": true},
+          "jump_to": "fire_escape"
+        },
+        {
+          "text": "Open the door. Face it.",
+          "choice_id": "raid_surrender",
+          "relationship_changes": {"diesel": 5},
+          "moral_shift": 10,
+          "set_flags": {"surrendered_arrest": true},
+          "jump_to": "surrender"
+        }
+      ]
+    },
+    {
+      "label": "fire_escape",
+      "type": "narration",
+      "text": "The fire escape shakes under your weight. Five stories of rusted metal and bad decisions. You hit the alley at a sprint."
+    },
+    {
+      "type": "narration",
+      "text": "Your car — the only one left, a beater CRX that Maya kept running out of loyalty — is parked two blocks away. You reach it as the first sirens start."
+    },
+    {
+      "type": "narration",
+      "text": "The engine starts. It sounds different now — not the CRX of your championship days. This engine coughs and wheezes and takes a full second to find its rhythm. But it runs."
+    },
+    {
+      "type": "narration",
+      "text": "Downtown Nova Pacifica. 4:30 AM. The streets are empty except for you and the growing chorus of sirens. You drive the way you drove in the beginning — by feel, by instinct, by the desperate mathematics of a person with nowhere to go."
+    },
+    {
+      "type": "narration",
+      "text": "Alley. Left turn. Through the market district. Under the overpass. Past Maya's garage — dark, closed, a monument to a life that used to make sense."
+    },
+    {
+      "type": "narration",
+      "text": "The sirens fall behind. The city swallows you. You drive until the road runs out at the harbor, where the container ships wait in darkness like sleeping giants.",
+      "jump_to": "raid_aftermath"
+    },
+    {
+      "label": "surrender",
+      "type": "narration",
+      "text": "You open the door."
+    },
+    {
+      "type": "narration",
+      "text": "Handcuffs. Rights read. The walk through the hotel lobby under the fluorescent gaze of night staff who will sell this story to every outlet that calls."
+    },
+    {
+      "type": "narration",
+      "text": "The back of a police car. The seat is hard and the cage is cold and the sirens are off because you came quietly. Through the window, Nova Pacifica slides past — the city that made you, unmaking you."
+    },
+    {
+      "type": "narration",
+      "text": "Processing. Fingerprints. Photographs. A cell that smells like bleach and despair. Hours that feel like years."
+    },
+    {
+      "type": "narration",
+      "text": "And then — released. Bail posted. The charges are thin and someone — Jade, probably — made sure the right lawyer showed up at the right time.",
+      "jump_to": "raid_aftermath"
+    },
+    {
+      "label": "raid_aftermath",
+      "type": "narration",
+      "text": "Dawn. Nova Pacifica wakes up and goes to work and doesn't care that your world just ended. The city does what cities do — it absorbs individual catastrophes into the general noise of being alive."
+    },
+    {
+      "type": "narration",
+      "text": "You are free, technically. But freedom with nowhere to go is just another kind of prison."
+    },
+    {
+      "type": "narration",
+      "text": "The championship trophy is in a storage unit. The corporate apartment has been reclaimed. The underground circuits are too dangerous with your face on every screen."
+    },
+    {
+      "type": "narration",
+      "text": "What's left is a car that barely runs and a city that used to be yours and a silence that is louder than any engine you've ever heard."
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "escaped_raid",
+        "value": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,195 @@
+{
+  "id": "ambient_harbor",
+  "district": "harbor",
+  "context": "Harbor district — docks, shipping containers, wet roads, cargo ships",
+  "lines": [
+    {
+      "speakers": ["dock_worker_1", "dock_worker_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Dock Worker", "text": "Watch the wet patches. Lost a buddy to hydroplaning last month."},
+        {"speaker": 1, "speaker_tag": "Dock Worker", "text": "On the road or the dock?"},
+        {"speaker": 0, "speaker_tag": "Dock Worker", "text": "Does it matter? Wet ground kills either way."}
+      ],
+      "conditions": {},
+      "weight": 1.0,
+      "tags": ["danger", "atmosphere"]
+    },
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Racer", "text": "They drift here at night. Cops don't bother — too many containers to hide behind."},
+        {"speaker": 1, "speaker_tag": "Racer", "text": "Containers, forklifts, cranes... it's like a maze down here."},
+        {"speaker": 0, "speaker_tag": "Racer", "text": "That's the point. You gotta earn your lines."}
+      ],
+      "conditions": {},
+      "weight": 1.0,
+      "tags": ["racing", "atmosphere"]
+    },
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Regular", "text": "Saw a black car down here. No plates. No lights. Just... moving."},
+        {"speaker": 1, "speaker_tag": "Regular", "text": "Moving where?"},
+        {"speaker": 0, "speaker_tag": "Regular", "text": "Everywhere. Nowhere. I don't know. It was like it wasn't even there."}
+      ],
+      "conditions": {},
+      "weight": 0.9,
+      "tags": ["ghost_legend", "ominous", "lore"]
+    },
+    {
+      "speakers": ["dock_worker_1"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Dock Worker", "text": "Ship came in from Yokohama last night. Whole container of JDM parts. 'Mislabeled,' they said."}
+      ],
+      "conditions": {},
+      "weight": 0.8,
+      "tags": ["cars", "smuggling", "atmosphere"]
+    },
+    {
+      "speakers": ["dock_worker_1", "dock_worker_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Dock Worker", "text": "Another shift, another hundred crates of nothing."},
+        {"speaker": 1, "speaker_tag": "Dock Worker", "text": "At least we're not the ones racing through here at 2 AM."},
+        {"speaker": 0, "speaker_tag": "Dock Worker", "text": "Speak for yourself. I race through here at 2 AM AND work the shift."}
+      ],
+      "conditions": {},
+      "weight": 0.8,
+      "tags": ["humor", "atmosphere"]
+    },
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Racer", "text": "Salt air eats paint. Eats rust. Eats everything. Harbor cars need twice the maintenance."},
+        {"speaker": 1, "speaker_tag": "Racer", "text": "But Harbor drivers? Twice as tough. You learn to drive on these surfaces, you can drive anywhere."}
+      ],
+      "conditions": {},
+      "weight": 0.8,
+      "tags": ["cars", "atmosphere"]
+    },
+    {
+      "speakers": ["regular_1"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Regular", "text": "They bring the imports through here. The real ones. Not the stuff at the dealership. The stuff that never sees a title."}
+      ],
+      "conditions": {},
+      "weight": 0.7,
+      "tags": ["smuggling", "cars", "lore"]
+    },
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Racer", "text": "Fog horn going off again. Third time tonight."},
+        {"speaker": 1, "speaker_tag": "Racer", "text": "Adds to the ambience. Nothing like a harbor sprint with zero visibility."},
+        {"speaker": 0, "speaker_tag": "Racer", "text": "That's not ambience. That's a warning."}
+      ],
+      "conditions": {},
+      "weight": 0.8,
+      "tags": ["atmosphere", "danger"]
+    },
+    {
+      "speakers": ["dock_worker_1", "regular_1"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Dock Worker", "text": "You racers tear up the loading zone every weekend. You know I gotta fix that, right?"},
+        {"speaker": 1, "speaker_tag": "Racer", "text": "Consider it job security."},
+        {"speaker": 0, "speaker_tag": "Dock Worker", "text": "Job security is not cleaning tire marks off concrete at 6 AM."}
+      ],
+      "conditions": {},
+      "weight": 0.8,
+      "tags": ["humor", "atmosphere"]
+    },
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Racer", "text": "The container alley run. Four turns, no room for error. Hit a box and you're done."},
+        {"speaker": 1, "speaker_tag": "Racer", "text": "Done as in 'you lose' or done as in 'they find you next morning'?"},
+        {"speaker": 0, "speaker_tag": "Racer", "text": "Yes."}
+      ],
+      "conditions": {},
+      "weight": 0.9,
+      "tags": ["racing", "danger"]
+    },
+    {
+      "speakers": ["regular_1"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Regular", "text": "Crane operator up there's been paid off. He moves containers to clear the sprint lane after midnight."}
+      ],
+      "conditions": {},
+      "weight": 0.7,
+      "tags": ["lore", "racing"]
+    },
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Racer", "text": "Water's black tonight. Like oil."},
+        {"speaker": 1, "speaker_tag": "Racer", "text": "It IS oil. Half the ships down here leak like a sieve."},
+        {"speaker": 0, "speaker_tag": "Racer", "text": "Romantic."}
+      ],
+      "conditions": {},
+      "weight": 0.7,
+      "tags": ["atmosphere"]
+    },
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Regular", "text": "Rain makes the docks a death trap. The surface turns to glass."},
+        {"speaker": 1, "speaker_tag": "Regular", "text": "Best drift surface in the city though. If you don't mind the consequences."}
+      ],
+      "conditions": {"weather": "light_rain"},
+      "weight": 1.3,
+      "preferred_weather": "light_rain",
+      "tags": ["weather", "racing"]
+    },
+    {
+      "speakers": ["regular_1"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Racer", "text": "Storm warning tonight. Perfect. The best races happen when God's trying to stop you."}
+      ],
+      "conditions": {"weather": "storm"},
+      "weight": 1.3,
+      "preferred_weather": "storm",
+      "tags": ["weather", "atmosphere"]
+    },
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Regular", "text": "Fog rolling in off the water. Can't see twenty feet."},
+        {"speaker": 1, "speaker_tag": "Regular", "text": "That's when the Ghost shows up. Fog and Harbor go together like bad decisions and Tuesday nights."}
+      ],
+      "conditions": {"weather": "fog"},
+      "weight": 1.2,
+      "preferred_weather": "fog",
+      "tags": ["weather", "ghost_legend"]
+    },
+    {
+      "speakers": ["dock_worker_1"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Dock Worker", "text": "Security guard just does his rounds and looks the other way. Everyone gets their cut down here."}
+      ],
+      "conditions": {},
+      "weight": 0.6,
+      "tags": ["lore", "atmosphere"]
+    },
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Racer", "text": "Someone wrecked into the dry dock last week. Car sank in eight feet of water."},
+        {"speaker": 1, "speaker_tag": "Racer", "text": "Driver make it out?"},
+        {"speaker": 0, "speaker_tag": "Racer", "text": "Driver swam out, walked home, and showed up to race the next night. Different car."}
+      ],
+      "conditions": {},
+      "weight": 0.8,
+      "tags": ["danger", "humor", "lore"]
+    },
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Racer", "text": "Late night at the docks hits different. Just the water, the engines, and the risk."},
+        {"speaker": 1, "speaker_tag": "Racer", "text": "Poetry. From a guy who eats gas station sushi at 3 AM."}
+      ],
+      "conditions": {"time_period": "late_night"},
+      "weight": 1.2,
+      "preferred_time": "late_night",
+      "tags": ["atmosphere", "humor", "time"]
+    }
+  ]
+}

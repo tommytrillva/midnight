@@ -1,0 +1,177 @@
+{
+  "id": "diesels_test_win",
+  "context": "Player beats Diesel's touge duel on Route 9 — Diesel gives rare approval",
+  "lines": [
+    {
+      "type": "narration",
+      "text": "The bottom of Route 9. Your brakes are smoking. Your hands are welded to the wheel. The mountain pass spits you out onto the harbor road and for a moment, you forget to breathe."
+    },
+    {
+      "type": "narration",
+      "text": "You beat him. Down the mountain, through forty-seven turns of guardrail-kissing, cliff-edge madness — you crossed the line first."
+    },
+    {
+      "type": "narration",
+      "text": "Diesel's coupe rolls to a stop behind you. Slow. Deliberate. He kills the engine and sits there for a long time."
+    },
+    {
+      "type": "narration",
+      "text": "Then the door opens."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_surprised",
+      "text": "Huh."
+    },
+    {
+      "type": "narration",
+      "text": "One syllable. But from him, it sounds like a standing ovation."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "Turn fourteen. The blind hairpin over the drainage ditch. You committed to the outside line."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "Most people cut inside there. It's safer. Slower. You trusted your car to hold the grip."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_approval",
+      "text": "It shouldn't have worked. But you knew it would. That's instinct. Can't teach that."
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "I just drove. Didn't think about it.",
+          "choice_id": "win_instinct",
+          "relationship_changes": {"diesel": 5},
+          "moral_shift": 5,
+          "jump_to": "diesel_responds_instinct"
+        },
+        {
+          "text": "I wasn't going to lose to someone who wouldn't tell me his name.",
+          "choice_id": "win_challenge",
+          "relationship_changes": {"diesel": 3},
+          "moral_shift": 0,
+          "jump_to": "diesel_responds_challenge"
+        },
+        {
+          "text": "You're faster than you showed. You were holding back.",
+          "choice_id": "win_observant",
+          "relationship_changes": {"diesel": 8},
+          "moral_shift": 5,
+          "jump_to": "diesel_responds_observant"
+        }
+      ]
+    },
+    {
+      "label": "diesel_responds_instinct",
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_approval",
+      "text": "Good. The moment you start thinking up there, you're already in the guardrail."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "Your hands know what your brain doesn't. Trust them.",
+      "jump_to": "diesel_deeper"
+    },
+    {
+      "label": "diesel_responds_challenge",
+      "type": "narration",
+      "text": "For the first time, something changes in his face. Not a smile — but the ghost of one. The memory of what a smile used to look like."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "Diesel. People call me Diesel.",
+      "jump_to": "diesel_deeper"
+    },
+    {
+      "label": "diesel_responds_observant",
+      "type": "narration",
+      "text": "He stops. Looks at you like he's seeing you for the first time."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_surprised",
+      "text": "...Yeah. I was."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "Didn't expect you to notice.",
+      "jump_to": "diesel_deeper"
+    },
+    {
+      "label": "diesel_deeper",
+      "type": "narration",
+      "text": "He leans against his car and stares at the harbor lights below. The city sprawls beneath you — a grid of light and shadow and a hundred stories you haven't heard yet."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "This city takes things from people. Cars. Money. Years."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "The ones who survive aren't the fastest. They're the ones who know why they're driving."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_approval",
+      "text": "You've got something. Don't let Nova Pacifica take it from you."
+    },
+    {
+      "type": "narration",
+      "text": "He pushes off the car. Walks to his door. Pauses."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "We'll talk again."
+    },
+    {
+      "type": "narration",
+      "text": "The matte black coupe disappears up the mountain road. No taillights — he killed them before the first turn. Like a ghost returning to where it lives."
+    },
+    {
+      "type": "narration",
+      "text": "You stand at the bottom of Route 9, the harbor wind pulling at your jacket, and for the first time since you arrived in this city, you feel like someone saw who you actually are."
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "change_relationship",
+        "character": "diesel",
+        "amount": 15
+      }
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "diesel_impressed",
+        "value": true
+      }
+    }
+  ]
+}

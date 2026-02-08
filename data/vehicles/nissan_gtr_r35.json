@@ -1,0 +1,41 @@
+{
+  "vehicle_id": "nissan_gtr_r35",
+  "display_name": "2017 Nissan GT-R R35",
+  "manufacturer": "Nissan",
+  "year": 2017,
+  "body_style": "coupe",
+  "category": "JDM/Pro",
+  "culture": "jdm",
+  "tier": 4,
+  "rarity": "uncommon",
+  "description": "Godzilla evolved. The R35 GT-R abandoned the Skyline name and the RB engine, replacing them with a bespoke twin-turbo V6 and a dual-clutch gearbox that launches the car to 60 mph in under three seconds. It embarrassed supercars costing five times as much and never stopped improving.",
+  "lore": "When the R35 debuted, it set a 7:29 lap at the N\u00fcrburgring and the supercar establishment panicked. A Japanese car with a V6 had no business being that fast. But the VR38DETT is hand-assembled by Takumi master craftsmen, and the ATTESA E-TS AWD system can split torque a thousand times per second. Technology as philosophy.",
+
+  "base_stats": {
+    "top_speed": 0.80,
+    "acceleration": 0.82,
+    "handling": 0.75,
+    "braking": 0.78,
+    "nitro_capacity": 0.42,
+    "weight": 1769.0
+  },
+
+  "engine": {
+    "code": "VR38DETT",
+    "horsepower": 565.0,
+    "torque": 467.0,
+    "displacement": "3.8L",
+    "configuration": "V6",
+    "aspiration": "twin_turbo"
+  },
+
+  "drivetrain": "awd",
+  "price": 120000,
+
+  "cosmetics": {
+    "default_color": "#C0C0C0",
+    "available_colors": ["#C0C0C0", "#FFFFFF", "#000000", "#FF0000", "#191970", "#FFD700"]
+  },
+
+  "special_traits": ["twin_turbo", "awd", "launch_control", "tech_monster"]
+}

@@ -1,0 +1,296 @@
+{
+  "id": "ending_e_contradiction",
+  "context": "Ending E: The Contradiction — Mixed choices, balanced paths. Interview format where each character remembers the Driver differently.",
+  "ending_id": "contradiction",
+  "ending_title": "The Contradiction",
+  "lines": [
+    {
+      "type": "narration",
+      "text": "A camera. A chair. A microphone. Someone is making a documentary."
+    },
+    {
+      "type": "narration",
+      "text": "Five interviews. Five people who knew the Driver. Five different people sitting in that chair, and every single one of them is telling the truth."
+    },
+    {
+      "type": "narration",
+      "text": "That's the problem."
+    },
+    {
+      "type": "narration",
+      "text": "MAYA TORRES. Mechanic. Builder. The one who made the cars run."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_interview",
+      "text": "People always ask me what they were like. And I never know how to answer that because the person I knew... they were the most genuine person I ever met."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_interview",
+      "text": "Not honest. That's different. Genuine. They felt things completely. Joy, anger, fear — all of it at full volume. No filter. No performance."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_emotional",
+      "text": "When they cared about something, you could see it in their hands. The way they touched the car. The way they held the wheel. Like every contact meant something."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_interview",
+      "text": "I miss that. That genuineness. The world could use more of it."
+    },
+    {
+      "type": "narration",
+      "text": "Cut."
+    },
+    {
+      "type": "narration",
+      "text": "NIKKO TANAKA. Rival. Brother. The one who raced alongside."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_interview",
+      "text": "Genuine? Maya said genuine?"
+    },
+    {
+      "type": "narration",
+      "text": "He laughs. Not unkindly."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_interview",
+      "text": "They were ruthless. Brilliant, but ruthless. On the track, off the track — they saw angles nobody else saw. Moved three steps ahead. Always."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_serious",
+      "text": "I raced them forty-seven times. Won maybe... twelve? Thirteen? Every loss taught me something. Every win felt like they let me have it."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_interview",
+      "text": "Ruthless isn't an insult. It's a compliment. They knew what they wanted and nothing — nothing — was going to stand in the way. Not even me. Especially not me."
+    },
+    {
+      "type": "narration",
+      "text": "Cut."
+    },
+    {
+      "type": "narration",
+      "text": "DIESEL. Mentor. Ghost. The one who watched from the shadows."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_interview",
+      "text": "They were a student. Always learning."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_interview",
+      "text": "Most people I tested on Route 9 thought they already knew everything. Thought speed was the answer to every question. This one... they listened. To the car. To the road. To the silence between the gear changes."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_approval",
+      "text": "A student. The best kind — the kind that eventually teaches the teacher."
+    },
+    {
+      "type": "narration",
+      "text": "He looks off-camera. At something the lens can't find."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_interview",
+      "text": "Marcus would have liked them. That's the highest thing I can say about anyone."
+    },
+    {
+      "type": "narration",
+      "text": "Cut."
+    },
+    {
+      "type": "narration",
+      "text": "JADE CHEN. Corporate. Fixer. The one who opened doors."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_interview",
+      "text": "They were an enigma."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_interview",
+      "text": "I work with drivers. Sponsors. Teams. Everyone has a brand. An angle. A thing they're selling. This one... I could never figure out what they were selling."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_interview",
+      "text": "Maybe that was the brand. The mystery. The not-knowing. People are drawn to things they can't categorize. We're pattern-matching machines, and when something breaks the pattern..."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_smile",
+      "text": "Well. That's an enigma. And enigmas are the only things that last."
+    },
+    {
+      "type": "narration",
+      "text": "Cut."
+    },
+    {
+      "type": "narration",
+      "text": "ECHO. Street philosopher. DJ. The pulse of Nova Pacifica's underground."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Echo",
+      "portrait": "echo_interview",
+      "text": "They were a current."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Echo",
+      "portrait": "echo_interview",
+      "text": "You know how a current works? Water doesn't decide to move. It just does. Pressure, temperature, the shape of the riverbed — forces you can't see push it in directions it didn't choose."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Echo",
+      "portrait": "echo_interview",
+      "text": "That was them. Moving through this city like the city was shaping them and they were shaping the city. Both at once. Neither in control."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Echo",
+      "portrait": "echo_interview",
+      "text": "Beautiful, if you knew how to watch. Most people don't know how to watch."
+    },
+    {
+      "type": "narration",
+      "text": "Cut."
+    },
+    {
+      "type": "narration",
+      "text": "A YOUNG RACER. No name given. Beat-up jacket. Eyes that haven't learned to hide what they feel."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Young Racer",
+      "portrait": "young_racer_interview",
+      "text": "They were my hero."
+    },
+    {
+      "type": "narration",
+      "text": "No elaboration. No stories. No qualifications."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Young Racer",
+      "portrait": "young_racer_interview",
+      "text": "That's it. That's the whole thing. They were my hero."
+    },
+    {
+      "type": "narration",
+      "text": "Cut. Cut. Cut. Faster now. Voices overlapping. Bleeding into each other."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_interview",
+      "text": "They were..."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_interview",
+      "text": "They were..."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_interview",
+      "text": "They were..."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_interview",
+      "text": "They were..."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Echo",
+      "portrait": "echo_interview",
+      "text": "They were..."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Young Racer",
+      "portrait": "young_racer_interview",
+      "text": "They were..."
+    },
+    {
+      "type": "narration",
+      "text": "All voices. Overlapping. A chorus of contradictions, each one true, none of them complete."
+    },
+    {
+      "type": "narration",
+      "text": "They were... They were..."
+    },
+    {
+      "type": "narration",
+      "text": "Static. Then silence."
+    },
+    {
+      "type": "narration",
+      "text": "A car. The car. Parked in the garage. Engine off. Hood cool."
+    },
+    {
+      "type": "narration",
+      "text": "The driver's seat is empty."
+    },
+    {
+      "type": "narration",
+      "text": "Racing gloves on the dash. Worn smooth at the palms. Stitching frayed at the fingertips from ten thousand gear changes."
+    },
+    {
+      "type": "narration",
+      "text": "Keys in the ignition. Turned to accessory. The dashboard lights glow faintly — like embers. Like memory."
+    },
+    {
+      "type": "narration",
+      "text": "No one is here."
+    },
+    {
+      "type": "narration",
+      "text": "Everyone was here."
+    },
+    {
+      "type": "narration",
+      "text": "THE CONTRADICTION"
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "ending_completed_contradiction",
+        "value": true
+      }
+    }
+  ]
+}

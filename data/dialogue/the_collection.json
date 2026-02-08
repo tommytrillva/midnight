@@ -1,0 +1,205 @@
+{
+  "id": "the_collection",
+  "context": "Act 3 Chapter 3.1 — Zero's car cathedral. Hundreds of vehicles. Impossible beauty. Every car has a story.",
+  "lines": [
+    {
+      "type": "narration",
+      "text": "A mountain road. No signs. No markings. The kind of road that exists because someone with enough money decided it should."
+    },
+    {
+      "type": "narration",
+      "text": "Echo drives. You sit in the passenger seat of a car you cannot identify — it moves like nothing you have ever ridden in, silent and fast and absolutely certain of itself."
+    },
+    {
+      "type": "narration",
+      "text": "The road ends at a door set into the mountainside. Not a gate — a door. Solid steel, fifty feet wide. It opens as the car approaches, and what lies beyond it stops your heart."
+    },
+    {
+      "type": "narration",
+      "text": "A cathedral. Not of stone and stained glass — of steel and carbon fiber and leather and chrome. A space carved into the mountain, vast as an airplane hangar, lit by diffused light that falls from above like grace."
+    },
+    {
+      "type": "narration",
+      "text": "Cars. Hundreds of them. Rows upon rows, arranged with the reverence of a museum and the precision of a military formation. Every era, every marque, every legendary machine that has ever turned a wheel."
+    },
+    {
+      "type": "narration",
+      "text": "A 1961 Ferrari 250 GT. A Porsche 917K in Gulf livery. A McLaren F1 in bare carbon. A Toyota 2000GT — one of only 351 ever made. A Mercedes 300SL with its gullwing doors frozen open, as if the car is perpetually arriving somewhere impossible."
+    },
+    {
+      "type": "narration",
+      "text": "And beside them — street legends. A Nissan Skyline R34 with a roll cage and competition numbers still visible under the paint. A Mazda RX-7 with a rotary engine that was illegal in three countries. Cars that were never meant to be precious — cars that became precious because of what they did."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Echo",
+      "portrait": "echo_hooded",
+      "text": "Zero's collection. Every car here was acquired at the moment it became legendary. Not before. Not after. The exact moment when metal and engineering and human will combined to create something transcendent."
+    },
+    {
+      "type": "narration",
+      "text": "You walk among them. Your footsteps echo. The silence is sacred — the kind of silence that exists in libraries and churches and the spaces between heartbeats."
+    },
+    {
+      "type": "narration",
+      "text": "And then you hear a voice."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Zero",
+      "portrait": "zero_silhouette",
+      "text": "Every car here has a story. Most of them are tragedies."
+    },
+    {
+      "type": "narration",
+      "text": "Zero. A figure at the far end of the cathedral. You cannot see their face — the light comes from behind, turning them into a silhouette, a shape defined by the absence of detail."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Zero",
+      "portrait": "zero_silhouette",
+      "text": "The Ferrari was driven by a man who won Le Mans and lost his family to the racing he couldn't stop. The Skyline belonged to a girl who outran the police for two years before they caught up to her at the wrong time on the wrong road."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Zero",
+      "portrait": "zero_silhouette",
+      "text": "Speed has a price. It always has. The question is whether the bill arrives before or after the race."
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "Why did you bring me here?",
+          "choice_id": "collection_why",
+          "relationship_changes": {"zero": 5},
+          "moral_shift": 0,
+          "jump_to": "zero_explains"
+        },
+        {
+          "text": "These cars are incredible. You've preserved history.",
+          "choice_id": "collection_admire",
+          "relationship_changes": {"zero": 10},
+          "moral_shift": -5,
+          "jump_to": "zero_flattery"
+        },
+        {
+          "text": "Cars belong on roads. Not in a cave.",
+          "choice_id": "collection_challenge",
+          "relationship_changes": {"zero": -5},
+          "moral_shift": 10,
+          "jump_to": "zero_amused"
+        }
+      ]
+    },
+    {
+      "label": "zero_explains",
+      "type": "dialogue",
+      "speaker": "Zero",
+      "portrait": "zero_silhouette",
+      "text": "Because you are at a crossroads. The corporate world used you and discarded you. The underground loved you and couldn't protect you. You are between worlds, belonging to neither.",
+      "conditions": {"act2_path": "corporate"}
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Zero",
+      "portrait": "zero_silhouette",
+      "text": "Because the underground you built was taken from you in a single night. And the question you haven't asked yet is: who gave the police the information they needed to take it?",
+      "conditions": {"act2_path": "underground"}
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Zero",
+      "portrait": "zero_silhouette",
+      "text": "I brought you here because I want you to see what exists above the underground and beyond the corporate. A third way. The real competition.",
+      "jump_to": "zero_proposition"
+    },
+    {
+      "label": "zero_flattery",
+      "type": "dialogue",
+      "speaker": "Zero",
+      "portrait": "zero_silhouette",
+      "text": "Preserved. An interesting word. One could also say 'collected.' Or 'captured.' The cars don't know the difference. They just know they are no longer moving.",
+      "jump_to": "zero_proposition"
+    },
+    {
+      "label": "zero_amused",
+      "type": "dialogue",
+      "speaker": "Zero",
+      "portrait": "zero_silhouette",
+      "text": "On that we agree. And soon, these cars will run again. On roads that make your underground circuits look like parking lots. I didn't bring you here to admire the collection. I brought you here to join it.",
+      "jump_to": "zero_proposition"
+    },
+    {
+      "label": "zero_proposition",
+      "type": "dialogue",
+      "speaker": "Zero",
+      "portrait": "zero_silhouette",
+      "text": "There is a circuit that exists outside all others. Not underground. Not professional. Elite. The best drivers in the world, competing for stakes that make championships look like children's games."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Zero",
+      "portrait": "zero_silhouette",
+      "text": "I created it because the world's racing infrastructure — both legal and illegal — is corrupt beyond repair. I created it because somewhere, there must exist a place where pure speed is the only currency."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Zero",
+      "portrait": "zero_silhouette",
+      "text": "Join my circle. Race among the elite. And in return, I offer you the one thing no sponsor, no team, and no underground can give you: the truth about how fast you really are."
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "I'm in.",
+          "choice_id": "collection_accept",
+          "relationship_changes": {"zero": 15},
+          "moral_shift": -10,
+          "set_flags": {"joined_zeros_circle": true},
+          "jump_to": "collection_end"
+        },
+        {
+          "text": "What's the price? Everything has a price.",
+          "choice_id": "collection_skeptical",
+          "relationship_changes": {"zero": 5},
+          "moral_shift": 5,
+          "set_flags": {"questioned_zero_price": true},
+          "jump_to": "zero_price"
+        }
+      ]
+    },
+    {
+      "label": "zero_price",
+      "type": "dialogue",
+      "speaker": "Zero",
+      "portrait": "zero_silhouette",
+      "text": "The price is everything you were before you walked through that door. The professional. The underground king. The teammate. The protege. None of those identities serve you here."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Zero",
+      "portrait": "zero_silhouette",
+      "text": "In my circle, you are only what you drive. Nothing more. Nothing less.",
+      "jump_to": "collection_end"
+    },
+    {
+      "label": "collection_end",
+      "type": "narration",
+      "text": "Zero turns and walks into the shadows between the cars. The silhouette dissolves. The cathedral hums with the memory of a thousand engines that once roared and now wait in silence."
+    },
+    {
+      "type": "narration",
+      "text": "You stand among legends made of metal and glass and wonder what it costs to become one of them."
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "seen_zeros_collection",
+        "value": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "vehicle_id": "honda_s2000",
+  "display_name": "2001 Honda S2000",
+  "manufacturer": "Honda",
+  "year": 2001,
+  "description": "A 9000 RPM naturally aspirated screamer in a roadster chassis. The S2000's F20C is the highest specific-output naturally aspirated four-cylinder Honda ever built — 120 horsepower per liter without a single forced-induction shortcut. The power lives at the top, and it rewards those brave enough to chase it.",
+  "base_stats": {
+    "top_speed": 0.60,
+    "acceleration": 0.58,
+    "handling": 0.74,
+    "braking": 0.62,
+    "nitro_capacity": 0.44,
+    "weight_lbs": 2700
+  },
+  "engine": {
+    "horsepower": 240.0,
+    "torque_lbft": 153.0,
+    "displacement_cc": 1997,
+    "configuration": "I4",
+    "aspiration": "naturally_aspirated"
+  },
+  "drivetrain": "rwd",
+  "tier": 3,
+  "price": 42000,
+  "rarity": "uncommon",
+  "cosmetics": {
+    "default_color": "#FF0000",
+    "available_colors": ["#FF0000", "#000000", "#C0C0C0", "#FFFFFF", "#FFD700", "#191970"]
+  },
+  "special_traits": ["vtec", "rev_happy", "balanced", "convertible"],
+  "lore": "Below 6000 RPM, the S2000 is a pleasant roadster. Above 6000 RPM, VTEC engages and the F20C transforms into something feral. That transition — from polite to unhinged — is what makes the S2000 an addiction you never want to quit.",
+  "category": "JDM"
+}

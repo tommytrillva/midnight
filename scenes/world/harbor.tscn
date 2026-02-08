@@ -1,0 +1,536 @@
+[gd_scene load_steps=43 format=3 uid="uid://harbor"]
+
+[sub_resource type="ProceduralSkyMaterial" id="sky_mat"]
+sky_top_color = Color(0.01, 0.02, 0.06, 1)
+sky_horizon_color = Color(0.04, 0.06, 0.15, 1)
+ground_bottom_color = Color(0.01, 0.02, 0.05, 1)
+ground_horizon_color = Color(0.03, 0.05, 0.12, 1)
+
+[sub_resource type="Sky" id="sky"]
+sky_material = SubResource("sky_mat")
+
+[sub_resource type="Environment" id="env"]
+background_mode = 2
+sky = SubResource("sky")
+ambient_light_source = 1
+ambient_light_color = Color(0.06, 0.08, 0.18, 1)
+ambient_light_energy = 0.25
+fog_enabled = true
+fog_light_color = Color(0.04, 0.06, 0.14, 1)
+fog_density = 0.012
+volumetric_fog_enabled = false
+
+[sub_resource type="StandardMaterial3D" id="wet_road_mat"]
+albedo_color = Color(0.1, 0.1, 0.14, 1)
+roughness = 0.3
+metallic = 0.1
+
+[node name="Harbor" type="Node3D"]
+
+[node name="WorldEnv" type="WorldEnvironment" parent="."]
+environment = SubResource("env")
+
+[node name="Moonlight" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.866, -0.25, 0.433, 0, 0.866, 0.5, -0.5, -0.433, 0.75, 0, 50, 0)
+light_color = Color(0.35, 0.45, 0.65, 1)
+light_energy = 0.35
+shadow_enabled = true
+
+[node name="Ground" type="StaticBody3D" parent="."]
+collision_layer = 2
+
+[node name="GroundMesh" type="MeshInstance3D" parent="Ground"]
+mesh = SubResource("PlaneMesh_ground")
+material_override = SubResource("ground_mat")
+
+[node name="GroundCollision" type="CollisionShape3D" parent="Ground"]
+shape = SubResource("WorldBoundaryShape3D_ground")
+
+[node name="Water" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3, -220)
+mesh = SubResource("PlaneMesh_water")
+material_override = SubResource("water_mat")
+
+[node name="Roads" type="Node3D" parent="."]
+
+[node name="WaterfrontBoulevard" type="StaticBody3D" parent="Roads"]
+collision_layer = 2
+
+[node name="Mesh" type="MeshInstance3D" parent="Roads/WaterfrontBoulevard"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.02, -80)
+mesh = SubResource("BoxMesh_boulevard")
+material_override = SubResource("wet_road_mat")
+
+[node name="Collision" type="CollisionShape3D" parent="Roads/WaterfrontBoulevard"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.02, -80)
+shape = SubResource("BoxShape_boulevard")
+
+[node name="DockRoad" type="StaticBody3D" parent="Roads"]
+collision_layer = 2
+
+[node name="Mesh" type="MeshInstance3D" parent="Roads/DockRoad"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.02, -150)
+mesh = SubResource("BoxMesh_dock_road")
+material_override = SubResource("wet_road_mat")
+
+[node name="Collision" type="CollisionShape3D" parent="Roads/DockRoad"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.02, -150)
+shape = SubResource("BoxShape_dock_road")
+
+[node name="WarehouseAlley1" type="StaticBody3D" parent="Roads"]
+collision_layer = 2
+
+[node name="Mesh" type="MeshInstance3D" parent="Roads/WarehouseAlley1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -80, 0.02, 50)
+mesh = SubResource("BoxMesh_alley")
+material_override = SubResource("wet_road_mat")
+
+[node name="Collision" type="CollisionShape3D" parent="Roads/WarehouseAlley1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -80, 0.02, 50)
+shape = SubResource("BoxShape_alley")
+
+[node name="WarehouseAlley2" type="StaticBody3D" parent="Roads"]
+collision_layer = 2
+
+[node name="Mesh" type="MeshInstance3D" parent="Roads/WarehouseAlley2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 0.02, 50)
+mesh = SubResource("BoxMesh_alley")
+material_override = SubResource("wet_road_mat")
+
+[node name="Collision" type="CollisionShape3D" parent="Roads/WarehouseAlley2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 0.02, 50)
+shape = SubResource("BoxShape_alley")
+
+[node name="CrossAlley" type="StaticBody3D" parent="Roads"]
+collision_layer = 2
+
+[node name="Mesh" type="MeshInstance3D" parent="Roads/CrossAlley"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.02, 80)
+mesh = SubResource("BoxMesh_cross_alley")
+material_override = SubResource("wet_road_mat")
+
+[node name="Collision" type="CollisionShape3D" parent="Roads/CrossAlley"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.02, 80)
+shape = SubResource("BoxShape_cross_alley")
+
+[node name="BridgeRoad" type="StaticBody3D" parent="Roads"]
+collision_layer = 2
+
+[node name="Mesh" type="MeshInstance3D" parent="Roads/BridgeRoad"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 275, 0.02, -80)
+mesh = SubResource("BoxMesh_bridge_road")
+material_override = SubResource("wet_road_mat")
+
+[node name="Collision" type="CollisionShape3D" parent="Roads/BridgeRoad"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 275, 0.02, -80)
+shape = SubResource("BoxShape_bridge_road")
+
+[node name="StreetLights" type="Node3D" parent="."]
+
+[node name="BoulevardLight1" type="OmniLight3D" parent="StreetLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 10, -80)
+light_color = Color(0.6, 0.7, 1.0, 1)
+light_energy = 2.5
+omni_range = 30.0
+
+[node name="BoulevardLight2" type="OmniLight3D" parent="StreetLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, -80)
+light_color = Color(0.6, 0.7, 1.0, 1)
+light_energy = 2.5
+omni_range = 30.0
+
+[node name="BoulevardLight3" type="OmniLight3D" parent="StreetLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 10, -80)
+light_color = Color(0.6, 0.7, 1.0, 1)
+light_energy = 2.5
+omni_range = 30.0
+
+[node name="BoulevardLight4" type="OmniLight3D" parent="StreetLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 120, 10, -80)
+light_color = Color(0.6, 0.7, 1.0, 1)
+light_energy = 2.5
+omni_range = 30.0
+
+[node name="DockLight1" type="OmniLight3D" parent="StreetLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 8, -170)
+light_color = Color(0.5, 0.6, 0.9, 1)
+light_energy = 2.0
+omni_range = 25.0
+
+[node name="DockLight2" type="OmniLight3D" parent="StreetLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 8, -180)
+light_color = Color(0.5, 0.6, 0.9, 1)
+light_energy = 2.0
+omni_range = 25.0
+
+[node name="AlleyLight1" type="OmniLight3D" parent="StreetLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -80, 7, 30)
+light_color = Color(0.7, 0.8, 1.0, 1)
+light_energy = 1.5
+omni_range = 18.0
+
+[node name="AlleyLight2" type="OmniLight3D" parent="StreetLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 7, 30)
+light_color = Color(0.7, 0.8, 1.0, 1)
+light_energy = 1.5
+omni_range = 18.0
+
+[node name="CraneSpotlight" type="SpotLight3D" parent="StreetLights"]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 60, 28, -175)
+light_color = Color(0.9, 0.95, 1.0, 1)
+light_energy = 4.0
+spot_range = 40.0
+spot_angle = 35.0
+
+[node name="CraneWarning" type="OmniLight3D" parent="StreetLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 31, -170)
+light_color = Color(1.0, 0.3, 0.1, 1)
+light_energy = 2.0
+omni_range = 10.0
+
+[node name="ContainerYardLight" type="OmniLight3D" parent="StreetLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12, -140)
+light_color = Color(0.8, 0.85, 1.0, 1)
+light_energy = 3.0
+omni_range = 35.0
+
+[node name="Structures" type="Node3D" parent="."]
+
+[node name="Warehouse1" type="StaticBody3D" parent="Structures"]
+collision_layer = 2
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -100, 7, 30)
+
+[node name="Mesh" type="MeshInstance3D" parent="Structures/Warehouse1"]
+mesh = SubResource("BoxMesh_warehouse_large")
+material_override = SubResource("warehouse_mat")
+
+[node name="Collision" type="CollisionShape3D" parent="Structures/Warehouse1"]
+shape = SubResource("BoxShape_warehouse_large")
+
+[node name="Warehouse2" type="StaticBody3D" parent="Structures"]
+collision_layer = 2
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 100, 7, 30)
+
+[node name="Mesh" type="MeshInstance3D" parent="Structures/Warehouse2"]
+mesh = SubResource("BoxMesh_warehouse_large")
+material_override = SubResource("warehouse_mat")
+
+[node name="Collision" type="CollisionShape3D" parent="Structures/Warehouse2"]
+shape = SubResource("BoxShape_warehouse_large")
+
+[node name="Warehouse3" type="StaticBody3D" parent="Structures"]
+collision_layer = 2
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 5, 120)
+
+[node name="Mesh" type="MeshInstance3D" parent="Structures/Warehouse3"]
+mesh = SubResource("BoxMesh_warehouse_small")
+material_override = SubResource("warehouse_mat")
+
+[node name="Collision" type="CollisionShape3D" parent="Structures/Warehouse3"]
+shape = SubResource("BoxShape_warehouse_small")
+
+[node name="Warehouse4" type="StaticBody3D" parent="Structures"]
+collision_layer = 2
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 5, 120)
+
+[node name="Mesh" type="MeshInstance3D" parent="Structures/Warehouse4"]
+mesh = SubResource("BoxMesh_warehouse_small")
+material_override = SubResource("warehouse_mat")
+
+[node name="Collision" type="CollisionShape3D" parent="Structures/Warehouse4"]
+shape = SubResource("BoxShape_warehouse_small")
+
+[node name="Container1" type="StaticBody3D" parent="Structures"]
+collision_layer = 2
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 1.5, -130)
+
+[node name="Mesh" type="MeshInstance3D" parent="Structures/Container1"]
+mesh = SubResource("BoxMesh_container")
+material_override = SubResource("container_mat")
+
+[node name="Collision" type="CollisionShape3D" parent="Structures/Container1"]
+shape = SubResource("BoxShape_container")
+
+[node name="Container2" type="StaticBody3D" parent="Structures"]
+collision_layer = 2
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 1.5, -145)
+
+[node name="Mesh" type="MeshInstance3D" parent="Structures/Container2"]
+mesh = SubResource("BoxMesh_container")
+material_override = SubResource("container_mat")
+
+[node name="Collision" type="CollisionShape3D" parent="Structures/Container2"]
+shape = SubResource("BoxShape_container")
+
+[node name="Container3" type="StaticBody3D" parent="Structures"]
+collision_layer = 2
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 1.5, -135)
+
+[node name="Mesh" type="MeshInstance3D" parent="Structures/Container3"]
+mesh = SubResource("BoxMesh_container")
+material_override = SubResource("container_mat")
+
+[node name="Collision" type="CollisionShape3D" parent="Structures/Container3"]
+shape = SubResource("BoxShape_container")
+
+[node name="Container4" type="StaticBody3D" parent="Structures"]
+collision_layer = 2
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 4.5, -132)
+
+[node name="Mesh" type="MeshInstance3D" parent="Structures/Container4"]
+mesh = SubResource("BoxMesh_container")
+material_override = SubResource("container_mat")
+
+[node name="Collision" type="CollisionShape3D" parent="Structures/Container4"]
+shape = SubResource("BoxShape_container")
+
+[node name="Container5" type="StaticBody3D" parent="Structures"]
+collision_layer = 2
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 1.5, -155)
+
+[node name="Mesh" type="MeshInstance3D" parent="Structures/Container5"]
+mesh = SubResource("BoxMesh_container")
+material_override = SubResource("container_mat")
+
+[node name="Collision" type="CollisionShape3D" parent="Structures/Container5"]
+shape = SubResource("BoxShape_container")
+
+[node name="Container6" type="StaticBody3D" parent="Structures"]
+collision_layer = 2
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 4.5, -152)
+
+[node name="Mesh" type="MeshInstance3D" parent="Structures/Container6"]
+mesh = SubResource("BoxMesh_container")
+material_override = SubResource("container_mat")
+
+[node name="Collision" type="CollisionShape3D" parent="Structures/Container6"]
+shape = SubResource("BoxShape_container")
+
+[node name="CraneTower" type="StaticBody3D" parent="Structures"]
+collision_layer = 2
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 15, -175)
+
+[node name="Mesh" type="MeshInstance3D" parent="Structures/CraneTower"]
+mesh = SubResource("BoxMesh_crane_tower")
+material_override = SubResource("crane_mat")
+
+[node name="Collision" type="CollisionShape3D" parent="Structures/CraneTower"]
+shape = SubResource("BoxShape_crane_tower")
+
+[node name="CraneArm" type="StaticBody3D" parent="Structures"]
+collision_layer = 2
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 73, 29, -175)
+
+[node name="Mesh" type="MeshInstance3D" parent="Structures/CraneArm"]
+mesh = SubResource("BoxMesh_crane_arm")
+material_override = SubResource("crane_mat")
+
+[node name="Collision" type="CollisionShape3D" parent="Structures/CraneArm"]
+shape = SubResource("BoxShape_crane_arm")
+
+[node name="DockPlatform" type="StaticBody3D" parent="Structures"]
+collision_layer = 2
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, -200)
+
+[node name="Mesh" type="MeshInstance3D" parent="Structures/DockPlatform"]
+mesh = SubResource("BoxMesh_dock_platform")
+material_override = SubResource("dock_mat")
+
+[node name="Collision" type="CollisionShape3D" parent="Structures/DockPlatform"]
+shape = SubResource("BoxShape_dock_platform")
+
+[node name="CargoShipHull" type="StaticBody3D" parent="Structures"]
+collision_layer = 2
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -80, 4, -255)
+
+[node name="Mesh" type="MeshInstance3D" parent="Structures/CargoShipHull"]
+mesh = SubResource("BoxMesh_ship_hull")
+material_override = SubResource("ship_mat")
+
+[node name="Collision" type="CollisionShape3D" parent="Structures/CargoShipHull"]
+shape = SubResource("BoxShape_ship_hull")
+
+[node name="CargoShipCabin" type="StaticBody3D" parent="Structures"]
+collision_layer = 2
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -105, 14, -255)
+
+[node name="Mesh" type="MeshInstance3D" parent="Structures/CargoShipCabin"]
+mesh = SubResource("BoxMesh_ship_cabin")
+material_override = SubResource("ship_mat")
+
+[node name="Collision" type="CollisionShape3D" parent="Structures/CargoShipCabin"]
+shape = SubResource("BoxShape_ship_cabin")
+
+[node name="InteractionPoints" type="Node3D" parent="."]
+
+[node name="DockRaceStart" type="Area3D" parent="InteractionPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -120)
+collision_layer = 32
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionPoints/DockRaceStart"]
+shape = SubResource("BoxShape_trigger")
+
+[node name="Label" type="Label3D" parent="InteractionPoints/DockRaceStart"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+text = "DOCK RACE"
+font_size = 48
+outline_size = 4
+modulate = Color(0, 0.8, 1, 1)
+
+[node name="UndergroundContact" type="Area3D" parent="InteractionPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -80, 0, 80)
+collision_layer = 32
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionPoints/UndergroundContact"]
+shape = SubResource("BoxShape_trigger")
+
+[node name="Label" type="Label3D" parent="InteractionPoints/UndergroundContact"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+text = "UNDERGROUND CONTACT"
+font_size = 36
+outline_size = 4
+modulate = Color(0.8, 0.2, 1, 1)
+
+[node name="PlayerSpawn" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -60)
+
+[node name="SpawnFrom_downtown" type="Marker3D" parent="."]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 340, 1, -80)
+
+[node name="DistrictTransitions" type="Node3D" parent="."]
+
+[node name="ToDowntown" type="Area3D" parent="DistrictTransitions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 350, 0, -80)
+collision_layer = 64
+metadata/target_district = "downtown"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DistrictTransitions/ToDowntown"]
+shape = SubResource("BoxShape_transition")
+
+[node name="Label" type="Label3D" parent="DistrictTransitions/ToDowntown"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+text = ">> DOWNTOWN >>"
+font_size = 36
+outline_size = 4
+modulate = Color(1, 1, 0.5, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ground"]
+size = Vector2(600, 600)
+
+[sub_resource type="StandardMaterial3D" id="ground_mat"]
+albedo_color = Color(0.06, 0.06, 0.08, 1)
+roughness = 1.0
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_ground"]
+
+[sub_resource type="StandardMaterial3D" id="water_mat"]
+albedo_color = Color(0.02, 0.04, 0.1, 1)
+roughness = 0.1
+metallic = 0.4
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_water"]
+size = Vector2(600, 300)
+
+[sub_resource type="BoxMesh" id="BoxMesh_boulevard"]
+size = Vector3(400, 0.05, 16)
+
+[sub_resource type="BoxShape3D" id="BoxShape_boulevard"]
+size = Vector3(400, 0.05, 16)
+
+[sub_resource type="BoxMesh" id="BoxMesh_dock_road"]
+size = Vector3(12, 0.05, 120)
+
+[sub_resource type="BoxShape3D" id="BoxShape_dock_road"]
+size = Vector3(12, 0.05, 120)
+
+[sub_resource type="BoxMesh" id="BoxMesh_alley"]
+size = Vector3(8, 0.05, 200)
+
+[sub_resource type="BoxShape3D" id="BoxShape_alley"]
+size = Vector3(8, 0.05, 200)
+
+[sub_resource type="BoxMesh" id="BoxMesh_cross_alley"]
+size = Vector3(200, 0.05, 8)
+
+[sub_resource type="BoxShape3D" id="BoxShape_cross_alley"]
+size = Vector3(200, 0.05, 8)
+
+[sub_resource type="BoxMesh" id="BoxMesh_bridge_road"]
+size = Vector3(200, 0.05, 12)
+
+[sub_resource type="BoxShape3D" id="BoxShape_bridge_road"]
+size = Vector3(200, 0.05, 12)
+
+[sub_resource type="StandardMaterial3D" id="warehouse_mat"]
+albedo_color = Color(0.1, 0.1, 0.13, 1)
+roughness = 0.85
+
+[sub_resource type="BoxMesh" id="BoxMesh_warehouse_large"]
+size = Vector3(40, 14, 35)
+
+[sub_resource type="BoxShape3D" id="BoxShape_warehouse_large"]
+size = Vector3(40, 14, 35)
+
+[sub_resource type="BoxMesh" id="BoxMesh_warehouse_small"]
+size = Vector3(30, 10, 25)
+
+[sub_resource type="BoxShape3D" id="BoxShape_warehouse_small"]
+size = Vector3(30, 10, 25)
+
+[sub_resource type="StandardMaterial3D" id="container_mat"]
+albedo_color = Color(0.15, 0.06, 0.04, 1)
+roughness = 0.7
+
+[sub_resource type="BoxMesh" id="BoxMesh_container"]
+size = Vector3(12, 3, 3)
+
+[sub_resource type="BoxShape3D" id="BoxShape_container"]
+size = Vector3(12, 3, 3)
+
+[sub_resource type="StandardMaterial3D" id="crane_mat"]
+albedo_color = Color(0.6, 0.55, 0.1, 1)
+roughness = 0.6
+
+[sub_resource type="BoxMesh" id="BoxMesh_crane_tower"]
+size = Vector3(4, 30, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape_crane_tower"]
+size = Vector3(4, 30, 4)
+
+[sub_resource type="BoxMesh" id="BoxMesh_crane_arm"]
+size = Vector3(25, 2, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape_crane_arm"]
+size = Vector3(25, 2, 2)
+
+[sub_resource type="StandardMaterial3D" id="dock_mat"]
+albedo_color = Color(0.12, 0.1, 0.08, 1)
+roughness = 0.9
+
+[sub_resource type="BoxMesh" id="BoxMesh_dock_platform"]
+size = Vector3(100, 1.5, 25)
+
+[sub_resource type="BoxShape3D" id="BoxShape_dock_platform"]
+size = Vector3(100, 1.5, 25)
+
+[sub_resource type="StandardMaterial3D" id="ship_mat"]
+albedo_color = Color(0.08, 0.08, 0.1, 1)
+roughness = 0.6
+
+[sub_resource type="BoxMesh" id="BoxMesh_ship_hull"]
+size = Vector3(70, 12, 18)
+
+[sub_resource type="BoxShape3D" id="BoxShape_ship_hull"]
+size = Vector3(70, 12, 18)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ship_cabin"]
+size = Vector3(12, 10, 14)
+
+[sub_resource type="BoxShape3D" id="BoxShape_ship_cabin"]
+size = Vector3(12, 10, 14)
+
+[sub_resource type="BoxShape3D" id="BoxShape_trigger"]
+size = Vector3(10, 4, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape_transition"]
+size = Vector3(20, 5, 20)

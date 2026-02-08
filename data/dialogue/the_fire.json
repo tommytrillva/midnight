@@ -1,0 +1,153 @@
+{
+  "id": "the_fire",
+  "context": "Act 3 Chapter 3.3 — Someone reaches out. Dynamic based on highest relationship. A spark of hope.",
+  "lines": [
+    {
+      "type": "narration",
+      "text": "Three days at rock bottom. The motel room. The parking lot. The rain that won't stop."
+    },
+    {
+      "type": "narration",
+      "text": "Your phone has been off for seventy-two hours. When you turn it on, there are 347 notifications. You delete them all without reading."
+    },
+    {
+      "type": "narration",
+      "text": "Except one."
+    },
+    {
+      "type": "narration",
+      "text": "A voicemail. From the one person who would leave a voicemail instead of a text, because voicemails are personal and personal means vulnerable and this person decided that vulnerability was worth the cost."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_determined",
+      "text": "[VOICEMAIL] I don't care what they're saying. I know who you are. I've known since you rolled into my lot with a car that barely ran and a look in your eyes like you were trying to outrun something you couldn't name.",
+      "conditions": {"prioritized_maya_act3": true}
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_determined",
+      "text": "[VOICEMAIL] The garage is open. The coffee is terrible. And I've got a list of things wrong with your car that would make a grown mechanic cry. So get over here. We've got work to do.",
+      "conditions": {"prioritized_maya_act3": true}
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "[VOICEMAIL] I taught you that the car doesn't care about you. That the people watching from the sidelines do. I'm on the sideline. I'm watching. And I'm telling you: get up.",
+      "conditions": {"prioritized_diesel_act3": true}
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "[VOICEMAIL] The underground is still here. Changed, but here. And it remembers who built it. Come home.",
+      "conditions": {"prioritized_diesel_act3": true}
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_determined",
+      "text": "[VOICEMAIL] You stopped for me when I was burning. You came for me on the Coastal. You're the only person who never gave up on me, even when I gave up on myself.",
+      "conditions": {"prioritized_nikko_act3": true}
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_determined",
+      "text": "[VOICEMAIL] Now it's my turn. I know where you're staying. I'm coming to get you. Don't make me break down the door.",
+      "conditions": {"prioritized_nikko_act3": true}
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_determined",
+      "text": "[VOICEMAIL] I don't care what they're saying. I know who you are. The garage is open. Come home.",
+      "conditions": {"abandoned_old_friends": true}
+    },
+    {
+      "type": "narration",
+      "text": "You play the message three times. Each time, the words land harder. Not because they change — because you change while listening to them."
+    },
+    {
+      "type": "narration",
+      "text": "The fire. Not the kind that burns cars and destroys lives. The other kind. The kind that starts small — a spark, a warmth, a flicker of something that might be hope if you give it room to breathe."
+    },
+    {
+      "type": "narration",
+      "text": "You look at the CRX through the motel window. Rain-streaked, dented, worth less than the parking space it occupies. But it runs. It has always run."
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "Go to them. Rebuild. Fight back.",
+          "choice_id": "fire_fight",
+          "relationship_changes": {"maya": 10, "diesel": 10, "nikko": 10},
+          "moral_shift": 15,
+          "set_flags": {"chose_to_fight_back": true},
+          "jump_to": "fire_lit"
+        },
+        {
+          "text": "Not yet. But soon. The fire needs fuel first.",
+          "choice_id": "fire_soon",
+          "relationship_changes": {"maya": 5, "diesel": 5},
+          "moral_shift": 5,
+          "set_flags": {"chose_to_prepare": true},
+          "jump_to": "fire_building"
+        }
+      ]
+    },
+    {
+      "label": "fire_lit",
+      "type": "narration",
+      "text": "You pack the duffel bag. Check out of the motel. Start the CRX."
+    },
+    {
+      "type": "narration",
+      "text": "The rain is still falling. But rain is just water. And water doesn't stop engines. It doesn't stop drivers. It just makes the road more interesting."
+    },
+    {
+      "type": "narration",
+      "text": "You drive to the garage. The bay door is open. The lights are on. Someone left a cup of coffee on the workbench, still steaming."
+    },
+    {
+      "type": "narration",
+      "text": "They were waiting for you. They knew you'd come.",
+      "jump_to": "fire_end"
+    },
+    {
+      "label": "fire_building",
+      "type": "narration",
+      "text": "You save the voicemail. Play it one more time. Then you turn off the phone and sit in the CRX and think."
+    },
+    {
+      "type": "narration",
+      "text": "Not about racing. Not about Zero. Not about the scandal or the courts or the cameras. You think about the first time you drove. Really drove. The feeling of the car responding to your hands. The road opening up ahead of you like a question that can only be answered by going faster."
+    },
+    {
+      "type": "narration",
+      "text": "That feeling is still there. Under the fear and the shame and the weight of everything that happened — it's still there. Like embers under ash. Waiting.",
+      "jump_to": "fire_end"
+    },
+    {
+      "label": "fire_end",
+      "type": "narration",
+      "text": "The fire is lit. Small. Fragile. The kind that can be blown out by a breath or fanned into an inferno by a choice."
+    },
+    {
+      "type": "narration",
+      "text": "You choose the inferno."
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "the_fire_lit",
+        "value": true
+      }
+    }
+  ]
+}

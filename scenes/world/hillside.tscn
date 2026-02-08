@@ -1,0 +1,613 @@
+[gd_scene load_steps=45 format=3 uid="uid://hillside"]
+
+[sub_resource type="ProceduralSkyMaterial" id="sky_mat"]
+sky_top_color = Color(0.01, 0.01, 0.04, 1)
+sky_horizon_color = Color(0.03, 0.02, 0.08, 1)
+ground_bottom_color = Color(0.01, 0.01, 0.03, 1)
+ground_horizon_color = Color(0.02, 0.02, 0.06, 1)
+
+[sub_resource type="Sky" id="sky"]
+sky_material = SubResource("sky_mat")
+
+[sub_resource type="Environment" id="env"]
+background_mode = 2
+sky = SubResource("sky")
+ambient_light_source = 1
+ambient_light_color = Color(0.05, 0.05, 0.1, 1)
+ambient_light_energy = 0.2
+fog_enabled = true
+fog_light_color = Color(0.03, 0.03, 0.06, 1)
+fog_density = 0.003
+volumetric_fog_enabled = false
+
+[sub_resource type="StandardMaterial3D" id="road_mat"]
+albedo_color = Color(0.14, 0.13, 0.12, 1)
+roughness = 0.85
+
+[node name="Hillside" type="Node3D"]
+
+[node name="WorldEnv" type="WorldEnvironment" parent="."]
+environment = SubResource("env")
+
+[node name="Moonlight" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.866, -0.25, 0.433, 0, 0.866, 0.5, -0.5, -0.433, 0.75, 0, 80, 0)
+light_color = Color(0.5, 0.55, 0.8, 1)
+light_energy = 0.5
+shadow_enabled = true
+
+[node name="Ground" type="StaticBody3D" parent="."]
+collision_layer = 2
+
+[node name="GroundMesh" type="MeshInstance3D" parent="Ground"]
+mesh = SubResource("PlaneMesh_ground")
+material_override = SubResource("ground_mat")
+
+[node name="GroundCollision" type="CollisionShape3D" parent="Ground"]
+shape = SubResource("WorldBoundaryShape3D_ground")
+
+[node name="Roads" type="Node3D" parent="."]
+
+[node name="EntryRoad" type="StaticBody3D" parent="Roads"]
+collision_layer = 2
+
+[node name="Mesh" type="MeshInstance3D" parent="Roads/EntryRoad"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.02, -165)
+mesh = SubResource("BoxMesh_entry_road")
+material_override = SubResource("road_mat")
+
+[node name="Collision" type="CollisionShape3D" parent="Roads/EntryRoad"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.02, -165)
+shape = SubResource("BoxShape_entry_road")
+
+[node name="Ramp1" type="StaticBody3D" parent="Roads"]
+collision_layer = 2
+
+[node name="Mesh" type="MeshInstance3D" parent="Roads/Ramp1"]
+transform = Transform3D(1, 0, 0, 0, 0.981, -0.196, 0, 0.196, 0.981, 0, 4, -60)
+mesh = SubResource("BoxMesh_ramp")
+material_override = SubResource("road_mat")
+
+[node name="Collision" type="CollisionShape3D" parent="Roads/Ramp1"]
+transform = Transform3D(1, 0, 0, 0, 0.981, -0.196, 0, 0.196, 0.981, 0, 4, -60)
+shape = SubResource("BoxShape_ramp")
+
+[node name="Switchback1" type="StaticBody3D" parent="Roads"]
+collision_layer = 2
+
+[node name="Mesh" type="MeshInstance3D" parent="Roads/Switchback1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 8.02, -20)
+mesh = SubResource("BoxMesh_switchback")
+material_override = SubResource("road_mat")
+
+[node name="Collision" type="CollisionShape3D" parent="Roads/Switchback1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 8.02, -20)
+shape = SubResource("BoxShape_switchback")
+
+[node name="Turn1Ramp" type="StaticBody3D" parent="Roads"]
+collision_layer = 2
+
+[node name="Mesh" type="MeshInstance3D" parent="Roads/Turn1Ramp"]
+transform = Transform3D(1, 0, 0, 0, 0.981, -0.196, 0, 0.196, 0.981, 150, 12, 0)
+mesh = SubResource("BoxMesh_ramp")
+material_override = SubResource("road_mat")
+
+[node name="Collision" type="CollisionShape3D" parent="Roads/Turn1Ramp"]
+transform = Transform3D(1, 0, 0, 0, 0.981, -0.196, 0, 0.196, 0.981, 150, 12, 0)
+shape = SubResource("BoxShape_ramp")
+
+[node name="Switchback2" type="StaticBody3D" parent="Roads"]
+collision_layer = 2
+
+[node name="Mesh" type="MeshInstance3D" parent="Roads/Switchback2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 16.02, 40)
+mesh = SubResource("BoxMesh_switchback")
+material_override = SubResource("road_mat")
+
+[node name="Collision" type="CollisionShape3D" parent="Roads/Switchback2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 16.02, 40)
+shape = SubResource("BoxShape_switchback")
+
+[node name="Turn2Ramp" type="StaticBody3D" parent="Roads"]
+collision_layer = 2
+
+[node name="Mesh" type="MeshInstance3D" parent="Roads/Turn2Ramp"]
+transform = Transform3D(1, 0, 0, 0, 0.981, -0.196, 0, 0.196, 0.981, 0, 20, 60)
+mesh = SubResource("BoxMesh_ramp")
+material_override = SubResource("road_mat")
+
+[node name="Collision" type="CollisionShape3D" parent="Roads/Turn2Ramp"]
+transform = Transform3D(1, 0, 0, 0, 0.981, -0.196, 0, 0.196, 0.981, 0, 20, 60)
+shape = SubResource("BoxShape_ramp")
+
+[node name="Switchback3" type="StaticBody3D" parent="Roads"]
+collision_layer = 2
+
+[node name="Mesh" type="MeshInstance3D" parent="Roads/Switchback3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 24.02, 100)
+mesh = SubResource("BoxMesh_switchback_short")
+material_override = SubResource("road_mat")
+
+[node name="Collision" type="CollisionShape3D" parent="Roads/Switchback3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 24.02, 100)
+shape = SubResource("BoxShape_switchback_short")
+
+[node name="FinalRamp" type="StaticBody3D" parent="Roads"]
+collision_layer = 2
+
+[node name="Mesh" type="MeshInstance3D" parent="Roads/FinalRamp"]
+transform = Transform3D(1, 0, 0, 0, 0.981, -0.196, 0, 0.196, 0.981, 120, 28, 120)
+mesh = SubResource("BoxMesh_ramp")
+material_override = SubResource("road_mat")
+
+[node name="Collision" type="CollisionShape3D" parent="Roads/FinalRamp"]
+transform = Transform3D(1, 0, 0, 0, 0.981, -0.196, 0, 0.196, 0.981, 120, 28, 120)
+shape = SubResource("BoxShape_ramp")
+
+[node name="SummitRoad" type="StaticBody3D" parent="Roads"]
+collision_layer = 2
+
+[node name="Mesh" type="MeshInstance3D" parent="Roads/SummitRoad"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 120, 32.02, 160)
+mesh = SubResource("BoxMesh_summit_road")
+material_override = SubResource("road_mat")
+
+[node name="Collision" type="CollisionShape3D" parent="Roads/SummitRoad"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 120, 32.02, 160)
+shape = SubResource("BoxShape_summit_road")
+
+[node name="StreetLights" type="Node3D" parent="."]
+
+[node name="EntryLight1" type="OmniLight3D" parent="StreetLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 6, -200)
+light_color = Color(0.8, 0.85, 1.0, 1)
+light_energy = 1.5
+omni_range = 20.0
+
+[node name="EntryLight2" type="OmniLight3D" parent="StreetLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 6, -130)
+light_color = Color(0.8, 0.85, 1.0, 1)
+light_energy = 1.5
+omni_range = 20.0
+
+[node name="SwitchbackLight1" type="OmniLight3D" parent="StreetLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 14, -20)
+light_color = Color(0.9, 0.9, 1.0, 1)
+light_energy = 1.2
+omni_range = 18.0
+
+[node name="SwitchbackLight2" type="OmniLight3D" parent="StreetLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 100, 22, 40)
+light_color = Color(0.9, 0.9, 1.0, 1)
+light_energy = 1.2
+omni_range = 18.0
+
+[node name="SummitLight" type="OmniLight3D" parent="StreetLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 120, 38, 170)
+light_color = Color(0.7, 0.75, 1.0, 1)
+light_energy = 2.0
+omni_range = 25.0
+
+[node name="Structures" type="Node3D" parent="."]
+
+[node name="MountainWall1" type="StaticBody3D" parent="Structures"]
+collision_layer = 2
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 8, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Structures/MountainWall1"]
+mesh = SubResource("BoxMesh_mountain_large")
+material_override = SubResource("mountain_mat")
+
+[node name="Collision" type="CollisionShape3D" parent="Structures/MountainWall1"]
+shape = SubResource("BoxShape_mountain_large")
+
+[node name="MountainWall2" type="StaticBody3D" parent="Structures"]
+collision_layer = 2
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 200, 16, 60)
+
+[node name="Mesh" type="MeshInstance3D" parent="Structures/MountainWall2"]
+mesh = SubResource("BoxMesh_mountain_tall")
+material_override = SubResource("mountain_mat")
+
+[node name="Collision" type="CollisionShape3D" parent="Structures/MountainWall2"]
+shape = SubResource("BoxShape_mountain_tall")
+
+[node name="MountainPeak" type="StaticBody3D" parent="Structures"]
+collision_layer = 2
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 160, 18, 160)
+
+[node name="Mesh" type="MeshInstance3D" parent="Structures/MountainPeak"]
+mesh = SubResource("BoxMesh_mountain_peak")
+material_override = SubResource("mountain_mat")
+
+[node name="Collision" type="CollisionShape3D" parent="Structures/MountainPeak"]
+shape = SubResource("BoxShape_mountain_peak")
+
+[node name="Guardrails" type="Node3D" parent="Structures"]
+
+[node name="Guardrail1" type="StaticBody3D" parent="Structures/Guardrails"]
+collision_layer = 2
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 9, -27)
+
+[node name="Mesh" type="MeshInstance3D" parent="Structures/Guardrails/Guardrail1"]
+mesh = SubResource("BoxMesh_guardrail_long")
+material_override = SubResource("guardrail_mat")
+
+[node name="Collision" type="CollisionShape3D" parent="Structures/Guardrails/Guardrail1"]
+shape = SubResource("BoxShape_guardrail_long")
+
+[node name="Guardrail2" type="StaticBody3D" parent="Structures/Guardrails"]
+collision_layer = 2
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 17, 33)
+
+[node name="Mesh" type="MeshInstance3D" parent="Structures/Guardrails/Guardrail2"]
+mesh = SubResource("BoxMesh_guardrail_long")
+material_override = SubResource("guardrail_mat")
+
+[node name="Collision" type="CollisionShape3D" parent="Structures/Guardrails/Guardrail2"]
+shape = SubResource("BoxShape_guardrail_long")
+
+[node name="Guardrail3" type="StaticBody3D" parent="Structures/Guardrails"]
+collision_layer = 2
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 9, -13)
+
+[node name="Mesh" type="MeshInstance3D" parent="Structures/Guardrails/Guardrail3"]
+mesh = SubResource("BoxMesh_guardrail_long")
+material_override = SubResource("guardrail_mat")
+
+[node name="Collision" type="CollisionShape3D" parent="Structures/Guardrails/Guardrail3"]
+shape = SubResource("BoxShape_guardrail_long")
+
+[node name="Guardrail4" type="StaticBody3D" parent="Structures/Guardrails"]
+collision_layer = 2
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 17, 47)
+
+[node name="Mesh" type="MeshInstance3D" parent="Structures/Guardrails/Guardrail4"]
+mesh = SubResource("BoxMesh_guardrail_long")
+material_override = SubResource("guardrail_mat")
+
+[node name="Collision" type="CollisionShape3D" parent="Structures/Guardrails/Guardrail4"]
+shape = SubResource("BoxShape_guardrail_long")
+
+[node name="GuardrailSummit" type="StaticBody3D" parent="Structures/Guardrails"]
+collision_layer = 2
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 120, 33.5, 177)
+
+[node name="Mesh" type="MeshInstance3D" parent="Structures/Guardrails/GuardrailSummit"]
+mesh = SubResource("BoxMesh_guardrail_short")
+material_override = SubResource("guardrail_mat")
+
+[node name="Collision" type="CollisionShape3D" parent="Structures/Guardrails/GuardrailSummit"]
+shape = SubResource("BoxShape_guardrail_short")
+
+[node name="TunnelWallSouth" type="StaticBody3D" parent="Structures"]
+collision_layer = 2
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 19, 34)
+
+[node name="Mesh" type="MeshInstance3D" parent="Structures/TunnelWallSouth"]
+mesh = SubResource("BoxMesh_tunnel_wall")
+material_override = SubResource("mountain_mat")
+
+[node name="Collision" type="CollisionShape3D" parent="Structures/TunnelWallSouth"]
+shape = SubResource("BoxShape_tunnel_wall")
+
+[node name="TunnelWallNorth" type="StaticBody3D" parent="Structures"]
+collision_layer = 2
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 19, 46)
+
+[node name="Mesh" type="MeshInstance3D" parent="Structures/TunnelWallNorth"]
+mesh = SubResource("BoxMesh_tunnel_wall")
+material_override = SubResource("mountain_mat")
+
+[node name="Collision" type="CollisionShape3D" parent="Structures/TunnelWallNorth"]
+shape = SubResource("BoxShape_tunnel_wall")
+
+[node name="TunnelRoof" type="StaticBody3D" parent="Structures"]
+collision_layer = 2
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 22.25, 40)
+
+[node name="Mesh" type="MeshInstance3D" parent="Structures/TunnelRoof"]
+mesh = SubResource("BoxMesh_tunnel_roof")
+material_override = SubResource("mountain_mat")
+
+[node name="Collision" type="CollisionShape3D" parent="Structures/TunnelRoof"]
+shape = SubResource("BoxShape_tunnel_roof")
+
+[node name="Trees" type="Node3D" parent="Structures"]
+
+[node name="Tree1Trunk" type="StaticBody3D" parent="Structures/Trees"]
+collision_layer = 2
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 2, -120)
+
+[node name="Mesh" type="MeshInstance3D" parent="Structures/Trees/Tree1Trunk"]
+mesh = SubResource("CylinderMesh_trunk")
+material_override = SubResource("trunk_mat")
+
+[node name="Collision" type="CollisionShape3D" parent="Structures/Trees/Tree1Trunk"]
+shape = SubResource("BoxShape_trunk")
+
+[node name="Tree1Canopy" type="MeshInstance3D" parent="Structures/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 6, -120)
+mesh = SubResource("SphereMesh_canopy")
+material_override = SubResource("canopy_mat")
+
+[node name="Tree2Trunk" type="StaticBody3D" parent="Structures/Trees"]
+collision_layer = 2
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 2, -100)
+
+[node name="Mesh" type="MeshInstance3D" parent="Structures/Trees/Tree2Trunk"]
+mesh = SubResource("CylinderMesh_trunk")
+material_override = SubResource("trunk_mat")
+
+[node name="Collision" type="CollisionShape3D" parent="Structures/Trees/Tree2Trunk"]
+shape = SubResource("BoxShape_trunk")
+
+[node name="Tree2Canopy" type="MeshInstance3D" parent="Structures/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 6, -100)
+mesh = SubResource("SphereMesh_canopy")
+material_override = SubResource("canopy_mat")
+
+[node name="Tree3Trunk" type="StaticBody3D" parent="Structures/Trees"]
+collision_layer = 2
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 10, -10)
+
+[node name="Mesh" type="MeshInstance3D" parent="Structures/Trees/Tree3Trunk"]
+mesh = SubResource("CylinderMesh_trunk")
+material_override = SubResource("trunk_mat")
+
+[node name="Collision" type="CollisionShape3D" parent="Structures/Trees/Tree3Trunk"]
+shape = SubResource("BoxShape_trunk")
+
+[node name="Tree3Canopy" type="MeshInstance3D" parent="Structures/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 14, -10)
+mesh = SubResource("SphereMesh_canopy")
+material_override = SubResource("canopy_mat")
+
+[node name="Tree4Trunk" type="StaticBody3D" parent="Structures/Trees"]
+collision_layer = 2
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 180, 18, 50)
+
+[node name="Mesh" type="MeshInstance3D" parent="Structures/Trees/Tree4Trunk"]
+mesh = SubResource("CylinderMesh_trunk")
+material_override = SubResource("trunk_mat")
+
+[node name="Collision" type="CollisionShape3D" parent="Structures/Trees/Tree4Trunk"]
+shape = SubResource("BoxShape_trunk")
+
+[node name="Tree4Canopy" type="MeshInstance3D" parent="Structures/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 180, 22, 50)
+mesh = SubResource("SphereMesh_canopy")
+material_override = SubResource("canopy_mat")
+
+[node name="Tree5Trunk" type="StaticBody3D" parent="Structures/Trees"]
+collision_layer = 2
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 18, 70)
+
+[node name="Mesh" type="MeshInstance3D" parent="Structures/Trees/Tree5Trunk"]
+mesh = SubResource("CylinderMesh_trunk")
+material_override = SubResource("trunk_mat")
+
+[node name="Collision" type="CollisionShape3D" parent="Structures/Trees/Tree5Trunk"]
+shape = SubResource("BoxShape_trunk")
+
+[node name="Tree5Canopy" type="MeshInstance3D" parent="Structures/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 22, 70)
+mesh = SubResource("SphereMesh_canopy")
+material_override = SubResource("canopy_mat")
+
+[node name="Tree6Trunk" type="StaticBody3D" parent="Structures/Trees"]
+collision_layer = 2
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 26, 110)
+
+[node name="Mesh" type="MeshInstance3D" parent="Structures/Trees/Tree6Trunk"]
+mesh = SubResource("CylinderMesh_trunk")
+material_override = SubResource("trunk_mat")
+
+[node name="Collision" type="CollisionShape3D" parent="Structures/Trees/Tree6Trunk"]
+shape = SubResource("BoxShape_trunk")
+
+[node name="Tree6Canopy" type="MeshInstance3D" parent="Structures/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 30, 110)
+mesh = SubResource("SphereMesh_canopy")
+material_override = SubResource("canopy_mat")
+
+[node name="Tree7Trunk" type="StaticBody3D" parent="Structures/Trees"]
+collision_layer = 2
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 160, 30, 140)
+
+[node name="Mesh" type="MeshInstance3D" parent="Structures/Trees/Tree7Trunk"]
+mesh = SubResource("CylinderMesh_trunk")
+material_override = SubResource("trunk_mat")
+
+[node name="Collision" type="CollisionShape3D" parent="Structures/Trees/Tree7Trunk"]
+shape = SubResource("BoxShape_trunk")
+
+[node name="Tree7Canopy" type="MeshInstance3D" parent="Structures/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 160, 34, 140)
+mesh = SubResource("SphereMesh_canopy")
+material_override = SubResource("canopy_mat")
+
+[node name="OverlookPlatform" type="StaticBody3D" parent="Structures"]
+collision_layer = 2
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 120, 33, 185)
+
+[node name="Mesh" type="MeshInstance3D" parent="Structures/OverlookPlatform"]
+mesh = SubResource("BoxMesh_overlook")
+material_override = SubResource("road_mat")
+
+[node name="Collision" type="CollisionShape3D" parent="Structures/OverlookPlatform"]
+shape = SubResource("BoxShape_overlook")
+
+[node name="InteractionPoints" type="Node3D" parent="."]
+
+[node name="Route9Start" type="Area3D" parent="InteractionPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -130)
+collision_layer = 32
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionPoints/Route9Start"]
+shape = SubResource("BoxShape_trigger")
+
+[node name="Label" type="Label3D" parent="InteractionPoints/Route9Start"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+text = "ROUTE 9 START"
+font_size = 48
+outline_size = 4
+modulate = Color(1.0, 0.3, 0.0, 1)
+
+[node name="SummitOverlook" type="Area3D" parent="InteractionPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 120, 34, 185)
+collision_layer = 32
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionPoints/SummitOverlook"]
+shape = SubResource("BoxShape_trigger")
+
+[node name="Label" type="Label3D" parent="InteractionPoints/SummitOverlook"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+text = "SUMMIT OVERLOOK"
+font_size = 42
+outline_size = 4
+modulate = Color(0.4, 0.8, 1.0, 1)
+
+[node name="PlayerSpawn" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -200)
+
+[node name="SpawnFrom_downtown" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -240)
+
+[node name="DistrictTransitions" type="Node3D" parent="."]
+
+[node name="ToDowntown" type="Area3D" parent="DistrictTransitions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -250)
+collision_layer = 64
+metadata/target_district = "downtown"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DistrictTransitions/ToDowntown"]
+shape = SubResource("BoxShape_transition")
+
+[node name="Label" type="Label3D" parent="DistrictTransitions/ToDowntown"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+text = ">> DOWNTOWN >>"
+font_size = 36
+outline_size = 4
+modulate = Color(1, 1, 0.5, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ground"]
+size = Vector2(600, 600)
+
+[sub_resource type="StandardMaterial3D" id="ground_mat"]
+albedo_color = Color(0.06, 0.08, 0.04, 1)
+roughness = 1.0
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_ground"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_entry_road"]
+size = Vector3(12, 0.05, 170)
+
+[sub_resource type="BoxShape3D" id="BoxShape_entry_road"]
+size = Vector3(12, 0.05, 170)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ramp"]
+size = Vector3(12, 0.1, 41)
+
+[sub_resource type="BoxShape3D" id="BoxShape_ramp"]
+size = Vector3(12, 0.1, 41)
+
+[sub_resource type="BoxMesh" id="BoxMesh_switchback"]
+size = Vector3(150, 0.05, 12)
+
+[sub_resource type="BoxShape3D" id="BoxShape_switchback"]
+size = Vector3(150, 0.05, 12)
+
+[sub_resource type="BoxMesh" id="BoxMesh_switchback_short"]
+size = Vector3(120, 0.05, 12)
+
+[sub_resource type="BoxShape3D" id="BoxShape_switchback_short"]
+size = Vector3(120, 0.05, 12)
+
+[sub_resource type="BoxMesh" id="BoxMesh_summit_road"]
+size = Vector3(80, 0.05, 12)
+
+[sub_resource type="BoxShape3D" id="BoxShape_summit_road"]
+size = Vector3(80, 0.05, 12)
+
+[sub_resource type="StandardMaterial3D" id="mountain_mat"]
+albedo_color = Color(0.1, 0.1, 0.08, 1)
+roughness = 1.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_mountain_large"]
+size = Vector3(60, 16, 80)
+
+[sub_resource type="BoxShape3D" id="BoxShape_mountain_large"]
+size = Vector3(60, 16, 80)
+
+[sub_resource type="BoxMesh" id="BoxMesh_mountain_tall"]
+size = Vector3(40, 32, 60)
+
+[sub_resource type="BoxShape3D" id="BoxShape_mountain_tall"]
+size = Vector3(40, 32, 60)
+
+[sub_resource type="BoxMesh" id="BoxMesh_mountain_peak"]
+size = Vector3(50, 36, 50)
+
+[sub_resource type="BoxShape3D" id="BoxShape_mountain_peak"]
+size = Vector3(50, 36, 50)
+
+[sub_resource type="StandardMaterial3D" id="guardrail_mat"]
+albedo_color = Color(0.5, 0.5, 0.5, 1)
+roughness = 0.5
+metallic = 0.4
+
+[sub_resource type="BoxMesh" id="BoxMesh_guardrail_long"]
+size = Vector3(140, 1.0, 0.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape_guardrail_long"]
+size = Vector3(140, 1.0, 0.3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_guardrail_short"]
+size = Vector3(40, 1.0, 0.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape_guardrail_short"]
+size = Vector3(40, 1.0, 0.3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_tunnel_wall"]
+size = Vector3(30, 6, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape_tunnel_wall"]
+size = Vector3(30, 6, 0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_tunnel_roof"]
+size = Vector3(30, 0.5, 13)
+
+[sub_resource type="BoxShape3D" id="BoxShape_tunnel_roof"]
+size = Vector3(30, 0.5, 13)
+
+[sub_resource type="StandardMaterial3D" id="trunk_mat"]
+albedo_color = Color(0.2, 0.12, 0.06, 1)
+roughness = 0.9
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_trunk"]
+top_radius = 0.25
+bottom_radius = 0.35
+height = 4.0
+
+[sub_resource type="BoxShape3D" id="BoxShape_trunk"]
+size = Vector3(0.7, 4, 0.7)
+
+[sub_resource type="StandardMaterial3D" id="canopy_mat"]
+albedo_color = Color(0.05, 0.15, 0.04, 1)
+roughness = 0.9
+
+[sub_resource type="SphereMesh" id="SphereMesh_canopy"]
+radius = 2.0
+height = 4.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_overlook"]
+size = Vector3(30, 0.5, 20)
+
+[sub_resource type="BoxShape3D" id="BoxShape_overlook"]
+size = Vector3(30, 0.5, 20)
+
+[sub_resource type="BoxShape3D" id="BoxShape_trigger"]
+size = Vector3(10, 4, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape_transition"]
+size = Vector3(20, 5, 20)

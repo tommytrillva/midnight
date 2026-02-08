@@ -1,0 +1,365 @@
+{
+  "id": "diesels_test_expanded",
+  "context": "Act 1 Chapter 1.1 — Diesel approaches at The Pit and issues his follow/test challenge",
+  "lines": [
+    {
+      "type": "narration",
+      "text": "The Pit is winding down. Cars pulling out, engines cooling, money changing hands in the shadows. You're leaning against the CRX, replaying every turn in your head, when the hairs on the back of your neck stand up."
+    },
+    {
+      "type": "narration",
+      "text": "A shadow detaches from a concrete pillar thirty feet away. It moves toward you with the slow, deliberate certainty of a man who has never rushed anything in his life."
+    },
+    {
+      "type": "narration",
+      "text": "He's tall. Lean in a way that suggests wire cable, not absence. Late forties, maybe older — hard to tell. His face is carved from the same concrete as the pillars around him. He studies you the way a mechanic studies an engine — looking for the fault lines."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "You're sloppy."
+    },
+    {
+      "type": "narration",
+      "text": "No introduction. No preamble. Just a verdict."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "Your corner entry is aggressive but your exits are weak. You brake too late and then you're fighting the car through the apex instead of letting it rotate. You carry speed in but you don't carry it out. That's backward."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "Your throttle application is binary. On or off. No modulation. That CRX is front-wheel drive — you need to trail the throttle through transitions or you'll understeer into a wall."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "And your line through the chicane was a full car-width off. You gave away a half-second every lap."
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "Who the hell are you?",
+          "choice_id": "diesel_expanded_who",
+          "relationship_changes": {"diesel": 2},
+          "moral_shift": 0,
+          "jump_to": "diesel_responds_who"
+        },
+        {
+          "text": "So teach me.",
+          "choice_id": "diesel_expanded_teach",
+          "relationship_changes": {"diesel": 8},
+          "moral_shift": 5,
+          "jump_to": "diesel_responds_teach"
+        },
+        {
+          "text": "I won, didn't I?",
+          "choice_id": "diesel_expanded_won",
+          "relationship_changes": {"diesel": -3},
+          "moral_shift": -5,
+          "jump_to": "diesel_responds_won"
+        }
+      ]
+    },
+    {
+      "label": "diesel_responds_who",
+      "type": "narration",
+      "text": "He doesn't answer immediately. He looks at your car. Looks at your tires. Looks at you."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "Someone who's been where you are. A long time ago."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "The question isn't who I am. The question is whether you're worth the conversation.",
+      "jump_to": "diesel_test_offer"
+    },
+    {
+      "label": "diesel_responds_teach",
+      "type": "narration",
+      "text": "Something shifts in his expression. Not a smile — Diesel doesn't smile. But the hard line of his mouth softens by a fraction. Like a locked door moving a millimeter."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "Hmm."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "Most kids your age would have told me to go to hell. Or tried to prove me wrong with words instead of driving.",
+      "jump_to": "diesel_test_offer"
+    },
+    {
+      "label": "diesel_responds_won",
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "You won a race against drivers who were worse than you. Congratulations. You're the tallest person in a room full of people sitting down."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "Winning doesn't mean you're good. It means you were good enough tonight. Against this field. In these conditions. Change any of those variables and you're sideways into a barrier."
+    },
+    {
+      "type": "narration",
+      "text": "The words sting. They sting because they're true.",
+      "jump_to": "diesel_test_offer"
+    },
+    {
+      "label": "diesel_test_offer",
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "I want to see something. There's an industrial strip on the east side — old factory road. Two miles of broken asphalt, off-camber turns, and blind crests."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "Simple rules. You follow me. Full speed. I set the pace, you match it. I don't care if you're faster — I care if you can read the road."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "The surface changes three times. Asphalt to concrete to gravel and back. If you don't adjust, you spin. If you panic, you crash. If you overthink, you fall behind."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "Tomorrow night. 1 AM. Be there or don't."
+    },
+    {
+      "type": "narration",
+      "text": "He turns. Walks toward the darkness. Then stops."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "One more thing. This isn't a race. If you try to pass me, we're done. You follow. You learn. Or you go home."
+    },
+    {
+      "type": "narration",
+      "text": "He disappears into the industrial dark. You never heard a car start. You never saw headlights. It's like the night just swallowed him whole."
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "diesel_followtest_accepted",
+        "value": true
+      }
+    },
+    {
+      "type": "narration",
+      "text": "--- The next night. 1 AM. The industrial strip. ---"
+    },
+    {
+      "type": "narration",
+      "text": "The factory road stretches ahead under a sky the color of bruised plums. No streetlights. No markings. Just the matte black coupe idling at the far end, headlights cutting through the dark like a predator's eyes."
+    },
+    {
+      "type": "narration",
+      "text": "You pull up behind Diesel. He doesn't acknowledge you. The coupe's brake lights flicker once — a signal. Then he's moving."
+    },
+    {
+      "label": "test_radio_start",
+      "type": "dialogue",
+      "speaker": "Diesel (Radio)",
+      "portrait": "diesel_radio",
+      "text": "First corner. Late apex. The surface breaks up on exit — keep your inputs smooth or the rear will step out."
+    },
+    {
+      "type": "narration",
+      "text": "His voice on the radio is calm. Measured. Like he's reading the weather."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel (Radio)",
+      "portrait": "diesel_radio",
+      "text": "Concrete section. Less grip. Brake earlier than you think you need to. Your instinct will be wrong."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel (Radio)",
+      "portrait": "diesel_radio",
+      "text": "Good. Now — feel the gravel transition. Don't fight the car. Let the rear slide. Steer with the throttle, not the wheel."
+    },
+    {
+      "type": "narration",
+      "text": "The coupe ahead of you flows through the broken road like water. Every movement minimal. Every correction invisible. This is driving stripped to its essence — no crowd, no money, no ego. Just machine and surface and the dark."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel (Radio)",
+      "portrait": "diesel_radio",
+      "text": "Blind crest ahead. Commit. If you lift off now, the weight transfers forward and you'll overshoot the next turn. Trust the road. Trust the car."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel (Radio)",
+      "portrait": "diesel_radio",
+      "text": "Commitment isn't about being fearless. It's about knowing exactly how much risk the moment demands and giving exactly that. No more. No less."
+    },
+    {
+      "type": "narration",
+      "text": "The industrial strip spits you out onto a gravel apron overlooking the harbor. Diesel's coupe is already there. Parked. Engine off. Like he's been waiting for hours."
+    },
+    {
+      "label": "post_test_kept_pace",
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "You kept pace.",
+      "condition": {
+        "type": "has_flag",
+        "flag": "diesel_test_kept_pace"
+      }
+    },
+    {
+      "type": "narration",
+      "text": "He says it like a fact. No praise. No enthusiasm. But you're learning that from Diesel, a fact is the highest form of compliment.",
+      "condition": {
+        "type": "has_flag",
+        "flag": "diesel_test_kept_pace"
+      }
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "Your surface transitions are still rough. You hesitate at the grip change instead of flowing through it. But you didn't panic. And you didn't try to show off.",
+      "condition": {
+        "type": "has_flag",
+        "flag": "diesel_test_kept_pace"
+      }
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_approval",
+      "text": "That's something I can work with.",
+      "condition": {
+        "type": "has_flag",
+        "flag": "diesel_test_kept_pace"
+      },
+      "jump_to": "post_test_end"
+    },
+    {
+      "label": "post_test_fell_behind",
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "You fell behind.",
+      "condition": {
+        "type": "flag_equals",
+        "flag": "diesel_test_kept_pace",
+        "value": false
+      }
+    },
+    {
+      "type": "narration",
+      "text": "A statement. Not a judgment. He could be telling you the time.",
+      "condition": {
+        "type": "flag_equals",
+        "flag": "diesel_test_kept_pace",
+        "value": false
+      }
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "The gravel section broke you. You lifted off and the gap opened up. Once you were chasing, you started overdriving to catch up, which made it worse.",
+      "condition": {
+        "type": "flag_equals",
+        "flag": "diesel_test_kept_pace",
+        "value": false
+      }
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "But you didn't quit. You didn't spin. And you made it to the end. That's more than most.",
+      "condition": {
+        "type": "flag_equals",
+        "flag": "diesel_test_kept_pace",
+        "value": false
+      }
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "It's not enough yet. But it could be.",
+      "condition": {
+        "type": "flag_equals",
+        "flag": "diesel_test_kept_pace",
+        "value": false
+      }
+    },
+    {
+      "label": "post_test_end",
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "The underground here — it's not what it used to be. It's gotten faster. More money. More stupid. People race for clout now, not because they love driving."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "You need a foundation. Or this city will eat you whole and spit out someone you don't recognize."
+    },
+    {
+      "type": "narration",
+      "text": "He pauses. Stares at the harbor lights."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "I'll be in touch."
+    },
+    {
+      "type": "narration",
+      "text": "The matte black coupe slips away into the night. No fanfare. No taillights. Just gone."
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "diesel_test_complete",
+        "value": true
+      }
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "change_relationship",
+        "character": "diesel",
+        "amount": 10
+      }
+    }
+  ]
+}

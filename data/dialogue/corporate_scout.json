@@ -1,0 +1,366 @@
+{
+  "id": "corporate_scout",
+  "context": "Chapter 1.3 — After a Pit win, Jade Winters of Apex Dynamics approaches the player.",
+  "lines": [
+    {
+      "type": "narration",
+      "text": "The crowd at the Pit is thinning out. Another win. Your name is getting louder in these hallways, and you can feel it — the way people step aside a half-second sooner, the way conversations pause when you walk past."
+    },
+    {
+      "type": "narration",
+      "text": "You're leaning against your car, counting your take, when you notice someone who doesn't belong."
+    },
+    {
+      "type": "narration",
+      "text": "She's standing at the edge of the crowd like a heron in a junkyard. Designer coat — camel, probably cashmere — over a black turtleneck. Her shoes alone cost more than most of the cars parked down here. Everything about her is clean in a place where nothing is clean."
+    },
+    {
+      "type": "narration",
+      "text": "She's been watching you. Not the race — you. And she's walking over now with the confidence of someone who has never been told no by anyone who mattered."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_professional",
+      "text": "Impressive performance. The way you took that hairpin on the second lap — you left the racing line intentionally. Used the curb as a launch point. Most drivers down here wouldn't even see that option."
+    },
+    {
+      "type": "narration",
+      "text": "She extends a hand. Her grip is firm. A business handshake with intent behind it."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_professional",
+      "text": "Jade Winters. Head of Talent Acquisition, Apex Dynamics."
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "Apex Dynamics. The corporate racing outfit?",
+          "choice_id": "jade_know_apex",
+          "relationship_changes": {"jade": 3},
+          "moral_shift": 0,
+          "jump_to": "jade_explains_apex"
+        },
+        {
+          "text": "Never heard of it.",
+          "choice_id": "jade_dont_know",
+          "relationship_changes": {},
+          "moral_shift": 0,
+          "jump_to": "jade_introduces_apex"
+        },
+        {
+          "text": "You're a long way from the boardroom.",
+          "choice_id": "jade_boardroom",
+          "relationship_changes": {"jade": 5},
+          "moral_shift": 0,
+          "jump_to": "jade_slumming"
+        }
+      ]
+    },
+    {
+      "label": "jade_explains_apex",
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_professional",
+      "text": "You do your homework. Good. Yes — Apex Dynamics. Largest independent motorsport development company on the Pacific Rim. We scout, develop, and promote racing talent.",
+      "jump_to": "jade_pitch"
+    },
+    {
+      "label": "jade_introduces_apex",
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_professional",
+      "text": "You will. Apex Dynamics is the largest independent motorsport development company on the Pacific Rim. We find talent before anyone else does. That's what I do. I find people.",
+      "jump_to": "jade_pitch"
+    },
+    {
+      "label": "jade_slumming",
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_amused",
+      "text": "Am I? Funny. Every great driver I've ever signed was racing in a place exactly like this. Basements. Parking garages. Mountain passes at two in the morning."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_professional",
+      "text": "The boardroom is where the money is. Down here is where the talent is. I've learned to speak both languages.",
+      "jump_to": "jade_pitch"
+    },
+    {
+      "label": "jade_pitch",
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_professional",
+      "text": "I'll be direct with you. I've been watching the underground scene in Nova Pacifica for six months. Most of what I've seen is adrenaline and ego — fast hands, slow brains. People who drive angry."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_professional",
+      "text": "You're different. You adapt mid-race. You read the car ahead of you like a book. And tonight — that move in the hairpin — that wasn't instinct. That was engineering. You calculated it."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_professional",
+      "text": "Apex is hosting a trial event next month. Invitation only. Professional-grade circuit, real equipment, real competition. Consider it an audition. No commitment, no contract. Just a chance to show what you can do with a real car on a real track."
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "When and where?",
+          "choice_id": "jade_interest",
+          "relationship_changes": {"jade": 5},
+          "moral_shift": 0,
+          "set_flags": {"jade_trial_interested": true},
+          "jump_to": "jade_details"
+        },
+        {
+          "text": "I'm good down here.",
+          "choice_id": "jade_reject",
+          "relationship_changes": {"diesel": 5},
+          "moral_shift": 5,
+          "set_flags": {"jade_trial_rejected": true},
+          "jump_to": "jade_rejection"
+        },
+        {
+          "text": "What's in it for Apex?",
+          "choice_id": "jade_suspicious",
+          "relationship_changes": {"jade": 5},
+          "moral_shift": 0,
+          "jump_to": "jade_business_model"
+        }
+      ]
+    },
+    {
+      "label": "jade_details",
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_professional",
+      "text": "Apex Circuit. Forty minutes north of the city. I'll send you the details once you're registered."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_professional",
+      "text": "Fair warning — the trial won't be like this. Down here, it's you and the car and the street. Up there, it's you and the car and a dozen engineers watching telemetry on screens you've never seen before. It's a different world."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_professional",
+      "text": "Some people from the underground thrive in it. Some people choke. There's no shame either way. But I think you'll thrive."
+    },
+    {
+      "type": "narration",
+      "text": "She pulls a business card from her coat — real card stock, embossed, the Apex logo catching the fluorescent light."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_professional",
+      "text": "My direct line. Don't lose it. And don't give it to anyone."
+    },
+    {
+      "type": "narration",
+      "text": "She turns to leave, then pauses."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_professional",
+      "text": "One more thing. Whatever you're doing down here — the money, the reputation, the street cred — enjoy it. Because if you step into our world, all of that resets to zero. You'll be a rookie again. The question is whether you're hungry enough to start over."
+    },
+    {
+      "type": "narration",
+      "text": "She walks away through the crowd. People part for her without realizing they're doing it. That's the kind of gravity money buys.",
+      "jump_to": "jade_end"
+    },
+    {
+      "label": "jade_rejection",
+      "type": "narration",
+      "text": "Something shifts in Jade's face. Not offense — recalibration. She was prepared for this answer."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_professional",
+      "text": "Loyalty to the scene. I respect that. Most people would jump at the chance to leave this behind."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_professional",
+      "text": "But 'down here' has a ceiling. You'll hit it faster than you think. And when you do, the offer doesn't expire."
+    },
+    {
+      "type": "narration",
+      "text": "She places a business card on the hood of your car. Real card stock, embossed, the Apex logo sharp enough to cut."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_professional",
+      "text": "My direct line. For when 'good down here' stops being enough."
+    },
+    {
+      "type": "narration",
+      "text": "She walks away. Later, Diesel finds you outside. He saw the whole thing from across the room."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "Suits. They come sniffing around every few years. Looking for the next thing to put in a commercial."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "You said no?"
+    },
+    {
+      "type": "narration",
+      "text": "You nod."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_approving",
+      "text": "Good."
+    },
+    {
+      "type": "narration",
+      "text": "He doesn't explain why. He doesn't need to. That single word carries the weight of a hundred arguments he'll never make.",
+      "jump_to": "jade_end"
+    },
+    {
+      "label": "jade_business_model",
+      "type": "narration",
+      "text": "Jade tilts her head. A smile — the first real one — crosses her face."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_amused",
+      "text": "Good question. The right question, actually. Most people don't ask it."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_professional",
+      "text": "Apex makes money two ways. First: we develop drivers for professional circuits. You win races, sponsors pay, everyone profits. Second: technology. The R&D that comes from competitive racing filters into consumer products. Every car on the road is better because someone pushed the limits on a track."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_professional",
+      "text": "What's in it for Apex is simple. We invest in raw talent. We provide training, equipment, support, and infrastructure. In return, we get a percentage of your competition earnings and endorsement deals. Standard industry arrangement."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_professional",
+      "text": "The real answer, though — the honest answer? I get a bonus when one of my recruits makes it to the pro circuit. So yes, I have a personal stake. I'm not pretending otherwise."
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "I appreciate the honesty. Tell me more about the trial.",
+          "choice_id": "jade_honest_interest",
+          "relationship_changes": {"jade": 5},
+          "moral_shift": 0,
+          "set_flags": {"jade_trial_interested": true},
+          "jump_to": "jade_trial_info"
+        },
+        {
+          "text": "Thanks, but I'm not ready for that.",
+          "choice_id": "jade_not_ready",
+          "relationship_changes": {},
+          "moral_shift": 0,
+          "set_flags": {"jade_trial_rejected": true},
+          "jump_to": "jade_patience"
+        }
+      ]
+    },
+    {
+      "label": "jade_trial_info",
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_professional",
+      "text": "Apex Circuit, forty minutes north. Invitation only. You'll drive one of our prepared cars — not yours. We want to see what you do with real equipment and real competition."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_professional",
+      "text": "No commitment, no contract. Just data. We watch, we analyze, and if both sides like what they see, we have a longer conversation."
+    },
+    {
+      "type": "narration",
+      "text": "She hands you a business card. Real card stock, embossed, the Apex logo precise as a blueprint."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_professional",
+      "text": "Think about it. My direct line is on the back."
+    },
+    {
+      "type": "narration",
+      "text": "She turns and walks through the crowd. People move for her like water around a prow. At the stairs, she pauses and looks back."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_professional",
+      "text": "For what it's worth — I've scouted a hundred drivers. The ones who ask what's in it for the other side are the ones who make it. You've got the right instincts. Don't waste them down here."
+    },
+    {
+      "type": "narration",
+      "text": "Then she's gone. Up the stairs, through the door, and back to whatever world exists above the one you live in. You pocket the card and feel its weight like a second heartbeat.",
+      "jump_to": "jade_end"
+    },
+    {
+      "label": "jade_patience",
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_professional",
+      "text": "Ready is overrated. Most of the best drivers I've signed thought they weren't ready. But I understand."
+    },
+    {
+      "type": "narration",
+      "text": "She places a business card on the hood of your car."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_professional",
+      "text": "The offer doesn't expire. When you're ready — if you're ever ready — that's my direct line."
+    },
+    {
+      "type": "narration",
+      "text": "She walks away. Clean, efficient, no wasted movement. Like everything about her has been optimized for purpose.",
+      "jump_to": "jade_end"
+    },
+    {
+      "label": "jade_end",
+      "type": "narration",
+      "text": "You stand in the parking lot, alone with your car and the echo of a world you've never seen. Corporate racing. Sponsors. Salaries. A real track with real equipment. It sounds like a dream. It sounds like a cage. It sounds like both."
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "corporate_scout_complete",
+        "value": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,254 @@
+{
+  "id": "nikko_returns_corporate",
+  "context": "Act 2A Chapter 2.3 — Nikko appears at a corporate event. Changed, but still Nikko. Old debts discussed.",
+  "lines": [
+    {
+      "type": "narration",
+      "text": "The Apex corporate lounge. Post-qualifying, pre-race. Drivers and team principals milling around with sponsored energy drinks and forced conversations."
+    },
+    {
+      "type": "narration",
+      "text": "You see him across the room before he sees you. Nikko Tanaka in a Kessler Racing polo that looks like it's wearing him rather than the other way around. He's leaning against a pillar, scrolling through his phone with the intensity of someone who'd rather be anywhere else."
+    },
+    {
+      "type": "narration",
+      "text": "He's thinner than at the gala. The circles under his eyes are darker. Whatever was eating him is eating faster now."
+    },
+    {
+      "type": "narration",
+      "text": "He looks up. Sees you. Something crosses his face — not the mask, not the rivalry, just the raw recognition of one drowning person seeing another in the water."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_tired",
+      "text": "So. We're really doing this. You and me, corporate racing. If someone told us this a year ago at The Pit, we'd have laughed them off the grid."
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "How are you holding up, Nikko? Really.",
+          "choice_id": "nikko_corp_genuine",
+          "relationship_changes": {"nikko": 10},
+          "moral_shift": 5,
+          "jump_to": "nikko_honest"
+        },
+        {
+          "text": "Ready for tomorrow? It's going to be a fight.",
+          "choice_id": "nikko_corp_professional",
+          "relationship_changes": {"nikko": 3},
+          "moral_shift": 0,
+          "jump_to": "nikko_game_face"
+        },
+        {
+          "text": "You look terrible.",
+          "choice_id": "nikko_corp_blunt",
+          "relationship_changes": {"nikko": 5},
+          "moral_shift": 0,
+          "jump_to": "nikko_blunt_response"
+        }
+      ]
+    },
+    {
+      "label": "nikko_honest",
+      "type": "narration",
+      "text": "Nikko glances around. Nobody's listening. He drops his voice."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_vulnerable",
+      "text": "I'm not holding up. I'm holding on. There's a difference."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_vulnerable",
+      "text": "The debt — it's worse than I told you at the gala. The people I owe, they don't do payment plans. They do deadlines. And my next deadline is after the championship final.",
+      "jump_to": "nikko_debt_detail"
+    },
+    {
+      "label": "nikko_game_face",
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_guarded",
+      "text": "Born ready. Kessler gave me a monster of a car. More power than I know what to do with."
+    },
+    {
+      "type": "narration",
+      "text": "The bravado is thin. You can see through it the way you can see through fog — the outline of something real and scared underneath."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_tired",
+      "text": "Actually — can I talk to you about something? Not here. Outside.",
+      "jump_to": "nikko_debt_detail"
+    },
+    {
+      "label": "nikko_blunt_response",
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_bitter",
+      "text": "Thanks. Really feeling the support."
+    },
+    {
+      "type": "narration",
+      "text": "But there's no bite in it. He's too tired for bite."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_tired",
+      "text": "I need to tell you something. Not here — outside.",
+      "jump_to": "nikko_debt_detail"
+    },
+    {
+      "label": "nikko_debt_detail",
+      "type": "narration",
+      "text": "The loading dock behind the circuit building. Concrete and diesel fumes. More honest than the lounge."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_vulnerable",
+      "text": "Kessler is asking me to do something. For the championship. They want me to — to manage certain race outcomes."
+    },
+    {
+      "type": "narration",
+      "text": "He can't even say the words. Nikko Tanaka, who once drove a car into a concrete barrier rather than back down from a challenge, can't say the words 'throw a race.'"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_bitter",
+      "text": "They want me to let their other driver win in Tokyo. And in exchange, they pay off a chunk of my debt. Enough to buy me another six months before the next deadline."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_anguished",
+      "text": "I've been racing my whole life. It's the only thing I'm good at. The only thing that's mine. And now they want to turn it into a lie."
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "Don't do it. We'll find another way to handle the debt.",
+          "choice_id": "nikko_corp_refuse_fix",
+          "relationship_changes": {"nikko": 15},
+          "moral_shift": 15,
+          "set_flags": {"advised_nikko_refuse": true},
+          "jump_to": "nikko_hope"
+        },
+        {
+          "text": "How much does it cover? Sometimes survival means compromise.",
+          "choice_id": "nikko_corp_pragmatic",
+          "relationship_changes": {"nikko": -5},
+          "moral_shift": -10,
+          "set_flags": {"advised_nikko_practical": true},
+          "jump_to": "nikko_disappointed"
+        },
+        {
+          "text": "There's something bigger going on. Kessler isn't the only team fixing races.",
+          "choice_id": "nikko_corp_reveal",
+          "relationship_changes": {"nikko": 10},
+          "moral_shift": 10,
+          "set_flags": {"told_nikko_about_fixing": true},
+          "conditions": {"corruption_discovered": true},
+          "jump_to": "nikko_bigger_picture"
+        }
+      ]
+    },
+    {
+      "label": "nikko_hope",
+      "type": "narration",
+      "text": "Nikko looks at you. Really looks. And for a moment, you see the person behind the rival — the kid who fell in love with speed, who drove because it was the only language that made sense."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_vulnerable",
+      "text": "Another way. You make it sound simple."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_determined",
+      "text": "But you know what? Maybe it should be. Race clean, drive fast, deal with consequences. That's what Diesel would say, right? That old man rubbed off on both of us more than we want to admit.",
+      "jump_to": "nikko_parting"
+    },
+    {
+      "label": "nikko_disappointed",
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_bitter",
+      "text": "Survival means compromise. Listen to yourself. A year ago, you would've told me to race clean or not race at all."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_bitter",
+      "text": "The corporate world got to you faster than I thought.",
+      "jump_to": "nikko_parting"
+    },
+    {
+      "label": "nikko_bigger_picture",
+      "type": "narration",
+      "text": "Nikko's eyes widen. Then narrow. Then widen again."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_intense",
+      "text": "You're saying this goes beyond Kessler? That the whole league—"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_intense",
+      "text": "That explains so much. The results I've been seeing. Races that didn't make sense. Drivers who should have won finishing tenth."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_determined",
+      "text": "If this is real — if the whole system is rigged — then throwing one race doesn't matter anyway. What matters is burning it down.",
+      "jump_to": "nikko_parting"
+    },
+    {
+      "label": "nikko_parting",
+      "type": "narration",
+      "text": "The loading dock door opens. A team engineer steps out for a cigarette, sees two rival drivers talking in the shadows, and decides his cigarette can wait."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_guarded",
+      "text": "I should get back. Kessler tracks my location — part of the contract."
+    },
+    {
+      "type": "narration",
+      "text": "He starts walking, then stops. Turns."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_tired",
+      "text": "Tomorrow, on the grid — I'm still going to try to beat you. That's not personal. That's the only honest thing I have left."
+    },
+    {
+      "type": "narration",
+      "text": "He disappears through the door. You stand in the loading dock, breathing diesel fumes, thinking about debts and cages and what happens when the only clean thing in your life gets dirty too."
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "nikko_returns_corporate_complete",
+        "value": true
+      }
+    }
+  ]
+}

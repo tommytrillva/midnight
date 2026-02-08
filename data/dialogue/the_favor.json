@@ -1,0 +1,291 @@
+{
+  "id": "the_favor",
+  "context": "Act 2A Chapter 2.2 — Maya calls needing help with an underground race. Sneaking back while under corporate contract. Risk of being caught.",
+  "lines": [
+    {
+      "type": "narration",
+      "text": "2:13 AM. Your phone buzzes on the nightstand. The screen lights up the hotel room in cold blue."
+    },
+    {
+      "type": "narration",
+      "text": "Maya Torres. She never calls this late. She never calls at all — Maya texts, because phone calls mean emotions and emotions mean vulnerability and Maya Torres does not do vulnerability."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_worried",
+      "text": "Hey. I know it's late. I know you've got your big corporate thing going on. But I need help."
+    },
+    {
+      "type": "narration",
+      "text": "Her voice is tight. Controlled. The way she sounds when everything is falling apart and she is holding it together with willpower and duct tape."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_worried",
+      "text": "The shop's in trouble again. Wells — Preston's cousin — bought out the lease holder. He's doubling my rent starting next month. I can't make it work with the numbers I've got."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_worried",
+      "text": "There's a race. Saturday night. Private circuit, behind the shipping yards. $20K entry, winner takes the pot — sixty grand. It's the only way I can cover the gap."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_conflicted",
+      "text": "I need a driver. I need you."
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "I'm there. No question.",
+          "choice_id": "favor_accept_immediate",
+          "relationship_changes": {"maya": 15},
+          "moral_shift": 5,
+          "set_flags": {"favor_accepted": true},
+          "jump_to": "maya_relieved"
+        },
+        {
+          "text": "Maya, if Apex finds out I'm racing underground...",
+          "choice_id": "favor_hesitate",
+          "relationship_changes": {"maya": -3},
+          "moral_shift": 0,
+          "jump_to": "maya_understands"
+        },
+        {
+          "text": "I can lend you money instead. Sixty grand — I've got it.",
+          "choice_id": "favor_offer_money",
+          "relationship_changes": {"maya": -5},
+          "moral_shift": 0,
+          "jump_to": "maya_refuses_money"
+        }
+      ]
+    },
+    {
+      "label": "maya_relieved",
+      "type": "narration",
+      "text": "You hear her exhale. Not relief — more like the sound of someone who just discovered the rope they're hanging from hasn't snapped yet."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_grateful",
+      "text": "Thank you. I didn't — I wasn't sure you'd... thank you."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_determined",
+      "text": "Saturday. Shipping yards. Midnight. I'll have a car ready — nothing traceable back to Apex. We'll use the old CRX.",
+      "jump_to": "race_night"
+    },
+    {
+      "label": "maya_understands",
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_pained",
+      "text": "I know. I know what I'm asking. Your contract, your career — I wouldn't ask if there was another option."
+    },
+    {
+      "type": "narration",
+      "text": "A pause. Through the phone, you can hear the garage. The hum of the ventilation, the distant clank of a tool. She is calling from the shop. At 2 AM. Because she has nowhere else to go."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_pained",
+      "text": "This shop is all I have left of my dad. I'm not losing it to another Wells."
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "I'll be there. We'll figure out the risk.",
+          "choice_id": "favor_accept_after_hesitate",
+          "relationship_changes": {"maya": 10},
+          "moral_shift": 5,
+          "set_flags": {"favor_accepted": true},
+          "jump_to": "maya_relieved_delayed"
+        },
+        {
+          "text": "I can't. I'm sorry, Maya. The risk is too high.",
+          "choice_id": "favor_refuse",
+          "relationship_changes": {"maya": -20},
+          "moral_shift": -10,
+          "set_flags": {"favor_refused": true},
+          "jump_to": "maya_silence"
+        }
+      ]
+    },
+    {
+      "label": "maya_refuses_money",
+      "type": "narration",
+      "text": "The silence on the line is sharp enough to cut."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_angry",
+      "text": "I don't want your corporate money. I'm not a charity case. I need a driver, not a donor."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_angry",
+      "text": "I called because I thought — forget it. Never mind. I'll find someone else."
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "Wait. I'll drive. I was wrong to offer money instead.",
+          "choice_id": "favor_accept_after_money",
+          "relationship_changes": {"maya": 5},
+          "moral_shift": 5,
+          "set_flags": {"favor_accepted": true},
+          "jump_to": "maya_reluctant_accept"
+        },
+        {
+          "text": "Maya, pride doesn't pay the rent.",
+          "choice_id": "favor_push_money",
+          "relationship_changes": {"maya": -15},
+          "moral_shift": -5,
+          "set_flags": {"favor_refused": true},
+          "jump_to": "maya_hangs_up"
+        }
+      ]
+    },
+    {
+      "label": "maya_relieved_delayed",
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_grateful",
+      "text": "Saturday. Shipping yards. Midnight. I'll have the CRX ready.",
+      "jump_to": "race_night"
+    },
+    {
+      "label": "maya_reluctant_accept",
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_neutral",
+      "text": "Fine. Saturday. Midnight. Shipping yards. Don't be late.",
+      "jump_to": "race_night"
+    },
+    {
+      "label": "maya_silence",
+      "type": "narration",
+      "text": "The line goes quiet. Not dead — she's still there. You can hear her breathing. Each breath is a word she won't say."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_distant",
+      "text": "Okay."
+    },
+    {
+      "type": "narration",
+      "text": "One word. The smallest word in the English language. It has never sounded so large."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_distant",
+      "text": "I understand. You've got your career. I've got my shop. We all make our choices."
+    },
+    {
+      "type": "narration",
+      "text": "Click. The line goes dead. The hotel room is very dark and very quiet and the silence tastes like betrayal.",
+      "jump_to": "favor_end"
+    },
+    {
+      "label": "maya_hangs_up",
+      "type": "narration",
+      "text": "Click."
+    },
+    {
+      "type": "narration",
+      "text": "She didn't even say goodbye. Maya Torres, who has never hung up on anyone in her life, just hung up on you. The silence that follows is not the comfortable kind.",
+      "jump_to": "favor_end"
+    },
+    {
+      "label": "race_night",
+      "type": "narration",
+      "text": "Saturday. 11:47 PM. The shipping yards."
+    },
+    {
+      "type": "narration",
+      "text": "You are wearing a hoodie, a hat, and sunglasses at night — because if anyone photographs you at an underground race, your Apex contract is ash. The absurdity is not lost on you."
+    },
+    {
+      "type": "narration",
+      "text": "Maya is waiting beside the CRX. She has it running, tuned, ready. The car looks the same but sounds different — meaner, hungrier. She has been working on it."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_determined",
+      "text": "I rebuilt the intake manifold and remapped the ECU. She's putting out about thirty more horsepower than when you left. Should be enough."
+    },
+    {
+      "type": "narration",
+      "text": "She hands you the keys. Your fingers touch. Neither of you pulls away."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_determined",
+      "text": "Win this. Bring my shop back."
+    },
+    {
+      "type": "narration",
+      "text": "The underground circuit is exactly as you remember it. Tight corners, broken asphalt, danger at every apex. The other drivers don't know who you are — the hoodie and the CRX make you anonymous. A ghost from a world you used to belong to."
+    },
+    {
+      "type": "narration",
+      "text": "The lights drop. You drive."
+    },
+    {
+      "type": "narration",
+      "text": "And for three laps of raw, ragged, beautiful underground racing, you remember what it feels like to drive without a plan. Without telemetry. Without a radio voice telling you where to brake."
+    },
+    {
+      "type": "narration",
+      "text": "You remember what it feels like to be free."
+    },
+    {
+      "type": "narration",
+      "text": "You win. Of course you win. You are overqualified for this field by several lifetimes. But the feeling — the feeling is worth more than the sixty thousand dollars."
+    },
+    {
+      "type": "narration",
+      "text": "Maya meets you at the finish. She is not crying — Maya Torres does not cry — but her eyes are wet and her smile is real and she doesn't say thank you because some things are too big for words."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_happy",
+      "text": "The shop stays open. Because of you."
+    },
+    {
+      "type": "narration",
+      "text": "She hugs you. It is brief and fierce and it smells like engine oil and determination."
+    },
+    {
+      "type": "narration",
+      "text": "You drive back to the hotel in a corporate car with underground dirt still on your shoes. Two worlds. One person. The seam between them is getting thinner."
+    },
+    {
+      "label": "favor_end",
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "the_favor_complete",
+        "value": true
+      }
+    }
+  ]
+}

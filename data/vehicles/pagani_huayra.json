@@ -1,0 +1,40 @@
+{
+  "vehicle_id": "pagani_huayra",
+  "display_name": "2013 Pagani Huayra",
+  "manufacturer": "Pagani",
+  "year": 2013,
+  "body_style": "coupe",
+  "category": "Hyper",
+  "culture": "euro",
+  "tier": 6,
+  "rarity": "legendary",
+  "description": "Art meets speed. Horacio Pagani doesn't build cars — he builds sculptures that happen to do 230 mph. The Huayra is named after the Incan god of wind, and its AMG-sourced twin-turbo V12 produces a sound worthy of divine attention.",
+  "lore": "Every Huayra is a masterpiece of obsessive craftsmanship. The carbon fiber weave is exposed and treated like fine art. The titanium exhaust bolts are polished to a mirror finish. The interior uses leather, aluminum, and carbon fiber arranged with the precision of a Swiss watch. And underneath all that artistry sits a Mercedes-AMG 6.0-liter twin-turbo V12 producing 730 horsepower. Horacio Pagani was once told by Enzo Ferrari that an Argentinian could never build a great car. The Huayra is his answer. Only 100 were built.",
+
+  "base_stats": {
+    "top_speed": 0.91,
+    "acceleration": 0.89,
+    "handling": 0.88,
+    "braking": 0.87,
+    "nitro_capacity": 0.44,
+    "weight": 1315.0
+  },
+
+  "engine": {
+    "horsepower": 730.0,
+    "torque": 738.0,
+    "displacement": "6.0L",
+    "configuration": "V12",
+    "aspiration": "twin_turbo"
+  },
+
+  "drivetrain": "rwd",
+  "price": 2000000,
+
+  "cosmetics": {
+    "default_color": "#4169E1",
+    "available_colors": ["#4169E1", "#C0C0C0", "#8B0000", "#FFFFFF", "#000000", "#FFD700"]
+  },
+
+  "special_traits": ["v12", "twin_turbo", "handcrafted", "art"]
+}

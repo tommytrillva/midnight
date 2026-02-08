@@ -1,0 +1,252 @@
+{
+  "id": "ambient_pit_early",
+  "district": "downtown",
+  "context": "The Pit — early game, player is unknown or a newcomer",
+  "lines": [
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Spectator", "text": "You see that kid in the CRX? Heard they took Preston Wells for pinks."},
+        {"speaker": 1, "speaker_tag": "Spectator", "text": "Preston Wells is a trust fund with legs. My grandmother could take him."}
+      ],
+      "conditions": {},
+      "weight": 1.0,
+      "tags": ["gossip", "racing"]
+    },
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Spectator", "text": "Preston Wells is a trust fund with legs. My grandmother could take him."},
+        {"speaker": 1, "speaker_tag": "Spectator", "text": "Your grandmother drives a Buick."},
+        {"speaker": 0, "speaker_tag": "Spectator", "text": "And she'd still take him."}
+      ],
+      "conditions": {},
+      "weight": 1.0,
+      "tags": ["humor", "gossip"]
+    },
+    {
+      "speakers": ["mechanic", "car_owner"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Mechanic", "text": "This turbo setup is criminal. Who tuned this?"},
+        {"speaker": 1, "speaker_tag": "Owner", "text": "YouTube."},
+        {"speaker": 0, "speaker_tag": "Mechanic", "text": "Yeah, I can tell."}
+      ],
+      "conditions": {},
+      "weight": 1.0,
+      "tags": ["humor", "cars"]
+    },
+    {
+      "speakers": ["bookie"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Bookie", "text": "Three to one on the kid from Torres's garage. Five to one against Nikko."}
+      ],
+      "conditions": {"mission_completed": "torres_garage"},
+      "weight": 1.2,
+      "tags": ["betting", "stakes"]
+    },
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Racer", "text": "Diesel was here last week. I saw him."},
+        {"speaker": 1, "speaker_tag": "Racer", "text": "Diesel's a myth, bro."}
+      ],
+      "conditions": {},
+      "weight": 1.0,
+      "tags": ["lore", "diesel"]
+    },
+    {
+      "speakers": ["girl_1", "girl_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Girl at the Pit", "text": "The new one's kinda cute though."},
+        {"speaker": 1, "speaker_tag": "Her Friend", "text": "Girl, you said that about the last three fresh meats."}
+      ],
+      "conditions": {},
+      "weight": 0.9,
+      "tags": ["humor", "player_reference"]
+    },
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Spectator", "text": "You hear about the new kid? Won six straight."},
+        {"speaker": 1, "speaker_tag": "Spectator", "text": "Six? Nah, nobody does that first week. You're making that up."},
+        {"speaker": 0, "speaker_tag": "Spectator", "text": "I'm telling you. Saw it with my own eyes."}
+      ],
+      "conditions": {"min_wins": 6},
+      "weight": 1.5,
+      "tags": ["player_reference", "reputation"]
+    },
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Regular", "text": "That's them. I heard they got blacklisted three years ago."},
+        {"speaker": 1, "speaker_tag": "Regular", "text": "Blacklisted? For what?"},
+        {"speaker": 0, "speaker_tag": "Regular", "text": "Nobody says. But it must've been bad if they ended up here."}
+      ],
+      "conditions": {"origin": "fallen"},
+      "weight": 1.3,
+      "tags": ["origin", "player_reference", "fallen"]
+    },
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Regular", "text": "Anyone know where that driver came from?"},
+        {"speaker": 1, "speaker_tag": "Regular", "text": "Nah. Nobody knows nothing."},
+        {"speaker": 0, "speaker_tag": "Regular", "text": "That's what makes it weird. Everyone comes from somewhere."}
+      ],
+      "conditions": {"origin": "ghost_origin"},
+      "weight": 1.3,
+      "tags": ["origin", "player_reference", "ghost"]
+    },
+    {
+      "speakers": ["regular_1"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Spectator", "text": "Another night at the Pit. Same cars, same drivers, same excuses."}
+      ],
+      "conditions": {},
+      "weight": 0.7,
+      "tags": ["atmosphere"]
+    },
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Racer", "text": "Who's running the book tonight?"},
+        {"speaker": 1, "speaker_tag": "Racer", "text": "Same guy. Takes his cut and disappears. Smart man."}
+      ],
+      "conditions": {},
+      "weight": 0.8,
+      "tags": ["betting", "atmosphere"]
+    },
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Racer", "text": "Cops busted the Harbor Road spot last week."},
+        {"speaker": 1, "speaker_tag": "Racer", "text": "Yeah, that's why we're all here tonight. Pit's the only safe spot left."}
+      ],
+      "conditions": {},
+      "weight": 0.8,
+      "tags": ["police", "atmosphere"]
+    },
+    {
+      "speakers": ["mechanic", "regular_1"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Mechanic", "text": "You hear that knock? That's your timing chain begging for mercy."},
+        {"speaker": 1, "speaker_tag": "Driver", "text": "It's fine. It always sounds like that."},
+        {"speaker": 0, "speaker_tag": "Mechanic", "text": "Famous last words."}
+      ],
+      "conditions": {},
+      "weight": 0.9,
+      "tags": ["humor", "cars"]
+    },
+    {
+      "speakers": ["regular_1"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Onlooker", "text": "Fresh meat. Every week there's a new one. Half of them don't last a month."}
+      ],
+      "conditions": {"max_rep_tier": 0},
+      "weight": 1.0,
+      "tags": ["player_reference", "atmosphere"]
+    },
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Racer", "text": "You see Torres built a new intake manifold? From scratch. The woman's a genius."},
+        {"speaker": 1, "speaker_tag": "Racer", "text": "She doesn't just wrench. She creates. Different breed."}
+      ],
+      "conditions": {"mission_completed": "torres_garage"},
+      "weight": 0.9,
+      "tags": ["maya", "lore"]
+    },
+    {
+      "speakers": ["bookie", "regular_1"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Bookie", "text": "You placing or not? Odds change in five."},
+        {"speaker": 1, "speaker_tag": "Bettor", "text": "Put me down for fifty on the outsider."},
+        {"speaker": 0, "speaker_tag": "Bookie", "text": "The new one? Bold. I like bold. It pays my rent."}
+      ],
+      "conditions": {"min_rep_tier": 1},
+      "weight": 1.0,
+      "tags": ["betting", "player_reference"]
+    },
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Regular", "text": "I swear I saw a black car on Route 9 last night. No lights. No plates."},
+        {"speaker": 1, "speaker_tag": "Regular", "text": "The Ghost? Come on."},
+        {"speaker": 0, "speaker_tag": "Regular", "text": "I know what I saw."}
+      ],
+      "conditions": {},
+      "weight": 0.7,
+      "tags": ["lore", "ghost_legend"]
+    },
+    {
+      "speakers": ["regular_1"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Spectator", "text": "Somebody brought a stock Civic to race night. I respect the confidence. Not the judgment, but the confidence."}
+      ],
+      "conditions": {},
+      "weight": 0.8,
+      "tags": ["humor", "cars"]
+    },
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Racer", "text": "What happened to that kid who wrecked on Harbor Road?"},
+        {"speaker": 1, "speaker_tag": "Racer", "text": "Hospital. Insurance doesn't cover 'being stupid at 2 AM.'"},
+        {"speaker": 0, "speaker_tag": "Racer", "text": "This life, man. It takes as much as it gives."}
+      ],
+      "conditions": {},
+      "weight": 0.7,
+      "tags": ["atmosphere", "danger"]
+    },
+    {
+      "speakers": ["regular_1"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Spectator", "text": "Bass so loud I can feel it in my teeth. I love this city."}
+      ],
+      "conditions": {},
+      "weight": 0.6,
+      "tags": ["atmosphere"]
+    },
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Regular", "text": "That new kid just lost everything on their first pink slip. Brutal."},
+        {"speaker": 1, "speaker_tag": "Regular", "text": "Pinks on your first week? That's not brave. That's stupid."}
+      ],
+      "conditions": {"recent_event": "pink_slip_lost"},
+      "weight": 1.5,
+      "tags": ["player_reference", "pink_slip"]
+    },
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Spectator", "text": "Did you see that race? They smoked everybody."},
+        {"speaker": 1, "speaker_tag": "Spectator", "text": "Beginner's luck. Let's see if they can do it twice."}
+      ],
+      "conditions": {"recent_event": "race_won"},
+      "weight": 1.3,
+      "tags": ["player_reference", "race_result"]
+    },
+    {
+      "speakers": ["regular_1"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Spectator", "text": "That CRX just got dusted. I almost felt bad. Almost."}
+      ],
+      "conditions": {"recent_event": "race_lost"},
+      "weight": 1.2,
+      "tags": ["player_reference", "race_result"]
+    },
+    {
+      "speakers": ["regular_1", "regular_2"],
+      "exchange": [
+        {"speaker": 0, "speaker_tag": "Racer", "text": "Sun's almost up. We gotta wrap this."},
+        {"speaker": 1, "speaker_tag": "Racer", "text": "One more race. I feel lucky."},
+        {"speaker": 0, "speaker_tag": "Racer", "text": "You said that three races ago."}
+      ],
+      "conditions": {"time_period": "dawn"},
+      "weight": 1.2,
+      "preferred_time": "dawn",
+      "tags": ["atmosphere", "time"]
+    }
+  ]
+}

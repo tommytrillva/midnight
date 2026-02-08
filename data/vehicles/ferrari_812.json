@@ -1,0 +1,40 @@
+{
+  "vehicle_id": "ferrari_812",
+  "display_name": "2018 Ferrari 812 Superfast",
+  "manufacturer": "Ferrari",
+  "year": 2018,
+  "body_style": "coupe",
+  "category": "Hyper",
+  "culture": "euro",
+  "tier": 6,
+  "rarity": "epic",
+  "description": "800 horsepower from a naturally aspirated 6.5-liter V12, revving to 8,500 RPM with a sound that makes angels weep. The 812 Superfast is Ferrari's most powerful front-engine car ever, and the name isn't marketing — it's a measured understatement.",
+  "lore": "Ferrari's V12 lineage stretches back to the very first car Enzo ever built. The 812 Superfast continues that tradition with the most powerful naturally aspirated production engine on Earth. 800 horsepower. No turbos. No superchargers. No electric motors. Just 6.5 liters of Italian engineering screaming through twelve cylinders. When this engine dies, a piece of automotive history dies with it.",
+
+  "base_stats": {
+    "top_speed": 0.91,
+    "acceleration": 0.87,
+    "handling": 0.84,
+    "braking": 0.85,
+    "nitro_capacity": 0.44,
+    "weight": 1588.0
+  },
+
+  "engine": {
+    "horsepower": 800.0,
+    "torque": 530.0,
+    "displacement": "6.5L",
+    "configuration": "V12",
+    "aspiration": "naturally_aspirated"
+  },
+
+  "drivetrain": "rwd",
+  "price": 1200000,
+
+  "cosmetics": {
+    "default_color": "#FF2400",
+    "available_colors": ["#FF2400", "#000000", "#C0C0C0", "#191970", "#FFFFFF", "#FFD700"]
+  },
+
+  "special_traits": ["v12", "naturally_aspirated", "grand_tourer"]
+}

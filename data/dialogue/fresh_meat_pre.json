@@ -1,0 +1,132 @@
+{
+  "id": "fresh_meat_pre",
+  "context": "Act 1 Chapter 1.2 — Fresh Meat Night at The Pit: qualification gauntlet begins",
+  "lines": [
+    {
+      "type": "narration",
+      "text": "You barely recognize The Pit. Someone's been busy."
+    },
+    {
+      "type": "narration",
+      "text": "Black and yellow banners hang from the rafters of the warehouse ring. Additional floodlights turn the loading dock into a stadium. The crowd is three times the usual size — pressed against chain-link, standing on car hoods, hanging off fire escapes."
+    },
+    {
+      "type": "narration",
+      "text": "The energy is different tonight. Sharper. Hungrier. This isn't a casual meet. This is an event."
+    },
+    {
+      "type": "narration",
+      "text": "A feedback whine splits the air. The Pit Boss stands on the hood of a stripped Camaro, megaphone in hand, gold tooth catching the floodlight."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Pit Boss",
+      "portrait": "pit_boss_announcing",
+      "text": "LISTEN UP! FRESH MEAT NIGHT!"
+    },
+    {
+      "type": "narration",
+      "text": "The crowd roars. The Pit Boss lets it build, lets it crest, then cuts it with a raised fist."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Pit Boss",
+      "portrait": "pit_boss_announcing",
+      "text": "Here's how it works. Five races. You finish all five, you're IN. You earn your spot on the board. You get ranked. You get access to the real money, the real events, the real scene."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Pit Boss",
+      "portrait": "pit_boss_announcing",
+      "text": "You DNF, you wreck out, you quit — you go home. And don't come back until next quarter. Those are the rules. No exceptions. No second chances."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Pit Boss",
+      "portrait": "pit_boss_announcing",
+      "text": "SURVIVE OR GO HOME!"
+    },
+    {
+      "type": "narration",
+      "text": "The crowd takes up the chant. SURVIVE OR GO HOME. SURVIVE OR GO HOME. The words beat against the warehouse walls like a second heartbeat."
+    },
+    {
+      "type": "narration",
+      "text": "You scan the staging area. A dozen cars. A dozen drivers who all want the same thing you do."
+    },
+    {
+      "type": "narration",
+      "text": "A tall racer — shaved head, neck tattoos, built like a problem — shoulders past you on his way to his car. The contact isn't accidental."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Tall Racer",
+      "portrait": "",
+      "text": "Watch yourself, Fresh Meat."
+    },
+    {
+      "type": "narration",
+      "text": "He doesn't look back. His car — a tuned Silvia with a body kit that costs more than your entire vehicle — growls to life three spots down."
+    },
+    {
+      "type": "narration",
+      "text": "To your left, a woman in a modded Miata with cage welding gives you a nod. Professional courtesy. Or pity. Hard to tell."
+    },
+    {
+      "type": "narration",
+      "text": "To your right, someone's praying over their steering wheel. You don't blame them."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya (Radio)",
+      "portrait": "maya_radio",
+      "text": "Hey. You there?",
+      "condition": {
+        "type": "has_flag",
+        "flag": "maya_radio_active"
+      }
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya (Radio)",
+      "portrait": "maya_radio",
+      "text": "Just remember — you don't have to win every race. You just have to finish. Five finishes. That's it. Don't be a hero.",
+      "condition": {
+        "type": "has_flag",
+        "flag": "maya_radio_active"
+      }
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya (Radio)",
+      "portrait": "maya_radio",
+      "text": "Some of these guys are going to drive like idiots. Let them. They'll take themselves out. You just bring the car home in one piece.",
+      "condition": {
+        "type": "has_flag",
+        "flag": "maya_radio_active"
+      }
+    },
+    {
+      "type": "narration",
+      "text": "The first race grid is forming. Engines rise to a collective howl. The Pit Boss raises the megaphone one last time."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Pit Boss",
+      "portrait": "pit_boss_announcing",
+      "text": "RACE ONE! FRESH MEAT — TO THE LINE!"
+    },
+    {
+      "type": "narration",
+      "text": "You roll forward. The crowd presses in. The night opens its mouth."
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "fresh_meat_started",
+        "value": true
+      }
+    }
+  ]
+}

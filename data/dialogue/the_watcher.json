@@ -1,0 +1,42 @@
+{
+  "id": "the_watcher",
+  "context": "After the first race — Diesel observes the player from the shadows",
+  "lines": [
+    {
+      "type": "narration",
+      "text": "You're heading back to your car when something makes you stop. Not a sound. Not a movement. Just a feeling — like the air pressure changed."
+    },
+    {
+      "type": "narration",
+      "text": "Across the lot, past the last row of parked cars, there's a figure. Leaning against a matte black coupe that doesn't reflect the streetlights. Arms crossed. Still as concrete."
+    },
+    {
+      "type": "narration",
+      "text": "You can't make out a face. Just a silhouette. Broad shoulders. A cigarette ember, barely visible — a faint orange dot that doesn't move."
+    },
+    {
+      "type": "narration",
+      "text": "He's watching you. Not the crowd. Not the cars. You."
+    },
+    {
+      "type": "narration",
+      "text": "The hair on the back of your neck stands up. It's not fear exactly — it's the feeling of being measured. Weighed. Like someone is deciding if you're worth their time."
+    },
+    {
+      "type": "narration",
+      "text": "You blink — and the cigarette ember is gone. The coupe is already pulling away, silent as a ghost. No rev, no show. Just headlights cutting through the dark and then nothing."
+    },
+    {
+      "type": "narration",
+      "text": "You stand there for a long moment. Whoever that was, they wanted you to know they were there. And that feels more dangerous than any race."
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "diesel_watching",
+        "value": true
+      }
+    }
+  ]
+}

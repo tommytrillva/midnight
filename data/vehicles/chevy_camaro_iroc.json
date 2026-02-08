@@ -1,0 +1,52 @@
+{
+  "vehicle_id": "chevy_camaro_iroc",
+  "display_name": "1987 Chevrolet Camaro IROC-Z",
+  "manufacturer": "Chevrolet",
+  "year": 1987,
+  "body_style": "coupe",
+  "category": "Muscle",
+  "culture": "american",
+  "tier": 1,
+  "rarity": "common",
+  "description": "The IROC-Z is an unashamed product of the 1980s — loud, brash, and powered by a V8 that drinks premium and demands attention. It handles like a boat in a hurricane but puts down power like nothing else at the price.",
+  "lore": "Mullet not included. Found with a Whitesnake cassette still in the deck and a pine tree air freshener from 1993. The TPI 5.0 still pulls hard and the gold IROC decals are only 40% peeled.",
+
+  "base_stats": {
+    "top_speed": 58.0,
+    "acceleration": 48.0,
+    "handling": 33.0,
+    "braking": 36.0,
+    "nitro_capacity": 40.0,
+    "weight_kg": 1497.0
+  },
+
+  "engine": {
+    "code": "LB9_305",
+    "horsepower": 220.0,
+    "torque_lbft": 290.0,
+    "displacement_cc": 4999,
+    "configuration": "V8",
+    "aspiration": "naturally_aspirated",
+    "valvetrain": "OHV 16V",
+    "redline_rpm": 5500
+  },
+
+  "drivetrain": "rwd",
+  "price": 6000,
+  "class": "C",
+
+  "cosmetics": {
+    "available_colors": ["bright_red", "black", "gold", "white"],
+    "body_kits": ["stock", "ground_effects", "smooth_bumper"],
+    "spoiler_options": ["none", "factory_hatch", "gta_rear"],
+    "wheel_options": ["stock_iroc_16", "weld_draglite", "cragar_ss", "american_racing_ar23"]
+  },
+
+  "special_traits": ["v8_rumble", "classic_muscle"],
+
+  "mod_potential": {
+    "engine_swaps": ["l98_350", "lt1", "ls1"],
+    "max_hp_potential": 650,
+    "upgrade_ceiling": "A"
+  }
+}
