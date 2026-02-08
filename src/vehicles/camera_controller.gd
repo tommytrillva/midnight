@@ -100,5 +100,3 @@ func _on_collision(_vehicle_id: int, impact_force: float) -> void:
 
 func _on_nitro(_vehicle_id: int) -> void:
 	apply_shake(0.15, 0.2)
-
-
