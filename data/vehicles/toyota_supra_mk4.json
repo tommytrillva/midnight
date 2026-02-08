@@ -1,0 +1,33 @@
+{
+  "vehicle_id": "toyota_supra_mk4",
+  "display_name": "1994 Toyota Supra Mk4",
+  "manufacturer": "Toyota",
+  "year": 1994,
+  "description": "The car that broke the internet before the internet existed. The Mk4 Supra's 2JZ-GTE is an iron-block monument to overengineering — Toyota built it to handle 1000 horsepower on stock internals, and the tuning community took that as a personal challenge.",
+  "base_stats": {
+    "top_speed": 0.70,
+    "acceleration": 0.68,
+    "handling": 0.58,
+    "braking": 0.60,
+    "nitro_capacity": 0.52,
+    "weight_lbs": 3400
+  },
+  "engine": {
+    "horsepower": 320.0,
+    "torque_lbft": 315.0,
+    "displacement_cc": 2997,
+    "configuration": "I6",
+    "aspiration": "twin_turbo"
+  },
+  "drivetrain": "rwd",
+  "tier": 3,
+  "price": 85000,
+  "rarity": "rare",
+  "cosmetics": {
+    "default_color": "#FF4500",
+    "available_colors": ["#FF4500", "#FFFFFF", "#000000", "#C0C0C0", "#1C1C1C", "#FFD700"]
+  },
+  "special_traits": ["2jz", "twin_turbo", "tuning_legend"],
+  "lore": "The 2JZ doesn't care about your power goals. It'll do whatever you ask. Four-digit horsepower on stock internals isn't a myth — it's a Tuesday for a good tuner with a Supra in the bay.",
+  "category": "JDM"
+}

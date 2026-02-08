@@ -1,0 +1,41 @@
+{
+  "vehicle_id": "toyota_gr_supra",
+  "display_name": "2020 Toyota GR Supra",
+  "manufacturer": "Toyota",
+  "year": 2020,
+  "body_style": "coupe",
+  "category": "JDM",
+  "culture": "jdm",
+  "tier": 4,
+  "rarity": "uncommon",
+  "description": "The return. After two decades without a Supra, Toyota brought back the nameplate with a BMW-sourced inline-six and a chassis co-developed with the Z4. Purists argued about the engine. Drivers who actually got behind the wheel stopped arguing and started smiling.",
+  "lore": "The A90 Supra's BMW B58 engine was controversial from the moment it was announced. Toyota fans wanted a 2JZ successor. What they got was a turbocharged inline-six that responds to tuning like it was born for it — bolt-on modifications pushing well past 500 horsepower on stock internals. History has a funny way of repeating itself. The original Supra wasn't appreciated in its time either.",
+
+  "base_stats": {
+    "top_speed": 0.72,
+    "acceleration": 0.72,
+    "handling": 0.74,
+    "braking": 0.74,
+    "nitro_capacity": 0.40,
+    "weight": 1542.0
+  },
+
+  "engine": {
+    "code": "B58",
+    "horsepower": 382.0,
+    "torque": 368.0,
+    "displacement": "3.0L",
+    "configuration": "I6",
+    "aspiration": "turbo"
+  },
+
+  "drivetrain": "rwd",
+  "price": 100000,
+
+  "cosmetics": {
+    "default_color": "#FFD700",
+    "available_colors": ["#FFD700", "#FF0000", "#FFFFFF", "#000000", "#C0C0C0", "#808080"]
+  },
+
+  "special_traits": ["turbo", "straight_six", "modern_legend"]
+}

@@ -1,0 +1,40 @@
+{
+  "vehicle_id": "porsche_918",
+  "display_name": "2015 Porsche 918 Spyder",
+  "manufacturer": "Porsche",
+  "year": 2015,
+  "body_style": "convertible",
+  "category": "Hyper",
+  "culture": "euro",
+  "tier": 6,
+  "rarity": "epic",
+  "description": "The hybrid pioneer. Before anyone else figured out how to make electrification exciting, Porsche combined a screaming V8 with two electric motors and produced 887 horsepower of all-wheel-drive fury. The 918 proved that the future of performance doesn't have to be boring.",
+  "lore": "Porsche's holy trinity entry — alongside the LaFerrari and McLaren P1 — proved that hybrid technology could enhance rather than dilute the driving experience. The 4.6-liter V8 revs to 9,150 RPM with a flat-plane crank sound that's pure motorsport, while the electric motors fill in torque gaps and enable silent electric-only driving. It set a 6:57 lap at the Nürburgring on its way to redefining what a hypercar could be. Only 918 were built.",
+
+  "base_stats": {
+    "top_speed": 0.93,
+    "acceleration": 0.92,
+    "handling": 0.90,
+    "braking": 0.90,
+    "nitro_capacity": 0.48,
+    "weight": 1633.0
+  },
+
+  "engine": {
+    "horsepower": 887.0,
+    "torque": 944.0,
+    "displacement": "4.6L",
+    "configuration": "V8",
+    "aspiration": "hybrid"
+  },
+
+  "drivetrain": "awd",
+  "price": 1800000,
+
+  "cosmetics": {
+    "default_color": "#C0C0C0",
+    "available_colors": ["#C0C0C0", "#FFFFFF", "#000000", "#FF2400", "#4169E1", "#556B2F"]
+  },
+
+  "special_traits": ["hybrid", "awd", "hypercar_pioneer"]
+}

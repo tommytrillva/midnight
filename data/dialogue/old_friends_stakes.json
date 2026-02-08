@@ -1,0 +1,170 @@
+{
+  "id": "old_friends_stakes",
+  "context": "Act 3 Chapter 3.1 — Relationships tested. Old friends need help. Zero's world demands full attention. Can't do both.",
+  "lines": [
+    {
+      "type": "narration",
+      "text": "Three messages on your phone. All from the world you left behind."
+    },
+    {
+      "type": "narration",
+      "text": "Maya: 'Haven't heard from you in two weeks. The garage roof is leaking again. Could use a hand. Or at least a call.'"
+    },
+    {
+      "type": "narration",
+      "text": "Diesel: 'The underground is asking where you've been. Leadership doesn't run itself. Call me.'"
+    },
+    {
+      "type": "narration",
+      "text": "Nikko: 'I need help. Real help. Not the kind you can give from whatever mountain you're hiding on.'"
+    },
+    {
+      "type": "narration",
+      "text": "And then a fourth message. From Echo: 'Zero requires your presence at 0600 tomorrow. A car will be sent. Do not be late.'"
+    },
+    {
+      "type": "narration",
+      "text": "Two worlds pulling in opposite directions. The elite circle demands everything — your time, your focus, your identity. The world below demands the same."
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "Call Maya first. The garage is her life.",
+          "choice_id": "old_friends_maya",
+          "relationship_changes": {"maya": 15, "zero": -5},
+          "moral_shift": 10,
+          "set_flags": {"prioritized_maya_act3": true},
+          "jump_to": "maya_call"
+        },
+        {
+          "text": "Call Diesel. The underground needs leadership.",
+          "choice_id": "old_friends_diesel",
+          "relationship_changes": {"diesel": 15, "zero": -5},
+          "moral_shift": 10,
+          "set_flags": {"prioritized_diesel_act3": true},
+          "jump_to": "diesel_call"
+        },
+        {
+          "text": "Call Nikko. He said he needs real help.",
+          "choice_id": "old_friends_nikko",
+          "relationship_changes": {"nikko": 15, "zero": -5},
+          "moral_shift": 10,
+          "set_flags": {"prioritized_nikko_act3": true},
+          "jump_to": "nikko_call"
+        },
+        {
+          "text": "Ignore the messages. Zero's circle is the priority now.",
+          "choice_id": "old_friends_ignore",
+          "relationship_changes": {"maya": -15, "diesel": -15, "nikko": -10, "zero": 10},
+          "moral_shift": -15,
+          "set_flags": {"abandoned_old_friends": true},
+          "jump_to": "ignore_all"
+        }
+      ]
+    },
+    {
+      "label": "maya_call",
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_tired",
+      "text": "Oh, you're alive. I was starting to wonder."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_tired",
+      "text": "The roof's been leaking for a week. I've got buckets everywhere. The insurance won't cover it because apparently 'racing-related vibration damage' isn't in the policy. Where have you been?"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Driver",
+      "portrait": "",
+      "text": "I'm sorry. I've been — it's complicated. I'll come by tomorrow."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_pained",
+      "text": "Tomorrow. You always say tomorrow. The problem with tomorrow is that it keeps being today for the people waiting for you.",
+      "jump_to": "old_friends_end"
+    },
+    {
+      "label": "diesel_call",
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_disappointed",
+      "text": "Where have you been?"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_disappointed",
+      "text": "The circuits are fracturing. Without a leader, the crews go back to being crews. The code is slipping. Last week, someone ran a meet with outside money — Zero money — and nobody stopped it because nobody was there to stop it."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Driver",
+      "portrait": "",
+      "text": "I'll come back. Soon. I just need to—"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_serious",
+      "text": "You need to choose. The underground or whatever Zero's selling you. You can't have both. Nobody can.",
+      "jump_to": "old_friends_end"
+    },
+    {
+      "label": "nikko_call",
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_desperate",
+      "text": "The deadline moved up. They want the money by the end of the month. All of it. I'm short by two hundred thousand."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_desperate",
+      "text": "Kessler dropped me. My contract's void. I've got nothing — no team, no income, no way out. The people I owe don't negotiate."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_desperate",
+      "text": "I know we've had our problems. I know I've been a terrible person to you more times than I can count. But I don't have anyone else to call.",
+      "jump_to": "old_friends_end"
+    },
+    {
+      "label": "ignore_all",
+      "type": "narration",
+      "text": "You put the phone down. Screen dark. Messages unread. The mountain is quiet and the air is clean and the elite circle is waiting and none of the voices from below can reach you here."
+    },
+    {
+      "type": "narration",
+      "text": "You tell yourself it's focus. Commitment. Discipline. But the word that fits better is the one you won't say: abandonment."
+    },
+    {
+      "type": "narration",
+      "text": "The phone sits on the counter. The messages accumulate like snow. Eventually, they stop coming.",
+      "jump_to": "old_friends_end"
+    },
+    {
+      "label": "old_friends_end",
+      "type": "narration",
+      "text": "The ceiling above you is mountain rock. The world below is full of people who believed in you before you believed in yourself. And you are up here, in a cathedral of cars, chasing something that has no name."
+    },
+    {
+      "type": "narration",
+      "text": "Zero's circle demands everything. The question is what 'everything' includes — and what it costs to find out."
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "relationships_strained",
+        "value": true
+      }
+    }
+  ]
+}

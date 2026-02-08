@@ -1,0 +1,33 @@
+{
+  "vehicle_id": "subaru_wrx_sti",
+  "display_name": "2004 Subaru Impreza WRX STI",
+  "manufacturer": "Subaru",
+  "year": 2004,
+  "description": "The Blobeye STI. Rally DNA in a sedan you could daily drive to work — if work was a special stage in Finland. The EJ257 boxer turbo four delivers its power with a distinctive rumble that you can hear three blocks away, and the symmetrical AWD system puts every bit of it to the ground.",
+  "base_stats": {
+    "top_speed": 0.62,
+    "acceleration": 0.64,
+    "handling": 0.64,
+    "braking": 0.60,
+    "nitro_capacity": 0.50,
+    "weight_lbs": 3300
+  },
+  "engine": {
+    "horsepower": 300.0,
+    "torque_lbft": 300.0,
+    "displacement_cc": 2457,
+    "configuration": "Flat-4",
+    "aspiration": "turbo"
+  },
+  "drivetrain": "awd",
+  "tier": 3,
+  "price": 45000,
+  "rarity": "uncommon",
+  "cosmetics": {
+    "default_color": "#0000CD",
+    "available_colors": ["#0000CD", "#FFD700", "#FFFFFF", "#000000", "#C0C0C0", "#FF0000"]
+  },
+  "special_traits": ["awd", "boxer_rumble", "rally_heritage"],
+  "lore": "World Rally Blue with gold wheels. If you know, you know. The STI is the working-class hero of the tuner world — affordable enough to buy, capable enough to win, and loud enough to announce your arrival at every meet in Nova Pacifica.",
+  "category": "JDM"
+}

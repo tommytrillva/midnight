@@ -1,0 +1,40 @@
+{
+  "vehicle_id": "lamborghini_huracan",
+  "display_name": "2016 Lamborghini Huracán",
+  "manufacturer": "Lamborghini",
+  "year": 2016,
+  "body_style": "coupe",
+  "category": "Euro/Exotic",
+  "culture": "euro",
+  "tier": 5,
+  "rarity": "rare",
+  "description": "The V10 entry point into the Lamborghini universe. 602 horsepower, all-wheel drive, and a design language that looks like it was sketched by a fighter jet designer having a fever dream. Subtle it is not. Fast it absolutely is.",
+  "lore": "The Huracán replaced the Gallardo as Lamborghini's 'entry-level' supercar — a phrase that only makes sense in a world where $350,000 is considered affordable. The 5.2-liter V10 screams with an intensity that makes neighbors file noise complaints, and the all-wheel-drive system means you can actually use all 602 horsepower without immediately dying.",
+
+  "base_stats": {
+    "top_speed": 0.83,
+    "acceleration": 0.82,
+    "handling": 0.78,
+    "braking": 0.80,
+    "nitro_capacity": 0.42,
+    "weight": 1406.0
+  },
+
+  "engine": {
+    "horsepower": 602.0,
+    "torque": 413.0,
+    "displacement": "5.2L",
+    "configuration": "V10",
+    "aspiration": "naturally_aspirated"
+  },
+
+  "drivetrain": "awd",
+  "price": 350000,
+
+  "cosmetics": {
+    "default_color": "#32CD32",
+    "available_colors": ["#32CD32", "#FFD700", "#FF4500", "#FFFFFF", "#000000", "#C0C0C0"]
+  },
+
+  "special_traits": ["v10", "awd", "dramatic"]
+}

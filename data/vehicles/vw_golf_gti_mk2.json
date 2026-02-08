@@ -1,0 +1,52 @@
+{
+  "vehicle_id": "vw_golf_gti_mk2",
+  "display_name": "1990 Volkswagen Golf GTI Mk2",
+  "manufacturer": "Volkswagen",
+  "year": 1990,
+  "body_style": "hatchback",
+  "category": "Euro/Tuner",
+  "culture": "euro",
+  "tier": 1,
+  "rarity": "common",
+  "description": "The Mk2 GTI is the hot hatch that defined a class. Boxy, purposeful, and deceptively quick. It won't win any drag races, but on a tight course with corners, this little German box will humble cars with twice the horsepower.",
+  "lore": "Hot hatch origins. The red stripe around the grille is faded, the headliner is sagging, and someone wired the aftermarket stereo with electrical tape. But the 1.8 is eager, the gearbox is tight, and the chassis has more grip than it has any right to.",
+
+  "base_stats": {
+    "top_speed": 50.0,
+    "acceleration": 42.0,
+    "handling": 52.0,
+    "braking": 42.0,
+    "nitro_capacity": 32.0,
+    "weight_kg": 998.0
+  },
+
+  "engine": {
+    "code": "PF",
+    "horsepower": 134.0,
+    "torque_lbft": 133.0,
+    "displacement_cc": 1781,
+    "configuration": "I4",
+    "aspiration": "naturally_aspirated",
+    "valvetrain": "SOHC 8V",
+    "redline_rpm": 6500
+  },
+
+  "drivetrain": "fwd",
+  "price": 5500,
+  "class": "D",
+
+  "cosmetics": {
+    "available_colors": ["tornado_red", "black", "alpine_white", "helios_blue"],
+    "body_kits": ["stock", "zender", "kamei", "euro_bumpers"],
+    "spoiler_options": ["none", "factory_hatch", "votex_rear"],
+    "wheel_options": ["stock_14_snowflake", "bbs_rs_15", "schmidt_th_line", "borbet_type_a"]
+  },
+
+  "special_traits": ["turbo_potential", "hot_hatch"],
+
+  "mod_potential": {
+    "engine_swaps": ["1.8t_20v", "vr6", "r32_turbo"],
+    "max_hp_potential": 500,
+    "upgrade_ceiling": "B"
+  }
+}

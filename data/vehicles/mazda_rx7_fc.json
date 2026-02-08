@@ -1,0 +1,52 @@
+{
+  "vehicle_id": "mazda_rx7_fc",
+  "display_name": "1988 Mazda RX-7 FC",
+  "manufacturer": "Mazda",
+  "year": 1988,
+  "body_style": "coupe",
+  "category": "JDM/Tuner",
+  "culture": "jdm",
+  "tier": 2,
+  "rarity": "uncommon",
+  "description": "The FC RX-7 is a rotary-powered sports car that screams to redline with a sound no piston engine can replicate. Lightweight, mid-front engine, and turbocharged from the factory. It's fast, it's unique, and it will teach you what 'apex seal replacement' means.",
+  "lore": "Reliability optional. The rotary motor sounds like an angry wasp trapped in a tin can, and it drinks premix like a frat boy at a keg party. The turbo spools, the triangle spins, and for one glorious moment between rebuilds, it's the most exciting car on the street.",
+
+  "base_stats": {
+    "top_speed": 64.0,
+    "acceleration": 55.0,
+    "handling": 58.0,
+    "braking": 48.0,
+    "nitro_capacity": 36.0,
+    "weight_kg": 1270.0
+  },
+
+  "engine": {
+    "code": "13B-T",
+    "horsepower": 200.0,
+    "torque_lbft": 196.0,
+    "displacement_cc": 1308,
+    "configuration": "Rotary",
+    "aspiration": "turbo",
+    "valvetrain": "2-rotor",
+    "redline_rpm": 7500
+  },
+
+  "drivetrain": "rwd",
+  "price": 18000,
+  "class": "C",
+
+  "cosmetics": {
+    "available_colors": ["crystal_white", "brilliant_black", "classic_red", "winning_blue"],
+    "body_kits": ["stock", "re_amemiya", "rocket_bunny", "feed_fujita"],
+    "spoiler_options": ["none", "factory_turbo", "re_amemiya_gt", "feed_wing"],
+    "wheel_options": ["stock_15", "work_equip_03_16", "rays_ce28_16", "enkei_rpf1_16"]
+  },
+
+  "special_traits": ["rotary", "turbo", "rev_happy"],
+
+  "mod_potential": {
+    "engine_swaps": ["13b-rew_twin_turbo", "20b_3_rotor", "ls1"],
+    "max_hp_potential": 650,
+    "upgrade_ceiling": "A"
+  }
+}

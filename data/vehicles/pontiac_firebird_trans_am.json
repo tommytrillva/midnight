@@ -1,0 +1,52 @@
+{
+  "vehicle_id": "pontiac_firebird_trans_am",
+  "display_name": "1999 Pontiac Firebird Trans Am WS6",
+  "manufacturer": "Pontiac",
+  "year": 1999,
+  "body_style": "coupe",
+  "category": "Muscle",
+  "culture": "american",
+  "tier": 2,
+  "rarity": "uncommon",
+  "description": "The WS6 Trans Am is the Camaro Z28's wilder, meaner sibling. Same LS1, but with ram air induction, aggressive aero, and a functional hood scoop that force-feeds cold air to 320 horsepower. It's the last of the real Firebirds, and it goes out swinging.",
+  "lore": "LS1, WS6, legend. Pontiac is dead and the Firebird died with it, but the WS6 Trans Am remains the greatest car they ever built. Ram air hood scoops, compound-curved headlights that look like they're angry at traffic, and an LS1 that runs 12s with bolt-ons. The last muscle car Pontiac ever made was also their best.",
+
+  "base_stats": {
+    "top_speed": 76.0,
+    "acceleration": 65.0,
+    "handling": 45.0,
+    "braking": 48.0,
+    "nitro_capacity": 50.0,
+    "weight_kg": 1542.0
+  },
+
+  "engine": {
+    "code": "LS1_WS6",
+    "horsepower": 320.0,
+    "torque_lbft": 345.0,
+    "displacement_cc": 5665,
+    "configuration": "V8",
+    "aspiration": "naturally_aspirated",
+    "valvetrain": "OHV 16V",
+    "redline_rpm": 6000
+  },
+
+  "drivetrain": "rwd",
+  "price": 24000,
+  "class": "B",
+
+  "cosmetics": {
+    "available_colors": ["pewter_metallic", "black", "bright_red", "navy_blue_metallic"],
+    "body_kits": ["stock_ws6", "slp_firehawk", "custom_widebody"],
+    "spoiler_options": ["none", "factory_ws6", "slp_firehawk_rear", "custom_high_mount"],
+    "wheel_options": ["stock_ws6_17", "weld_s71_17", "american_racing_torq_thrust_ii_18", "fikse_fm10_18"]
+  },
+
+  "special_traits": ["ls_power", "muscle_heritage", "underrated"],
+
+  "mod_potential": {
+    "engine_swaps": ["ls2", "ls3", "lsx_454"],
+    "max_hp_potential": 950,
+    "upgrade_ceiling": "S"
+  }
+}

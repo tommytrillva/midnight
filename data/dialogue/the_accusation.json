@@ -1,0 +1,145 @@
+{
+  "id": "the_accusation",
+  "context": "Act 3 Chapter 3.3 — Scandal breaks publicly. Driver implicated. Media firestorm.",
+  "lines": [
+    {
+      "type": "narration",
+      "text": "It happens at 6 AM on a Tuesday. The world wakes up and your name is everywhere."
+    },
+    {
+      "type": "narration",
+      "text": "Not the championship headlines you earned. Not the racing coverage. Something else. Something designed to destroy."
+    },
+    {
+      "type": "narration",
+      "text": "A leak. Massive. Documents, emails, recordings — everything Mina Park had been gathering, twisted and released prematurely. But not by Mina. By someone who wanted the information weaponized rather than investigated."
+    },
+    {
+      "type": "narration",
+      "text": "The narrative is surgical: you are not the victim of race fixing. You are the architect. A street racer who corrupted professional racing from the inside. A criminal who infiltrated the legitimate world to exploit it."
+    },
+    {
+      "type": "narration",
+      "text": "Your phone fills with notifications. News alerts. Text messages. Calls from numbers you don't recognize. The digital equivalent of a mob with torches."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_devastated",
+      "text": "Don't turn on the television."
+    },
+    {
+      "type": "narration",
+      "text": "You turn on the television."
+    },
+    {
+      "type": "narration",
+      "text": "Your face on every channel. Old footage from underground races — someone recorded them despite the code. Professional races with commentary reframed as evidence of manipulation. Sound bites from people you've never met, claiming to have been coerced."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "News Anchor",
+      "portrait": "news_anchor",
+      "text": "The scope of the scandal continues to widen this morning. Sources indicate the driver at the center of the investigation has ties to organized gambling operations, underground criminal enterprises, and a shadowy figure known only as 'Zero.'"
+    },
+    {
+      "type": "narration",
+      "text": "They have your name connected to Zero. Not as a victim. As a partner."
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "Call Mina Park. Find out who leaked the documents.",
+          "choice_id": "accuse_call_mina",
+          "relationship_changes": {},
+          "moral_shift": 5,
+          "set_flags": {"investigating_leak": true},
+          "jump_to": "mina_response"
+        },
+        {
+          "text": "Call Jade. We need damage control now.",
+          "choice_id": "accuse_call_jade",
+          "relationship_changes": {"jade": 5},
+          "moral_shift": 0,
+          "jump_to": "jade_damage_control"
+        },
+        {
+          "text": "Go silent. Don't give them ammunition.",
+          "choice_id": "accuse_go_dark",
+          "relationship_changes": {},
+          "moral_shift": 0,
+          "set_flags": {"went_dark_scandal": true},
+          "jump_to": "go_dark"
+        }
+      ]
+    },
+    {
+      "label": "mina_response",
+      "type": "dialogue",
+      "speaker": "Mina Park",
+      "portrait": "mina_panicked",
+      "text": "It wasn't me. My sources were compromised. Someone — Zero, it has to be Zero — got ahead of us. They took the evidence and reframed it. Made you the villain instead of the whistleblower."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Mina Park",
+      "portrait": "mina_panicked",
+      "text": "This is what Zero does. When the truth threatens the system, Zero doesn't suppress it — Zero redirects it. Gives the public a sacrificial offering so they stop looking at the machinery.",
+      "jump_to": "accusation_aftermath"
+    },
+    {
+      "label": "jade_damage_control",
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_cold",
+      "text": "Apex has suspended your contract pending investigation. The board made the decision at midnight. I fought it. I lost."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Jade",
+      "portrait": "jade_pained",
+      "text": "I'm going to fight for you. But I need you to understand — from this moment, you are radioactive. Every person, every organization, every sponsor that touches you gets contaminated. That's how they designed it.",
+      "jump_to": "accusation_aftermath"
+    },
+    {
+      "label": "go_dark",
+      "type": "narration",
+      "text": "You turn off the phone. Turn off the television. Sit in the silence of a hotel room that feels like a cell."
+    },
+    {
+      "type": "narration",
+      "text": "Outside, the world disassembles your reputation with the efficiency of a pit crew stripping a car. Each bolt removed precisely. Each panel discarded. Until what's left is just a chassis with no bodywork — exposed, vulnerable, unrecognizable.",
+      "jump_to": "accusation_aftermath"
+    },
+    {
+      "label": "accusation_aftermath",
+      "type": "narration",
+      "text": "Within 48 hours: Apex suspends your contract. Your racing license is under review. Sponsors pull their logos from your car and their money from your accounts. Social media becomes a cesspool of people who were your fans yesterday and your executioners today."
+    },
+    {
+      "type": "narration",
+      "text": "Within a week: the police announce they are reviewing your involvement in illegal racing activities. Not charging — reviewing. But the distinction doesn't matter in the court of public opinion."
+    },
+    {
+      "type": "narration",
+      "text": "Within two weeks: you are alone."
+    },
+    {
+      "type": "narration",
+      "text": "Zero's plan is elegant in its cruelty. The system continues. The corruption continues. Only the face changes — and your face was the one chosen to be sacrificed."
+    },
+    {
+      "type": "narration",
+      "text": "The fall is not a moment. It is a season. And winter has just begun."
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "scandal_public",
+        "value": true
+      }
+    }
+  ]
+}

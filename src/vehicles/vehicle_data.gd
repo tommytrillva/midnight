@@ -1,7 +1,65 @@
 ## Data class representing a vehicle's complete state.
 ## Includes base specs, installed parts, cosmetics, wear, and affinity.
+## Supports 7-tier, 100-car roster with categories, rarity, lore, and acquisition tracking.
 class_name VehicleData
 extends Resource
+
+# --- Vehicle Tier System (7 tiers) ---
+enum VehicleTier {
+	BEATER = 1,       # Junkers, barn finds, starter cars
+	STREET = 2,       # Entry-level tuners, daily drivers
+	SPORT = 3,        # Factory performance, hot hatches
+	PRO = 4,          # Serious builds, track-ready
+	ELITE = 5,        # High-end sports cars, built monsters
+	APEX = 6,         # Supercars, top-tier tuned legends
+	MYTHIC = 7,       # Unobtanium — story/achievement only
+}
+
+const VEHICLE_TIER_NAMES := {
+	1: "Beater",
+	2: "Street",
+	3: "Sport",
+	4: "Pro",
+	5: "Elite",
+	6: "Apex",
+	7: "Mythic",
+}
+
+const VEHICLE_TIER_COLORS := {
+	1: Color(0.6, 0.6, 0.6),       # Gray
+	2: Color(0.3, 0.7, 0.3),       # Green
+	3: Color(0.3, 0.5, 0.9),       # Blue
+	4: Color(0.7, 0.3, 0.9),       # Purple
+	5: Color(0.9, 0.6, 0.1),       # Orange
+	6: Color(0.9, 0.2, 0.2),       # Red
+	7: Color(1.0, 0.85, 0.0),      # Gold
+}
+
+# --- Upgrade Tier Enums ---
+enum EngineTier { STOCK, STAGE_1, STAGE_2, STAGE_3, STAGE_4, RACE_SPEC }
+enum AeroTier { STOCK, STREET, AGGRESSIVE, TRACK, RACE, CUSTOM }
+enum SuspensionTier { STOCK, LOWERING, COILOVERS, TRACK, AIR, RACE }
+
+# --- Category Constants ---
+const VALID_CATEGORIES := [
+	"JDM", "Muscle", "Euro", "Tuner", "Drift", "Pro", "Hyper", "Classic", "Mythic",
+]
+
+const VALID_ACQUISITION_METHODS := [
+	"purchase", "pink_slip", "zero_gift", "story_unlock", "barn_find", "tournament_reward",
+]
+
+const VALID_ENGINE_CONFIGS := [
+	"I4", "I6", "V6", "V8", "V10", "V12", "W16", "Flat-4", "Flat-6", "Rotary",
+]
+
+const VALID_ASPIRATIONS := [
+	"NA", "turbo", "twin_turbo", "supercharged", "quad_turbo", "hybrid",
+]
+
+const VALID_DRIVETRAINS := ["FWD", "RWD", "AWD", "MR"]
+
+const VALID_RARITIES := ["common", "uncommon", "rare", "epic", "legendary"]
 
 # --- Identity ---
 @export var vehicle_id: String = ""
@@ -12,6 +70,17 @@ extends Resource
 @export var culture: String = "jdm" # jdm, american, euro
 @export var description: String = ""
 
+# --- New Roster Fields ---
+@export var tier: int = 1 # VehicleTier enum value (1-7)
+@export var category: String = "JDM" # JDM, Muscle, Euro, Tuner, Drift, Pro, Hyper, Classic, Mythic
+@export var acquisition_method: String = "purchase" # purchase, pink_slip, zero_gift, story_unlock, barn_find, tournament_reward
+@export var engine_config: String = "I4" # I4, I6, V6, V8, V10, V12, W16, Flat-4, Flat-6, Rotary
+@export var aspiration: String = "NA" # NA, turbo, twin_turbo, supercharged, quad_turbo, hybrid
+@export var special_traits: Array[String] = [] # e.g. ["pop_up_headlights", "rotary_screamer", "widebody"]
+@export var lore: String = "" # Flavor text, backstory for the car
+@export var rarity: String = "common" # common, uncommon, rare, epic, legendary
+@export var is_story_locked: bool = false # Can't sell/wager story-critical cars
+
 # --- Base Stats (before mods) ---
 @export var base_speed: float = 100.0
 @export var base_acceleration: float = 50.0
@@ -20,13 +89,13 @@ extends Resource
 @export var base_durability: float = 100.0
 
 # --- Engine Specs ---
-@export var engine_type: String = "i4" # i4, i6, v6, v8, rotary, boxer
+@export var engine_type: String = "i4" # Legacy compat — use engine_config for new data
 @export var displacement_cc: int = 2000
 @export var stock_hp: float = 150.0
 @export var stock_torque: float = 140.0
 @export var redline_rpm: int = 7000
 @export var weight_kg: float = 1200.0
-@export var drivetrain: String = "rwd" # fwd, rwd, awd
+@export var drivetrain: String = "RWD" # FWD, RWD, AWD, MR
 
 # --- Installed Parts (slot -> part_id) ---
 @export var installed_parts: Dictionary = {
@@ -64,10 +133,15 @@ extends Resource
 @export var affinity: float = 0.0 # 0-100, improves with use
 
 # --- Provenance ---
-@export var acquired_method: String = "purchased" # purchased, won_pink_slip, story, built
+@export var acquired_method: String = "purchased" # Legacy compat — use acquisition_method for new data
 @export var acquired_timestamp: String = ""
 @export var race_history: Array[Dictionary] = [] # [{race_id, result, date}]
 @export var estimated_value: int = 0
+
+# --- Upgrade Tier Tracking ---
+@export var engine_upgrade_tier: int = 0 # EngineTier enum
+@export var aero_upgrade_tier: int = 0 # AeroTier enum
+@export var suspension_upgrade_tier: int = 0 # SuspensionTier enum
 
 
 func get_effective_stats() -> Dictionary:
@@ -153,8 +227,10 @@ func add_race_to_history(race_id: String, result: String) -> void:
 
 
 func calculate_value() -> int:
-	## Estimate vehicle market value based on base + mods - wear.
+	## Estimate vehicle market value based on base + mods - wear + tier bonus.
 	var base_value := int(stock_hp * 50 + base_speed * 20)
+	# Tier multiplier: higher tier cars are worth more
+	var tier_mult := 1.0 + (tier - 1) * 0.5
 	var mod_value := 0
 	for slot in installed_parts:
 		var part_id: String = installed_parts[slot]
@@ -163,5 +239,37 @@ func calculate_value() -> int:
 			if part:
 				mod_value += part.get("price", 0)
 	var condition_mult := 1.0 - (wear_percentage * 0.003) - (damage_percentage * 0.005)
-	estimated_value = int((base_value + mod_value) * maxf(condition_mult, 0.1))
+	estimated_value = int((base_value * tier_mult + mod_value) * maxf(condition_mult, 0.1))
 	return estimated_value
+
+
+func get_tier_name() -> String:
+	return VEHICLE_TIER_NAMES.get(tier, "Unknown")
+
+
+func get_tier_color() -> Color:
+	return VEHICLE_TIER_COLORS.get(tier, Color.WHITE)
+
+
+func can_sell() -> bool:
+	## Story-locked vehicles cannot be sold or wagered.
+	return not is_story_locked
+
+
+func can_wager() -> bool:
+	## Story-locked vehicles cannot be wagered in pink slips.
+	return not is_story_locked
+
+
+func get_full_engine_description() -> String:
+	## Returns a formatted engine description string.
+	var asp_text := ""
+	match aspiration:
+		"NA": asp_text = "Naturally Aspirated"
+		"turbo": asp_text = "Turbocharged"
+		"twin_turbo": asp_text = "Twin-Turbo"
+		"supercharged": asp_text = "Supercharged"
+		"quad_turbo": asp_text = "Quad-Turbo"
+		"hybrid": asp_text = "Hybrid"
+		_: asp_text = aspiration
+	return "%s %s %.1fL %s" % [asp_text, engine_config, displacement_cc / 1000.0, drivetrain]

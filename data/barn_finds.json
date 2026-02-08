@@ -1,0 +1,28 @@
+{
+  "barn_finds": [
+    {
+      "id": "bf_2000gt",
+      "vehicle_id": "toyota_2000gt",
+      "district": "downtown",
+      "position": {"x": -100, "y": 0, "z": 150},
+      "discovery_condition": {"rep_tier": "KNOWN", "flag": "explored_old_district"},
+      "hint_dialogue": "Old Tanaka used to have a garage in the Japanese district. Nobody's been in there since he passed."
+    },
+    {
+      "id": "bf_240z",
+      "vehicle_id": "datsun_240z",
+      "district": "harbor",
+      "position": {"x": 80, "y": 0, "z": -120},
+      "discovery_condition": {"rep_tier": "RESPECTED"},
+      "hint_dialogue": "Dock workers talk about a container that's been sealed since the 80s. Red customs tape. Nobody's opened it."
+    },
+    {
+      "id": "bf_miura",
+      "vehicle_id": "lamborghini_miura",
+      "district": "hillside",
+      "position": {"x": -50, "y": 30, "z": -200},
+      "discovery_condition": {"flag": "zero_revealed", "rep_tier": "LEGENDARY"},
+      "hint_dialogue": "There's a tunnel off Route 9 that doesn't appear on any map. Zero used to store things there. Beautiful, expensive things."
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "vehicle_id": "vw_corrado_vr6",
+  "display_name": "1993 Volkswagen Corrado VR6",
+  "manufacturer": "Volkswagen",
+  "year": 1993,
+  "body_style": "coupe",
+  "category": "Euro/Tuner",
+  "culture": "euro",
+  "tier": 2,
+  "rarity": "uncommon",
+  "description": "The Corrado VR6 is Volkswagen's forgotten sports coupe. A narrow-angle V6 that sounds like nothing else, a rising rear spoiler that deploys at speed, and a chassis that punches above its weight class. Nobody knows what it is, and that's exactly the advantage.",
+  "lore": "Forgotten weapon. The VR6 makes a sound that's half-snarl, half-howl — six cylinders packed so tight they share a single head. The active rear spoiler rises like a warning flag. Most people at the meet don't even know what a Corrado is. They will after tonight.",
+
+  "base_stats": {
+    "top_speed": 58.0,
+    "acceleration": 48.0,
+    "handling": 52.0,
+    "braking": 42.0,
+    "nitro_capacity": 34.0,
+    "weight_kg": 1225.0
+  },
+
+  "engine": {
+    "code": "AAA_VR6",
+    "horsepower": 178.0,
+    "torque_lbft": 177.0,
+    "displacement_cc": 2792,
+    "configuration": "VR6",
+    "aspiration": "naturally_aspirated",
+    "valvetrain": "DOHC 12V",
+    "redline_rpm": 6500
+  },
+
+  "drivetrain": "fwd",
+  "price": 16000,
+  "class": "C",
+
+  "cosmetics": {
+    "available_colors": ["flash_red", "black", "classic_green", "nugget_yellow"],
+    "body_kits": ["stock", "zender", "oettinger", "rieger_gto"],
+    "spoiler_options": ["active_rear_spoiler", "oettinger_fixed", "rieger_gt"],
+    "wheel_options": ["stock_bbs_15", "bbs_rs_16", "schmidt_th_line_16", "oz_futura_17"]
+  },
+
+  "special_traits": ["vr6", "forgotten_gem", "sleeper"],
+
+  "mod_potential": {
+    "engine_swaps": ["vr6_turbo", "r32_turbo", "1.8t_20v"],
+    "max_hp_potential": 550,
+    "upgrade_ceiling": "A"
+  }
+}

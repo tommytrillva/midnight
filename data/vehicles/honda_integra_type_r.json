@@ -1,0 +1,52 @@
+{
+  "vehicle_id": "honda_integra_type_r",
+  "display_name": "1997 Honda Integra Type R (DC2)",
+  "manufacturer": "Honda",
+  "year": 1997,
+  "body_style": "coupe",
+  "category": "JDM/Tuner",
+  "culture": "jdm",
+  "tier": 2,
+  "rarity": "uncommon",
+  "description": "The DC2 Type R is Honda's masterpiece of naturally-aspirated engineering. The hand-ported B18C5 screams to 8,400 RPM, the limited-slip differential claws through corners, and the chassis is so balanced that it redefined what front-wheel drive could be.",
+  "lore": "Front-wheel drive perfection. The Championship White paint, the red Recaro seats, the B18C5 that revs like it's personally offended by the redline — this is the car that made believers out of skeptics. FWD is not a compromise when Honda is the one engineering it.",
+
+  "base_stats": {
+    "top_speed": 62.0,
+    "acceleration": 55.0,
+    "handling": 72.0,
+    "braking": 55.0,
+    "nitro_capacity": 35.0,
+    "weight_kg": 1134.0
+  },
+
+  "engine": {
+    "code": "B18C5",
+    "horsepower": 195.0,
+    "torque_lbft": 130.0,
+    "displacement_cc": 1797,
+    "configuration": "I4",
+    "aspiration": "naturally_aspirated",
+    "valvetrain": "DOHC VTEC",
+    "redline_rpm": 8400
+  },
+
+  "drivetrain": "fwd",
+  "price": 35000,
+  "class": "B",
+
+  "cosmetics": {
+    "available_colors": ["championship_white", "phoenix_yellow", "milano_red", "starlight_black"],
+    "body_kits": ["stock_type_r", "mugen", "spoon_sports", "j_blood"],
+    "spoiler_options": ["none", "factory_type_r", "mugen_gt", "spoon_carbon"],
+    "wheel_options": ["stock_type_r_15", "mugen_mf10_16", "volk_te37_16", "spoon_sw388_16"]
+  },
+
+  "special_traits": ["vtec", "rev_happy", "fwd_legend"],
+
+  "mod_potential": {
+    "engine_swaps": ["b18c5_built", "k20a_type_r", "k24_turbo"],
+    "max_hp_potential": 550,
+    "upgrade_ceiling": "A"
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "vehicle_id": "honda_crx_si",
+  "display_name": "1989 Honda CRX Si",
+  "manufacturer": "Honda",
+  "year": 1989,
+  "body_style": "hatchback",
+  "category": "JDM/Tuner",
+  "culture": "jdm",
+  "tier": 1,
+  "rarity": "common",
+  "description": "The CRX Si is where legends begin — not with a roar, but with a humble rev and a willingness to learn every corner. Light enough to feel the road through the steering wheel, nimble enough to embarrass cars twice its price.",
+  "lore": "A rusted CRX Si with 200,000 miles and a check engine light that's been on since the Clinton administration. But under the patina, there's a chassis that wants to dance.",
+
+  "base_stats": {
+    "top_speed": 45.0,
+    "acceleration": 40.0,
+    "handling": 55.0,
+    "braking": 35.0,
+    "nitro_capacity": 30.0,
+    "weight_kg": 826.0
+  },
+
+  "engine": {
+    "code": "D16A6",
+    "horsepower": 108.0,
+    "torque_lbft": 100.0,
+    "displacement_cc": 1590,
+    "configuration": "I4",
+    "aspiration": "naturally_aspirated",
+    "valvetrain": "SOHC VTEC",
+    "redline_rpm": 6800
+  },
+
+  "drivetrain": "fwd",
+  "price": 3000,
+  "class": "D",
+
+  "cosmetics": {
+    "available_colors": ["championship_white", "tahitian_green", "blade_silver", "rio_red"],
+    "body_kits": ["stock", "jdm_lip_kit"],
+    "spoiler_options": ["none", "factory_lip"],
+    "wheel_options": ["stock_13", "enkei_rpf1_14", "mugen_cf48"]
+  },
+
+  "special_traits": ["vtec", "lightweight", "starter_car"],
+
+  "mod_potential": {
+    "engine_swaps": ["b16a", "b18c", "k20a"],
+    "max_hp_potential": 450,
+    "upgrade_ceiling": "B"
+  }
+}

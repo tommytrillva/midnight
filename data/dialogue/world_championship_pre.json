@@ -1,0 +1,137 @@
+{
+  "id": "world_championship_pre",
+  "context": "Act 3 Chapter 3.2 — 8-race global tournament setup. Biggest stage possible. Everything building to this.",
+  "lines": [
+    {
+      "type": "narration",
+      "text": "A conference room that spans half a floor of a building you didn't know existed. Screens showing circuits from eight countries. Flags on the table representing teams from every continent. This is the World Underground Championship — the event that Zero built from nothing."
+    },
+    {
+      "type": "narration",
+      "text": "Except it isn't underground. Not really. It exists in the space between legal and illegal, between sanctioned and unsanctioned, funded by money that asks no questions and administered by people who answer to no one."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Echo",
+      "portrait": "echo_hooded",
+      "text": "Eight races. Eight countries. Eight circuits that exist only for this event — roads closed by arrangement, temporary infrastructure, invisible to the outside world."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Echo",
+      "portrait": "echo_hooded",
+      "text": "Nova Pacifica. Tokyo. Dubai. Monaco. Buenos Aires. Cape Town. Shanghai. And the finale — a circuit in Iceland that runs through volcanic terrain at the edge of a glacier."
+    },
+    {
+      "type": "narration",
+      "text": "The driver lineup scrolls across the screen. Twelve names. Some you recognize from the elite circuit. Some you recognize from professional racing. Some you have never heard of — and the fact that they are here means they are the kind of dangerous that doesn't advertise."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Echo",
+      "portrait": "echo_hooded",
+      "text": "Zero has entered you as the Nova Pacifica representative. Your performance in the elite events has earned this position. Do not waste it."
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "Eight countries. Eight races. I was born for this.",
+          "choice_id": "world_champ_confident",
+          "relationship_changes": {},
+          "moral_shift": 0,
+          "rep": 10,
+          "jump_to": "echo_preparation"
+        },
+        {
+          "text": "Who's the favorite? Who do I need to worry about?",
+          "choice_id": "world_champ_strategic",
+          "relationship_changes": {},
+          "moral_shift": 0,
+          "set_flags": {"world_champ_studied_field": true},
+          "jump_to": "echo_favorites"
+        },
+        {
+          "text": "What are the real stakes? Not the racing stakes — Zero's stakes.",
+          "choice_id": "world_champ_suspicious",
+          "relationship_changes": {"zero": -5},
+          "moral_shift": 10,
+          "jump_to": "echo_real_stakes"
+        }
+      ]
+    },
+    {
+      "label": "echo_preparation",
+      "type": "dialogue",
+      "speaker": "Echo",
+      "portrait": "echo_hooded",
+      "text": "Confidence is useful. Arrogance is fatal. The drivers in this field have between them over two hundred race victories across professional and underground circuits. Prepare accordingly.",
+      "jump_to": "world_champ_briefing"
+    },
+    {
+      "label": "echo_favorites",
+      "type": "dialogue",
+      "speaker": "Echo",
+      "portrait": "echo_hooded",
+      "text": "The Tokyo representative — Kenji Yoshida. Son of a Formula One champion. Drove professionally until he was banned for refusing team orders. He has the most natural talent of anyone in the field."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Echo",
+      "portrait": "echo_hooded",
+      "text": "The Dubai entry — Amira Hassan. Rally champion turned circuit specialist. She is faster in adverse conditions than anyone else in the field — rain, night, technical failures, she thrives on chaos."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Echo",
+      "portrait": "echo_hooded",
+      "text": "And the unknown — the Monaco entry. No public history. No known racing record. Zero selected them personally. That alone should concern you.",
+      "jump_to": "world_champ_briefing"
+    },
+    {
+      "label": "echo_real_stakes",
+      "type": "dialogue",
+      "speaker": "Echo",
+      "portrait": "echo_hooded",
+      "text": "The world championship validates Zero's vision. It proves that a racing ecosystem can exist outside institutional control. It proves that speed needs no governing body."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Echo",
+      "portrait": "echo_hooded",
+      "text": "If you win, you become the face of that proof. You become evidence that the system works. You become Zero's greatest argument."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Echo",
+      "portrait": "echo_hooded",
+      "text": "Whether that is a privilege or a trap depends on what you believe about Zero.",
+      "jump_to": "world_champ_briefing"
+    },
+    {
+      "label": "world_champ_briefing",
+      "type": "narration",
+      "text": "The briefing continues for three hours. Circuit maps, competitor analyses, weather patterns, car specifications. The level of preparation is beyond professional — it is obsessive."
+    },
+    {
+      "type": "narration",
+      "text": "When it ends, you sit alone in the conference room. The screens show circuits from around the world — roads you have never driven, in cities you have never visited, against drivers who might be the best you ever face."
+    },
+    {
+      "type": "narration",
+      "text": "Eight races. Eight chances to prove something. Not to Zero. Not to the world. To yourself."
+    },
+    {
+      "type": "narration",
+      "text": "Because the question that started in a parking garage in Nova Pacifica — 'How fast can I really go?' — is about to be answered. One way or another."
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "world_championship_briefed",
+        "value": true
+      }
+    }
+  ]
+}

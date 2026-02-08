@@ -1,0 +1,52 @@
+{
+  "vehicle_id": "eagle_talon_tsi",
+  "display_name": "1992 Eagle Talon TSi",
+  "manufacturer": "Eagle",
+  "year": 1992,
+  "body_style": "coupe",
+  "category": "JDM/Tuner",
+  "culture": "jdm",
+  "tier": 2,
+  "rarity": "uncommon",
+  "description": "The Eagle Talon TSi is the Eclipse GSX's fraternal twin — same 4G63T heart, same AWD system, different badge and a lower price tag because nobody remembers Eagle existed. DSM brotherhood runs deep, and the Talon is the secret handshake.",
+  "lore": "DSM brotherhood. Eagle is dead, but the Talon lives on in garage builds across the country. Same 4G63 turbo motor, same potential, half the recognition. The badge might say Eagle but the motor was born in Nagoya.",
+
+  "base_stats": {
+    "top_speed": 60.0,
+    "acceleration": 55.0,
+    "handling": 50.0,
+    "braking": 42.0,
+    "nitro_capacity": 38.0,
+    "weight_kg": 1361.0
+  },
+
+  "engine": {
+    "code": "4G63T",
+    "horsepower": 195.0,
+    "torque_lbft": 203.0,
+    "displacement_cc": 1997,
+    "configuration": "I4",
+    "aspiration": "turbo",
+    "valvetrain": "DOHC 16V",
+    "redline_rpm": 7000
+  },
+
+  "drivetrain": "awd",
+  "price": 15000,
+  "class": "C",
+
+  "cosmetics": {
+    "available_colors": ["ebony_black", "baja_white", "scarlet_red", "teal_metallic"],
+    "body_kits": ["stock", "battle_aero", "custom_lip_kit"],
+    "spoiler_options": ["none", "factory_tsi", "apr_gtc200"],
+    "wheel_options": ["stock_16", "enkei_rpf1_17", "rays_te37_17", "weld_s71_15_drag"]
+  },
+
+  "special_traits": ["awd", "turbo", "dsm"],
+
+  "mod_potential": {
+    "engine_swaps": ["4g63_built_stroker", "4g63_2.3_stroker"],
+    "max_hp_potential": 750,
+    "upgrade_ceiling": "S"
+  }
+}

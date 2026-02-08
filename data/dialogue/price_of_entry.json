@@ -1,0 +1,156 @@
+{
+  "id": "price_of_entry",
+  "context": "Act 3 Chapter 3.1 — Zero demands a moral compromise to stay in the circle. Everyone pays. The only question is the currency.",
+  "lines": [
+    {
+      "type": "narration",
+      "text": "The cathedral. Zero stands before the collection, bathed in the filtered light that falls from above. Echo stands at the entrance like a sentinel."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Zero",
+      "portrait": "zero_silhouette",
+      "text": "You've raced three events. Finished second, third, and first. You have proven your ability. Now you must prove your commitment."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Zero",
+      "portrait": "zero_silhouette",
+      "text": "Every driver in this circle has paid a price for membership. Not in money — money is trivial. The price is a choice. A demonstration that you understand what it means to exist outside the boundaries of ordinary morality."
+    },
+    {
+      "type": "narration",
+      "text": "Zero gestures to a screen that descends from the ceiling. On it: a race. An upcoming professional event. Names you recognize. Results already determined."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Zero",
+      "portrait": "zero_silhouette",
+      "text": "This race has been arranged to bankrupt a small team. Their sponsor — a family-owned business — has been targeted by interests that want their market share. A last-place finish eliminates their sponsorship contract and closes the team permanently."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Zero",
+      "portrait": "zero_silhouette",
+      "text": "Your task is to ensure that finish. Race clean, race fair, but position yourself to block their driver from advancing beyond last place. No one will know. No one will suspect. You are simply racing."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Zero",
+      "portrait": "zero_silhouette",
+      "text": "Everyone pays. The only question is the currency."
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "No. I won't destroy someone's livelihood for your test.",
+          "choice_id": "price_refuse",
+          "relationship_changes": {"zero": -20, "maya": 10, "diesel": 10},
+          "moral_shift": 25,
+          "set_flags": {"refused_zeros_test": true, "defied_zero": true},
+          "jump_to": "zero_cold"
+        },
+        {
+          "text": "I'll do it. But this is the last test.",
+          "choice_id": "price_accept",
+          "relationship_changes": {"zero": 15},
+          "moral_shift": -25,
+          "set_flags": {"passed_zeros_test": true, "moral_compromise": true},
+          "jump_to": "zero_satisfied"
+        },
+        {
+          "text": "I'll race. But I'll do it my way.",
+          "choice_id": "price_compromise",
+          "relationship_changes": {"zero": 5},
+          "moral_shift": -5,
+          "set_flags": {"zeros_test_ambiguous": true},
+          "jump_to": "zero_watches"
+        }
+      ]
+    },
+    {
+      "label": "zero_cold",
+      "type": "narration",
+      "text": "The cathedral goes quiet. Not silent — quiet. The difference is intention. Silence is absence. Quiet is restraint."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Zero",
+      "portrait": "zero_silhouette",
+      "text": "Interesting."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Zero",
+      "portrait": "zero_silhouette",
+      "text": "Most drivers accept immediately. The ones who refuse are either morally superior or morally naive. I haven't decided which you are."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Zero",
+      "portrait": "zero_silhouette",
+      "text": "You may continue to race in my events. But the inner circle requires sacrifice. Without sacrifice, you are a guest. Guests leave eventually."
+    },
+    {
+      "type": "narration",
+      "text": "Zero turns and walks into the shadows. The conversation is over. You have drawn a line. The question is whether Zero respects lines or simply works around them.",
+      "jump_to": "price_end"
+    },
+    {
+      "label": "zero_satisfied",
+      "type": "dialogue",
+      "speaker": "Zero",
+      "portrait": "zero_silhouette",
+      "text": "Good. The race is Saturday. The driver you need to contain is Marcus Reid, car number 17. Block his overtake opportunities in the final sector. The rest will take care of itself."
+    },
+    {
+      "type": "narration",
+      "text": "Zero hands you a folder. Inside: detailed race strategy, competitor analysis, and a financial document showing exactly how much the small team will lose."
+    },
+    {
+      "type": "narration",
+      "text": "You take it. The folder weighs almost nothing. The moral weight is something else entirely."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Zero",
+      "portrait": "zero_silhouette",
+      "text": "Welcome to the inner circle. Everyone here has made a choice like this. It is the bond that holds us together — not trust, but mutual complicity.",
+      "jump_to": "price_end"
+    },
+    {
+      "label": "zero_watches",
+      "type": "dialogue",
+      "speaker": "Zero",
+      "portrait": "zero_silhouette",
+      "text": "Your way. An interesting phrase. I'll be watching to see what 'your way' looks like when the flag drops."
+    },
+    {
+      "type": "narration",
+      "text": "Zero offers no further instruction. No folder. No strategy. Just the expectation that you will race and the certainty that you will be observed."
+    },
+    {
+      "type": "narration",
+      "text": "Your way. You don't know what that means yet. But the race will decide.",
+      "jump_to": "price_end"
+    },
+    {
+      "label": "price_end",
+      "type": "narration",
+      "text": "You leave the cathedral. The mountain air hits your face — cold, clean, the exact opposite of everything that just happened inside."
+    },
+    {
+      "type": "narration",
+      "text": "The road down the mountain is dark. Your headlights carve a tunnel through the night. And in the silence of the car, with no radio and no voices and no one watching, you wonder whether the person driving is still the same person who arrived."
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "zeros_test_complete",
+        "value": true
+      }
+    }
+  ]
+}

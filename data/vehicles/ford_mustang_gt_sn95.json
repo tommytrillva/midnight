@@ -1,0 +1,52 @@
+{
+  "vehicle_id": "ford_mustang_gt_sn95",
+  "display_name": "1996 Ford Mustang GT (SN95)",
+  "manufacturer": "Ford",
+  "year": 1996,
+  "body_style": "coupe",
+  "category": "Muscle",
+  "culture": "american",
+  "tier": 2,
+  "rarity": "common",
+  "description": "The SN95 Mustang GT brought Ford's pony car into the modern era with new-edge styling and a modular 4.6L V8. It's not the fastest, it's not the lightest, but it has presence and a deep aftermarket that makes power cheap.",
+  "lore": "New edge aggression. The 4.6 makes a deeper, more sophisticated rumble than the old pushrod 5.0, and the chassis actually has some refinement. Came from a guy who 'only drove it to car shows' but the worn drag radials tell a different story.",
+
+  "base_stats": {
+    "top_speed": 62.0,
+    "acceleration": 52.0,
+    "handling": 40.0,
+    "braking": 42.0,
+    "nitro_capacity": 44.0,
+    "weight_kg": 1520.0
+  },
+
+  "engine": {
+    "code": "4.6L_SOHC",
+    "horsepower": 215.0,
+    "torque_lbft": 285.0,
+    "displacement_cc": 4601,
+    "configuration": "V8",
+    "aspiration": "naturally_aspirated",
+    "valvetrain": "SOHC 16V",
+    "redline_rpm": 5800
+  },
+
+  "drivetrain": "rwd",
+  "price": 17000,
+  "class": "C",
+
+  "cosmetics": {
+    "available_colors": ["rio_red", "black", "crystal_white", "atlantic_blue"],
+    "body_kits": ["stock", "cobra_r_front", "saleen_s281", "roush_stage_1"],
+    "spoiler_options": ["none", "factory_gt", "cobra_r_wing", "saleen_rear"],
+    "wheel_options": ["stock_gt_16", "cobra_r_17", "weld_draglite_15", "fr500_18"]
+  },
+
+  "special_traits": ["v8_rumble", "muscle_heritage"],
+
+  "mod_potential": {
+    "engine_swaps": ["4.6_dohc_cobra", "5.4_terminator", "coyote_5.0"],
+    "max_hp_potential": 750,
+    "upgrade_ceiling": "A"
+  }
+}

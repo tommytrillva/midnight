@@ -1,0 +1,147 @@
+{
+  "id": "building_the_case",
+  "context": "Act 3 Chapter 3.4 — Gathering evidence to clear name and expose the truth. Allies help based on relationship levels.",
+  "lines": [
+    {
+      "type": "narration",
+      "text": "Maya's garage. War room configuration. The workbench cleared of tools and covered with papers, phones, laptops. A conspiracy wall that would make any detective proud — or concerned."
+    },
+    {
+      "type": "narration",
+      "text": "The team: Maya, Diesel, and whoever else answered the call. It is smaller than an army. It is bigger than nothing."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_determined",
+      "text": "Okay. Here's what we have. Zero's network operates through three channels: corporate race fixing, underground money laundering, and elite gambling operations. Each channel feeds the others."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_determined",
+      "text": "To clear your name, we need to prove that you were a target, not a participant. That means connecting the leak — the document dump that framed you — back to Zero's network."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_serious",
+      "text": "The underground knows things. Whispers, rumors, names that don't get spoken in polite company. I can reach out to the old network — the drivers who remember the code. They'll talk if they trust the reason."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_determined",
+      "text": "I know the gambling side. The operations, the handlers, the money flows. I was inside it for two years. I can map it.",
+      "conditions": {"nikko_saved": true}
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "We need Mina Park and her evidence. The journalist angle is our strongest card.",
+          "choice_id": "case_journalist",
+          "relationship_changes": {},
+          "moral_shift": 10,
+          "set_flags": {"case_journalist_angle": true},
+          "jump_to": "journalist_angle"
+        },
+        {
+          "text": "Reyes — the detective. If we give her what she needs, law enforcement does the heavy lifting.",
+          "choice_id": "case_police",
+          "relationship_changes": {},
+          "moral_shift": 5,
+          "set_flags": {"case_police_angle": true},
+          "jump_to": "police_angle"
+        },
+        {
+          "text": "We do this ourselves. No journalists. No cops. We expose Zero at a race — in front of everyone.",
+          "choice_id": "case_independent",
+          "relationship_changes": {"diesel": 5},
+          "moral_shift": 0,
+          "set_flags": {"case_independent_angle": true},
+          "jump_to": "independent_angle"
+        }
+      ]
+    },
+    {
+      "label": "journalist_angle",
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_neutral",
+      "text": "Mina's sources were compromised. But her evidence is real. If we can supplement it with what Nikko knows about the gambling side and what Diesel can get from the underground — that's a story no outlet can ignore."
+    },
+    {
+      "type": "narration",
+      "text": "You make the call. Mina answers on the first ring. She has been waiting.",
+      "jump_to": "case_plan"
+    },
+    {
+      "label": "police_angle",
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_concerned",
+      "text": "Cops. I never thought I'd agree with bringing cops into the underground. But this is bigger than the underground now."
+    },
+    {
+      "type": "narration",
+      "text": "Reyes answers. She has been waiting too. The case she built needs what you have. What you have needs her authority.",
+      "jump_to": "case_plan"
+    },
+    {
+      "label": "independent_angle",
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_approving",
+      "text": "The underground way. No outsiders. No institutions. We handle it the way racers handle everything — on the road, in front of witnesses, with nothing hidden."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_worried",
+      "text": "That's riskier. If it doesn't work, we have no fallback. But it's the most honest way. And honesty is the one thing Zero can't compete with.",
+      "jump_to": "case_plan"
+    },
+    {
+      "label": "case_plan",
+      "type": "narration",
+      "text": "The plan takes shape over three races and two weeks. Each race you win funds the investigation. Each win restores a fraction of the reputation that was stolen."
+    },
+    {
+      "type": "narration",
+      "text": "Piece by piece, the evidence comes together. Financial records traced through shell companies. Testimony from drivers who were exploited. Communication logs that connect Zero's network to the leak that destroyed you."
+    },
+    {
+      "type": "narration",
+      "text": "The picture that emerges is damning. Not just for Zero — for the entire system that enabled it. Professional racing's sanctioning bodies. Underground organizers who looked the other way. Corporate sponsors who profited from managed results."
+    },
+    {
+      "type": "narration",
+      "text": "Everyone is complicit. Everyone is a victim. The line between the two is as thin as a racing line."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_determined",
+      "text": "We have enough. The question now is when and where."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_serious",
+      "text": "The underground tournament. It's the biggest event of the year. Every driver, every crew, every eye in the underground will be there. Win the tournament, and you earn the right to speak. Then we tell them everything."
+    },
+    {
+      "type": "narration",
+      "text": "Win the tournament. Clear your name. Expose Zero. Three objectives. One race at a time."
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "evidence_gathered",
+        "value": true
+      }
+    }
+  ]
+}

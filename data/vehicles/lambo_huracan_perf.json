@@ -1,0 +1,40 @@
+{
+  "vehicle_id": "lambo_huracan_perf",
+  "display_name": "2018 Lamborghini Huracán Performante",
+  "manufacturer": "Lamborghini",
+  "year": 2018,
+  "body_style": "coupe",
+  "category": "Hyper",
+  "culture": "euro",
+  "tier": 6,
+  "rarity": "epic",
+  "description": "The ALA active aero system makes the Performante a different animal from the standard Huracán. Active flaps in the front splitter and rear wing redirect airflow in real-time, creating asymmetric downforce through corners. It held the Nürburgring production car lap record. Enough said.",
+  "lore": "ALA stands for Aerodinamica Lamborghini Attiva — Lamborghini's active aerodynamics system that can vector downforce to individual wheels by opening and closing flaps in the carbon fiber bodywork. Combined with a forged carbon fiber construction process that Lamborghini invented, the Performante weighs 220 pounds less than the standard Huracán while producing 40 more horsepower. The result set a 6:52.01 lap at the Nürburgring.",
+
+  "base_stats": {
+    "top_speed": 0.88,
+    "acceleration": 0.87,
+    "handling": 0.88,
+    "braking": 0.86,
+    "nitro_capacity": 0.40,
+    "weight": 1315.0
+  },
+
+  "engine": {
+    "horsepower": 640.0,
+    "torque": 443.0,
+    "displacement": "5.2L",
+    "configuration": "V10",
+    "aspiration": "naturally_aspirated"
+  },
+
+  "drivetrain": "awd",
+  "price": 900000,
+
+  "cosmetics": {
+    "default_color": "#32CD32",
+    "available_colors": ["#32CD32", "#FFFFFF", "#000000", "#FF4500", "#FFD700", "#C0C0C0"]
+  },
+
+  "special_traits": ["v10", "active_aero", "lightweight"]
+}

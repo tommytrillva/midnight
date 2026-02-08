@@ -1,0 +1,40 @@
+{
+  "vehicle_id": "ferrari_488",
+  "display_name": "2017 Ferrari 488 GTB",
+  "manufacturer": "Ferrari",
+  "year": 2017,
+  "body_style": "coupe",
+  "category": "Euro/Exotic",
+  "culture": "euro",
+  "tier": 5,
+  "rarity": "rare",
+  "description": "The twin-turbo evolution of Ferrari's mid-engine V8 lineage. What the 488 loses in naturally aspirated purity, it gains in savage, relentless thrust. 661 horsepower arrives with zero hesitation and doesn't let up until you run out of road.",
+  "lore": "Purists mourned when Ferrari went turbo. Then they drove the 488 and shut up. The 3.9-liter twin-turbo V8 produces 661 horsepower with virtually zero lag, thanks to engineering that borders on witchcraft. It's faster than the 458 in every measurable way, and if you close your eyes, you can almost pretend the turbo whistle is just the wind.",
+
+  "base_stats": {
+    "top_speed": 0.84,
+    "acceleration": 0.83,
+    "handling": 0.82,
+    "braking": 0.83,
+    "nitro_capacity": 0.40,
+    "weight": 1451.0
+  },
+
+  "engine": {
+    "horsepower": 661.0,
+    "torque": 561.0,
+    "displacement": "3.9L",
+    "configuration": "V8",
+    "aspiration": "twin_turbo"
+  },
+
+  "drivetrain": "mr",
+  "price": 400000,
+
+  "cosmetics": {
+    "default_color": "#FF2400",
+    "available_colors": ["#FF2400", "#FFFFFF", "#FFD700", "#000000", "#C0C0C0", "#191970"]
+  },
+
+  "special_traits": ["twin_turbo", "mid_engine", "ferrari_dna"]
+}

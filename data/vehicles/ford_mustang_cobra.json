@@ -1,0 +1,33 @@
+{
+  "vehicle_id": "ford_mustang_cobra",
+  "display_name": "2003 Ford Mustang SVT Cobra",
+  "manufacturer": "Ford",
+  "year": 2003,
+  "description": "The Terminator. Ford's SVT division strapped an Eaton supercharger to a forged 4.6L V8 and dropped it into a Mustang with independent rear suspension. The result was 390 horsepower that the chassis could barely contain — and a drag strip reputation that full-price exotics learned to respect.",
+  "base_stats": {
+    "top_speed": 0.66,
+    "acceleration": 0.64,
+    "handling": 0.54,
+    "braking": 0.58,
+    "nitro_capacity": 0.52,
+    "weight_lbs": 3600
+  },
+  "engine": {
+    "horsepower": 390.0,
+    "torque_lbft": 390.0,
+    "displacement_cc": 4601,
+    "configuration": "V8",
+    "aspiration": "supercharged"
+  },
+  "drivetrain": "rwd",
+  "tier": 3,
+  "price": 55000,
+  "rarity": "uncommon",
+  "cosmetics": {
+    "default_color": "#000000",
+    "available_colors": ["#000000", "#FF0000", "#0000CD", "#C0C0C0", "#FFFFFF", "#2F4F4F"]
+  },
+  "special_traits": ["supercharged", "drag_potential"],
+  "lore": "They called it the Terminator because it killed everything at the drag strip. A simple pulley swap and tune puts you over 500 horsepower, and the forged internals laugh at the abuse. In Nova Pacifica, Terminators are the great equalizer — cheap speed that doesn't care about your pedigree.",
+  "category": "Muscle"
+}

@@ -1,0 +1,52 @@
+{
+  "vehicle_id": "toyota_ae86",
+  "display_name": "1986 Toyota Corolla AE86",
+  "manufacturer": "Toyota",
+  "year": 1986,
+  "body_style": "coupe",
+  "category": "JDM/Drift",
+  "culture": "jdm",
+  "tier": 1,
+  "rarity": "uncommon",
+  "description": "The car that proved you don't need power to be fast. The AE86 is a lightweight, rev-happy chassis that rewards driver skill over horsepower. A legend born from tofu deliveries and mountain passes.",
+  "lore": "Tofu delivery special, needs everything. The odometer stopped working at 180,000 miles and that was years ago. The 4A-GE still screams to redline like it's angry at physics.",
+
+  "base_stats": {
+    "top_speed": 48.0,
+    "acceleration": 38.0,
+    "handling": 52.0,
+    "braking": 38.0,
+    "nitro_capacity": 32.0,
+    "weight_kg": 953.0
+  },
+
+  "engine": {
+    "code": "4A-GE",
+    "horsepower": 128.0,
+    "torque_lbft": 105.0,
+    "displacement_cc": 1587,
+    "configuration": "I4",
+    "aspiration": "naturally_aspirated",
+    "valvetrain": "DOHC 16V",
+    "redline_rpm": 7600
+  },
+
+  "drivetrain": "rwd",
+  "price": 12000,
+  "class": "D",
+
+  "cosmetics": {
+    "available_colors": ["high_tech_two_tone", "white", "red", "black"],
+    "body_kits": ["stock", "trd_n2", "run_free", "levin_front"],
+    "spoiler_options": ["none", "factory_lip", "trd_rear"],
+    "wheel_options": ["stock_13", "watanabe_rs_14", "te37_14", "hayashi_street"]
+  },
+
+  "special_traits": ["lightweight", "drift_legend", "rev_happy"],
+
+  "mod_potential": {
+    "engine_swaps": ["4a-ge_20v_blacktop", "3s-ge_beams", "1jz-gte"],
+    "max_hp_potential": 400,
+    "upgrade_ceiling": "B"
+  }
+}

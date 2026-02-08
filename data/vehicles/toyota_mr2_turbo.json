@@ -1,0 +1,52 @@
+{
+  "vehicle_id": "toyota_mr2_turbo",
+  "display_name": "1991 Toyota MR2 Turbo",
+  "manufacturer": "Toyota",
+  "year": 1991,
+  "body_style": "coupe",
+  "category": "JDM/Tuner",
+  "culture": "jdm",
+  "tier": 2,
+  "rarity": "uncommon",
+  "description": "The SW20 MR2 Turbo is Toyota's mid-engine weapon. The 3S-GTE sits behind the driver, feeding the rear wheels with turbocharged fury. It's fast, it's balanced on entry, and it will swap ends on you mid-corner if you lift the throttle. Respect the snap oversteer or pay the price.",
+  "lore": "Mid-engine snap oversteer. The car that insurance companies hate and driving purists love. A turbo four behind your head, the rear wheels directly connected to the motor, and handling characteristics that separate the skilled from the scared. Lift off in a corner and the rear comes around like it has a personal grudge.",
+
+  "base_stats": {
+    "top_speed": 64.0,
+    "acceleration": 58.0,
+    "handling": 60.0,
+    "braking": 48.0,
+    "nitro_capacity": 36.0,
+    "weight_kg": 1225.0
+  },
+
+  "engine": {
+    "code": "3S-GTE",
+    "horsepower": 200.0,
+    "torque_lbft": 200.0,
+    "displacement_cc": 1998,
+    "configuration": "I4",
+    "aspiration": "turbo",
+    "valvetrain": "DOHC 16V",
+    "redline_rpm": 7000
+  },
+
+  "drivetrain": "mr",
+  "price": 20000,
+  "class": "C",
+
+  "cosmetics": {
+    "available_colors": ["super_red", "black", "white_pearl", "turquoise_metallic"],
+    "body_kits": ["stock", "trd_2000gt", "border_racing", "veilside"],
+    "spoiler_options": ["none", "factory_turbo", "trd_2000gt_wing", "apr_gt3"],
+    "wheel_options": ["stock_turbo_15", "rays_te37_16", "enkei_rpf1_16", "work_emotion_cr_16"]
+  },
+
+  "special_traits": ["mid_engine", "turbo", "snap_oversteer"],
+
+  "mod_potential": {
+    "engine_swaps": ["3s-gte_gen4", "2gr-fe_v6", "k20a"],
+    "max_hp_potential": 550,
+    "upgrade_ceiling": "A"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "vehicle_id": "subaru_sti_s209",
+  "display_name": "2019 Subaru WRX STI S209",
+  "manufacturer": "Subaru",
+  "year": 2019,
+  "body_style": "sedan",
+  "category": "JDM",
+  "culture": "jdm",
+  "tier": 4,
+  "rarity": "rare",
+  "description": "Limited American special. The S209 was the first S-line STI ever sold in North America — 209 units of hand-tuned flat-four fury. STI's motorsport division touched every component: forged pistons, larger turbo, intercooler water spray, and Bilstein dampers calibrated on Subaru's test track in Japan.",
+  "lore": "Subaru Tecnica International built only 209 units for the US market. Each EJ25 was hand-assembled with forged internals, a larger HKS turbocharger, and an intercooler water spray system borrowed from rally cars. The boxer rumble at idle is deceptive — it sounds docile until boost builds and the symmetrical AWD system hooks up with a ferocity that explains why Subaru dominates rally stages worldwide. The S209 was the EJ25's swan song, and STI made sure it sang.",
+
+  "base_stats": {
+    "top_speed": 0.70,
+    "acceleration": 0.72,
+    "handling": 0.76,
+    "braking": 0.74,
+    "nitro_capacity": 0.40,
+    "weight": 1542.0
+  },
+
+  "engine": {
+    "code": "EJ25",
+    "horsepower": 341.0,
+    "torque": 330.0,
+    "displacement": "2.5L",
+    "configuration": "Flat-4",
+    "aspiration": "turbo"
+  },
+
+  "drivetrain": "awd",
+  "price": 120000,
+
+  "cosmetics": {
+    "default_color": "#4169E1",
+    "available_colors": ["#4169E1", "#FFFFFF", "#000000", "#C0C0C0", "#808080", "#1C1C1C"]
+  },
+
+  "special_traits": ["turbo", "awd", "limited_edition", "boxer_rumble"]
+}

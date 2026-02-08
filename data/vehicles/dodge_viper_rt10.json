@@ -1,0 +1,33 @@
+{
+  "vehicle_id": "dodge_viper_rt10",
+  "display_name": "1996 Dodge Viper RT/10",
+  "manufacturer": "Dodge",
+  "year": 1996,
+  "description": "No traction control. No stability control. No ABS. Just 8.0 liters of V10, rear-wheel drive, and your survival instincts. The Viper RT/10 is automotive Darwinism — it rewards skill and punishes overconfidence with zero mercy and zero electronic safety nets.",
+  "base_stats": {
+    "top_speed": 0.70,
+    "acceleration": 0.66,
+    "handling": 0.48,
+    "braking": 0.56,
+    "nitro_capacity": 0.54,
+    "weight_lbs": 3400
+  },
+  "engine": {
+    "horsepower": 415.0,
+    "torque_lbft": 488.0,
+    "displacement_cc": 7990,
+    "configuration": "V10",
+    "aspiration": "naturally_aspirated"
+  },
+  "drivetrain": "rwd",
+  "tier": 3,
+  "price": 70000,
+  "rarity": "uncommon",
+  "cosmetics": {
+    "default_color": "#FF0000",
+    "available_colors": ["#FF0000", "#0000CD", "#000000", "#FFFFFF", "#FFD700", "#228B22"]
+  },
+  "special_traits": ["v10", "raw_power", "no_assists"],
+  "lore": "The first-gen Viper didn't even have door handles. Dodge built it as a dare, and every owner accepted. In Nova Pacifica, Viper drivers are either the bravest or the most foolish people on the road. Sometimes both. Always entertaining.",
+  "category": "Muscle"
+}

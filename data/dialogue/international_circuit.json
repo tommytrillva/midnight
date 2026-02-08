@@ -4,163 +4,184 @@
   "lines": [
     {
       "type": "narration",
-      "text": "The harbor warehouse has been transformed. What was once a rusted shell is now a staging ground for something unprecedented — an international underground racing event, organized in whispers and encrypted messages, drawing the best illegal racers from three continents."
+      "text": "The container yard near Pier 9. Midnight. But tonight is different — the yard is full. Not the usual twenty or thirty cars. Hundreds. From license plates you recognize and ones you don't. Japanese plates. German plates. Australian plates."
     },
     {
       "type": "narration",
-      "text": "Cars from worlds you've only read about line the makeshift paddock. A Nissan Silvia with Japanese plates and a turbo setup that defies engineering. A BMW M3 with German racing stripes worn into the paint from actual races on actual mountain passes. A Lancia Delta that looks like it escaped from a rally stage in another century."
+      "text": "The International Underground Circuit has come to Nova Pacifica."
     },
     {
       "type": "dialogue",
       "speaker": "Diesel",
       "portrait": "diesel_neutral",
-      "text": "Every five years, the underground goes international. Racers from Japan, Europe, South America — they come to whoever holds the strongest scene. For the last decade, that's been Tokyo."
+      "text": "Once a year, the best underground drivers in the world converge on a host city. This year, it's us. Six races over two weeks. No rules except the code."
     },
     {
       "type": "dialogue",
       "speaker": "Diesel",
-      "portrait": "diesel_approving",
-      "text": "This year, it's us. Because of you. Nova Pacifica's underground hasn't had this kind of reputation since I was racing."
-    },
-    {
-      "type": "narration",
-      "text": "A small group approaches. Three drivers, each carrying the quiet confidence of people who have been the best in their world for a very long time."
+      "portrait": "diesel_serious",
+      "text": "These aren't amateurs. The Japanese contingent — touge specialists from Hakone and Irohazaka. They grew up on mountain passes that make our hillside look like a parking lot."
     },
     {
       "type": "dialogue",
-      "speaker": "Takumi",
-      "portrait": "takumi_calm",
-      "text": "You are the one they talk about. The champion of Nova Pacifica."
-    },
-    {
-      "type": "narration",
-      "text": "Takumi Hayashi. Japanese touge legend. His reputation precedes him by approximately ten thousand kilometers — the man who has never lost a downhill race on any mountain in Asia."
+      "speaker": "Diesel",
+      "portrait": "diesel_serious",
+      "text": "The Europeans — circuit racers from the Autobahn underground. They've been racing at two hundred plus on roads that were never designed for it. Their car control is surgical."
     },
     {
       "type": "dialogue",
-      "speaker": "Takumi",
-      "portrait": "takumi_calm",
-      "text": "In Japan, we race to understand the road. Not to defeat opponents — to have a conversation with the mountain. I am curious what your roads have to say."
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Katrin",
-      "portrait": "katrin_fierce",
-      "text": "Katrin Voss. Berlin. I don't race for philosophy. I race because I'm faster than everyone else."
+      "speaker": "Diesel",
+      "portrait": "diesel_serious",
+      "text": "And the Australians — outback rally specialists. They can drive sideways at a hundred and fifty and consider it Tuesday."
     },
     {
       "type": "narration",
-      "text": "Katrin Voss. European circuit specialist. Her M3 has won on the Nurburgring Nordschleife in conditions that would make professional drivers refuse to start."
+      "text": "A woman approaches. Japanese. Early twenties. She moves like a cat — every step deliberate, every muscle aware. Her eyes evaluate you with the clinical precision of a surgeon."
     },
     {
       "type": "dialogue",
-      "speaker": "Santos",
-      "portrait": "santos_grinning",
-      "text": "Luis Santos. São Paulo. I race for the fun. Also the money. Mostly the money."
-    },
-    {
-      "type": "narration",
-      "text": "Luis Santos. South American sprint champion. His smile is infectious and his driving, by all accounts, is terrifying."
+      "speaker": "Yuki Tanaka",
+      "portrait": "yuki_calm",
+      "text": "You are the one they call the Underground King of Nova Pacifica. I expected someone... bigger."
     },
     {
       "type": "choice",
       "choices": [
         {
-          "text": "Welcome to Nova Pacifica. Let's make this a series to remember.",
-          "choice_id": "intl_welcoming",
-          "relationship_changes": {},
-          "moral_shift": 5,
-          "rep": 10,
-          "jump_to": "event_format"
-        },
-        {
-          "text": "I've been waiting for real competition.",
+          "text": "Size doesn't matter on the road. Driving does.",
           "choice_id": "intl_confident",
           "relationship_changes": {},
-          "moral_shift": -5,
+          "moral_shift": 0,
           "rep": 5,
-          "jump_to": "katrin_responds"
+          "jump_to": "yuki_impressed"
         },
         {
-          "text": "Takumi — I'd like to learn about the touge philosophy.",
-          "choice_id": "intl_respectful",
+          "text": "And you are?",
+          "choice_id": "intl_curious",
           "relationship_changes": {},
-          "moral_shift": 10,
-          "set_flags": {"touge_philosophy": true},
-          "jump_to": "takumi_teaches"
+          "moral_shift": 0,
+          "jump_to": "yuki_introduces"
+        },
+        {
+          "text": "The roads here are tighter than they look. Don't underestimate them.",
+          "choice_id": "intl_warning",
+          "relationship_changes": {},
+          "moral_shift": 0,
+          "jump_to": "yuki_acknowledges"
         }
       ]
     },
     {
-      "label": "event_format",
+      "label": "yuki_impressed",
+      "type": "dialogue",
+      "speaker": "Yuki Tanaka",
+      "portrait": "yuki_smile",
+      "text": "Good answer. In Japan, we say 'the wind does not show its face.' I am Yuki Tanaka. Hakone touge champion. Three years undefeated.",
+      "jump_to": "european_arrival"
+    },
+    {
+      "label": "yuki_introduces",
+      "type": "dialogue",
+      "speaker": "Yuki Tanaka",
+      "portrait": "yuki_calm",
+      "text": "Yuki Tanaka. Hakone touge circuit. I have raced on mountains that would make your harbor run look like a children's ride. But I respect any road that has history.",
+      "jump_to": "european_arrival"
+    },
+    {
+      "label": "yuki_acknowledges",
+      "type": "dialogue",
+      "speaker": "Yuki Tanaka",
+      "portrait": "yuki_calm",
+      "text": "I never underestimate a road. Roads have memory. They remember every driver who has respected them — and every driver who hasn't.",
+      "jump_to": "european_arrival"
+    },
+    {
+      "label": "european_arrival",
+      "type": "narration",
+      "text": "A broad-shouldered man with a thick German accent approaches. He carries himself like a man who has driven faster than most people will ever travel in their lives."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Klaus Werner",
+      "portrait": "klaus_neutral",
+      "text": "Klaus Werner. Autobahn underground. I've heard about Nova Pacifica. Tight roads, heavy traffic, lots of drama. In Germany, we prefer our racing clean. Fast, straight, pure."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Klaus Werner",
+      "portrait": "klaus_neutral",
+      "text": "But I can adapt. The question is whether your city can handle what we bring."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "It can. It has. For thirty years."
+    },
+    {
+      "type": "narration",
+      "text": "The tension between the locals and the internationals is a living thing. Not hostility — respect stretched to its limits. Every driver here believes they are the best. Only the road will decide who's right."
+    },
+    {
       "type": "dialogue",
       "speaker": "Diesel",
-      "portrait": "diesel_teaching",
-      "text": "Six races. One on each circuit — Downtown, Harbor, Industrial, Hillside. Plus two night runs. Points accumulate. The top three at the end earn the title of International Underground Champion.",
-      "jump_to": "the_stakes"
-    },
-    {
-      "label": "katrin_responds",
-      "type": "dialogue",
-      "speaker": "Katrin",
-      "portrait": "katrin_fierce",
-      "text": "Real competition doesn't announce itself. It just shows up and takes your position."
-    },
-    {
-      "type": "narration",
-      "text": "She walks to her M3 without looking back. Challenge accepted. Challenge expected.",
-      "jump_to": "the_stakes"
-    },
-    {
-      "label": "takumi_teaches",
-      "type": "dialogue",
-      "speaker": "Takumi",
-      "portrait": "takumi_calm",
-      "text": "The mountain teaches patience. A downhill pass is not about speed — it is about understanding weight transfer, reading the gradient, feeling where the road wants the car to go."
+      "portrait": "diesel_serious",
+      "text": "Six races. Different circuits. Different conditions. The driver with the most points at the end takes the International Crown. Nova Pacifica has never won it — our best was second, fifteen years ago."
     },
     {
       "type": "dialogue",
-      "speaker": "Takumi",
-      "portrait": "takumi_calm",
-      "text": "In Japan, we say: the fastest driver is the one who listens best. Your mentor — Diesel — he understands this. I can see his teaching in how you drive."
+      "speaker": "Diesel",
+      "portrait": "diesel_serious",
+      "text": "The city needs this. The underground needs this. Win the International Crown and every circuit in Nova Pacifica is united under one banner. Lose and the international crews will run our roads for the next year — their rules, their way."
     },
     {
-      "type": "narration",
-      "text": "Diesel overhears. His expression doesn't change, but his posture shifts — straighter. Proud.",
-      "jump_to": "the_stakes"
+      "type": "choice",
+      "choices": [
+        {
+          "text": "I'll bring the Crown home. For Nova Pacifica.",
+          "choice_id": "intl_for_city",
+          "relationship_changes": {"diesel": 10},
+          "moral_shift": 5,
+          "rep": 10,
+          "jump_to": "diesel_proud"
+        },
+        {
+          "text": "This is the biggest stage I've ever been on. I'm ready.",
+          "choice_id": "intl_for_self",
+          "relationship_changes": {"diesel": 3},
+          "moral_shift": 0,
+          "jump_to": "diesel_nods"
+        }
+      ]
     },
     {
-      "label": "the_stakes",
-      "type": "narration",
-      "text": "The warehouse fills over the next hour. Drivers, mechanics, spectators from the underground communities of a dozen countries. The air hums with languages you don't speak and engine notes you've never heard."
-    },
-    {
+      "label": "diesel_proud",
       "type": "dialogue",
-      "speaker": "Maya",
-      "portrait": "maya_excited",
-      "text": "I've been working on the Sakura all week. New suspension geometry, uprated brakes, a turbo setup that'll compete with anything in that garage."
+      "speaker": "Diesel",
+      "portrait": "diesel_approving",
+      "text": "That's what I needed to hear. Not for the trophy. For the city. For the underground. For everyone who races in the dark because the light doesn't have room for them.",
+      "jump_to": "intl_end"
     },
     {
+      "label": "diesel_nods",
       "type": "dialogue",
-      "speaker": "Maya",
-      "portrait": "maya_determined",
-      "text": "These international cars are serious hardware. But I know our roads. And I know our car. That's our advantage."
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "Good. Because ready is the minimum. This field will test everything I've taught you — and everything you've taught yourself.",
+      "jump_to": "intl_end"
+    },
+    {
+      "label": "intl_end",
+      "type": "narration",
+      "text": "The container yard buzzes with engines from three continents. Music plays from different cars — J-pop, electronic, Australian rock — and the night air carries the universal language of exhaust and anticipation."
     },
     {
       "type": "narration",
-      "text": "She is right. The international drivers are talented, but Nova Pacifica's roads are a language they don't speak yet. Home advantage is real — not because of the pavement, but because of the darkness between the corners, the way the harbor mist rolls in at 2 AM, the potholes on the industrial route that will swallow a suspension if you don't know where they are."
+      "text": "Tomorrow, the International Underground Circuit begins. The world's best underground drivers on Nova Pacifica's roads. Your roads."
     },
     {
       "type": "narration",
-      "text": "Six races. Three continents of talent. The underground has never been this big, and it has never been this dangerous."
-    },
-    {
-      "type": "narration",
-      "text": "You look around the warehouse. Diesel is talking to Koa from the Salts. Takumi is meditating beside his Silvia. Katrin is reviewing data on a laptop. Santos is making someone laugh."
-    },
-    {
-      "type": "narration",
-      "text": "This is the underground at its best — a world within a world, invisible to everyone except those who belong. And you are at its center."
+      "text": "It is going to be magnificent."
     },
     {
       "type": "action",

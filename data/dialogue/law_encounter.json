@@ -1,51 +1,47 @@
 {
   "id": "law_encounter",
-  "context": "Act 2B Chapter 2.1 — Detective Reyes approaches. Warning, or recruiting as informant. Not arresting.",
+  "context": "Act 2B Chapter 2.1 — Detective Reyes approaches. Warning or recruitment as informant.",
   "lines": [
     {
       "type": "narration",
-      "text": "Late afternoon. You're leaving Maya's garage after a tune-up session. The Sakura GTR is running better than ever — new exhaust manifold, remapped ECU. Maya's work is art."
+      "text": "A parking lot. Late. You are checking your phone after a practice run on the harbor circuit when headlights pin you against the wall."
     },
     {
       "type": "narration",
-      "text": "A sedan is parked across the street. Unmarked. But obviously police — the antenna, the tinted windows, the way it sits like it's waiting for something."
+      "text": "An unmarked sedan. The kind that screams 'law enforcement' by trying not to scream anything at all. The engine dies. The door opens."
     },
     {
       "type": "narration",
-      "text": "The driver's window rolls down."
+      "text": "Detective Elena Reyes. Mid-forties. A face that has seen everything and decided to keep fighting anyway. Badge on her belt, not her chest — the placement of someone who uses authority as a tool, not a shield."
     },
     {
       "type": "dialogue",
       "speaker": "Reyes",
-      "portrait": "reyes_neutral",
-      "text": "Got a minute?"
+      "portrait": "reyes_calm",
+      "text": "Don't run. If I wanted to arrest you, I would have done it at the race instead of waiting in a parking lot like a creep."
     },
     {
       "type": "narration",
-      "text": "Detective Elena Reyes. Mid-forties. Short hair. No makeup. Eyes that have seen the worst of Nova Pacifica and decided to stay anyway. She doesn't look angry. She looks tired. The kind of tired that comes from fighting a war nobody else acknowledges."
+      "text": "She leans against her car. Crosses her arms. Studies you with the patience of someone who interrogates people for a living."
     },
     {
       "type": "dialogue",
       "speaker": "Reyes",
-      "portrait": "reyes_neutral",
-      "text": "I know who you are. I know what you do at night. I've got a file on you that's about this thick."
-    },
-    {
-      "type": "narration",
-      "text": "She holds up her fingers about two inches apart."
+      "portrait": "reyes_calm",
+      "text": "I know what you do at night. I know the circuits, the meets, the entry fees. I know about The Pit, the harbor runs, the industrial loop. I probably know more about the underground than most of its participants."
     },
     {
       "type": "dialogue",
       "speaker": "Reyes",
-      "portrait": "reyes_neutral",
-      "text": "Relax. I'm not here to arrest you. If I wanted to arrest you, I would have done it during the Dock Run last Thursday when you hit 160 in a 50 zone."
+      "portrait": "reyes_calm",
+      "text": "And before you ask — no, I'm not here to shut it down. If I shut down every underground race in Nova Pacifica, I'd need a hundred officers and a thousand hours and the races would start again the next week in a different zip code."
     },
     {
       "type": "choice",
       "choices": [
         {
-          "text": "What do you want?",
-          "choice_id": "law_direct",
+          "text": "Then what do you want?",
+          "choice_id": "law_what_want",
           "relationship_changes": {},
           "moral_shift": 0,
           "jump_to": "reyes_pitch"
@@ -58,11 +54,11 @@
           "jump_to": "reyes_amused"
         },
         {
-          "text": "Am I in danger?",
-          "choice_id": "law_cautious",
+          "text": "If you're not arresting me, I'm leaving.",
+          "choice_id": "law_leave",
           "relationship_changes": {},
-          "moral_shift": 5,
-          "jump_to": "reyes_warning_first"
+          "moral_shift": 0,
+          "jump_to": "reyes_stops"
         }
       ]
     },
@@ -70,205 +66,212 @@
       "label": "reyes_pitch",
       "type": "dialogue",
       "speaker": "Reyes",
-      "portrait": "reyes_neutral",
-      "text": "Straight to it. I like that.",
-      "jump_to": "reyes_explains"
+      "portrait": "reyes_serious",
+      "text": "Someone is moving serious weight through the underground racing scene. Not drugs — money. Clean money going in dirty, dirty money coming out clean. The races are being used as a laundering operation.",
+      "jump_to": "reyes_details"
     },
     {
       "label": "reyes_amused",
       "type": "dialogue",
       "speaker": "Reyes",
       "portrait": "reyes_amused",
-      "text": "Right. And I don't know what a radar gun is. Save the act for someone who hasn't watched your telemetry.",
-      "jump_to": "reyes_explains"
-    },
-    {
-      "label": "reyes_warning_first",
-      "type": "dialogue",
-      "speaker": "Reyes",
-      "portrait": "reyes_serious",
-      "text": "Not from me. From something bigger. That's why I'm here.",
-      "jump_to": "reyes_explains"
-    },
-    {
-      "label": "reyes_explains",
-      "type": "dialogue",
-      "speaker": "Reyes",
-      "portrait": "reyes_serious",
-      "text": "There's a task force forming. NPPD, federal, Interpol. The target is the underground racing network in Nova Pacifica. They want to shut it down — all of it. The Pit, the Dock Run, the Foundry, the Ridge."
+      "text": "Right. And the tire marks on Pier 7 drew themselves. And the noise complaints from Industrial Row every Saturday night are just 'ambient construction.'"
     },
     {
       "type": "dialogue",
       "speaker": "Reyes",
       "portrait": "reyes_serious",
-      "text": "I've been assigned as liaison. Which means I get to watch a bunch of suits in a conference room plan the destruction of something they don't understand."
+      "text": "Drop the act. I'm here because we want the same thing — to keep the underground from being destroyed by something bigger than either of us.",
+      "jump_to": "reyes_details"
     },
     {
+      "label": "reyes_stops",
       "type": "dialogue",
       "speaker": "Reyes",
-      "portrait": "reyes_conflicted",
-      "text": "Here's the thing — I grew up in this city. My brother raced at The Pit before it was The Pit. I know the underground isn't just crime. It's culture. It's community. But the task force doesn't see that. They see statistics and property damage and political pressure."
+      "portrait": "reyes_serious",
+      "text": "Wait."
+    },
+    {
+      "type": "narration",
+      "text": "Not a command. A request. There is something in her voice that doesn't belong to a detective — something almost desperate."
     },
     {
       "type": "dialogue",
       "speaker": "Reyes",
       "portrait": "reyes_serious",
-      "text": "They're coming. In six months, maybe sooner. And when they come, it won't be a raid — it'll be a war."
+      "text": "Five minutes. Give me five minutes and then you can go. But if you leave without hearing what I have to say, you're going to wish you'd stayed.",
+      "jump_to": "reyes_details"
+    },
+    {
+      "label": "reyes_details",
+      "type": "dialogue",
+      "speaker": "Reyes",
+      "portrait": "reyes_serious",
+      "text": "There's a network operating above the street-level races. It uses the underground as infrastructure — the meets, the cash flows, the informal economy. Millions of dollars moving through race entries, side bets, vehicle sales."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Reyes",
+      "portrait": "reyes_serious",
+      "text": "The person running it — or the entity, because my intelligence is unclear on whether it's a person or an organization — goes by 'Zero.'"
+    },
+    {
+      "type": "narration",
+      "text": "Zero. Again. Always Zero."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Reyes",
+      "portrait": "reyes_serious",
+      "text": "I've been building a case for two years. I'm close. But I need eyes inside the underground. Someone who races, who has access, who can get me information I can't get with a badge."
     },
     {
       "type": "choice",
       "choices": [
         {
-          "text": "Why are you telling me this?",
-          "choice_id": "law_why_tell",
-          "relationship_changes": {},
-          "moral_shift": 0,
-          "jump_to": "reyes_proposition"
-        },
-        {
           "text": "You want me to be an informant.",
-          "choice_id": "law_informant",
+          "choice_id": "law_informant_realize",
           "relationship_changes": {},
           "moral_shift": 0,
-          "jump_to": "reyes_not_exactly"
+          "jump_to": "reyes_confirms"
         },
         {
-          "text": "The underground will survive. It always has.",
-          "choice_id": "law_defiant",
-          "relationship_changes": {"diesel": 5},
+          "text": "The underground has a code. No snitching. Ever.",
+          "choice_id": "law_code_refuse",
+          "relationship_changes": {"diesel": 10},
           "moral_shift": 5,
-          "jump_to": "reyes_reality"
+          "set_flags": {"refused_informant": true},
+          "jump_to": "reyes_respects"
+        },
+        {
+          "text": "What's in it for me?",
+          "choice_id": "law_whats_in_it",
+          "relationship_changes": {},
+          "moral_shift": -5,
+          "jump_to": "reyes_offer"
         }
       ]
     },
     {
-      "label": "reyes_proposition",
+      "label": "reyes_confirms",
       "type": "dialogue",
       "speaker": "Reyes",
-      "portrait": "reyes_conflicted",
-      "text": "Because you're in a position to help. Not as a snitch — as a bridge.",
-      "jump_to": "reyes_deal"
-    },
-    {
-      "label": "reyes_not_exactly",
-      "type": "dialogue",
-      "speaker": "Reyes",
-      "portrait": "reyes_serious",
-      "text": "Not exactly. An informant gives us names and addresses so we can make arrests. I don't want arrests. I want prevention.",
-      "jump_to": "reyes_deal"
-    },
-    {
-      "label": "reyes_reality",
-      "type": "dialogue",
-      "speaker": "Reyes",
-      "portrait": "reyes_serious",
-      "text": "Not this time. This isn't local PD running a patrol car through the industrial district. This is federal resources, surveillance technology, and zero tolerance. The underground has never faced anything like this.",
-      "jump_to": "reyes_deal"
-    },
-    {
-      "label": "reyes_deal",
-      "type": "dialogue",
-      "speaker": "Reyes",
-      "portrait": "reyes_serious",
-      "text": "Here's what I'm proposing. You keep me informed about the big events — the ones where civilians could get hurt, where things could go sideways. In exchange, I give the underground advanced warning when the task force is moving."
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Reyes",
-      "portrait": "reyes_conflicted",
-      "text": "It's not legal. It's not by the book. But it might be the only way both sides survive this."
+      "portrait": "reyes_calm",
+      "text": "I want you to be a concerned citizen who occasionally shares observations with law enforcement. The terminology is flexible."
     },
     {
       "type": "choice",
       "choices": [
         {
-          "text": "I'll work with you. But I'm not selling out my people.",
-          "choice_id": "law_accept_terms",
-          "relationship_changes": {},
-          "moral_shift": 5,
-          "set_flags": {"reyes_ally": true, "informant_deal": true},
-          "jump_to": "reyes_agreement"
-        },
-        {
-          "text": "I need to think about it. This is a lot.",
-          "choice_id": "law_think",
+          "text": "I'll keep my eyes open. But I'm not wearing a wire.",
+          "choice_id": "law_conditional_yes",
           "relationship_changes": {},
           "moral_shift": 0,
-          "set_flags": {"reyes_pending": true},
-          "jump_to": "reyes_patient"
+          "set_flags": {"informal_informant": true},
+          "jump_to": "reyes_deal"
         },
         {
-          "text": "No deal. I don't work with cops.",
-          "choice_id": "law_refuse",
-          "relationship_changes": {"diesel": 10},
-          "moral_shift": -5,
-          "set_flags": {"reyes_refused": true},
+          "text": "No. Find someone else.",
+          "choice_id": "law_refuse_final",
+          "relationship_changes": {"diesel": 5},
+          "moral_shift": 5,
+          "set_flags": {"refused_informant": true},
           "jump_to": "reyes_card"
         }
       ]
     },
     {
-      "label": "reyes_agreement",
+      "label": "reyes_respects",
       "type": "dialogue",
       "speaker": "Reyes",
-      "portrait": "reyes_neutral",
-      "text": "I don't want you to sell anyone out. I want to keep people safe — your people and mine. That's the only agenda I have."
+      "portrait": "reyes_calm",
+      "text": "The code. I respect that. It's more than most organizations in this city have."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Reyes",
+      "portrait": "reyes_serious",
+      "text": "But here's what the code doesn't account for: Zero doesn't follow it. Zero uses the underground and discards it. When I finally move on Zero, the underground is going to be collateral damage. Everyone. Every circuit. Every driver."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Reyes",
+      "portrait": "reyes_serious",
+      "text": "Help me take down Zero surgically, and the underground survives. Force me to use a sledgehammer, and everything Diesel built goes with it.",
+      "jump_to": "reyes_card"
+    },
+    {
+      "label": "reyes_offer",
+      "type": "dialogue",
+      "speaker": "Reyes",
+      "portrait": "reyes_calm",
+      "text": "Full immunity for any racing-related offenses. Past and future. A clean record. And when we take Zero down, you're on the right side of history instead of the wrong side of a jail cell."
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "Deal. On my terms.",
+          "choice_id": "law_deal_terms",
+          "relationship_changes": {},
+          "moral_shift": -5,
+          "set_flags": {"informant_deal": true},
+          "jump_to": "reyes_deal"
+        },
+        {
+          "text": "Keep your immunity. I'll handle Zero my own way.",
+          "choice_id": "law_own_way",
+          "relationship_changes": {"diesel": 5},
+          "moral_shift": 5,
+          "set_flags": {"refused_informant": true},
+          "jump_to": "reyes_card"
+        }
+      ]
+    },
+    {
+      "label": "reyes_deal",
+      "type": "dialogue",
+      "speaker": "Reyes",
+      "portrait": "reyes_calm",
+      "text": "Your terms. I'm listening."
     },
     {
       "type": "narration",
-      "text": "She hands you a burner phone. Cheap. Disposable. The kind that doesn't keep records."
+      "text": "You establish boundaries. No names of regular drivers. No disrupting legitimate underground events. No raids based on your information without advance warning. The underground survives — that's the deal."
     },
     {
       "type": "dialogue",
       "speaker": "Reyes",
-      "portrait": "reyes_neutral",
-      "text": "One number programmed. Mine. Use it when you need to. Destroy it if you need to.",
-      "jump_to": "reyes_departure"
-    },
-    {
-      "label": "reyes_patient",
-      "type": "dialogue",
-      "speaker": "Reyes",
-      "portrait": "reyes_neutral",
-      "text": "Fair. Think fast though. The task force doesn't think — it acts.",
-      "jump_to": "reyes_departure"
+      "portrait": "reyes_calm",
+      "text": "Accepted. I'll be in touch. Use the burner number on the card.",
+      "jump_to": "law_end"
     },
     {
       "label": "reyes_card",
-      "type": "dialogue",
-      "speaker": "Reyes",
-      "portrait": "reyes_neutral",
-      "text": "I respect that. I expected it, actually."
-    },
-    {
       "type": "narration",
-      "text": "She doesn't look offended. She looks like someone who has been refused before and knows that refusal is not always permanent.",
-      "jump_to": "reyes_departure"
-    },
-    {
-      "label": "reyes_departure",
-      "type": "narration",
-      "text": "She starts the sedan. Pauses with her hand on the shifter."
+      "text": "Reyes pulls a card from her jacket. Simple. Just a phone number."
     },
     {
       "type": "dialogue",
       "speaker": "Reyes",
-      "portrait": "reyes_serious",
-      "text": "One more thing. There's a name that keeps appearing in the federal file. Someone the task force considers the primary target. Not a racer — a puppeteer."
+      "portrait": "reyes_calm",
+      "text": "When Zero comes for you — and they will — this number works. Day or night."
     },
     {
+      "type": "narration",
+      "text": "She gets back in her car. The engine starts. The headlights sweep across the parking lot.",
+      "jump_to": "law_end"
+    },
+    {
+      "label": "law_end",
       "type": "dialogue",
       "speaker": "Reyes",
-      "portrait": "reyes_serious",
-      "text": "They call them Zero. I don't know if that's a person or a code name or a ghost story. But whatever it is, the feds want it badly enough to burn down the entire underground to find it."
+      "portrait": "reyes_calm",
+      "text": "One more thing. Diesel — tell him I said hello. He'll know who I am."
     },
     {
       "type": "narration",
-      "text": "The sedan pulls away. You stand on the sidewalk outside Maya's garage, watching it disappear into traffic."
-    },
-    {
-      "type": "narration",
-      "text": "A task force. Six months. Zero at the center. The underground is a home, but homes can be raided. Homes can be torn down. And the people inside them can be caught in the wreckage."
+      "text": "The sedan disappears. You stand in the parking lot holding a card that might be a lifeline or a noose. In the underground, the line between the two is thinner than a racing line."
     },
     {
       "type": "action",

@@ -1,0 +1,41 @@
+{
+  "vehicle_id": "mitsubishi_evo_x",
+  "display_name": "2015 Mitsubishi Lancer Evo X",
+  "manufacturer": "Mitsubishi",
+  "year": 2015,
+  "body_style": "sedan",
+  "category": "JDM",
+  "culture": "jdm",
+  "tier": 4,
+  "rarity": "rare",
+  "description": "Final evolution. The Evo X was Mitsubishi's last hurrah in the performance sedan wars — a turbocharged four-cylinder, Super All-Wheel Control system, and a rally heritage that stretches back to Tommi M\u00e4kinen dominating the WRC. When Mitsubishi announced there would be no Evo XI, the tuning world mourned.",
+  "lore": "The 4B11T replaced the legendary 4G63 and purists were skeptical. But the aluminum-block turbo four proved worthy of the Evo name, and the S-AWC system — Super All-Wheel Control — could vector torque between all four wheels with a precision that made the car feel like it was reading your mind. The Final Edition came with a plaque on the center console. Number of 1,600. When the last one rolled off the line, an era of Japanese performance sedans ended. The rivalry with the STI had pushed both cars to greatness.",
+
+  "base_stats": {
+    "top_speed": 0.68,
+    "acceleration": 0.70,
+    "handling": 0.78,
+    "braking": 0.74,
+    "nitro_capacity": 0.38,
+    "weight": 1497.0
+  },
+
+  "engine": {
+    "code": "4B11T",
+    "horsepower": 291.0,
+    "torque": 300.0,
+    "displacement": "2.0L",
+    "configuration": "I4",
+    "aspiration": "turbo"
+  },
+
+  "drivetrain": "awd",
+  "price": 100000,
+
+  "cosmetics": {
+    "default_color": "#FFFFFF",
+    "available_colors": ["#FFFFFF", "#000000", "#C0C0C0", "#FF0000", "#4169E1", "#808080"]
+  },
+
+  "special_traits": ["turbo", "awd", "final_edition", "rally_heritage"]
+}

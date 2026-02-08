@@ -1,0 +1,196 @@
+{
+  "id": "act2b_fall",
+  "context": "Act 2B Chapter 2.4 — Police raid on a major meet. Someone informed. Diesel suspected. Chase through industrial district. THE FALL.",
+  "lines": [
+    {
+      "type": "narration",
+      "text": "The biggest meet in Nova Pacifica's underground history. Every circuit, every crew, every alliance — gathered at the container yards for the Crown Defense. Your title on the line against the international challengers who returned for a rematch."
+    },
+    {
+      "type": "narration",
+      "text": "Three hundred spectators. Forty cars. The energy is volcanic — music thumping, engines revving, the air thick with exhaust and anticipation."
+    },
+    {
+      "type": "narration",
+      "text": "Maya is in the staging area, tuning the Sakura GTR for the main event. Diesel is by the observation point, watching the crowd with eyes that have seen this scene a thousand times."
+    },
+    {
+      "type": "narration",
+      "text": "And then the sirens start."
+    },
+    {
+      "type": "narration",
+      "text": "Not one. Not two. Dozens. The sound comes from every direction — north, south, east. Helicopter rotors join the chorus. Searchlights sweep across the container yard like fingers reaching into a drawer."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_panicked",
+      "text": "RAID! It's a raid!"
+    },
+    {
+      "type": "narration",
+      "text": "Chaos. Three hundred people trying to run in every direction at once. Cars starting, tires screaming, headlights cutting through the darkness like panicked eyes."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_urgent",
+      "text": "Get to the car. Now. West exit through the container corridor — it's the only route they haven't sealed."
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "Maya first. I'm not leaving without her.",
+          "choice_id": "fall_maya_first",
+          "relationship_changes": {"maya": 20},
+          "moral_shift": 15,
+          "set_flags": {"saved_maya_raid": true},
+          "jump_to": "grab_maya"
+        },
+        {
+          "text": "Follow Diesel. He knows the way out.",
+          "choice_id": "fall_follow_diesel",
+          "relationship_changes": {"diesel": 5},
+          "moral_shift": 0,
+          "jump_to": "follow_diesel"
+        },
+        {
+          "text": "Split up. We're less visible alone.",
+          "choice_id": "fall_split",
+          "relationship_changes": {},
+          "moral_shift": -5,
+          "jump_to": "go_alone"
+        }
+      ]
+    },
+    {
+      "label": "grab_maya",
+      "type": "narration",
+      "text": "You find her in the staging area, throwing tools into a bag. Her hands are shaking but her eyes are steady. She is Maya Torres — she does not break."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_panicked",
+      "text": "The Sakura — we can't lose the car—"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Driver",
+      "portrait": "",
+      "text": "Leave it. We can rebuild a car. Get in."
+    },
+    {
+      "type": "narration",
+      "text": "She hesitates for exactly one second. Then she's in the passenger seat and you are accelerating through the container corridor, darkness and metal on both sides.",
+      "jump_to": "the_chase"
+    },
+    {
+      "label": "follow_diesel",
+      "type": "narration",
+      "text": "Diesel moves through the chaos with the calm of a man who has survived raids before. He leads you through the container maze — left, right, left again — his memory of the yard better than any map."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_urgent",
+      "text": "Stay on me. Don't stop for anyone.",
+      "jump_to": "the_chase"
+    },
+    {
+      "label": "go_alone",
+      "type": "narration",
+      "text": "You run for the car. The parking area is mayhem — doors slamming, engines firing, the percussion of a hundred people making the same decision at the same time."
+    },
+    {
+      "type": "narration",
+      "text": "You find the CRX. Key in the ignition. Engine alive. Alone in the dark with sirens closing in.",
+      "jump_to": "the_chase"
+    },
+    {
+      "label": "the_chase",
+      "type": "narration",
+      "text": "The industrial district at night. A maze of warehouses, loading docks, rail crossings. Behind you, police cruisers — their lights turning the darkness into a strobe nightmare."
+    },
+    {
+      "type": "narration",
+      "text": "You drive the way the underground taught you. No headlights. No brake lights. By feel, by memory, by the connection between your hands and the road that only exists when there is nothing left between you and the machine."
+    },
+    {
+      "type": "narration",
+      "text": "A cruiser appears in front of you. You cut left through a loading bay, across a train track, between two warehouses with inches to spare on each side."
+    },
+    {
+      "type": "narration",
+      "text": "The helicopter finds you. The searchlight locks on. You are pinned — a insect under a magnifying glass."
+    },
+    {
+      "type": "narration",
+      "text": "And then the road runs out."
+    },
+    {
+      "type": "narration",
+      "text": "A dead end. A fence. Concrete barriers. The helicopter overhead. Cruisers behind. No exit. No gap. No miracle."
+    },
+    {
+      "type": "narration",
+      "text": "You stop the car. Kill the engine. The silence that follows is the loudest thing you have ever heard."
+    },
+    {
+      "type": "narration",
+      "text": "Doors open. Weapons drawn. Flashlights in your face. Commands shouted from every direction."
+    },
+    {
+      "type": "narration",
+      "text": "Face down on the asphalt. Hands behind your head. The ground is cold and rough and it smells like oil and broken dreams."
+    },
+    {
+      "type": "narration",
+      "text": "From this angle, the sky is full of flashing lights. Red and blue, red and blue, a rhythm like a heartbeat that is not your own."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Police Officer",
+      "portrait": "police_neutral",
+      "text": "You're under arrest. Illegal street racing, reckless endangerment, organizing criminal activity, evading law enforcement."
+    },
+    {
+      "type": "narration",
+      "text": "The handcuffs click. Cold metal on warm wrists."
+    },
+    {
+      "type": "narration",
+      "text": "And somewhere in the back of your mind, through the adrenaline and the fear and the sound of your life ending, a question forms: who told them? Who knew about the meet? Who gave the police the date, the time, the location?"
+    },
+    {
+      "type": "narration",
+      "text": "Who?"
+    },
+    {
+      "type": "narration",
+      "text": "The answer, when it comes, will be worse than the handcuffs."
+    },
+    {
+      "type": "narration",
+      "text": "The Fall begins."
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "underground_fall",
+        "value": true
+      }
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "the_setup_complete",
+        "value": true
+      }
+    }
+  ]
+}

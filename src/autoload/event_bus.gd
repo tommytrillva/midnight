@@ -68,6 +68,15 @@ signal vehicle_stats_changed(vehicle_id: String, stats: Dictionary)
 signal part_combo_achieved(vehicle_id: String, combo_data: Dictionary)
 signal part_combo_lost(vehicle_id: String, combo_id: String)
 
+# --- Dealership Events ---
+signal vehicle_purchased(vehicle_id: String, price: int)
+signal vehicle_traded_in(vehicle_id: String, value: int)
+signal dealership_stock_refreshed
+
+# --- Acquisition Events ---
+signal barn_find_discovered(barn_id: String, vehicle_id: String)
+signal zero_gift_received(vehicle_id: String)
+
 # --- Pink Slip Events ---
 signal pink_slip_challenge_offered(challenger_data: Dictionary)
 signal pink_slip_accepted(race_data: Dictionary)

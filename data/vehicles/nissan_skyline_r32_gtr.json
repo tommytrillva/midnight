@@ -1,0 +1,33 @@
+{
+  "vehicle_id": "nissan_skyline_r32_gtr",
+  "display_name": "1992 Nissan Skyline R32 GT-R",
+  "manufacturer": "Nissan",
+  "year": 1992,
+  "description": "The original Godzilla. The R32 GT-R dominated Australian touring cars so thoroughly they changed the rules to ban it. Its ATTESA E-TS all-wheel drive and RB26DETT twin-turbo inline-six were decades ahead of the competition.",
+  "base_stats": {
+    "top_speed": 0.66,
+    "acceleration": 0.65,
+    "handling": 0.64,
+    "braking": 0.62,
+    "nitro_capacity": 0.50,
+    "weight_lbs": 3300
+  },
+  "engine": {
+    "horsepower": 280.0,
+    "torque_lbft": 266.0,
+    "displacement_cc": 2568,
+    "configuration": "I6",
+    "aspiration": "twin_turbo"
+  },
+  "drivetrain": "awd",
+  "tier": 3,
+  "price": 80000,
+  "rarity": "rare",
+  "cosmetics": {
+    "default_color": "#708090",
+    "available_colors": ["#708090", "#000000", "#FFFFFF", "#1C1C1C", "#2F4F4F", "#8B0000"]
+  },
+  "special_traits": ["rb26", "awd", "godzilla"],
+  "lore": "They called it Godzilla because it destroyed everything in its path. The R32 GT-R won 29 consecutive races in Group A touring cars before the sanctioning body gave up and rewrote the rulebook. Thirty years later, it still feels like the future.",
+  "category": "JDM"
+}

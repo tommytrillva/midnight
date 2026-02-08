@@ -1,0 +1,110 @@
+{
+  "id": "rock_bottom",
+  "context": "Act 3 Chapter 3.3 — Lost everything. Back in the CRX. Rain. Full circle. Internal monologue.",
+  "lines": [
+    {
+      "type": "narration",
+      "text": "Rain."
+    },
+    {
+      "type": "narration",
+      "text": "Not the dramatic kind. Not the cinematic downpour that washes clean and signals renewal. Just rain. Steady, gray, indifferent rain that falls on champions and failures alike."
+    },
+    {
+      "type": "narration",
+      "text": "You are sitting in the CRX in a parking lot behind a motel on the edge of the harbor district. Room 6. Thirty-two dollars a night. The mattress has stories it doesn't want to tell and the television gets four channels, all of them broadcasting some version of your disgrace."
+    },
+    {
+      "type": "narration",
+      "text": "The CRX. The car you arrived in. The car that Maya rebuilt. The car that Diesel taught you to listen to. The car that carried you through The Pit and the Harbor Sprint and every moment that mattered."
+    },
+    {
+      "type": "narration",
+      "text": "Remember when this car was all we had?"
+    },
+    {
+      "type": "narration",
+      "text": "You grip the steering wheel. The leather is worn smooth in the places your hands always go. Grooves that fit you like a fingerprint. This car knows you better than any person alive."
+    },
+    {
+      "type": "narration",
+      "text": "The inventory of what's left: the CRX. A duffel bag of clothes. Forty-seven hundred dollars in cash. A phone with messages you don't read. A reputation that has been burned so thoroughly that the ashes have their own ashes."
+    },
+    {
+      "type": "narration",
+      "text": "No team. No sponsor. No championship. No underground. No elite circle. No identity."
+    },
+    {
+      "type": "narration",
+      "text": "Just a driver in a car in the rain."
+    },
+    {
+      "type": "narration",
+      "text": "You turn the key. The engine starts — because Maya built this engine to survive anything, including its driver's worst days. The dashboard lights up. The fuel gauge reads half."
+    },
+    {
+      "type": "narration",
+      "text": "Half a tank. Enough to go somewhere. The question is where."
+    },
+    {
+      "type": "narration",
+      "text": "You could leave. Nova Pacifica has a highway that goes north and doesn't stop until you reach another country. Start over. New name. New city. New nothing."
+    },
+    {
+      "type": "narration",
+      "text": "You could stay. Face the charges, the courts, the cameras, the system that decided you were the sacrifice. Fight it from inside the machine that built you."
+    },
+    {
+      "type": "narration",
+      "text": "Or you could drive. Not to anywhere. Not from anywhere. Just drive. The way you used to before racing became a career and a cage and a catastrophe."
+    },
+    {
+      "type": "narration",
+      "text": "You put the car in gear."
+    },
+    {
+      "type": "narration",
+      "text": "The harbor road in the rain at 3 AM is empty. The asphalt glistens. The city lights reflect off the wet surface like a mirror showing you a world that's upside down."
+    },
+    {
+      "type": "narration",
+      "text": "You don't race. You don't push. You drive at the speed limit — which is something you haven't done since the first night you arrived in this city — and you let the rain and the road and the sound of the engine fill the spaces where everything else used to be."
+    },
+    {
+      "type": "narration",
+      "text": "Turn six on the harbor circuit. Where Nikko crashed. Where you stopped or didn't stop. The barrier is still dented. The road remembers."
+    },
+    {
+      "type": "narration",
+      "text": "Industrial Row. Where Diesel tested you. Where you learned that listening to the car is more important than telling it what to do. The warehouses are dark and closed and the road is full of potholes that you navigate by memory."
+    },
+    {
+      "type": "narration",
+      "text": "Maya's garage. You slow. The lights are off. The bay door is closed. But through the small window, you can see a shape — her toolbox, still open, tools still out, as if she left in the middle of something and planned to come back."
+    },
+    {
+      "type": "narration",
+      "text": "She always comes back. Maya Torres always comes back."
+    },
+    {
+      "type": "narration",
+      "text": "You park the CRX in the lot where you first parked it, months ago. Full circle. The same spot. The same car. The same city."
+    },
+    {
+      "type": "narration",
+      "text": "Different driver."
+    },
+    {
+      "type": "narration",
+      "text": "The rain falls. The engine cools. And somewhere in the noise of water on metal, you hear something that sounds almost like a beginning."
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "rock_bottom_reached",
+        "value": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "vehicle_id": "chevy_corvette_c5_z06",
+  "display_name": "2002 Chevrolet Corvette C5 Z06",
+  "manufacturer": "Chevrolet",
+  "year": 2002,
+  "description": "The LS6-powered lightweight that taught European exotics a lesson in value. The C5 Z06 stripped weight everywhere — thinner glass, titanium exhaust, lighter wheels — and bolted in a 405 horsepower small-block V8 that redlines at 6500 RPM. The result embarrassed cars costing three times as much.",
+  "base_stats": {
+    "top_speed": 0.68,
+    "acceleration": 0.66,
+    "handling": 0.62,
+    "braking": 0.62,
+    "nitro_capacity": 0.50,
+    "weight_lbs": 3100
+  },
+  "engine": {
+    "horsepower": 405.0,
+    "torque_lbft": 400.0,
+    "displacement_cc": 5665,
+    "configuration": "V8",
+    "aspiration": "naturally_aspirated"
+  },
+  "drivetrain": "rwd",
+  "tier": 3,
+  "price": 45000,
+  "rarity": "uncommon",
+  "cosmetics": {
+    "default_color": "#FF0000",
+    "available_colors": ["#FF0000", "#000000", "#FFD700", "#C0C0C0", "#FFFFFF", "#0000CD"]
+  },
+  "special_traits": ["ls_power", "lightweight", "track_ready"],
+  "lore": "The C5 Z06 is the blue-collar track weapon. No fancy electronics, no dual-clutch gearbox, no launch control. Just a big naturally aspirated V8, a six-speed manual, and a chassis that'll do whatever you have the courage to ask. The best bang-for-buck performance car ever built.",
+  "category": "Muscle"
+}

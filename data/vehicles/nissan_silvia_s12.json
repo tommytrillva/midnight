@@ -1,0 +1,52 @@
+{
+  "vehicle_id": "nissan_silvia_s12",
+  "display_name": "1986 Nissan Silvia S12",
+  "manufacturer": "Nissan",
+  "year": 1986,
+  "body_style": "coupe",
+  "category": "JDM/Drift",
+  "culture": "jdm",
+  "tier": 1,
+  "rarity": "uncommon",
+  "description": "The forgotten Silvia. Before the S13 became the drift icon, the S12 was already rear-wheel drive and turbocharged, waiting for someone to discover its potential. Wedge-shaped 80s aggression with a motor that spools and surprises.",
+  "lore": "Forgotten gem, drift potential. Nobody posts this one on social media. Nobody has a poster of it. That's exactly why it costs half what an S13 does, with a factory turbo the S13 never got. The smart money is here.",
+
+  "base_stats": {
+    "top_speed": 48.0,
+    "acceleration": 40.0,
+    "handling": 45.0,
+    "braking": 36.0,
+    "nitro_capacity": 34.0,
+    "weight_kg": 1134.0
+  },
+
+  "engine": {
+    "code": "CA18DET",
+    "horsepower": 120.0,
+    "torque_lbft": 134.0,
+    "displacement_cc": 1809,
+    "configuration": "I4",
+    "aspiration": "turbo",
+    "valvetrain": "DOHC 16V",
+    "redline_rpm": 7000
+  },
+
+  "drivetrain": "rwd",
+  "price": 6000,
+  "class": "D",
+
+  "cosmetics": {
+    "available_colors": ["super_black", "crystal_white", "blue_metallic", "wine_red"],
+    "body_kits": ["stock", "factory_aero", "custom_widebody"],
+    "spoiler_options": ["none", "factory_lip", "wangan_wing"],
+    "wheel_options": ["stock_14", "watanabe_rs_14", "work_equip_01_15", "ssr_mk2_15"]
+  },
+
+  "special_traits": ["turbo", "drift_potential", "forgotten_gem"],
+
+  "mod_potential": {
+    "engine_swaps": ["sr20det", "ca18det_built", "rb25det"],
+    "max_hp_potential": 500,
+    "upgrade_ceiling": "B"
+  }
+}

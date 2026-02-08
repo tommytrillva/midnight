@@ -1,0 +1,40 @@
+{
+  "vehicle_id": "porsche_gt2_rs",
+  "display_name": "2018 Porsche 911 GT2 RS (991)",
+  "manufacturer": "Porsche",
+  "year": 2018,
+  "body_style": "coupe",
+  "category": "Euro/Pro",
+  "culture": "euro",
+  "tier": 5,
+  "rarity": "rare",
+  "description": "The widow maker returns. 700 horsepower through the rear wheels only, because Porsche engineers apparently have a death wish and want you to share it. The GT2 RS is the most powerful 911 ever built — a twin-turbo flat-six monster that rewards precision and punishes overconfidence.",
+  "lore": "They call it the widow maker for a reason. The original 993 GT2 earned the name by sending overconfident drivers into barriers at triple-digit speeds. The 991 GT2 RS carries on that tradition with 700 horsepower, rear-wheel drive, and a turbocharged flat-six that hits like a freight train. Respect it, and it'll make you look like a god. Disrespect it, and it'll put you in the wall.",
+
+  "base_stats": {
+    "top_speed": 0.88,
+    "acceleration": 0.85,
+    "handling": 0.82,
+    "braking": 0.85,
+    "nitro_capacity": 0.40,
+    "weight": 1451.0
+  },
+
+  "engine": {
+    "horsepower": 700.0,
+    "torque": 553.0,
+    "displacement": "3.8L",
+    "configuration": "Flat-6",
+    "aspiration": "twin_turbo"
+  },
+
+  "drivetrain": "rwd",
+  "price": 450000,
+
+  "cosmetics": {
+    "default_color": "#C0C0C0",
+    "available_colors": ["#C0C0C0", "#FFFFFF", "#000000", "#FF4500", "#FFD700", "#1C1C1C"]
+  },
+
+  "special_traits": ["twin_turbo", "rear_engine", "widow_maker"]
+}

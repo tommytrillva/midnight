@@ -1,0 +1,41 @@
+{
+  "vehicle_id": "bmw_m3_gts",
+  "display_name": "2010 BMW M3 GTS (E92)",
+  "manufacturer": "BMW",
+  "year": 2010,
+  "body_style": "coupe",
+  "category": "Euro/Pro",
+  "culture": "euro",
+  "tier": 4,
+  "rarity": "rare",
+  "description": "Track-focused M. BMW took the already magnificent E92 M3, stripped out the luxury, bored the S65 V8 to 4.4 liters, bolted on a roll cage, and painted it Fire Orange as a warning. Only 135 were built, and every single one was destined for the circuit.",
+  "lore": "The M3 GTS was BMW M division saying 'enough compromise.' They removed the rear seats, fitted polycarbonate windows, added a bolt-in roll cage, and turned up the S65 V8 until it screamed. The result was a street-legal race car that lapped the N\u00fcrburgring in 7:48 — faster than the M5 that cost twice as much. Fire Orange wasn't a color choice. It was a statement.",
+
+  "base_stats": {
+    "top_speed": 0.74,
+    "acceleration": 0.72,
+    "handling": 0.80,
+    "braking": 0.78,
+    "nitro_capacity": 0.40,
+    "weight": 1452.0
+  },
+
+  "engine": {
+    "code": "S65",
+    "horsepower": 450.0,
+    "torque": 295.0,
+    "displacement": "4.4L",
+    "configuration": "V8",
+    "aspiration": "naturally_aspirated"
+  },
+
+  "drivetrain": "rwd",
+  "price": 175000,
+
+  "cosmetics": {
+    "default_color": "#FF4500",
+    "available_colors": ["#FF4500", "#000000", "#FFFFFF", "#C0C0C0"]
+  },
+
+  "special_traits": ["v8", "track_focused", "limited_edition"]
+}

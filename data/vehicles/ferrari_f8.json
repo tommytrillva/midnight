@@ -1,0 +1,40 @@
+{
+  "vehicle_id": "ferrari_f8",
+  "display_name": "2020 Ferrari F8 Tributo",
+  "manufacturer": "Ferrari",
+  "year": 2020,
+  "body_style": "coupe",
+  "category": "Hyper",
+  "culture": "euro",
+  "tier": 6,
+  "rarity": "epic",
+  "description": "Tributo — tribute. Ferrari named this car in honor of the most powerful V8 in the company's history, and then gave it 710 horsepower to back up the boast. The F8 is the culmination of everything Ferrari learned building mid-engine V8 supercars, distilled into one savage, beautiful machine.",
+  "lore": "The F8 Tributo pays homage to Ferrari's long line of twin-turbo V8 mid-engine cars, from the 308 GTB to the 488 Pista. The 3.9-liter engine produces 710 horsepower with response times that defy the laws of turbocharger physics. Every surface has been sculpted in the wind tunnel, including the S-Duct from Formula 1 that channels air over the hood. It is, quite possibly, the greatest V8 Ferrari will ever build.",
+
+  "base_stats": {
+    "top_speed": 0.90,
+    "acceleration": 0.88,
+    "handling": 0.87,
+    "braking": 0.88,
+    "nitro_capacity": 0.42,
+    "weight": 1406.0
+  },
+
+  "engine": {
+    "horsepower": 710.0,
+    "torque": 568.0,
+    "displacement": "3.9L",
+    "configuration": "V8",
+    "aspiration": "twin_turbo"
+  },
+
+  "drivetrain": "mr",
+  "price": 900000,
+
+  "cosmetics": {
+    "default_color": "#FF2400",
+    "available_colors": ["#FF2400", "#FFFFFF", "#FFD700", "#000000", "#4169E1", "#C0C0C0"]
+  },
+
+  "special_traits": ["twin_turbo", "mid_engine", "ferrari_dna"]
+}

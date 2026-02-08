@@ -1,0 +1,40 @@
+{
+  "vehicle_id": "porsche_911_gt3_996",
+  "display_name": "2004 Porsche 911 GT3 (996)",
+  "manufacturer": "Porsche",
+  "year": 2004,
+  "body_style": "coupe",
+  "category": "Euro/Pro",
+  "culture": "euro",
+  "tier": 4,
+  "rarity": "uncommon",
+  "description": "Mezger motor magic. While the base 996 got water-cooled and lost some soul, the GT3 kept the Mezger flat-six — a racing engine detuned for the street. It revs with an urgency that modern turbocharged Porsches can only dream about, and the chassis is so transparent you can feel individual pebbles through the steering wheel.",
+  "lore": "Hans Mezger designed the engine that won Le Mans. When Porsche needed a powerplant for the GT3, they went to his motorsport division instead of the road car team. The result is a flat-six that screams to 8,200 RPM with a mechanical purity that makes grown engineers weep. The 996 GT3 was the first — and many say still the best.",
+
+  "base_stats": {
+    "top_speed": 0.72,
+    "acceleration": 0.70,
+    "handling": 0.82,
+    "braking": 0.80,
+    "nitro_capacity": 0.38,
+    "weight": 1361.0
+  },
+
+  "engine": {
+    "horsepower": 381.0,
+    "torque": 284.0,
+    "displacement": "3.6L",
+    "configuration": "Flat-6",
+    "aspiration": "naturally_aspirated"
+  },
+
+  "drivetrain": "rwd",
+  "price": 150000,
+
+  "cosmetics": {
+    "default_color": "#FFFFFF",
+    "available_colors": ["#FFFFFF", "#000000", "#C0C0C0", "#FF2400", "#4169E1", "#FFD700"]
+  },
+
+  "special_traits": ["naturally_aspirated", "flat_six", "track_weapon"]
+}

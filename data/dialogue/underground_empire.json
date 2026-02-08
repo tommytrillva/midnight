@@ -1,226 +1,210 @@
 {
   "id": "underground_empire",
-  "context": "Act 2B Chapter 2.3 — Building territory through racing. Control districts, earn loyalty. Power and responsibility.",
+  "context": "Act 2B Chapter 2.3 — Building territory through racing. Control districts, set up meets, earn loyalty. Power and responsibility.",
   "lines": [
     {
       "type": "narration",
-      "text": "Three months. Twelve victories. Four districts."
+      "text": "Three months since the International Crown. Your name is more than a name now — it is a territory marker, a guarantee, a flag planted in every circuit in Nova Pacifica."
     },
     {
       "type": "narration",
-      "text": "You have done what no driver in Nova Pacifica's underground history has done — won the crown in every circuit. Downtown. Harbor. Industrial. Hillside. Four territories. Four crews who now look to you not just as a racer, but as a leader."
+      "text": "Maya's garage has become the unofficial headquarters. The wall behind the counter now has a map — Diesel's map, expanded, with pins marking every circuit, every meet, every alliance."
     },
     {
       "type": "narration",
-      "text": "Maya's garage has become the unofficial headquarters of the underground. Cars line the street outside. Drivers come for tuning advice. Crew leaders come for dispute resolution. You settle arguments about race rules at 3 AM and approve new circuits at dawn."
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Maya",
-      "portrait": "maya_amused",
-      "text": "You know, when I agreed to be your mechanic, I didn't sign up for running a government."
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Maya",
-      "portrait": "maya_amused",
-      "text": "There's a guy from the Salts waiting to talk about fishing boat access for the Dock Run. And Ironworks wants to expand their circuit past the old refinery. And someone — I don't even know who — left a goat in the shop as a gift."
-    },
-    {
-      "type": "choice",
-      "choices": [
-        {
-          "text": "I never asked for this. I just wanted to race.",
-          "choice_id": "empire_reluctant",
-          "relationship_changes": {"maya": 5},
-          "moral_shift": 5,
-          "jump_to": "maya_truth"
-        },
-        {
-          "text": "This is bigger than racing now. We're building something.",
-          "choice_id": "empire_embrace",
-          "relationship_changes": {"maya": 3, "diesel": -5},
-          "moral_shift": -5,
-          "set_flags": {"empire_embraced": true},
-          "jump_to": "diesel_warning"
-        },
-        {
-          "text": "The goat stays. I like the goat.",
-          "choice_id": "empire_humor",
-          "relationship_changes": {"maya": 8},
-          "moral_shift": 0,
-          "jump_to": "maya_laughs"
-        }
-      ]
-    },
-    {
-      "label": "maya_truth",
-      "type": "dialogue",
-      "speaker": "Maya",
-      "portrait": "maya_honest",
-      "text": "Nobody who changes things ever asks for it. They just do what needs doing and one day they look up and realize the world rearranged itself around them."
+      "text": "You own the underground. Not through force — through respect. Through wins earned clean, codes honored, drivers helped. The kings you dethroned now race under your banner. The circuits that once had separate identities now answer to one name."
     },
     {
       "type": "dialogue",
       "speaker": "Maya",
       "portrait": "maya_determined",
-      "text": "But here's the thing — the underground needs leadership or it becomes chaos. You're not just a racer anymore. You're a symbol. People need symbols.",
-      "jump_to": "diesel_arrives"
-    },
-    {
-      "label": "diesel_warning",
-      "type": "narration",
-      "text": "The shop door opens. Diesel walks in, grease on his hands, disapproval on his face."
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Diesel",
-      "portrait": "diesel_stern",
-      "text": "Building something. I've heard that before. From every underground king who started believing their own legend."
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Diesel",
-      "portrait": "diesel_stern",
-      "text": "The underground isn't an empire. The moment it becomes one, it stops being the underground and starts being just another power structure. And power structures attract the wrong kind of attention.",
-      "jump_to": "territory_meeting"
-    },
-    {
-      "label": "maya_laughs",
-      "type": "narration",
-      "text": "Maya laughs. A real laugh — the kind that surprises her, that breaks through the exhaustion and the grease stains and the impossibility of managing a underground racing network out of a two-bay garage."
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Maya",
-      "portrait": "maya_happy",
-      "text": "The goat is named Fernando and he eats everything including brake lines. He does NOT stay.",
-      "jump_to": "diesel_arrives"
-    },
-    {
-      "label": "diesel_arrives",
-      "type": "narration",
-      "text": "Diesel walks through the bay door. He has seen the evolution of the garage from shop to headquarters. His expression is complicated — proud and worried in equal measure."
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Diesel",
-      "portrait": "diesel_serious",
-      "text": "We need to talk. All three of us.",
-      "jump_to": "territory_meeting"
-    },
-    {
-      "label": "territory_meeting",
-      "type": "dialogue",
-      "speaker": "Diesel",
-      "portrait": "diesel_serious",
-      "text": "I've been hearing things. The Hillside Runners are unhappy. They think their territory is being absorbed, not represented. And the Salts want more autonomy — Koa is talking about splitting from the unified schedule."
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Maya",
-      "portrait": "maya_concerned",
-      "text": "There's also money to deal with. The prize pools have tripled since the international event. Someone needs to manage the funds, set up entry fees, handle disputes. That used to be crew-by-crew. Now it's—"
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Maya",
-      "portrait": "maya_concerned",
-      "text": "Now it's you."
-    },
-    {
-      "type": "choice",
-      "choices": [
-        {
-          "text": "Set up a council. One rep from each crew. Decisions by vote.",
-          "choice_id": "empire_democratic",
-          "relationship_changes": {"diesel": 15, "maya": 10},
-          "moral_shift": 15,
-          "set_flags": {"underground_council": true},
-          "jump_to": "democratic_path"
-        },
-        {
-          "text": "I'll handle it personally. People trust me, not a committee.",
-          "choice_id": "empire_autocratic",
-          "relationship_changes": {"diesel": -15, "maya": -5},
-          "moral_shift": -10,
-          "set_flags": {"underground_autocrat": true},
-          "jump_to": "autocratic_path"
-        },
-        {
-          "text": "Let each crew keep their autonomy. I'm a coordinator, not a king.",
-          "choice_id": "empire_federated",
-          "relationship_changes": {"diesel": 10, "maya": 5},
-          "moral_shift": 10,
-          "set_flags": {"underground_federated": true},
-          "jump_to": "federated_path"
-        }
-      ]
-    },
-    {
-      "label": "democratic_path",
-      "type": "dialogue",
-      "speaker": "Diesel",
-      "portrait": "diesel_approving",
-      "text": "A council. That's — yeah. That's the right call. Power shared is power sustained."
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Maya",
-      "portrait": "maya_determined",
-      "text": "I'll set up the meetings. Neutral ground — the old warehouse by the waterfront. One table, four chairs, no weapons, no posturing.",
-      "jump_to": "empire_future"
-    },
-    {
-      "label": "autocratic_path",
-      "type": "dialogue",
-      "speaker": "Diesel",
-      "portrait": "diesel_disappointed",
-      "text": "That's how it starts. Personal control. 'I can handle it.' And then one day you wake up and you're the thing you were racing against."
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Maya",
-      "portrait": "maya_worried",
-      "text": "I'll support you. But Diesel's right — be careful. The line between leader and tyrant is thinner than you think.",
-      "jump_to": "empire_future"
-    },
-    {
-      "label": "federated_path",
-      "type": "dialogue",
-      "speaker": "Diesel",
-      "portrait": "diesel_approving",
-      "text": "Coordinator. Not king. I like the sound of that. Reminds me of how it used to be."
+      "text": "Three calls today. Harbor crew wants to expand the circuit past the container yards. Industrial crew is asking for better starting equipment. And Takeshi from the Hillside wants to organize a memorial race for the driver who died on the Coastal."
     },
     {
       "type": "dialogue",
       "speaker": "Maya",
       "portrait": "maya_neutral",
-      "text": "It means more work for you — mediating, traveling between crews, being everywhere at once. But it respects what the underground is.",
-      "jump_to": "empire_future"
+      "text": "You wanted the underground. Congratulations — the underground wants you back."
     },
     {
-      "label": "empire_future",
-      "type": "narration",
-      "text": "That night, you drive through all four districts. Downtown, where it started. Harbor, where the Salts race against the tide. Industrial, where sparks fly from the foundry and the asphalt. Hillside, where the mountain decides who lives and who learns."
+      "type": "choice",
+      "choices": [
+        {
+          "text": "Handle the logistics. I'll focus on the racing.",
+          "choice_id": "empire_delegate",
+          "relationship_changes": {"maya": -5},
+          "moral_shift": -5,
+          "jump_to": "maya_not_secretary"
+        },
+        {
+          "text": "We'll handle it together. This is bigger than just me.",
+          "choice_id": "empire_partnership",
+          "relationship_changes": {"maya": 15},
+          "moral_shift": 10,
+          "set_flags": {"maya_partner_empire": true},
+          "jump_to": "maya_smiles"
+        },
+        {
+          "text": "Tell them I'll be at each circuit this week. Face to face.",
+          "choice_id": "empire_personal",
+          "relationship_changes": {"maya": 5, "diesel": 5},
+          "moral_shift": 5,
+          "rep": 10,
+          "jump_to": "maya_approves"
+        }
+      ]
+    },
+    {
+      "label": "maya_not_secretary",
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_angry",
+      "text": "I'm your mechanic, not your secretary. You built this empire — you manage it. I keep the cars running."
     },
     {
       "type": "narration",
-      "text": "This is yours. Not because you took it — because you earned it. Corner by corner, race by race, respect by respect."
+      "text": "She's right. And the way she said 'empire' — half admiration, half warning — tells you she's been thinking about what this is becoming.",
+      "jump_to": "diesel_arrives"
+    },
+    {
+      "label": "maya_smiles",
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_happy",
+      "text": "Together. I like the sound of that. But I'm still billing you for the overtime."
     },
     {
       "type": "narration",
-      "text": "But empires attract attention. And somewhere in the federal building downtown, a task force is meeting. And somewhere in the shadows, Zero is watching your empire grow."
+      "text": "She pulls out a notebook — an actual paper notebook, because Maya Torres does not trust anything that needs a battery — and starts organizing.",
+      "jump_to": "diesel_arrives"
+    },
+    {
+      "label": "maya_approves",
+      "type": "dialogue",
+      "speaker": "Maya",
+      "portrait": "maya_neutral",
+      "text": "Good answer. Personal touch matters in the underground. These people follow you because they know you, not because of a logo on a car.",
+      "jump_to": "diesel_arrives"
+    },
+    {
+      "label": "diesel_arrives",
+      "type": "narration",
+      "text": "Diesel walks in. He's carrying a newspaper — a physical newspaper, because Diesel trusts screens about as much as he trusts corporate sponsors."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_serious",
+      "text": "We need to talk. About what this is becoming."
     },
     {
       "type": "narration",
-      "text": "They are both hungry. And empires are exactly what they eat."
+      "text": "He drops the paper on the counter. The headline: UNDERGROUND RACING EPIDEMIC — POLICE COMMISSIONER VOWS CRACKDOWN."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_serious",
+      "text": "The bigger the underground gets, the more attention it draws. We've had three new meets a week, entry fees are up, the money flowing through is — it's visible. The kind of visible that makes cops start careers."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_serious",
+      "text": "And it's not just cops. Word is that someone's been buying into our meets. Side bets that are too large, too organized. Money that doesn't smell like racing money."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_serious",
+      "text": "You know what Zero is."
+    },
+    {
+      "type": "narration",
+      "text": "It is not a question."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_serious",
+      "text": "Zero uses the underground as infrastructure. Our circuits, our meets, our cash flows — they're all pipelines. And the bigger your empire gets, the more useful it becomes to people who don't care about racing. They care about the machinery."
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "Then we lock it down. Vet every entry, cap the meets, keep it clean.",
+          "choice_id": "empire_lockdown",
+          "relationship_changes": {"diesel": 10},
+          "moral_shift": 10,
+          "set_flags": {"empire_locked_down": true},
+          "jump_to": "diesel_approves_lockdown"
+        },
+        {
+          "text": "If Zero wants to use our network, we can use that. Information flows both ways.",
+          "choice_id": "empire_leverage",
+          "relationship_changes": {"diesel": -10},
+          "moral_shift": -10,
+          "set_flags": {"empire_leveraged": true},
+          "jump_to": "diesel_warns"
+        },
+        {
+          "text": "What would Marcus do?",
+          "choice_id": "empire_ask_marcus",
+          "relationship_changes": {"diesel": 15},
+          "moral_shift": 5,
+          "jump_to": "diesel_marcus"
+        }
+      ]
+    },
+    {
+      "label": "diesel_approves_lockdown",
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_approving",
+      "text": "Good. That's the right call. It'll cost us money and it'll make some people angry, but it keeps the underground clean. Clean is all that matters.",
+      "jump_to": "empire_end"
+    },
+    {
+      "label": "diesel_warns",
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_disappointed",
+      "text": "That's how it starts. 'We'll use them before they use us.' That's what every person who's been swallowed by Zero has said. You're standing on a cliff and you think you can lean over the edge without falling.",
+      "jump_to": "empire_end"
+    },
+    {
+      "label": "diesel_marcus",
+      "type": "narration",
+      "text": "Diesel goes quiet. The question lands in a place he doesn't often visit — the past, where Marcus Webb still lives in the echo of an engine note."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_sad",
+      "text": "Marcus would say the same thing he always said: 'The road gives you everything you need. The moment you start taking more, the road takes it back.'"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Diesel",
+      "portrait": "diesel_neutral",
+      "text": "He kept the underground small on purpose. Manageable. Human-sized. Because the moment it becomes an empire, it stops being a family.",
+      "jump_to": "empire_end"
+    },
+    {
+      "label": "empire_end",
+      "type": "narration",
+      "text": "You look at the map on the wall. Every pin, every circuit, every alliance — yours. An underground empire built on speed and trust and the simple belief that the road belongs to everyone."
+    },
+    {
+      "type": "narration",
+      "text": "But empires have enemies. And somewhere in the darkness beyond the map's edges, those enemies are gathering."
     },
     {
       "type": "action",
       "action": {
         "type": "set_flag",
-        "flag": "territory_claimed",
+        "flag": "underground_empire_built",
         "value": true
       }
     }

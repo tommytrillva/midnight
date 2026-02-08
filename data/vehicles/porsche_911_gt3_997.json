@@ -1,0 +1,40 @@
+{
+  "vehicle_id": "porsche_911_gt3_997",
+  "display_name": "2010 Porsche 911 GT3 (997)",
+  "manufacturer": "Porsche",
+  "year": 2010,
+  "body_style": "coupe",
+  "category": "Euro/Pro",
+  "culture": "euro",
+  "tier": 4,
+  "rarity": "rare",
+  "description": "The track weapon. The 997 GT3 took the Mezger formula and refined every single variable. More displacement, more power, sharper aero, and a chassis so balanced it makes you believe you're a better driver than you actually are. The last analog GT3 before electronics took over.",
+  "lore": "Porsche engineers called the 997 GT3 the most complete car they'd ever built. The 3.8-liter Mezger flat-six makes 435 horsepower with no turbochargers, no superchargers, and no apologies. It revs to 8,500 RPM with a flat-six howl that echoes off canyon walls. This is what driving was supposed to feel like.",
+
+  "base_stats": {
+    "top_speed": 0.75,
+    "acceleration": 0.73,
+    "handling": 0.85,
+    "braking": 0.83,
+    "nitro_capacity": 0.40,
+    "weight": 1406.0
+  },
+
+  "engine": {
+    "horsepower": 435.0,
+    "torque": 317.0,
+    "displacement": "3.8L",
+    "configuration": "Flat-6",
+    "aspiration": "naturally_aspirated"
+  },
+
+  "drivetrain": "rwd",
+  "price": 180000,
+
+  "cosmetics": {
+    "default_color": "#FFFFFF",
+    "available_colors": ["#FFFFFF", "#000000", "#C0C0C0", "#4169E1", "#FF4500", "#2F4F4F"]
+  },
+
+  "special_traits": ["naturally_aspirated", "flat_six", "track_weapon"]
+}

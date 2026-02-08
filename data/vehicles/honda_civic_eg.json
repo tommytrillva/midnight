@@ -1,0 +1,52 @@
+{
+  "vehicle_id": "honda_civic_eg",
+  "display_name": "1995 Honda Civic EG",
+  "manufacturer": "Honda",
+  "year": 1995,
+  "body_style": "hatchback",
+  "category": "JDM/Tuner",
+  "culture": "jdm",
+  "tier": 2,
+  "rarity": "common",
+  "description": "The EG Civic is the weapon of choice for anyone who believes horsepower-per-dollar is the only metric that matters. Featherweight, aerodynamic for a hatchback, and ready to accept any Honda motor ever made. The D16 is just the opening act.",
+  "lore": "K-swap ready, lightweight warrior. This EG hatch has been repainted at least twice and still doesn't match. But the shell is rust-free, the subframes are solid, and someone already did a five-lug conversion. The foundation is set.",
+
+  "base_stats": {
+    "top_speed": 48.0,
+    "acceleration": 42.0,
+    "handling": 55.0,
+    "braking": 38.0,
+    "nitro_capacity": 32.0,
+    "weight_kg": 953.0
+  },
+
+  "engine": {
+    "code": "D16Z6",
+    "horsepower": 125.0,
+    "torque_lbft": 106.0,
+    "displacement_cc": 1590,
+    "configuration": "I4",
+    "aspiration": "naturally_aspirated",
+    "valvetrain": "SOHC VTEC",
+    "redline_rpm": 7000
+  },
+
+  "drivetrain": "fwd",
+  "price": 16000,
+  "class": "C",
+
+  "cosmetics": {
+    "available_colors": ["captiva_blue", "frost_white", "samba_green", "milano_red"],
+    "body_kits": ["stock", "sir_lip_kit", "voltex", "spoon_sports"],
+    "spoiler_options": ["none", "sir_factory", "spoon_carbon", "voltex_gt"],
+    "wheel_options": ["stock_14", "mugen_gp_15", "enkei_rpf1_15", "volk_te37_15"]
+  },
+
+  "special_traits": ["vtec", "lightweight", "k_swap_ready"],
+
+  "mod_potential": {
+    "engine_swaps": ["b16a", "b18c_type_r", "k20a_type_r", "k24_turbo"],
+    "max_hp_potential": 600,
+    "upgrade_ceiling": "A"
+  }
+}

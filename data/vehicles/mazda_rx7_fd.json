@@ -1,0 +1,33 @@
+{
+  "vehicle_id": "mazda_rx7_fd",
+  "display_name": "1993 Mazda RX-7 FD",
+  "manufacturer": "Mazda",
+  "year": 1993,
+  "description": "Sequential twin-turbo rotary power in a body that looks like it was sculpted by wind. The FD RX-7 is Mazda's masterpiece — a front-midship layout with near-perfect 50:50 weight distribution and one of the most exotic engines ever fitted to a production sports car.",
+  "base_stats": {
+    "top_speed": 0.64,
+    "acceleration": 0.63,
+    "handling": 0.70,
+    "braking": 0.62,
+    "nitro_capacity": 0.50,
+    "weight_lbs": 2800
+  },
+  "engine": {
+    "horsepower": 255.0,
+    "torque_lbft": 217.0,
+    "displacement_cc": 1308,
+    "configuration": "Rotary",
+    "aspiration": "sequential_twin_turbo"
+  },
+  "drivetrain": "rwd",
+  "tier": 3,
+  "price": 70000,
+  "rarity": "rare",
+  "cosmetics": {
+    "default_color": "#FFD700",
+    "available_colors": ["#FFD700", "#000000", "#FFFFFF", "#FF0000", "#C0C0C0", "#191970"]
+  },
+  "special_traits": ["rotary", "sequential_turbo", "balanced"],
+  "lore": "The 13B-REW screams like nothing else on four wheels. Rotary owners will tell you the apex seals are a myth, the fuel economy is a feature, and the sound at 9000 RPM is worth every rebuild. They're not wrong about the sound.",
+  "category": "JDM"
+}

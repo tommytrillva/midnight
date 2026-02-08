@@ -1,0 +1,233 @@
+{
+  "id": "nikkos_breaking_point",
+  "context": "Act 3 Chapter 3.2 — Nikko in deep trouble. Debts caught up. Being forced to throw races. Choice to intervene.",
+  "lines": [
+    {
+      "type": "narration",
+      "text": "2:43 AM. Your phone. Nikko's name on the screen. This is the third time he's called tonight."
+    },
+    {
+      "type": "narration",
+      "text": "You answer."
+    },
+    {
+      "type": "narration",
+      "text": "The sound on the line is wrong. Wind. An engine. The high-pitched wail of a car being driven far too fast on a road that was not designed for speed. And underneath it all, breathing — fast, ragged, the breathing of someone who has stopped caring about what happens next."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_desperate",
+      "text": "I can't do it anymore."
+    },
+    {
+      "type": "narration",
+      "text": "His voice is flat. Empty. The anger is gone. The bravado is gone. What's left is just a voice and a car and a road and the terrible momentum of a person who has run out of reasons to brake."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_desperate",
+      "text": "They made me throw three races. Three. And it wasn't enough. It's never enough. The debt grows because the interest grows because the people who own me make sure it grows."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_desperate",
+      "text": "I'm on the Coastal. The road where the last king died. I'm driving it and I'm not slowing down."
+    },
+    {
+      "type": "narration",
+      "text": "The Coastal. Cliffs on one side. Ocean on the other. The road that killed a driver three years ago because the margin between fast and dead is measured in inches."
+    },
+    {
+      "type": "choice",
+      "choices": [
+        {
+          "text": "I'm coming. Stay on the phone. Keep talking to me.",
+          "choice_id": "nikko_bp_rush",
+          "relationship_changes": {"nikko": 25},
+          "moral_shift": 15,
+          "set_flags": {"rushing_to_nikko": true},
+          "jump_to": "racing_to_nikko"
+        },
+        {
+          "text": "Nikko, slow down. Pull over. We can fix this.",
+          "choice_id": "nikko_bp_calm",
+          "relationship_changes": {"nikko": 15},
+          "moral_shift": 10,
+          "jump_to": "nikko_not_stopping"
+        },
+        {
+          "text": "The debt is just money. Your life is worth more than money.",
+          "choice_id": "nikko_bp_value",
+          "relationship_changes": {"nikko": 20},
+          "moral_shift": 15,
+          "jump_to": "nikko_laughs"
+        }
+      ]
+    },
+    {
+      "label": "racing_to_nikko",
+      "type": "narration",
+      "text": "You are already moving. Keys. Car. Ignition. The road to the Coastal is twenty minutes. You drive it in twelve."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_desperate",
+      "text": "Why are you coming? I never did anything for you. I was your rival. I was an obstacle. I was the person who crashed and you stopped for when you should have kept racing."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Driver",
+      "portrait": "",
+      "text": "And I'd stop again. That's the point.",
+      "conditions": {"stopped_for_nikko": true}
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Driver",
+      "portrait": "",
+      "text": "Because that's what you do. You don't leave someone on the road."
+    },
+    {
+      "type": "narration",
+      "text": "You hit the Coastal road. Dark. Narrow. The ocean roars below. Ahead, taillight — a single point of red, moving fast, tracing the cliff edge.",
+      "jump_to": "the_pursuit"
+    },
+    {
+      "label": "nikko_not_stopping",
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_desperate",
+      "text": "Fix this? How? You going to give me half a million dollars? You going to make the people I owe disappear? You going to turn back time and stop me from being stupid?"
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_desperate",
+      "text": "There's nothing to fix. There's just the road and the cliff and the question of whether I turn the wheel or don't."
+    },
+    {
+      "type": "narration",
+      "text": "You are already in the car. Already driving.",
+      "jump_to": "the_pursuit"
+    },
+    {
+      "label": "nikko_laughs",
+      "type": "narration",
+      "text": "Nikko laughs. It is the worst sound you have ever heard — not because it's cruel but because it's empty. A laugh that used to have joy in it, hollowed out and echoing."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_desperate",
+      "text": "My life. What's my life? Throwing races for people who own me. Living in a car I can't afford. Pretending I'm still a driver when I'm just a puppet."
+    },
+    {
+      "type": "narration",
+      "text": "You grab your keys. You are already moving.",
+      "jump_to": "the_pursuit"
+    },
+    {
+      "label": "the_pursuit",
+      "type": "narration",
+      "text": "The Coastal at night. The road is a ribbon of asphalt clinging to the cliff face. Below, the ocean is black and endless. Above, the stars are cold and indifferent."
+    },
+    {
+      "type": "narration",
+      "text": "Nikko's car is ahead. You can see him in the corners — cutting close to the edge, too close, the kind of driving that is not racing but raging."
+    },
+    {
+      "type": "narration",
+      "text": "You push. You have to catch him before the cliffside section — the stretch where the road narrows and the drop is two hundred feet of nothing."
+    },
+    {
+      "type": "narration",
+      "text": "Corner after corner. You are gaining. Not because you are faster — because he is losing control. His car is drifting wider on each turn, the tires screaming their last warnings."
+    },
+    {
+      "type": "narration",
+      "text": "You pull alongside him on the straight before the cliff section. Window to window. You can see his face — illuminated by dashboard lights, streaked with something that might be tears or might be sweat."
+    },
+    {
+      "type": "narration",
+      "text": "You don't honk. You don't flash your lights. You just drive beside him. Matching his speed. Being there."
+    },
+    {
+      "type": "narration",
+      "text": "The cliff section approaches. The road narrows. There is only room for one car."
+    },
+    {
+      "type": "narration",
+      "text": "Nikko looks at you. You look at Nikko. The moment stretches like taffy — sweet and terrible and endless."
+    },
+    {
+      "type": "narration",
+      "text": "He brakes."
+    },
+    {
+      "type": "narration",
+      "text": "His car slows. Stops. You stop behind him. The engines idle. The ocean crashes below. The night is enormous and dark and alive."
+    },
+    {
+      "type": "narration",
+      "text": "You get out. Walk to his car. Open his door. He is gripping the steering wheel so hard his knuckles are white."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_broken",
+      "text": "I wasn't going to — I don't think I was going to—"
+    },
+    {
+      "type": "narration",
+      "text": "He can't finish the sentence. You don't make him."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Driver",
+      "portrait": "",
+      "text": "Come on. We're going to figure this out. Not tonight. But we're going to figure it out."
+    },
+    {
+      "type": "narration",
+      "text": "You help him out of the car. He stands on the cliff road, shaking, the wind pulling at his jacket. For a long time, neither of you speaks."
+    },
+    {
+      "type": "narration",
+      "text": "Then Nikko says the thing that changes everything."
+    },
+    {
+      "type": "dialogue",
+      "speaker": "Nikko",
+      "portrait": "nikko_broken",
+      "text": "The people I owe — they work for Zero. All of them. The gambling, the debt, the race fixing — it's all one system. Zero's system."
+    },
+    {
+      "type": "narration",
+      "text": "The ocean roars. The stars watch. And the name that has been haunting your life since the underground takes on a new shape — not mysterious, not romantic, not philosophical."
+    },
+    {
+      "type": "narration",
+      "text": "Monstrous."
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "nikko_saved",
+        "value": true
+      }
+    },
+    {
+      "type": "action",
+      "action": {
+        "type": "set_flag",
+        "flag": "nikko_debt_is_zero",
+        "value": true
+      }
+    }
+  ]
+}

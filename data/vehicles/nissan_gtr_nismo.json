@@ -1,0 +1,41 @@
+{
+  "vehicle_id": "nissan_gtr_nismo",
+  "display_name": "2020 Nissan GT-R Nismo",
+  "manufacturer": "Nissan",
+  "year": 2020,
+  "body_style": "coupe",
+  "category": "JDM/Pro",
+  "culture": "jdm",
+  "tier": 5,
+  "rarity": "rare",
+  "description": "The ultimate R35. Nismo took Nissan's already legendary GT-R and turned every dial to eleven. Hand-assembled engine, carbon fiber body panels, competition suspension, and the most advanced all-wheel-drive system ever fitted to a Japanese car.",
+  "lore": "The VR38DETT is hand-assembled by a single technician — a 'Takumi' master craftsman whose name is stamped on a plaque on the engine. The Nismo variant gets exclusive turbos from the GT3 racing program, a retuned ATTESA all-wheel-drive system, and enough carbon fiber to build a small airplane. It's the final evolution of Godzilla.",
+
+  "base_stats": {
+    "top_speed": 0.84,
+    "acceleration": 0.84,
+    "handling": 0.80,
+    "braking": 0.82,
+    "nitro_capacity": 0.42,
+    "weight": 1724.0
+  },
+
+  "engine": {
+    "code": "VR38DETT",
+    "horsepower": 600.0,
+    "torque": 481.0,
+    "displacement": "3.8L",
+    "configuration": "V6",
+    "aspiration": "twin_turbo"
+  },
+
+  "drivetrain": "awd",
+  "price": 400000,
+
+  "cosmetics": {
+    "default_color": "#FFFFFF",
+    "available_colors": ["#FFFFFF", "#FF0000", "#000000", "#C0C0C0", "#1C1C1C", "#FFD700"]
+  },
+
+  "special_traits": ["twin_turbo", "awd", "nismo", "tech_monster"]
+}

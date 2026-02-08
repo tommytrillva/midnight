@@ -1,0 +1,52 @@
+{
+  "vehicle_id": "bmw_e36_m3",
+  "display_name": "1995 BMW E36 M3",
+  "manufacturer": "BMW",
+  "year": 1995,
+  "body_style": "coupe",
+  "category": "Euro",
+  "culture": "euro",
+  "tier": 2,
+  "rarity": "uncommon",
+  "description": "The E36 M3 is the benchmark by which all sport sedans are measured. BMW's S50 inline-6 is silky smooth, the chassis balance is near-perfect, and the car is as comfortable on a canyon road as it is on a race track. It does everything well and nothing poorly.",
+  "lore": "The benchmark. When magazine writers run out of ways to describe a car's handling, they say 'it reminds me of the E36 M3.' The cooling system is a ticking time bomb and the subframe mounts are cracking, but the way the straight-six revs to 7,000 makes you forget all of that.",
+
+  "base_stats": {
+    "top_speed": 70.0,
+    "acceleration": 58.0,
+    "handling": 68.0,
+    "braking": 55.0,
+    "nitro_capacity": 38.0,
+    "weight_kg": 1406.0
+  },
+
+  "engine": {
+    "code": "S50B30",
+    "horsepower": 240.0,
+    "torque_lbft": 225.0,
+    "displacement_cc": 2990,
+    "configuration": "I6",
+    "aspiration": "naturally_aspirated",
+    "valvetrain": "DOHC 24V",
+    "redline_rpm": 7000
+  },
+
+  "drivetrain": "rwd",
+  "price": 25000,
+  "class": "B",
+
+  "cosmetics": {
+    "available_colors": ["alpine_white", "cosmos_black", "estoril_blue", "dakar_yellow"],
+    "body_kits": ["stock_m3", "ltw_gt", "pandem_widebody", "rieger_gt"],
+    "spoiler_options": ["none", "factory_m3_lip", "ltw_gt_wing", "csl_trunk"],
+    "wheel_options": ["stock_m_contour_17", "bbs_lm_17", "apex_arc_8_17", "rays_te37_17"]
+  },
+
+  "special_traits": ["straight_six", "balanced", "drift_capable"],
+
+  "mod_potential": {
+    "engine_swaps": ["s50b32_euro", "s54b32", "2jz-gte"],
+    "max_hp_potential": 600,
+    "upgrade_ceiling": "A"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "vehicle_id": "lotus_exige_s",
+  "display_name": "2013 Lotus Exige S",
+  "manufacturer": "Lotus",
+  "year": 2013,
+  "body_style": "coupe",
+  "category": "Euro/Pro",
+  "culture": "euro",
+  "tier": 4,
+  "rarity": "uncommon",
+  "description": "Supercharged lightweight. Colin Chapman's philosophy of 'simplify, then add lightness' taken to its logical extreme. A supercharged Toyota V6 in a car that weighs less than a Miata. The Exige S doesn't need 600 horsepower because it doesn't carry 600 horsepower worth of weight.",
+  "lore": "Lotus borrowed a V6 from Toyota, bolted on a supercharger, and dropped it into a car made primarily of aluminum and fiberglass that tips the scales at 2,400 pounds. The result is a power-to-weight ratio that embarrasses cars with twice the horsepower. There's no power steering, no sound deadening, and the cabin is roughly the size of a phone booth. None of that matters when you're carrying more lateral G through a corner than a GT3 car.",
+
+  "base_stats": {
+    "top_speed": 0.70,
+    "acceleration": 0.72,
+    "handling": 0.88,
+    "braking": 0.78,
+    "nitro_capacity": 0.36,
+    "weight": 1089.0
+  },
+
+  "engine": {
+    "horsepower": 345.0,
+    "torque": 295.0,
+    "displacement": "3.5L",
+    "configuration": "V6",
+    "aspiration": "supercharged"
+  },
+
+  "drivetrain": "mr",
+  "price": 120000,
+
+  "cosmetics": {
+    "default_color": "#FFD700",
+    "available_colors": ["#FFD700", "#000000", "#FFFFFF", "#FF2400", "#32CD32", "#FF4500"]
+  },
+
+  "special_traits": ["supercharged", "featherweight", "mid_engine"]
+}

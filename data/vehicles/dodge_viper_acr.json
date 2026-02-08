@@ -1,0 +1,40 @@
+{
+  "vehicle_id": "dodge_viper_acr",
+  "display_name": "2010 Dodge Viper ACR",
+  "manufacturer": "Dodge",
+  "year": 2010,
+  "body_style": "coupe",
+  "category": "Muscle/Pro",
+  "culture": "american",
+  "tier": 4,
+  "rarity": "rare",
+  "description": "Aero monster. The ACR took the already unhinged Viper and gave it a purpose beyond terrifying its owner. A massive wing, aggressive splitter, and race-spec suspension transformed America's most dangerous sports car into a legitimate track weapon that held lap records at circuits across the country.",
+  "lore": "The original Viper was a car that actively tried to kill you. The ACR was a car that let you survive long enough to set a lap record. The 8.4-liter V10 makes 600 horsepower with no electronic assists — no traction control, no stability management, just you and ten cylinders of American fury. It set track records at Laguna Seca, Virginia International Raceway, and a dozen other circuits. It was proof that sometimes the brute force approach works.",
+
+  "base_stats": {
+    "top_speed": 0.80,
+    "acceleration": 0.78,
+    "handling": 0.82,
+    "braking": 0.80,
+    "nitro_capacity": 0.44,
+    "weight": 1497.0
+  },
+
+  "engine": {
+    "horsepower": 600.0,
+    "torque": 560.0,
+    "displacement": "8.4L",
+    "configuration": "V10",
+    "aspiration": "naturally_aspirated"
+  },
+
+  "drivetrain": "rwd",
+  "price": 180000,
+
+  "cosmetics": {
+    "default_color": "#FFFFFF",
+    "available_colors": ["#FFFFFF", "#000000", "#FF0000", "#FFD700", "#4169E1", "#C0C0C0"]
+  },
+
+  "special_traits": ["v10", "aero_monster", "track_record"]
+}

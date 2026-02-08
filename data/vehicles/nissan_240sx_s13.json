@@ -1,0 +1,52 @@
+{
+  "vehicle_id": "nissan_240sx_s13",
+  "display_name": "1991 Nissan 240SX (S13)",
+  "manufacturer": "Nissan",
+  "year": 1991,
+  "body_style": "coupe",
+  "category": "JDM/Drift",
+  "culture": "jdm",
+  "tier": 1,
+  "rarity": "common",
+  "description": "The S13 is the gateway drug of drift culture. A balanced rear-wheel-drive chassis with a motor that's begging to be swapped. Rust spots are character. Oil leaks are personality.",
+  "lore": "Drift tax not applied — rust included. Found in a field behind a vape shop, this S13 still has the bones of a champion underneath three different shades of primer.",
+
+  "base_stats": {
+    "top_speed": 55.0,
+    "acceleration": 42.0,
+    "handling": 50.0,
+    "braking": 40.0,
+    "nitro_capacity": 35.0,
+    "weight_kg": 1225.0
+  },
+
+  "engine": {
+    "code": "KA24DE",
+    "horsepower": 155.0,
+    "torque_lbft": 160.0,
+    "displacement_cc": 2389,
+    "configuration": "I4",
+    "aspiration": "naturally_aspirated",
+    "valvetrain": "DOHC",
+    "redline_rpm": 6500
+  },
+
+  "drivetrain": "rwd",
+  "price": 8000,
+  "class": "D",
+
+  "cosmetics": {
+    "available_colors": ["super_black", "crystal_white", "teal", "cherry_red"],
+    "body_kits": ["stock", "kouki_front", "origin_lab_stream", "bn_sports"],
+    "spoiler_options": ["none", "factory_hatch", "rocket_bunny_ducktail"],
+    "wheel_options": ["stock_15", "work_meister_s1", "ssr_mk3", "watanabe_rs"]
+  },
+
+  "special_traits": ["drift_ready", "sr20_swappable"],
+
+  "mod_potential": {
+    "engine_swaps": ["sr20det", "rb25det", "ls1"],
+    "max_hp_potential": 600,
+    "upgrade_ceiling": "A"
+  }
+}

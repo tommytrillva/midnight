@@ -1,0 +1,40 @@
+{
+  "vehicle_id": "mclaren_720s",
+  "display_name": "2018 McLaren 720S",
+  "manufacturer": "McLaren",
+  "year": 2018,
+  "body_style": "coupe",
+  "category": "Hyper",
+  "culture": "euro",
+  "tier": 6,
+  "rarity": "epic",
+  "description": "The benchmark supercar. Every manufacturer measures their latest creation against the 720S, and most come up short. 710 horsepower, a carbon fiber monocoque, and a chassis that communicates with a clarity that borders on telepathy.",
+  "lore": "When McLaren launched the 720S, every automotive journalist said the same thing: this changes everything. The twin-turbo 4.0-liter V8 produces 710 horsepower with response times that feel naturally aspirated. The carbon fiber Monocage II chassis weighs almost nothing. The hydraulic suspension provides both devastating track performance and genuine daily-driver comfort. It made cars costing twice as much feel overpriced.",
+
+  "base_stats": {
+    "top_speed": 0.91,
+    "acceleration": 0.90,
+    "handling": 0.88,
+    "braking": 0.88,
+    "nitro_capacity": 0.42,
+    "weight": 1270.0
+  },
+
+  "engine": {
+    "horsepower": 710.0,
+    "torque": 568.0,
+    "displacement": "4.0L",
+    "configuration": "V8",
+    "aspiration": "twin_turbo"
+  },
+
+  "drivetrain": "mr",
+  "price": 1000000,
+
+  "cosmetics": {
+    "default_color": "#FF8C00",
+    "available_colors": ["#FF8C00", "#C0C0C0", "#000000", "#FFFFFF", "#4169E1", "#FFD700"]
+  },
+
+  "special_traits": ["twin_turbo", "carbon_tub", "benchmark"]
+}

@@ -327,10 +327,10 @@ func _transition_to_game() -> void:
 
 	# Give the player their starter vehicle if they don't have one
 	if GameManager.garage.get_vehicle_count() == 0:
-		var starter := VehicleFactory.create_from_json("starter_beater")
+		var starter := VehicleFactory.create_from_json("honda_crx_si")
 		if starter:
 			GameManager.garage.add_vehicle(starter, "story")
-			GameManager.player_data.current_vehicle_id = "starter_beater"
+			GameManager.player_data.current_vehicle_id = "honda_crx_si"
 
 	# Load the free roam world
 	var free_roam_scene := load("res://scenes/world/free_roam.tscn")

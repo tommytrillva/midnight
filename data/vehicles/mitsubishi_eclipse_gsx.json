@@ -1,0 +1,52 @@
+{
+  "vehicle_id": "mitsubishi_eclipse_gsx",
+  "display_name": "1995 Mitsubishi Eclipse GSX",
+  "manufacturer": "Mitsubishi",
+  "year": 1995,
+  "body_style": "coupe",
+  "category": "JDM/Tuner",
+  "culture": "jdm",
+  "tier": 2,
+  "rarity": "uncommon",
+  "description": "The Eclipse GSX is the crown jewel of the DSM platform. A turbocharged 4G63 sending power through all four wheels, wrapped in 90s styling that still turns heads. When the boost builds, all four tires hook up and the horizon gets closer in a hurry.",
+  "lore": "AWD turbo sleeper. The DSM community calls these cars '10-second platforms' and they're not joking. The 4G63 eats boost for breakfast. The transfer case whines, the turbo whistles, and the crankwalk is a problem for future you.",
+
+  "base_stats": {
+    "top_speed": 62.0,
+    "acceleration": 58.0,
+    "handling": 52.0,
+    "braking": 45.0,
+    "nitro_capacity": 40.0,
+    "weight_kg": 1406.0
+  },
+
+  "engine": {
+    "code": "4G63T",
+    "horsepower": 210.0,
+    "torque_lbft": 214.0,
+    "displacement_cc": 1997,
+    "configuration": "I4",
+    "aspiration": "turbo",
+    "valvetrain": "DOHC 16V",
+    "redline_rpm": 7000
+  },
+
+  "drivetrain": "awd",
+  "price": 18000,
+  "class": "C",
+
+  "cosmetics": {
+    "available_colors": ["kalapana_black", "northstar_white", "cayenne_red", "jamaican_blue"],
+    "body_kits": ["stock", "battle_aero", "veilside", "apr_widebody"],
+    "spoiler_options": ["none", "factory_gsx", "apr_gtc200", "battle_aero_chassis_mount"],
+    "wheel_options": ["stock_16", "enkei_rpf1_17", "rays_te37_17", "weld_s71_15_drag"]
+  },
+
+  "special_traits": ["awd", "turbo", "sleeper"],
+
+  "mod_potential": {
+    "engine_swaps": ["4g63_built_stroker", "4g63_2.3_stroker"],
+    "max_hp_potential": 800,
+    "upgrade_ceiling": "S"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "vehicle_id": "nissan_350z",
+  "display_name": "2003 Nissan 350Z",
+  "manufacturer": "Nissan",
+  "year": 2003,
+  "description": "VQ power, drift potential, and the spiritual successor to the Z-car legacy. The 350Z brought Nissan's sports car lineage back from the dead with a 287 horsepower V6, rear-wheel drive, and a chassis that's equally happy on a circuit or sideways through a corner. This is Nikko's platform of choice — and he chose wisely.",
+  "base_stats": {
+    "top_speed": 0.62,
+    "acceleration": 0.60,
+    "handling": 0.64,
+    "braking": 0.60,
+    "nitro_capacity": 0.46,
+    "weight_lbs": 3200
+  },
+  "engine": {
+    "horsepower": 287.0,
+    "torque_lbft": 274.0,
+    "displacement_cc": 3498,
+    "configuration": "V6",
+    "aspiration": "naturally_aspirated"
+  },
+  "drivetrain": "rwd",
+  "tier": 3,
+  "price": 40000,
+  "rarity": "uncommon",
+  "cosmetics": {
+    "default_color": "#4169E1",
+    "available_colors": ["#4169E1", "#FF4500", "#000000", "#C0C0C0", "#FFFFFF", "#FFD700"]
+  },
+  "special_traits": ["vq_power", "drift_capable"],
+  "lore": "Nikko's car. He picked the 350Z not because it was the fastest or the most exotic, but because it was honest. A naturally aspirated V6 with a predictable chassis — no turbo lag to mask, no electronic wizardry to lean on. Just driver and machine, communicating clearly. That's Nikko's whole philosophy in automotive form.",
+  "category": "JDM"
+}

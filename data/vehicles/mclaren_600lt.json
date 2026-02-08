@@ -1,0 +1,40 @@
+{
+  "vehicle_id": "mclaren_600lt",
+  "display_name": "2019 McLaren 600LT",
+  "manufacturer": "McLaren",
+  "year": 2019,
+  "body_style": "coupe",
+  "category": "Euro/Pro",
+  "culture": "euro",
+  "tier": 5,
+  "rarity": "rare",
+  "description": "Longtail track focus. McLaren took the 570S, extended the body, cranked the power, stripped the weight, and pointed the exhaust straight up through the engine cover. The 600LT is what happens when engineers are told to make something faster with no regard for comfort.",
+  "lore": "The 'LT' stands for Longtail, a designation McLaren reserves for its most track-focused variants. The 600LT gets top-exit exhausts that spit flames, a longer rear diffuser, fixed rear wing, and 30 extra horsepower squeezed from the twin-turbo V8. It weighs less than the 570S despite being longer. That's not engineering — that's obsession.",
+
+  "base_stats": {
+    "top_speed": 0.83,
+    "acceleration": 0.82,
+    "handling": 0.83,
+    "braking": 0.82,
+    "nitro_capacity": 0.36,
+    "weight": 1225.0
+  },
+
+  "engine": {
+    "horsepower": 592.0,
+    "torque": 457.0,
+    "displacement": "3.8L",
+    "configuration": "V8",
+    "aspiration": "twin_turbo"
+  },
+
+  "drivetrain": "mr",
+  "price": 380000,
+
+  "cosmetics": {
+    "default_color": "#00FF7F",
+    "available_colors": ["#00FF7F", "#FF8C00", "#FFFFFF", "#000000", "#C0C0C0", "#4169E1"]
+  },
+
+  "special_traits": ["twin_turbo", "longtail", "track_focused"]
+}

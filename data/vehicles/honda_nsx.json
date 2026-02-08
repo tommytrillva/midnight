@@ -1,0 +1,33 @@
+{
+  "vehicle_id": "honda_nsx",
+  "display_name": "1991 Honda NSX",
+  "manufacturer": "Honda",
+  "year": 1991,
+  "description": "Senna helped develop it. Gordon Murray daily drove one. The NSX proved that a mid-engine supercar didn't need to be temperamental, unreliable, or terrifying to drive. Honda applied F1 engineering to a car you could take to the grocery store — and it embarrassed Ferraris on the way there.",
+  "base_stats": {
+    "top_speed": 0.66,
+    "acceleration": 0.62,
+    "handling": 0.72,
+    "braking": 0.66,
+    "nitro_capacity": 0.46,
+    "weight_lbs": 3000
+  },
+  "engine": {
+    "horsepower": 270.0,
+    "torque_lbft": 210.0,
+    "displacement_cc": 2977,
+    "configuration": "V6",
+    "aspiration": "naturally_aspirated"
+  },
+  "drivetrain": "mr",
+  "tier": 3,
+  "price": 90000,
+  "rarity": "rare",
+  "cosmetics": {
+    "default_color": "#FF0000",
+    "available_colors": ["#FF0000", "#000000", "#FFFFFF", "#C0C0C0", "#FFD700", "#191970"]
+  },
+  "special_traits": ["mid_engine", "balanced", "vtec", "legend"],
+  "lore": "Ayrton Senna tested the prototype and told Honda the chassis was too flexible. They rebuilt it with an all-aluminum monocoque. In Nova Pacifica, an NSX in good condition is treated with the same reverence as a religious artifact — because that's what it is.",
+  "category": "JDM"
+}

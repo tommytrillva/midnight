@@ -1,0 +1,40 @@
+{
+  "vehicle_id": "lambo_gallardo_sl",
+  "display_name": "2008 Lamborghini Gallardo Superleggera",
+  "manufacturer": "Lamborghini",
+  "year": 2008,
+  "body_style": "coupe",
+  "category": "Euro/Exotic",
+  "culture": "euro",
+  "tier": 5,
+  "rarity": "rare",
+  "description": "The lightweight bull. Lamborghini stripped 220 pounds from the standard Gallardo, added carbon fiber everything, and let the 5.0-liter V10 breathe a little harder. The result is a rawer, more aggressive machine that feels like it's actively trying to escape from under you.",
+  "lore": "Superleggera means 'super light' in Italian, and Lamborghini took it seriously. Carbon fiber body panels, lightweight wheels, stripped interior, and a diet that brought the V10 screamer down to 2,900 pounds. It's the Gallardo that hardcore drivers begged for — less luxury, more lunacy.",
+
+  "base_stats": {
+    "top_speed": 0.80,
+    "acceleration": 0.79,
+    "handling": 0.80,
+    "braking": 0.78,
+    "nitro_capacity": 0.38,
+    "weight": 1315.0
+  },
+
+  "engine": {
+    "horsepower": 523.0,
+    "torque": 376.0,
+    "displacement": "5.0L",
+    "configuration": "V10",
+    "aspiration": "naturally_aspirated"
+  },
+
+  "drivetrain": "awd",
+  "price": 380000,
+
+  "cosmetics": {
+    "default_color": "#FF4500",
+    "available_colors": ["#FF4500", "#000000", "#FFD700", "#FFFFFF", "#1C1C1C", "#32CD32"]
+  },
+
+  "special_traits": ["v10", "lightweight", "awd"]
+}

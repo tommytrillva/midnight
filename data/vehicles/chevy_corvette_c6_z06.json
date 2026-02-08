@@ -1,0 +1,41 @@
+{
+  "vehicle_id": "chevy_corvette_c6_z06",
+  "display_name": "2008 Chevrolet Corvette C6 Z06",
+  "manufacturer": "Chevrolet",
+  "year": 2008,
+  "body_style": "coupe",
+  "category": "Muscle/Pro",
+  "culture": "american",
+  "tier": 4,
+  "rarity": "uncommon",
+  "description": "LS7 naturally aspirated. Seven liters of displacement, no forced induction, and 505 horsepower that arrives with the subtlety of a freight train. The C6 Z06 proved that cubic inches and aluminum construction could beat European exotics at their own game — on the track, not just the drag strip.",
+  "lore": "The LS7 is the largest displacement small-block V8 GM ever built for a production car. Hand-assembled in a clean room, with titanium connecting rods and CNC-ported heads, it makes 505 horsepower without a single turbocharger or supercharger. The C6 Z06's aluminum frame weighs less than an E46 M3. Chevrolet engineers didn't just want to compete with the Europeans — they wanted to humiliate them.",
+
+  "base_stats": {
+    "top_speed": 0.78,
+    "acceleration": 0.76,
+    "handling": 0.75,
+    "braking": 0.74,
+    "nitro_capacity": 0.42,
+    "weight": 1406.0
+  },
+
+  "engine": {
+    "code": "LS7",
+    "horsepower": 505.0,
+    "torque": 470.0,
+    "displacement": "7.0L",
+    "configuration": "V8",
+    "aspiration": "naturally_aspirated"
+  },
+
+  "drivetrain": "rwd",
+  "price": 110000,
+
+  "cosmetics": {
+    "default_color": "#FFD700",
+    "available_colors": ["#FFD700", "#FF0000", "#000000", "#FFFFFF", "#C0C0C0", "#4169E1"]
+  },
+
+  "special_traits": ["ls_power", "naturally_aspirated", "track_ready"]
+}

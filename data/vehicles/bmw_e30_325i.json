@@ -1,0 +1,52 @@
+{
+  "vehicle_id": "bmw_e30_325i",
+  "display_name": "1989 BMW E30 325i",
+  "manufacturer": "BMW",
+  "year": 1989,
+  "body_style": "coupe",
+  "category": "Euro",
+  "culture": "euro",
+  "tier": 1,
+  "rarity": "uncommon",
+  "description": "The E30 is the chassis that launched a thousand drift builds. A silky inline-6, near-perfect weight distribution, and a rear end that steps out with just the right amount of throttle. It's the thinking driver's beater.",
+  "lore": "The chassis that started it all. Bought from an engineering student who swore he'd restore it someday. Pixel-perfect dashboard cracks, a straight-six that hums like a sewing machine, and suspension bushings older than most drivers on the street.",
+
+  "base_stats": {
+    "top_speed": 55.0,
+    "acceleration": 45.0,
+    "handling": 55.0,
+    "braking": 45.0,
+    "nitro_capacity": 35.0,
+    "weight_kg": 1270.0
+  },
+
+  "engine": {
+    "code": "M20B25",
+    "horsepower": 168.0,
+    "torque_lbft": 164.0,
+    "displacement_cc": 2494,
+    "configuration": "I6",
+    "aspiration": "naturally_aspirated",
+    "valvetrain": "SOHC 12V",
+    "redline_rpm": 6500
+  },
+
+  "drivetrain": "rwd",
+  "price": 10000,
+  "class": "C",
+
+  "cosmetics": {
+    "available_colors": ["alpine_white", "diamond_schwarz", "bronzit_beige", "zinnoberrot_red"],
+    "body_kits": ["stock", "mtech2", "is_lip", "e30_m3_widebody"],
+    "spoiler_options": ["none", "is_trunk_lip", "mtech_rear", "dtm_wing"],
+    "wheel_options": ["stock_bottlecap_14", "bbs_rs_15", "hartge_16", "style_5_17"]
+  },
+
+  "special_traits": ["balanced", "straight_six", "drift_capable"],
+
+  "mod_potential": {
+    "engine_swaps": ["s50b30", "m50b25_turbo", "s54b32", "ls1"],
+    "max_hp_potential": 550,
+    "upgrade_ceiling": "A"
+  }
+}

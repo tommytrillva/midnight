@@ -1,0 +1,33 @@
+{
+  "vehicle_id": "mitsubishi_evo_vi",
+  "display_name": "1999 Mitsubishi Lancer Evo VI TME",
+  "manufacturer": "Mitsubishi",
+  "year": 1999,
+  "description": "The Tommi Mäkinen Edition — named after the four-time WRC champion who proved that a sedan from a mid-tier Japanese manufacturer could embarrass purpose-built rally cars. Active yaw control, aggressive aero, and a 4G63 that responds to boost like it was born for it.",
+  "base_stats": {
+    "top_speed": 0.62,
+    "acceleration": 0.66,
+    "handling": 0.70,
+    "braking": 0.64,
+    "nitro_capacity": 0.52,
+    "weight_lbs": 2900
+  },
+  "engine": {
+    "horsepower": 280.0,
+    "torque_lbft": 262.0,
+    "displacement_cc": 1997,
+    "configuration": "I4",
+    "aspiration": "turbo"
+  },
+  "drivetrain": "awd",
+  "tier": 3,
+  "price": 60000,
+  "rarity": "rare",
+  "cosmetics": {
+    "default_color": "#FFFFFF",
+    "available_colors": ["#FFFFFF", "#FF0000", "#C0C0C0", "#000000", "#1E90FF", "#FFD700"]
+  },
+  "special_traits": ["rally_legend", "awd", "turbo"],
+  "lore": "Tommi Mäkinen didn't just win rallies in the Evo — he made them look easy. The TME edition carries that energy. In Nova Pacifica's rain-soaked mountain passes, there's nothing that puts power down more confidently than an Evo VI at full boost.",
+  "category": "JDM"
+}

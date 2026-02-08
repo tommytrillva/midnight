@@ -1,0 +1,52 @@
+{
+  "vehicle_id": "mazda_miata_na",
+  "display_name": "1990 Mazda Miata NA",
+  "manufacturer": "Mazda",
+  "year": 1990,
+  "body_style": "roadster",
+  "category": "JDM/Tuner",
+  "culture": "jdm",
+  "tier": 1,
+  "rarity": "common",
+  "description": "The answer is always Miata. A perfectly balanced roadster that teaches you everything about driving with nothing but 116 horsepower and a smile. The NA is pure, unfiltered connection between driver and road.",
+  "lore": "The answer is always Miata. Soft top has a tear patched with duct tape, the paint is sunburned, and the previous owner left a collection of gas station receipts in the glovebox. But the shifter clicks like a rifle bolt and the chassis is poetry.",
+
+  "base_stats": {
+    "top_speed": 46.0,
+    "acceleration": 38.0,
+    "handling": 58.0,
+    "braking": 40.0,
+    "nitro_capacity": 30.0,
+    "weight_kg": 960.0
+  },
+
+  "engine": {
+    "code": "B6ZE",
+    "horsepower": 116.0,
+    "torque_lbft": 100.0,
+    "displacement_cc": 1597,
+    "configuration": "I4",
+    "aspiration": "naturally_aspirated",
+    "valvetrain": "DOHC 16V",
+    "redline_rpm": 7000
+  },
+
+  "drivetrain": "rwd",
+  "price": 5000,
+  "class": "D",
+
+  "cosmetics": {
+    "available_colors": ["classic_red", "mariner_blue", "crystal_white", "british_racing_green"],
+    "body_kits": ["stock", "gv_lip_kit", "rocket_bunny", "garage_vary"],
+    "spoiler_options": ["none", "factory_lip", "duck_tail"],
+    "wheel_options": ["stock_14", "enkei_rpf1_15", "advanti_storm_s1", "konig_hypergram"]
+  },
+
+  "special_traits": ["balanced", "convertible", "lightweight"],
+
+  "mod_potential": {
+    "engine_swaps": ["bp_1.8", "k20a", "ls_v8"],
+    "max_hp_potential": 500,
+    "upgrade_ceiling": "B"
+  }
+}

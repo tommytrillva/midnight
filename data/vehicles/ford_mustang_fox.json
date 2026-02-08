@@ -1,0 +1,52 @@
+{
+  "vehicle_id": "ford_mustang_fox",
+  "display_name": "1988 Ford Mustang 5.0 LX",
+  "manufacturer": "Ford",
+  "year": 1988,
+  "body_style": "coupe",
+  "category": "Muscle",
+  "culture": "american",
+  "tier": 1,
+  "rarity": "common",
+  "description": "The Fox Body is American muscle distilled to its cheapest, most dangerous form. A 5.0 V8 in a lightweight chassis with the aerodynamics of a brick and the subtlety of a sledgehammer. Drag strip dreams on a drive-thru budget.",
+  "lore": "5.0 dreams on a budget. The paint is oxidized, the T-tops leak when it rains, and the rear end hops under hard acceleration. But that Windsor V8 makes a sound that turns heads at every stoplight.",
+
+  "base_stats": {
+    "top_speed": 60.0,
+    "acceleration": 50.0,
+    "handling": 35.0,
+    "braking": 38.0,
+    "nitro_capacity": 42.0,
+    "weight_kg": 1406.0
+  },
+
+  "engine": {
+    "code": "Windsor_302",
+    "horsepower": 225.0,
+    "torque_lbft": 300.0,
+    "displacement_cc": 4942,
+    "configuration": "V8",
+    "aspiration": "naturally_aspirated",
+    "valvetrain": "OHV 16V",
+    "redline_rpm": 5800
+  },
+
+  "drivetrain": "rwd",
+  "price": 7000,
+  "class": "C",
+
+  "cosmetics": {
+    "available_colors": ["oxford_white", "black", "bright_red", "medium_shadow_blue"],
+    "body_kits": ["stock", "saleen_body_kit", "cobra_front", "cervini_stalker"],
+    "spoiler_options": ["none", "factory_hatch", "saleen_wing", "cobra_whale_tail"],
+    "wheel_options": ["stock_15", "weld_draglite", "american_racing_torq_thrust", "pony_wheels"]
+  },
+
+  "special_traits": ["drag_potential", "v8_rumble"],
+
+  "mod_potential": {
+    "engine_swaps": ["351w", "coyote_5.0"],
+    "max_hp_potential": 700,
+    "upgrade_ceiling": "A"
+  }
+}

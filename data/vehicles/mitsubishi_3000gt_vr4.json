@@ -1,0 +1,33 @@
+{
+  "vehicle_id": "mitsubishi_3000gt_vr4",
+  "display_name": "1991 Mitsubishi 3000GT VR-4",
+  "manufacturer": "Mitsubishi",
+  "year": 1991,
+  "description": "Twin turbo V6, all-wheel drive, all-wheel steering, active aero, and active exhaust — in 1991. The 3000GT VR-4 was the most technologically advanced Japanese sports car of its era, packed with so many systems that it weighed nearly two tons. Heavy, complex, and absolutely devastating when everything works.",
+  "base_stats": {
+    "top_speed": 0.64,
+    "acceleration": 0.62,
+    "handling": 0.54,
+    "braking": 0.58,
+    "nitro_capacity": 0.48,
+    "weight_lbs": 3800
+  },
+  "engine": {
+    "horsepower": 300.0,
+    "torque_lbft": 306.0,
+    "displacement_cc": 2972,
+    "configuration": "V6",
+    "aspiration": "twin_turbo"
+  },
+  "drivetrain": "awd",
+  "tier": 3,
+  "price": 55000,
+  "rarity": "uncommon",
+  "cosmetics": {
+    "default_color": "#8B0000",
+    "available_colors": ["#8B0000", "#000000", "#FFFFFF", "#C0C0C0", "#191970", "#2F4F4F"]
+  },
+  "special_traits": ["twin_turbo", "awd", "heavy_hitter"],
+  "lore": "The VR-4 is what happens when engineers are given unlimited budgets and zero weight targets. Every system is brilliant individually. Together, they create a car that weighs as much as a small apartment but puts down power like a freight train with a grudge. Maintenance is a nightmare. Worth it.",
+  "category": "JDM"
+}
