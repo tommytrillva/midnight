@@ -198,8 +198,8 @@ func _ready() -> void:
 
 	_set_wheel_friction_now(normal_front_friction, normal_rear_friction)
 	nitro_amount = nitro_max
-	print("[Vehicle] Ready. Top speed: %d km/h | Force: %d N" % [
-		int(_top_speed_kmh), int(max_engine_force)])
+	print("[Vehicle] Ready. Top speed: %d km/h | Force: %d N | Visible: %s | Position: %s" % [
+		int(_top_speed_kmh), int(max_engine_force), visible, global_transform.origin])
 
 
 func _physics_process(delta: float) -> void:

@@ -30,6 +30,9 @@ var _screen_transition: ScreenTransition = null
 
 
 func _ready() -> void:
+	print("[FreeRoam] Starting initialization...")
+	print("[FreeRoam] Downtown node: %s, visible: %s" % [downtown, downtown.visible if downtown else "null"])
+
 	_spawn_player_vehicle()
 
 	# Initialize district manager
@@ -63,6 +66,8 @@ func _ready() -> void:
 
 	_update_hud_district_name()
 	print("[FreeRoam] %s loaded. Drive around!" % district_manager.get_current_district_name())
+	print("[FreeRoam] Scene children: %s" % get_child_count())
+	print("[FreeRoam] Vehicle visible: %s, position: %s" % [player_vehicle.visible if player_vehicle else "null", player_vehicle.global_transform.origin if player_vehicle else "null"])
 
 
 func _find_screen_transition() -> ScreenTransition:
@@ -106,16 +111,24 @@ func _spawn_player_vehicle() -> void:
 	var spawn := downtown.get_node_or_null("PlayerSpawn") as Marker3D
 	if spawn:
 		player_vehicle.global_transform = spawn.global_transform
+		print("[FreeRoam] Vehicle spawned at: %s" % spawn.global_transform.origin)
 	else:
 		player_vehicle.global_transform.origin = Vector3(0, 1, 0)
+		print("[FreeRoam] Vehicle spawned at default position: Vector3(0, 1, 0)")
 
 	add_child(player_vehicle)
+	print("[FreeRoam] Vehicle added to scene tree. Visible: %s" % player_vehicle.visible)
 
 	# Activate camera
-	var camera := player_vehicle.get_node_or_null("CameraMount/ChaseCamera") as CameraController
+	var camera := player_vehicle.get_node_or_null("CameraMount/ChaseCamera") as Camera3D
 	if camera:
-		camera.target = player_vehicle
+		if camera is CameraController:
+			camera.target = player_vehicle
 		camera.make_current()
+		print("[FreeRoam] Camera activated at position: %s" % camera.global_position)
+		print("[FreeRoam] Camera found and activated. Current: %s, Position: %s" % [camera.current, camera.global_transform.origin])
+	else:
+		print("[FreeRoam] ERROR: Camera not found at CameraMount/ChaseCamera!")
 
 
 func _setup_interactions() -> void:

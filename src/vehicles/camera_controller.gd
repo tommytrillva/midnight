@@ -22,10 +22,13 @@ var _shake_timer: float = 0.0
 func _ready() -> void:
 	EventBus.vehicle_collision.connect(_on_collision)
 	EventBus.nitro_activated.connect(_on_nitro)
+	print("[CameraController] Camera initialized. Target: %s, Current: %s" % [target, current])
 
 
 func _physics_process(delta: float) -> void:
 	if target == null:
+		if Engine.get_physics_frames() % 60 == 0:  # Print once per second
+			print("[CameraController] WARNING: Target is null!")
 		return
 
 	var vehicle := target as VehicleController
@@ -97,3 +100,5 @@ func _on_collision(_vehicle_id: int, impact_force: float) -> void:
 
 func _on_nitro(_vehicle_id: int) -> void:
 	apply_shake(0.15, 0.2)
+
+
