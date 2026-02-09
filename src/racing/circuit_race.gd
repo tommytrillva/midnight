@@ -413,7 +413,7 @@ func _complete_pit_stop() -> void:
 
 	# Repair vehicle
 	if _player_vehicle and _player_vehicle.vehicle_data:
-		var old_condition := _player_vehicle.vehicle_data.condition
+		var old_condition: float = _player_vehicle.vehicle_data.condition
 		_player_vehicle.vehicle_data.condition = minf(
 			_player_vehicle.vehicle_data.condition + PIT_REPAIR_AMOUNT, 100.0
 		)

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://crt_overlay"]
+
+[ext_resource type="Script" path="res://src/effects/crt_overlay.gd" id="1"]
+
+[node name="CRTOverlay" type="CanvasLayer"]
+layer = 100
+script = ExtResource("1")

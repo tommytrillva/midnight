@@ -129,7 +129,7 @@ func _find_neon_lights() -> void:
 			_sign_base_energies[node] = node.light_energy
 			_sign_base_colors[node] = node.light_color
 		elif node is MeshInstance3D:
-			var mat := node.get_surface_override_material(0)
+			var mat: Material = node.get_surface_override_material(0)
 			if mat == null:
 				mat = node.mesh.surface_get_material(0) if node.mesh else null
 			if mat is StandardMaterial3D:
@@ -222,7 +222,7 @@ func _process_buzz_to_life(delta: float) -> void:
 			state["flickers_left"] -= 1
 
 			var base_energy: float = _sign_base_energies.get(sign_node, 1.0)
-			var is_on := state["flickers_left"] % 2 == 0
+			var is_on: bool = state["flickers_left"] % 2 == 0
 
 			var energy: float
 			if is_on:
@@ -246,7 +246,7 @@ func _process_buzz_to_life(delta: float) -> void:
 
 func _set_emission_strength(mesh: MeshInstance3D, strength: float) -> void:
 	## Set emission energy on a MeshInstance3D's material.
-	var mat := mesh.get_surface_override_material(0)
+	var mat: Material = mesh.get_surface_override_material(0)
 	if mat == null and mesh.mesh:
 		# Create an override so we don't modify the shared resource
 		mat = mesh.mesh.surface_get_material(0)

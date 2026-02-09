@@ -130,15 +130,19 @@ func play_cinematic(cinematic_id: String) -> void:
 	_skipping = false
 	_parallel_tasks.clear()
 
-	# Resolve dialogue system reference
-	if GameManager and GameManager.has_node("DialogueSystem"):
-		_dialogue_system = GameManager.get_node("DialogueSystem") as DialogueSystem
+	# Resolve dialogue system reference from StoryManager
+	if GameManager and GameManager.story and GameManager.story._dialogue_system:
+		_dialogue_system = GameManager.story._dialogue_system
 	elif GameManager:
-		# Might be added as a direct child with a different name — search
+		# Fallback: search children recursively
 		for child in GameManager.get_children():
 			if child is DialogueSystem:
 				_dialogue_system = child
 				break
+			for grandchild in child.get_children():
+				if grandchild is DialogueSystem:
+					_dialogue_system = grandchild
+					break
 
 	# Enter cinematic state
 	_enter_cinematic_mode()

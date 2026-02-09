@@ -1,6 +1,91 @@
-[gd_scene load_steps=2 format=3 uid="uid://touge_track"]
+[gd_scene load_steps=26 format=3 uid="uid://touge_track"]
 
 [ext_resource type="Script" path="res://src/racing/race_track.gd" id="1"]
+
+; ---- Sub-Resources ----
+
+; Touge racing line: winding downhill path with 4 hairpins
+; Start at top (y=0), descend to (y=-40) over several switchbacks
+[sub_resource type="Curve3D" id="Curve3D_touge"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 1, 0, 5, 0, -2, -5, 0, 2, -5, -2, 15, -10, 0, 5, 10, 0, -5, -15, -5, 30, 5, 0, 10, -5, 0, -10, -30, -8, 50, 10, 0, -5, -10, 0, 5, -35, -12, 70, -5, 0, -10, 5, 0, 10, -15, -16, 90, 5, 0, 10, -5, 0, -10, 5, -20, 110, -5, 0, -10, 5, 0, 10, 25, -24, 125, 10, 0, 5, -10, 0, -5, 40, -28, 140, -5, 0, 10, 5, 0, -10, 35, -32, 158, 5, 0, -5, -5, 0, 5, 45, -35, 172, 0, 0, 5, 0, 0, -5, 50, -37, 185),
+"tilts": PackedFloat32Array(0, -0.05, -0.1, 0.1, -0.1, 0.08, -0.08, 0.1, -0.05, 0.05, -0.03, 0)
+}
+
+; Collision shapes
+[sub_resource type="BoxShape3D" id="BoxShape_touge_finish"]
+size = Vector3(12, 4, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape_touge_cp"]
+size = Vector3(12, 4, 2)
+
+; Guardrails
+[sub_resource type="BoxMesh" id="BoxMesh_guardrail"]
+size = Vector3(20, 1.2, 0.15)
+
+[sub_resource type="BoxShape3D" id="BoxShape_guardrail"]
+size = Vector3(20, 1.2, 0.15)
+
+[sub_resource type="StandardMaterial3D" id="mat_guardrail"]
+albedo_color = Color(0.7, 0.7, 0.7, 1)
+metallic = 0.8
+roughness = 0.3
+
+; Rock walls
+[sub_resource type="BoxMesh" id="BoxMesh_rockwall"]
+size = Vector3(20, 6, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape_rockwall"]
+size = Vector3(20, 6, 2)
+
+[sub_resource type="StandardMaterial3D" id="mat_rock"]
+albedo_color = Color(0.35, 0.3, 0.25, 1)
+roughness = 1.0
+
+; Tunnel walls and ceilings (short)
+[sub_resource type="BoxMesh" id="BoxMesh_tunnel_wall"]
+size = Vector3(0.5, 5, 12)
+
+[sub_resource type="BoxShape3D" id="BoxShape_tunnel_wall"]
+size = Vector3(0.5, 5, 12)
+
+[sub_resource type="BoxMesh" id="BoxMesh_tunnel_ceiling"]
+size = Vector3(10.5, 0.5, 12)
+
+[sub_resource type="BoxShape3D" id="BoxShape_tunnel_ceiling"]
+size = Vector3(10.5, 0.5, 12)
+
+; Tunnel walls and ceilings (long)
+[sub_resource type="BoxMesh" id="BoxMesh_tunnel_wall_long"]
+size = Vector3(0.5, 5, 20)
+
+[sub_resource type="BoxShape3D" id="BoxShape_tunnel_wall_long"]
+size = Vector3(0.5, 5, 20)
+
+[sub_resource type="BoxMesh" id="BoxMesh_tunnel_ceiling_long"]
+size = Vector3(10.5, 0.5, 20)
+
+[sub_resource type="BoxShape3D" id="BoxShape_tunnel_ceiling_long"]
+size = Vector3(10.5, 0.5, 20)
+
+; Tree meshes
+[sub_resource type="CylinderMesh" id="CylinderMesh_trunk"]
+top_radius = 0.15
+bottom_radius = 0.25
+height = 4.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_canopy"]
+top_radius = 0.3
+bottom_radius = 1.5
+height = 3.0
+
+[sub_resource type="StandardMaterial3D" id="mat_bark"]
+albedo_color = Color(0.3, 0.2, 0.1, 1)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="mat_foliage"]
+albedo_color = Color(0.1, 0.3, 0.1, 1)
+roughness = 0.9
 
 [node name="TougeTrack" type="Node3D"]
 script = ExtResource("1")
@@ -336,88 +421,3 @@ material_override = SubResource("mat_bark")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
 mesh = SubResource("CylinderMesh_canopy")
 material_override = SubResource("mat_foliage")
-
-; ---- Sub-Resources ----
-
-; Touge racing line: winding downhill path with 4 hairpins
-; Start at top (y=0), descend to (y=-40) over several switchbacks
-[sub_resource type="Curve3D" id="Curve3D_touge"]
-_data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 1, 0, 5, 0, -2, -5, 0, 2, -5, -2, 15, -10, 0, 5, 10, 0, -5, -15, -5, 30, 5, 0, 10, -5, 0, -10, -30, -8, 50, 10, 0, -5, -10, 0, 5, -35, -12, 70, -5, 0, -10, 5, 0, 10, -15, -16, 90, 5, 0, 10, -5, 0, -10, 5, -20, 110, -5, 0, -10, 5, 0, 10, 25, -24, 125, 10, 0, 5, -10, 0, -5, 40, -28, 140, -5, 0, 10, 5, 0, -10, 35, -32, 158, 5, 0, -5, -5, 0, 5, 45, -35, 172, 0, 0, 5, 0, 0, -5, 50, -37, 185),
-"tilts": PackedFloat32Array(0, -0.05, -0.1, 0.1, -0.1, 0.08, -0.08, 0.1, -0.05, 0.05, -0.03, 0)
-}
-
-; Collision shapes
-[sub_resource type="BoxShape3D" id="BoxShape_touge_finish"]
-size = Vector3(12, 4, 2)
-
-[sub_resource type="BoxShape3D" id="BoxShape_touge_cp"]
-size = Vector3(12, 4, 2)
-
-; Guardrails
-[sub_resource type="BoxMesh" id="BoxMesh_guardrail"]
-size = Vector3(20, 1.2, 0.15)
-
-[sub_resource type="BoxShape3D" id="BoxShape_guardrail"]
-size = Vector3(20, 1.2, 0.15)
-
-[sub_resource type="StandardMaterial3D" id="mat_guardrail"]
-albedo_color = Color(0.7, 0.7, 0.7, 1)
-metallic = 0.8
-roughness = 0.3
-
-; Rock walls
-[sub_resource type="BoxMesh" id="BoxMesh_rockwall"]
-size = Vector3(20, 6, 2)
-
-[sub_resource type="BoxShape3D" id="BoxShape_rockwall"]
-size = Vector3(20, 6, 2)
-
-[sub_resource type="StandardMaterial3D" id="mat_rock"]
-albedo_color = Color(0.35, 0.3, 0.25, 1)
-roughness = 1.0
-
-; Tunnel walls and ceilings (short)
-[sub_resource type="BoxMesh" id="BoxMesh_tunnel_wall"]
-size = Vector3(0.5, 5, 12)
-
-[sub_resource type="BoxShape3D" id="BoxShape_tunnel_wall"]
-size = Vector3(0.5, 5, 12)
-
-[sub_resource type="BoxMesh" id="BoxMesh_tunnel_ceiling"]
-size = Vector3(10.5, 0.5, 12)
-
-[sub_resource type="BoxShape3D" id="BoxShape_tunnel_ceiling"]
-size = Vector3(10.5, 0.5, 12)
-
-; Tunnel walls and ceilings (long)
-[sub_resource type="BoxMesh" id="BoxMesh_tunnel_wall_long"]
-size = Vector3(0.5, 5, 20)
-
-[sub_resource type="BoxShape3D" id="BoxShape_tunnel_wall_long"]
-size = Vector3(0.5, 5, 20)
-
-[sub_resource type="BoxMesh" id="BoxMesh_tunnel_ceiling_long"]
-size = Vector3(10.5, 0.5, 20)
-
-[sub_resource type="BoxShape3D" id="BoxShape_tunnel_ceiling_long"]
-size = Vector3(10.5, 0.5, 20)
-
-; Tree meshes
-[sub_resource type="CylinderMesh" id="CylinderMesh_trunk"]
-top_radius = 0.15
-bottom_radius = 0.25
-height = 4.0
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_canopy"]
-top_radius = 0.3
-bottom_radius = 1.5
-height = 3.0
-
-[sub_resource type="StandardMaterial3D" id="mat_bark"]
-albedo_color = Color(0.3, 0.2, 0.1, 1)
-roughness = 1.0
-
-[sub_resource type="StandardMaterial3D" id="mat_foliage"]
-albedo_color = Color(0.1, 0.3, 0.1, 1)
-roughness = 0.9

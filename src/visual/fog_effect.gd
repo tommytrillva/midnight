@@ -119,7 +119,7 @@ func _cache_environment() -> void:
 
 func _find_world_environment() -> WorldEnvironment:
 	## Search the scene tree for a WorldEnvironment node.
-	var root := get_tree().root if get_tree() else null
+	var root: Window = get_tree().root if get_tree() else null
 	if root == null:
 		return null
 	return _find_node_of_type(root) as WorldEnvironment
@@ -256,7 +256,7 @@ func _update_ground_fog(delta: float) -> void:
 		pmat.scale_max = lerpf(4.0, 10.0, ground_scale)
 
 	# Follow camera horizontally
-	var camera := get_viewport().get_camera_3d() if get_viewport() else null
+	var camera: Camera3D = get_viewport().get_camera_3d() if get_viewport() else null
 	if camera and _ground_fog_particles:
 		_ground_fog_particles.global_position = Vector3(
 			camera.global_position.x,

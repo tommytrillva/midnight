@@ -221,6 +221,13 @@ func _process(_delta: float) -> void:
 
 
 func _input(event: InputEvent) -> void:
+	# Garage state: ESC or pause closes the garage instead of opening pause menu
+	if GameManager.current_state == GameManager.GameState.GARAGE:
+		if event.is_action_pressed("ui_cancel") or event.is_action_pressed("pause"):
+			close_garage()
+			get_viewport().set_input_as_handled()
+			return
+
 	# Pause menu toggle
 	if event.is_action_pressed("pause"):
 		if pause_menu and not pause_menu.is_open():
@@ -228,6 +235,7 @@ func _input(event: InputEvent) -> void:
 				GameManager.GameState.MENU,
 				GameManager.GameState.LOADING,
 				GameManager.GameState.PAUSED,
+				GameManager.GameState.GARAGE,
 			]:
 				pause_menu.open_menu()
 				get_viewport().set_input_as_handled()

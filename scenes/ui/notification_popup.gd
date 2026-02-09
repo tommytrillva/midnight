@@ -248,13 +248,13 @@ func _on_mission_started(mission_id: String) -> void:
 
 func _on_rep_tier_changed(_old_tier: int, new_tier: int) -> void:
 	var tier_names := ["UNKNOWN", "NEWCOMER", "RUNNER", "CONTENDER", "ELITE", "LEGEND"]
-	var tier_name := tier_names[new_tier] if new_tier < tier_names.size() else "TIER %d" % new_tier
+	var tier_name: String = tier_names[new_tier] if new_tier < tier_names.size() else "TIER %d" % new_tier
 	notify("REP increased!", "Now: %s" % tier_name, "reputation")
 
 
 func _on_relationship_level_up(character_id: String, new_level: int) -> void:
 	var level_names := ["Stranger", "Acquaintance", "Friend", "Close Friend", "Trusted", "Bonded"]
-	var level_name := level_names[new_level] if new_level < level_names.size() else "Level %d" % new_level
+	var level_name: String = level_names[new_level] if new_level < level_names.size() else "Level %d" % new_level
 	var char_name := character_id.capitalize()
 	notify("Relationship: %s" % char_name, "Now: %s" % level_name, "relationship")
 

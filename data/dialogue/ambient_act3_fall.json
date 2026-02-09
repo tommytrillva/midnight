@@ -3,194 +3,194 @@
   "district": "any",
   "context": "During Act 3: The Fall — player has lost everything, the world reacts",
   "lines": [
-    {
-      "speakers": ["regular_1", "regular_2"],
-      "exchange": [
-        {"speaker": 0, "speaker_tag": "Regular", "text": "Is that...? Nah. Can't be. They're done."},
-        {"speaker": 1, "speaker_tag": "Regular", "text": "That's them alright. Or what's left of them."}
-      ],
-      "conditions": {"act": 3},
-      "weight": 1.2,
-      "tags": ["player_reference", "fall"]
-    },
-    {
-      "speakers": ["regular_1", "regular_2"],
-      "exchange": [
-        {"speaker": 0, "speaker_tag": "Regular", "text": "Heard they lost everything. Cars, money, all of it."},
-        {"speaker": 1, "speaker_tag": "Regular", "text": "Everything? Even the—"},
-        {"speaker": 0, "speaker_tag": "Regular", "text": "Everything. Just a beater and the clothes on their back."}
-      ],
-      "conditions": {"act": 3},
-      "weight": 1.3,
-      "tags": ["player_reference", "fall"]
-    },
-    {
-      "speakers": ["regular_1", "regular_2"],
-      "exchange": [
-        {"speaker": 0, "speaker_tag": "Spectator", "text": "Used to be the King. Now look at them."},
-        {"speaker": 1, "speaker_tag": "Spectator", "text": "The higher you climb, the harder the fall. Oldest story in the book."},
-        {"speaker": 0, "speaker_tag": "Spectator", "text": "Yeah, but nobody expected it to happen to THEM."}
-      ],
-      "conditions": {"act": 3},
-      "weight": 1.2,
-      "tags": ["player_reference", "fall"]
-    },
-    {
-      "speakers": ["regular_1"],
-      "exchange": [
-        {"speaker": 0, "speaker_tag": "Old Friend", "text": "Hey... I remember you. You helped me once. Need anything?"}
-      ],
-      "conditions": {"act": 3, "min_moral": 20},
-      "weight": 1.5,
-      "tags": ["player_reference", "fall", "moral", "kindness"]
-    },
-    {
-      "speakers": ["regular_1"],
-      "exchange": [
-        {"speaker": 0, "speaker_tag": "Regular", "text": "Some people come back from the bottom. Most don't."}
-      ],
-      "conditions": {"act": 3},
-      "weight": 1.0,
-      "tags": ["atmosphere", "fall", "philosophy"]
-    },
-    {
-      "speakers": ["regular_1", "regular_2"],
-      "exchange": [
-        {"speaker": 0, "speaker_tag": "Regular", "text": "I heard it was Zero. Zero brought them down."},
-        {"speaker": 1, "speaker_tag": "Regular", "text": "Zero brings everyone down eventually. It's what Zero does."},
-        {"speaker": 0, "speaker_tag": "Regular", "text": "The question is whether they're smart enough to figure out why."}
-      ],
-      "conditions": {"act": 3},
-      "weight": 1.1,
-      "tags": ["zero", "fall", "lore"]
-    },
-    {
-      "speakers": ["regular_1", "regular_2"],
-      "exchange": [
-        {"speaker": 0, "speaker_tag": "Spectator", "text": "Torres is still with them. Only one who stayed."},
-        {"speaker": 1, "speaker_tag": "Spectator", "text": "That says everything about Torres. And everything about everyone else."}
-      ],
-      "conditions": {"act": 3},
-      "weight": 1.1,
-      "tags": ["maya", "loyalty", "fall"]
-    },
-    {
-      "speakers": ["regular_1", "regular_2"],
-      "exchange": [
-        {"speaker": 0, "speaker_tag": "Regular", "text": "Nikko won't even look at them anymore."},
-        {"speaker": 1, "speaker_tag": "Regular", "text": "Can you blame him? After what happened?"},
-        {"speaker": 0, "speaker_tag": "Regular", "text": "Blame is cheap. Loyalty costs something."}
-      ],
-      "conditions": {"act": 3, "has_flag": "kept_racing_nikko_crash"},
-      "weight": 1.3,
-      "tags": ["nikko", "fall", "consequences"]
-    },
-    {
-      "speakers": ["regular_1"],
-      "exchange": [
-        {"speaker": 0, "speaker_tag": "Regular", "text": "Nikko's been asking about them. Wants to help. Says he owes them."}
-      ],
-      "conditions": {"act": 3, "has_flag": "saved_nikko"},
-      "weight": 1.4,
-      "tags": ["nikko", "fall", "loyalty"]
-    },
-    {
-      "speakers": ["regular_1", "regular_2"],
-      "exchange": [
-        {"speaker": 0, "speaker_tag": "Regular", "text": "The new king of the Pit doesn't hold a candle to what they were."},
-        {"speaker": 1, "speaker_tag": "Regular", "text": "Nobody does. That's the tragedy."}
-      ],
-      "conditions": {"act": 3},
-      "weight": 0.9,
-      "tags": ["player_reference", "fall", "nostalgia"]
-    },
-    {
-      "speakers": ["regular_1"],
-      "exchange": [
-        {"speaker": 0, "speaker_tag": "Regular", "text": "Saw them working on that beater in a parking lot. No garage. No tools. Just bare hands and determination."}
-      ],
-      "conditions": {"act": 3},
-      "weight": 1.0,
-      "tags": ["player_reference", "fall", "resilience"]
-    },
-    {
-      "speakers": ["regular_1", "regular_2"],
-      "exchange": [
-        {"speaker": 0, "speaker_tag": "Racer", "text": "People are already forgetting. That's the scene. You're only as good as your last race."},
-        {"speaker": 1, "speaker_tag": "Racer", "text": "Not everyone forgets. Some of us remember what they did for the scene."}
-      ],
-      "conditions": {"act": 3},
-      "weight": 0.9,
-      "tags": ["player_reference", "fall", "philosophy"]
-    },
-    {
-      "speakers": ["regular_1"],
-      "exchange": [
-        {"speaker": 0, "speaker_tag": "Regular", "text": "They're racing again. In that bucket. Against nobody. Just... laps. Alone. Like they're remembering."}
-      ],
-      "conditions": {"act": 3, "min_chapter": 3},
-      "weight": 1.2,
-      "tags": ["player_reference", "fall", "resilience"]
-    },
-    {
-      "speakers": ["regular_1", "regular_2"],
-      "exchange": [
-        {"speaker": 0, "speaker_tag": "Spectator", "text": "Diesel showed up yesterday. Talked to them for an hour."},
-        {"speaker": 1, "speaker_tag": "Spectator", "text": "Diesel doesn't waste words. If he's talking for an hour, he believes in them."},
-        {"speaker": 0, "speaker_tag": "Spectator", "text": "Or he's saying goodbye."}
-      ],
-      "conditions": {"act": 3, "min_chapter": 2},
-      "weight": 1.1,
-      "tags": ["diesel", "fall", "lore"]
-    },
-    {
-      "speakers": ["bookie"],
-      "exchange": [
-        {"speaker": 0, "speaker_tag": "Bookie", "text": "Odds on the comeback: twenty to one. I'm taking that bet myself. Call me sentimental."}
-      ],
-      "conditions": {"act": 3, "min_chapter": 3},
-      "weight": 1.0,
-      "tags": ["betting", "fall", "hope"]
-    },
-    {
-      "speakers": ["regular_1", "regular_2"],
-      "exchange": [
-        {"speaker": 0, "speaker_tag": "Regular", "text": "You know what the difference is between finished and fallen?"},
-        {"speaker": 1, "speaker_tag": "Regular", "text": "What?"},
-        {"speaker": 0, "speaker_tag": "Regular", "text": "Fallen can get back up."}
-      ],
-      "conditions": {"act": 3, "min_chapter": 3},
-      "weight": 1.2,
-      "tags": ["fall", "hope", "philosophy"]
-    },
-    {
-      "speakers": ["regular_1"],
-      "exchange": [
-        {"speaker": 0, "speaker_tag": "Regular", "text": "Nobody's talking about them anymore. That's almost worse than the hate. Just... silence."}
-      ],
-      "conditions": {"act": 3, "max_rep_tier": 1},
-      "weight": 1.0,
-      "tags": ["player_reference", "fall"]
-    },
-    {
-      "speakers": ["regular_1", "regular_2"],
-      "exchange": [
-        {"speaker": 0, "speaker_tag": "Regular", "text": "I heard they're entering the Saturday race. In THAT car."},
-        {"speaker": 1, "speaker_tag": "Regular", "text": "Against who?"},
-        {"speaker": 0, "speaker_tag": "Regular", "text": "Against everyone. And honestly? I wouldn't bet against them."}
-      ],
-      "conditions": {"act": 3, "min_chapter": 4},
-      "weight": 1.3,
-      "tags": ["player_reference", "fall", "hope", "comeback"]
-    },
-    {
-      "speakers": ["regular_1"],
-      "exchange": [
-        {"speaker": 0, "speaker_tag": "Regular", "text": "The city moves on. But the streets remember. They always remember."}
-      ],
-      "conditions": {"act": 3},
-      "weight": 0.8,
-      "tags": ["atmosphere", "fall", "philosophy"]
-    }
+	{
+	  "speakers": ["regular_1", "regular_2"],
+	  "exchange": [
+		{"speaker": 0, "speaker_tag": "Regular", "text": "Is that...? Nah. Can't be. They're done."},
+		{"speaker": 1, "speaker_tag": "Regular", "text": "That's them alright. Or what's left of them."}
+	  ],
+	  "conditions": {"act": 3},
+	  "weight": 1.2,
+	  "tags": ["player_reference", "fall"]
+	},
+	{
+	  "speakers": ["regular_1", "regular_2"],
+	  "exchange": [
+		{"speaker": 0, "speaker_tag": "Regular", "text": "Heard they lost everything. Cars, money, all of it."},
+		{"speaker": 1, "speaker_tag": "Regular", "text": "Everything? Even the—"},
+		{"speaker": 0, "speaker_tag": "Regular", "text": "Everything. Just a beater and the clothes on their back."}
+	  ],
+	  "conditions": {"act": 3},
+	  "weight": 1.3,
+	  "tags": ["player_reference", "fall"]
+	},
+	{
+	  "speakers": ["regular_1", "regular_2"],
+	  "exchange": [
+		{"speaker": 0, "speaker_tag": "Spectator", "text": "Used to be the King. Now look at them."},
+		{"speaker": 1, "speaker_tag": "Spectator", "text": "The higher you climb, the harder the fall. Oldest story in the book."},
+		{"speaker": 0, "speaker_tag": "Spectator", "text": "Yeah, but nobody expected it to happen to THEM."}
+	  ],
+	  "conditions": {"act": 3},
+	  "weight": 1.2,
+	  "tags": ["player_reference", "fall"]
+	},
+	{
+	  "speakers": ["regular_1"],
+	  "exchange": [
+		{"speaker": 0, "speaker_tag": "Old Friend", "text": "Hey... I remember you. You helped me once. Need anything?"}
+	  ],
+	  "conditions": {"act": 3, "min_moral": 20},
+	  "weight": 1.5,
+	  "tags": ["player_reference", "fall", "moral", "kindness"]
+	},
+	{
+	  "speakers": ["regular_1"],
+	  "exchange": [
+		{"speaker": 0, "speaker_tag": "Regular", "text": "Some people come back from the bottom. Most don't."}
+	  ],
+	  "conditions": {"act": 3},
+	  "weight": 1.0,
+	  "tags": ["atmosphere", "fall", "philosophy"]
+	},
+	{
+	  "speakers": ["regular_1", "regular_2"],
+	  "exchange": [
+		{"speaker": 0, "speaker_tag": "Regular", "text": "I heard it was Zero. Zero brought them down."},
+		{"speaker": 1, "speaker_tag": "Regular", "text": "Zero brings everyone down eventually. It's what Zero does."},
+		{"speaker": 0, "speaker_tag": "Regular", "text": "The question is whether they're smart enough to figure out why."}
+	  ],
+	  "conditions": {"act": 3},
+	  "weight": 1.1,
+	  "tags": ["zero", "fall", "lore"]
+	},
+	{
+	  "speakers": ["regular_1", "regular_2"],
+	  "exchange": [
+		{"speaker": 0, "speaker_tag": "Spectator", "text": "Torres is still with them. Only one who stayed."},
+		{"speaker": 1, "speaker_tag": "Spectator", "text": "That says everything about Torres. And everything about everyone else."}
+	  ],
+	  "conditions": {"act": 3},
+	  "weight": 1.1,
+	  "tags": ["maya", "loyalty", "fall"]
+	},
+	{
+	  "speakers": ["regular_1", "regular_2"],
+	  "exchange": [
+		{"speaker": 0, "speaker_tag": "Regular", "text": "Nikko won't even look at them anymore."},
+		{"speaker": 1, "speaker_tag": "Regular", "text": "Can you blame him? After what happened?"},
+		{"speaker": 0, "speaker_tag": "Regular", "text": "Blame is cheap. Loyalty costs something."}
+	  ],
+	  "conditions": {"act": 3, "has_flag": "kept_racing_nikko_crash"},
+	  "weight": 1.3,
+	  "tags": ["nikko", "fall", "consequences"]
+	},
+	{
+	  "speakers": ["regular_1"],
+	  "exchange": [
+		{"speaker": 0, "speaker_tag": "Regular", "text": "Nikko's been asking about them. Wants to help. Says he owes them."}
+	  ],
+	  "conditions": {"act": 3, "has_flag": "saved_nikko"},
+	  "weight": 1.4,
+	  "tags": ["nikko", "fall", "loyalty"]
+	},
+	{
+	  "speakers": ["regular_1", "regular_2"],
+	  "exchange": [
+		{"speaker": 0, "speaker_tag": "Regular", "text": "The new king of the Pit doesn't hold a candle to what they were."},
+		{"speaker": 1, "speaker_tag": "Regular", "text": "Nobody does. That's the tragedy."}
+	  ],
+	  "conditions": {"act": 3},
+	  "weight": 0.9,
+	  "tags": ["player_reference", "fall", "nostalgia"]
+	},
+	{
+	  "speakers": ["regular_1"],
+	  "exchange": [
+		{"speaker": 0, "speaker_tag": "Regular", "text": "Saw them working on that beater in a parking lot. No garage. No tools. Just bare hands and determination."}
+	  ],
+	  "conditions": {"act": 3},
+	  "weight": 1.0,
+	  "tags": ["player_reference", "fall", "resilience"]
+	},
+	{
+	  "speakers": ["regular_1", "regular_2"],
+	  "exchange": [
+		{"speaker": 0, "speaker_tag": "Racer", "text": "People are already forgetting. That's the scene. You're only as good as your last race."},
+		{"speaker": 1, "speaker_tag": "Racer", "text": "Not everyone forgets. Some of us remember what they did for the scene."}
+	  ],
+	  "conditions": {"act": 3},
+	  "weight": 0.9,
+	  "tags": ["player_reference", "fall", "philosophy"]
+	},
+	{
+	  "speakers": ["regular_1"],
+	  "exchange": [
+		{"speaker": 0, "speaker_tag": "Regular", "text": "They're racing again. In that bucket. Against nobody. Just... laps. Alone. Like they're remembering."}
+	  ],
+	  "conditions": {"act": 3, "min_chapter": 3},
+	  "weight": 1.2,
+	  "tags": ["player_reference", "fall", "resilience"]
+	},
+	{
+	  "speakers": ["regular_1", "regular_2"],
+	  "exchange": [
+		{"speaker": 0, "speaker_tag": "Spectator", "text": "Diesel showed up yesterday. Talked to them for an hour."},
+		{"speaker": 1, "speaker_tag": "Spectator", "text": "Diesel doesn't waste words. If he's talking for an hour, he believes in them."},
+		{"speaker": 0, "speaker_tag": "Spectator", "text": "Or he's saying goodbye."}
+	  ],
+	  "conditions": {"act": 3, "min_chapter": 2},
+	  "weight": 1.1,
+	  "tags": ["diesel", "fall", "lore"]
+	},
+	{
+	  "speakers": ["bookie"],
+	  "exchange": [
+		{"speaker": 0, "speaker_tag": "Bookie", "text": "Odds on the comeback: twenty to one. I'm taking that bet myself. Call me sentimental."}
+	  ],
+	  "conditions": {"act": 3, "min_chapter": 3},
+	  "weight": 1.0,
+	  "tags": ["betting", "fall", "hope"]
+	},
+	{
+	  "speakers": ["regular_1", "regular_2"],
+	  "exchange": [
+		{"speaker": 0, "speaker_tag": "Regular", "text": "You know what the difference is between finished and fallen?"},
+		{"speaker": 1, "speaker_tag": "Regular", "text": "What?"},
+		{"speaker": 0, "speaker_tag": "Regular", "text": "Fallen can get back up."}
+	  ],
+	  "conditions": {"act": 3, "min_chapter": 3},
+	  "weight": 1.2,
+	  "tags": ["fall", "hope", "philosophy"]
+	},
+	{
+	  "speakers": ["regular_1"],
+	  "exchange": [
+		{"speaker": 0, "speaker_tag": "Regular", "text": "Nobody's talking about them anymore. That's almost worse than the hate. Just... silence."}
+	  ],
+	  "conditions": {"act": 3, "max_rep_tier": 1},
+	  "weight": 1.0,
+	  "tags": ["player_reference", "fall"]
+	},
+	{
+	  "speakers": ["regular_1", "regular_2"],
+	  "exchange": [
+		{"speaker": 0, "speaker_tag": "Regular", "text": "I heard they're entering the Saturday race. In THAT car."},
+		{"speaker": 1, "speaker_tag": "Regular", "text": "Against who?"},
+		{"speaker": 0, "speaker_tag": "Regular", "text": "Against everyone. And honestly? I wouldn't bet against them."}
+	  ],
+	  "conditions": {"act": 3, "min_chapter": 4},
+	  "weight": 1.3,
+	  "tags": ["player_reference", "fall", "hope", "comeback"]
+	},
+	{
+	  "speakers": ["regular_1"],
+	  "exchange": [
+		{"speaker": 0, "speaker_tag": "Regular", "text": "The city moves on. But the streets remember. They always remember."}
+	  ],
+	  "conditions": {"act": 3},
+	  "weight": 0.8,
+	  "tags": ["atmosphere", "fall", "philosophy"]
+	}
   ]
 }

@@ -1,6 +1,73 @@
-[gd_scene load_steps=2 format=3 uid="uid://circuit_track"]
+[gd_scene load_steps=30 format=3 uid="uid://circuit_track"]
 
 [ext_resource type="Script" path="res://src/racing/race_track.gd" id="1"]
+
+; ---- Sub-Resources ----
+
+; Circuit racing line: closed loop with hairpin, chicane, sweeper, esses
+; Approximate layout coordinates for a ~600m track
+[sub_resource type="Curve3D" id="Curve3D_circuit"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0.5, 0, 0, 0, -5, 0, 0, 5, 0, 0.5, 30, 0, 0, -5, 0, 0, 5, 0, 0.5, 60, -10, 0, 0, 10, 0, 0, -10, 0.5, 80, -10, 0, 0, -5, 0, -5, -30, 0.5, 80, 0, 0, -10, 0, 0, 10, -45, 0.5, 70, 5, 0, -5, -5, 0, 5, -55, 0.5, 55, -5, 0, -10, 5, 0, 10, -70, 0.5, 40, -10, 0, -5, 10, 0, 5, -80, 0.5, 20, 0, 0, -10, 0, 0, 10, -85, 0.5, 0, 0, 0, -10, 0, 0, 10, -80, 0.5, -20, 0, 0, -10, 0, 0, 10, -80, 0.5, -50, 5, 0, -10, -5, 0, 10, -75, 0.5, -70, 10, 0, 0, -10, 0, 0, -60, 0.5, -80, 10, 0, 5, -10, 0, -5, -40, 0.5, -75, 5, 0, 10, -5, 0, -10, -25, 0.5, -55, 10, 0, 5, -10, 0, -5, -10, 0.5, -35, 5, 0, -10, -5, 0, 10, 0, 0.5, -15, 0, 0, 5, 0, 0, -5, 0, 0.5, 0),
+"tilts": PackedFloat32Array(0, 0, 0, -0.05, 0, 0, -0.02, 0.02, -0.03, 0, 0, 0, 0, -0.03, 0.03, -0.02, 0.02, 0, 0)
+}
+
+; Finish / checkpoint shapes
+[sub_resource type="BoxShape3D" id="BoxShape_circuit_finish"]
+size = Vector3(14, 4, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape_circuit_cp"]
+size = Vector3(14, 4, 2)
+
+; Pit area
+[sub_resource type="BoxShape3D" id="BoxShape_pit_area"]
+size = Vector3(8, 4, 20)
+
+; Pit wall
+[sub_resource type="BoxMesh" id="BoxMesh_pitwall"]
+size = Vector3(0.3, 1.0, 20)
+
+[sub_resource type="BoxShape3D" id="BoxShape_pitwall"]
+size = Vector3(0.3, 1.0, 20)
+
+[sub_resource type="StandardMaterial3D" id="mat_pitwall"]
+albedo_color = Color(0.8, 0.8, 0.8, 1)
+roughness = 0.5
+
+; Pit box visual
+[sub_resource type="BoxMesh" id="BoxMesh_pitbox"]
+size = Vector3(4, 0.05, 4)
+
+[sub_resource type="StandardMaterial3D" id="mat_pitbox"]
+albedo_color = Color(0.2, 0.2, 0.25, 1)
+roughness = 0.8
+
+; Barriers
+[sub_resource type="BoxMesh" id="BoxMesh_barrier_long"]
+size = Vector3(0.5, 1.2, 60)
+
+[sub_resource type="BoxShape3D" id="BoxShape_barrier_long"]
+size = Vector3(0.5, 1.2, 60)
+
+[sub_resource type="BoxMesh" id="BoxMesh_barrier_medium"]
+size = Vector3(0.5, 1.2, 30)
+
+[sub_resource type="BoxShape3D" id="BoxShape_barrier_medium"]
+size = Vector3(0.5, 1.2, 30)
+
+[sub_resource type="BoxMesh" id="BoxMesh_barrier_short"]
+size = Vector3(0.5, 1.2, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape_barrier_short"]
+size = Vector3(0.5, 1.2, 10)
+
+[sub_resource type="StandardMaterial3D" id="mat_barrier"]
+albedo_color = Color(0.3, 0.3, 0.35, 1)
+roughness = 0.7
+
+[sub_resource type="StandardMaterial3D" id="mat_barrier_red"]
+albedo_color = Color(0.7, 0.15, 0.1, 1)
+roughness = 0.6
 
 [node name="CircuitTrack" type="Node3D"]
 script = ExtResource("1")
@@ -280,70 +347,3 @@ material_override = SubResource("mat_barrier")
 
 [node name="Collision" type="CollisionShape3D" parent="Barriers/BarrierReturn"]
 shape = SubResource("BoxShape_barrier_long")
-
-; ---- Sub-Resources ----
-
-; Circuit racing line: closed loop with hairpin, chicane, sweeper, esses
-; Approximate layout coordinates for a ~600m track
-[sub_resource type="Curve3D" id="Curve3D_circuit"]
-_data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0.5, 0, 0, 0, -5, 0, 0, 5, 0, 0.5, 30, 0, 0, -5, 0, 0, 5, 0, 0.5, 60, -10, 0, 0, 10, 0, 0, -10, 0.5, 80, -10, 0, 0, -5, 0, -5, -30, 0.5, 80, 0, 0, -10, 0, 0, 10, -45, 0.5, 70, 5, 0, -5, -5, 0, 5, -55, 0.5, 55, -5, 0, -10, 5, 0, 10, -70, 0.5, 40, -10, 0, -5, 10, 0, 5, -80, 0.5, 20, 0, 0, -10, 0, 0, 10, -85, 0.5, 0, 0, 0, -10, 0, 0, 10, -80, 0.5, -20, 0, 0, -10, 0, 0, 10, -80, 0.5, -50, 5, 0, -10, -5, 0, 10, -75, 0.5, -70, 10, 0, 0, -10, 0, 0, -60, 0.5, -80, 10, 0, 5, -10, 0, -5, -40, 0.5, -75, 5, 0, 10, -5, 0, -10, -25, 0.5, -55, 10, 0, 5, -10, 0, -5, -10, 0.5, -35, 5, 0, -10, -5, 0, 10, 0, 0.5, -15, 0, 0, 5, 0, 0, -5, 0, 0.5, 0),
-"tilts": PackedFloat32Array(0, 0, 0, -0.05, 0, 0, -0.02, 0.02, -0.03, 0, 0, 0, 0, -0.03, 0.03, -0.02, 0.02, 0, 0)
-}
-
-; Finish / checkpoint shapes
-[sub_resource type="BoxShape3D" id="BoxShape_circuit_finish"]
-size = Vector3(14, 4, 2)
-
-[sub_resource type="BoxShape3D" id="BoxShape_circuit_cp"]
-size = Vector3(14, 4, 2)
-
-; Pit area
-[sub_resource type="BoxShape3D" id="BoxShape_pit_area"]
-size = Vector3(8, 4, 20)
-
-; Pit wall
-[sub_resource type="BoxMesh" id="BoxMesh_pitwall"]
-size = Vector3(0.3, 1.0, 20)
-
-[sub_resource type="BoxShape3D" id="BoxShape_pitwall"]
-size = Vector3(0.3, 1.0, 20)
-
-[sub_resource type="StandardMaterial3D" id="mat_pitwall"]
-albedo_color = Color(0.8, 0.8, 0.8, 1)
-roughness = 0.5
-
-; Pit box visual
-[sub_resource type="BoxMesh" id="BoxMesh_pitbox"]
-size = Vector3(4, 0.05, 4)
-
-[sub_resource type="StandardMaterial3D" id="mat_pitbox"]
-albedo_color = Color(0.2, 0.2, 0.25, 1)
-roughness = 0.8
-
-; Barriers
-[sub_resource type="BoxMesh" id="BoxMesh_barrier_long"]
-size = Vector3(0.5, 1.2, 60)
-
-[sub_resource type="BoxShape3D" id="BoxShape_barrier_long"]
-size = Vector3(0.5, 1.2, 60)
-
-[sub_resource type="BoxMesh" id="BoxMesh_barrier_medium"]
-size = Vector3(0.5, 1.2, 30)
-
-[sub_resource type="BoxShape3D" id="BoxShape_barrier_medium"]
-size = Vector3(0.5, 1.2, 30)
-
-[sub_resource type="BoxMesh" id="BoxMesh_barrier_short"]
-size = Vector3(0.5, 1.2, 10)
-
-[sub_resource type="BoxShape3D" id="BoxShape_barrier_short"]
-size = Vector3(0.5, 1.2, 10)
-
-[sub_resource type="StandardMaterial3D" id="mat_barrier"]
-albedo_color = Color(0.3, 0.3, 0.35, 1)
-roughness = 0.7
-
-[sub_resource type="StandardMaterial3D" id="mat_barrier_red"]
-albedo_color = Color(0.7, 0.15, 0.1, 1)
-roughness = 0.6

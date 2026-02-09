@@ -103,7 +103,7 @@ func _advance() -> void:
 			_waiting_for_choice = true
 			var choices: Array = line.get("choices", [])
 			# Filter choices by conditions (supports both "condition" and "conditions")
-			var available := choices.filter(func(c):
+			var available: Array = choices.filter(func(c):
 				if c.has("conditions"):
 					return _check_conditions(c.conditions)
 				elif c.has("condition"):

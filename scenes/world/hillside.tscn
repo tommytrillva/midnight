@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://hillside"]
+[gd_scene load_steps=43 format=3 uid="uid://hillside"]
 
 [sub_resource type="ProceduralSkyMaterial" id="sky_mat"]
 sky_top_color = Color(0.01, 0.01, 0.04, 1)
@@ -23,6 +23,128 @@ volumetric_fog_enabled = false
 [sub_resource type="StandardMaterial3D" id="road_mat"]
 albedo_color = Color(0.14, 0.13, 0.12, 1)
 roughness = 0.85
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ground"]
+size = Vector2(600, 600)
+
+[sub_resource type="StandardMaterial3D" id="ground_mat"]
+albedo_color = Color(0.06, 0.08, 0.04, 1)
+roughness = 1.0
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_ground"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_entry_road"]
+size = Vector3(12, 0.05, 170)
+
+[sub_resource type="BoxShape3D" id="BoxShape_entry_road"]
+size = Vector3(12, 0.05, 170)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ramp"]
+size = Vector3(12, 0.1, 41)
+
+[sub_resource type="BoxShape3D" id="BoxShape_ramp"]
+size = Vector3(12, 0.1, 41)
+
+[sub_resource type="BoxMesh" id="BoxMesh_switchback"]
+size = Vector3(150, 0.05, 12)
+
+[sub_resource type="BoxShape3D" id="BoxShape_switchback"]
+size = Vector3(150, 0.05, 12)
+
+[sub_resource type="BoxMesh" id="BoxMesh_switchback_short"]
+size = Vector3(120, 0.05, 12)
+
+[sub_resource type="BoxShape3D" id="BoxShape_switchback_short"]
+size = Vector3(120, 0.05, 12)
+
+[sub_resource type="BoxMesh" id="BoxMesh_summit_road"]
+size = Vector3(80, 0.05, 12)
+
+[sub_resource type="BoxShape3D" id="BoxShape_summit_road"]
+size = Vector3(80, 0.05, 12)
+
+[sub_resource type="StandardMaterial3D" id="mountain_mat"]
+albedo_color = Color(0.1, 0.1, 0.08, 1)
+roughness = 1.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_mountain_large"]
+size = Vector3(60, 16, 80)
+
+[sub_resource type="BoxShape3D" id="BoxShape_mountain_large"]
+size = Vector3(60, 16, 80)
+
+[sub_resource type="BoxMesh" id="BoxMesh_mountain_tall"]
+size = Vector3(40, 32, 60)
+
+[sub_resource type="BoxShape3D" id="BoxShape_mountain_tall"]
+size = Vector3(40, 32, 60)
+
+[sub_resource type="BoxMesh" id="BoxMesh_mountain_peak"]
+size = Vector3(50, 36, 50)
+
+[sub_resource type="BoxShape3D" id="BoxShape_mountain_peak"]
+size = Vector3(50, 36, 50)
+
+[sub_resource type="StandardMaterial3D" id="guardrail_mat"]
+albedo_color = Color(0.5, 0.5, 0.5, 1)
+roughness = 0.5
+metallic = 0.4
+
+[sub_resource type="BoxMesh" id="BoxMesh_guardrail_long"]
+size = Vector3(140, 1.0, 0.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape_guardrail_long"]
+size = Vector3(140, 1.0, 0.3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_guardrail_short"]
+size = Vector3(40, 1.0, 0.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape_guardrail_short"]
+size = Vector3(40, 1.0, 0.3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_tunnel_wall"]
+size = Vector3(30, 6, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape_tunnel_wall"]
+size = Vector3(30, 6, 0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_tunnel_roof"]
+size = Vector3(30, 0.5, 13)
+
+[sub_resource type="BoxShape3D" id="BoxShape_tunnel_roof"]
+size = Vector3(30, 0.5, 13)
+
+[sub_resource type="StandardMaterial3D" id="trunk_mat"]
+albedo_color = Color(0.2, 0.12, 0.06, 1)
+roughness = 0.9
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_trunk"]
+top_radius = 0.25
+bottom_radius = 0.35
+height = 4.0
+
+[sub_resource type="BoxShape3D" id="BoxShape_trunk"]
+size = Vector3(0.7, 4, 0.7)
+
+[sub_resource type="StandardMaterial3D" id="canopy_mat"]
+albedo_color = Color(0.05, 0.15, 0.04, 1)
+roughness = 0.9
+
+[sub_resource type="SphereMesh" id="SphereMesh_canopy"]
+radius = 2.0
+height = 4.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_overlook"]
+size = Vector3(30, 0.5, 20)
+
+[sub_resource type="BoxShape3D" id="BoxShape_overlook"]
+size = Vector3(30, 0.5, 20)
+
+[sub_resource type="BoxShape3D" id="BoxShape_trigger"]
+size = Vector3(10, 4, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape_transition"]
+size = Vector3(20, 5, 20)
 
 [node name="Hillside" type="Node3D"]
 
@@ -489,125 +611,3 @@ text = ">> DOWNTOWN >>"
 font_size = 36
 outline_size = 4
 modulate = Color(1, 1, 0.5, 1)
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_ground"]
-size = Vector2(600, 600)
-
-[sub_resource type="StandardMaterial3D" id="ground_mat"]
-albedo_color = Color(0.06, 0.08, 0.04, 1)
-roughness = 1.0
-
-[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_ground"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_entry_road"]
-size = Vector3(12, 0.05, 170)
-
-[sub_resource type="BoxShape3D" id="BoxShape_entry_road"]
-size = Vector3(12, 0.05, 170)
-
-[sub_resource type="BoxMesh" id="BoxMesh_ramp"]
-size = Vector3(12, 0.1, 41)
-
-[sub_resource type="BoxShape3D" id="BoxShape_ramp"]
-size = Vector3(12, 0.1, 41)
-
-[sub_resource type="BoxMesh" id="BoxMesh_switchback"]
-size = Vector3(150, 0.05, 12)
-
-[sub_resource type="BoxShape3D" id="BoxShape_switchback"]
-size = Vector3(150, 0.05, 12)
-
-[sub_resource type="BoxMesh" id="BoxMesh_switchback_short"]
-size = Vector3(120, 0.05, 12)
-
-[sub_resource type="BoxShape3D" id="BoxShape_switchback_short"]
-size = Vector3(120, 0.05, 12)
-
-[sub_resource type="BoxMesh" id="BoxMesh_summit_road"]
-size = Vector3(80, 0.05, 12)
-
-[sub_resource type="BoxShape3D" id="BoxShape_summit_road"]
-size = Vector3(80, 0.05, 12)
-
-[sub_resource type="StandardMaterial3D" id="mountain_mat"]
-albedo_color = Color(0.1, 0.1, 0.08, 1)
-roughness = 1.0
-
-[sub_resource type="BoxMesh" id="BoxMesh_mountain_large"]
-size = Vector3(60, 16, 80)
-
-[sub_resource type="BoxShape3D" id="BoxShape_mountain_large"]
-size = Vector3(60, 16, 80)
-
-[sub_resource type="BoxMesh" id="BoxMesh_mountain_tall"]
-size = Vector3(40, 32, 60)
-
-[sub_resource type="BoxShape3D" id="BoxShape_mountain_tall"]
-size = Vector3(40, 32, 60)
-
-[sub_resource type="BoxMesh" id="BoxMesh_mountain_peak"]
-size = Vector3(50, 36, 50)
-
-[sub_resource type="BoxShape3D" id="BoxShape_mountain_peak"]
-size = Vector3(50, 36, 50)
-
-[sub_resource type="StandardMaterial3D" id="guardrail_mat"]
-albedo_color = Color(0.5, 0.5, 0.5, 1)
-roughness = 0.5
-metallic = 0.4
-
-[sub_resource type="BoxMesh" id="BoxMesh_guardrail_long"]
-size = Vector3(140, 1.0, 0.3)
-
-[sub_resource type="BoxShape3D" id="BoxShape_guardrail_long"]
-size = Vector3(140, 1.0, 0.3)
-
-[sub_resource type="BoxMesh" id="BoxMesh_guardrail_short"]
-size = Vector3(40, 1.0, 0.3)
-
-[sub_resource type="BoxShape3D" id="BoxShape_guardrail_short"]
-size = Vector3(40, 1.0, 0.3)
-
-[sub_resource type="BoxMesh" id="BoxMesh_tunnel_wall"]
-size = Vector3(30, 6, 0.5)
-
-[sub_resource type="BoxShape3D" id="BoxShape_tunnel_wall"]
-size = Vector3(30, 6, 0.5)
-
-[sub_resource type="BoxMesh" id="BoxMesh_tunnel_roof"]
-size = Vector3(30, 0.5, 13)
-
-[sub_resource type="BoxShape3D" id="BoxShape_tunnel_roof"]
-size = Vector3(30, 0.5, 13)
-
-[sub_resource type="StandardMaterial3D" id="trunk_mat"]
-albedo_color = Color(0.2, 0.12, 0.06, 1)
-roughness = 0.9
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_trunk"]
-top_radius = 0.25
-bottom_radius = 0.35
-height = 4.0
-
-[sub_resource type="BoxShape3D" id="BoxShape_trunk"]
-size = Vector3(0.7, 4, 0.7)
-
-[sub_resource type="StandardMaterial3D" id="canopy_mat"]
-albedo_color = Color(0.05, 0.15, 0.04, 1)
-roughness = 0.9
-
-[sub_resource type="SphereMesh" id="SphereMesh_canopy"]
-radius = 2.0
-height = 4.0
-
-[sub_resource type="BoxMesh" id="BoxMesh_overlook"]
-size = Vector3(30, 0.5, 20)
-
-[sub_resource type="BoxShape3D" id="BoxShape_overlook"]
-size = Vector3(30, 0.5, 20)
-
-[sub_resource type="BoxShape3D" id="BoxShape_trigger"]
-size = Vector3(10, 4, 10)
-
-[sub_resource type="BoxShape3D" id="BoxShape_transition"]
-size = Vector3(20, 5, 20)

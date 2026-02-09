@@ -30,6 +30,8 @@ var ending_system: EndingSystem = null
 var ambient_dialogue: AmbientDialogue = null
 var housing: HousingSystem = null
 var phone: PhoneSystem = null
+var radio: RadioSystem = null
+var pink_slip: PinkSlipSystem = null
 
 # --- Debug ---
 var debug_mode: bool = false
@@ -83,6 +85,12 @@ func _ready() -> void:
 	phone = PhoneSystem.new()
 	phone.name = "PhoneSystem"
 	print("[GameManager] ✓ PhoneSystem created")
+	radio = RadioSystem.new()
+	radio.name = "RadioSystem"
+	print("[GameManager] ✓ RadioSystem created")
+	pink_slip = PinkSlipSystem.new()
+	pink_slip.name = "PinkSlipSystem"
+	print("[GameManager] ✓ PinkSlipSystem created")
 
 	print("[GameManager] Adding subsystems as children...")
 	# Add subsystems as children so they process
@@ -104,6 +112,8 @@ func _ready() -> void:
 	add_child(ambient_dialogue)
 	add_child(housing)
 	add_child(phone)
+	add_child(radio)
+	add_child(pink_slip)
 
 	print("[GameManager] Setting initial values...")
 	# Initialize with default state

@@ -151,7 +151,7 @@ func _generate_ai_names() -> Array[String]:
 		RaceManager.RaceType.TOUGE: ["Mountain Warrior", "Touge Legend", "Downhill Ace"],
 	}
 
-	var pool := name_pools.get(race_type, ["Street Racer", "Local Driver", "Newcomer"])
+	var pool: Array = name_pools.get(race_type, ["Street Racer", "Local Driver", "Newcomer"])
 
 	for i in range(ai_count):
 		if i < pool.size():

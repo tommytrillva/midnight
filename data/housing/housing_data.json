@@ -1,74 +1,74 @@
 {
   "levels": [
-    {
-      "id": "car",
-      "name": "Your Car",
-      "description": "The backseat of your beater. Cold, cramped, and smells like oil. But it's yours.",
-      "rest_bonus": 0.0,
-      "vehicle_storage": 0,
-      "monthly_rent": 0,
-      "flavor": "You wake up with a steering wheel imprint on your forehead.",
-      "unlock": "default"
-    },
-    {
-      "id": "couch",
-      "name": "Maya's Couch",
-      "description": "A lumpy couch above Torres Automotive. The sounds of wrenches and engines are your alarm clock.",
-      "rest_bonus": 0.05,
-      "vehicle_storage": 0,
-      "monthly_rent": 0,
-      "flavor": "Maya leaves coffee on the counter. Never says it's for you. It always is.",
-      "unlock": {"flag": "maya_offered_couch"}
-    },
-    {
-      "id": "studio",
-      "name": "Harbor Studio",
-      "description": "A tiny studio near the docks. Water stains on the ceiling, but it's got a bed and a door that locks.",
-      "rest_bonus": 0.1,
-      "vehicle_storage": 1,
-      "monthly_rent": 500,
-      "flavor": "The fog horn wakes you at 5 AM. Every. Single. Morning.",
-      "unlock": {"cash_min": 2000, "rep_tier": "NEWCOMER"}
-    },
-    {
-      "id": "apartment",
-      "name": "Downtown Apartment",
-      "description": "Two bedrooms, a view of the neon signs, and a parking garage with space for your cars.",
-      "rest_bonus": 0.2,
-      "vehicle_storage": 3,
-      "monthly_rent": 2000,
-      "flavor": "The neon from the bar across the street paints your ceiling pink every night.",
-      "unlock": {"cash_min": 10000, "rep_tier": "KNOWN"}
-    },
-    {
-      "id": "penthouse",
-      "name": "Skyline Penthouse",
-      "description": "Top floor. Full city view. Private garage elevator. This is what winning looks like.",
-      "rest_bonus": 0.3,
-      "vehicle_storage": 8,
-      "monthly_rent": 10000,
-      "flavor": "You can see every district from up here. Every road you've conquered.",
-      "unlock": {"cash_min": 100000, "rep_tier": "FEARED"}
-    },
-    {
-      "id": "back_to_car",
-      "name": "Your Car (Again)",
-      "description": "Full circle. The backseat. The cold. But this time you know exactly what you lost.",
-      "rest_bonus": 0.0,
-      "vehicle_storage": 0,
-      "monthly_rent": 0,
-      "flavor": "The steering wheel imprint feels familiar. Like coming home to a home you hate.",
-      "unlock": {"flag": "the_fall_triggered"}
-    },
-    {
-      "id": "rebuild_studio",
-      "name": "Fresh Start Studio",
-      "description": "Different building, same sized room. But this time you chose it. That matters.",
-      "rest_bonus": 0.1,
-      "vehicle_storage": 1,
-      "monthly_rent": 500,
-      "flavor": "No fog horn this time. Just quiet. Quiet is new.",
-      "unlock": {"flag": "rebuilding_started", "cash_min": 2000}
-    }
+	{
+	  "id": "car",
+	  "name": "Your Car",
+	  "description": "The backseat of your beater. Cold, cramped, and smells like oil. But it's yours.",
+	  "rest_bonus": 0.0,
+	  "vehicle_storage": 0,
+	  "monthly_rent": 0,
+	  "flavor": "You wake up with a steering wheel imprint on your forehead.",
+	  "unlock": "default"
+	},
+	{
+	  "id": "couch",
+	  "name": "Maya's Couch",
+	  "description": "A lumpy couch above Torres Automotive. The sounds of wrenches and engines are your alarm clock.",
+	  "rest_bonus": 0.05,
+	  "vehicle_storage": 0,
+	  "monthly_rent": 0,
+	  "flavor": "Maya leaves coffee on the counter. Never says it's for you. It always is.",
+	  "unlock": {"flag": "maya_offered_couch"}
+	},
+	{
+	  "id": "studio",
+	  "name": "Harbor Studio",
+	  "description": "A tiny studio near the docks. Water stains on the ceiling, but it's got a bed and a door that locks.",
+	  "rest_bonus": 0.1,
+	  "vehicle_storage": 1,
+	  "monthly_rent": 500,
+	  "flavor": "The fog horn wakes you at 5 AM. Every. Single. Morning.",
+	  "unlock": {"cash_min": 2000, "rep_tier": "NEWCOMER"}
+	},
+	{
+	  "id": "apartment",
+	  "name": "Downtown Apartment",
+	  "description": "Two bedrooms, a view of the neon signs, and a parking garage with space for your cars.",
+	  "rest_bonus": 0.2,
+	  "vehicle_storage": 3,
+	  "monthly_rent": 2000,
+	  "flavor": "The neon from the bar across the street paints your ceiling pink every night.",
+	  "unlock": {"cash_min": 10000, "rep_tier": "KNOWN"}
+	},
+	{
+	  "id": "penthouse",
+	  "name": "Skyline Penthouse",
+	  "description": "Top floor. Full city view. Private garage elevator. This is what winning looks like.",
+	  "rest_bonus": 0.3,
+	  "vehicle_storage": 8,
+	  "monthly_rent": 10000,
+	  "flavor": "You can see every district from up here. Every road you've conquered.",
+	  "unlock": {"cash_min": 100000, "rep_tier": "FEARED"}
+	},
+	{
+	  "id": "back_to_car",
+	  "name": "Your Car (Again)",
+	  "description": "Full circle. The backseat. The cold. But this time you know exactly what you lost.",
+	  "rest_bonus": 0.0,
+	  "vehicle_storage": 0,
+	  "monthly_rent": 0,
+	  "flavor": "The steering wheel imprint feels familiar. Like coming home to a home you hate.",
+	  "unlock": {"flag": "the_fall_triggered"}
+	},
+	{
+	  "id": "rebuild_studio",
+	  "name": "Fresh Start Studio",
+	  "description": "Different building, same sized room. But this time you chose it. That matters.",
+	  "rest_bonus": 0.1,
+	  "vehicle_storage": 1,
+	  "monthly_rent": 500,
+	  "flavor": "No fog horn this time. Just quiet. Quiet is new.",
+	  "unlock": {"flag": "rebuilding_started", "cash_min": 2000}
+	}
   ]
 }

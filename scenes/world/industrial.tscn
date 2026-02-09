@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://industrial"]
+[gd_scene load_steps=45 format=3 uid="uid://industrial"]
 
 [sub_resource type="ProceduralSkyMaterial" id="sky_mat"]
 sky_top_color = Color(0.03, 0.02, 0.04, 1)
@@ -23,6 +23,135 @@ volumetric_fog_enabled = false
 [sub_resource type="StandardMaterial3D" id="road_mat"]
 albedo_color = Color(0.12, 0.11, 0.1, 1)
 roughness = 0.95
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ground"]
+size = Vector2(600, 600)
+
+[sub_resource type="StandardMaterial3D" id="ground_mat"]
+albedo_color = Color(0.06, 0.05, 0.05, 1)
+roughness = 1.0
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_ground"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_main_road"]
+size = Vector3(14, 0.05, 400)
+
+[sub_resource type="BoxShape3D" id="BoxShape_main_road"]
+size = Vector3(14, 0.05, 400)
+
+[sub_resource type="BoxMesh" id="BoxMesh_narrow_street"]
+size = Vector3(300, 0.05, 8)
+
+[sub_resource type="BoxShape3D" id="BoxShape_narrow_street"]
+size = Vector3(300, 0.05, 8)
+
+[sub_resource type="BoxMesh" id="BoxMesh_side_street"]
+size = Vector3(8, 0.05, 300)
+
+[sub_resource type="BoxShape3D" id="BoxShape_side_street"]
+size = Vector3(8, 0.05, 300)
+
+[sub_resource type="BoxMesh" id="BoxMesh_overpass_road"]
+size = Vector3(12, 0.15, 150)
+
+[sub_resource type="BoxShape3D" id="BoxShape_overpass_road"]
+size = Vector3(12, 0.15, 150)
+
+[sub_resource type="BoxMesh" id="BoxMesh_overpass_ramp"]
+size = Vector3(12, 0.15, 62)
+
+[sub_resource type="BoxShape3D" id="BoxShape_overpass_ramp"]
+size = Vector3(12, 0.15, 62)
+
+[sub_resource type="StandardMaterial3D" id="factory_mat"]
+albedo_color = Color(0.1, 0.08, 0.07, 1)
+roughness = 0.85
+
+[sub_resource type="BoxMesh" id="BoxMesh_factory_large"]
+size = Vector3(35, 20, 30)
+
+[sub_resource type="BoxShape3D" id="BoxShape_factory_large"]
+size = Vector3(35, 20, 30)
+
+[sub_resource type="BoxMesh" id="BoxMesh_factory_medium"]
+size = Vector3(30, 16, 25)
+
+[sub_resource type="BoxShape3D" id="BoxShape_factory_medium"]
+size = Vector3(30, 16, 25)
+
+[sub_resource type="BoxMesh" id="BoxMesh_factory_small"]
+size = Vector3(25, 12, 20)
+
+[sub_resource type="BoxShape3D" id="BoxShape_factory_small"]
+size = Vector3(25, 12, 20)
+
+[sub_resource type="StandardMaterial3D" id="smokestack_mat"]
+albedo_color = Color(0.15, 0.12, 0.1, 1)
+roughness = 0.7
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_smokestack"]
+top_radius = 2.0
+bottom_radius = 2.5
+height = 28.0
+
+[sub_resource type="BoxShape3D" id="BoxShape_smokestack"]
+size = Vector3(5, 28, 5)
+
+[sub_resource type="StandardMaterial3D" id="fence_mat"]
+albedo_color = Color(0.2, 0.2, 0.2, 1)
+roughness = 0.5
+metallic = 0.3
+
+[sub_resource type="BoxMesh" id="BoxMesh_fence"]
+size = Vector3(0.3, 3, 250)
+
+[sub_resource type="BoxShape3D" id="BoxShape_fence"]
+size = Vector3(0.3, 3, 250)
+
+[sub_resource type="StandardMaterial3D" id="barrier_mat"]
+albedo_color = Color(0.3, 0.3, 0.3, 1)
+roughness = 0.9
+
+[sub_resource type="BoxMesh" id="BoxMesh_barrier"]
+size = Vector3(4, 1, 1.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape_barrier"]
+size = Vector3(4, 1, 1.5)
+
+[sub_resource type="StandardMaterial3D" id="rail_mat"]
+albedo_color = Color(0.25, 0.2, 0.15, 1)
+roughness = 0.6
+metallic = 0.4
+
+[sub_resource type="BoxMesh" id="BoxMesh_rail_track"]
+size = Vector3(0.15, 0.3, 350)
+
+[sub_resource type="BoxShape3D" id="BoxShape_rail_track"]
+size = Vector3(0.15, 0.3, 350)
+
+[sub_resource type="BoxMesh" id="BoxMesh_overpass_support"]
+size = Vector3(1.5, 6, 1.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape_overpass_support"]
+size = Vector3(1.5, 6, 1.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape_trigger"]
+size = Vector3(10, 4, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape_transition"]
+size = Vector3(20, 5, 20)
+
+[sub_resource type="BoxMesh" id="BoxMesh_fence_half"]
+size = Vector3(0.3, 3, 115)
+
+[sub_resource type="BoxShape3D" id="BoxShape_fence_half"]
+size = Vector3(0.3, 3, 115)
+
+[sub_resource type="BoxMesh" id="BoxMesh_transition_road"]
+size = Vector3(150, 0.05, 14)
+
+[sub_resource type="BoxShape3D" id="BoxShape_transition_road"]
+size = Vector3(150, 0.05, 14)
 
 [node name="Industrial" type="Node3D"]
 
@@ -520,132 +649,3 @@ text = "<< DOWNTOWN <<"
 font_size = 36
 outline_size = 4
 modulate = Color(1, 1, 0.5, 1)
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_ground"]
-size = Vector2(600, 600)
-
-[sub_resource type="StandardMaterial3D" id="ground_mat"]
-albedo_color = Color(0.06, 0.05, 0.05, 1)
-roughness = 1.0
-
-[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_ground"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_main_road"]
-size = Vector3(14, 0.05, 400)
-
-[sub_resource type="BoxShape3D" id="BoxShape_main_road"]
-size = Vector3(14, 0.05, 400)
-
-[sub_resource type="BoxMesh" id="BoxMesh_narrow_street"]
-size = Vector3(300, 0.05, 8)
-
-[sub_resource type="BoxShape3D" id="BoxShape_narrow_street"]
-size = Vector3(300, 0.05, 8)
-
-[sub_resource type="BoxMesh" id="BoxMesh_side_street"]
-size = Vector3(8, 0.05, 300)
-
-[sub_resource type="BoxShape3D" id="BoxShape_side_street"]
-size = Vector3(8, 0.05, 300)
-
-[sub_resource type="BoxMesh" id="BoxMesh_overpass_road"]
-size = Vector3(12, 0.15, 150)
-
-[sub_resource type="BoxShape3D" id="BoxShape_overpass_road"]
-size = Vector3(12, 0.15, 150)
-
-[sub_resource type="BoxMesh" id="BoxMesh_overpass_ramp"]
-size = Vector3(12, 0.15, 62)
-
-[sub_resource type="BoxShape3D" id="BoxShape_overpass_ramp"]
-size = Vector3(12, 0.15, 62)
-
-[sub_resource type="StandardMaterial3D" id="factory_mat"]
-albedo_color = Color(0.1, 0.08, 0.07, 1)
-roughness = 0.85
-
-[sub_resource type="BoxMesh" id="BoxMesh_factory_large"]
-size = Vector3(35, 20, 30)
-
-[sub_resource type="BoxShape3D" id="BoxShape_factory_large"]
-size = Vector3(35, 20, 30)
-
-[sub_resource type="BoxMesh" id="BoxMesh_factory_medium"]
-size = Vector3(30, 16, 25)
-
-[sub_resource type="BoxShape3D" id="BoxShape_factory_medium"]
-size = Vector3(30, 16, 25)
-
-[sub_resource type="BoxMesh" id="BoxMesh_factory_small"]
-size = Vector3(25, 12, 20)
-
-[sub_resource type="BoxShape3D" id="BoxShape_factory_small"]
-size = Vector3(25, 12, 20)
-
-[sub_resource type="StandardMaterial3D" id="smokestack_mat"]
-albedo_color = Color(0.15, 0.12, 0.1, 1)
-roughness = 0.7
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_smokestack"]
-top_radius = 2.0
-bottom_radius = 2.5
-height = 28.0
-
-[sub_resource type="BoxShape3D" id="BoxShape_smokestack"]
-size = Vector3(5, 28, 5)
-
-[sub_resource type="StandardMaterial3D" id="fence_mat"]
-albedo_color = Color(0.2, 0.2, 0.2, 1)
-roughness = 0.5
-metallic = 0.3
-
-[sub_resource type="BoxMesh" id="BoxMesh_fence"]
-size = Vector3(0.3, 3, 250)
-
-[sub_resource type="BoxShape3D" id="BoxShape_fence"]
-size = Vector3(0.3, 3, 250)
-
-[sub_resource type="StandardMaterial3D" id="barrier_mat"]
-albedo_color = Color(0.3, 0.3, 0.3, 1)
-roughness = 0.9
-
-[sub_resource type="BoxMesh" id="BoxMesh_barrier"]
-size = Vector3(4, 1, 1.5)
-
-[sub_resource type="BoxShape3D" id="BoxShape_barrier"]
-size = Vector3(4, 1, 1.5)
-
-[sub_resource type="StandardMaterial3D" id="rail_mat"]
-albedo_color = Color(0.25, 0.2, 0.15, 1)
-roughness = 0.6
-metallic = 0.4
-
-[sub_resource type="BoxMesh" id="BoxMesh_rail_track"]
-size = Vector3(0.15, 0.3, 350)
-
-[sub_resource type="BoxShape3D" id="BoxShape_rail_track"]
-size = Vector3(0.15, 0.3, 350)
-
-[sub_resource type="BoxMesh" id="BoxMesh_overpass_support"]
-size = Vector3(1.5, 6, 1.5)
-
-[sub_resource type="BoxShape3D" id="BoxShape_overpass_support"]
-size = Vector3(1.5, 6, 1.5)
-
-[sub_resource type="BoxShape3D" id="BoxShape_trigger"]
-size = Vector3(10, 4, 10)
-
-[sub_resource type="BoxShape3D" id="BoxShape_transition"]
-size = Vector3(20, 5, 20)
-
-[sub_resource type="BoxMesh" id="BoxMesh_fence_half"]
-size = Vector3(0.3, 3, 115)
-
-[sub_resource type="BoxShape3D" id="BoxShape_fence_half"]
-size = Vector3(0.3, 3, 115)
-
-[sub_resource type="BoxMesh" id="BoxMesh_transition_road"]
-size = Vector3(150, 0.05, 14)
-
-[sub_resource type="BoxShape3D" id="BoxShape_transition_road"]
-size = Vector3(150, 0.05, 14)

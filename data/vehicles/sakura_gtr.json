@@ -1,0 +1,71 @@
+{
+  "vehicle_id": "sakura_gtr",
+  "display_name": "1994 Sakura GTR",
+  "manufacturer": "Sakura",
+  "year": 1994,
+  "body_style": "coupe",
+  "category": "JDM",
+  "culture": "jdm",
+  "tier": 1,
+  "rarity": "common",
+  "acquisition_method": "story_unlock",
+  "is_story_locked": true,
+  "description": "A beat-up '94 sport compact that's seen better days. The paint is faded, the exhaust rattles, but the engine still has heart.",
+  "lore": "Nobody knows how many owners this GTR has had. The VIN plate is scratched, the odometer rolled over at least once, and there's a mysterious dent in the rear quarter that looks like someone lost an argument with a guardrail. But the 1.6 still fires on the first crank every morning, the gearbox slots clean, and when you wind it out past 5,000 RPM, something in the exhaust note sounds like it's begging you to push harder. It's not much. But it's yours.",
+
+  "base_speed": 35.0,
+  "base_acceleration": 40.0,
+  "base_handling": 50.0,
+  "base_braking": 40.0,
+  "base_durability": 70.0,
+
+  "engine_type": "i4",
+  "engine_config": "I4",
+  "displacement_cc": 1590,
+  "stock_hp": 155.0,
+  "stock_torque": 110.0,
+  "aspiration": "NA",
+  "redline_rpm": 7200,
+  "weight_kg": 1180.0,
+  "drivetrain": "RWD",
+
+  "starting_value": 0,
+  "price": 0,
+  "class": "D",
+
+  "base_stats": {
+    "top_speed": 35.0,
+    "acceleration": 40.0,
+    "handling": 50.0,
+    "braking": 40.0,
+    "nitro_capacity": 25.0,
+    "weight_kg": 1180.0
+  },
+
+  "engine": {
+    "code": "4G-RE",
+    "horsepower": 155.0,
+    "torque_lbft": 110.0,
+    "displacement_cc": 1590,
+    "configuration": "I4",
+    "aspiration": "naturally_aspirated",
+    "valvetrain": "DOHC 16V",
+    "redline_rpm": 7200
+  },
+
+  "cosmetics": {
+    "default_color": "#7B8D8E",
+    "available_colors": ["faded_midnight_blue", "primer_gray", "sun_bleached_red", "rust_white"],
+    "body_kits": ["stock", "lip_kit", "widebody_v1"],
+    "spoiler_options": ["none", "factory_lip", "duck_bill"],
+    "wheel_options": ["stock_14", "enkei_rpf1_15", "volk_te37_15", "watanabe_rs_15"]
+  },
+
+  "special_traits": ["starter_car", "high_redline", "rev_happy", "beater"],
+
+  "mod_potential": {
+    "engine_swaps": ["4g-re_turbo", "2j-gte", "sr20det"],
+    "max_hp_potential": 500,
+    "upgrade_ceiling": "B"
+  }
+}

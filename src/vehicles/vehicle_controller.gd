@@ -707,6 +707,9 @@ func _emit_telemetry() -> void:
 		EventBus.nitro_flame.emit(get_instance_id(), nitro_active)
 		_was_nitro = nitro_active
 
+	# Engine RPM for audio systems
+	EventBus.engine_rpm_updated.emit(get_instance_id(), current_rpm, input_throttle)
+
 
 # ═══════════════════════════════════════════════════════════════════════════════
 #  PUBLIC API
@@ -744,17 +747,10 @@ func _apply_weather_effects(_delta: float) -> void:
 	_weather_grip = 1.0
 	_road_wetness = 0.0
 
-	if GameManager.has_node("WeatherSystem"):
-		var weather_sys: Node = GameManager.get_node("WeatherSystem")
-		if weather_sys.has_method("get_grip_multiplier"):
-			_weather_grip = weather_sys.get_grip_multiplier()
-		if weather_sys.has_method("get_rain_intensity"):
-			_road_wetness = weather_sys.get_rain_intensity()
-	elif GameManager.has_node("WorldTimeSystem"):
-		# Fallback to WorldTimeSystem grip data
-		var world_time: Node = GameManager.get_node("WorldTimeSystem")
-		if world_time.has_method("get_grip_multiplier"):
-			_weather_grip = world_time.get_grip_multiplier()
+	if GameManager.world_time and GameManager.world_time.has_method("get_grip_multiplier"):
+		_weather_grip = GameManager.world_time.get_grip_multiplier()
+	if GameManager.world_time and GameManager.world_time.has_method("get_rain_intensity"):
+		_road_wetness = GameManager.world_time.get_rain_intensity()
 
 	# Apply grip reduction to wheel friction
 	if _weather_grip < 1.0:

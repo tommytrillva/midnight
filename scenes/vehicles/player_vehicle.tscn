@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://player_vehicle"]
+[gd_scene load_steps=6 format=3 uid="uid://player_vehicle"]
 
 [ext_resource type="Script" path="res://src/vehicles/vehicle_controller.gd" id="1"]
 [ext_resource type="Script" path="res://src/vehicles/camera_controller.gd" id="2"]

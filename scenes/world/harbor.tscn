@@ -25,6 +25,127 @@ albedo_color = Color(0.1, 0.1, 0.14, 1)
 roughness = 0.3
 metallic = 0.1
 
+[sub_resource type="PlaneMesh" id="PlaneMesh_ground"]
+size = Vector2(600, 600)
+
+[sub_resource type="StandardMaterial3D" id="ground_mat"]
+albedo_color = Color(0.06, 0.06, 0.08, 1)
+roughness = 1.0
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_ground"]
+
+[sub_resource type="StandardMaterial3D" id="water_mat"]
+albedo_color = Color(0.02, 0.04, 0.1, 1)
+roughness = 0.1
+metallic = 0.4
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_water"]
+size = Vector2(600, 300)
+
+[sub_resource type="BoxMesh" id="BoxMesh_boulevard"]
+size = Vector3(400, 0.05, 16)
+
+[sub_resource type="BoxShape3D" id="BoxShape_boulevard"]
+size = Vector3(400, 0.05, 16)
+
+[sub_resource type="BoxMesh" id="BoxMesh_dock_road"]
+size = Vector3(12, 0.05, 120)
+
+[sub_resource type="BoxShape3D" id="BoxShape_dock_road"]
+size = Vector3(12, 0.05, 120)
+
+[sub_resource type="BoxMesh" id="BoxMesh_alley"]
+size = Vector3(8, 0.05, 200)
+
+[sub_resource type="BoxShape3D" id="BoxShape_alley"]
+size = Vector3(8, 0.05, 200)
+
+[sub_resource type="BoxMesh" id="BoxMesh_cross_alley"]
+size = Vector3(200, 0.05, 8)
+
+[sub_resource type="BoxShape3D" id="BoxShape_cross_alley"]
+size = Vector3(200, 0.05, 8)
+
+[sub_resource type="BoxMesh" id="BoxMesh_bridge_road"]
+size = Vector3(200, 0.05, 12)
+
+[sub_resource type="BoxShape3D" id="BoxShape_bridge_road"]
+size = Vector3(200, 0.05, 12)
+
+[sub_resource type="StandardMaterial3D" id="warehouse_mat"]
+albedo_color = Color(0.1, 0.1, 0.13, 1)
+roughness = 0.85
+
+[sub_resource type="BoxMesh" id="BoxMesh_warehouse_large"]
+size = Vector3(40, 14, 35)
+
+[sub_resource type="BoxShape3D" id="BoxShape_warehouse_large"]
+size = Vector3(40, 14, 35)
+
+[sub_resource type="BoxMesh" id="BoxMesh_warehouse_small"]
+size = Vector3(30, 10, 25)
+
+[sub_resource type="BoxShape3D" id="BoxShape_warehouse_small"]
+size = Vector3(30, 10, 25)
+
+[sub_resource type="StandardMaterial3D" id="container_mat"]
+albedo_color = Color(0.15, 0.06, 0.04, 1)
+roughness = 0.7
+
+[sub_resource type="BoxMesh" id="BoxMesh_container"]
+size = Vector3(12, 3, 3)
+
+[sub_resource type="BoxShape3D" id="BoxShape_container"]
+size = Vector3(12, 3, 3)
+
+[sub_resource type="StandardMaterial3D" id="crane_mat"]
+albedo_color = Color(0.6, 0.55, 0.1, 1)
+roughness = 0.6
+
+[sub_resource type="BoxMesh" id="BoxMesh_crane_tower"]
+size = Vector3(4, 30, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape_crane_tower"]
+size = Vector3(4, 30, 4)
+
+[sub_resource type="BoxMesh" id="BoxMesh_crane_arm"]
+size = Vector3(25, 2, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape_crane_arm"]
+size = Vector3(25, 2, 2)
+
+[sub_resource type="StandardMaterial3D" id="dock_mat"]
+albedo_color = Color(0.12, 0.1, 0.08, 1)
+roughness = 0.9
+
+[sub_resource type="BoxMesh" id="BoxMesh_dock_platform"]
+size = Vector3(100, 1.5, 25)
+
+[sub_resource type="BoxShape3D" id="BoxShape_dock_platform"]
+size = Vector3(100, 1.5, 25)
+
+[sub_resource type="StandardMaterial3D" id="ship_mat"]
+albedo_color = Color(0.08, 0.08, 0.1, 1)
+roughness = 0.6
+
+[sub_resource type="BoxMesh" id="BoxMesh_ship_hull"]
+size = Vector3(70, 12, 18)
+
+[sub_resource type="BoxShape3D" id="BoxShape_ship_hull"]
+size = Vector3(70, 12, 18)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ship_cabin"]
+size = Vector3(12, 10, 14)
+
+[sub_resource type="BoxShape3D" id="BoxShape_ship_cabin"]
+size = Vector3(12, 10, 14)
+
+[sub_resource type="BoxShape3D" id="BoxShape_trigger"]
+size = Vector3(10, 4, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape_transition"]
+size = Vector3(20, 5, 20)
+
 [node name="Harbor" type="Node3D"]
 
 [node name="WorldEnv" type="WorldEnvironment" parent="."]
@@ -413,124 +534,3 @@ text = ">> DOWNTOWN >>"
 font_size = 36
 outline_size = 4
 modulate = Color(1, 1, 0.5, 1)
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_ground"]
-size = Vector2(600, 600)
-
-[sub_resource type="StandardMaterial3D" id="ground_mat"]
-albedo_color = Color(0.06, 0.06, 0.08, 1)
-roughness = 1.0
-
-[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_ground"]
-
-[sub_resource type="StandardMaterial3D" id="water_mat"]
-albedo_color = Color(0.02, 0.04, 0.1, 1)
-roughness = 0.1
-metallic = 0.4
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_water"]
-size = Vector2(600, 300)
-
-[sub_resource type="BoxMesh" id="BoxMesh_boulevard"]
-size = Vector3(400, 0.05, 16)
-
-[sub_resource type="BoxShape3D" id="BoxShape_boulevard"]
-size = Vector3(400, 0.05, 16)
-
-[sub_resource type="BoxMesh" id="BoxMesh_dock_road"]
-size = Vector3(12, 0.05, 120)
-
-[sub_resource type="BoxShape3D" id="BoxShape_dock_road"]
-size = Vector3(12, 0.05, 120)
-
-[sub_resource type="BoxMesh" id="BoxMesh_alley"]
-size = Vector3(8, 0.05, 200)
-
-[sub_resource type="BoxShape3D" id="BoxShape_alley"]
-size = Vector3(8, 0.05, 200)
-
-[sub_resource type="BoxMesh" id="BoxMesh_cross_alley"]
-size = Vector3(200, 0.05, 8)
-
-[sub_resource type="BoxShape3D" id="BoxShape_cross_alley"]
-size = Vector3(200, 0.05, 8)
-
-[sub_resource type="BoxMesh" id="BoxMesh_bridge_road"]
-size = Vector3(200, 0.05, 12)
-
-[sub_resource type="BoxShape3D" id="BoxShape_bridge_road"]
-size = Vector3(200, 0.05, 12)
-
-[sub_resource type="StandardMaterial3D" id="warehouse_mat"]
-albedo_color = Color(0.1, 0.1, 0.13, 1)
-roughness = 0.85
-
-[sub_resource type="BoxMesh" id="BoxMesh_warehouse_large"]
-size = Vector3(40, 14, 35)
-
-[sub_resource type="BoxShape3D" id="BoxShape_warehouse_large"]
-size = Vector3(40, 14, 35)
-
-[sub_resource type="BoxMesh" id="BoxMesh_warehouse_small"]
-size = Vector3(30, 10, 25)
-
-[sub_resource type="BoxShape3D" id="BoxShape_warehouse_small"]
-size = Vector3(30, 10, 25)
-
-[sub_resource type="StandardMaterial3D" id="container_mat"]
-albedo_color = Color(0.15, 0.06, 0.04, 1)
-roughness = 0.7
-
-[sub_resource type="BoxMesh" id="BoxMesh_container"]
-size = Vector3(12, 3, 3)
-
-[sub_resource type="BoxShape3D" id="BoxShape_container"]
-size = Vector3(12, 3, 3)
-
-[sub_resource type="StandardMaterial3D" id="crane_mat"]
-albedo_color = Color(0.6, 0.55, 0.1, 1)
-roughness = 0.6
-
-[sub_resource type="BoxMesh" id="BoxMesh_crane_tower"]
-size = Vector3(4, 30, 4)
-
-[sub_resource type="BoxShape3D" id="BoxShape_crane_tower"]
-size = Vector3(4, 30, 4)
-
-[sub_resource type="BoxMesh" id="BoxMesh_crane_arm"]
-size = Vector3(25, 2, 2)
-
-[sub_resource type="BoxShape3D" id="BoxShape_crane_arm"]
-size = Vector3(25, 2, 2)
-
-[sub_resource type="StandardMaterial3D" id="dock_mat"]
-albedo_color = Color(0.12, 0.1, 0.08, 1)
-roughness = 0.9
-
-[sub_resource type="BoxMesh" id="BoxMesh_dock_platform"]
-size = Vector3(100, 1.5, 25)
-
-[sub_resource type="BoxShape3D" id="BoxShape_dock_platform"]
-size = Vector3(100, 1.5, 25)
-
-[sub_resource type="StandardMaterial3D" id="ship_mat"]
-albedo_color = Color(0.08, 0.08, 0.1, 1)
-roughness = 0.6
-
-[sub_resource type="BoxMesh" id="BoxMesh_ship_hull"]
-size = Vector3(70, 12, 18)
-
-[sub_resource type="BoxShape3D" id="BoxShape_ship_hull"]
-size = Vector3(70, 12, 18)
-
-[sub_resource type="BoxMesh" id="BoxMesh_ship_cabin"]
-size = Vector3(12, 10, 14)
-
-[sub_resource type="BoxShape3D" id="BoxShape_ship_cabin"]
-size = Vector3(12, 10, 14)
-
-[sub_resource type="BoxShape3D" id="BoxShape_trigger"]
-size = Vector3(10, 4, 10)
-
-[sub_resource type="BoxShape3D" id="BoxShape_transition"]
-size = Vector3(20, 5, 20)

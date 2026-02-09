@@ -28,7 +28,7 @@ const COLOR_WHITE := Color(1.0, 1.0, 1.0)
 
 
 func _ready() -> void:
-	# Create transition systems
+	# Create transition system
 	screen_transition = ScreenTransition.new()
 	add_child(screen_transition)
 

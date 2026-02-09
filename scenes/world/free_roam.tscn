@@ -164,3 +164,39 @@ text = "SERVICE"
 [node name="ExitBtn" type="Button" parent="GarageUI/Buttons"]
 layout_mode = 2
 text = "EXIT GARAGE"
+
+[node name="MayaDialogue" type="PanelContainer" parent="GarageUI"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -300.0
+offset_top = -110.0
+offset_right = 300.0
+offset_bottom = -70.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="MayaLine" type="Label" parent="GarageUI/MayaDialogue"]
+layout_mode = 2
+text = "Maya: \"Pull it in, let me take a look.\""
+horizontal_alignment = 1
+
+[node name="ComboPanel" type="VBoxContainer" parent="GarageUI"]
+layout_mode = 1
+offset_left = 40.0
+offset_top = 360.0
+offset_right = 300.0
+offset_bottom = 480.0
+theme_override_constants/separation = 4
+
+[node name="ComboTitle" type="Label" parent="GarageUI/ComboPanel"]
+layout_mode = 2
+text = "PART COMBOS"
+
+[node name="ComboList" type="Label" parent="GarageUI/ComboPanel"]
+layout_mode = 2
+text = "No active combos"
+autowrap_mode = 2

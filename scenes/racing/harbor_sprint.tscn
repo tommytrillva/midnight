@@ -1,6 +1,73 @@
-[gd_scene load_steps=3 format=3 uid="uid://harbor_sprint"]
+[gd_scene load_steps=19 format=3 uid="uid://harbor_sprint"]
 
 [ext_resource type="Script" path="res://src/racing/race_track.gd" id="1"]
+
+; ---- Sub-Resources ----
+
+; 2km straight racing line along docks
+[sub_resource type="Curve3D" id="Curve3D_harbor"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 400, 0, 0, 0, 0, 0, 0, 0, 0.5, 800, 0, 0, 0, 0, 0, 0, 0, 0.5, 1200, 0, 0, 0, 0, 0, 0, 0, 0.5, 1600, 0, 0, 0, 0, 0, 0, 0, 0.5, 2000),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0)
+}
+
+; Collision shapes
+[sub_resource type="BoxShape3D" id="BoxShape_finish"]
+size = Vector3(24, 5, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape_cp"]
+size = Vector3(24, 5, 2)
+
+; Ground
+[sub_resource type="BoxMesh" id="BoxMesh_ground"]
+size = Vector3(24, 0.2, 2100)
+
+[sub_resource type="BoxShape3D" id="BoxShape_ground"]
+size = Vector3(24, 0.2, 2100)
+
+[sub_resource type="StandardMaterial3D" id="mat_ground_harbor"]
+albedo_color = Color(0.18, 0.18, 0.2, 1)
+roughness = 0.85
+
+; Barriers
+[sub_resource type="BoxMesh" id="BoxMesh_barrier_long"]
+size = Vector3(0.5, 1.6, 2100)
+
+[sub_resource type="BoxShape3D" id="BoxShape_barrier_long"]
+size = Vector3(0.5, 1.6, 2100)
+
+[sub_resource type="StandardMaterial3D" id="mat_barrier_harbor"]
+albedo_color = Color(0.8, 0.7, 0.3, 1)
+metallic = 0.6
+roughness = 0.4
+
+; Container props
+[sub_resource type="BoxMesh" id="BoxMesh_container"]
+size = Vector3(6, 3, 2.5)
+
+[sub_resource type="StandardMaterial3D" id="mat_container_red"]
+albedo_color = Color(0.65, 0.1, 0.1, 1)
+roughness = 0.75
+
+[sub_resource type="StandardMaterial3D" id="mat_container_blue"]
+albedo_color = Color(0.1, 0.2, 0.6, 1)
+roughness = 0.75
+
+[sub_resource type="StandardMaterial3D" id="mat_container_green"]
+albedo_color = Color(0.1, 0.55, 0.2, 1)
+roughness = 0.75
+
+; Environment
+[sub_resource type="Environment" id="Environment_harbor"]
+background_mode = 1
+background_color = Color(0.3, 0.4, 0.5, 1)
+ambient_light_source = 2
+ambient_light_color = Color(0.5, 0.55, 0.6, 1)
+ambient_light_energy = 0.6
+tonemap_mode = 2
+fog_enabled = true
+fog_light_color = Color(0.6, 0.65, 0.7, 1)
+fog_density = 0.002
 
 [node name="HarborSprint" type="Node3D"]
 script = ExtResource("1")
@@ -211,70 +278,3 @@ spot_angle = 45.0
 ; ---- World Environment ----
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_harbor")
-
-; ---- Sub-Resources ----
-
-; 2km straight racing line along docks
-[sub_resource type="Curve3D" id="Curve3D_harbor"]
-_data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 400, 0, 0, 0, 0, 0, 0, 0, 0.5, 800, 0, 0, 0, 0, 0, 0, 0, 0.5, 1200, 0, 0, 0, 0, 0, 0, 0, 0.5, 1600, 0, 0, 0, 0, 0, 0, 0, 0.5, 2000),
-"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0)
-}
-
-; Collision shapes
-[sub_resource type="BoxShape3D" id="BoxShape_finish"]
-size = Vector3(24, 5, 2)
-
-[sub_resource type="BoxShape3D" id="BoxShape_cp"]
-size = Vector3(24, 5, 2)
-
-; Ground
-[sub_resource type="BoxMesh" id="BoxMesh_ground"]
-size = Vector3(24, 0.2, 2100)
-
-[sub_resource type="BoxShape3D" id="BoxShape_ground"]
-size = Vector3(24, 0.2, 2100)
-
-[sub_resource type="StandardMaterial3D" id="mat_ground_harbor"]
-albedo_color = Color(0.18, 0.18, 0.2, 1)
-roughness = 0.85
-
-; Barriers
-[sub_resource type="BoxMesh" id="BoxMesh_barrier_long"]
-size = Vector3(0.5, 1.6, 2100)
-
-[sub_resource type="BoxShape3D" id="BoxShape_barrier_long"]
-size = Vector3(0.5, 1.6, 2100)
-
-[sub_resource type="StandardMaterial3D" id="mat_barrier_harbor"]
-albedo_color = Color(0.8, 0.7, 0.3, 1)
-metallic = 0.6
-roughness = 0.4
-
-; Container props
-[sub_resource type="BoxMesh" id="BoxMesh_container"]
-size = Vector3(6, 3, 2.5)
-
-[sub_resource type="StandardMaterial3D" id="mat_container_red"]
-albedo_color = Color(0.65, 0.1, 0.1, 1)
-roughness = 0.75
-
-[sub_resource type="StandardMaterial3D" id="mat_container_blue"]
-albedo_color = Color(0.1, 0.2, 0.6, 1)
-roughness = 0.75
-
-[sub_resource type="StandardMaterial3D" id="mat_container_green"]
-albedo_color = Color(0.1, 0.55, 0.2, 1)
-roughness = 0.75
-
-; Environment
-[sub_resource type="Environment" id="Environment_harbor"]
-background_mode = 1
-background_color = Color(0.3, 0.4, 0.5, 1)
-ambient_light_source = 2
-ambient_light_color = Color(0.5, 0.55, 0.6, 1)
-ambient_light_energy = 0.6
-tonemap_mode = 2
-fog_enabled = true
-fog_light_color = Color(0.6, 0.65, 0.7, 1)
-fog_density = 0.002

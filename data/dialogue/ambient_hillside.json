@@ -3,203 +3,203 @@
   "district": "hillside",
   "context": "Hillside district — mountain roads, hairpin turns, touge culture, elevation, wind",
   "lines": [
-    {
-      "speakers": ["regular_1", "regular_2"],
-      "exchange": [
-        {"speaker": 0, "speaker_tag": "Racer", "text": "Route 9 after midnight. That's where legends are made."},
-        {"speaker": 1, "speaker_tag": "Racer", "text": "And where legends end, if they're not careful."},
-        {"speaker": 0, "speaker_tag": "Racer", "text": "Same road. Same rules. Different outcomes."}
-      ],
-      "conditions": {},
-      "weight": 1.0,
-      "tags": ["racing", "atmosphere", "legend"]
-    },
-    {
-      "speakers": ["regular_1"],
-      "exchange": [
-        {"speaker": 0, "speaker_tag": "Racer", "text": "Touge rules are simple: don't go off the mountain."}
-      ],
-      "conditions": {},
-      "weight": 1.0,
-      "tags": ["racing", "rules", "humor"]
-    },
-    {
-      "speakers": ["regular_1", "regular_2"],
-      "exchange": [
-        {"speaker": 0, "speaker_tag": "Regular", "text": "Ghost runs this mountain. I've seen the tire marks."},
-        {"speaker": 1, "speaker_tag": "Regular", "text": "Tire marks don't prove anything. I leave tire marks."},
-        {"speaker": 0, "speaker_tag": "Regular", "text": "Your tire marks are zigzags. These are perfect lines. PERFECT. Nobody drives like that."}
-      ],
-      "conditions": {},
-      "weight": 1.0,
-      "tags": ["ghost_legend", "lore", "mystery"]
-    },
-    {
-      "speakers": ["regular_1", "regular_2"],
-      "exchange": [
-        {"speaker": 0, "speaker_tag": "Racer", "text": "Wind's picking up. Crosswind on the switchbacks is no joke."},
-        {"speaker": 1, "speaker_tag": "Racer", "text": "Lighter cars get pushed. Heavier cars understeer. There's no winning against the mountain."},
-        {"speaker": 0, "speaker_tag": "Racer", "text": "You don't win against the mountain. You survive it."}
-      ],
-      "conditions": {},
-      "weight": 0.9,
-      "tags": ["atmosphere", "danger"]
-    },
-    {
-      "speakers": ["regular_1"],
-      "exchange": [
-        {"speaker": 0, "speaker_tag": "Racer", "text": "You can see the whole city from up here. Every light, every street. Makes you feel like you own it all."}
-      ],
-      "conditions": {},
-      "weight": 0.8,
-      "tags": ["atmosphere", "views"]
-    },
-    {
-      "speakers": ["regular_1", "regular_2"],
-      "exchange": [
-        {"speaker": 0, "speaker_tag": "Racer", "text": "Guardrails are optional up here. Half of them are missing from last month's race."},
-        {"speaker": 1, "speaker_tag": "Racer", "text": "The city stopped replacing them. Figured it was cheaper to let Darwin sort it out."}
-      ],
-      "conditions": {},
-      "weight": 0.8,
-      "tags": ["danger", "humor"]
-    },
-    {
-      "speakers": ["regular_1", "regular_2"],
-      "exchange": [
-        {"speaker": 0, "speaker_tag": "Racer", "text": "Hairpin at the summit. Thirty degrees of bank. Touch the brakes wrong and you're airborne."},
-        {"speaker": 1, "speaker_tag": "Racer", "text": "I saw someone go off there last year. Car flew fifty feet before hitting trees."},
-        {"speaker": 0, "speaker_tag": "Racer", "text": "Driver walked away. Car didn't. Mountain keeps what it takes."}
-      ],
-      "conditions": {},
-      "weight": 0.9,
-      "tags": ["danger", "lore"]
-    },
-    {
-      "speakers": ["regular_1"],
-      "exchange": [
-        {"speaker": 0, "speaker_tag": "Old Timer", "text": "Diesel used to own this mountain. Before he retired to the flatlands. Said the hills took too many friends."}
-      ],
-      "conditions": {},
-      "weight": 0.8,
-      "tags": ["diesel", "lore"]
-    },
-    {
-      "speakers": ["regular_1", "regular_2"],
-      "exchange": [
-        {"speaker": 0, "speaker_tag": "Racer", "text": "Downhill is faster. Uphill is harder. Which one you want?"},
-        {"speaker": 1, "speaker_tag": "Racer", "text": "Downhill. I let gravity do the work."},
-        {"speaker": 0, "speaker_tag": "Racer", "text": "Gravity does the work until it does too much. Then you're a headline."}
-      ],
-      "conditions": {},
-      "weight": 0.9,
-      "tags": ["racing", "danger"]
-    },
-    {
-      "speakers": ["regular_1", "regular_2"],
-      "exchange": [
-        {"speaker": 0, "speaker_tag": "Racer", "text": "Trees are so close you can smell the pine through the window."},
-        {"speaker": 1, "speaker_tag": "Racer", "text": "If you can smell the pine, you're too close."},
-        {"speaker": 0, "speaker_tag": "Racer", "text": "Or you're exactly close enough."}
-      ],
-      "conditions": {},
-      "weight": 0.7,
-      "tags": ["atmosphere", "racing"]
-    },
-    {
-      "speakers": ["regular_1"],
-      "exchange": [
-        {"speaker": 0, "speaker_tag": "Spectator", "text": "The view from the lookout point is worth the drive alone. City lights below, stars above. Engines in between."}
-      ],
-      "conditions": {},
-      "weight": 0.7,
-      "tags": ["atmosphere", "views"]
-    },
-    {
-      "speakers": ["regular_1", "regular_2"],
-      "exchange": [
-        {"speaker": 0, "speaker_tag": "Racer", "text": "Blind corners. That's the hill's weapon. You can memorize every one and it still surprises you."},
-        {"speaker": 1, "speaker_tag": "Racer", "text": "Because it's not about knowing the corner. It's about trusting yourself to commit."}
-      ],
-      "conditions": {},
-      "weight": 0.8,
-      "tags": ["philosophy", "racing"]
-    },
-    {
-      "speakers": ["regular_1", "regular_2"],
-      "exchange": [
-        {"speaker": 0, "speaker_tag": "Regular", "text": "Someone painted lines on the road. Apex markers. Braking points."},
-        {"speaker": 1, "speaker_tag": "Regular", "text": "The mountain already tells you where to brake. You just gotta listen."},
-        {"speaker": 0, "speaker_tag": "Regular", "text": "Poetic. You practice that in the mirror?"}
-      ],
-      "conditions": {},
-      "weight": 0.7,
-      "tags": ["humor", "racing"]
-    },
-    {
-      "speakers": ["regular_1", "regular_2"],
-      "exchange": [
-        {"speaker": 0, "speaker_tag": "Racer", "text": "Temperature drops five degrees between the bottom and the top. Tire grip changes with every switchback."},
-        {"speaker": 1, "speaker_tag": "Racer", "text": "Smart drivers adjust. Everyone else slides."}
-      ],
-      "conditions": {},
-      "weight": 0.7,
-      "tags": ["technical", "racing"]
-    },
-    {
-      "speakers": ["regular_1", "regular_2"],
-      "exchange": [
-        {"speaker": 0, "speaker_tag": "Racer", "text": "Fog's rolling up the mountain. Visibility's gone."},
-        {"speaker": 1, "speaker_tag": "Racer", "text": "Perfect. Real touge happens when you can't see the drop."},
-        {"speaker": 0, "speaker_tag": "Racer", "text": "That's not racing. That's gambling with your life."},
-        {"speaker": 1, "speaker_tag": "Racer", "text": "What's the difference?"}
-      ],
-      "conditions": {"weather": "fog"},
-      "weight": 1.4,
-      "preferred_weather": "fog",
-      "tags": ["weather", "danger", "philosophy"]
-    },
-    {
-      "speakers": ["regular_1"],
-      "exchange": [
-        {"speaker": 0, "speaker_tag": "Racer", "text": "Rain on the mountain is a different animal. Water runs downhill, collects in the corners. Every turn is a trap."}
-      ],
-      "conditions": {"weather": "heavy_rain"},
-      "weight": 1.3,
-      "preferred_weather": "heavy_rain",
-      "tags": ["weather", "danger"]
-    },
-    {
-      "speakers": ["regular_1", "regular_2"],
-      "exchange": [
-        {"speaker": 0, "speaker_tag": "Racer", "text": "Clear night. You can see the ocean from the top."},
-        {"speaker": 1, "speaker_tag": "Racer", "text": "I don't look at the view when I'm driving. The road gets jealous."}
-      ],
-      "conditions": {"weather": "clear"},
-      "weight": 0.9,
-      "preferred_weather": "clear",
-      "tags": ["atmosphere", "views"]
-    },
-    {
-      "speakers": ["regular_1", "regular_2"],
-      "exchange": [
-        {"speaker": 0, "speaker_tag": "Regular", "text": "Dawn on the mountain. Best view in the city. Worst time to be driving home tired."},
-        {"speaker": 1, "speaker_tag": "Regular", "text": "One more run. The sun can wait."}
-      ],
-      "conditions": {"time_period": "dawn"},
-      "weight": 1.2,
-      "preferred_time": "dawn",
-      "tags": ["atmosphere", "time", "views"]
-    },
-    {
-      "speakers": ["regular_1"],
-      "exchange": [
-        {"speaker": 0, "speaker_tag": "Regular", "text": "They say if you drive Route 9 alone at midnight, you'll see headlights behind you. But when you look... nothing's there."}
-      ],
-      "conditions": {"time_period": "late_night"},
-      "weight": 1.0,
-      "preferred_time": "late_night",
-      "tags": ["ghost_legend", "mystery", "time"]
-    }
+	{
+	  "speakers": ["regular_1", "regular_2"],
+	  "exchange": [
+		{"speaker": 0, "speaker_tag": "Racer", "text": "Route 9 after midnight. That's where legends are made."},
+		{"speaker": 1, "speaker_tag": "Racer", "text": "And where legends end, if they're not careful."},
+		{"speaker": 0, "speaker_tag": "Racer", "text": "Same road. Same rules. Different outcomes."}
+	  ],
+	  "conditions": {},
+	  "weight": 1.0,
+	  "tags": ["racing", "atmosphere", "legend"]
+	},
+	{
+	  "speakers": ["regular_1"],
+	  "exchange": [
+		{"speaker": 0, "speaker_tag": "Racer", "text": "Touge rules are simple: don't go off the mountain."}
+	  ],
+	  "conditions": {},
+	  "weight": 1.0,
+	  "tags": ["racing", "rules", "humor"]
+	},
+	{
+	  "speakers": ["regular_1", "regular_2"],
+	  "exchange": [
+		{"speaker": 0, "speaker_tag": "Regular", "text": "Ghost runs this mountain. I've seen the tire marks."},
+		{"speaker": 1, "speaker_tag": "Regular", "text": "Tire marks don't prove anything. I leave tire marks."},
+		{"speaker": 0, "speaker_tag": "Regular", "text": "Your tire marks are zigzags. These are perfect lines. PERFECT. Nobody drives like that."}
+	  ],
+	  "conditions": {},
+	  "weight": 1.0,
+	  "tags": ["ghost_legend", "lore", "mystery"]
+	},
+	{
+	  "speakers": ["regular_1", "regular_2"],
+	  "exchange": [
+		{"speaker": 0, "speaker_tag": "Racer", "text": "Wind's picking up. Crosswind on the switchbacks is no joke."},
+		{"speaker": 1, "speaker_tag": "Racer", "text": "Lighter cars get pushed. Heavier cars understeer. There's no winning against the mountain."},
+		{"speaker": 0, "speaker_tag": "Racer", "text": "You don't win against the mountain. You survive it."}
+	  ],
+	  "conditions": {},
+	  "weight": 0.9,
+	  "tags": ["atmosphere", "danger"]
+	},
+	{
+	  "speakers": ["regular_1"],
+	  "exchange": [
+		{"speaker": 0, "speaker_tag": "Racer", "text": "You can see the whole city from up here. Every light, every street. Makes you feel like you own it all."}
+	  ],
+	  "conditions": {},
+	  "weight": 0.8,
+	  "tags": ["atmosphere", "views"]
+	},
+	{
+	  "speakers": ["regular_1", "regular_2"],
+	  "exchange": [
+		{"speaker": 0, "speaker_tag": "Racer", "text": "Guardrails are optional up here. Half of them are missing from last month's race."},
+		{"speaker": 1, "speaker_tag": "Racer", "text": "The city stopped replacing them. Figured it was cheaper to let Darwin sort it out."}
+	  ],
+	  "conditions": {},
+	  "weight": 0.8,
+	  "tags": ["danger", "humor"]
+	},
+	{
+	  "speakers": ["regular_1", "regular_2"],
+	  "exchange": [
+		{"speaker": 0, "speaker_tag": "Racer", "text": "Hairpin at the summit. Thirty degrees of bank. Touch the brakes wrong and you're airborne."},
+		{"speaker": 1, "speaker_tag": "Racer", "text": "I saw someone go off there last year. Car flew fifty feet before hitting trees."},
+		{"speaker": 0, "speaker_tag": "Racer", "text": "Driver walked away. Car didn't. Mountain keeps what it takes."}
+	  ],
+	  "conditions": {},
+	  "weight": 0.9,
+	  "tags": ["danger", "lore"]
+	},
+	{
+	  "speakers": ["regular_1"],
+	  "exchange": [
+		{"speaker": 0, "speaker_tag": "Old Timer", "text": "Diesel used to own this mountain. Before he retired to the flatlands. Said the hills took too many friends."}
+	  ],
+	  "conditions": {},
+	  "weight": 0.8,
+	  "tags": ["diesel", "lore"]
+	},
+	{
+	  "speakers": ["regular_1", "regular_2"],
+	  "exchange": [
+		{"speaker": 0, "speaker_tag": "Racer", "text": "Downhill is faster. Uphill is harder. Which one you want?"},
+		{"speaker": 1, "speaker_tag": "Racer", "text": "Downhill. I let gravity do the work."},
+		{"speaker": 0, "speaker_tag": "Racer", "text": "Gravity does the work until it does too much. Then you're a headline."}
+	  ],
+	  "conditions": {},
+	  "weight": 0.9,
+	  "tags": ["racing", "danger"]
+	},
+	{
+	  "speakers": ["regular_1", "regular_2"],
+	  "exchange": [
+		{"speaker": 0, "speaker_tag": "Racer", "text": "Trees are so close you can smell the pine through the window."},
+		{"speaker": 1, "speaker_tag": "Racer", "text": "If you can smell the pine, you're too close."},
+		{"speaker": 0, "speaker_tag": "Racer", "text": "Or you're exactly close enough."}
+	  ],
+	  "conditions": {},
+	  "weight": 0.7,
+	  "tags": ["atmosphere", "racing"]
+	},
+	{
+	  "speakers": ["regular_1"],
+	  "exchange": [
+		{"speaker": 0, "speaker_tag": "Spectator", "text": "The view from the lookout point is worth the drive alone. City lights below, stars above. Engines in between."}
+	  ],
+	  "conditions": {},
+	  "weight": 0.7,
+	  "tags": ["atmosphere", "views"]
+	},
+	{
+	  "speakers": ["regular_1", "regular_2"],
+	  "exchange": [
+		{"speaker": 0, "speaker_tag": "Racer", "text": "Blind corners. That's the hill's weapon. You can memorize every one and it still surprises you."},
+		{"speaker": 1, "speaker_tag": "Racer", "text": "Because it's not about knowing the corner. It's about trusting yourself to commit."}
+	  ],
+	  "conditions": {},
+	  "weight": 0.8,
+	  "tags": ["philosophy", "racing"]
+	},
+	{
+	  "speakers": ["regular_1", "regular_2"],
+	  "exchange": [
+		{"speaker": 0, "speaker_tag": "Regular", "text": "Someone painted lines on the road. Apex markers. Braking points."},
+		{"speaker": 1, "speaker_tag": "Regular", "text": "The mountain already tells you where to brake. You just gotta listen."},
+		{"speaker": 0, "speaker_tag": "Regular", "text": "Poetic. You practice that in the mirror?"}
+	  ],
+	  "conditions": {},
+	  "weight": 0.7,
+	  "tags": ["humor", "racing"]
+	},
+	{
+	  "speakers": ["regular_1", "regular_2"],
+	  "exchange": [
+		{"speaker": 0, "speaker_tag": "Racer", "text": "Temperature drops five degrees between the bottom and the top. Tire grip changes with every switchback."},
+		{"speaker": 1, "speaker_tag": "Racer", "text": "Smart drivers adjust. Everyone else slides."}
+	  ],
+	  "conditions": {},
+	  "weight": 0.7,
+	  "tags": ["technical", "racing"]
+	},
+	{
+	  "speakers": ["regular_1", "regular_2"],
+	  "exchange": [
+		{"speaker": 0, "speaker_tag": "Racer", "text": "Fog's rolling up the mountain. Visibility's gone."},
+		{"speaker": 1, "speaker_tag": "Racer", "text": "Perfect. Real touge happens when you can't see the drop."},
+		{"speaker": 0, "speaker_tag": "Racer", "text": "That's not racing. That's gambling with your life."},
+		{"speaker": 1, "speaker_tag": "Racer", "text": "What's the difference?"}
+	  ],
+	  "conditions": {"weather": "fog"},
+	  "weight": 1.4,
+	  "preferred_weather": "fog",
+	  "tags": ["weather", "danger", "philosophy"]
+	},
+	{
+	  "speakers": ["regular_1"],
+	  "exchange": [
+		{"speaker": 0, "speaker_tag": "Racer", "text": "Rain on the mountain is a different animal. Water runs downhill, collects in the corners. Every turn is a trap."}
+	  ],
+	  "conditions": {"weather": "heavy_rain"},
+	  "weight": 1.3,
+	  "preferred_weather": "heavy_rain",
+	  "tags": ["weather", "danger"]
+	},
+	{
+	  "speakers": ["regular_1", "regular_2"],
+	  "exchange": [
+		{"speaker": 0, "speaker_tag": "Racer", "text": "Clear night. You can see the ocean from the top."},
+		{"speaker": 1, "speaker_tag": "Racer", "text": "I don't look at the view when I'm driving. The road gets jealous."}
+	  ],
+	  "conditions": {"weather": "clear"},
+	  "weight": 0.9,
+	  "preferred_weather": "clear",
+	  "tags": ["atmosphere", "views"]
+	},
+	{
+	  "speakers": ["regular_1", "regular_2"],
+	  "exchange": [
+		{"speaker": 0, "speaker_tag": "Regular", "text": "Dawn on the mountain. Best view in the city. Worst time to be driving home tired."},
+		{"speaker": 1, "speaker_tag": "Regular", "text": "One more run. The sun can wait."}
+	  ],
+	  "conditions": {"time_period": "dawn"},
+	  "weight": 1.2,
+	  "preferred_time": "dawn",
+	  "tags": ["atmosphere", "time", "views"]
+	},
+	{
+	  "speakers": ["regular_1"],
+	  "exchange": [
+		{"speaker": 0, "speaker_tag": "Regular", "text": "They say if you drive Route 9 alone at midnight, you'll see headlights behind you. But when you look... nothing's there."}
+	  ],
+	  "conditions": {"time_period": "late_night"},
+	  "weight": 1.0,
+	  "preferred_time": "late_night",
+	  "tags": ["ghost_legend", "mystery", "time"]
+	}
   ]
 }

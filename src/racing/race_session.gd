@@ -615,7 +615,7 @@ func _stagger_results_children() -> void:
 	var delay_offset := 0.0
 	for child in results_panel.get_children():
 		if child is Control:
-			var orig_x := child.position.x
+			var orig_x: float = child.position.x
 			child.position.x -= 40.0
 			child.modulate.a = 0.0
 			var child_tween := create_tween()

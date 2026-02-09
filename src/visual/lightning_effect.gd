@@ -323,7 +323,7 @@ func _show_fork_lightning(intensity: float) -> void:
 	_fork_mesh.mesh = _generate_bolt_mesh(intensity)
 
 	# Position in the sky, offset randomly from camera
-	var camera := get_viewport().get_camera_3d() if get_viewport() else null
+	var camera: Camera3D = get_viewport().get_camera_3d() if get_viewport() else null
 	if camera:
 		var offset := Vector3(
 			randf_range(-80.0, 80.0),

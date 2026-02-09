@@ -64,7 +64,7 @@ func _refresh_parts() -> void:
 	# Create a button per part slot
 	for slot_name in _current_vehicle.installed_parts:
 		var part_id: String = _current_vehicle.installed_parts[slot_name]
-		var display := slot_name.replace("_", " ").capitalize()
+		var display: String = slot_name.replace("_", " ").capitalize()
 		var part_name := "Empty"
 		if not part_id.is_empty():
 			var part := PartDatabase.get_part(part_id)
@@ -74,7 +74,7 @@ func _refresh_parts() -> void:
 		var btn := Button.new()
 		btn.text = "%s: %s" % [display, part_name]
 		btn.alignment = HORIZONTAL_ALIGNMENT_LEFT
-		var slot := slot_name
+		var slot: String = slot_name
 		btn.pressed.connect(func(): _on_slot_selected(slot))
 		part_slots.add_child(btn)
 
@@ -102,7 +102,7 @@ func _show_shop(slot: String) -> void:
 		var price: int = part_data.get("price", 0)
 		var name: String = part_data.get("name", pid)
 		var tier: int = part_data.get("tier", 1)
-		var tier_label := ["", "Stock", "Street", "Sport", "Race", "Elite", "Legendary"][clampi(tier, 0, 6)]
+		var tier_label: String = ["", "Stock", "Street", "Sport", "Race", "Elite", "Legendary"][clampi(tier, 0, 6)]
 
 		var btn := Button.new()
 		btn.text = "%s [%s] — $%d" % [name, tier_label, price]

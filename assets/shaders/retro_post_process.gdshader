@@ -13,6 +13,8 @@ uniform float saturation_boost : hint_range(0.0, 2.0) = 1.3;
 uniform float bloom_threshold : hint_range(0.0, 1.0) = 0.7;
 uniform float bloom_strength : hint_range(0.0, 1.0) = 0.2;
 
+uniform sampler2D screen_texture : hint_screen_texture, repeat_disable, filter_nearest;
+
 // 4x4 Bayer dither matrix
 const mat4 DITHER_MATRIX = mat4(
 	vec4(0.0, 8.0, 2.0, 10.0),
@@ -27,9 +29,9 @@ void fragment() {
 
 	// Chromatic aberration
 	float ca_offset = chromatic_aberration * pixel_size.x;
-	float r = texture(TEXTURE, vec2(uv.x + ca_offset, uv.y)).r;
-	float g = texture(TEXTURE, uv).g;
-	float b = texture(TEXTURE, vec2(uv.x - ca_offset, uv.y)).b;
+	float r = texture(screen_texture, vec2(uv.x + ca_offset, uv.y)).r;
+	float g = texture(screen_texture, uv).g;
+	float b = texture(screen_texture, vec2(uv.x - ca_offset, uv.y)).b;
 	vec3 color = vec3(r, g, b);
 
 	// Saturation boost (for that PS2-era vivid look)
@@ -42,7 +44,7 @@ void fragment() {
 		float total = 0.0;
 		for (int x = -2; x <= 2; x++) {
 			for (int y = -2; y <= 2; y++) {
-				vec3 s = texture(TEXTURE, uv + vec2(float(x), float(y)) * pixel_size * 3.0).rgb;
+				vec3 s = texture(screen_texture, uv + vec2(float(x), float(y)) * pixel_size * 3.0).rgb;
 				float brightness = max(s.r, max(s.g, s.b));
 				if (brightness > bloom_threshold) {
 					bloom += s;

@@ -2,329 +2,329 @@
   "id": "the_old_ways",
   "context": "Act 1 Chapter 1.2 — Diesel training session 3: advanced cornering and Marcus revelation",
   "lines": [
-    {
-      "type": "narration",
-      "text": "Diesel's training ground. An abandoned karting circuit on the industrial outskirts — half a mile of tight technical turns carved into cracked asphalt. Someone built this place with love, once. Now it belongs to the weeds and to one old man who won't let it die."
-    },
-    {
-      "type": "narration",
-      "text": "Diesel stands at the apex of turn seven — the circuit's sharpest corner, a decreasing-radius left-hander with negative camber and a drainage grate right on the exit line. The kind of corner that punishes everything but perfect technique."
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Diesel",
-      "portrait": "diesel_neutral",
-      "text": "See that corner? I've watched four hundred racers take it. Maybe five got it right."
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Diesel",
-      "portrait": "diesel_neutral",
-      "text": "Most people brake too late, turn in too early, and understeer off the exit. They fight the radius change instead of anticipating it."
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Diesel",
-      "portrait": "diesel_neutral",
-      "text": "The trick is patience. Late turn-in. Hold the car straight longer than feels comfortable. Then rotate — trail brake through the first third, release through the second, and power through the last."
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Diesel",
-      "portrait": "diesel_neutral",
-      "text": "Three phases. One motion. Like breathing."
-    },
-    {
-      "type": "narration",
-      "text": "He walks back to his car. The matte black coupe idles with a patience that mirrors its owner."
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Diesel",
-      "portrait": "diesel_neutral",
-      "text": "Ten laps. I want to see you get it right by the eighth. Go."
-    },
-    {
-      "label": "training_radio_start",
-      "type": "narration",
-      "text": "--- Training run begins ---"
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Diesel (Radio)",
-      "portrait": "diesel_radio",
-      "text": "Brake point is the crack in the asphalt — the long one that runs perpendicular. You see it? That's your marker. Hit it every time."
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Diesel (Radio)",
-      "portrait": "diesel_radio",
-      "text": "Too early on the turn-in. You're rushing it. Hold straight. Hold... hold... NOW."
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Diesel (Radio)",
-      "portrait": "diesel_radio",
-      "text": "Better. But your trail brake is too aggressive — the rear's getting light. Ease off the pedal like you're setting down a glass of water."
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Diesel (Radio)",
-      "portrait": "diesel_radio",
-      "text": "Weight transfer. Feel where the mass is. Front-left is loaded under braking. As you release, the weight migrates back. That migration IS your rotation. You're not turning the car — gravity is. You're just managing the invitation."
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Diesel (Radio)",
-      "portrait": "diesel_radio",
-      "text": "Throttle application on exit — progressive. Squeeze it on. If you stab at it, the front wheels will wash out and all that work through the apex was for nothing."
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Diesel (Radio)",
-      "portrait": "diesel_radio",
-      "text": "There. That lap. That was it. Did you feel the difference?"
-    },
-    {
-      "type": "narration",
-      "text": "You did. The car flowed through the corner like it was on rails. No fighting. No scrubbing. Just momentum, preserved and redirected."
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Diesel (Radio)",
-      "portrait": "diesel_radio",
-      "text": "Do it again. Exactly like that. Prove it wasn't an accident."
-    },
-    {
-      "type": "narration",
-      "text": "--- After the training run ---"
-    },
-    {
-      "type": "narration",
-      "text": "Diesel leans against the chain-link fence at the edge of the circuit. He pulls a thermos from somewhere — battered steel, no labels — and pours something dark into the cap. Doesn't offer you any."
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Diesel",
-      "portrait": "diesel_neutral",
-      "text": "This place used to be full. Every Friday. Thirty, forty cars. People came to learn, not to prove anything. No money. No rankings. Just driving."
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Diesel",
-      "portrait": "diesel_neutral",
-      "text": "The underground used to mean something. It was a community. People looked out for each other. You raced hard and then you helped the other guy fix his car in the parking lot."
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Diesel",
-      "portrait": "diesel_neutral",
-      "text": "Now it's content creators and influencer racers and trust fund kids who think a turbo kit makes them a driver. The spirit's been commodified. Packaged and sold."
-    },
-    {
-      "type": "narration",
-      "text": "He takes a long drink from the thermos cap. The silence stretches out."
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Diesel",
-      "portrait": "diesel_distant",
-      "text": "I stopped racing. A long time ago."
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Diesel",
-      "portrait": "diesel_distant",
-      "text": "There was a kid. Marcus. Twenty-two years old. Fast. Stupid fast. The kind of talent that comes along once in a decade."
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Diesel",
-      "portrait": "diesel_pained",
-      "text": "I was teaching him. The way I'm teaching you. Same corners. Same lectures. Same thermos of bad coffee."
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Diesel",
-      "portrait": "diesel_pained",
-      "text": "He got into a race he shouldn't have been in. Too fast, too young, too much to prove. Touge run on the coast road. It rained that night."
-    },
-    {
-      "type": "narration",
-      "text": "Diesel stops. His hands tighten around the thermos. The metal dents slightly under his grip."
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Diesel",
-      "portrait": "diesel_pained",
-      "text": "He went off at the switchback above the cliffs. The guardrail was rusted through. They didn't find the car until morning."
-    },
-    {
-      "type": "narration",
-      "text": "The wind moves through the abandoned circuit. Somewhere, a loose fence panel clangs against its post."
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Diesel",
-      "portrait": "diesel_pained",
-      "text": "I stopped because someone died. Someone I was supposed to protect."
-    },
-    {
-      "type": "choice",
-      "choices": [
-        {
-          "text": "Is that why you stopped?",
-          "choice_id": "old_ways_why_stopped",
-          "relationship_changes": {"diesel": 5},
-          "moral_shift": 0,
-          "jump_to": "diesel_why_stopped"
-        },
-        {
-          "text": "Is that why you're teaching me?",
-          "choice_id": "old_ways_why_teaching",
-          "relationship_changes": {"diesel": 10},
-          "moral_shift": 5,
-          "jump_to": "diesel_why_teaching"
-        },
-        {
-          "text": "(Say nothing. Just listen.)",
-          "choice_id": "old_ways_silence",
-          "relationship_changes": {"diesel": 8},
-          "moral_shift": 5,
-          "jump_to": "diesel_silence"
-        }
-      ]
-    },
-    {
-      "label": "diesel_why_stopped",
-      "type": "dialogue",
-      "speaker": "Diesel",
-      "portrait": "diesel_neutral",
-      "text": "I stopped because I couldn't separate the joy from the guilt. Every time I got behind the wheel, I saw his face. Every corner was the corner."
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Diesel",
-      "portrait": "diesel_neutral",
-      "text": "For fifteen years, the car sat in the garage. I'd start it once a month just to keep the engine alive. But I never drove. Not really."
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Diesel",
-      "portrait": "diesel_distant",
-      "text": "Then I saw you at The Pit. And I saw Marcus. Not the ghost of him — the potential. That thing behind the eyes that says 'I need this the way I need oxygen.'",
-      "jump_to": "diesel_conclusion"
-    },
-    {
-      "label": "diesel_why_teaching",
-      "type": "narration",
-      "text": "Diesel looks at you. Really looks at you. For the first time, you see something behind the granite — something old and tired and still burning."
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Diesel",
-      "portrait": "diesel_vulnerable",
-      "text": "Yeah."
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Diesel",
-      "portrait": "diesel_vulnerable",
-      "text": "I couldn't save Marcus. I wasn't good enough. I taught him how to be fast but I didn't teach him how to be smart. I gave him the engine without the brakes."
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Diesel",
-      "portrait": "diesel_neutral",
-      "text": "I'm not making that mistake again. You're going to be fast. But you're going to be smart first. You're going to know when to push and when to pull back. When to race and when to walk away.",
-      "jump_to": "diesel_conclusion"
-    },
-    {
-      "label": "diesel_silence",
-      "type": "narration",
-      "text": "You don't say anything. The silence between you isn't empty — it's full. Full of the weight of what he just gave you. A story he doesn't tell. A name he doesn't say out loud."
-    },
-    {
-      "type": "narration",
-      "text": "Diesel notices the silence. Appreciates it. His shoulders drop a fraction."
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Diesel",
-      "portrait": "diesel_neutral",
-      "text": "Most people would have said something stupid. 'I'm sorry' or 'It wasn't your fault.' All the things people say when they don't know what to say."
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Diesel",
-      "portrait": "diesel_approval",
-      "text": "You didn't. That tells me more about you than any race ever could.",
-      "jump_to": "diesel_conclusion"
-    },
-    {
-      "label": "diesel_conclusion",
-      "type": "narration",
-      "text": "He pours out the rest of the thermos onto the cracked asphalt. Watches it spread into the crevices."
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Diesel",
-      "portrait": "diesel_neutral",
-      "text": "The old ways — the real underground — it was built on something. Respect. Skill. Knowing that the road is bigger than you are."
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Diesel",
-      "portrait": "diesel_neutral",
-      "text": "This city's going to test you. Not just your speed — your character. The money, the fame, the people who want to use you. Every one of them is a corner. And every corner is a choice."
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Diesel",
-      "portrait": "diesel_approval",
-      "text": "Remember what I taught you. Three phases. One motion. Patience, rotation, power. That's not just driving. That's everything."
-    },
-    {
-      "type": "narration",
-      "text": "He screws the cap back on the thermos. Walks to his car. The door opens with a sound like a vault."
-    },
-    {
-      "type": "dialogue",
-      "speaker": "Diesel",
-      "portrait": "diesel_neutral",
-      "text": "Same time next week. Bring better tires."
-    },
-    {
-      "type": "narration",
-      "text": "The matte black coupe rolls away. The training ground goes quiet. Just the wind, the weeds, and the ghost of four hundred racers who took that corner."
-    },
-    {
-      "type": "narration",
-      "text": "You sit in the CRX and think about Marcus. About Diesel. About the weight of teaching someone something that can kill them. And you realize that every lesson Diesel gives you isn't just about driving. It's an apology to a dead man."
-    },
-    {
-      "type": "action",
-      "action": {
-        "type": "change_relationship",
-        "character": "diesel",
-        "amount": 15
-      }
-    },
-    {
-      "type": "action",
-      "action": {
-        "type": "set_flag",
-        "flag": "diesel_training_3_complete",
-        "value": true
-      }
-    },
-    {
-      "type": "action",
-      "action": {
-        "type": "set_flag",
-        "flag": "marcus_revealed",
-        "value": true
-      }
-    }
+	{
+	  "type": "narration",
+	  "text": "Diesel's training ground. An abandoned karting circuit on the industrial outskirts — half a mile of tight technical turns carved into cracked asphalt. Someone built this place with love, once. Now it belongs to the weeds and to one old man who won't let it die."
+	},
+	{
+	  "type": "narration",
+	  "text": "Diesel stands at the apex of turn seven — the circuit's sharpest corner, a decreasing-radius left-hander with negative camber and a drainage grate right on the exit line. The kind of corner that punishes everything but perfect technique."
+	},
+	{
+	  "type": "dialogue",
+	  "speaker": "Diesel",
+	  "portrait": "diesel_neutral",
+	  "text": "See that corner? I've watched four hundred racers take it. Maybe five got it right."
+	},
+	{
+	  "type": "dialogue",
+	  "speaker": "Diesel",
+	  "portrait": "diesel_neutral",
+	  "text": "Most people brake too late, turn in too early, and understeer off the exit. They fight the radius change instead of anticipating it."
+	},
+	{
+	  "type": "dialogue",
+	  "speaker": "Diesel",
+	  "portrait": "diesel_neutral",
+	  "text": "The trick is patience. Late turn-in. Hold the car straight longer than feels comfortable. Then rotate — trail brake through the first third, release through the second, and power through the last."
+	},
+	{
+	  "type": "dialogue",
+	  "speaker": "Diesel",
+	  "portrait": "diesel_neutral",
+	  "text": "Three phases. One motion. Like breathing."
+	},
+	{
+	  "type": "narration",
+	  "text": "He walks back to his car. The matte black coupe idles with a patience that mirrors its owner."
+	},
+	{
+	  "type": "dialogue",
+	  "speaker": "Diesel",
+	  "portrait": "diesel_neutral",
+	  "text": "Ten laps. I want to see you get it right by the eighth. Go."
+	},
+	{
+	  "label": "training_radio_start",
+	  "type": "narration",
+	  "text": "--- Training run begins ---"
+	},
+	{
+	  "type": "dialogue",
+	  "speaker": "Diesel (Radio)",
+	  "portrait": "diesel_radio",
+	  "text": "Brake point is the crack in the asphalt — the long one that runs perpendicular. You see it? That's your marker. Hit it every time."
+	},
+	{
+	  "type": "dialogue",
+	  "speaker": "Diesel (Radio)",
+	  "portrait": "diesel_radio",
+	  "text": "Too early on the turn-in. You're rushing it. Hold straight. Hold... hold... NOW."
+	},
+	{
+	  "type": "dialogue",
+	  "speaker": "Diesel (Radio)",
+	  "portrait": "diesel_radio",
+	  "text": "Better. But your trail brake is too aggressive — the rear's getting light. Ease off the pedal like you're setting down a glass of water."
+	},
+	{
+	  "type": "dialogue",
+	  "speaker": "Diesel (Radio)",
+	  "portrait": "diesel_radio",
+	  "text": "Weight transfer. Feel where the mass is. Front-left is loaded under braking. As you release, the weight migrates back. That migration IS your rotation. You're not turning the car — gravity is. You're just managing the invitation."
+	},
+	{
+	  "type": "dialogue",
+	  "speaker": "Diesel (Radio)",
+	  "portrait": "diesel_radio",
+	  "text": "Throttle application on exit — progressive. Squeeze it on. If you stab at it, the front wheels will wash out and all that work through the apex was for nothing."
+	},
+	{
+	  "type": "dialogue",
+	  "speaker": "Diesel (Radio)",
+	  "portrait": "diesel_radio",
+	  "text": "There. That lap. That was it. Did you feel the difference?"
+	},
+	{
+	  "type": "narration",
+	  "text": "You did. The car flowed through the corner like it was on rails. No fighting. No scrubbing. Just momentum, preserved and redirected."
+	},
+	{
+	  "type": "dialogue",
+	  "speaker": "Diesel (Radio)",
+	  "portrait": "diesel_radio",
+	  "text": "Do it again. Exactly like that. Prove it wasn't an accident."
+	},
+	{
+	  "type": "narration",
+	  "text": "--- After the training run ---"
+	},
+	{
+	  "type": "narration",
+	  "text": "Diesel leans against the chain-link fence at the edge of the circuit. He pulls a thermos from somewhere — battered steel, no labels — and pours something dark into the cap. Doesn't offer you any."
+	},
+	{
+	  "type": "dialogue",
+	  "speaker": "Diesel",
+	  "portrait": "diesel_neutral",
+	  "text": "This place used to be full. Every Friday. Thirty, forty cars. People came to learn, not to prove anything. No money. No rankings. Just driving."
+	},
+	{
+	  "type": "dialogue",
+	  "speaker": "Diesel",
+	  "portrait": "diesel_neutral",
+	  "text": "The underground used to mean something. It was a community. People looked out for each other. You raced hard and then you helped the other guy fix his car in the parking lot."
+	},
+	{
+	  "type": "dialogue",
+	  "speaker": "Diesel",
+	  "portrait": "diesel_neutral",
+	  "text": "Now it's content creators and influencer racers and trust fund kids who think a turbo kit makes them a driver. The spirit's been commodified. Packaged and sold."
+	},
+	{
+	  "type": "narration",
+	  "text": "He takes a long drink from the thermos cap. The silence stretches out."
+	},
+	{
+	  "type": "dialogue",
+	  "speaker": "Diesel",
+	  "portrait": "diesel_distant",
+	  "text": "I stopped racing. A long time ago."
+	},
+	{
+	  "type": "dialogue",
+	  "speaker": "Diesel",
+	  "portrait": "diesel_distant",
+	  "text": "There was a kid. Marcus. Twenty-two years old. Fast. Stupid fast. The kind of talent that comes along once in a decade."
+	},
+	{
+	  "type": "dialogue",
+	  "speaker": "Diesel",
+	  "portrait": "diesel_pained",
+	  "text": "I was teaching him. The way I'm teaching you. Same corners. Same lectures. Same thermos of bad coffee."
+	},
+	{
+	  "type": "dialogue",
+	  "speaker": "Diesel",
+	  "portrait": "diesel_pained",
+	  "text": "He got into a race he shouldn't have been in. Too fast, too young, too much to prove. Touge run on the coast road. It rained that night."
+	},
+	{
+	  "type": "narration",
+	  "text": "Diesel stops. His hands tighten around the thermos. The metal dents slightly under his grip."
+	},
+	{
+	  "type": "dialogue",
+	  "speaker": "Diesel",
+	  "portrait": "diesel_pained",
+	  "text": "He went off at the switchback above the cliffs. The guardrail was rusted through. They didn't find the car until morning."
+	},
+	{
+	  "type": "narration",
+	  "text": "The wind moves through the abandoned circuit. Somewhere, a loose fence panel clangs against its post."
+	},
+	{
+	  "type": "dialogue",
+	  "speaker": "Diesel",
+	  "portrait": "diesel_pained",
+	  "text": "I stopped because someone died. Someone I was supposed to protect."
+	},
+	{
+	  "type": "choice",
+	  "choices": [
+		{
+		  "text": "Is that why you stopped?",
+		  "choice_id": "old_ways_why_stopped",
+		  "relationship_changes": {"diesel": 5},
+		  "moral_shift": 0,
+		  "jump_to": "diesel_why_stopped"
+		},
+		{
+		  "text": "Is that why you're teaching me?",
+		  "choice_id": "old_ways_why_teaching",
+		  "relationship_changes": {"diesel": 10},
+		  "moral_shift": 5,
+		  "jump_to": "diesel_why_teaching"
+		},
+		{
+		  "text": "(Say nothing. Just listen.)",
+		  "choice_id": "old_ways_silence",
+		  "relationship_changes": {"diesel": 8},
+		  "moral_shift": 5,
+		  "jump_to": "diesel_silence"
+		}
+	  ]
+	},
+	{
+	  "label": "diesel_why_stopped",
+	  "type": "dialogue",
+	  "speaker": "Diesel",
+	  "portrait": "diesel_neutral",
+	  "text": "I stopped because I couldn't separate the joy from the guilt. Every time I got behind the wheel, I saw his face. Every corner was the corner."
+	},
+	{
+	  "type": "dialogue",
+	  "speaker": "Diesel",
+	  "portrait": "diesel_neutral",
+	  "text": "For fifteen years, the car sat in the garage. I'd start it once a month just to keep the engine alive. But I never drove. Not really."
+	},
+	{
+	  "type": "dialogue",
+	  "speaker": "Diesel",
+	  "portrait": "diesel_distant",
+	  "text": "Then I saw you at The Pit. And I saw Marcus. Not the ghost of him — the potential. That thing behind the eyes that says 'I need this the way I need oxygen.'",
+	  "jump_to": "diesel_conclusion"
+	},
+	{
+	  "label": "diesel_why_teaching",
+	  "type": "narration",
+	  "text": "Diesel looks at you. Really looks at you. For the first time, you see something behind the granite — something old and tired and still burning."
+	},
+	{
+	  "type": "dialogue",
+	  "speaker": "Diesel",
+	  "portrait": "diesel_vulnerable",
+	  "text": "Yeah."
+	},
+	{
+	  "type": "dialogue",
+	  "speaker": "Diesel",
+	  "portrait": "diesel_vulnerable",
+	  "text": "I couldn't save Marcus. I wasn't good enough. I taught him how to be fast but I didn't teach him how to be smart. I gave him the engine without the brakes."
+	},
+	{
+	  "type": "dialogue",
+	  "speaker": "Diesel",
+	  "portrait": "diesel_neutral",
+	  "text": "I'm not making that mistake again. You're going to be fast. But you're going to be smart first. You're going to know when to push and when to pull back. When to race and when to walk away.",
+	  "jump_to": "diesel_conclusion"
+	},
+	{
+	  "label": "diesel_silence",
+	  "type": "narration",
+	  "text": "You don't say anything. The silence between you isn't empty — it's full. Full of the weight of what he just gave you. A story he doesn't tell. A name he doesn't say out loud."
+	},
+	{
+	  "type": "narration",
+	  "text": "Diesel notices the silence. Appreciates it. His shoulders drop a fraction."
+	},
+	{
+	  "type": "dialogue",
+	  "speaker": "Diesel",
+	  "portrait": "diesel_neutral",
+	  "text": "Most people would have said something stupid. 'I'm sorry' or 'It wasn't your fault.' All the things people say when they don't know what to say."
+	},
+	{
+	  "type": "dialogue",
+	  "speaker": "Diesel",
+	  "portrait": "diesel_approval",
+	  "text": "You didn't. That tells me more about you than any race ever could.",
+	  "jump_to": "diesel_conclusion"
+	},
+	{
+	  "label": "diesel_conclusion",
+	  "type": "narration",
+	  "text": "He pours out the rest of the thermos onto the cracked asphalt. Watches it spread into the crevices."
+	},
+	{
+	  "type": "dialogue",
+	  "speaker": "Diesel",
+	  "portrait": "diesel_neutral",
+	  "text": "The old ways — the real underground — it was built on something. Respect. Skill. Knowing that the road is bigger than you are."
+	},
+	{
+	  "type": "dialogue",
+	  "speaker": "Diesel",
+	  "portrait": "diesel_neutral",
+	  "text": "This city's going to test you. Not just your speed — your character. The money, the fame, the people who want to use you. Every one of them is a corner. And every corner is a choice."
+	},
+	{
+	  "type": "dialogue",
+	  "speaker": "Diesel",
+	  "portrait": "diesel_approval",
+	  "text": "Remember what I taught you. Three phases. One motion. Patience, rotation, power. That's not just driving. That's everything."
+	},
+	{
+	  "type": "narration",
+	  "text": "He screws the cap back on the thermos. Walks to his car. The door opens with a sound like a vault."
+	},
+	{
+	  "type": "dialogue",
+	  "speaker": "Diesel",
+	  "portrait": "diesel_neutral",
+	  "text": "Same time next week. Bring better tires."
+	},
+	{
+	  "type": "narration",
+	  "text": "The matte black coupe rolls away. The training ground goes quiet. Just the wind, the weeds, and the ghost of four hundred racers who took that corner."
+	},
+	{
+	  "type": "narration",
+	  "text": "You sit in the CRX and think about Marcus. About Diesel. About the weight of teaching someone something that can kill them. And you realize that every lesson Diesel gives you isn't just about driving. It's an apology to a dead man."
+	},
+	{
+	  "type": "action",
+	  "action": {
+		"type": "change_relationship",
+		"character": "diesel",
+		"amount": 15
+	  }
+	},
+	{
+	  "type": "action",
+	  "action": {
+		"type": "set_flag",
+		"flag": "diesel_training_3_complete",
+		"value": true
+	  }
+	},
+	{
+	  "type": "action",
+	  "action": {
+		"type": "set_flag",
+		"flag": "marcus_revealed",
+		"value": true
+	  }
+	}
   ]
 }
