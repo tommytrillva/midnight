@@ -12,7 +12,7 @@ const ENDING_FAMILY := "family"           # ENDING_C: High Maya + Nikko + Diesel
 const ENDING_GHOST := "ghost"             # ENDING_D: Beat Ghost in Act 4 + specific choices
 const ENDING_CONTRADICTION := "contradiction" # ENDING_E: Mixed choices, balanced paths
 const ENDING_PRICE := "price"             # ENDING_F: Moral compromises + Zero alliance
-const ENDING_SECRET := "beginning"        # SECRET: <120h + all high + selfless + all car types
+const ENDING_SECRET := "secret_beginning"  # SECRET: <120h + all high + selfless + all car types
 
 # Minimum score to qualify for an ending
 const QUALIFICATION_THRESHOLD := 50
@@ -103,7 +103,7 @@ func _score_legend() -> float:
 
 	# Reputation matters
 	var rep_tier: int = GameManager.reputation.get_tier()
-	score += remap(rep_tier, 0, 10, 0, 20) # Up to 20 points from rep
+	score += remap(rep_tier, 0, 5, 0, 20) # Up to 20 points from rep
 
 	# Moral alignment: moderate positive preferred
 	var moral := _get_moral_alignment()
@@ -157,7 +157,7 @@ func _score_empire() -> float:
 
 	# High reputation
 	var rep_tier: int = GameManager.reputation.get_tier()
-	score += remap(rep_tier, 0, 10, 0, 10)
+	score += remap(rep_tier, 0, 5, 0, 10)
 
 	return clampf(score, 0, 100)
 

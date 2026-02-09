@@ -200,7 +200,7 @@ func apply_wear(amount: float) -> void:
 func apply_damage(amount: float) -> void:
 	damage_percentage = clampf(damage_percentage + amount, 0.0, 100.0)
 	if damage_percentage >= 100.0:
-		EventBus.vehicle_totaled.emit(vehicle_id.hash())
+		EventBus.vehicle_totaled.emit(vehicle_id)
 
 
 func repair(amount: float) -> void:

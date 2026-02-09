@@ -44,6 +44,7 @@ var current_period: String = PERIOD_DUSK
 var current_weather: String = "clear"
 var weather_change_timer: float = 0.0
 var day_count: int = 1
+var _days_per_month: int = 7 # 7 in-game nights = 1 game month
 
 const WEATHER_CHANGE_INTERVAL := 600.0 # Check weather every 10 real minutes
 
@@ -62,6 +63,9 @@ func _process(delta: float) -> void:
 	if game_hour >= 30.0: # 6AM = 30 (24+6)
 		game_hour = 19.0
 		day_count += 1
+		# Emit month_start every _days_per_month days for rent collection
+		if day_count % _days_per_month == 0:
+			EventBus.time_period_changed.emit("month_start")
 
 	# Handle midnight wrap
 	if game_hour >= 24.0 and game_hour < 30.0:
@@ -97,6 +101,15 @@ func get_grip_multiplier() -> float:
 
 func get_visibility() -> float:
 	return WEATHER_VISIBILITY.get(current_weather, 1.0)
+
+
+func get_rain_intensity() -> float:
+	## Returns 0.0-1.0 rain intensity for vehicle weather effects.
+	match current_weather:
+		"light_rain": return 0.3
+		"heavy_rain": return 0.7
+		"storm": return 1.0
+		_: return 0.0
 
 
 func get_normalized_hour() -> float:

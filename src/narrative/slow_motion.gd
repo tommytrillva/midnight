@@ -31,7 +31,9 @@ func _process(delta: float) -> void:
 		return
 
 	# Count down using real (unscaled) delta
-	_duration_timer -= delta
+	# Note: PROCESS_MODE_ALWAYS doesn't unscale delta, so divide by time_scale
+	var real_delta := delta / maxf(Engine.time_scale, 0.01)
+	_duration_timer -= real_delta
 	if _duration_timer <= 0.0:
 		_timed = false
 		deactivate(0.5)

@@ -13,7 +13,7 @@ signal race_position_changed(racer_id: int, new_position: int)
 # --- Vehicle Events ---
 signal vehicle_collision(vehicle_id: int, impact_force: float)
 signal vehicle_damaged(vehicle_id: int, damage_amount: float)
-signal vehicle_totaled(vehicle_id: int)
+signal vehicle_totaled(vehicle_id: String)
 signal speed_changed(vehicle_id: int, speed_kmh: float)
 signal gear_shifted(vehicle_id: int, gear: int)
 signal nitro_activated(vehicle_id: int)

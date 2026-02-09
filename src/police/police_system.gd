@@ -101,12 +101,10 @@ func reset() -> void:
 
 
 func serialize() -> Dictionary:
-	return {
-		"heat_level": heat_level,
-	}
+	# Per GDD: police heat is per-session, not saved
+	return {}
 
 
-func deserialize(data: Dictionary) -> void:
-	heat_level = data.get("heat_level", HeatLevel.CLEAN)
-	in_pursuit = false
-	pursuit_duration = 0.0
+func deserialize(_data: Dictionary) -> void:
+	# Per GDD: police heat resets on load
+	reset()

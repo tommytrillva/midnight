@@ -55,11 +55,8 @@ func acquire_vehicle(vehicle_id: String, method: String, source: String = "") ->
 		EventBus.zero_gift_received.emit(vehicle_id)
 		print("[Acquisition] Zero's gift received: %s (strings attached)" % vehicle.display_name)
 
-	# Add to player's garage
+	# Add to player's garage (also emits vehicle_acquired signal)
 	GameManager.garage.add_vehicle(vehicle, method)
-
-	# Emit the general acquisition signal
-	EventBus.vehicle_acquired.emit(vehicle_id, method)
 
 	# Method-specific signals
 	match method:

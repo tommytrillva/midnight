@@ -8,7 +8,8 @@ var _active_combos: Dictionary = {} # vehicle_id -> Array[Dictionary] (active co
 
 
 func _ready() -> void:
-	EventBus.pink_slip_won.connect(_on_pink_slip_won)
+	# Note: pink_slip_won is handled by VehicleAcquisition (loads full JSON data).
+	# GarageSystem only handles pink_slip_lost (vehicle removal).
 	EventBus.pink_slip_lost.connect(_on_pink_slip_lost)
 	EventBus.vehicle_impounded.connect(_on_vehicle_impounded)
 
@@ -302,11 +303,24 @@ func serialize() -> Dictionary:
 			"year": v.year,
 			"body_style": v.body_style,
 			"culture": v.culture,
+			"description": v.description,
+			# Roster fields
+			"tier": v.tier,
+			"category": v.category,
+			"acquisition_method": v.acquisition_method,
+			"engine_config": v.engine_config,
+			"aspiration": v.aspiration,
+			"special_traits": v.special_traits,
+			"lore": v.lore,
+			"rarity": v.rarity,
+			"is_story_locked": v.is_story_locked,
+			# Base stats
 			"base_speed": v.base_speed,
 			"base_acceleration": v.base_acceleration,
 			"base_handling": v.base_handling,
 			"base_braking": v.base_braking,
 			"base_durability": v.base_durability,
+			# Engine specs
 			"engine_type": v.engine_type,
 			"displacement_cc": v.displacement_cc,
 			"stock_hp": v.stock_hp,
@@ -314,8 +328,18 @@ func serialize() -> Dictionary:
 			"redline_rpm": v.redline_rpm,
 			"weight_kg": v.weight_kg,
 			"drivetrain": v.drivetrain,
+			# Parts & cosmetics
 			"installed_parts": v.installed_parts,
 			"paint_color": [v.paint_color.r, v.paint_color.g, v.paint_color.b],
+			"decal_ids": v.decal_ids,
+			"interior_style": v.interior_style,
+			"headlight_style": v.headlight_style,
+			"exhaust_tip_style": v.exhaust_tip_style,
+			# Upgrade tiers
+			"engine_upgrade_tier": v.engine_upgrade_tier,
+			"aero_upgrade_tier": v.aero_upgrade_tier,
+			"suspension_upgrade_tier": v.suspension_upgrade_tier,
+			# Dynamic state
 			"wear_percentage": v.wear_percentage,
 			"damage_percentage": v.damage_percentage,
 			"odometer_km": v.odometer_km,
@@ -325,6 +349,7 @@ func serialize() -> Dictionary:
 			"race_history": v.race_history,
 			"current_hp": v.current_hp,
 			"current_torque": v.current_torque,
+			"estimated_value": v.estimated_value,
 		}
 	return {"vehicles": vehicle_data}
 
@@ -342,11 +367,24 @@ func deserialize(data: Dictionary) -> void:
 		v.year = vd.get("year", 1995)
 		v.body_style = vd.get("body_style", "")
 		v.culture = vd.get("culture", "jdm")
+		v.description = vd.get("description", "")
+		# Roster fields
+		v.tier = vd.get("tier", 1)
+		v.category = vd.get("category", "JDM")
+		v.acquisition_method = vd.get("acquisition_method", "purchase")
+		v.engine_config = vd.get("engine_config", "I4")
+		v.aspiration = vd.get("aspiration", "NA")
+		v.special_traits.assign(vd.get("special_traits", []))
+		v.lore = vd.get("lore", "")
+		v.rarity = vd.get("rarity", "common")
+		v.is_story_locked = vd.get("is_story_locked", false)
+		# Base stats
 		v.base_speed = vd.get("base_speed", 100.0)
 		v.base_acceleration = vd.get("base_acceleration", 50.0)
 		v.base_handling = vd.get("base_handling", 50.0)
 		v.base_braking = vd.get("base_braking", 50.0)
 		v.base_durability = vd.get("base_durability", 100.0)
+		# Engine specs
 		v.engine_type = vd.get("engine_type", "i4")
 		v.displacement_cc = vd.get("displacement_cc", 2000)
 		v.stock_hp = vd.get("stock_hp", 150.0)
@@ -354,9 +392,19 @@ func deserialize(data: Dictionary) -> void:
 		v.redline_rpm = vd.get("redline_rpm", 7000)
 		v.weight_kg = vd.get("weight_kg", 1200.0)
 		v.drivetrain = vd.get("drivetrain", "rwd")
+		# Parts & cosmetics
 		v.installed_parts = vd.get("installed_parts", {})
 		var pc: Array = vd.get("paint_color", [0.5, 0.5, 0.5])
 		v.paint_color = Color(pc[0], pc[1], pc[2])
+		v.decal_ids.assign(vd.get("decal_ids", []))
+		v.interior_style = vd.get("interior_style", "stock")
+		v.headlight_style = vd.get("headlight_style", "stock")
+		v.exhaust_tip_style = vd.get("exhaust_tip_style", "stock")
+		# Upgrade tiers
+		v.engine_upgrade_tier = vd.get("engine_upgrade_tier", 0)
+		v.aero_upgrade_tier = vd.get("aero_upgrade_tier", 0)
+		v.suspension_upgrade_tier = vd.get("suspension_upgrade_tier", 0)
+		# Dynamic state
 		v.wear_percentage = vd.get("wear_percentage", 0.0)
 		v.damage_percentage = vd.get("damage_percentage", 0.0)
 		v.odometer_km = vd.get("odometer_km", 0.0)
@@ -366,6 +414,7 @@ func deserialize(data: Dictionary) -> void:
 		v.race_history = vd.get("race_history", [])
 		v.current_hp = vd.get("current_hp", v.stock_hp)
 		v.current_torque = vd.get("current_torque", v.stock_torque)
+		v.estimated_value = vd.get("estimated_value", 0)
 		vehicles[vid] = v
 		# Rebuild active combos cache for loaded vehicles
 		_active_combos[vid] = PartDatabase.get_active_combos(v.installed_parts)

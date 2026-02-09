@@ -381,7 +381,7 @@ func begin_pit_stop() -> void:
 	var vehicle_data := _player_vehicle.vehicle_data
 	var damage := 0.0
 	if vehicle_data:
-		damage = 100.0 - vehicle_data.condition  # condition is 0-100
+		damage = vehicle_data.damage_percentage  # 0-100 damage scale
 
 	# Duration scales with damage
 	var duration: float = PIT_STOP_BASE_DURATION + (damage / 100.0) * (PIT_STOP_MAX_DURATION - PIT_STOP_BASE_DURATION)
@@ -413,11 +413,9 @@ func _complete_pit_stop() -> void:
 
 	# Repair vehicle
 	if _player_vehicle and _player_vehicle.vehicle_data:
-		var old_condition: float = _player_vehicle.vehicle_data.condition
-		_player_vehicle.vehicle_data.condition = minf(
-			_player_vehicle.vehicle_data.condition + PIT_REPAIR_AMOUNT, 100.0
-		)
-		repairs["condition_restored"] = _player_vehicle.vehicle_data.condition - old_condition
+		var old_damage: float = _player_vehicle.vehicle_data.damage_percentage
+		_player_vehicle.vehicle_data.repair(PIT_REPAIR_AMOUNT)
+		repairs["damage_repaired"] = old_damage - _player_vehicle.vehicle_data.damage_percentage
 
 	# Refill nitro
 	if _player_vehicle:

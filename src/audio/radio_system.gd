@@ -675,7 +675,7 @@ func _on_mission_completed(mission_id: String, _outcome: Dictionary) -> void:
 
 func _on_rep_tier_changed(_old_tier: int, new_tier: int) -> void:
 	# Map tier numbers to tier names for event matching
-	var tier_names := {0: "UNKNOWN", 1: "KNOWN", 2: "RESPECTED", 3: "FEARED", 4: "LEGENDARY"}
+	var tier_names := {0: "UNKNOWN", 1: "NEWCOMER", 2: "KNOWN", 3: "RESPECTED", 4: "FEARED", 5: "LEGENDARY"}
 	var tier_name: String = tier_names.get(new_tier, "")
 	if not tier_name.is_empty():
 		_queue_event_line("rep_tier:%s" % tier_name)

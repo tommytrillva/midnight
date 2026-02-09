@@ -145,6 +145,8 @@ func start_new_game() -> void:
 	ambient_dialogue.clear_recent_events()
 	housing.deserialize({})  # Reset to CAR (starting housing)
 	phone.deserialize({})  # Reset phone messages
+	radio.deserialize({})  # Reset radio state
+	pink_slip.deserialize({})  # Reset pink slip state
 	# Start in CUTSCENE state for the prologue; story.start_new_story()
 	# will auto-trigger the prologue_opening mission
 	change_state(GameState.CUTSCENE)
@@ -191,6 +193,8 @@ func get_save_data() -> Dictionary:
 		"ambient_dialogue": ambient_dialogue.serialize(),
 		"housing": housing.serialize(),
 		"phone": phone.serialize(),
+		"radio": radio.serialize(),
+		"pink_slip": pink_slip.serialize(),
 	}
 
 
@@ -212,4 +216,6 @@ func load_save_data(data: Dictionary) -> void:
 	ambient_dialogue.deserialize(data.get("ambient_dialogue", {}))
 	housing.deserialize(data.get("housing", {}))
 	phone.deserialize(data.get("phone", {}))
+	radio.deserialize(data.get("radio", {}))
+	pink_slip.deserialize(data.get("pink_slip", {}))
 	print("[GameManager] Save data loaded.")

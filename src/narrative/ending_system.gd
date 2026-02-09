@@ -245,10 +245,11 @@ func determine_ending() -> String:
 	var all_high_rel := (maya_level >= 4 and diesel_level >= 4 and
 						nikko_level >= 4 and jade_level >= 4)
 	var selfless := moral >= 50.0
-	var beat_ghost_all_types: bool = flags.get("beat_ghost_sedan", false) and \
-		flags.get("beat_ghost_coupe", false) and \
-		flags.get("beat_ghost_hatch", false) and \
-		flags.get("beat_ghost_muscle", false)
+	var beat_ghost_all_types: bool = story_flags.get("ghost_beat_sedan", false) and \
+		story_flags.get("ghost_beat_coupe", false) and \
+		story_flags.get("ghost_beat_hatch", false) and \
+		story_flags.get("ghost_beat_muscle", false) and \
+		story_flags.get("ghost_beat_exotic", false)
 
 	if (play_hours < 120.0 and all_high_rel and selfless and
 		beat_ghost and beat_ghost_all_types):
