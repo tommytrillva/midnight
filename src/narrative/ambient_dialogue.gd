@@ -556,7 +556,7 @@ func _on_rep_tier_changed(_old_tier: int, new_tier: int) -> void:
 	add_recent_event("tier_up_%d" % new_tier)
 
 
-func _on_vehicle_totaled(_vehicle_id: int) -> void:
+func _on_vehicle_totaled(_vehicle_id: String) -> void:
 	add_recent_event("vehicle_totaled")
 
 

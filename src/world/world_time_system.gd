@@ -63,9 +63,9 @@ func _process(delta: float) -> void:
 	if game_hour >= 30.0: # 6AM = 30 (24+6)
 		game_hour = 19.0
 		day_count += 1
-		# Emit month_start every _days_per_month days for rent collection
+		# Emit month_started every _days_per_month days for rent collection
 		if day_count % _days_per_month == 0:
-			EventBus.time_period_changed.emit("month_start")
+			EventBus.month_started.emit(day_count)
 
 	# Handle midnight wrap
 	if game_hour >= 24.0 and game_hour < 30.0:

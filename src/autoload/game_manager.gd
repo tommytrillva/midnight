@@ -32,6 +32,7 @@ var housing: HousingSystem = null
 var phone: PhoneSystem = null
 var radio: RadioSystem = null
 var pink_slip: PinkSlipSystem = null
+var vehicle_acquisition: VehicleAcquisition = null
 
 # --- Debug ---
 var debug_mode: bool = false
@@ -91,6 +92,9 @@ func _ready() -> void:
 	pink_slip = PinkSlipSystem.new()
 	pink_slip.name = "PinkSlipSystem"
 	print("[GameManager] ✓ PinkSlipSystem created")
+	vehicle_acquisition = VehicleAcquisition.new()
+	vehicle_acquisition.name = "VehicleAcquisition"
+	print("[GameManager] ✓ VehicleAcquisition created")
 
 	print("[GameManager] Adding subsystems as children...")
 	# Add subsystems as children so they process
@@ -114,6 +118,7 @@ func _ready() -> void:
 	add_child(phone)
 	add_child(radio)
 	add_child(pink_slip)
+	add_child(vehicle_acquisition)
 
 	print("[GameManager] Setting initial values...")
 	# Initialize with default state
@@ -147,6 +152,10 @@ func start_new_game() -> void:
 	phone.deserialize({})  # Reset phone messages
 	radio.deserialize({})  # Reset radio state
 	pink_slip.deserialize({})  # Reset pink slip state
+	vehicle_acquisition.deserialize({})  # Reset acquisition log
+	world_time.deserialize({})  # Reset time/weather
+	origin.deserialize({})  # Reset origin
+	ending_system.deserialize({})  # Reset ending state
 	# Start in CUTSCENE state for the prologue; story.start_new_story()
 	# will auto-trigger the prologue_opening mission
 	change_state(GameState.CUTSCENE)
@@ -195,6 +204,7 @@ func get_save_data() -> Dictionary:
 		"phone": phone.serialize(),
 		"radio": radio.serialize(),
 		"pink_slip": pink_slip.serialize(),
+		"vehicle_acquisition": vehicle_acquisition.serialize(),
 	}
 
 
@@ -218,4 +228,5 @@ func load_save_data(data: Dictionary) -> void:
 	phone.deserialize(data.get("phone", {}))
 	radio.deserialize(data.get("radio", {}))
 	pink_slip.deserialize(data.get("pink_slip", {}))
+	vehicle_acquisition.deserialize(data.get("vehicle_acquisition", {}))
 	print("[GameManager] Save data loaded.")

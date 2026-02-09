@@ -55,10 +55,18 @@ func acquire_vehicle(vehicle_id: String, method: String, source: String = "") ->
 		EventBus.zero_gift_received.emit(vehicle_id)
 		print("[Acquisition] Zero's gift received: %s (strings attached)" % vehicle.display_name)
 
+	# Apply method-specific state before adding to garage
+	match method:
+		"barn_find":
+			# Barn finds start with extra wear — apply before add_vehicle
+			# so the vehicle_acquired signal carries correct state
+			vehicle.wear_percentage = randf_range(40.0, 80.0)
+			vehicle.damage_percentage = randf_range(10.0, 40.0)
+
 	# Add to player's garage (also emits vehicle_acquired signal)
 	GameManager.garage.add_vehicle(vehicle, method)
 
-	# Method-specific signals
+	# Method-specific logging
 	match method:
 		"purchase":
 			print("[Acquisition] Purchased: %s" % vehicle.display_name)
@@ -67,9 +75,6 @@ func acquire_vehicle(vehicle_id: String, method: String, source: String = "") ->
 		"story_unlock":
 			print("[Acquisition] Story unlock: %s (source: %s)" % [vehicle.display_name, source])
 		"barn_find":
-			# Barn finds start with extra wear
-			vehicle.wear_percentage = randf_range(40.0, 80.0)
-			vehicle.damage_percentage = randf_range(10.0, 40.0)
 			print("[Acquisition] Barn find discovered: %s" % vehicle.display_name)
 		"tournament_reward":
 			print("[Acquisition] Tournament reward: %s (source: %s)" % [vehicle.display_name, source])

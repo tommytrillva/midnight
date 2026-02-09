@@ -270,13 +270,6 @@ func reset() -> void:
 # Event Handlers
 # ---------------------------------------------------------------------------
 
-func _on_pink_slip_won(won_vehicle_data: Dictionary) -> void:
-	var vehicle := VehicleData.new()
-	vehicle.vehicle_id = won_vehicle_data.get("vehicle_id", "")
-	vehicle.display_name = won_vehicle_data.get("display_name", "Unknown")
-	add_vehicle(vehicle, "won_pink_slip")
-
-
 func _on_pink_slip_lost(lost_vehicle_data: Dictionary) -> void:
 	var lost_id: String = lost_vehicle_data.get("vehicle_id", "")
 	remove_vehicle(lost_id, "lost_pink_slip")

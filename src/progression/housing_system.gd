@@ -51,7 +51,7 @@ func _ready() -> void:
 	_setup_dialogue_map()
 
 	# Listen for month ticks to handle rent
-	EventBus.time_period_changed.connect(_on_time_period_changed)
+	EventBus.month_started.connect(_on_month_started)
 
 	print("[Housing] System initialized. Current: %s" % _get_level_name())
 
@@ -331,11 +331,10 @@ func _trigger_transition_dialogue(level: int) -> void:
 # TIME
 # =============================================================================
 
-func _on_time_period_changed(period: String) -> void:
+func _on_month_started(_day_count: int) -> void:
 	## Listen for month changes to trigger rent payment.
-	## The WorldTimeSystem emits "month_start" at each new month.
-	if period == "month_start":
-		pay_rent()
+	## The WorldTimeSystem emits month_started at each new month.
+	pay_rent()
 
 
 # =============================================================================

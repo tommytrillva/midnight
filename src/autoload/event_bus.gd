@@ -100,6 +100,7 @@ signal skill_unlocked(tree: String, skill_id: String)
 
 # --- World/Time Events ---
 signal time_period_changed(period: String)
+signal month_started(day_count: int)
 signal weather_changed(condition: String)
 signal weather_changing(from: String, to: String)
 signal lightning_struck

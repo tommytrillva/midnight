@@ -37,6 +37,7 @@ func calculate_ending() -> String:
 
 	# Secret ending has highest priority (hardest to achieve)
 	if scores[ENDING_SECRET] >= QUALIFICATION_THRESHOLD:
+		EventBus.ending_determined.emit(ENDING_SECRET)
 		print("[Ending] SECRET ENDING qualified!")
 		return ENDING_SECRET
 
@@ -329,7 +330,7 @@ func _score_price() -> float:
 
 
 func _score_secret() -> float:
-	## ENDING_SECRET "beginning": Complete in <120 hours + all high relationships +
+	## ENDING_SECRET "secret_beginning": Complete in <120 hours + all high relationships +
 	## selfless choices + beat Ghost with every car type.
 	## The true ending — extremely hard to achieve.
 	var score := 0.0

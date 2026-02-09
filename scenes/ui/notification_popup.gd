@@ -247,7 +247,7 @@ func _on_mission_started(mission_id: String) -> void:
 
 
 func _on_rep_tier_changed(_old_tier: int, new_tier: int) -> void:
-	var tier_names := ["UNKNOWN", "NEWCOMER", "RUNNER", "CONTENDER", "ELITE", "LEGEND"]
+	var tier_names := ["UNKNOWN", "NEWCOMER", "KNOWN", "RESPECTED", "FEARED", "LEGENDARY"]
 	var tier_name: String = tier_names[new_tier] if new_tier < tier_names.size() else "TIER %d" % new_tier
 	notify("REP increased!", "Now: %s" % tier_name, "reputation")
 
